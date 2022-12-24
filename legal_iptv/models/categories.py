@@ -20,6 +20,7 @@ def localized_category_name(category):
         { 'entertainment': 'Entretenimento' },
         { 'family': 'Família' },
         { 'general': 'Variedades' },
+        { 'kids': 'Infantil' },
         { 'legislative': 'Legislativo' },
         { 'lifestyle': 'Estilo de Vida' },
         { 'movies': 'Filmes' },
@@ -34,7 +35,9 @@ def localized_category_name(category):
         { 'sports': 'Esportes' },
         { 'travel': 'Viagem' },
         { 'weather': 'Clima' },
-        { 'youtube': 'YouTube Live'}
+        { 'web': 'Web Live'},
+        { 'pluto': 'PlutoTV' },
+        { 'radio': 'Rádio' }
     ]
 
     return __get_element(categories, category)

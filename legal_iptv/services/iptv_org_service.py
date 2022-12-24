@@ -55,5 +55,3 @@ def fetch_channels():
     streams = __filter_streams(__request(streams_url), channels)
 
     return __channels(channels, streams)
-
-print(fetch_channels())
