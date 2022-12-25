@@ -51,6 +51,18 @@ http://midia.faap.br:80/faaplatamlive-live/stream_720/livestream.m3u8
 #EXTGRP:Variedades
 https://srv2.zcast.com.br/elzemar/elzemar/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="DiarioTV.br" tvg-name="Diário TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/c395ee4019fcd2bcacc342b09d3c9ff7.webp", Diário TV
+#EXTGRP:Variedades
+https://hls.youtb.workers.dev/channel/UCYA_8op4pkwqWxbmcW-pzzQ.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Central Live" tvg-logo="https://cdn.mitvstatic.com/channels/br_sbt_m.png", SBT Central Live
+#EXTGRP:Variedades
+https://hls.youtb.workers.dev/channel/UC-kzuB1mP2LnmaXMPniKeyg.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT RS Live" tvg-logo="https://cdn.mitvstatic.com/channels/br_sbt_m.png", SBT RS Live
+#EXTGRP:Variedades
+https://hls.youtb.workers.dev/channel/UCHDfPYXReWt5EVIzBA6TzOQ.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
@@ -327,29 +339,17 @@ https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8
 #EXTGRP:Variedades
 https://596639ebdd89b.streamlock.net/8124/8124/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT RS Live" tvg-logo="https://cdn.mitvstatic.com/channels/br_sbt_m.png", SBT RS Live
-#EXTGRP:Variedades
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014890/ei/yZeoY77pOZDDgwP4npboDQ/ip/172.177.131.80/id/A9E5D6U8Q8c.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIgYhWd4zP6jfuEJON5yc9zHimf5Mg78oBOo2fwRvpOtU0CIQCqoq-DJFsQZkhKNlrozrDtC5pSHZjooVF5SUyPvvqncQ%3D%3D/file/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Central Live" tvg-logo="https://cdn.mitvstatic.com/channels/br_sbt_m.png", SBT Central Live
-#EXTGRP:Variedades
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014890/ei/ypeoY4mWEYjJhgaolI1I/ip/172.177.131.80/id/iM7GwxuMu_I.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRgIhAL92oPcpjDqRwLtOaEKpwiaZGai9AS2s8UvbmRXBD-rcAiEA7J2X8vFOtpiC02P4GGI9qVUSWOgk5G-iGiy9WA9etTg%3D/file/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="DiarioTV.br" tvg-name="Diário TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/c395ee4019fcd2bcacc342b09d3c9ff7.webp", Diário TV
-#EXTGRP:Variedades
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014895/ei/z5eoY_bRKcmP_9EPqs-wgAE/ip/172.177.131.80/id/3ud29cF6hPc.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIgbyw69kfzcrZkfLHduH2__ys3Nr5SIbChfZAK9seSfXECIQDrKLcWEg8rcy1uF1IPJWlaJsmrSv_hNvzWKbI1tWJg1g%3D%3D/file/index.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGazeta.br" tvg-name="TV Gazeta" tvg-logo="https://cdn.mitvstatic.com/channels/br_rede-gazeta_m.png", TV Gazeta
 #EXTGRP:Variedades
-https://stream-04.nyc.dailymotion.com/sec(OZ0ERGOH4oE-_Xr-zBQ5v8SkIx7fU9Oz8vEapQfUwVcNU-bHzKDfSX_2Au7HP7hV)/dm/3/x89qors/d/live-4.m3u8#cell=lnyc
+https://stream-03.nyc.dailymotion.com/sec(OZ0ERGOH4oE-_Xr-zBQ5v2X3MFW2TcSH2gA87FFmIkVYyT4S5duri5IQbS84r73x)/dm/3/x89qors/d/live-4.m3u8#cell=lnyc
 
 #EXTINF:-1 group-title="Variedades" tvg-id="CanalEducacao.br" tvg-name="Canal Educação" tvg-logo="https://i.imgur.com/bZGO7xc.png", Canal Educação
 #EXTGRP:Variedades
-https://stream-02.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4LszwIZpIXRBpr2ic7luVIHyBAnA5Yq1Q57gTIFqZvbL6s)/dm/3/x8abdvf/s/live-3.m3u8#cell=lnyc
+https://stream-03.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Ls2SlWPF8sOQpoqd1iDK3EwibgiB3dkgNeW2IXxibZEM4)/dm/3/x8abdvf/s/live-3.m3u8#cell=lnyc
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVT.br" tvg-name="TVT" tvg-logo="https://cdn.mitvstatic.com/channels/br_tvt_m.png", TVT
 #EXTGRP:Variedades
-https://stream-02.nyc.dailymotion.com/sec(hq_e0q5VHX_FvDCk_Uz4G1v6BSq75Owq0R8ez4mrxDxgBqqDRiBLmzBBL99yx1F4)/dm/3/x6ph7x7/d/live-1.m3u8#cell=lnyc
+https://stream-04.nyc.dailymotion.com/sec(hq_e0q5VHX_FvDCk_Uz4GwdEzmmcRlzyaqS9Q-xWJAe5zetkRGgZi3pDAeKTFE8_)/dm/3/x6ph7x7/d/live-1.m3u8#cell=lnyc
 
 ### Canais Filmes
 
@@ -451,21 +451,25 @@ http://168.205.87.198:8555/live/4666/123456/159.m3u8
 #EXTGRP:Séries
 https://serv.tvchannel.videovox.pw/serv-tvchannel/serv-tvchannel/chunklist_w504418236.m3u8
 
+#EXTINF:-1 group-title="Séries" tvg-id="PowerRangersTV.br" tvg-name="PowerRangers TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/1803aa8768a96c38aa19d7bc3f0cf98f.webp", PowerRangers TV
+#EXTGRP:Séries
+https://hls.youtb.workers.dev/channel/UCE3_4WG166NcyQPcRtgGWkQ.m3u8
+
+#EXTINF:-1 group-title="Séries" tvg-id="ChavesLive.br" tvg-name="Chaves Live" tvg-logo="https://c-fa.cdn.smule.com/rs-s52/arr/f5/41/cb737524-84d4-4ae6-89f4-03d716cba9c5.jpg", Chaves Live
+#EXTGRP:Séries
+https://hls.youtb.workers.dev/channel/UCEXwBr_PGiKYrqvbVi0bmvw.m3u8
+
+#EXTINF:-1 group-title="Séries" tvg-id="ChavesLive.br" tvg-name="Chaves Live 2" tvg-logo="https://c-fa.cdn.smule.com/rs-s52/arr/f5/41/cb737524-84d4-4ae6-89f4-03d716cba9c5.jpg", Chaves Live 2
+#EXTGRP:Séries
+https://hls.youtb.workers.dev/channel/UCM9g8b3jb28mQwCCcwssV2w.m3u8
+
 #EXTINF:-1 group-title="Séries" tvg-id="DarkMatterTVBrazil.br" tvg-name="Dark Matter TV Brazil" tvg-logo="https://i.imgur.com/fNZwRtB.png", Dark Matter TV Brazil
 #EXTGRP:Séries
 https://darkmatter-por-samsungbrazil.amagi.tv/playlist.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="ChavesLive.br" tvg-name="Chaves Live" tvg-logo="https://c-fa.cdn.smule.com/rs-s52/arr/f5/41/cb737524-84d4-4ae6-89f4-03d716cba9c5.jpg", Chaves Live
+#EXTINF:-1 group-title="Séries" tvg-id="ChavesLive.br" tvg-name="Chaves Live 3" tvg-logo="https://c-fa.cdn.smule.com/rs-s52/arr/f5/41/cb737524-84d4-4ae6-89f4-03d716cba9c5.jpg", Chaves Live 3
 #EXTGRP:Séries
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014893/ei/zJeoY7OHOsKV_9EPof6D2AU/ip/172.177.131.80/id/zmvVgKPszQI.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhALzFtymXkyVeQQAuRJmLVR-YS8Nj2UQae6qKFaJKx42JAiBNKXkvR83HYcGFe7WMNzQyTLTmJ9f9FZPDwp7UFVDx4g%3D%3D/file/index.m3u8
-
-#EXTINF:-1 group-title="Séries" tvg-id="PowerRangersTV.br" tvg-name="PowerRangers TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/1803aa8768a96c38aa19d7bc3f0cf98f.webp", PowerRangers TV
-#EXTGRP:Séries
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014896/ei/0JeoY-2FB_zvhwaesLjIAQ/ip/172.177.131.80/id/IuIfDZdJ0qk.1/source/yt_live_broadcast/requiressl/yes/hfr/1/force_finished/1/maudio/1/gcr/us/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/CLEAN/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cforce_finished%2Cmaudio%2Cgcr%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIgVwGf3EAp_iwYYtOlQ-_BgHlMBlVD6aBarbrsPJGfykoCIQCa-OECGQHydXGD7Uc2zjwgdLLYV6G1ft9FPuGeJOs2Gg%3D%3D/file/index.m3u8
-
-#EXTINF:-1 group-title="Séries" tvg-id="ChavesLive.br" tvg-name="Chaves Live 2" tvg-logo="https://c-fa.cdn.smule.com/rs-s52/arr/f5/41/cb737524-84d4-4ae6-89f4-03d716cba9c5.jpg", Chaves Live 2
-#EXTGRP:Séries
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014896/ei/0JeoY_zEHomJ_9EP1r--yAw/ip/172.177.131.80/id/qrDJ5PEw93s.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhAPycrqdmWtOEu2ynHSSgLufDlY59OTAf9g55L7TRfFg_AiAVwykKpKaip4Pvl0I1IaABhQLchS3El8Zn7tMJUaOrsA%3D%3D/file/index.m3u8
+https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672023438/ei/LrmoY-uEDJmQhwaUn7a4Bw/ip/172.176.224.208/id/7Zmjo9rTsww.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRgIhAL0EeevlVvi85iXw2X8tZoAUhdQ7gDwPWoC0XDUTk24xAiEAlbD13hU5Ou7u2BO5K0AZg2GBFDd2cEs8rvhuUU6rc5k%3D/file/index.m3u8
 
 ### Canais Infantil
 
@@ -489,6 +493,14 @@ https://5ad482a77183d.streamlock.net/urbantvkidsgmail.com/urbantvkidsgmail.com/c
 #EXTGRP:Infantil
 http://168.205.87.198:8555/live/4666/123456/143.m3u8
 
+#EXTINF:-1 group-title="Infantil" tvg-id="BabyBus.br" tvg-name="Baby Bus" tvg-logo="https://yt3.ggpht.com/ytc/AMLnZu-z-KRyClup--esKMFo5aOruxVnrOBACXid_otlnw=s176-c-k-c0x00ffffff-no-rj", Baby Bus
+#EXTGRP:Infantil
+https://hls.youtb.workers.dev/channel/UCg1PtLqCSYX8odBuWHP9Ebg.m3u8
+
+#EXTINF:-1 group-title="Infantil" tvg-id="NovoPicaPau.br" tvg-name="PicaPau" tvg-logo="https://yt3.ggpht.com/ytc/AMLnZu9sG9yS_GJyx3Ir6VrPg-omBmE43OaxLfrUrftsOw=s176-c-k-c0x00ffffff-no-rj", PicaPau
+#EXTGRP:Infantil
+https://hls.youtb.workers.dev/channel/UCiFg-2CjsG_xcSsHNjDeLpw.m3u8
+
 #EXTINF:-1 group-title="Infantil" tvg-id="CartoonNetworkBrazil.br" tvg-name="Cartoon Network Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/512px-Cartoon_Network_2010_logo.svg.png", Cartoon Network Brazil
 #EXTGRP:Infantil
 https://playout.cdn.cartoonnetwork.com.br/playout_01/playlist.m3u8
@@ -509,17 +521,9 @@ https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5f121460b
 #EXTGRP:Infantil
 https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5ddd7cb2cbb9010009b4fe32/master.m3u8?advertisingId=&appName=web&appVersion=5.14.0-0f5ca04c21649b8c8aad4e56266a23b96d73b83a&app_name=web&clientDeviceType=0&clientID=6fbead95-26b1-415d-998f-1bdef62d10be&clientModelNumber=na&deviceDNT=false&deviceId=6fbead95-26b1-415d-998f-1bdef62d10be&deviceLat=19.4358&deviceLon=-99.1441&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=88.0.4324.150&marketingRegion=VE&serverSideAds=false&sessionID=b8e5a857-714a-11eb-b532-0242ac110002&sid=b8e5a857-714a-11eb-b532-0242ac110002&userId=
 
-#EXTINF:-1 group-title="Infantil" tvg-id="BabyBus.br" tvg-name="Baby Bus" tvg-logo="https://yt3.ggpht.com/ytc/AMLnZu-z-KRyClup--esKMFo5aOruxVnrOBACXid_otlnw=s176-c-k-c0x00ffffff-no-rj", Baby Bus
-#EXTGRP:Infantil
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014897/ei/0JeoY_aXLsq2gwOJ9a7QDA/ip/172.177.131.80/id/0_MjCRWnYTw.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRAIgDsj_Z9p36Lj3aaw50-gMhqd1sMA4WBTsPxl3qOsy8zMCIBz5lJ-hYH-zd2HKQD7FgV9V6u8NJsB1fJ9b9-8rO_Ab/file/index.m3u8
-
-#EXTINF:-1 group-title="Infantil" tvg-id="NovoPicaPau.br" tvg-name="PicaPau" tvg-logo="https://yt3.ggpht.com/ytc/AMLnZu9sG9yS_GJyx3Ir6VrPg-omBmE43OaxLfrUrftsOw=s176-c-k-c0x00ffffff-no-rj", PicaPau
-#EXTGRP:Infantil
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014897/ei/0ZeoY4vCB4rzhgbGzbrQBQ/ip/172.177.131.80/id/HGznpIdrOp8.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhAIlaz7x2tbsWeTwnJ8N8X2iiRiXysrxK9JfSRDyiJSZXAiAsLA53fjK2wwawhNOHqPS-MQzAEi_ekbR3UtxLT899yA%3D%3D/file/index.m3u8
-
 #EXTINF:-1 group-title="Infantil" tvg-id="CavernaDragao.br" tvg-name="Caverna do Dragão" tvg-logo="https://pm1.narvii.com/6271/535a152ee5b8fb6dbe40c1f4967356f926e4c5d4_128.jpg", Caverna do Dragão
 #EXTGRP:Infantil
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014897/ei/0ZeoY-XSH4uxhgaF66awAw/ip/172.177.131.80/id/Uk9Li24gCuw.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRgIhAOwAYWWC_DGmK7KTHo9mzCPhZLO9SBL_hwMYGKoLEiYHAiEAmhfrkmGQkizPyi7VYGIK-1Uj_TtHjUmR8LLQO3Bt1g0%3D/file/index.m3u8
+https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672023437/ei/LbmoY8PUNOWU_9EPsu2QuAE/ip/172.176.224.208/id/Uk9Li24gCuw.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRAIgZEXc7VxnNELsnNkQzqbJuCK3G_h4JzxJlvJvVYCDq9QCICNkEFfZYQwMGoPIB7G_59EF9EPIrn71TiANSvQLmq0T/file/index.m3u8
 
 ### Canais Animação
 
@@ -567,6 +571,14 @@ https://stmv1.srvif.com/retrotv/retrotv/playlist.m3u8
 
 ### Canais Notícia
 
+#EXTINF:-1 group-title="Notícia" tvg-id="RecordNews.br" tvg-name="Record News Live" tvg-logo="https://yt3.googleusercontent.com/xoqgjnZ9Wd8-cPvKryCyTcfeaT7K3rZtQxCJHhcbICXoVvw7x3hYcQ0S02kzvdmsqwq-Fgnt=s176-c-k-c0x00ffffff-no-rj", Record News Live
+#EXTGRP:Notícia
+https://hls.youtb.workers.dev/channel/UCuiLR4p6wQ3xLEm15pEn1Xw.m3u8
+
+#EXTINF:-1 group-title="Notícia" tvg-id="JovemPanNews.br" tvg-name="Jovem Pan Live" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Jovem_Pan_logo_2018.svg/512px-Jovem_Pan_logo_2018.svg.png", Jovem Pan Live
+#EXTGRP:Notícia
+https://hls.youtb.workers.dev/channel/UCP391YRAjSOdM_bwievgaZA.m3u8
+
 #EXTINF:-1 group-title="Notícia" tvg-id="AratuOn.br" tvg-name="Aratu On" tvg-logo="https://i.imgur.com/Ht4jCab.png", Aratu On
 #EXTGRP:Notícia
 https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8
@@ -583,15 +595,11 @@ https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/ind
 #EXTGRP:Notícia
 https://59f2354c05961.streamlock.net:1443/tvideonews/_definst_/tvideonews/chunklist.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="RecordNews.br" tvg-name="Record News Live" tvg-logo="https://yt3.googleusercontent.com/xoqgjnZ9Wd8-cPvKryCyTcfeaT7K3rZtQxCJHhcbICXoVvw7x3hYcQ0S02kzvdmsqwq-Fgnt=s176-c-k-c0x00ffffff-no-rj", Record News Live
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014892/ei/zJeoY5nmJbSW_9EP87OAgAk/ip/172.177.131.80/id/YAqJUcHns_I.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhAO68wNfbp4ktdIfeKBT6GaLCPeG5SAWUksZWn37xvlBPAiBRzS_GabCVdgX7y4_L-Qd3M16_Qg0s8G2-ojynEh1FCQ%3D%3D/file/index.m3u8
-
 ### Canais Cultura
 
 #EXTINF:-1 group-title="Cultura" tvg-id="CanalLibras.br" tvg-name="Canal Libras" tvg-logo="https://i.imgur.com/7kRysMu.png", Canal Libras
 #EXTGRP:Cultura
-https://stream-01.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Ls7H4lDQExCGoQVcqAWhvFuNnFwBZAhrmnSowTlUG2bOQ)/dm/3/x8a60g5/d/live-4.m3u8#cell=lnyc
+https://stream-03.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4LswMzCDKsvPFszNT7fKzR52T25BxC6CRoBAJEploBjgeg)/dm/3/x8a60g5/d/live-4.m3u8#cell=lnyc
 
 ### Canais Entretenimento
 
@@ -741,15 +749,15 @@ http://cdn.tvmatic.net/fight.m3u8
 
 #EXTINF:-1 group-title="Shop" tvg-id="Shoptime.br" tvg-name="Shoptime" tvg-logo="https://i.imgur.com/wcsIaWu.png", Shoptime
 #EXTGRP:Shop
-http://168.205.87.198:8555/live/4666/123456/164.m3u8
+https://hls.youtb.workers.dev/channel/UCCuYi5AP3gya6C5mdWYS6CQ.m3u8
+
+#EXTINF:-1 group-title="Shop" tvg-id="Shoptime.br" tvg-name="Shoptime" tvg-logo="https://i.imgur.com/wcsIaWu.png", Shoptime
+#EXTGRP:Shop
+https://hls.youtb.workers.dev/channel/UCCuYi5AP3gya6C5mdWYS6CQ.m3u8
 
 #EXTINF:-1 group-title="Shop" tvg-id="1001Noites.br" tvg-name="1001 Noites" tvg-logo="https://i.imgur.com/dWA9y2J.png", 1001 Noites
 #EXTGRP:Shop
 https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8
-
-#EXTINF:-1 group-title="Shop" tvg-id="Shoptime.br" tvg-name="Shoptime" tvg-logo="https://i.imgur.com/wcsIaWu.png", Shoptime
-#EXTGRP:Shop
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1672014890/ei/ypeoY_nOJ7yT_9EPg6Wj4AY/ip/172.177.131.80/id/8NwlX4l7uYk.1/source/yt_live_broadcast/requiressl/yes/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/vprv/1/go/1/pacing/0/nvgoi/1/keepalive/yes/fexp/24001373%2C24007246/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cvprv%2Cgo%2Citag%2Cplaylist_type/sig/AOq0QJ8wRQIhAIkuTOoCHgVSBKlQa31eNS23OybVAfOGQfrFz9nbMKf2AiBja0e9PP1Az6SBuSpKdzOWxrtg3QCmIOc6XTdTLngZIQ%3D%3D/file/index.m3u8
 
 ### Canais Viagem
 
