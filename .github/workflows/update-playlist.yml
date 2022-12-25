@@ -1,0 +1,43 @@
+name: 'Update IPTV list'
+on:
+  schedule: ## Schedule to run every five hours
+    - cron: '0 0/5 * * *'
+
+  pull_request:
+    branches:
+      - main
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies 
+        run: pip3 install --user requests
+
+      - name: Execute
+        run: python legal_iptv
+
+      - name: Config Git User
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+      - name: Updates playlist
+        run: |
+          git add -A
+          git commit -m "Updates playlist"
+          git push
