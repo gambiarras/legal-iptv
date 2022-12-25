@@ -1,3 +1,3 @@
-from services import iptv_org_service, youtube_channels_service
+from services import extra_channels_service, iptv_org_service, youtube_channels_service
 
-print(youtube_channels_service.fetch_channels())
+print(extra_channels_service.fetch_channels())

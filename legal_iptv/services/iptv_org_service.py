@@ -1,4 +1,5 @@
 from urllib.request import urlopen
+from functools import partial
 
 import json
 
@@ -23,23 +24,30 @@ def __filter_streams(streams, channels):
     ]
 
 def __get_element(json_list, key, value):
-    return next(filter(lambda element: key in element and element[key] == value, json_list), None)
+    return next(__get_elements(json_list, key, value), None)
+
+def __get_elements(json_list, key, value):
+    return filter(lambda element: key in element and element[key] == value, json_list)
+
+def __make_channel(stream, channel_data, category):
+    return Channel(
+        channel_data['id'],
+        channel_data['name'],
+        stream['url'],
+        channel_data['logo'],
+        localized_category_name(category)
+    )
 
 def __channels(channels_data, streams_data):
     channels = []
 
     for channel_data in channels_data:
-        stream_element = __get_element(streams_data, "channel", channel_data["id"])
+        stream_elements = __get_elements(streams_data, "channel", channel_data["id"])
 
-        if stream_element is not None:
+        if stream_elements:
             category = next(iter(channel_data['categories']), None)
-            channels.append(Channel(
-                channel_data['id'],
-                channel_data['name'],
-                stream_element['url'],
-                channel_data['logo'],
-                localized_category_name(category)
-            ))
+            partial_make_channel = partial(__make_channel, channel_data=channel_data, category=category)
+            channels = channels + list(map(partial_make_channel, stream_elements))
         else:
             channels.append(None)
 
