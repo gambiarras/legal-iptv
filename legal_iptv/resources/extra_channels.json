@@ -226,7 +226,7 @@
   {
     "id": "UrbanTV.br",
     "name": "Urban TV",
-    "url": "http://200.194.238.229:8383/live/urbantv/playlist.m3u8",
+    "url": "https://5ad482a77183d.streamlock.net/urbantvstreaminggmail.com/urbantvstreaminggmail.com/playlist.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbantv.jpg",
     "group": "general"
   },
@@ -306,5 +306,33 @@
     "url": "http://midia.faap.br:80/faaplatamlive-live/stream_720/livestream.m3u8",
     "logo": "https://listaiptv.gratis/logos/imagens/tvfaap.png",
     "group": "general"
+  },
+  {
+    "id": "TVCine.br",
+    "name": "TV Cine",
+    "url": "https://stmv1.srvif.com/channel1/channel1/chunklist_w1787086626.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/0d8ea456a45f1f4837ffb24db7646f8f.webp",
+    "group": "classic"
+  },
+  {
+    "id": "TelaVivaTV.br",
+    "name": "Tela Viva TV",
+    "url": "https://srv4.zcast.com.br/telavivatv/telavivatv/playlist.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/ee32135a0ae4307048d3b24d0891738f.webp",
+    "group": "classic"
+  },
+  {
+    "id": "XPlusTV.br",
+    "name": "X Plus TV",
+    "url": "https://srv2.zcast.com.br/elzemar/elzemar/playlist.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/3887b3ba2258769221444dbb4e42a93d.webp",
+    "group": "general"
+  },
+  {
+    "id": "CatedralRockTV.br",
+    "name": "Catedral do Rock TV",
+    "url": "https://stmv1.srvstm.com/catedraldorock/catedraldorock/playlist.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/d697ec8c1724e5dc37d8999e9aa71ac3.webp",
+    "group": "music"
   }
 ]

@@ -6,8 +6,42 @@ def __get_element(values, key):
 
     return 'Variedades'
 
-def localized_category_name(category):
-    categories = [
+def get_categories_ordered():
+    return [
+        'Variedades',
+        'Filmes',
+        'Séries',
+        'Infantil',
+        'Animação',
+        'Clássico',
+        'Web Live',
+        'Notícia',
+        'Cultura',
+        'Família',
+        'Entretenimento',
+        'Negócios',
+        'Comédia',
+        'Documentário',
+        'Religião',
+        'Ciência',
+        'Educação',
+        'Estilo de Vida',
+        'Esportes',
+        'Shop',
+        'Viagem',
+        'Auto',
+        'Cozinha',
+        'Legislativo',
+        'Música',
+        'Outdoor',
+        'Relax',
+        'Clima',
+        'PlutoTV',
+        'Rádio'
+    ]
+
+def __get_categories():
+    return [
         { 'auto': 'Auto' },
         { 'animation': 'Animação' },
         { 'business': 'Negócios' },
@@ -24,7 +58,7 @@ def localized_category_name(category):
         { 'legislative': 'Legislativo' },
         { 'lifestyle': 'Estilo de Vida' },
         { 'movies': 'Filmes' },
-        { 'music': 'Múscia' },
+        { 'music': 'Música' },
         { 'news': 'Notícia' },
         { 'outdoor': 'Outdoor' },
         { 'relax': 'Relax' },
@@ -40,5 +74,7 @@ def localized_category_name(category):
         { 'radio': 'Rádio' }
     ]
 
+def localized_category_name(category):
+    categories = __get_categories()
     return __get_element(categories, category)
     
