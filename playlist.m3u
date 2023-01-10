@@ -71,10 +71,6 @@ https://video01.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="BoaVontadeTV.br" tvg-name="Boa Vontade TV" tvg-logo="https://i.imgur.com/Ms5tSgu.png", Boa Vontade TV
-#EXTGRP:Variedades
-https://hls.youtb.workers.dev/channel/UCedt33latJW7StRfdF4-1FQ.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -118,6 +114,10 @@ https://cdn.jmvstream.com/w/LVW-9883/LVW9883_lFcfKysrHF/chunklist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="MKKWebTV.br" tvg-name="MKK Web TV" tvg-logo="https://i.imgur.com/A8Yhtid.png", MKK Web TV
 #EXTGRP:Variedades
 https://video01.logicahost.com.br/mkkwebtv/mkkwebtv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="NovaEraTV.br" tvg-name="Nova Era TV" tvg-logo="https://i.imgur.com/IK3F9Uq.png", Nova Era TV
+#EXTGRP:Variedades
+http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="NTV.br" tvg-name="NTV" tvg-logo="https://i.imgur.com/n79nkVC.png", NTV
 #EXTGRP:Variedades
@@ -165,19 +165,15 @@ https://dd8umsy8yf96u.cloudfront.net/live/cnt-salvador_360p614k/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeCNTSaoPaulo.br" tvg-name="Rede CNT Sao Paulo" tvg-logo="https://i.imgur.com/jcasAmw.png", Rede CNT Sao Paulo
 #EXTGRP:Variedades
-https://dd8umsy8yf96u.cloudfront.net/live/cnt-americana_360p614k/index.m3u8
+https://dd8umsy8yf96u.cloudfront.net/live/cnt-americana.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeCNTSaoPaulo.br" tvg-name="Rede CNT Sao Paulo" tvg-logo="https://i.imgur.com/jcasAmw.png", Rede CNT Sao Paulo
 #EXTGRP:Variedades
-https://dd8umsy8yf96u.cloudfront.net/live/cnt-americana.m3u8
+https://dd8umsy8yf96u.cloudfront.net/live/cnt-americana_360p614k/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeFamilia.br" tvg-name="Rede Familia" tvg-logo="https://i.imgur.com/7KVFCrQ.png", Rede Familia
 #EXTGRP:Variedades
 https://5a1c76baf08c0.streamlock.net/familia/smil:familia.smil/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="RedeInternacionaldeTV.br" tvg-name="Rede Internacional de TV" tvg-logo="https://i.imgur.com/i2psU4x.png", Rede Internacional de TV
-#EXTGRP:Variedades
-https://hls.youtb.workers.dev/channel/UCA0bOG0NUfJ855eDtHSxOkw.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeMassa.br" tvg-name="Rede Massa" tvg-logo="https://i.imgur.com/yFRqXIx.png", Rede Massa
 #EXTGRP:Variedades
@@ -189,15 +185,19 @@ http://tv02.logicahost.com.br:1935/rederc/rederc/live.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV!" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV!
 #EXTGRP:Variedades
-https://59f1cbe63db89.streamlock.net:1443/redetvro/_definst_/redetvro/playlist.m3u8
+https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV!" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV!
 #EXTGRP:Variedades
-https://hls.brasilstream.com.br/live/redetv/redetv/playlist.m3u8
+https://59f1cbe63db89.streamlock.net:1443/redetvro/_definst_/redetvro/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTVES.br" tvg-name="Rede TV! ES" tvg-logo="https://i.imgur.com/k7vO9Bk.png", Rede TV! ES
 #EXTGRP:Variedades
 https://hls.brasilstream.com.br/live/redetves/redetves/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeTVTocantins.br" tvg-name="RedeTV! Tocantins" tvg-logo="https://i.imgur.com/SEe2ki7.png", RedeTV! Tocantins
+#EXTGRP:Variedades
+https://59f1cbe63db89.streamlock.net:1443/redetvro/redetvro/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeUTV.br" tvg-name="Rede UTV" tvg-logo="https://i.imgur.com/Usw2e9d.png", Rede UTV
 #EXTGRP:Variedades
@@ -233,11 +233,11 @@ https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBirigui.br" tvg-name="TV Birigui" tvg-logo="https://i.imgur.com/VqIzaFz.png", TV Birigui
 #EXTGRP:Variedades
-http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8
+https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBirigui.br" tvg-name="TV Birigui" tvg-logo="https://i.imgur.com/VqIzaFz.png", TV Birigui
 #EXTGRP:Variedades
-https://59f2354c05961.streamlock.net:1443/tvdigitalbirigui/_definst_/tvdigitalbirigui/playlist.m3u8
+http://tv02.logicahost.com.br:1935/tvdigitalbirigui/tvdigitalbirigui/live.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBirigui.br" tvg-name="TV Birigui" tvg-logo="https://i.imgur.com/VqIzaFz.png", TV Birigui
 #EXTGRP:Variedades
@@ -262,6 +262,10 @@ https://59f1cbe63db89.streamlock.net:1443/tvcidade/tvcidade/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCidadedePetropolis.br" tvg-name="TV Cidade de Petropolis" tvg-logo="https://i.imgur.com/xUs8gHV.png", TV Cidade de Petropolis
 #EXTGRP:Variedades
 https://video01.kshost.com.br:4443/inside2133/inside2133/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVCidadeVerde.br" tvg-name="TV Cidade Verde" tvg-logo="https://i.imgur.com/SysgBqZ.png", TV Cidade Verde
+#EXTGRP:Variedades
+https://stmv1.transmissaodigital.com/cidadeverdenovo/cidadeverdenovo/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCulturaNacional.br" tvg-name="TV Cultura Nacional" tvg-logo="https://i.imgur.com/hcApLfE.png", TV Cultura Nacional
 #EXTGRP:Variedades
@@ -293,7 +297,7 @@ https://tvdiversa.brasilstream.com.br/hls/tvdiversa/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVEBahia.br" tvg-name="TVE Bahia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/512px-TVE_Bahia_logo.svg.png", TVE Bahia
 #EXTGRP:Variedades
-http://stream2.ba.gov.br/hls-live/livepkgr/_definst_/irdeb/pgm-1.m3u8
+http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVEBahia.br" tvg-name="TVE Bahia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/512px-TVE_Bahia_logo.svg.png", TVE Bahia
 #EXTGRP:Variedades
@@ -301,7 +305,7 @@ http://selpro1348.procergs.com.br:1935/tve/stve/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVEBahia.br" tvg-name="TVE Bahia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/512px-TVE_Bahia_logo.svg.png", TVE Bahia
 #EXTGRP:Variedades
-http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
+http://stream2.ba.gov.br/hls-live/livepkgr/_definst_/irdeb/pgm-1.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVFuturo.br" tvg-name="TV Futuro" tvg-logo="https://i.imgur.com/xonrNBf.png", TV Futuro
 #EXTGRP:Variedades
@@ -330,10 +334,6 @@ https://evpp.mm.uol.com.br/ne10/ne10.smil/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVJustica.br" tvg-name="TV Justica" tvg-logo="https://i.imgur.com/rOQKiMO.png", TV Justica
 #EXTGRP:Variedades
 https://hls.youtb.workers.dev/channel/UC0qlZ5jxxueKNzUERcrllNw.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVLaVerdad.br" tvg-name="TV La Verdad" tvg-logo="https://i.imgur.com/I3iMwnY.png", TV La Verdad
-#EXTGRP:Variedades
-https://hls.youtb.workers.dev/channel/UCS5n5q3lJBXom3wVbOiUl9Q.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaceio.br" tvg-name="TV Maceio" tvg-logo="https://i.imgur.com/zZ9LEOZ.png", TV Maceio
 #EXTGRP:Variedades
@@ -379,14 +379,6 @@ https://stmv1.srvstm.com/luis5346/luis5346/playlist.m3u8
 #EXTGRP:Variedades
 https://srv1.zcast.com.br/tvmon/tvmon/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="TVMundoMaior.br" tvg-name="TV Mundo Maior" tvg-logo="https://i.imgur.com/aneHeMz.png", TV Mundo Maior
-#EXTGRP:Variedades
-https://hls.youtb.workers.dev/channel/UC5-IOBnk-mFdQgKS-niajYg.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVNatal.br" tvg-name="TV Natal" tvg-logo="https://i.imgur.com/wqQmQml.png", TV Natal
-#EXTGRP:Variedades
-https://stmv1.srvstm.com/antonioflavio9545/antonioflavio9545/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVNBrasil.br" tvg-name="TVN Brasil" tvg-logo="https://i.imgur.com/XZS13xD.png", TVN Brasil
 #EXTGRP:Variedades
 http://wz3.dnip.com.br/tvnbrasil/tvnbrasil.sdp/playlist.m3u8
@@ -427,10 +419,6 @@ http://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn-grupo-10049.ciclano.io:1443/grupo-10049/grupo-10049/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="TVTropical.br" tvg-name="TV Tropical" tvg-logo="https://i.imgur.com/TD6ZJoa.png", TV Tropical
-#EXTGRP:Variedades
-https://59f2354c05961.streamlock.net:1443/portaldatropical/_definst_/portaldatropical/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVUniaoFortaleza.br" tvg-name="TV Uniao Fortaleza" tvg-logo="https://i.imgur.com/Ec90iw0.png", TV Uniao Fortaleza
 #EXTGRP:Variedades
 https://stmv1.srvif.com/tvu/tvu/playlist.m3u8
@@ -445,19 +433,19 @@ https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil" tvg-logo="https://cdn.mitvstatic.com/channels/br_tv-brasil_m.png", TV Brasil
 #EXTGRP:Variedades
-https://stream-04.nyc.dailymotion.com/sec(YDiRVmci6dFcTAVfdXnSLjsMrVaOXL-JNSF-pK-Pv6ShPGelkFHdXkBDi0XcUcCt)/dm/3/x82pp99/d/live-3.m3u8#cell=lnyc
+https://stream-03.nyc.dailymotion.com/sec(YDiRVmci6dFcTAVfdXnSLvZCL8718twMHGTBx2-tfSmNTnIpahsEDxBCQDu04nNl)/dm/3/x82pp99/d/live-3.m3u8#cell=lnyc
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGazeta.br" tvg-name="TV Gazeta" tvg-logo="https://cdn.mitvstatic.com/channels/br_rede-gazeta_m.png", TV Gazeta
 #EXTGRP:Variedades
-https://stream-01.nyc.dailymotion.com/sec(OZ0ERGOH4oE-_Xr-zBQ5v1ZRVXLaNigSubKPM8umXCCX-EDay_MzBL9bOzTYipg-)/dm/3/x89qors/d/live-4.m3u8#cell=lnyc
+https://stream-01.nyc.dailymotion.com/sec(OZ0ERGOH4oE-_Xr-zBQ5v3rURMppU7WHcNFvo2lxm1sG683Y-g-RCzZSKo8xFuVJ)/dm/3/x89qors/d/live-4.m3u8#cell=lnyc
 
 #EXTINF:-1 group-title="Variedades" tvg-id="CanalEducacao.br" tvg-name="Canal Educação" tvg-logo="https://i.imgur.com/bZGO7xc.png", Canal Educação
 #EXTGRP:Variedades
-https://stream-03.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Ls4TNAI9XQTPqzknETdENBOxQKWuDYxaPf-Rc1WFYicM2)/dm/3/x8abdvf/s/live-3.m3u8#cell=lnyc
+https://stream-02.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Lswovn9nVhQ4IfFaJ-0FDQNan9UuQdaU8Ryp2zNTJ53Hc)/dm/3/x8abdvf/s/live-3.m3u8#cell=lnyc
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVT.br" tvg-name="TVT" tvg-logo="https://cdn.mitvstatic.com/channels/br_tvt_m.png", TVT
 #EXTGRP:Variedades
-https://stream-04.nyc.dailymotion.com/sec(hq_e0q5VHX_FvDCk_Uz4G-97wygo4DV5bhpqSTFgmxvUy7lN19KGsQHaB1n06dLy)/dm/3/x6ph7x7/d/live-1.m3u8#cell=lnyc
+https://stream-04.nyc.dailymotion.com/sec(hq_e0q5VHX_FvDCk_Uz4G2afYkD3Suz7frXfsrzSfVNkJjY6qNdYF_lhQiHU5eBf)/dm/3/x6ph7x7/d/live-1.m3u8#cell=lnyc
 
 ### Canais Filmes
 
@@ -607,11 +595,11 @@ https://hls.youtb.workers.dev/channel/UCiFg-2CjsG_xcSsHNjDeLpw.m3u8
 
 #EXTINF:-1 group-title="Infantil" tvg-id="CartoonNetworkBrazil.br" tvg-name="Cartoon Network Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/512px-Cartoon_Network_2010_logo.svg.png", Cartoon Network Brazil
 #EXTGRP:Infantil
-https://playout.cdn.cartoonnetwork.com.br/playout_02/playlist.m3u8
+https://playout.cdn.cartoonnetwork.com.br/playout_01/playlist.m3u8
 
 #EXTINF:-1 group-title="Infantil" tvg-id="CartoonNetworkBrazil.br" tvg-name="Cartoon Network Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/512px-Cartoon_Network_2010_logo.svg.png", Cartoon Network Brazil
 #EXTGRP:Infantil
-https://playout.cdn.cartoonnetwork.com.br/playout_01/playlist.m3u8
+https://playout.cdn.cartoonnetwork.com.br/playout_02/playlist.m3u8
 
 #EXTINF:-1 group-title="Infantil" tvg-id="NickClassico.br" tvg-name="Nick Classico" tvg-logo="https://i.imgur.com/Crip6wT.png", Nick Classico
 #EXTGRP:Infantil
@@ -637,11 +625,11 @@ https://stmv1.srvif.com/animetv/animetv/playlist.m3u8
 
 #EXTINF:-1 group-title="Animação" tvg-id="CartoonitoBrazil.br" tvg-name="Cartoonito Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Cartoonito_-_Logo_2021.svg/512px-Cartoonito_-_Logo_2021.svg.png", Cartoonito Brazil
 #EXTGRP:Animação
-https://playout.cdn.cartoonnetwork.com.br/playout_04/playlist.m3u8
+https://playout.cdn.cartoonnetwork.com.br/playout_03/playlist.m3u8
 
 #EXTINF:-1 group-title="Animação" tvg-id="CartoonitoBrazil.br" tvg-name="Cartoonito Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Cartoonito_-_Logo_2021.svg/512px-Cartoonito_-_Logo_2021.svg.png", Cartoonito Brazil
 #EXTGRP:Animação
-https://playout.cdn.cartoonnetwork.com.br/playout_03/playlist.m3u8
+https://playout.cdn.cartoonnetwork.com.br/playout_04/playlist.m3u8
 
 ### Canais Clássico
 
@@ -687,10 +675,6 @@ https://cdn.jmvstream.com/w/LVW-8379/LVW8379_rIq6ZYiIiA/playlist.m3u8
 #EXTGRP:Notícia
 https://video01.logicahost.com.br/redebemtv/redebemtv/playlist.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="CNNBrasil.br" tvg-name="CNN Brasil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/CNN_Brasil.svg/512px-CNN_Brasil.svg.png", CNN Brasil
-#EXTGRP:Notícia
-https://hls.youtb.workers.dev/channel/UCvdwhh_fDyWccR42-rReZLw.m3u8
-
 #EXTINF:-1 group-title="Notícia" tvg-id="JovemPanNews.br" tvg-name="Jovem Pan News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Jovem_Pan_logo_2018.svg/512px-Jovem_Pan_logo_2018.svg.png", Jovem Pan News
 #EXTGRP:Notícia
 https://d6yfbj4xxtrod.cloudfront.net/out/v1/7836eb391ec24452b149f3dc6df15bbd/index.m3u8
@@ -727,7 +711,7 @@ https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8
 
 #EXTINF:-1 group-title="Cultura" tvg-id="CanalLibras.br" tvg-name="Canal Libras" tvg-logo="https://i.imgur.com/7kRysMu.png", Canal Libras
 #EXTGRP:Cultura
-https://stream-04.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Ls0gvUN8cnFcsSlZ8KkpGDz2o7dGhot4N977XUjO6aeyu)/dm/3/x8a60g5/d/live-4.m3u8#cell=lnyc
+https://stream-01.nyc.dailymotion.com/sec(mOyh5XasEoxB2izGnZ4Ls4Z9n4WFuRaJnE-vrNpHpo2iiPsZkm7YdEYsDHXiujI3)/dm/3/x8a60g5/d/live-4.m3u8#cell=lnyc
 
 ### Canais Entretenimento
 
@@ -829,9 +813,9 @@ https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
 #EXTGRP:Religião
 https://cdn.jmvstream.com/w/LVW-10024/ngrp:LVW10024_H3QLdAY6kx_all/playlist.m3u8
 
-#EXTINF:-1 group-title="Religião" tvg-id="RedeSuper.br" tvg-name="Rede Super" tvg-logo="https://i.imgur.com/X75qTEm.png", Rede Super
+#EXTINF:-1 group-title="Religião" tvg-id="RedeVida.br" tvg-name="Rede Vida" tvg-logo="https://i.imgur.com/mP1qfp2.png", Rede Vida
 #EXTGRP:Religião
-http://free.fullspeed.tv/iptv-query?streaming-ip=https://livestream.com/accounts/10205943
+https://cvd1.cds.ebtcvd.net/live-redevida/smil:redevida.smil/playlist.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVAparecida.br" tvg-name="TV Aparecida" tvg-logo="https://i.imgur.com/kxrja0X.png", TV Aparecida
 #EXTGRP:Religião
@@ -851,11 +835,11 @@ https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVPaiEterno.br" tvg-name="TV Pai Eterno" tvg-logo="https://i.imgur.com/iuoXchN.png", TV Pai Eterno
 #EXTGRP:Religião
-https://59f1cbe63db89.streamlock.net:1443/teste01/_definst_/teste01/chunklist.m3u8
+https://59f1cbe63db89.streamlock.net:1443/teste01/teste01/playlist.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVPaiEterno.br" tvg-name="TV Pai Eterno" tvg-logo="https://i.imgur.com/iuoXchN.png", TV Pai Eterno
 #EXTGRP:Religião
-https://59f1cbe63db89.streamlock.net:1443/teste01/teste01/playlist.m3u8
+https://59f1cbe63db89.streamlock.net:1443/teste01/_definst_/teste01/chunklist.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVTerceiroAnjo.br" tvg-name="TV Terceiro Anjo" tvg-logo="https://i.imgur.com/PExKWNv.png", TV Terceiro Anjo
 #EXTGRP:Religião
@@ -866,10 +850,6 @@ https://streamer1.streamhost.org/salive/GMI3anjoh/playlist.m3u8
 https://644398c.ha.azioncdn.net/primary/tvuniversal_480p.sdp/playlist.m3u8
 
 ### Canais Educação
-
-#EXTINF:-1 group-title="Educação" tvg-id="Futura.br" tvg-name="Futura" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Canal_Futura.png/512px-Canal_Futura.png", Futura
-#EXTGRP:Educação
-https://tv.unisc.br/hls/test.m3u8
 
 #EXTINF:-1 group-title="Educação" tvg-id="PlutoTVNaturezaBrazil.br" tvg-name="Pluto TV Natureza Brazil" tvg-logo="https://i.imgur.com/RuyQQ6M.png", Pluto TV Natureza Brazil
 #EXTGRP:Educação
@@ -995,11 +975,11 @@ https://srv1.zcast.com.br/kpoptv/kpoptv/playlist.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="AgroBrasilTV.br" tvg-name="AgroBrasil TV" tvg-logo="https://i.imgur.com/aNkP7Zd.png", AgroBrasil TV
 #EXTGRP:Outdoor
-https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8
+http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="AgroBrasilTV.br" tvg-name="AgroBrasil TV" tvg-logo="https://i.imgur.com/aNkP7Zd.png", AgroBrasil TV
 #EXTGRP:Outdoor
-http://45.162.230.234:1935/agrobrasiltv/agrobrasiltv/playlist.m3u8
+https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="CanaldoCriador.br" tvg-name="Canal do Criador" tvg-logo="https://i.imgur.com/k29So6X.png", Canal do Criador
 #EXTGRP:Outdoor
