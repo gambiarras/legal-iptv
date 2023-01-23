@@ -51,7 +51,7 @@
   {
     "id": "UrbanMovies.br",
     "name": "Urban Movies",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvmoviesgmail.com/urbantvmoviesgmail.com/chunklist_w627497384.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantvmovies/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbanmovies.jpg",
     "group": "movies"
   },
@@ -93,7 +93,7 @@
   {
     "id": "UrbanSeriesTV.br",
     "name": "Urban Séries",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvseriesgmail.com/urbantvseriesgmail.com/chunklist_w949993906.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantvseries/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbanseries.jpg",
     "group": "series"
   },
@@ -149,7 +149,7 @@
   {
     "id": "UrbanKids.br",
     "name": "Urban Kids",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvkidsgmail.com/urbantvkidsgmail.com/chunklist_w79601195.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantvkids/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbankids.jpg",
     "group": "kids"
   },
@@ -219,7 +219,7 @@
   {
     "id": "UrbanTV.br",
     "name": "Urban TV",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvstreaminggmail.com/urbantvstreaminggmail.com/playlist.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantv/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbantv.jpg",
     "group": "general"
   },
@@ -275,14 +275,14 @@
   {
     "id": "UrbanDocs.br",
     "name": "Urban Docs",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvdocsgmail.com/urbantvdocsgmail.com/chunklist_w1778094322.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantvdocs/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbandocs.jpg",
     "group": "documentary"
   },
   {
     "id": "UrbanTurbo.br",
     "name": "Urban Turbo",
-    "url": "https://5ad482a77183d.streamlock.net/urbantvturbogmail.com/urbantvturbogmail.com/playlist.m3u8",
+    "url": "https://stream.urbantv.com.br/urbantvturbo/tracks-v1a1/mono.m3u8",
     "logo": "https://urbantv.com.br/canais/logo-urbanturbo.jpg",
     "group": "documentary"
   },
@@ -411,5 +411,19 @@
     "url":"https://hls.youtb.workers.dev/channel/UCHDfPYXReWt5EVIzBA6TzOQ.m3u8",
     "logo":"https://cdn.mitvstatic.com/channels/br_sbt_m.png",
     "group": "general"
+  },
+  {
+    "id": "UrbanRetro.br",
+    "name": "Urban Retro",
+    "url": "https://stream.urbantv.com.br/urbantvretro/tracks-v1a1/mono.m3u8",
+    "logo": "https://urbantv.com.br/canais/logo-urbanretro.png",
+    "group": "classic"
+  },
+  {
+    "id": "UrbanTravel.br",
+    "name": "Urban Travel",
+    "url": "https://stream.urbantv.com.br/urbantvtravel/tracks-v1a1/mono.m3u8",
+    "logo": "https://urbantv.com.br/canais/logo-urbantravel.jpg",
+    "group": "travel"
   }
 ]
