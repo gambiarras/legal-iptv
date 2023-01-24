@@ -14,9 +14,8 @@ def __group_by_categories(channels):
 
 def __get_headers():
     tvg_urls = ",".join([
-        'https://iptv-org.github.io/epg/guides/br/mi.tv.epg.xml.gz',
+        'https://iptv-org.github.io/epg/guides/pt/mi.tv.xml.gz',
         'https://i.mjh.nz/Plex/all.xml',
-        'https://iptv-org.github.io/epg/guides/ca/tvtv.us.epg.xml.gz',
         'https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/SamsungTVPlus/all.xml'
     ])
 
