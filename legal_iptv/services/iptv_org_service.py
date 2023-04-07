@@ -19,7 +19,7 @@ def __filter_streams(streams, channels):
     return [
         stream for stream in streams
             if 'status' in stream 
-                and stream['status'] != 'error' and stream['status'] != 'blocked'
+                and stream['status'] == 'online'
                 and [channel for channel in channels if channel['id'] == stream['channel']]
     ]
 
@@ -45,7 +45,7 @@ def __channels(channels_data, streams_data):
         stream_elements = __get_elements(streams_data, "channel", channel_data["id"])
 
         if stream_elements:
-            category = next(iter(channel_data['categories']), None)
+            category = next(iter(channel_data['categories']), 'general')
             partial_make_channel = partial(__make_channel, channel_data=channel_data, category=category)
             channels = channels + list(map(partial_make_channel, stream_elements))
         else:
