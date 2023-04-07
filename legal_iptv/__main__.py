@@ -7,7 +7,6 @@ iptv_org_channels = iptv_org_service.fetch_channels()
 web_channels = youtube_channels_service.fetch_channels()
 
 channels = extra_channels + iptv_org_channels + web_channels
-channels = m3u8_checker.check_channels(channels)
 m3u = m3u_converter.convert(channels)
 
 with open('playlist.m3u', 'w', encoding="utf-8") as outfile:
