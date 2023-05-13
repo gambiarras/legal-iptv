@@ -18,8 +18,7 @@ def __filter_channels(channels):
 def __filter_streams(streams, channels):
     return [
         stream for stream in streams
-            if 'status' in stream 
-                and stream['status'] == 'online'
+            if 'status' in stream
                 and [channel for channel in channels if channel['id'] == stream['channel']]
     ]
 
