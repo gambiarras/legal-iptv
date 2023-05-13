@@ -18,7 +18,7 @@ def __filter_channels(channels):
 def __filter_streams(streams, channels):
     return [
         stream for stream in streams
-            and [channel for channel in channels if channel['id'] == stream['channel']]
+            if [channel for channel in channels if channel['id'] == stream['channel']]
     ]
 
 def __get_element(json_list, key, value):
