@@ -35,6 +35,14 @@ https://d6tk2pyqxpvie.cloudfront.net/out/v1/d324ea2ed7d24eb9b36b54c6bc43b489/ind
 #EXTGRP:Variedades
 http://187.95.95.241:7988/fabic/tracks-v1a1/mono.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CTV.br" tvg-name="CTV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/e1c515ec353cb03545f409372154bda0.webp", CTV
+#EXTGRP:Variedades
+https://stmv1.samcast.com.br/ctvpb/ctvpb/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVOsorio.br" tvg-name="TV Osório" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/40d7d18ac1b8c2e6b87ecf0e3410cad7.webp", TV Osório
+#EXTGRP:Variedades
+https://serv2.videovox.pw/video13154/video13154/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="AdessoTV.br" tvg-name="Adesso TV" tvg-logo="https://i.imgur.com/KgetM8j.png", Adesso TV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8
@@ -874,6 +882,10 @@ https://stream.urbantv.com.br/urbantvseries/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 group-title="Séries" tvg-id="ClassiqueTV.br" tvg-name="CLASSIQUE TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/f032a160e2b4cbb9de8f0080b845c9ca.webp", CLASSIQUE TV
 #EXTGRP:Séries
 https://stmv1.srvif.com/classique/classique/playlist.m3u8
+
+#EXTINF:-1 group-title="Séries" tvg-id="ChespiritoTV.br" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
+#EXTGRP:Séries
+http://168.205.87.198:8555/live/1492/123456/159.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="TVSeries.br" tvg-name="TV Series" tvg-logo="https://i.imgur.com/Ff5mj0o.png", TV Series
 #EXTGRP:Séries
