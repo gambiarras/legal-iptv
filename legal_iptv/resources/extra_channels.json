@@ -1,19 +1,5 @@
 [
   {
-    "id": "CindieLite",
-    "name": "Cindie Lite",
-    "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=821",
-    "logo": "https://imgur.com/RaSZCuy.png",
-    "group": "movies"
-  },
-  {
-    "id": "FronteiraMovies",
-    "name": "Fronteira Movies",
-    "url": "https://srv4.zcast.com.br/fronteiramovies/fronteiramovies/master.m3u8",
-    "logo": "https://i.imgur.com/qpPZJWy.png",
-    "group": "movies"
-  },
-  {
     "id": "MyTimemovienetworkBrazil.br",
     "name": "MyTime Movie Network Brazil",
     "url": "https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8",
@@ -23,21 +9,21 @@
   {
     "id": "RunTime.br",
     "name": "RunTime",
-    "url": "https://stream.ads.ottera.tv/cl/230407cgnnuu5iqe0ek3s0mv6g/854x480_1355200_2_f.m3u8?i=475_2153",
+    "url": "https://stream.ads.ottera.tv/cl/231225cm4e1dv6s3ih1rer0bjg/854x480_1355200_2_f.m3u8",
     "logo": "https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_1920x1080_0.jpg",
     "group": "movies"
   },
   {
     "id": "RunTimeAction.br",
     "name": "RunTime Ação",
-    "url": "https://stream.ads.ottera.tv/cl/230407cgnnttqe3s2g9j94q700/854x480_1355200_2_f.m3u8?i=475_2552",
+    "url": "https://stream.ads.ottera.tv/cl/231225cm4e2j0b1vkkqhjol2ug/854x480_1355200_2_f.m3u8",
     "logo": "https://img2.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_action_bg.jpg",
     "group": "movies"
   },
   {
     "id": "RunTimeComedia.br",
     "name": "RunTime Comédia",
-    "url": "https://stream.ads.ottera.tv/cl/230407cgnnsqcrac18lffanai0/854x480_1355200_2_f.m3u8?i=475_2553",
+    "url": "https://stream.ads.ottera.tv/cl/231225cm4e2vc5gtbpt4b9324g/854x480_1355200_2_f.m3u8",
     "logo": "https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/br_comedy_bg.jpg",
     "group": "movies"
   },
@@ -46,13 +32,6 @@
     "name": "Soul Cine Clube",
     "url": "https://video01.soultv.com.br/soulcine/soulcine/playlist.m3u8",
     "logo": "https://imgur.com/QapVmCb.png",
-    "group": "movies"
-  },
-  {
-    "id": "UrbanMovies.br",
-    "name": "Urban Movies",
-    "url": "https://stream.urbantv.com.br/urbantvmovies/tracks-v1a1/playlist.m3u8",
-    "logo": "https://i.imgur.com/wcjtSkq.png",
     "group": "movies"
   },
   {
@@ -77,32 +56,11 @@
     "group": "series"
   },
   {
-    "id": "UrbanSeries.br",
-    "name": "Urban Series",
-    "url": "https://stream.urbantv.com.br/urbantvseries/tracks-v1a1/playlist.m3u8",
-    "logo": "image.png",
-    "group": "series"
-  },
-  {
     "id": "ClassiqueTV.br",
     "name": "CLASSIQUE TV",
     "url": "https://stmv1.srvif.com/classique/classique/playlist.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/f032a160e2b4cbb9de8f0080b845c9ca.webp",
     "group": "series"
-  },
-  {
-    "id": "CBNRio.br",
-    "name": "CBN Rio",
-    "url": "https://medias.sgr.globo.com/hls/vCBNRJ/vCBNRJ.m3u8",
-    "logo": "https://i.imgur.com/FZwHq8k.png",
-    "group": "radio"
-  },
-  {
-    "id": "CBNSaoPaulo.br",
-    "name": "CBN São Paulo",
-    "url": "https://medias.sgr.globo.com/hls/vCBNSP/vCBNSP.m3u8",
-    "logo": "https://i.imgur.com/FZwHq8k.png",
-    "group": "radio"
   },
   {
     "id": "Jetsons.br",
@@ -119,20 +77,6 @@
     "group": "kids"
   },
   {
-    "id": "UrbanKids.br",
-    "name": "Urban Kids",
-    "url": "https://stream.urbantv.com.br/urbantvkids/tracks-v1a1/playlist.m3u8",
-    "logo": "https://i.imgur.com/bDIeiIH.png",
-    "group": "kids"
-  },
-  {
-    "id": "BCCTV.br",
-    "name": "BCC TV",
-    "url": "https://video01.kshost.com.br/bccinternational523/bccinternational523/playlist.m3u8",
-    "logo": "https://i.imgur.com/6M73DBe.png",
-    "group": "general"
-  },
-  {
     "id": "TVCancaoNova.br",
     "name": "TV Canção Nova",
     "url": "https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova/playlist.m3u8",
@@ -142,65 +86,37 @@
   {
     "id": "DMaisTV.br",
     "name": "D+ TV",
-    "url": "https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8",
+    "url": "https://stmv1.samcast.com.br/demaistv6503/demaistv6503/chunklist_w1316191273.m3u8",
     "logo": "http://www.cxtv.com.br/img/Tvs/Logo/5a0ca2ab1c68adcde7bf577af87071b8.jpg",
     "group": "general"
   },
   {
     "id": "TVCarioca.br",
     "name": "TV Carioca",
-    "url": "https://stmv1.duvoxtv.com.br/tvcarioca/tvcarioca/playlist.m3u8",
+    "url": "https://a.cdni.live/tvcarioca/tvcarioca/chunklist_w490017018.m3u8",
     "logo": "https://i.imgur.com/mVWydMw.png",
-    "group": "general"
-  },
-  {
-    "id": "UrbanTV.br",
-    "name": "Urban TV",
-    "url": "https://stream.urbantv.com.br/urbantv/tracks-v1a1/playlist.m3u8",
-    "logo": "https://i.imgur.com/RBcvj3Q.png",
-    "group": "entertainment"
-  },
-  {
-    "id": "LassTV.br",
-    "name": "Lass TV",
-    "url": "https://tv02.zas.media:1936/lasstv/lasstv/playlist.m3u8",
-    "logo": "https://i.imgur.com/Emaofdr.png",
     "group": "general"
   },
   {
     "id": "VintageTV.br",
     "name": "Vintage TV",
-    "url": "https://stmv1.srvif.com/webvintage/webvintage/playlist.m3u8",
+    "url": "https://video01.kshost.com.br:4443/rogerio7271/rogerio7271/chunklist_w252547800.m3u8",
     "logo": "https://static.wixstatic.com/media/968b35_bb1cad15a0db43d09a3fe41e05a624ad~mv2.png",
     "group": "classic"
   },
   {
     "id": "XtremeTV.br",
     "name": "Xtreme TV",
-    "url": "https://stmv1.srvif.com/xtremetv/xtremetv/playlist.m3u8",
+    "url": "https://stmv1.srvif.com/xtremetv/xtremetv/chunklist_w310205105.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/87464e2fb467b19b710aadb2da52725d.webp",
     "group": "classic"
   },
   {
     "id": "RedeCloudingTV.br",
     "name": "Rede Clouding TV",
-    "url": "https://stmv1.paineltv.net/redeclonetv/redeclonetv/playlist.m3u8",
+    "url": "https://stmv1.paineltv.net/redeclonetv/redeclonetv/chunklist_w1196826486.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/1c3207336ef93a99e4678042297cd0a6.webp",
     "group": "general"
-  },
-  {
-    "id": "UrbanDocs.br",
-    "name": "Urban Docs",
-    "url": "https://stream.urbantv.com.br/urbantvdocs/tracks-v1a1/playlist.m3u8",
-    "logo": "https://i.imgur.com/hOSHO1T.png",
-    "group": "documentary"
-  },
-  {
-    "id": "UrbanTurbo.br",
-    "name": "Urban Turbo",
-    "url": "https://stream.urbantv.com.br/urbantvturbo/tracks-v1a1/playlist.m3u8",
-    "logo": "https://i.imgur.com/zsKzLhq.png",
-    "group": "auto"
   },
   {
     "id": "RakutenTVDocumentarios.br",
@@ -210,16 +126,9 @@
     "group": "documentary"
   },
   {
-    "id": "TVFAAP.br",
-    "name": "TV FAAP",
-    "url": "http://midia.faap.br:80/faaplatamlive-live/stream_720/livestream.m3u8",
-    "logo": "https://listaiptv.gratis/logos/imagens/tvfaap.png",
-    "group": "general"
-  },
-  {
     "id": "TVCine.br",
     "name": "TV Cine",
-    "url": "https://stmv1.painelvideo.top//channel1/channel1/playlist.m3u8",
+    "url": "https://stmv1.srvif.com/tvserie/tvserie/chunklist_w711675595.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/0d8ea456a45f1f4837ffb24db7646f8f.webp",
     "group": "classic"
   },
@@ -229,20 +138,6 @@
     "url": "https://stmv1.srvstm.com/catedraldorock/catedraldorock/playlist.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/d697ec8c1724e5dc37d8999e9aa71ac3.webp",
     "group": "music"
-  },
-  {
-    "id": "UrbanRetro.br",
-    "name": "Urban Retro",
-    "url": "https://stream.urbantv.com.br/urbantvretro/tracks-v1a1/mono.m3u8",
-    "logo": "https://i.imgur.com/1uyv9vn.png",
-    "group": "classic"
-  },
-  {
-    "id": "UrbanTravel.br",
-    "name": "Urban Travel",
-    "url": "https://stream.urbantv.com.br/urbantvtravel/tracks-v1a1/mono.m3u8",
-    "logo": "https://i.imgur.com/ST24ALh.png",
-    "group": "travel"
   },
   {
     "id": "Loading.br",
@@ -259,24 +154,10 @@
     "group": "kids"
   },
   {
-    "id": "Yeeaah.br",
-    "name": "Yeeaah!",
-    "url": "https://d6tk2pyqxpvie.cloudfront.net/out/v1/d324ea2ed7d24eb9b36b54c6bc43b489/index.mpd",
-    "logo": "https://i.imgur.com/R22OHnk.png",
-    "group": "general"
-  },
-  {
     "id": "AniTV.br",
     "name": "AniTV",
-    "url": "https://stream.ichibantv.ga:3764/hybrid/play.m3u8",
+    "url": "https://stream.ichibantv.com:3764/hybrid/play.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/3eabf05ad0127a53af71227f1fe132a1.webp",
-    "group": "animation"
-  },
-  {
-    "id": "TVTeenNet.br",
-    "name": "TV Teen Net",
-    "url": "https://stmv1.painelvideo.top/tvteennet/tvteennet/playlist.m3u8",
-    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/084299119e2cf7e1b863489165dd5af3.webp",
     "group": "animation"
   },
   {
@@ -287,13 +168,6 @@
     "group": "movies"
   },
   {
-    "id": "FandomTV.br",
-    "name": "Fandom TV HD",
-    "url": "http://187.95.95.241:7988/fabic/tracks-v1a1/mono.m3u8",
-    "logo": "https://peganet.com.br/wp-content/uploads/2020/11/136-FANDOM.jpg",
-    "group": "general"
-  },
-  {
     "id": "ChespiritoTV.br",
     "name": "Chespirito",
     "url": "http://168.205.87.198:8555/live/1492/123456/159.m3u8",
@@ -301,17 +175,24 @@
     "group": "series"
   },
   {
-    "id": "CTV.br",
-    "name": "CTV",
-    "url": "https://stmv1.samcast.com.br/ctvpb/ctvpb/playlist.m3u8",
-    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/e1c515ec353cb03545f409372154bda0.webp",
-    "group": "general"
-  },
-  {
     "id": "TVOsorio.br",
     "name": "TV Osório",
     "url": "https://serv2.videovox.pw/video13154/video13154/playlist.m3u8",
     "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/40d7d18ac1b8c2e6b87ecf0e3410cad7.webp",
     "group": "general"
+  },
+  {
+    "id": "TVKidmais.br",
+    "name": "TV Kidmais",
+    "url": "https://video03.logicahost.com.br/novafamilia01/novafamilia01/chunklist_w1961954709.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/875c68d876502060f56b9303cf91a09e.webp",
+    "group": "kids"
+  },
+  {
+    "id": "OtakuSignTV.br",
+    "name": "Otaku Sign TV",
+    "url": "https://stmv1.srvif.com/otaku/otaku/chunklist_w1072940021.m3u8",
+    "logo": "https://www.cxtv.com.br/img/Tvs/Logo/webp-m/442d0e9d16595bd786733d685f375b56.webp",
+    "group": "animation"
   }
 ]
