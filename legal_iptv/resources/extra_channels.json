@@ -9,22 +9,36 @@
    {
       "id":"RunTime.br",
       "name":"RunTime",
-      "url":"https://stream.ads.ottera.tv/cl/231225cm4e1dv6s3ih1rer0bjg/854x480_1355200_2_f.m3u8",
+      "url":"https://run-rt-br.otteravision.com/run/rt_br/rt_br_720p_high.m3u8",
       "logo":"https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_1920x1080_0.jpg",
       "group":"movies"
    },
    {
       "id":"RunTimeAction.br",
       "name":"RunTime Ação",
-      "url":"https://stream.ads.ottera.tv/cl/231225cm4e2j0b1vkkqhjol2ug/854x480_1355200_2_f.m3u8",
+      "url":"https://run-rt-ra.otteravision.com/run/rt_ra/rt_ra_720.m3u8",
       "logo":"https://img2.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_action_bg.jpg",
       "group":"movies"
    },
    {
       "id":"RunTimeComedia.br",
       "name":"RunTime Comédia",
-      "url":"https://stream.ads.ottera.tv/cl/231225cm4e2vc5gtbpt4b9324g/854x480_1355200_2_f.m3u8",
+      "url":"https://run-rc-br.otteravision.com/run/rc_br/rc_br_720.m3u8",
       "logo":"https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/br_comedy_bg.jpg",
+      "group":"movies"
+   },
+   {
+      "id":"RunTimeFamilia.br",
+      "name":"RunTime Família",
+      "url":"https://run-rufb.otteravision.com/run/rufb/rufb_480.m3u8",
+      "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/a81de2ad139464cf76f231a06ccb4b89.webp",
+      "group":"movies"
+   },
+   {
+      "id":"RunTimeCrimes.br",
+      "name":"RunTime Crimes",
+      "url":"https://run-cr-br.otteravision.com/run/cr_br/cr_br_720.m3u8",
+      "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/ae540b891b4a0d073b39ae0bb693f5c3.webp",
       "group":"movies"
    },
    {
@@ -44,7 +58,7 @@
    {
       "id":"Canal29.br",
       "name":"Canal 29",
-      "url":"https://stmv1.srvif.com/canal29/canal29/chunklist_w609906612.m3u8",
+      "url":"https://stmv1.srvif.com/canal29/canal29/playlist.m3u8",
       "logo":"http://www.cxtv.com.br/img/Tvs/Logo/dcb3ff84b8f31ddc39ef213b42402f75.jpg",
       "group":"series"
    },
@@ -128,8 +142,15 @@
    {
       "id":"TVCine.br",
       "name":"TV Cine",
-      "url":"https://stmv1.srvif.com/tvserie/tvserie/chunklist_w711675595.m3u8",
+      "url":"https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8",
       "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/0d8ea456a45f1f4837ffb24db7646f8f.webp",
+      "group":"classic"
+   },
+   {
+      "id":"LucasTV.br",
+      "name":"LucasTV",
+      "url":"https://stmv1.srvif.com/lucastv/lucastv/playlist.m3u8",
+      "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/30b5156f5206356ea7e928eedcbc7667.webp",
       "group":"classic"
    },
    {
@@ -149,7 +170,7 @@
    {
       "id":"fkids.br",
       "name":"Fox Kids WebTV",
-      "url":"https://stmv1.srvif.com/emlsilva/emlsilva/playlist.m3u8",
+      "url":"https://stmv2.srvif.com/emlsilva/emlsilva/playlist.m3u8",
       "logo":"https://raw.githubusercontent.com/listamake/sitefkweb/main/logosite.png",
       "group":"kids"
    },
@@ -184,8 +205,8 @@
    {
       "id":"TVKidmais.br",
       "name":"TV Kidmais",
-      "url":"https://video03.logicahost.com.br/novafamilia01/novafamilia01/chunklist_w1961954709.m3u8",
-      "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/875c68d876502060f56b9303cf91a09e.webp",
+      "url":"https://s1.tvr.ovh/video52119/video52119/chunklist_w744681843.m3u8",
+      "logo":"https://d14vd6r4ppsx57.cloudfront.net/media/brand/unnamed_4cMwnRI.png",
       "group":"kids"
    },
    {
@@ -193,6 +214,13 @@
       "name":"Otaku Sign TV",
       "url":"https://stmv1.srvif.com/otaku/otaku/chunklist_w1072940021.m3u8",
       "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/442d0e9d16595bd786733d685f375b56.webp",
+      "group":"animation"
+   },
+   {
+      "id":"TVLoading.br",
+      "name":"TV Loading",
+      "url":"https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8",
+      "logo":"https://www.cxtv.com.br/img/Tvs/Logo/webp-m/1d08352f33c92124373d9f3b0fcf2ef8.webp",
       "group":"animation"
    },
    {
@@ -208,6 +236,34 @@
       "url":"https://stmv8.samcast.com.br/novatvi2098/novatvi2098/chunklist_w129419067.m3u8",
       "logo":"https://pa-str.srvsite.com/arquivos/7140/cabecalho-7140-20240911033310.png",
       "group":"general"
+   },
+   {
+      "id":"Kanade.br",
+      "name":"Kanade",
+      "url":"https://backend.energeek.cl/webtv/kanadebr/tracks-v1a1/mono.m3u8?token=deM0kanADeweB",
+      "logo":"https://static.kanade.cl/assets/img/profilepic_512px.png",
+      "group":"kids"
+   },
+   {
+      "id":"TVSonata.br",
+      "name":"TV Sonata",
+      "url":"https://video04.logicahost.com.br/isonata/isonata/chunklist_w417588321.m3u8",
+      "logo":"https://tvsonata.com.br/storage/690/config/YIpr9GvubiZ14KntfgXqTob4kMpue1cFo2R5h91h.png",
+      "group":"classic"
+   },
+   {
+      "id":"CNNBrasil.br",
+      "name":"CNN Brasil",
+      "url":"https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/CNN_Brasil.svg/512px-CNN_Brasil.svg.png",
+      "group":"news"
+   },
+   {
+      "id":"SeriesClassic.br",
+      "name":"Séries Classic",
+      "url":"https://video10.logicahost.com.br/serieclassic/serieclassic/chunklist_w625230327.m3u8",
+      "logo":"https://d14vd6r4ppsx57.cloudfront.net/media/brand/S%C3%A9ries_Classic_70_Channel_100x100_RYYThZ7.png",
+      "group":"series"
    },
    {
       "id":"RetroCartoon.br",
