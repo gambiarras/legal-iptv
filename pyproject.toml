@@ -1,0 +1,16 @@
+[project]
+name = "legal-iptv"
+version = "0.1.0"
+description = "Aggregates legal public IPTV and live streaming sources into a static M3U playlist"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "requests>=2.31.0",
+]
+
+[project.scripts]
+legal-iptv = "legal_iptv.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
