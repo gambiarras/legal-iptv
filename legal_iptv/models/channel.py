@@ -18,4 +18,4 @@ class Channel:
     ttl_seconds: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)git 
+        return asdict(self) 

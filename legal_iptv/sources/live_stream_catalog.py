@@ -3,7 +3,7 @@ from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
 
 
-LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/youtube-live-channels/main/channels.json"
+LIVE_STREAM_CATALOG_URL = "https://github.com/gambiarras/youtube-live-channels/raw/refs/heads/live-stream-catalog/channels.json"
 
 
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
