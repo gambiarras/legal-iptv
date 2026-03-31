@@ -20,7 +20,11 @@ def run_aggregation(config: AppConfig) -> None:
     try:
         extra = extra_channels.fetch_channels()
         iptv = iptv_org.fetch_channels(client)
-        live = live_stream_catalog.fetch_channels(client, min_live_ttl=config.min_live_ttl)
+        live = live_stream_catalog.fetch_channels(
+            client,
+            min_live_ttl=config.min_live_ttl,
+            local_file=config.live_catalog_file,
+        )
 
         all_channels = extra + iptv + live
         selected = select_best_channels(all_channels)

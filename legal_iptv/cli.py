@@ -10,4 +10,5 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--meta-output", default="playlist.meta.json")
     parser.add_argument("--log-level", default="INFO")
     parser.add_argument("--min-live-ttl", type=int, default=900)
+    parser.add_argument("--live-catalog-file", default=None)
     return parser.parse_args()

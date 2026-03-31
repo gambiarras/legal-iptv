@@ -1,9 +1,12 @@
+import json
+from pathlib import Path
+
 from legal_iptv.clients import HttpClient
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
 
 
-LIVE_STREAM_CATALOG_URL = "https://github.com/gambiarras/youtube-live-channels/raw/refs/heads/live-stream-catalog/channels.json"
+LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/youtube-live-channels/main/channels.json"
 
 
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
@@ -21,8 +24,19 @@ def _is_usable(item: dict, min_live_ttl: int) -> bool:
     return True
 
 
-def fetch_channels(client: HttpClient, min_live_ttl: int) -> list[Channel]:
-    raw = client.get_json(LIVE_STREAM_CATALOG_URL)
+def _load_raw(client: HttpClient, local_file: Path | None) -> list[dict]:
+    if local_file is not None and local_file.exists():
+        return json.loads(local_file.read_text(encoding="utf-8"))
+
+    return client.get_json(LIVE_STREAM_CATALOG_URL)
+
+
+def fetch_channels(
+    client: HttpClient,
+    min_live_ttl: int,
+    local_file: Path | None = None,
+) -> list[Channel]:
+    raw = _load_raw(client, local_file)
 
     channels: list[Channel] = []
     for item in raw:
