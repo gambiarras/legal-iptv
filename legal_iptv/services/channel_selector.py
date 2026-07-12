@@ -26,6 +26,7 @@ def _score(channel: Channel) -> tuple:
     return (
         SOURCE_PRIORITY.get(channel.source, 0),
         1 if channel.status == "resolved" else 0,
+        1 if channel.stream_url else 0,
         ttl_state,
         ttl_value,
         1 if channel.logo else 0,
