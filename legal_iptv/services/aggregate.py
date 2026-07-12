@@ -5,6 +5,10 @@ from legal_iptv.config import AppConfig
 from legal_iptv.exporters import render_m3u
 from legal_iptv.io import write_json_atomic
 from legal_iptv.services.channel_selector import select_best_channels
+from legal_iptv.services.link_validator import (
+    filter_cached_offline_channels,
+    refresh_stream_status,
+)
 from legal_iptv.services.metadata import build_run_metadata
 from legal_iptv.sources import extra_channels, iptv_org, live_stream_catalog
 
@@ -28,6 +32,20 @@ def run_aggregation(config: AppConfig) -> None:
 
         all_channels = extra + iptv + live
         selected = select_best_channels(all_channels)
+
+        if config.validate_streams:
+            selected = refresh_stream_status(
+                selected,
+                status_file=config.stream_status_file,
+                max_workers=config.validation_max_workers,
+                timeout=config.validation_timeout,
+            )
+        else:
+            selected = filter_cached_offline_channels(
+                selected,
+                status_file=config.stream_status_file,
+                max_age_seconds=config.stream_status_max_age,
+            )
 
         playlist = render_m3u(selected)
         config.output_path.write_text(playlist, encoding="utf-8")
