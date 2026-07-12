@@ -95,6 +95,31 @@ python3.11 -m legal_iptv \
 
 When `--live-catalog-file` is provided, the file must exist. This keeps local runs from silently falling back to a remote catalog.
 
+`live-stream-catalog` entries have higher selection priority than manually curated extra channels and IPTV-ORG channels. If duplicate candidates point to the same URL and have the same or a very similar name, only the best candidate is kept. If their URLs differ, both are kept and duplicate channel IDs are made unique.
+
+Optionally validate stream URLs before rendering the playlist:
+
+```bash
+python3.11 -m legal_iptv \
+  --live-catalog-file ../live-stream-catalog/channels.json \
+  --validate-streams \
+  --validation-max-workers 32 \
+  --validation-timeout 6
+```
+
+Validation is disabled by default because it performs network checks against every unique stream URL. When enabled, it writes `stream-status.json` with the latest status for each URL.
+
+For scheduled environments, run validation periodically, for example every 4 hours, outside this repository. Normal playlist generation reads `stream-status.json` and skips URLs recently marked offline:
+
+```bash
+python3.11 -m legal_iptv \
+  --live-catalog-file ../live-stream-catalog/channels.json \
+  --stream-status-file stream-status.json \
+  --stream-status-max-age 14400
+```
+
+Only offline statuses newer than `--stream-status-max-age` are applied, so stale failures do not block channels forever.
+
 ---
 
 ## Development
