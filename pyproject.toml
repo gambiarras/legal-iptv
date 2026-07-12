@@ -11,6 +11,13 @@ dependencies = [
 [project.scripts]
 legal-iptv = "legal_iptv.__main__:main"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["legal_iptv*"]
+
+[tool.setuptools.package-data]
+"legal_iptv.resources" = ["*.json", "images/*.png"]
+
 [build-system]
 requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
