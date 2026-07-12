@@ -15,12 +15,23 @@ from legal_iptv.models import Channel
 logger = logging.getLogger(__name__)
 
 FALLBACK_STATUSES = {403, 405}
+UNKNOWN_STATUSES = {429}
 
 _thread_local = threading.local()
 
 
 def _is_success_status(status_code: int) -> bool:
     return 200 <= status_code < 400
+
+
+def _status_to_activity(status_code: int) -> bool | None:
+    if _is_success_status(status_code):
+        return True
+
+    if status_code in UNKNOWN_STATUSES:
+        return None
+
+    return False
 
 
 def _get_session() -> requests.Session:
@@ -32,7 +43,7 @@ def _get_session() -> requests.Session:
     return session
 
 
-def is_url_active(url: str, timeout: int) -> bool:
+def is_url_active(url: str, timeout: int) -> bool | None:
     headers = build_headers(accept="*/*")
     session = _get_session()
 
@@ -48,7 +59,7 @@ def is_url_active(url: str, timeout: int) -> bool:
             return True
 
         if response.status_code not in FALLBACK_STATUSES:
-            return False
+            return _status_to_activity(response.status_code)
 
     except requests.RequestException:
         pass
@@ -62,7 +73,7 @@ def is_url_active(url: str, timeout: int) -> bool:
             stream=True,
         )
         try:
-            return _is_success_status(response.status_code)
+            return _status_to_activity(response.status_code)
         finally:
             response.close()
 
@@ -75,12 +86,12 @@ def validate_urls(
     *,
     max_workers: int,
     timeout: int,
-) -> dict[str, bool]:
+) -> dict[str, bool | None]:
     if not urls:
         return {}
 
     worker_count = max(1, min(max_workers, len(urls)))
-    status_by_url: dict[str, bool] = {}
+    status_by_url: dict[str, bool | None] = {}
 
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
         futures = {
@@ -115,14 +126,16 @@ def filter_active_channels(
     active_channels = [
         channel
         for channel in channels
-        if channel.stream_url and status_by_url.get(channel.stream_url, False)
+        if channel.stream_url and status_by_url.get(channel.stream_url) is not False
     ]
+    unknown_count = sum(1 for is_active in status_by_url.values() if is_active is None)
 
     logger.info(
-        "Stream validation finished total=%s active=%s inactive=%s unique_urls=%s",
+        "Stream validation finished total=%s kept=%s inactive=%s unknown_urls=%s unique_urls=%s",
         len(channels),
         len(active_channels),
         len(channels) - len(active_channels),
+        unknown_count,
         len(urls),
     )
 
@@ -150,7 +163,7 @@ def _parse_datetime(value: str | None) -> datetime | None:
 
 def write_stream_status(
     status_file: Path,
-    status_by_url: dict[str, bool],
+    status_by_url: dict[str, bool | None],
 ) -> None:
     checked_at = _utc_now().isoformat()
     payload = {
@@ -251,14 +264,16 @@ def refresh_stream_status(
     active_channels = [
         channel
         for channel in channels
-        if channel.stream_url and status_by_url.get(channel.stream_url, False)
+        if channel.stream_url and status_by_url.get(channel.stream_url) is not False
     ]
+    unknown_count = sum(1 for is_active in status_by_url.values() if is_active is None)
 
     logger.info(
-        "Stream status refreshed total=%s active=%s inactive=%s unique_urls=%s status_file=%s",
+        "Stream status refreshed total=%s kept=%s inactive=%s unknown_urls=%s unique_urls=%s status_file=%s",
         len(channels),
         len(active_channels),
         len(channels) - len(active_channels),
+        unknown_count,
         len(urls),
         status_file,
     )

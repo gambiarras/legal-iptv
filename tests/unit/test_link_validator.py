@@ -59,6 +59,28 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertTrue(session.get.return_value.closed)
 
     @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_status_is_unknown_when_head_is_rate_limited(self, get_session_mock: Mock):
+        session = Mock()
+        session.head.return_value = FakeResponse(429)
+        get_session_mock.return_value = session
+
+        self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
+        session.get.assert_not_called()
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_status_is_unknown_when_get_fallback_is_rate_limited(
+        self,
+        get_session_mock: Mock,
+    ):
+        session = Mock()
+        session.head.return_value = FakeResponse(405)
+        session.get.return_value = FakeResponse(429)
+        get_session_mock.return_value = session
+
+        self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
+        self.assertTrue(session.get.return_value.closed)
+
+    @patch("legal_iptv.services.link_validator._get_session")
     def test_filter_active_channels_validates_each_url_once(self, get_session_mock: Mock):
         session = Mock()
         session.head.side_effect = [
@@ -114,6 +136,10 @@ class LinkValidatorTest(unittest.TestCase):
                             },
                             "https://example.test/active.m3u8": {
                                 "active": True,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/unknown.m3u8": {
+                                "active": None,
                                 "checked_at": checked_at,
                             },
                         }
@@ -183,15 +209,17 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual([channel.id for channel in filtered_channels], ["active"])
 
     @patch("legal_iptv.services.link_validator.validate_urls")
-    def test_refresh_stream_status_writes_cache_and_filters_active_channels(
+    def test_refresh_stream_status_writes_cache_and_filters_only_offline_channels(
         self,
         validate_urls_mock: Mock,
     ):
         active_url = "https://example.test/active.m3u8"
         offline_url = "https://example.test/offline.m3u8"
+        unknown_url = "https://example.test/unknown.m3u8"
         validate_urls_mock.return_value = {
             active_url: True,
             offline_url: False,
+            unknown_url: None,
         }
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -199,6 +227,7 @@ class LinkValidatorTest(unittest.TestCase):
             channels = [
                 make_channel("active", active_url),
                 make_channel("offline", offline_url),
+                make_channel("unknown", unknown_url),
             ]
 
             active_channels = refresh_stream_status(
@@ -209,9 +238,10 @@ class LinkValidatorTest(unittest.TestCase):
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
-        self.assertEqual([channel.id for channel in active_channels], ["active"])
+        self.assertEqual([channel.id for channel in active_channels], ["active", "unknown"])
         self.assertTrue(payload["urls"][active_url]["active"])
         self.assertFalse(payload["urls"][offline_url]["active"])
+        self.assertIsNone(payload["urls"][unknown_url]["active"])
 
 
 if __name__ == "__main__":
