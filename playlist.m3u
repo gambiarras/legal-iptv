@@ -43,10 +43,6 @@ http://45.162.231.38:7779/BIS/index.m3u8
 #EXTGRP:Variedades
 http://45.162.231.38:7779/Boa_Vontade_TV/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.51" tvg-name="BS TV Online" tvg-logo="https://i.postimg.cc/bJk7dg4Q/bstv-online.jpg", BS TV Online
 #EXTGRP:Variedades
 https://video05.logicahost.com.br/gbsstudio/gbsstudio/playlist.m3u8
@@ -90,10 +86,6 @@ http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="series-classicas" tvg-name="Canal Séries Classic" tvg-logo="https://i.postimg.cc/JzY6JCzg/cana-series-classic.png", Canal Séries Classic
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/serieclassic/serieclassic/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="caravana-play" tvg-name="Caravana Play" tvg-logo="https://i.postimg.cc/59CKXBvC/caravana-play.jpg", Caravana Play
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/keynni6990/keynni6990/playlist.m3u8?hls_ctx=50455x4i
 
 #EXTINF:-1 group-title="Variedades" tvg-id="CatveFM.br" tvg-name="Catve FM" tvg-logo="https://i.imgur.com/w89yw36.png", Catve FM
 #EXTGRP:Variedades
@@ -174,10 +166,6 @@ https://video01.logicahost.com.br/ypetv/ypetv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="FalaLitoral.br" tvg-name="Fala Litoral" tvg-logo="https://i.imgur.com/NF6PL8O.png", Fala Litoral
 #EXTGRP:Variedades
 https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.63" tvg-name="Fama TV" tvg-logo="https://i.postimg.cc/mg6b26n8/tv_fama.jpg", Fama TV
-#EXTGRP:Variedades
-https://tv2.fastcast4u.com:3310/live/famatvlive.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.15" tvg-name="Filmelier TV" tvg-logo="https://i.postimg.cc/0jf73RwY/filmeliertv.jpg", Filmelier TV
 #EXTGRP:Variedades
@@ -763,10 +751,6 @@ https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
 #EXTGRP:Variedades
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.36" tvg-name="TV Mais Brasil" tvg-logo="https://i.postimg.cc/9XYT6hfP/tvmaisbrasil.jpg", TV Mais Brasil
-#EXTGRP:Variedades
-https://stmv8.samcast.com.br/tvmaisbrasil/tvmaisbrasil/playlist.m3u8?hls_ctx=l53m3i21
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaisMarica.br" tvg-name="TV Mais Marica" tvg-logo="https://i.imgur.com/lgCRX7q.png", TV Mais Marica
 #EXTGRP:Variedades
 https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8
@@ -878,6 +862,10 @@ https://stmv8.samcast.com.br/raimundoanselmolimamororo1908/raimundoanselmolimamo
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.89" tvg-name="TV Singular" tvg-logo="https://i.postimg.cc/SsRjXYqd/lingular-tv-logo2.png", TV Singular
 #EXTGRP:Variedades
 https://stmv2.srvsh.com.br/daniel8121/daniel8121/chunklist_w1486298669.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVSulBahia.br" tvg-name="TV Sul Bahia" tvg-logo="https://i.imgur.com/qM6nMWm.png", TV Sul Bahia
+#EXTGRP:Variedades
+https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVSuldeMinas.br" tvg-name="TV Sul de Minas" tvg-logo="https://i.imgur.com/hPh8cxK.png", TV Sul de Minas
 #EXTGRP:Variedades
@@ -1338,10 +1326,6 @@ https://isaocorp.cloudecast.com/ngt/index.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="RedeNGT.br" tvg-name="Rede NGT" tvg-logo="https://i.imgur.com/ZFN1R4B.png", Rede NGT
 #EXTGRP:Entretenimento
 https://cdn-tiva-maystreaming-cloudecast-com.smartbit.co/ngt/index.m3u8
-
-#EXTINF:-1 group-title="Entretenimento" tvg-id="RedePremiumTV.br" tvg-name="Rede Premium TV" tvg-logo="https://i.imgur.com/jMHaHAR.png", Rede Premium TV
-#EXTGRP:Entretenimento
-https://cdn-tiva-stmv2-samcast-com-br.smartbit.co/leonardo9878/leonardo9878/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="TVCuruca.br" tvg-name="TV Curuca" tvg-logo="https://i.imgur.com/JdCKNZ4.png", TV Curuca
 #EXTGRP:Entretenimento
