@@ -12,6 +12,7 @@ from legal_iptv.services.link_validator import (
     is_url_active,
     load_offline_urls,
     refresh_stream_status,
+    validate_urls,
 )
 
 
@@ -84,6 +85,19 @@ class LinkValidatorTest(unittest.TestCase):
             ["active.one", "active.two"],
         )
         self.assertEqual(session.head.call_count, 2)
+
+    @patch("legal_iptv.services.link_validator.is_url_active")
+    def test_validate_urls_marks_unexpected_errors_offline(self, is_url_active_mock: Mock):
+        is_url_active_mock.side_effect = RuntimeError("boom")
+
+        with self.assertLogs("legal_iptv.services.link_validator", level="WARNING"):
+            status_by_url = validate_urls(
+                ["https://example.test/live.m3u8"],
+                max_workers=1,
+                timeout=1,
+            )
+
+        self.assertEqual(status_by_url, {"https://example.test/live.m3u8": False})
 
     def test_loads_fresh_offline_urls_from_status_file(self):
         checked_at = datetime.now(timezone.utc).isoformat()

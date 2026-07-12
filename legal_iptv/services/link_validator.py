@@ -90,7 +90,11 @@ def validate_urls(
 
         for future in as_completed(futures):
             url = futures[future]
-            status_by_url[url] = future.result()
+            try:
+                status_by_url[url] = future.result()
+            except Exception as exc:
+                logger.warning("Stream validation failed url=%s error=%s", url, exc)
+                status_by_url[url] = False
 
     return status_by_url
 
