@@ -24,7 +24,7 @@ BROWSER_USER_AGENTS = [
 ]
 
 
-def _build_headers(
+def build_headers(
     referer: Optional[str] = None,
     accept: str = "application/json, text/plain, */*",
 ) -> dict:
@@ -84,7 +84,7 @@ class HttpClient:
         last_error = None
 
         for attempt in range(self.retries):
-            headers = _build_headers(
+            headers = build_headers(
                 referer=referer,
                 accept=(
                     "application/json, text/plain, */*"
