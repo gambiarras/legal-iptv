@@ -54,6 +54,7 @@ def fetch_channels(
                 logo=item.get("logo", ""),
                 group=localized_category_name(item.get("group", "web")),
                 source="live_stream_catalog",
+                tvg_id=item.get("tvg_id"),
                 source_type=item.get("source_type"),
                 source_url=item.get("source_url"),
                 status=item.get("status"),

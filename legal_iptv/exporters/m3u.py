@@ -7,7 +7,7 @@ from legal_iptv.services.category_mapper import CATEGORY_ORDER
 EPG_URLS = [
     "https://iptv-epg.org/files/epg-br.xml",
     "https://i.mjh.nz/Plex/all.xml",
-    "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/SamsungTVPlus/all.xml",
+    "https://i.mjh.nz/SamsungTVPlus/all.xml",
 ]
 
 
@@ -29,13 +29,13 @@ def _render_header() -> str:
 
 def _render_channel(channel: Channel) -> str:
     group = _sanitize_attribute(channel.group)
-    channel_id = _sanitize_attribute(channel.id)
+    tvg_id = _sanitize_attribute(channel.tvg_id or channel.id)
     name = _sanitize_attribute(channel.name)
     logo = _sanitize_attribute(channel.logo)
     display_name = _sanitize_display_name(channel.name)
 
     return (
-        f'#EXTINF:-1 group-title="{group}" tvg-id="{channel_id}" '
+        f'#EXTINF:-1 group-title="{group}" tvg-id="{tvg_id}" '
         f'tvg-name="{name}" tvg-logo="{logo}", {display_name}\n'
         f'#EXTGRP:{group}\n'
         f'{channel.stream_url}'

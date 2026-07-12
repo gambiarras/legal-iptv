@@ -27,6 +27,7 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
                 "group": "web",
                 "source_type": "twitch",
                 "source_url": "https://www.twitch.tv/example",
+                "tvg_id": "ResolvedNullTTL.br",
                 "status": "resolved",
                 "ttl_seconds": None,
             },
@@ -67,6 +68,7 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
 
         self.assertEqual(len(channels), 1)
         self.assertEqual(channels[0].id, "channel.resolved.nullttl")
+        self.assertEqual(channels[0].tvg_id, "ResolvedNullTTL.br")
         self.assertEqual(channels[0].group, "Web Live")
         self.assertIsNone(channels[0].ttl_seconds)
 

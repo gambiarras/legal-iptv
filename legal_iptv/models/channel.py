@@ -10,6 +10,7 @@ class Channel:
     logo: str
     group: str
     source: str
+    tvg_id: str | None = None
     source_type: str | None = None
     source_url: str | None = None
     status: str | None = None
@@ -18,4 +19,4 @@ class Channel:
     ttl_seconds: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self) 
+        return asdict(self)

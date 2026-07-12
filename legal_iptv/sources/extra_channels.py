@@ -17,6 +17,7 @@ def fetch_channels() -> list[Channel]:
             logo=item.get("logo", ""),
             group=localized_category_name(item.get("group", "general")),
             source="extra",
+            tvg_id=item.get("tvg_id"),
         )
         for item in raw
     ]

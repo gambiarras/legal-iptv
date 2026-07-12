@@ -46,6 +46,7 @@ def fetch_channels(client: HttpClient) -> list[Channel]:
                     logo=logo_url,
                     group=localized_category_name(category),
                     source="iptv_org",
+                    tvg_id=channel["id"],
                 )
             )
 

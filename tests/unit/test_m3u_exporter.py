@@ -23,6 +23,22 @@ class M3UExporterTest(unittest.TestCase):
         self.assertIn("https://example.test/live.m3u8", playlist)
         self.assertTrue(playlist.endswith("\n"))
 
+    def test_uses_tvg_id_when_available(self):
+        channel = Channel(
+            id="internal.channel",
+            name="Example Channel",
+            stream_url="https://example.test/live.m3u8",
+            logo="",
+            group="Web Live",
+            source="live_stream_catalog",
+            tvg_id="ExampleChannel.br",
+        )
+
+        playlist = render_m3u([channel])
+
+        self.assertIn('tvg-id="ExampleChannel.br"', playlist)
+        self.assertNotIn('tvg-id="internal.channel"', playlist)
+
     def test_sanitizes_attribute_values(self):
         channel = Channel(
             id='example."channel"',
