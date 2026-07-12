@@ -227,6 +227,10 @@ http://45.162.231.38:7779/Play_TV/index.m3u8
 #EXTGRP:Variedades
 http://167.250.126.140:7777/PLAYTV-HD/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="PlayTV.br" tvg-name="Play TV" tvg-logo="https://i.imgur.com/Ikrj3lk.png", Play TV
+#EXTGRP:Variedades
+http://45.162.64.114/PLAY_TV/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="PrimerTV.br" tvg-name="Primer TV" tvg-logo="https://i.imgur.com/PMptSP3.png", Primer TV
 #EXTGRP:Variedades
 http://200.194.238.229:8383/live/primer/playlist.m3u8
@@ -358,10 +362,6 @@ https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
-#EXTGRP:Variedades
-http://167.250.126.140:7777/COMEDYCENTRAL-HD/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Nacional" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional
 #EXTGRP:Variedades
@@ -611,6 +611,10 @@ https://video08.logicahost.com.br/tvc21/tvc21/playlist.m3u8
 #EXTGRP:Variedades
 https://tv.nuvemplay.live/hls/40gtv/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="TVGazeta.br" tvg-name="TV Gazeta" tvg-logo="https://i.imgur.com/0sksWse.png", TV Gazeta
+#EXTGRP:Variedades
+http://45.162.64.114/GAZETA/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGloboSaoPaulo.br" tvg-name="TV Globo Sao Paulo" tvg-logo="https://i.imgur.com/OoSUg78.png", TV Globo Sao Paulo
 #EXTGRP:Variedades
 https://cdn-5.nxplay.com.br/GLOBO_SP_TK/index.m3u8
@@ -845,6 +849,10 @@ https://stmv.video.expressolider.com.br/ghostv/ghostv/playlist.m3u8
 #EXTGRP:Filmes
 https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8
 
+#EXTINF:-1 group-title="Filmes" tvg-id="SonyMovies.br" tvg-name="Sony Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_Movies_Logo.svg/500px-Sony_Movies_Logo.svg.png", Sony Movies
+#EXTGRP:Filmes
+http://45.162.64.114/SONY_MOVIES/index.m3u8
+
 #EXTINF:-1 group-title="Filmes" tvg-id="TelecineAction.br" tvg-name="Telecine Action" tvg-logo="https://i.imgur.com/BHYWG0h.png", Telecine Action
 #EXTGRP:Filmes
 http://45.162.231.38:7779/Telecine_Action/index.m3u8
@@ -921,7 +929,7 @@ https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="chavesvivo.tv" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
 #EXTGRP:Séries
-https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFc8SUzIc0ytmSOKLDSPIWb3vWsmHof1p2afRq3ug2YN3RTKw5AUjTQeHcqWglW1iZNgRuG3sLJf69lozOTqpabIxIhMt_cga6KeOIo2egUf6niSl51f3vmuqRsaRLxqo1guTF5gVGAccCWnljEQKNcleklKLmIJvcx0_f4W37b3hYtxWcBKY9xdTL3oCOHFR2VGMQ9JGVrwSrHLKF6Da5mcE-UEBvbewdhvaxzd5sCWM_th95kCfbXV6AT6_A30ilESLhC3_Cl5fLindAMammUlzOsQNDzd0_sAcc5YWLFPA5hjkscmcz1-4dDaPdQPNvDJIDQ4qXDiiyfOcArG_u-EYFszPOXdyhtUkL8b4gXsnS-MCn4VAQq-oPzHSady-NyK9yxYpceSErVzz3WGtTzstJNAYC0QPTJVnko1AGdSCM_Cmo3UxAAmacM7XN_a2ADKFiqAdJ6VRPhcGNbVEQKWyuB8S0yGAv9zQBn79NC3IxB6xhT5sBhbiae2A631sXkvWXaLamqw4XkOmsb0i2wIqoFXtpPtzEnEmc_gLSi-CcZ_TnQYtPGF8YX5OTIq-xW9mIhuZx9pSK5_34LosaVmxpUz7azHNHW1sEfdM50tDvm3rY-pyasdAyJWw_2hvzh5KflUdn7L8UKzDlyklxlTcC-TChTmKfLGdWSqzrIrt3uKqAYgq-imTNYvNNlera7jrp7taZtdab_JWNywqD8EekUnPavfamcFUk-mel9HR58QlTTp8KSp6fEA77KkvefdpQ0-eT7wEdkvdhoJ8nnrw19oYVvD5IxrmINCYJHB7RTpe3JD23JJ3mUcmSotGVfEu8pfte4F7D4uU73ql_d41sUDWpmwPqIFL1UENT8qaqJHN8RkWXVlL9PDMAbng0-Gdqapoz5bxQRvpUf0x7h18aDFL-THYt_5CiVC-wriABKgl1cy1lYXN0LTIwyQ8.m3u8
+https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrAFFqqS_ZQqqqT3fdagLiHCTJ8doCcZFr_9rcnczhYBugHnwh3ufZORhrv7xgNs3UJ83znIZW5KN5kkjt7dunXBfMlJf33_4HXq66FWr3yr58WswN8xZCK84DCuYjGx21cXDjeIDBNGyvwv5yzcGEBfFAa4GFjxY7KcpUmnp10WPPwbaZQpyCgAzuDEIrPBZog5aufLVx-u9-FcY9QoXP0la7ehAHa8NJpHgJ-qhCt5tjuDIoao5UKN6l8zJag3uxPlpqrlkfZiRSzKs4MipOvNWZIJjjvqQh-pX4K9_sTDeUcNq6DmifHVEwtzt6JGQvqJhm7z_wQRewY5DmpAYf8tynGgPLY_3aPmesok07meikQeTPPnlk68zaAOAwhUG7uvi1tn8HB9cazUuqjVLtmGMeGdxZgWqWlDC1jJzw7eY4WWAx_JNu8gEPRypVEtGpflkhIza-N9NFosQyUuX_Ph7KAFK5t1Ivd0FaHTUiqiwvB9b38EehH3O2Xeb5uA6NI2OjGpTU8XTWhJu22Ftha-DOJAcFDVrVTFZhDA9-t3XNDRcr61Qwenm0_BRAtBGgMNENhHdjmVA8y9DxixMtWSq4g47qWs1Q5vcl1rKfx0eQPkPmxuY5wboAsiDm2f38SVXPFr3zZyNYI_x6k__DJYT1_dBGjrxAWa1oTTsunDWjnZjUlY-dB-JyqETH77lk7r2bZyAQj5scITIrY9RSlPflLDasexT1_B6mArPqnhiCjpEYc6TViS2f0sX-LDd4ieuat_a0x-oWsmPR0kAMD_JK5CEOGB3Zu-WUqg7l396Fl1uG6N13-JzhkffY-g6Nx1L64dzklOpuxfL_qeKTySAvHAQsq3VynrvBfaKUitdUYt8smsZCrasy4EdeHBb-BzLWOgzuQHvoj1fP-oz-p4UxoMbGtOxy9QDIevC5x1IAEqCXVzLWVhc3QtMjDJDw.m3u8
 
 ### Canais Infantil
 
@@ -1111,6 +1119,10 @@ http://167.250.126.140:7777/BANDNEWS-HD/index.m3u8
 #EXTGRP:Notícia
 http://45.162.64.114/BAND_NEWS/index.m3u8
 
+#EXTINF:-1 group-title="Notícia" tvg-id="BandNews.br" tvg-name="BandNews" tvg-logo="https://i.ibb.co/0jVZBFp/u8ya-iw-R-400x400.jpg", BandNews
+#EXTGRP:Notícia
+http://177.52.24.163/BAND-NEWS-HD/index.m3u8
+
 #EXTINF:-1 group-title="Notícia" tvg-id="BMCNews.br" tvg-name="BM&C News" tvg-logo="https://i.imgur.com/pOUY2Uz.png", BM&C News
 #EXTGRP:Notícia
 https://jmp2.uk/plu-666c9c60a7efd40008f552f0.m3u8
@@ -1202,6 +1214,10 @@ http://167.250.126.140:7777/RECORDNEWS-HD/index.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="RecordNews.br" tvg-name="Record News" tvg-logo="https://i.imgur.com/HZDRG0K.png", Record News
 #EXTGRP:Notícia
 http://45.162.64.114/RECORD_NEWS/index.m3u8
+
+#EXTINF:-1 group-title="Notícia" tvg-id="SBTNews.br" tvg-name="SBT News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/42/SBT_News_2025.svg", SBT News
+#EXTGRP:Notícia
+http://167.250.126.140:7777/COMEDYCENTRAL-HD/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="STZTV.br" tvg-name="STZ TV" tvg-logo="https://i.imgur.com/SeF2I7q.png", STZ TV
 #EXTGRP:Notícia
@@ -1522,6 +1538,10 @@ https://video01.logicahost.com.br/tvpadrecicero/tvpadrecicero/playlist.m3u8
 #EXTINF:-1 group-title="Religião" tvg-id="TVPaiEterno.br" tvg-name="TV Pai Eterno" tvg-logo="https://i.imgur.com/iuoXchN.png", TV Pai Eterno
 #EXTGRP:Religião
 http://45.162.231.38:7779/Pai_Eterno/index.m3u8
+
+#EXTINF:-1 group-title="Religião" tvg-id="TVPaiEterno.br" tvg-name="TV Pai Eterno" tvg-logo="https://i.imgur.com/iuoXchN.png", TV Pai Eterno
+#EXTGRP:Religião
+http://45.162.64.114/TV_PAI_ETERNO/index.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVTerceiroAnjo.br" tvg-name="TV Terceiro Anjo" tvg-logo="https://i.imgur.com/PExKWNv.png", TV Terceiro Anjo
 #EXTGRP:Religião
@@ -1858,6 +1878,10 @@ http://45.162.231.38:7779/Fish_TV/index.m3u8
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV
 #EXTGRP:Outdoor
 http://167.250.126.140:7777/FISHTV-HD/index.m3u8
+
+#EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV
+#EXTGRP:Outdoor
+http://45.162.64.114/FISH_TV/index.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="TerraViva.br" tvg-name="Terra Viva" tvg-logo="https://i.imgur.com/wnYsE3O.png", Terra Viva
 #EXTGRP:Outdoor
