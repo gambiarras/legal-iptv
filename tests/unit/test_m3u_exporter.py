@@ -23,6 +23,25 @@ class M3UExporterTest(unittest.TestCase):
         self.assertIn("https://example.test/live.m3u8", playlist)
         self.assertTrue(playlist.endswith("\n"))
 
+    def test_sanitizes_attribute_values(self):
+        channel = Channel(
+            id='example."channel"',
+            name='Example "Quoted"\nChannel',
+            stream_url="https://example.test/live.m3u8",
+            logo='https://example.test/"logo".png',
+            group="Web Live",
+            source="live_stream_catalog",
+        )
+
+        playlist = render_m3u([channel])
+
+        self.assertIn('group-title="Web Live"', playlist)
+        self.assertIn('tvg-id="example.\'channel\'"', playlist)
+        self.assertIn('tvg-name="Example \'Quoted\' Channel"', playlist)
+        self.assertIn('tvg-logo="https://example.test/\'logo\'.png"', playlist)
+        self.assertIn("Example \"Quoted\" Channel", playlist)
+        self.assertNotIn("\nChannel", playlist)
+
 
 if __name__ == "__main__":
     unittest.main()

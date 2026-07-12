@@ -11,16 +11,33 @@ EPG_URLS = [
 ]
 
 
+def _sanitize_attribute(value: str | None) -> str:
+    if value is None:
+        return ""
+
+    return " ".join(value.replace('"', "'").split())
+
+
+def _sanitize_display_name(value: str) -> str:
+    return " ".join(value.split())
+
+
 def _render_header() -> str:
     tvg_urls = ",".join(EPG_URLS)
     return f'#EXTM3U refresh="3600" x-tvg-url="{tvg_urls}" tvg-url="{tvg_urls}"'
 
 
 def _render_channel(channel: Channel) -> str:
+    group = _sanitize_attribute(channel.group)
+    channel_id = _sanitize_attribute(channel.id)
+    name = _sanitize_attribute(channel.name)
+    logo = _sanitize_attribute(channel.logo)
+    display_name = _sanitize_display_name(channel.name)
+
     return (
-        f'#EXTINF:-1 group-title="{channel.group}" tvg-id="{channel.id}" '
-        f'tvg-name="{channel.name}" tvg-logo="{channel.logo}", {channel.name}\n'
-        f'#EXTGRP:{channel.group}\n'
+        f'#EXTINF:-1 group-title="{group}" tvg-id="{channel_id}" '
+        f'tvg-name="{name}" tvg-logo="{logo}", {display_name}\n'
+        f'#EXTGRP:{group}\n'
         f'{channel.stream_url}'
     )
 
