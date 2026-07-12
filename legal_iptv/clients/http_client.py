@@ -82,6 +82,7 @@ class HttpClient:
         referer: Optional[str] = None,
     ):
         last_error = None
+        last_status = None
 
         for attempt in range(self.retries):
             headers = build_headers(
@@ -101,13 +102,14 @@ class HttpClient:
                 )
 
                 if response.status_code in (403, 429):
+                    last_status = response.status_code
                     logger.warning(
                         "Blocked or rate-limited (status=%s) url=%s attempt=%s",
                         response.status_code,
                         url,
                         attempt + 1,
                     )
-                    self._sleep(attempt)
+                    self._sleep_before_retry(attempt)
                     continue
 
                 response.raise_for_status()
@@ -126,11 +128,17 @@ class HttpClient:
                     url,
                     exc,
                 )
-                self._sleep(attempt)
+                self._sleep_before_retry(attempt)
 
-        raise RuntimeError(f"Failed to fetch {url}: {last_error}")
+        if last_error is not None:
+            raise RuntimeError(f"Failed to fetch {url}: {last_error}")
 
-    def _sleep(self, attempt: int) -> None:
+        raise RuntimeError(f"Failed to fetch {url}: last_status={last_status}")
+
+    def _sleep_before_retry(self, attempt: int) -> None:
+        if attempt >= self.retries - 1:
+            return
+
         delay = self.base_delay * (2 ** attempt)
         jitter = random.uniform(0.1, 0.5)
         time.sleep(delay + jitter)
