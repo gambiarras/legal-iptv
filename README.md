@@ -82,6 +82,31 @@ The aggregation pipeline filters and selects channels, then renders the final M3
 
 ---
 
+## Local usage
+
+Use a local `live-stream-catalog` output when running both repositories on the same machine:
+
+```bash
+python3.11 -m legal_iptv \
+  --live-catalog-file ../live-stream-catalog/channels.json \
+  --output playlist.m3u \
+  --meta-output playlist.meta.json
+```
+
+When `--live-catalog-file` is provided, the file must exist. This keeps local runs from silently falling back to a remote catalog.
+
+---
+
+## Development
+
+Run the unit tests:
+
+```bash
+python3.11 -m unittest discover -s tests
+```
+
+---
+
 ## Project structure
 
 ```text

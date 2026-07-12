@@ -6,7 +6,7 @@ from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
 
 
-LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/youtube-live-channels/main/channels.json"
+LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/live-stream-catalog/main/channels.json"
 
 
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
@@ -25,7 +25,10 @@ def _is_usable(item: dict, min_live_ttl: int) -> bool:
 
 
 def _load_raw(client: HttpClient, local_file: Path | None) -> list[dict]:
-    if local_file is not None and local_file.exists():
+    if local_file is not None:
+        if not local_file.exists():
+            raise FileNotFoundError(f"Live catalog file not found: {local_file}")
+
         return json.loads(local_file.read_text(encoding="utf-8"))
 
     return client.get_json(LIVE_STREAM_CATALOG_URL)
