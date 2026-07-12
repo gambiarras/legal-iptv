@@ -1,13 +1,15 @@
-from services import extra_channels_service, iptv_org_service, youtube_channels_service
-from converters import m3u_converter
-from checkers import m3u8_checker
+from legal_iptv.cli import parse_args
+from legal_iptv.config import AppConfig
+from legal_iptv.logging_config import configure_logging
+from legal_iptv.services.aggregate import run_aggregation
 
-extra_channels = extra_channels_service.fetch_channels()
-iptv_org_channels = iptv_org_service.fetch_channels()
-web_channels = youtube_channels_service.fetch_channels()
 
-channels = extra_channels + iptv_org_channels + web_channels
-m3u = m3u_converter.convert(channels)
+def main() -> None:
+    args = parse_args()
+    config = AppConfig.from_args(args)
+    configure_logging(config.log_level)
+    run_aggregation(config)
 
-with open('playlist.m3u', 'w', encoding="utf-8") as outfile:
-    outfile.write(m3u)
+
+if __name__ == "__main__":
+    main()
