@@ -115,6 +115,37 @@ def _with_unique_ids(channels: list[Channel]) -> list[Channel]:
     return unique_channels
 
 
+def _alternative_key(channel: Channel) -> tuple[str, str] | None:
+    name = _normalize_name(channel.name)
+    if not name:
+        return None
+
+    return (channel.tvg_id or "", name)
+
+
+def _with_alternative_names(channels: list[Channel]) -> list[Channel]:
+    seen_counts: dict[tuple[str, str], int] = {}
+    renamed_channels: list[Channel] = []
+
+    for channel in channels:
+        key = _alternative_key(channel)
+        if key is None:
+            renamed_channels.append(channel)
+            continue
+
+        count = seen_counts.get(key, 0)
+        seen_counts[key] = count + 1
+        if count == 0:
+            renamed_channels.append(channel)
+            continue
+
+        renamed_channels.append(
+            replace(channel, name=f"{channel.name} Alternativo {count}")
+        )
+
+    return renamed_channels
+
+
 def select_best_channels(channels: list[Channel]) -> list[Channel]:
     selected: list[Channel] = []
     selected_by_url: dict[str, list[Channel]] = {}
@@ -135,4 +166,4 @@ def select_best_channels(channels: list[Channel]) -> list[Channel]:
         selected.append(channel)
         existing_channels.append(channel)
 
-    return _with_unique_ids(selected)
+    return _with_unique_ids(_with_alternative_names(selected))

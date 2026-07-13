@@ -13,6 +13,7 @@ def make_channel(
     status: str | None = "resolved",
     ttl_seconds: int | None = None,
     logo: str = "",
+    tvg_id: str | None = None,
 ) -> Channel:
     return Channel(
         id=id,
@@ -23,6 +24,7 @@ def make_channel(
         source=source,
         status=status,
         ttl_seconds=ttl_seconds,
+        tvg_id=tvg_id,
     )
 
 
@@ -135,6 +137,46 @@ class ChannelSelectorTest(unittest.TestCase):
         selected = select_best_channels([without_logo, with_logo])
 
         self.assertEqual(selected, [with_logo])
+
+    def test_keeps_same_tvg_id_when_url_is_different_and_marks_alternative(self):
+        iptv_org = make_channel(
+            id="Band.br",
+            name="Band",
+            source="iptv_org",
+            stream_url="https://example.test/iptv.m3u8",
+            tvg_id="Band.br",
+        )
+        live_catalog = make_channel(
+            id="script_catalog_1.41",
+            name="Band",
+            source="live_stream_catalog",
+            stream_url="https://example.test/live.m3u8",
+            tvg_id="Band.br",
+        )
+
+        selected = select_best_channels([iptv_org, live_catalog])
+
+        self.assertEqual(len(selected), 2)
+        self.assertEqual(selected[0].name, "Band")
+        self.assertEqual(selected[1].name, "Band Alternativo 1")
+
+    def test_keeps_same_tvg_id_when_names_are_regional(self):
+        sp = make_channel(
+            id="sbt.sp",
+            name="SBT SP",
+            stream_url="https://example.test/sp.m3u8",
+            tvg_id="SBT.br",
+        )
+        rio = make_channel(
+            id="sbt.rio",
+            name="SBT Rio",
+            stream_url="https://example.test/rio.m3u8",
+            tvg_id="SBT.br",
+        )
+
+        selected = select_best_channels([sp, rio])
+
+        self.assertEqual(len(selected), 2)
 
 
 if __name__ == "__main__":
