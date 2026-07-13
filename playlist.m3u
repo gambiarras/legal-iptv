@@ -87,10 +87,6 @@ http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/serieclassic/serieclassic/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="caravana-play" tvg-name="Caravana Play" tvg-logo="https://i.postimg.cc/59CKXBvC/caravana-play.jpg", Caravana Play
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/keynni6990/keynni6990/playlist.m3u8?hls_ctx=7l5p09n6
-
 #EXTINF:-1 group-title="Variedades" tvg-id="CatveFM.br" tvg-name="Catve FM" tvg-logo="https://i.imgur.com/w89yw36.png", Catve FM
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8
@@ -270,6 +266,10 @@ https://stmv1.srvif.com/lucastv/lucastv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.87" tvg-name="Mais Um" tvg-logo="https://i.postimg.cc/NFWhnwMH/mais_um.jpg", Mais Um
 #EXTGRP:Variedades
 https://stream.ichibansys.com:3230/hybrid/play.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="Megapix.br" tvg-name="Megapix" tvg-logo="https://i.imgur.com/qTYv5jt.png", Megapix
+#EXTGRP:Variedades
+http://177.52.24.163/MEGAPIX-HD/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Megapix.br" tvg-name="Megapix" tvg-logo="https://i.imgur.com/qTYv5jt.png", Megapix
 #EXTGRP:Variedades
@@ -491,10 +491,6 @@ https://s1.micineovs.com/SBT/index.m3u8?token=16FOTt9Ae2m8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1783994418/ei/0kNVapyFI7mtobIPhLXSyQ4/ip/138.117.220.50/id/LLpNUqHVam8.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhPtemJBKGkOx8ayQejFcRpqTrqNtxMkiCqUE9um7AS3wqXxTlrzSUN1_FVAsIcn0xDLoIw0B7ei/spc/SQ-umlTRG3X7plHrJot8OyMhjrmad2kflBYzpvHA3zeCszymP7AdMMnbixOs7A/vprv/1/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/2007500/met/1783972819,/mh/pR/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rmhost/rr2---sn-n0hpjput-bpbk.googlevideo.com/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52017147/mt/1783972365/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAIWuvYY3fldRXNcXm0ssnTaNNurx-J5S_s6UcTA1N8LmAiAbKvPz3me-e3cxsqOsPz2rzBMFNp1t4kWSKcflZ-LDgQ%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rmhost,rms/lsig/APaTxxMwRQIgQ0YpBXevU_xJA56QSfwLH6NwoyTQFO62YXSJHivziDICIQD83sos5Cr7eHIeYOjsiIsWPwmWEAHNiu7C3eB_Tsy5qg%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTCuiaba.br" tvg-name="SBT Cuiaba" tvg-logo="https://i.imgur.com/EZJWQ3i.png", SBT Cuiaba
-#EXTGRP:Variedades
-https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
@@ -510,18 +506,6 @@ http://45.190.28.50/SBT_HD/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.22" tvg-name="SBT News" tvg-logo="https://i.postimg.cc/NF5jbN5d/sbt_news.jpg", SBT News
 #EXTGRP:Variedades
 https://sbtnews.maissbt.com/3.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTNovaMutum.br" tvg-name="SBT Nova Mutum" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d0/Logotipo_do_SBT_Nova_Mutum.png", SBT Nova Mutum
-#EXTGRP:Variedades
-https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTRondonopolis.br" tvg-name="SBT Rondonopolis" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d5/Logotipo_do_SBT_Rondon%C3%B3polis.png", SBT Rondonopolis
-#EXTGRP:Variedades
-https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTSinop.br" tvg-name="SBT Sinop" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/8/8b/Logotipo_do_SBT_Sinop.png", SBT Sinop
-#EXTGRP:Variedades
-https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="SESCTV.br" tvg-name="SESC TV" tvg-logo="https://i.imgur.com/Mu8O6CV.png", SESC TV
 #EXTGRP:Variedades
@@ -786,10 +770,6 @@ https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.108" tvg-name="TV Life América" tvg-logo="https://i.postimg.cc/bwVCbfwL/tv-life-america.png", TV Life América
 #EXTGRP:Variedades
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.36" tvg-name="TV Mais Brasil" tvg-logo="https://i.postimg.cc/9XYT6hfP/tvmaisbrasil.jpg", TV Mais Brasil
-#EXTGRP:Variedades
-https://stmv8.samcast.com.br/tvmaisbrasil/tvmaisbrasil/playlist.m3u8?hls_ctx=93035385
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaisMarica.br" tvg-name="TV Mais Marica" tvg-logo="https://i.imgur.com/lgCRX7q.png", TV Mais Marica
 #EXTGRP:Variedades
