@@ -87,10 +87,6 @@ http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/serieclassic/serieclassic/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="caravana-play" tvg-name="Caravana Play" tvg-logo="https://i.postimg.cc/59CKXBvC/caravana-play.jpg", Caravana Play
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/keynni6990/keynni6990/playlist.m3u8?hls_ctx=dp336953
-
 #EXTINF:-1 group-title="Variedades" tvg-id="CatveFM.br" tvg-name="Catve FM" tvg-logo="https://i.imgur.com/w89yw36.png", Catve FM
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8
@@ -170,6 +166,10 @@ https://video01.logicahost.com.br/ypetv/ypetv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="FalaLitoral.br" tvg-name="Fala Litoral" tvg-logo="https://i.imgur.com/NF6PL8O.png", Fala Litoral
 #EXTGRP:Variedades
 https://5c483b9d1019c.streamlock.net/falalitoraltv/falalitoraltv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.63" tvg-name="Fama TV" tvg-logo="https://i.postimg.cc/mg6b26n8/tv_fama.jpg", Fama TV
+#EXTGRP:Variedades
+https://tv2.fastcast4u.com:3310/live/famatvlive.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.15" tvg-name="Filmelier TV" tvg-logo="https://i.postimg.cc/0jf73RwY/filmeliertv.jpg", Filmelier TV
 #EXTGRP:Variedades
@@ -266,6 +266,10 @@ https://stream.ichibansys.com:3230/hybrid/play.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="Megapix.br" tvg-name="Megapix" tvg-logo="https://i.imgur.com/qTYv5jt.png", Megapix
 #EXTGRP:Variedades
 http://45.190.156.152/MEGAPIX/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.65" tvg-name="Melodie TV" tvg-logo="https://i.postimg.cc/g20BQHxg/melody_tv.jpg", Melodie TV
+#EXTGRP:Variedades
+https://live20.bozztv.com/akamaissh101/ssh101/melodietvlive/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.84" tvg-name="Ministério Infantil TV" tvg-logo="https://i.postimg.cc/GtrgvgjN/ministerio_infantil.jpg", Ministério Infantil TV
 #EXTGRP:Variedades
@@ -742,10 +746,6 @@ https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.108" tvg-name="TV Life América" tvg-logo="https://i.postimg.cc/bwVCbfwL/tv-life-america.png", TV Life América
 #EXTGRP:Variedades
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.36" tvg-name="TV Mais Brasil" tvg-logo="https://i.postimg.cc/9XYT6hfP/tvmaisbrasil.jpg", TV Mais Brasil
-#EXTGRP:Variedades
-https://stmv8.samcast.com.br/tvmaisbrasil/tvmaisbrasil/playlist.m3u8?hls_ctx=20354q87
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaisMarica.br" tvg-name="TV Mais Marica" tvg-logo="https://i.imgur.com/lgCRX7q.png", TV Mais Marica
 #EXTGRP:Variedades
@@ -1356,6 +1356,10 @@ https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8
 #EXTINF:-1 group-title="Religião" tvg-id="RedeGospel.br" tvg-name="Rede Gospel" tvg-logo="https://i.imgur.com/mttSwgO.png", Rede Gospel
 #EXTGRP:Religião
 http://45.190.28.50/REDE_GOSPEL_HD/index.m3u8
+
+#EXTINF:-1 group-title="Religião" tvg-id="RedeSeculo21.br" tvg-name="Rede Seculo 21" tvg-logo="", Rede Seculo 21
+#EXTGRP:Religião
+http://45.162.64.114/REDE_SECULO_21/index.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="RedeVida.br" tvg-name="Rede Vida" tvg-logo="https://i.imgur.com/mP1qfp2.png", Rede Vida
 #EXTGRP:Religião
