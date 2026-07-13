@@ -13,6 +13,7 @@ class Channel:
     tvg_id: str | None = None
     source_type: str | None = None
     source_url: str | None = None
+    feed_id: str | None = None
     status: str | None = None
     resolved_at: str | None = None
     expires_at: str | None = None

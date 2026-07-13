@@ -57,6 +57,7 @@ def fetch_channels(
                 tvg_id=item.get("tvg_id"),
                 source_type=item.get("source_type"),
                 source_url=item.get("source_url"),
+                feed_id=item.get("feed_id"),
                 status=item.get("status"),
                 resolved_at=item.get("resolved_at"),
                 expires_at=item.get("expires_at"),
