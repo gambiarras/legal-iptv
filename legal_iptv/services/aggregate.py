@@ -7,6 +7,7 @@ from legal_iptv.exporters import render_m3u
 from legal_iptv.io import write_json_atomic
 from legal_iptv.models import Channel
 from legal_iptv.services.channel_selector import select_best_channels
+from legal_iptv.services.epg_mapper import enrich_epg_metadata, load_xmltv_aliases
 from legal_iptv.services.link_validator import (
     filter_cached_offline_channels,
     refresh_stream_status,
@@ -59,7 +60,9 @@ def run_aggregation(config: AppConfig) -> None:
         )
 
         all_channels = extra + iptv + live
-        selected = select_best_channels(all_channels)
+        xmltv_aliases = load_xmltv_aliases(client)
+        enriched_channels = enrich_epg_metadata(all_channels, xmltv_aliases=xmltv_aliases)
+        selected = select_best_channels(enriched_channels)
         selected_before_stream_filter = len(selected)
 
         if config.validate_streams:

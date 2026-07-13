@@ -2,13 +2,7 @@ from collections import defaultdict
 
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import CATEGORY_ORDER
-
-
-EPG_URLS = [
-    "https://iptv-epg.org/files/epg-br.xml",
-    "https://i.mjh.nz/Plex/all.xml",
-    "https://i.mjh.nz/SamsungTVPlus/all.xml",
-]
+from legal_iptv.services.epg_sources import EPG_URLS
 
 
 def _sanitize_attribute(value: str | None) -> str:
@@ -29,7 +23,7 @@ def _render_header() -> str:
 
 def _render_channel(channel: Channel) -> str:
     group = _sanitize_attribute(channel.group)
-    tvg_id = _sanitize_attribute(channel.tvg_id or channel.id)
+    tvg_id = _sanitize_attribute(channel.tvg_id)
     name = _sanitize_attribute(channel.name)
     logo = _sanitize_attribute(channel.logo)
     display_name = _sanitize_display_name(channel.name)

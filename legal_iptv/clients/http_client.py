@@ -75,11 +75,24 @@ class HttpClient:
             referer=referer,
         )
 
+    def get_bytes(
+        self,
+        url: str,
+        referer: Optional[str] = None,
+    ) -> bytes:
+        return self._request(
+            url=url,
+            expect_json=False,
+            referer=referer,
+            as_bytes=True,
+        )
+
     def _request(
         self,
         url: str,
         expect_json: bool,
         referer: Optional[str] = None,
+        as_bytes: bool = False,
     ):
         last_error = None
         last_status = None
@@ -116,6 +129,9 @@ class HttpClient:
 
                 if expect_json:
                     return response.json()
+
+                if as_bytes:
+                    return response.content
 
                 return response.text
 

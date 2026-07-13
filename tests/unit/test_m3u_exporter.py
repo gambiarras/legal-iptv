@@ -19,7 +19,7 @@ class M3UExporterTest(unittest.TestCase):
 
         self.assertTrue(playlist.startswith("#EXTM3U"))
         self.assertIn('group-title="Web Live"', playlist)
-        self.assertIn('tvg-id="example.channel"', playlist)
+        self.assertIn('tvg-id=""', playlist)
         self.assertIn("https://example.test/live.m3u8", playlist)
         self.assertTrue(playlist.endswith("\n"))
 
@@ -52,7 +52,7 @@ class M3UExporterTest(unittest.TestCase):
         playlist = render_m3u([channel])
 
         self.assertIn('group-title="Web Live"', playlist)
-        self.assertIn('tvg-id="example.\'channel\'"', playlist)
+        self.assertIn('tvg-id=""', playlist)
         self.assertIn('tvg-name="Example \'Quoted\' Channel"', playlist)
         self.assertIn('tvg-logo="https://example.test/\'logo\'.png"', playlist)
         self.assertIn("Example \"Quoted\" Channel", playlist)

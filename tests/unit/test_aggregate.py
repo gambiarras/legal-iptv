@@ -42,6 +42,14 @@ def make_channel(id: str, stream_url: str) -> Channel:
 
 
 class AggregateTest(unittest.TestCase):
+    def setUp(self):
+        self.epg_patcher = patch(
+            "legal_iptv.services.aggregate.load_xmltv_aliases",
+            return_value={},
+        )
+        self.epg_patcher.start()
+        self.addCleanup(self.epg_patcher.stop)
+
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")
     @patch("legal_iptv.services.aggregate.extra_channels.fetch_channels")
