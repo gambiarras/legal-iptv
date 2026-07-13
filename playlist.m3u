@@ -43,10 +43,6 @@ https://video01.brascast.com/bdctv/bdctv/playlist.m3u8
 #EXTGRP:Variedades
 http://45.190.156.152/BIS/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.51" tvg-name="BS TV Online" tvg-logo="https://i.postimg.cc/bJk7dg4Q/bstv-online.jpg", BS TV Online
 #EXTGRP:Variedades
 https://video05.logicahost.com.br/gbsstudio/gbsstudio/playlist.m3u8
@@ -90,10 +86,6 @@ http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="series-classicas" tvg-name="Canal Séries Classic" tvg-logo="https://i.postimg.cc/JzY6JCzg/cana-series-classic.png", Canal Séries Classic
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/serieclassic/serieclassic/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="caravana-play" tvg-name="Caravana Play" tvg-logo="https://i.postimg.cc/59CKXBvC/caravana-play.jpg", Caravana Play
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/keynni6990/keynni6990/playlist.m3u8?hls_ctx=11m01q85
 
 #EXTINF:-1 group-title="Variedades" tvg-id="CatveFM.br" tvg-name="Catve FM" tvg-logo="https://i.imgur.com/w89yw36.png", Catve FM
 #EXTGRP:Variedades
@@ -495,6 +487,10 @@ https://s1.micineovs.com/SBT/index.m3u8?token=16FOTt9Ae2m8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1783980016/ei/kAtVarnAOYizobIPoKTMGQ/ip/138.117.220.50/id/LLpNUqHVam8.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/ARmQxEUL5M7kjFevmRKmE7SY2EPr5ei_CgkTVc3VXR5awSqZq5PHiYZCqzxGhgmjx1g82P7fzT6Pkdtn/spc/SQ-umvgVrh5m-FdiCRNeoCK5RdGz7EaLPiSKEchu-qo3GgddPz1ex5W2MRsGAw/vprv/1/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/1512500/met/1783958417,/mh/pR/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52017147/mt/1783957972/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAKrYlCOaHWU-IxeQyYWqhDV1-x10IVkkFVChAeQ6zrAyAiEA-OL0eZHox5YvYLy2yJf77Y3lyJeMqpD-kS3qC3MQEm4%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhANO2_N6XlILA0FTrKoOx-kDkMvzRv9ezYUXRNGtylaBSAiBUp-iVxgm1M4fIcREjmhkn1wNzY7HepEIRuyHZjwrzdg%3D%3D/playlist/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTCuiaba.br" tvg-name="SBT Cuiaba" tvg-logo="https://i.imgur.com/EZJWQ3i.png", SBT Cuiaba
+#EXTGRP:Variedades
+https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
@@ -510,6 +506,18 @@ http://45.190.28.50/SBT_HD/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.22" tvg-name="SBT News" tvg-logo="https://i.postimg.cc/NF5jbN5d/sbt_news.jpg", SBT News
 #EXTGRP:Variedades
 https://sbtnews.maissbt.com/3.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTNovaMutum.br" tvg-name="SBT Nova Mutum" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d0/Logotipo_do_SBT_Nova_Mutum.png", SBT Nova Mutum
+#EXTGRP:Variedades
+https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTRondonopolis.br" tvg-name="SBT Rondonopolis" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d5/Logotipo_do_SBT_Rondon%C3%B3polis.png", SBT Rondonopolis
+#EXTGRP:Variedades
+https://video09.logicahost.com.br/sbtroo/sbtroo/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTSinop.br" tvg-name="SBT Sinop" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/8/8b/Logotipo_do_SBT_Sinop.png", SBT Sinop
+#EXTGRP:Variedades
+https://video09.logicahost.com.br/sbtsinop/sbtsinop/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="SESCTV.br" tvg-name="SESC TV" tvg-logo="https://i.imgur.com/Mu8O6CV.png", SESC TV
 #EXTGRP:Variedades
@@ -775,10 +783,6 @@ https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
 #EXTGRP:Variedades
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="script_catalog_1.36" tvg-name="TV Mais Brasil" tvg-logo="https://i.postimg.cc/9XYT6hfP/tvmaisbrasil.jpg", TV Mais Brasil
-#EXTGRP:Variedades
-https://stmv8.samcast.com.br/tvmaisbrasil/tvmaisbrasil/playlist.m3u8?hls_ctx=702x9943
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaisMarica.br" tvg-name="TV Mais Marica" tvg-logo="https://i.imgur.com/lgCRX7q.png", TV Mais Marica
 #EXTGRP:Variedades
 https://5cf4a2c2512a2.streamlock.net/tvmaismarica/tvmaismarica/playlist.m3u8
@@ -1005,6 +1009,10 @@ https://stmv.webtvninjas.com.br/xtremetv54/xtremetv54/playlist.m3u8
 #EXTGRP:Filmes
 http://45.190.28.50/AXN_HD/index.m3u8
 
+#EXTINF:-1 group-title="Filmes" tvg-id="CINDIETV.br" tvg-name="CINDIE TV" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV
+#EXTGRP:Filmes
+https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8
+
 #EXTINF:-1 group-title="Filmes" tvg-id="MyTimeMovieNetwork.br" tvg-name="MyTime Movie Network" tvg-logo="https://i.imgur.com/aiGQtzI.png", MyTime Movie Network
 #EXTGRP:Filmes
 https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8
@@ -1062,10 +1070,6 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1783980019/ei/
 #EXTINF:-1 group-title="Séries" tvg-id="classic-mr-bean.tv.U__tcQKkU9w" tvg-name="Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!" tvg-logo="https://i.ytimg.com/vi/U__tcQKkU9w/hqdefault.jpg?v=69b9476d&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVyszW21SsmVk_8cCsC5lOuTISYw", Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1783980020/ei/lAtVauz5EY-R-LAPsfOjgA4/ip/138.117.220.50/id/U__tcQKkU9w.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/ARmQxEUXJ9YMkuRQdS9TN2okZa8dO7iCYqT-MKqu0CDQ7M7Hl2WNYZjVPNYmXTOEeqAGJwrG-nKlRxHQ/spc/SQ-umoxpw5QdtzHf9xx8uL4fOOjXqIut-OfrrHtwF1QGyFTko0T1yIq-FMBc8w/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1512500/met/1783958420,/mh/rf/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52017147/mt/1783957972/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAISnOZCSelg0qVL6KW288FIeuynzV940Xtq0eEchWCYGAiAs3Gzl01LSvMexoV3I_kTy3iEV6bHt6cxQQxj75y81Qg%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAPiova5kgx6dF36NSa93Dg4klBdMLEGlRckBz1FpuzQ3AiAmOoUKgjwAdEvA_SyAqqBkPTbcjGrZ6MT-V3FlZxDhaQ%3D%3D/playlist/index.m3u8
-
-#EXTINF:-1 group-title="Séries" tvg-id="iptvsimplesbr.tv" tvg-name="Séries #1" tvg-logo="", Séries #1
-#EXTGRP:Séries
-https://sae12.playlist.ttvnw.net/v1/playlist/CtMEl0iJ7H0VyDcCVed1NEL1JPnKEuXWS79poDOgOHyehSFMjWLVrACSEH39zHGOTHqQzn3b1KAoDMiFqBKklY99TFugI8Pz843N4RRJgtuLhcbNfKrzvSBSaSftMXOOxWyDr5JXC1YdERxnLUaCwhIGRxepKFU9BURtUnXzb1pjSE8cFGZyAqrSHNoFK0Ax6HQCjBA1FFvK091-PxZiqhyD46frFQaxsvGbvB6tPRhdSGmdRe39Yl9rGyaEVCBIjioLlvWXvUvNGVC7DZNiRjX-y_sq9N39_xbtGxHCYNGqiam_E0IQga14kaTviAt7GCgO5OOlV6DJt8tEfLpvveUHz-doMN-bPOlSrbXHt14-PK1NDM95DUuMli61vpW8bhgVaWT-nb1041wL1yLSPGAnAq-etH08w8F1jjIlYdNknfebB3hsbLfs-AG2X2TooXxDX3GPUycGuWhZ-SSkUr4OOC0KH0UffZ-S0gbEe7VyroadCo5LWozlIbLXekbi6fYOHaUnohZBgZh88UD3XdSLipKNrpNGjqGFdbAj2bHb53jDrcozmsYEWqmTWmNIOBbzjykj93nH4_RJdBgl7KkECMPPSCsEo1z0C5CixjIQAS3nc0UmQdAxZBHKDh89zpqMGdPFAifQaHHieWW7wn5YUsKSho4d516FAR-1Hg_HuUo61EjqNoY_NFXUnxBwO-NQ_NHy4qhiGqY3H0ljrYdqHwCZyvEVIwjzdJg6En2Q5qzcbe89KiZw3mjEB7Onsm8JUewUF2RIJfrIU-avkoH4cUMPeRoMLdQvzbrZxzYXNPINIAEqCXVzLWVhc3QtMjDKDw.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="SeriesClassic.br" tvg-name="Séries Classic" tvg-logo="https://d14vd6r4ppsx57.cloudfront.net/media/brand/S%C3%A9ries_Classic_70_Channel_100x100_RYYThZ7.png", Séries Classic
 #EXTGRP:Séries
@@ -1429,6 +1433,10 @@ https://redegospel-aovivo.nuvemplay.live/hls/stream.m3u8
 #EXTGRP:Religião
 http://45.190.28.50/REDE_GOSPEL_HD/index.m3u8
 
+#EXTINF:-1 group-title="Religião" tvg-id="RedeSeculo21.br" tvg-name="Rede Seculo 21" tvg-logo="", Rede Seculo 21
+#EXTGRP:Religião
+http://45.162.64.114/REDE_SECULO_21/index.m3u8
+
 #EXTINF:-1 group-title="Religião" tvg-id="RedeVida.br" tvg-name="Rede Vida" tvg-logo="https://i.imgur.com/mP1qfp2.png", Rede Vida
 #EXTGRP:Religião
 http://45.190.28.50/REDE_VIDA_HD/index.m3u8
@@ -1590,6 +1598,12 @@ https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8
 #EXTINF:-1 group-title="Esportes" tvg-id="PremiereClubes.br" tvg-name="Premiere Clubes" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Premiere_(2017)_logo.png/960px-Premiere_(2017)_logo.png", Premiere Clubes
 #EXTGRP:Esportes
 http://45.190.156.152/PREMIERE_CLUBES/index.m3u8
+
+### Canais Shop
+
+#EXTINF:-1 group-title="Shop" tvg-id="1001Noites.br" tvg-name="1001 Noites" tvg-logo="https://i.imgur.com/dWA9y2J.png", 1001 Noites
+#EXTGRP:Shop
+https://cdn.jmvstream.com/w/LVW-8155/ngrp:LVW8155_41E1ciuCvO_all/playlist.m3u8
 
 ### Canais Viagem
 
