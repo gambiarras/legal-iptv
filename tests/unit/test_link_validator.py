@@ -25,14 +25,21 @@ class FakeResponse:
         self.closed = True
 
 
-def make_channel(id: str, stream_url: str) -> Channel:
+def make_channel(
+    id: str,
+    stream_url: str,
+    *,
+    source: str = "live_stream_catalog",
+    source_type: str | None = None,
+) -> Channel:
     return Channel(
         id=id,
         name=id,
         stream_url=stream_url,
         logo="",
         group="Web Live",
-        source="live_stream_catalog",
+        source=source,
+        source_type=source_type,
     )
 
 
@@ -208,6 +215,43 @@ class LinkValidatorTest(unittest.TestCase):
 
         self.assertEqual([channel.id for channel in filtered_channels], ["active"])
 
+    def test_cached_offline_filter_keeps_transient_live_catalog_urls(self):
+        checked_at = datetime.now(timezone.utc).isoformat()
+        transient_url = "https://manifest.googlevideo.com/live.m3u8"
+        static_url = "https://example.test/offline.m3u8"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            transient_url: {
+                                "active": False,
+                                "checked_at": checked_at,
+                            },
+                            static_url: {
+                                "active": False,
+                                "checked_at": checked_at,
+                            },
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            channels = [
+                make_channel("youtube", transient_url, source_type="youtube"),
+                make_channel("static", static_url, source="extra"),
+            ]
+
+            filtered_channels = filter_cached_offline_channels(
+                channels,
+                status_file=status_file,
+                max_age_seconds=14400,
+            )
+
+        self.assertEqual([channel.id for channel in filtered_channels], ["youtube"])
+
     @patch("legal_iptv.services.link_validator.validate_urls")
     def test_refresh_stream_status_writes_cache_and_filters_only_offline_channels(
         self,
@@ -242,6 +286,31 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertTrue(payload["urls"][active_url]["active"])
         self.assertFalse(payload["urls"][offline_url]["active"])
         self.assertIsNone(payload["urls"][unknown_url]["active"])
+
+    @patch("legal_iptv.services.link_validator.validate_urls")
+    def test_refresh_stream_status_marks_transient_live_failures_as_unknown(
+        self,
+        validate_urls_mock: Mock,
+    ):
+        transient_url = "https://manifest.googlevideo.com/live.m3u8"
+        validate_urls_mock.return_value = {transient_url: False}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            channels = [
+                make_channel("youtube", transient_url, source_type="youtube"),
+            ]
+
+            active_channels = refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        self.assertEqual([channel.id for channel in active_channels], ["youtube"])
+        self.assertIsNone(payload["urls"][transient_url]["active"])
 
 
 if __name__ == "__main__":

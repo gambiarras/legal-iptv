@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from legal_iptv.clients import HttpClient
@@ -9,6 +10,29 @@ from legal_iptv.services.category_mapper import localized_category_name
 LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/live-stream-catalog/main/channels.json"
 
 
+def _parse_datetime(value: str | None) -> datetime | None:
+    if not value:
+        return None
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+
+    return parsed
+
+
+def _current_ttl_seconds(item: dict) -> int | None:
+    expires_at = _parse_datetime(item.get("expires_at"))
+    if expires_at is not None:
+        return max(0, int((expires_at - datetime.now(timezone.utc)).total_seconds()))
+
+    return item.get("ttl_seconds")
+
+
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
     if item.get("status") != "resolved":
         return False
@@ -17,7 +41,7 @@ def _is_usable(item: dict, min_live_ttl: int) -> bool:
     if not stream_url:
         return False
 
-    ttl_seconds = item.get("ttl_seconds")
+    ttl_seconds = _current_ttl_seconds(item)
     if ttl_seconds is not None and ttl_seconds < min_live_ttl:
         return False
 
@@ -61,7 +85,7 @@ def fetch_channels(
                 status=item.get("status"),
                 resolved_at=item.get("resolved_at"),
                 expires_at=item.get("expires_at"),
-                ttl_seconds=item.get("ttl_seconds"),
+                ttl_seconds=_current_ttl_seconds(item),
             )
         )
 

@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 FALLBACK_STATUSES = {403, 405}
 UNKNOWN_STATUSES = {429}
+TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
 
 _thread_local = threading.local()
 
@@ -232,7 +233,7 @@ def filter_cached_offline_channels(
     filtered_channels = [
         channel
         for channel in channels
-        if channel.stream_url not in offline_urls
+        if channel.stream_url not in offline_urls or _is_transient_live_channel(channel)
     ]
 
     logger.info(
@@ -244,6 +245,21 @@ def filter_cached_offline_channels(
     )
 
     return filtered_channels
+
+
+def _is_transient_live_channel(channel: Channel) -> bool:
+    return (
+        channel.source == "live_stream_catalog"
+        and channel.source_type in TRANSIENT_LIVE_SOURCE_TYPES
+    )
+
+
+def _transient_live_urls(channels: list[Channel]) -> set[str]:
+    return {
+        channel.stream_url
+        for channel in channels
+        if channel.stream_url and _is_transient_live_channel(channel)
+    }
 
 
 def refresh_stream_status(
@@ -259,6 +275,10 @@ def refresh_stream_status(
         max_workers=max_workers,
         timeout=timeout,
     )
+    for url in _transient_live_urls(channels):
+        if status_by_url.get(url) is False:
+            status_by_url[url] = None
+
     write_stream_status(status_file, status_by_url)
 
     active_channels = [

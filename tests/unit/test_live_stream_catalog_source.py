@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from legal_iptv.sources.live_stream_catalog import LIVE_STREAM_CATALOG_URL, fetch_channels
@@ -99,6 +100,38 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
         self.assertEqual(client.requested_urls, [LIVE_STREAM_CATALOG_URL])
         self.assertEqual(len(channels), 1)
         self.assertEqual(channels[0].stream_url, "https://example.test/remote.m3u8")
+
+    def test_recalculates_ttl_from_expires_at(self):
+        future_expires_at = (datetime.now(timezone.utc) + timedelta(hours=1)).isoformat()
+        past_expires_at = (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat()
+        payload = [
+            {
+                "id": "channel.future",
+                "name": "Future",
+                "stream_url": "https://example.test/future.m3u8",
+                "group": "web",
+                "status": "resolved",
+                "expires_at": future_expires_at,
+                "ttl_seconds": 1,
+            },
+            {
+                "id": "channel.past",
+                "name": "Past",
+                "stream_url": "https://example.test/past.m3u8",
+                "group": "web",
+                "status": "resolved",
+                "expires_at": past_expires_at,
+                "ttl_seconds": 3600,
+            },
+        ]
+        client = FakeClient(payload)
+
+        channels = fetch_channels(client, min_live_ttl=900)
+
+        self.assertEqual(len(channels), 1)
+        self.assertEqual(channels[0].id, "channel.future")
+        self.assertGreater(channels[0].ttl_seconds, 900)
+        self.assertLessEqual(channels[0].ttl_seconds, 3600)
 
 
 if __name__ == "__main__":
