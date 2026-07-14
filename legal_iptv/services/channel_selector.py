@@ -2,7 +2,6 @@ import hashlib
 import re
 import unicodedata
 from dataclasses import replace
-from difflib import SequenceMatcher
 from urllib.parse import urlsplit, urlunsplit
 
 from legal_iptv.models import Channel
@@ -13,8 +12,6 @@ SOURCE_PRIORITY = {
     "extra": 200,
     "iptv_org": 100,
 }
-
-SIMILAR_NAME_THRESHOLD = 0.92
 
 
 def _score(channel: Channel) -> tuple:
@@ -31,6 +28,7 @@ def _score(channel: Channel) -> tuple:
         ttl_value = 0
 
     return (
+        _stream_url_quality(channel.stream_url),
         SOURCE_PRIORITY.get(channel.source, 0),
         1 if channel.status == "resolved" else 0,
         1 if channel.stream_url else 0,
@@ -49,36 +47,40 @@ def _normalize_name(name: str) -> str:
 
 def _normalize_url(url: str) -> str:
     parsed = urlsplit(url.strip())
-    path = parsed.path.rstrip("/") or "/"
+    path = _normalize_hls_path(parsed.path.rstrip("/") or "/")
     return urlunsplit(
         (
             parsed.scheme.casefold(),
             parsed.netloc.casefold(),
             path,
-            parsed.query,
+            "",
             "",
         )
     )
 
 
-def _has_similar_name(left: Channel, right: Channel) -> bool:
-    left_name = _normalize_name(left.name)
-    right_name = _normalize_name(right.name)
+def _normalize_hls_path(path: str) -> str:
+    if not path.casefold().endswith(".m3u8"):
+        return path
 
-    if not left_name or not right_name:
-        return False
+    path_parts = path.rsplit("/", 1)
+    directory = path_parts[0] if len(path_parts) == 2 else ""
+    filename = path_parts[-1].casefold()
 
-    if left_name == right_name:
-        return True
+    if re.fullmatch(r"chunklist(?:_w\d+)?\.m3u8", filename):
+        return f"{directory}/playlist.m3u8" if directory else "playlist.m3u8"
 
-    return SequenceMatcher(None, left_name, right_name).ratio() >= SIMILAR_NAME_THRESHOLD
+    return path
 
 
-def _is_duplicate_candidate(candidate: Channel, existing: Channel) -> bool:
-    if candidate.id == existing.id:
-        return True
+def _stream_url_quality(url: str) -> tuple[int, int]:
+    parsed = urlsplit(url.strip())
+    filename = parsed.path.rsplit("/", 1)[-1].casefold()
 
-    return _has_similar_name(candidate, existing)
+    stable_playlist = 1 if filename in {"master.m3u8", "playlist.m3u8"} else 0
+    has_query = 1 if parsed.query else 0
+
+    return (stable_playlist, has_query)
 
 
 def _unique_id(channel: Channel, used_ids: set[str]) -> str:
@@ -148,7 +150,7 @@ def _with_alternative_names(channels: list[Channel]) -> list[Channel]:
 
 def select_best_channels(channels: list[Channel]) -> list[Channel]:
     selected: list[Channel] = []
-    selected_by_url: dict[str, list[Channel]] = {}
+    selected_urls: set[str] = set()
 
     ranked_channels = sorted(
         (channel for channel in channels if channel.stream_url),
@@ -158,12 +160,10 @@ def select_best_channels(channels: list[Channel]) -> list[Channel]:
 
     for channel in ranked_channels:
         url_key = _normalize_url(channel.stream_url)
-        existing_channels = selected_by_url.setdefault(url_key, [])
-
-        if any(_is_duplicate_candidate(channel, existing) for existing in existing_channels):
+        if url_key in selected_urls:
             continue
 
         selected.append(channel)
-        existing_channels.append(channel)
+        selected_urls.add(url_key)
 
     return _with_unique_ids(_with_alternative_names(selected))
