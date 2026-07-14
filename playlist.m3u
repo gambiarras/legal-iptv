@@ -79,10 +79,6 @@ http://45.190.156.152/OFF/index.m3u8
 #EXTGRP:Variedades
 http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Caravana Play" tvg-logo="https://i.postimg.cc/59CKXBvC/caravana-play.jpg", Caravana Play
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/keynni6990/keynni6990/playlist.m3u8?hls_ctx=2ttg41zm
-
 #EXTINF:-1 group-title="Variedades" tvg-id="CatveFM.br" tvg-name="Catve FM" tvg-logo="https://i.imgur.com/w89yw36.png", Catve FM
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8
@@ -619,10 +615,6 @@ https://video10.logicahost.com.br/cidadefarroupilha/cidadefarroupilha/playlist.m
 #EXTGRP:Variedades
 https://televisaocidadeverde.brasilstream.com.br/hls/televisaocidadeverde/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Cidade- Afiliada à TV Gazeta" tvg-logo="https://i.postimg.cc/3RYQT2Vx/tv-cidade-afiliada-gazeta.jpg", TV Cidade- Afiliada à TV Gazeta
-#EXTGRP:Variedades
-https://video08.logicahost.com.br/tvc21/tvc21/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVClube.br" tvg-name="TV Clube" tvg-logo="https://i.imgur.com/CpXjcyE.png", TV Clube
 #EXTGRP:Variedades
 https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8
@@ -746,10 +738,6 @@ https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVLifeAmerica.br" tvg-name="TV Life America" tvg-logo="https://i.postimg.cc/bwVCbfwL/tv-life-america.png", TV Life America
 #EXTGRP:Variedades
 https://streaming.cloudecast.com/hls/tvlifeamerica/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Mais Brasil" tvg-logo="https://i.postimg.cc/9XYT6hfP/tvmaisbrasil.jpg", TV Mais Brasil
-#EXTGRP:Variedades
-https://stmv8.samcast.com.br/tvmaisbrasil/tvmaisbrasil/playlist.m3u8?hls_ctx=1022wt72
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVMaisMarica.br" tvg-name="TV Mais Marica" tvg-logo="https://i.imgur.com/lgCRX7q.png", TV Mais Marica
 #EXTGRP:Variedades
@@ -973,6 +961,10 @@ https://stmv.webtvninjas.com.br/xtremetv54/xtremetv54/playlist.m3u8
 #EXTGRP:Filmes
 http://45.190.28.50/AXN_HD/index.m3u8
 
+#EXTINF:-1 group-title="Filmes" tvg-id="CINDIETV.br" tvg-name="CINDIE TV Alternativo 1" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV Alternativo 1
+#EXTGRP:Filmes
+https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8
+
 #EXTINF:-1 group-title="Filmes" tvg-id="MyTimeMovieNetwork.br" tvg-name="MyTime Movie Network Brazil" tvg-logo="https://i.imgur.com/pw4NZK1.png", MyTime Movie Network Brazil
 #EXTGRP:Filmes
 https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8
@@ -1002,10 +994,6 @@ http://45.162.64.114/SONY_MOVIES/index.m3u8
 http://45.190.28.50/SONY_MOVIES/index.m3u8
 
 ### Canais Séries
-
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
-#EXTGRP:Séries
-https://fa723fc1b171.sae13.playlist.live-video.net/v1/playlist/Cq8F6q9oZw11QIqe9Yd8rHkI3UDh8bx23NiikKgqtlCVaj2dy89EYQLR_s9t9au3Z8TyWstMg-nZb_oD6rf1cLx02E3ne9f4lbQZssH-bN3q2tYGG1S6iG1GiRl-UjeKjNqDfpZNZd-b6y6DQq1a71-NJy2gSrQkl3YG3SEx8Pw7MiTLJjIbRpsCYa5kJDcPTJCNwC6zdP_ijzLnQJEaUYOw8GYtgCHMcfAiVF_TfvyL3Op76EM9AvSOI1hIAOyPBi_El1HkWiJFIQFJsqSn0HYmf9CTg_VKZs9KRY2AqdLxP_nThvLJC1udDfJj_z2LV_eQ_EhfiA6HKhU_jyqn9D4AdFEWOYjbpvtAZZqbzJhw-bIbGkz0PHi1gjz1PK6aIUzZA5aTm7yKKsr7_TSxiBy9SOySSI9TIAyQfHLeoY6FFY9Z_564uxfUxO_cNhjJ1NSQFVkHO_nIGSsku84xzEIhmcL8v56VG8p7dbaNCfp0wuA_tHUzYp8kLkdloZYn2gZS2F6OL1ZfnfFHpuNGC0463YRu4SfwFh-cmC0nPNcXnGyh5H8h7h1bojDzm5Dzc__rQGd2A9iEoVujHGkeL-9ctGGCDChG3shKxHCAouypWCEgL6UbuPlCeIp0z78OYF8RPL0sMab9O7gN2hHvosK22E4LSdc6EaN109XE55ypsLTsmbWmZrzeA5CsHpCpzdHSaeQSTWi66VxC50ZnHyvLuTAvegucp-t9ZXu-hAgC-tDc73wcnYuzBAOHo__ag8cLj5B0pPsszTc5aEYd1kIuwVdUgW8e35RGNdPrcFZzvbCVxdwNaaxkBByci5hxM39yrCODk6ezzTbctl3YzJgoVpsKhEXg4soZKOVXT3b-JBW0vGTzA9zeE1NvKFBeN24W0yzfIGMT22Us619Toeq2GgxFhHuVfA38ws2aSukgASoJdXMtZWFzdC0yMMsP.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
@@ -1582,6 +1570,10 @@ http://45.162.64.114/TV_CAMARA/index.m3u8
 http://45.190.28.50/TV_CAMARA/index.m3u8
 
 ### Canais Música
+
+#EXTINF:-1 group-title="Música" tvg-id="KpopTVPlay.br" tvg-name="KpopTV Play" tvg-logo="https://i.imgur.com/Tf0vweF.png", KpopTV Play
+#EXTGRP:Música
+https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
 
 #EXTINF:-1 group-title="Música" tvg-id="MusicBoxBrazil.br" tvg-name="Music Box Brazil Alternativo 1" tvg-logo="https://i.imgur.com/CDPCF2X.png", Music Box Brazil Alternativo 1
 #EXTGRP:Música
