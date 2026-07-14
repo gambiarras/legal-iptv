@@ -162,6 +162,14 @@ def _parse_datetime(value: str | None) -> datetime | None:
     return parsed
 
 
+def _activity_status(is_active: bool | None) -> str:
+    if is_active is True:
+        return "active"
+    if is_active is False:
+        return "offline"
+    return "unknown"
+
+
 def write_stream_status(
     status_file: Path,
     status_by_url: dict[str, bool | None],
@@ -172,6 +180,7 @@ def write_stream_status(
         "urls": {
             url: {
                 "active": is_active,
+                "status": _activity_status(is_active),
                 "checked_at": checked_at,
             }
             for url, is_active in sorted(status_by_url.items())

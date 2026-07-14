@@ -283,9 +283,16 @@ class LinkValidatorTest(unittest.TestCase):
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
         self.assertEqual([channel.id for channel in active_channels], ["active", "unknown"])
+        self.assertIsInstance(payload["generated_at"], str)
         self.assertTrue(payload["urls"][active_url]["active"])
+        self.assertEqual(payload["urls"][active_url]["status"], "active")
+        self.assertIsInstance(payload["urls"][active_url]["checked_at"], str)
         self.assertFalse(payload["urls"][offline_url]["active"])
+        self.assertEqual(payload["urls"][offline_url]["status"], "offline")
+        self.assertIsInstance(payload["urls"][offline_url]["checked_at"], str)
         self.assertIsNone(payload["urls"][unknown_url]["active"])
+        self.assertEqual(payload["urls"][unknown_url]["status"], "unknown")
+        self.assertIsInstance(payload["urls"][unknown_url]["checked_at"], str)
 
     @patch("legal_iptv.services.link_validator.validate_urls")
     def test_refresh_stream_status_marks_transient_live_failures_as_unknown(
@@ -311,6 +318,8 @@ class LinkValidatorTest(unittest.TestCase):
 
         self.assertEqual([channel.id for channel in active_channels], ["youtube"])
         self.assertIsNone(payload["urls"][transient_url]["active"])
+        self.assertEqual(payload["urls"][transient_url]["status"], "unknown")
+        self.assertIsInstance(payload["urls"][transient_url]["checked_at"], str)
 
 
 if __name__ == "__main__":
