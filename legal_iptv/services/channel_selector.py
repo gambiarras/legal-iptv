@@ -2,6 +2,7 @@ import hashlib
 import re
 import unicodedata
 from dataclasses import replace
+from functools import lru_cache
 from urllib.parse import urlsplit, urlunsplit
 
 from legal_iptv.models import Channel
@@ -12,6 +13,8 @@ SOURCE_PRIORITY = {
     "extra": 200,
     "iptv_org": 100,
 }
+
+CHUNKLIST_PATTERN = re.compile(r"chunklist(?:_w\d+)?\.m3u8")
 
 
 def _score(channel: Channel) -> tuple:
@@ -38,6 +41,7 @@ def _score(channel: Channel) -> tuple:
     )
 
 
+@lru_cache(maxsize=4096)
 def _normalize_name(name: str) -> str:
     normalized = unicodedata.normalize("NFKD", name)
     ascii_name = normalized.encode("ascii", "ignore").decode("ascii")
@@ -45,6 +49,7 @@ def _normalize_name(name: str) -> str:
     return " ".join(simplified.split())
 
 
+@lru_cache(maxsize=8192)
 def _normalize_url(url: str) -> str:
     parsed = urlsplit(url.strip())
     path = _normalize_hls_path(parsed.path.rstrip("/") or "/")
@@ -59,6 +64,7 @@ def _normalize_url(url: str) -> str:
     )
 
 
+@lru_cache(maxsize=8192)
 def _normalize_hls_path(path: str) -> str:
     if not path.casefold().endswith(".m3u8"):
         return path
@@ -67,12 +73,13 @@ def _normalize_hls_path(path: str) -> str:
     directory = path_parts[0] if len(path_parts) == 2 else ""
     filename = path_parts[-1].casefold()
 
-    if re.fullmatch(r"chunklist(?:_w\d+)?\.m3u8", filename):
+    if CHUNKLIST_PATTERN.fullmatch(filename):
         return f"{directory}/playlist.m3u8" if directory else "playlist.m3u8"
 
     return path
 
 
+@lru_cache(maxsize=8192)
 def _stream_url_quality(url: str) -> tuple[int, int]:
     parsed = urlsplit(url.strip())
     filename = parsed.path.rsplit("/", 1)[-1].casefold()

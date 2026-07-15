@@ -14,6 +14,8 @@ class RunMetadata:
     stream_filtered_channels: int = 0
     deduplicated_channels: int = 0
     selected_by_source: dict[str, int] = field(default_factory=dict)
+    timings_seconds: dict[str, float] = field(default_factory=dict)
+    epg_aliases_count: int = 0
 
     def to_dict(self) -> dict:
         return asdict(self)

@@ -29,6 +29,8 @@ class MetadataTest(unittest.TestCase):
             selected,
             source_errors={"iptv_org": "boom"},
             selected_before_stream_filter=2,
+            timings_seconds={"total": 1.23},
+            epg_aliases_count=42,
         ).to_dict()
 
         self.assertEqual(metadata["total_input_channels"], 3)
@@ -41,6 +43,8 @@ class MetadataTest(unittest.TestCase):
         self.assertEqual(metadata["stream_filtered_channels"], 1)
         self.assertEqual(metadata["deduplicated_channels"], 1)
         self.assertEqual(metadata["selected_by_source"], {"live_stream_catalog": 1})
+        self.assertEqual(metadata["timings_seconds"], {"total": 1.23})
+        self.assertEqual(metadata["epg_aliases_count"], 42)
 
 
 if __name__ == "__main__":

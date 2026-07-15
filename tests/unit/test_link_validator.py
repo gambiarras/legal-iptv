@@ -279,13 +279,18 @@ class LinkValidatorTest(unittest.TestCase):
                 status_file=status_file,
                 max_workers=4,
                 timeout=2,
+                max_age_seconds=14400,
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
         self.assertEqual([channel.id for channel in active_channels], ["active", "unknown"])
         self.assertIsInstance(payload["generated_at"], str)
+        self.assertEqual(payload["summary"]["validated_urls"], 3)
+        self.assertEqual(payload["summary"]["cached_urls"], 0)
         self.assertTrue(payload["urls"][active_url]["active"])
         self.assertEqual(payload["urls"][active_url]["status"], "active")
+        self.assertEqual(payload["urls"][active_url]["validation"], "validated")
+        self.assertEqual(payload["urls"][active_url]["sources"], ["live_stream_catalog"])
         self.assertIsInstance(payload["urls"][active_url]["checked_at"], str)
         self.assertFalse(payload["urls"][offline_url]["active"])
         self.assertEqual(payload["urls"][offline_url]["status"], "offline")
@@ -293,6 +298,58 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertIsNone(payload["urls"][unknown_url]["active"])
         self.assertEqual(payload["urls"][unknown_url]["status"], "unknown")
         self.assertIsInstance(payload["urls"][unknown_url]["checked_at"], str)
+
+
+    @patch("legal_iptv.services.link_validator.validate_urls")
+    def test_refresh_stream_status_reuses_fresh_cached_records(
+        self,
+        validate_urls_mock: Mock,
+    ):
+        cached_url = "https://example.test/cached.m3u8"
+        new_url = "https://example.test/new.m3u8"
+        checked_at = datetime.now(timezone.utc).isoformat()
+        validate_urls_mock.return_value = {new_url: True}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            cached_url: {
+                                "active": True,
+                                "status": "active",
+                                "checked_at": checked_at,
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            channels = [
+                make_channel("cached", cached_url),
+                make_channel("new", new_url),
+            ]
+
+            active_channels = refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        validate_urls_mock.assert_called_once_with(
+            [new_url],
+            max_workers=4,
+            timeout=2,
+        )
+        self.assertEqual([channel.id for channel in active_channels], ["cached", "new"])
+        self.assertEqual(payload["summary"]["validated_urls"], 1)
+        self.assertEqual(payload["summary"]["cached_urls"], 1)
+        self.assertEqual(payload["urls"][cached_url]["validation"], "cached")
+        self.assertEqual(payload["urls"][new_url]["validation"], "validated")
 
     @patch("legal_iptv.services.link_validator.validate_urls")
     def test_refresh_stream_status_marks_transient_live_failures_as_unknown(
@@ -313,6 +370,7 @@ class LinkValidatorTest(unittest.TestCase):
                 status_file=status_file,
                 max_workers=4,
                 timeout=2,
+                max_age_seconds=14400,
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 

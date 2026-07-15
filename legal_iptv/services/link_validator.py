@@ -1,5 +1,5 @@
-import logging
 import json
+import logging
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -170,24 +170,156 @@ def _activity_status(is_active: bool | None) -> str:
     return "unknown"
 
 
+def _read_status_records(status_file: Path) -> dict[str, dict]:
+    if not status_file.exists():
+        return {}
+
+    try:
+        payload = json.loads(status_file.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        logger.warning("Failed to read stream status file path=%s", status_file)
+        return {}
+
+    records = payload.get("urls", {})
+    if not isinstance(records, dict):
+        return {}
+
+    return {url: record for url, record in records.items() if isinstance(record, dict)}
+
+
+def _is_fresh_record(record: dict, *, max_age_seconds: int) -> bool:
+    checked_at = _parse_datetime(record.get("checked_at"))
+    if checked_at is None:
+        return False
+
+    if checked_at < _utc_now() - timedelta(seconds=max_age_seconds):
+        return False
+
+    return record.get("active") in {True, False, None}
+
+
+def _record_activity(record: dict | None) -> bool | None:
+    if not isinstance(record, dict):
+        return False
+
+    active = record.get("active")
+    if active is True or active is False or active is None:
+        return active
+
+    return False
+
+
+def _url_metadata(channels: list[Channel]) -> dict[str, dict]:
+    metadata: dict[str, dict] = {}
+
+    for channel in channels:
+        if not channel.stream_url:
+            continue
+
+        item = metadata.setdefault(
+            channel.stream_url,
+            {
+                "channels": [],
+                "sources": set(),
+                "source_types": set(),
+            },
+        )
+        item["channels"].append(
+            {
+                "id": channel.id,
+                "name": channel.name,
+                "source": channel.source,
+                "source_type": channel.source_type,
+            }
+        )
+        item["sources"].add(channel.source)
+        if channel.source_type:
+            item["source_types"].add(channel.source_type)
+
+    return {
+        url: {
+            "channels": item["channels"],
+            "sources": sorted(item["sources"]),
+            "source_types": sorted(item["source_types"]),
+        }
+        for url, item in metadata.items()
+    }
+
+
+def _status_record(
+    is_active: bool | None,
+    *,
+    checked_at: str,
+    metadata: dict | None = None,
+    validation: str = "validated",
+) -> dict:
+    return {
+        "active": is_active,
+        "status": _activity_status(is_active),
+        "checked_at": checked_at,
+        "validation": validation,
+        **(metadata or {}),
+    }
+
+
+def _write_stream_status_records(
+    status_file: Path,
+    records_by_url: dict[str, dict],
+    *,
+    generated_at: str,
+    validated_urls: int,
+    cached_urls: int,
+) -> None:
+    status_counts = {"active": 0, "offline": 0, "unknown": 0}
+    source_counts: dict[str, int] = {}
+    source_type_counts: dict[str, int] = {}
+
+    for record in records_by_url.values():
+        status = record.get("status")
+        if status in status_counts:
+            status_counts[status] += 1
+
+        for source in record.get("sources", []):
+            source_counts[source] = source_counts.get(source, 0) + 1
+
+        for source_type in record.get("source_types", []):
+            source_type_counts[source_type] = source_type_counts.get(source_type, 0) + 1
+
+    payload = {
+        "generated_at": generated_at,
+        "summary": {
+            "total_urls": len(records_by_url),
+            "validated_urls": validated_urls,
+            "cached_urls": cached_urls,
+            "status_counts": status_counts,
+            "source_counts": source_counts,
+            "source_type_counts": source_type_counts,
+        },
+        "urls": {
+            url: records_by_url[url]
+            for url in sorted(records_by_url)
+        },
+    }
+
+    write_json_atomic(status_file, payload)
+
+
 def write_stream_status(
     status_file: Path,
     status_by_url: dict[str, bool | None],
 ) -> None:
     checked_at = _utc_now().isoformat()
-    payload = {
-        "generated_at": checked_at,
-        "urls": {
-            url: {
-                "active": is_active,
-                "status": _activity_status(is_active),
-                "checked_at": checked_at,
-            }
-            for url, is_active in sorted(status_by_url.items())
-        },
+    records = {
+        url: _status_record(is_active, checked_at=checked_at)
+        for url, is_active in status_by_url.items()
     }
-
-    write_json_atomic(status_file, payload)
+    _write_stream_status_records(
+        status_file,
+        records,
+        generated_at=checked_at,
+        validated_urls=len(status_by_url),
+        cached_urls=0,
+    )
 
 
 def load_offline_urls(
@@ -195,31 +327,14 @@ def load_offline_urls(
     *,
     max_age_seconds: int,
 ) -> set[str]:
-    if not status_file.exists():
-        return set()
-
-    try:
-        payload = json.loads(status_file.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        logger.warning("Failed to read stream status file path=%s", status_file)
-        return set()
-
-    url_statuses = payload.get("urls", {})
-    if not isinstance(url_statuses, dict):
-        return set()
-
-    cutoff = _utc_now() - timedelta(seconds=max_age_seconds)
+    records = _read_status_records(status_file)
     offline_urls: set[str] = set()
 
-    for url, status in url_statuses.items():
-        if not isinstance(status, dict):
+    for url, record in records.items():
+        if not _is_fresh_record(record, max_age_seconds=max_age_seconds):
             continue
 
-        checked_at = _parse_datetime(status.get("checked_at"))
-        if checked_at is None or checked_at < cutoff:
-            continue
-
-        if status.get("active") is False:
+        if record.get("active") is False:
             offline_urls.add(url)
 
     return offline_urls
@@ -277,10 +392,20 @@ def refresh_stream_status(
     status_file: Path,
     max_workers: int,
     timeout: int,
+    max_age_seconds: int,
 ) -> list[Channel]:
     urls = sorted({channel.stream_url for channel in channels if channel.stream_url})
+    previous_records = _read_status_records(status_file)
+    fresh_records = {
+        url: previous_records[url]
+        for url in urls
+        if url in previous_records
+        and _is_fresh_record(previous_records[url], max_age_seconds=max_age_seconds)
+    }
+    urls_to_validate = [url for url in urls if url not in fresh_records]
+
     status_by_url = validate_urls(
-        urls,
+        urls_to_validate,
         max_workers=max_workers,
         timeout=timeout,
     )
@@ -288,22 +413,55 @@ def refresh_stream_status(
         if status_by_url.get(url) is False:
             status_by_url[url] = None
 
-    write_stream_status(status_file, status_by_url)
+    checked_at = _utc_now().isoformat()
+    metadata_by_url = _url_metadata(channels)
+    records_by_url: dict[str, dict] = {}
+
+    for url in urls:
+        metadata = metadata_by_url.get(url, {})
+        if url in status_by_url:
+            records_by_url[url] = _status_record(
+                status_by_url[url],
+                checked_at=checked_at,
+                metadata=metadata,
+                validation="validated",
+            )
+            continue
+
+        cached_record = dict(fresh_records[url])
+        cached_record.update(metadata)
+        cached_record["status"] = _activity_status(cached_record.get("active"))
+        cached_record["validation"] = "cached"
+        records_by_url[url] = cached_record
+
+    _write_stream_status_records(
+        status_file,
+        records_by_url,
+        generated_at=checked_at,
+        validated_urls=len(urls_to_validate),
+        cached_urls=len(fresh_records),
+    )
 
     active_channels = [
         channel
         for channel in channels
-        if channel.stream_url and status_by_url.get(channel.stream_url) is not False
+        if channel.stream_url
+        and _record_activity(records_by_url.get(channel.stream_url)) is not False
     ]
-    unknown_count = sum(1 for is_active in status_by_url.values() if is_active is None)
+    unknown_count = sum(
+        1 for record in records_by_url.values()
+        if _record_activity(record) is None
+    )
 
     logger.info(
-        "Stream status refreshed total=%s kept=%s inactive=%s unknown_urls=%s unique_urls=%s status_file=%s",
+        "Stream status refreshed total=%s kept=%s inactive=%s unknown_urls=%s unique_urls=%s validated_urls=%s cached_urls=%s status_file=%s",
         len(channels),
         len(active_channels),
         len(channels) - len(active_channels),
         unknown_count,
         len(urls),
+        len(urls_to_validate),
+        len(fresh_records),
         status_file,
     )
 
