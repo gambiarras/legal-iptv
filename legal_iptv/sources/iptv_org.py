@@ -1,20 +1,75 @@
+import json
+import logging
 from collections import defaultdict
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 from legal_iptv.clients import HttpClient
+from legal_iptv.io import write_json_atomic
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
 
 
 BASE_URL = "https://iptv-org.github.io/api"
+API_FILES = (
+    "channels",
+    "feeds",
+    "streams",
+    "logos",
+    "subdivisions",
+    "cities",
+)
+
+logger = logging.getLogger(__name__)
 
 
-def fetch_channels(client: HttpClient) -> list[Channel]:
-    channels_raw = client.get_json(f"{BASE_URL}/channels.json")
-    feeds_raw = client.get_json(f"{BASE_URL}/feeds.json")
-    streams_raw = client.get_json(f"{BASE_URL}/streams.json")
-    logos_raw = client.get_json(f"{BASE_URL}/logos.json")
-    subdivisions_raw = client.get_json(f"{BASE_URL}/subdivisions.json")
-    cities_raw = client.get_json(f"{BASE_URL}/cities.json")
+def fetch_channels(
+    client: HttpClient,
+    *,
+    cache_file: Path | None = None,
+    cache_ttl_seconds: int = 43200,
+    force_refresh: bool = False,
+) -> list[Channel]:
+    if cache_file is not None and not force_refresh:
+        cached_channels = _load_fresh_channels_cache(
+            cache_file,
+            max_age_seconds=cache_ttl_seconds,
+        )
+        if cached_channels is not None:
+            logger.info(
+                "Loaded IPTV-org channels from cache channels=%s cache_file=%s",
+                len(cached_channels),
+                cache_file,
+            )
+            return cached_channels
+
+    try:
+        channels = _build_channels(_fetch_api_data(client))
+    except Exception:
+        if cache_file is not None:
+            stale_channels = _load_channels_cache(cache_file, max_age_seconds=None)
+            if stale_channels is not None:
+                logger.warning(
+                    "Using stale IPTV-org channel cache channels=%s cache_file=%s",
+                    len(stale_channels),
+                    cache_file,
+                )
+                return stale_channels
+        raise
+
+    if cache_file is not None:
+        _write_channels_cache(cache_file, channels)
+
+    return channels
+
+
+def _build_channels(raw: dict[str, list[dict]]) -> list[Channel]:
+    channels_raw = raw["channels"]
+    feeds_raw = raw["feeds"]
+    streams_raw = raw["streams"]
+    logos_raw = raw["logos"]
+    subdivisions_raw = raw["subdivisions"]
+    cities_raw = raw["cities"]
 
     br_channels = [
         item for item in channels_raw
@@ -82,6 +137,95 @@ def fetch_channels(client: HttpClient) -> list[Channel]:
             )
 
     return result
+
+
+def _fetch_api_data(client: HttpClient) -> dict[str, list[dict]]:
+    payload: dict[str, list[dict]] = {}
+    for name in API_FILES:
+        data = client.get_json(f"{BASE_URL}/{name}.json")
+        if not isinstance(data, list):
+            raise RuntimeError(f"Unexpected IPTV-org API payload: {name}")
+        payload[name] = data
+
+    logger.info("Loaded IPTV-org API data from sources files=%s", len(payload))
+    return payload
+
+
+def _load_fresh_channels_cache(
+    cache_file: Path,
+    *,
+    max_age_seconds: int,
+) -> list[Channel] | None:
+    return _load_channels_cache(cache_file, max_age_seconds=max_age_seconds)
+
+
+def _load_channels_cache(
+    cache_file: Path,
+    *,
+    max_age_seconds: int | None,
+) -> list[Channel] | None:
+    if not cache_file.exists():
+        return None
+
+    try:
+        payload = json.loads(cache_file.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        logger.warning("Failed to read IPTV-org cache cache_file=%s", cache_file)
+        return None
+
+    generated_at = _parse_datetime(payload.get("generated_at"))
+    if generated_at is None:
+        return None
+
+    if max_age_seconds is not None:
+        cutoff = _utc_now() - timedelta(seconds=max_age_seconds)
+        if generated_at < cutoff:
+            return None
+
+    raw_channels = payload.get("channels")
+    if not isinstance(raw_channels, list):
+        return None
+
+    channels: list[Channel] = []
+    for item in raw_channels:
+        if not isinstance(item, dict):
+            continue
+
+        try:
+            channels.append(Channel(**item))
+        except TypeError:
+            logger.warning("Skipping invalid IPTV-org cached channel cache_file=%s", cache_file)
+
+    return channels
+
+
+def _write_channels_cache(cache_file: Path, channels: list[Channel]) -> None:
+    write_json_atomic(
+        cache_file,
+        {
+            "generated_at": _utc_now().isoformat(),
+            "channels": [channel.to_dict() for channel in channels],
+        },
+    )
+
+
+def _utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def _parse_datetime(value: str | None) -> datetime | None:
+    if not value:
+        return None
+
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+
+    return parsed
 
 
 def _feeds_by_key(

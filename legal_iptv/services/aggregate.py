@@ -1,4 +1,5 @@
 import logging
+import time
 from collections.abc import Callable
 
 from legal_iptv.clients import HttpClient
@@ -32,24 +33,39 @@ def _fetch_source(
         return []
 
 
+def _timed(timings: dict[str, float], name: str, callback):
+    started_at = time.perf_counter()
+    try:
+        return callback()
+    finally:
+        timings[name] = round(time.perf_counter() - started_at, 3)
+
+
 def run_aggregation(config: AppConfig) -> None:
     logger.info("Starting aggregation")
 
     client = HttpClient()
+    started_at = time.perf_counter()
+    timings: dict[str, float] = {}
 
     try:
         source_errors: dict[str, str] = {}
-        extra = _fetch_source(
+        extra = _timed(timings, "fetch_extra", lambda: _fetch_source(
             "extra",
             extra_channels.fetch_channels,
             source_errors,
-        )
-        iptv = _fetch_source(
+        ))
+        iptv = _timed(timings, "fetch_iptv_org", lambda: _fetch_source(
             "iptv_org",
-            lambda: iptv_org.fetch_channels(client),
+            lambda: iptv_org.fetch_channels(
+                client,
+                cache_file=config.iptv_org_cache_file,
+                cache_ttl_seconds=config.iptv_org_cache_ttl_seconds,
+                force_refresh=config.refresh_iptv_org_cache,
+            ),
             source_errors,
-        )
-        live = _fetch_source(
+        ))
+        live = _timed(timings, "fetch_live_stream_catalog", lambda: _fetch_source(
             "live_stream_catalog",
             lambda: live_stream_catalog.fetch_channels(
                 client,
@@ -57,36 +73,57 @@ def run_aggregation(config: AppConfig) -> None:
                 local_file=config.live_catalog_file,
             ),
             source_errors,
-        )
+        ))
 
         all_channels = extra + iptv + live
-        xmltv_aliases = load_xmltv_aliases(client)
-        enriched_channels = enrich_epg_metadata(all_channels, xmltv_aliases=xmltv_aliases)
-        selected = select_best_channels(enriched_channels)
+        xmltv_aliases = _timed(timings, "load_epg_aliases", lambda: load_xmltv_aliases(
+            client,
+            cache_file=config.epg_cache_file,
+            cache_ttl_seconds=config.epg_cache_ttl_seconds,
+            force_refresh=config.refresh_epg_cache,
+        ))
+        enriched_channels = _timed(
+            timings,
+            "enrich_epg_metadata",
+            lambda: enrich_epg_metadata(all_channels, xmltv_aliases=xmltv_aliases),
+        )
+        selected = _timed(timings, "select_channels", lambda: select_best_channels(enriched_channels))
         selected_before_stream_filter = len(selected)
 
         if config.validate_streams:
-            selected = refresh_stream_status(
-                selected,
-                status_file=config.stream_status_file,
-                max_workers=config.validation_max_workers,
-                timeout=config.validation_timeout,
+            selected = _timed(
+                timings,
+                "refresh_stream_status",
+                lambda: refresh_stream_status(
+                    selected,
+                    status_file=config.stream_status_file,
+                    max_workers=config.validation_max_workers,
+                    timeout=config.validation_timeout,
+                    max_age_seconds=config.stream_status_max_age,
+                ),
             )
         else:
-            selected = filter_cached_offline_channels(
-                selected,
-                status_file=config.stream_status_file,
-                max_age_seconds=config.stream_status_max_age,
+            selected = _timed(
+                timings,
+                "filter_cached_offline_channels",
+                lambda: filter_cached_offline_channels(
+                    selected,
+                    status_file=config.stream_status_file,
+                    max_age_seconds=config.stream_status_max_age,
+                ),
             )
 
-        playlist = render_m3u(selected)
+        playlist = _timed(timings, "render_m3u", lambda: render_m3u(selected))
         config.output_path.write_text(playlist, encoding="utf-8")
+        timings["total"] = round(time.perf_counter() - started_at, 3)
 
         metadata = build_run_metadata(
             all_channels,
             selected,
             source_errors=source_errors,
             selected_before_stream_filter=selected_before_stream_filter,
+            timings_seconds=timings,
+            epg_aliases_count=len(xmltv_aliases),
         )
         write_json_atomic(config.meta_output_path, metadata.to_dict())
 

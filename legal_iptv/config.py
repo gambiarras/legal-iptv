@@ -14,6 +14,12 @@ class AppConfig:
     validation_timeout: int
     stream_status_file: Path
     stream_status_max_age: int
+    epg_cache_file: Path
+    epg_cache_ttl_seconds: int
+    refresh_epg_cache: bool
+    iptv_org_cache_file: Path
+    iptv_org_cache_ttl_seconds: int
+    refresh_iptv_org_cache: bool
 
     @classmethod
     def from_args(cls, args) -> "AppConfig":
@@ -28,4 +34,10 @@ class AppConfig:
             validation_timeout=args.validation_timeout,
             stream_status_file=Path(args.stream_status_file),
             stream_status_max_age=args.stream_status_max_age,
+            epg_cache_file=Path(args.epg_cache_file),
+            epg_cache_ttl_seconds=args.epg_cache_ttl,
+            refresh_epg_cache=args.refresh_epg_cache,
+            iptv_org_cache_file=Path(args.iptv_org_cache_file),
+            iptv_org_cache_ttl_seconds=args.iptv_org_cache_ttl,
+            refresh_iptv_org_cache=args.refresh_iptv_org_cache,
         )

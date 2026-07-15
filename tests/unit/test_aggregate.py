@@ -26,6 +26,12 @@ def make_config(
         validation_timeout=2,
         stream_status_file=base_path / "stream-status.json",
         stream_status_max_age=14400,
+        epg_cache_file=base_path / "epg-cache.json",
+        epg_cache_ttl_seconds=43200,
+        refresh_epg_cache=False,
+        iptv_org_cache_file=base_path / "iptv-org-cache.json",
+        iptv_org_cache_ttl_seconds=43200,
+        refresh_iptv_org_cache=False,
     )
 
 
@@ -84,6 +90,9 @@ class AggregateTest(unittest.TestCase):
         self.assertEqual(metadata["deduplicated_channels"], 0)
         self.assertEqual(metadata["source_errors"], {})
         self.assertEqual(metadata["selected_by_source"], {"live_stream_catalog": 1})
+        self.assertIn("timings_seconds", metadata)
+        self.assertIn("total", metadata["timings_seconds"])
+        self.assertEqual(metadata["epg_aliases_count"], 0)
 
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")
@@ -108,6 +117,7 @@ class AggregateTest(unittest.TestCase):
             run_aggregation(config)
 
         refresh_mock.assert_called_once()
+        self.assertEqual(refresh_mock.call_args.kwargs["max_age_seconds"], 14400)
 
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")
