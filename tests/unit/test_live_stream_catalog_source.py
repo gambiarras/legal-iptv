@@ -73,6 +73,44 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
         self.assertEqual(channels[0].group, "Web Live")
         self.assertIsNone(channels[0].ttl_seconds)
 
+    def test_does_not_filter_kick_channels_by_platform_ttl(self):
+        payload = [
+            {
+                "id": "kick.channel",
+                "name": "Kick Channel",
+                "stream_url": "https://kick.example.test/live.m3u8",
+                "group": "web",
+                "source_type": "kick",
+                "status": "resolved",
+                "ttl_seconds": 598,
+            },
+            {
+                "id": "youtube.channel",
+                "name": "YouTube Channel",
+                "stream_url": "https://youtube.example.test/live.m3u8",
+                "group": "web",
+                "source_type": "youtube",
+                "status": "resolved",
+                "ttl_seconds": 598,
+            },
+            {
+                "id": "kick.expiring",
+                "name": "Kick Expiring",
+                "stream_url": "https://kick.example.test/expiring.m3u8",
+                "group": "web",
+                "source_type": "kick",
+                "status": "resolved",
+                "ttl_seconds": 30,
+            },
+        ]
+        client = FakeClient(payload)
+
+        channels = fetch_channels(client, min_live_ttl=900)
+
+        self.assertEqual([channel.id for channel in channels], ["kick.channel", "kick.expiring"])
+        self.assertEqual(channels[0].ttl_seconds, 598)
+        self.assertEqual(channels[1].ttl_seconds, 30)
+
     def test_local_catalog_file_is_required_when_configured(self):
         missing_path = Path("/tmp/legal_iptv_missing_channels.json")
         client = FakeClient()

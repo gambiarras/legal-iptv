@@ -8,6 +8,7 @@ from legal_iptv.services.category_mapper import localized_category_name
 
 
 LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/live-stream-catalog/main/channels.json"
+TTL_FILTER_EXEMPT_SOURCE_TYPES = {"kick"}
 
 
 def _parse_datetime(value: str | None) -> datetime | None:
@@ -33,6 +34,10 @@ def _current_ttl_seconds(item: dict) -> int | None:
     return item.get("ttl_seconds")
 
 
+def _should_filter_by_ttl(item: dict) -> bool:
+    return item.get("source_type") not in TTL_FILTER_EXEMPT_SOURCE_TYPES
+
+
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
     if item.get("status") != "resolved":
         return False
@@ -42,7 +47,7 @@ def _is_usable(item: dict, min_live_ttl: int) -> bool:
         return False
 
     ttl_seconds = _current_ttl_seconds(item)
-    if ttl_seconds is not None and ttl_seconds < min_live_ttl:
+    if _should_filter_by_ttl(item) and ttl_seconds is not None and ttl_seconds < min_live_ttl:
         return False
 
     return True
