@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T09:00:34.836499+00:00",
+  "generated_at": "2026-07-19T09:30:53.267913+00:00",
   "total_input_channels": 615,
   "selected_channels": 587,
   "extra_channels": 41,
@@ -17,7 +17,7 @@
   "timings_seconds": {
     "fetch_extra": 0.0,
     "fetch_iptv_org": 0.001,
-    "fetch_live_stream_catalog": 0.001,
+    "fetch_live_stream_catalog": 0.0,
     "load_epg_aliases": 0.008,
     "enrich_epg_metadata": 0.003,
     "select_channels": 0.005,
