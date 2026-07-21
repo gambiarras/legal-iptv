@@ -287,6 +287,10 @@ https://appletree-mytimespain-rakuten.amagi.tv/playlist.m3u8
 #EXTGRP:Variedades
 https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt_720p.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="NickOnline.br" tvg-name="NickOnline" tvg-logo="https://i.postimg.cc/BQcPnGB4/nick-online.jpg", NickOnline
+#EXTGRP:Variedades
+https://x1colegal.com/hls/stream.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Nicktoons" tvg-logo="https://i.postimg.cc/t70kcjXC/nicktoons.jpg", Nicktoons
 #EXTGRP:Variedades
 https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8
@@ -310,10 +314,6 @@ https://ikki.hubcloud.tv.br/OnTV/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Os Detetives" tvg-logo="https://i.postimg.cc/L5q8SQKm/os-detetives.jpg", Os Detetives
 #EXTGRP:Variedades
 https://video11.logicahost.com.br/detetives/detetives/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Peak Toons" tvg-logo="https://i.postimg.cc/L6pPb29z/peak-toons.jpg", Peak Toons
-#EXTGRP:Variedades
-https://x1colegal.com/hls/stream.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="PlayTV.br" tvg-name="Play TV" tvg-logo="https://i.imgur.com/Ikrj3lk.png", Play TV
 #EXTGRP:Variedades
@@ -995,6 +995,10 @@ http://45.190.28.50/SONY_MOVIES/index.m3u8
 
 ### Canais Séries
 
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
+#EXTGRP:Séries
+https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFLSURB6Ewfdk3IBH_0Jy7EcNKpfT8NgJbI6EeIuvipD5_FzPUOXcSUsQ1wwh7h7Mfk49454VftE7kyBtuKoBMLp8mESZCDi8-4wl1De_-I12nFr8NAqvB1pHDzMxHoXcEBv_L8yMP6lXpRDaM8NIMC04EsJkLreiRl2PViklwCYuwIM5n3of_FHDR-qXu-CQunxjbBbF6cFkmTLTLauHw7vVAthuwXN_SbFO2ucO87hRxwRmvbsP-cEwAXl7aU3k449XCiQP5Hc4lD-2peFihQAW4eo_80Lxj9gy118FniTxLa3hb8sAP6OLiZD7XMbkqtDQxquMhmIw4dyc84ygJb1i31LgqbqMdE9Eidt3WrG1nlnxHY2jMl8f3b_CFcQ4JTZgr8e2Qmo4dXON12-rK2oWZ3u5iLY-gXygBkikrV6ziZq-pDzO6aPTE5NvoBbhldz3FLupdPzNW-XZZF2dTcWUBy-tWD-9P8ECEEhIv4lZZT3RlezhHcEX3ydKiE1wb03J6WF654W0EH_J5bjlKJgesnqWIGaTu-AdKxN6aHm6xHcruoI1s0K_NtFiB12uHmjoxj_xTXGYD2TlfgF939KO5F3RszQFSkdx_Aa01uDffTh-AGM-Kxt7JdyC_0DIEUakxQaAnyTBv-g82tH0oOUDTxDgxSt5dCeaf62GgJWBpQQYM3FlLOh8yHvmBonXsFXUgSFIqA1AA-hW5mJsZSuu4j2NZB46DiBgkqedfR1bBSkVRu6Cza4ivaKSlTv9oXFRIiHRphspR_UDSH1ML2kI8DK9RVvlbStZVd6qSwfoDdVv_W6Uhgzp7aa68AFqtgRfcUppObs9OlWcckZlp3ekz-uZL6eCT39dQ6lQ_UuQIo7S8Qvt-g2IUcilOLe5tkCzpYDra5ITMQ9sPIAZjx_saDEF2q5RvF5lIE2-WwyABKgl1cy1lYXN0LTIw0g8.m3u8
+
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
@@ -1049,11 +1053,11 @@ http://45.190.156.152/GLOOBINHO/index.m3u8
 #EXTGRP:Infantil
 https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios" tvg-logo="https://i.ytimg.com/vi/xIs3odCrjZs/hqdefault.jpg?v=696e66d9&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgtdMxIzMsv_Z3Q3KHRTi6ZfD2iQ", Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios" tvg-logo="https://i.ytimg.com/vi/xIs3odCrjZs/hqdefault.jpg?v=696e66d9&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLBvvHktvrLuvBqCk1ysCRWfl9o7_A", Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784656851/ei/c19fatPpBKXw1sQPtJ7iiAs/ip/138.117.221.16/id/xIs3odCrjZs.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhMacTx9uKv6xayChhurh9PlsVxJPuuJWvVvw6OT21_RTO0rdb-5Hdbyl9rdFfhAOpg52AV4p6rp/spc/SQ-umpQFzVc5UEvN2L8R6b0TOKGmx0Zcr15bxEfPPsP3AmCJyGCSL8ZjQRkjZw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2663750/met/1784635251,/mh/HB/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116/mt/1784635007/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgLiAV9LcCbA1RwW8dI5-KHtB_UmnEPkH7L2av0t4Zr8ECIQDOF5Yo0CbAlzWjqjv4I93eZ9lgPYZlr4poN64yFlNCIA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgUNWh_C-a1cya3g9F9CDSRS1H4ssbw6ysGRfWMuGC0rcCIQCTdHj3E4SPkmWKvqfGOaLquHXFqwzmp-1IXQ7NrGrJaA%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos" tvg-logo="https://i.ytimg.com/vi/bK03WDeq5SI/hqdefault.jpg?v=69bd7a4f&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD8PddgDBPPviSepht4XRi1iutJYg", Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos" tvg-logo="https://i.ytimg.com/vi/bK03WDeq5SI/hqdefault.jpg?v=69bd7a4f&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLAeLFn2E-4mOJujmWUaJGsz2-VRIQ", Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784656848/ei/cF9fap-dNMDn1sQPqOLRSA/ip/138.117.221.16/id/bK03WDeq5SI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhNWM5uW6b5Xnc2zTFh14GHKPNsIXTYnJlf5lUwaF8G0gM5faITIPykRAlWxUor1lM8FY_57FJsD/spc/SQ-umh302f38jmbA5wZZVoIdSa5MRyC653lNI61eN3hiPaQbkclshpjfagCEiA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2663750/met/1784635249,/mh/VC/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1784634777/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAMfri5N4krM9t3zS0NzlxavNXO6yWwpJYgY6seoDNONwAiEAqjYluFNQSOYm5oRnj6uEc5RThjzslb9yjxoCdOwhW80%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAMaA6GWNmy-eYEn2X3017NrJKq_1tOtkUPppv95bJMDfAiAtk22bnRl16WK9Y6IXq37p8qpAlnZR1EbwfoKO3MWVkg%3D%3D/playlist/index.m3u8
 
@@ -1130,10 +1134,6 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784667631/ei/
 #EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hqdefault.jpg?v=658ae6ef&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvQeaNyjO5SbndUBg35ixCJqeeUQ", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784656840/ei/aF9fapfsMKePg-UPktKwiAg/ip/138.117.221.16/id/eTz4XgOQaAE.4/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AZFlqhNKLlThqn7ap_fs9p_GIXZQxDC5OP129DetaSMkBIJQaMoC7MNrvQbwPyh_wL1tCWrSVHCGkz9n/spc/SQ-umhzORdLT3an1rGx9hLQ7M5Nj6YvFmsojGKMzdEri7mbUXulbhFqrkPfMdQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2663750/met/1784635241,/mh/Ro/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1784634777/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgL7EYRx22hx04s8PauUY7Ze3O78HnBDWJXsnCbm6TGCoCIBEsBtPruTy4u6uHZLacS0S_b33_QdeBbPNIMMVdwMTR/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhALXHQD6x0aOs1I7BhJcYRHOExmmANyvqOiUCXL_LuNfXAiEAganjwWdWEzQLfHZRyVCzxmdvDRweVjdomveOeNbIqUs%3D/playlist/index.m3u8
-
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - MORNING SHOW - 21/07/2026" tvg-logo="https://i.ytimg.com/vi/aO8dQDYSHdM/hqdefault.jpg?v=6a5e96fb&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_wvQoWUoQOexsPE6Ga7-Mzy4dFA", Jovem Pan Live - MORNING SHOW - 21/07/2026
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784664081/ei/sXtfaoKFOdyQ-LAP69LM4Q0/ip/200.151.162.1/id/aO8dQDYSHdM.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-uxaxh5g-bpblk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhMXYojpa5Lzkn60tqVDo4HB-fXed0UG_RWd0PVo5bTAyPkwodT2o9rJgYbhdWjzsCH0bZUs5d89/spc/SQ-umrojmvrASKfRSWYNdmrdo0-fSoiCmaFS9VUqzRvrqbrCn5FQvWHL94QfnQ/vprv/1/reg/0/playlist_type/DVR/hcs/ir/initcwndbps/1163750/met/1784642482,/mh/iE/mm/44/mn/sn-uxaxh5g-bpblk/ms/lva/mv/m/mvi/2/pl/24/rmhost/rr1---sn-uxaxh5g-bpblk.googlevideo.com/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1784641977/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAN1xnqB9T_TMNGDij1WZIIPoe4-K0FcIFDU9t4Ifixq4AiEAnNkGvt4_jLNoPd5x0jjt_a3wvhjrKU6ol5qYGKpoCA0%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rmhost,rms/lsig/APaTxxMwRgIhANZA9kPLkmRk5SZJ9ixyGo8qKgEEU3CuqYhlLelZiuKpAiEA9L4xWLMwpDUQJ3sQZ7gZzdido-o4IzDQ92SaSy5q9MI%3D/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="JovemPanNews.br" tvg-name="Jovem Pan News" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Jovem_Pan_logo_2018.svg/960px-Jovem_Pan_logo_2018.svg.png", Jovem Pan News
 #EXTGRP:Notícia
@@ -1469,7 +1469,7 @@ http://45.190.28.50/BAND_SPORTS_HD/index.m3u8
 #EXTGRP:Esportes
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
 
-#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="CazéTV - AO VIVO: TIME BRASIL NO WTT STAR CONTENDER DE SÃO JOSÉ DOS CAMPOS | TÊNIS DE MESA" tvg-logo="https://i.ytimg.com/vi/Wg9t1mPI-zk/hqdefault.jpg?v=6a5ea2c7&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLAvRhGgF9c5w_hTbVwA4e54fa9gVw", CazéTV - AO VIVO: TIME BRASIL NO WTT STAR CONTENDER DE SÃO JOSÉ DOS CAMPOS | TÊNIS DE MESA
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="CazéTV - AO VIVO: TIME BRASIL NO WTT STAR CONTENDER DE SÃO JOSÉ DOS CAMPOS | TÊNIS DE MESA" tvg-logo="https://i.ytimg.com/vi/Wg9t1mPI-zk/hqdefault.jpg?v=6a5ea2c7&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2r4swHMzWKgZxQtJuyntl5z2e_g", CazéTV - AO VIVO: TIME BRASIL NO WTT STAR CONTENDER DE SÃO JOSÉ DOS CAMPOS | TÊNIS DE MESA
 #EXTGRP:Esportes
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784664078/ei/rntfavS_Hbik-LAPlqGg2QI/ip/200.151.162.1/id/Wg9t1mPI-zk.1/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/rqh/1/hls_chunk_host/rr2---sn-uxaxh5g-bpblr.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/ctier/SPL/playlist_duration/30/manifest_duration/30/gcr/br/bui/AZFlqhP3DZrMzyfGKb3ZwFG-U9jFrvpp8YHhuq4gBYeFWV4v-b-otHwbQRFuzSTxnJzCEDQEBBV409Yi/spc/SQ-umvGtRFOUJUE8nde7rQ_JCeoEPs5St2in9qpNIlUF_XAgEAg0dhKbOA4tqw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1868750/met/1784642479,/mh/yl/mm/44/mn/sn-uxaxh5g-bpblr/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116/mt/1784642209/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,ctier,playlist_duration,manifest_duration,gcr,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAIsuobiZzFrd8Qf5aUILg-62hcdimO0t-hj8UjL7y_U5AiEAjoz0e_oDL5Xg1tjxLtjYro9jJsFp30zms7NvGJEiRQ4%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAP-5_aez-dQTekBpecxJQG6hR-qApMhqdvstvA4hP7mxAiEA9Nzgr6CrS0fWSk9N8Xl4EIitk6_B2UL1mBzfrZB_Bro%3D/playlist/index.m3u8
 
