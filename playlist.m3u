@@ -91,6 +91,14 @@ http://45.190.28.50/CANAL_DO_BOI/index.m3u8
 #EXTGRP:Variedades
 http://168.197.104.22:80/CANAL_DO_BOI/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 3" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 3
+#EXTGRP:Variedades
+http://138.255.2.6:8084/CANALDOBOI/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 4" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 4
+#EXTGRP:Variedades
+http://45.177.114.115:80/CANAL_DO_BOI/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 5" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 5
 #EXTGRP:Variedades
 http://170.83.16.50:80/CANAL_DO_BOI/index.m3u8
@@ -550,6 +558,10 @@ http://45.162.64.114/REDE_TV/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 3" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 3
 #EXTGRP:Variedades
 http://168.197.104.22:80/REDE_TV/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 4" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 4
+#EXTGRP:Variedades
+http://138.255.2.6:8084/REDETV/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 5" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 5
 #EXTGRP:Variedades
@@ -1371,10 +1383,6 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 ### Canais Séries
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
-#EXTGRP:Séries
-https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFv6UzN4B3qgGRoPRn50wPSUEEY39TDJ_Y8VQzH5yrIGNd7tm3wOd0gpQN5rRLcktxUm8rxXPrBJrYSeh1RM69H46zin9Mo5ia6fhdtsYQMbZ-wJrcaABGajrS8YEG2_9okxlxsZLErPMbLt0Pfe8jDQUIpVzdK2GFiR9nyBtI1fxW2r9FLwR9UPJeUiKDSY_tEZyUF_c6Os8CBTWahzUs9M72i9q2IsHd4DlbXLEbtCd-Cr8oTd1p_3MOOXc44wggMF9qSIkbkAZQKEnfYJ_-m-d3DUidYAViHU_u9oDGBfrwSea73ji6igdQ51FdNuA09-iAm88mLfNtneGYNLyAzkjEHTGt9mXOH0zXDkoaH8xrQnpIYrWA6XYOvYDYBCKxk9lAPUZVY0Y_ILB0vSHvmX1gDkbXd1ud6370JXN1n7YsHKgC0Eq-0qeQGeWHud6qyvZhrHR2R5QTkPECzgNOnd7NyF_H2qwY4j03WaN70ki0cf3AWiJPD8zF48dFydz07HbECAXNjB-HQYx7XTgBRCrjtLefxF6kPAnYBNmJB7cT_2BHp-KxabBnmTqDVR8Rj_kBoyN-BHI7dbAig3n0IhcrxZfSj9AMJE-zPn7lcEwnpJXvm51oQkYuykS1YTAh7WTM8z1j1AKNmEyTCFZ5mruJtW5BCN_INWtnxCciXSgI6bUYthJH0RuH5WlymvaCsF27ymeLOpXv0BUlbeVxbUK1-TvZrarWGxuAIAJ8q_RxYBucvCqHqsSopfbyl63k4IzrSHFBUXv59YZGcZDIO0lxgT-2SM6Bn7c_S5xEQOtEPm5yDJ09wlTvHERDTGLXmskU4_ZdcFnZHSYdkFaeIgN69THVm_d-yZVykGmM84B4LJ5IZeGQAG049Jdtjqc8k7VryghaLdD05wary9aOHNsaDHWYjrEQppxBewpePCABKgl1cy1lYXN0LTIw1Q8.m3u8
-
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
@@ -1461,7 +1469,7 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784916027/ei/
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784916026/ei/2lNjasDbB-OO4dUPi6H92As/ip/138.117.221.16/id/bK03WDeq5SI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhOJScezBNd2LpOxkODRw7ZbVoTgcREVO1YS0ytJUQ8b9Gb5OrFBQfzsz9bKEFDi5YA0k6rcNkV6/spc/SQ-umj1k8MLlZhTxf8LoqlGDQcLcerqta6VXD4QlpPhZ7EGYulfkswC5bVgtVg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1935000/met/1784894426,/mh/VC/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51946838,51992868/mt/1784893960/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAOnzoWXC5OTSkrqgbiPx084aweKRZvdJYmiSZQctFEHPAiAu-qwPZX-XltvBjlBCEjpVEbXadkFK4rt0Qpga5IR-GA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgf9mLXpYBm3xkNNT9KN8wk9dqp056DyIh5oI0my9vQXECIQDSmIEkiw__knyNfeZBVvXRDZRz9nDPy8b_1cUSFYMFag%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças" tvg-logo="https://i.ytimg.com/vi/cQHlHWNg5zA/hqdefault.jpg?v=6a0d8090&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBEDAMJ7vWuQS5pUEw7ptWS2xKLxw", PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças" tvg-logo="https://i.ytimg.com/vi/cQHlHWNg5zA/hqdefault.jpg?v=6a0d8090&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-6XpFw1Q-uhnQbbzpuFXxBvLWyw", PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784916022/ei/1lNjao65I5qJ4dUP2MegkA8/ip/138.117.221.16/id/cQHlHWNg5zA.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AZFlqhPJ4vo5n4FGcd-oX4x0E_vDI-1-Nb_EnxbLDE6AmfWgf8LnHqE66fS4V1qfEKAQ-gwlrOFLetk3/spc/SQ-umpSIAh4YcOx5-34hCkUlQhEonYTSIc6QWGwJadPY_SvxUL2_Ysypt7Bl1Q/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1935000/met/1784894423,/mh/El/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51992868/mt/1784893960/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgIgntLg0BrFgFvDPOzbc0deylKiL8t4RfztmfrtGU-ykCIFXCY0aSKjDv9nyBnGczmtvx14hx8LVfDyEUI8A1DdZa/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgI-fuTAAxdjtxOjZ_n_7cP96w093KwvCQ3y1NtZoYRcICIA2lvDcLpZMjutEXW0fjeRIVRSRke7s6iMMnsxL4fnGt/playlist/index.m3u8
 
@@ -1635,7 +1643,7 @@ http://170.83.16.50:80/RECORD_NEWS/index.m3u8
 #EXTGRP:Notícia
 http://170.83.49.66:8083/RECORDNEWSHD/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/YLUkhMIGmqk/hqdefault.jpg?v=6a621e0f&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZCc-T_a4svSG8f5tIFt2HiFGm1Q", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/YLUkhMIGmqk/hqdefault.jpg?v=6a621e0f&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLA44gUkUJJ22S95Tak2h_OSifrW3g", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784901637/ei/pRtjat3mAoyh-LAP5vCqwQI/ip/200.151.162.1/id/YLUkhMIGmqk.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-uxaxh5g-bpblk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhN42GisljmqoGG1WYcR1S1UTz4kIkp-BrMrM9iK7Nl3JaMldRBKNmHNBz8P0V0QVK0CQ9EmrrT-/spc/SQ-umkLt-iuHlG83UdcKxrwSQTwwYB88afZDI9-R55AIAKYiSoqY7TksjUalKQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1516250/met/1784880040,/mh/7k/mm/44/mn/sn-uxaxh5g-bpblk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51992868/mt/1784879787/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAPtiVGf_IXUbJcLru3nbRM_qugIeJbyVV0DcX8YXaxUWAiEAvDRQ7TQoY3gfM2wI5IDyE7CrVd9IWMKRmKzU1bwOid4%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgcq-qKXGje3_TrrStvkJf8bv9epSa893Nll2Ee440sD4CIHMKsxgxZhbhg0QcII1vKO7LNXQiSiLJ4R9MHAm4_RfF/playlist/index.m3u8
 
@@ -1804,6 +1812,10 @@ http://177.52.24.163/HISTORY-HD/index.m3u8
 #EXTINF:-1 group-title="Documentário" tvg-id="History.br" tvg-name="History Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 2
 #EXTGRP:Documentário
 http://138.255.2.6:8084/HISTORY/index.m3u8
+
+#EXTINF:-1 group-title="Documentário" tvg-id="History.br" tvg-name="History Alternativo 3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 3
+#EXTGRP:Documentário
+http://45.177.114.114:80/HISTORY/index.m3u8
 
 #EXTINF:-1 group-title="Documentário" tvg-id="History.br" tvg-name="History Alternativo 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 4
 #EXTGRP:Documentário
@@ -2037,6 +2049,10 @@ https://aovivo.equipea.com.br:5443/aovivort/streams/pshRLrnv6isXq7RG474756777404
 #EXTGRP:Educação
 http://168.197.104.22:80/AGRO_CANAL/index.m3u8
 
+#EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 4" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 4
+#EXTGRP:Educação
+http://45.177.114.115:80/AGRO_CANAL/index.m3u8
+
 #EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 5" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 5
 #EXTGRP:Educação
 http://170.83.49.66:8083/AGROCANALHD/index.m3u8
@@ -2121,6 +2137,10 @@ http://45.162.64.114/BAND_SPORTS/index.m3u8
 #EXTGRP:Esportes
 http://45.190.28.50/BAND_SPORTS_HD/index.m3u8
 
+#EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 5" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 5
+#EXTGRP:Esportes
+http://168.197.104.22:80/BANS_SPORTS/index.m3u8
+
 #EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 6" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 6
 #EXTGRP:Esportes
 http://138.255.2.6:8084/BANDSPORTS/index.m3u8
@@ -2137,7 +2157,7 @@ http://170.83.49.66:8083/BANDSPORTSHD/index.m3u8
 #EXTGRP:Esportes
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
 
-#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="CazéTV - AO VIVO (SOM AMBIENTE) : THIAGO WILD X PHILIP HENNING | ATP CHALLENGER DE ZUG" tvg-logo="https://i.ytimg.com/vi/Lm7YQ9jCq6c/hqdefault.jpg?v=6a626252&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAnBhM5r0Ex_2qtMn_TJr0oEnPqtA", CazéTV - AO VIVO (SOM AMBIENTE) : THIAGO WILD X PHILIP HENNING | ATP CHALLENGER DE ZUG
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="CazéTV - AO VIVO (SOM AMBIENTE) : THIAGO WILD X PHILIP HENNING | ATP CHALLENGER DE ZUG" tvg-logo="https://i.ytimg.com/vi/Lm7YQ9jCq6c/hqdefault.jpg?v=6a626252&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCKAbZLK-yatPjkwfZIhpOCNuTjZw", CazéTV - AO VIVO (SOM AMBIENTE) : THIAGO WILD X PHILIP HENNING | ATP CHALLENGER DE ZUG
 #EXTGRP:Esportes
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1784916016/ei/0FNjaujoMfGbobIPh9W54Ak/ip/138.117.221.16/id/Lm7YQ9jCq6c.2/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/ctier/SPL/playlist_duration/30/manifest_duration/30/gcr/br/bui/AZFlqhMebcmu_690JkFqrJx4EDOlCiD3zhPqftwnGHEvBNAYMK8ZcSIX7Kg8gHL5FmP3D4YV4a-uCQ4s/spc/SQ-ump5sOe_sa_cEHCQIOEKO5_1bq9lvJc-OKrPlDRqebOlQBqx386GQDHw-XA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1935000/met/1784894417,/mh/AP/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1784894188/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,ctier,playlist_duration,manifest_duration,gcr,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgOdT20GLR5xcfx5ZVJxobesgNgTIdjHMSI8btlI0GfwcCICVYMn4jFtenGm6UR82F7CX0iFiD5Fgxw-LoMjIeKUiT/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAOnSCFseU-a2wqms9gGRyY0PCxf2gUQgIXuVNfBVjY3nAiAxJALG1leM7UNCML_GFqlKWeWDqyxjOuwTdxlUGmnjkA%3D%3D/playlist/index.m3u8
 
@@ -2251,6 +2271,14 @@ http://168.197.104.22:80/TV_CAMARA/index.m3u8
 #EXTGRP:Legislativo
 http://138.255.2.6:8084/TVCAMARA/index.m3u8
 
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 5" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 5
+#EXTGRP:Legislativo
+http://45.177.114.115:80/TV_CAMARA/index.m3u8
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 6" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 6
+#EXTGRP:Legislativo
+http://170.83.49.66:8083/TVCAMARAHD/index.m3u8
+
 #EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 7" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 7
 #EXTGRP:Legislativo
 http://186.219.52.187:80/tv_camara/index.m3u8
@@ -2306,6 +2334,10 @@ http://45.190.28.50/FISH_TV_HD/index.m3u8
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 3" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 3
 #EXTGRP:Outdoor
 http://168.197.104.22:80/FISH_TV/index.m3u8
+
+#EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 4" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 4
+#EXTGRP:Outdoor
+http://138.255.2.6:8084/FISHTV/index.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 5" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 5
 #EXTGRP:Outdoor
