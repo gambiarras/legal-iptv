@@ -91,6 +91,14 @@ http://45.190.28.50/CANAL_DO_BOI/index.m3u8
 #EXTGRP:Variedades
 http://168.197.104.22:80/CANAL_DO_BOI/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 3" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 3
+#EXTGRP:Variedades
+http://138.255.2.6:8084/CANALDOBOI/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 4" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 4
+#EXTGRP:Variedades
+http://45.177.114.115:80/CANAL_DO_BOI/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 5" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 5
 #EXTGRP:Variedades
 http://170.83.16.50:80/CANAL_DO_BOI/index.m3u8
@@ -551,6 +559,10 @@ http://45.162.64.114/REDE_TV/index.m3u8
 #EXTGRP:Variedades
 http://168.197.104.22:80/REDE_TV/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 4" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 4
+#EXTGRP:Variedades
+http://138.255.2.6:8084/REDETV/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 5" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 5
 #EXTGRP:Variedades
 http://170.83.16.50:80/REDE_TV/index.m3u8
@@ -742,6 +754,10 @@ http://45.190.28.50/TV_BRASIL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 2
 #EXTGRP:Variedades
 http://168.197.104.22:80/TV_BRASIL/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 3
+#EXTGRP:Variedades
+http://138.255.2.6:8084/TVBRASIL/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 4
 #EXTGRP:Variedades
@@ -1367,19 +1383,23 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 ### Canais Séries
 
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
+#EXTGRP:Séries
+https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFfMQ9hm8WtX7XHVebZZHX-Bs5Q6nvSGc6NVS9TC1jzc6yrPsymq_j8ljq9JXu0yUGrnsAmMlFBx_GBz3UzmhtXBEW0k7bp-o5TuJRsBwJIAwqm_BHU0kMByES1UYV52sVGNqGshv9x9tsfHhre7CgEDS17gf8XnEdjNF9lbHP_-AR-ZXpFGB4LdQ1W2-mNSA0ErLaF2MmpdlXOMaTgkgQcwpqnPcTc0l5YuQzfYVjyq3bD_wIjb72I6bbR8ocfpyZ4MOMAkWTLC2mJ8q3Vx5yccAk4MBzYiaEKrFdEp0dXt_V14oyPRrsWktxxYfEwEfB-KaSAJkw4p2Kf1r6T-gNcJ1EJZgPh0OjorwYgxewsp-JeFG5P9Y9RYILSZ6oUOnit-4LvP4FN6hkFxrJ9GggSLhzFtNiQwTry8iJ5CWAjn_JAs7Wup4TAeV3rg0Ieb-qgBoWTfDZt-x4dDLDFjSBzq9Zd-awaalvT6NGEk1RB6f4_uujxFmLRATeoQwwTR95Q_NxIRLd8MoxaJbj4iPdDjpsulteVua1KG8-6BiJfXXSAyeNbF656SA3mCmYzNA0Nc1TJ2SOeywFebRTGCTR1g6gSdiNbAkZ_04FDIxkXZojKPpwXLTJGeuLzUCKxdPWtCyrH5xNJrZc7KTwa-sqKJAbLOS36AQ3XY1cCEXWL18OXTOgtcK6cdwMTBl_HrC14-GU8cGreu-JeuS-etnETnlx-LaXkRwBNxUvDIpqw2FMIF2VhsoWHGtElyQpNVGVIOSZ23lD4pFQlOPkRJWj6-haQ3T9zVb70hgatlm6RFsyq-m64Yv6IgHZcHC5gFC07Fk2wxTchh6NzgTHsX7q4hckBbgHImayqlW49Mwb3nY2-DP1mylEiOIEd65t_vbHq3frKphAGqUhcbuWC3oK63kaDI8curRPc9Oc_zB94yABKgl1cy1lYXN0LTIw1g8.m3u8
+
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes" tvg-logo="https://i.ytimg.com/vi/XQLEvieRMj4/hqdefault.jpg?v=69a544a5&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLB9JEIdbxWnBsvnzSbqoqLkTlal7w&usqp=CBc", Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes" tvg-logo="https://i.ytimg.com/vi/XQLEvieRMj4/hqdefault.jpg?v=69a544a5&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBq7EW0uXrvIQor9jnyJt4mUBVANg", Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785031234/ei/4hVlaqjcIdf51sQP4cjcwA4/ip/138.117.221.157/id/XQLEvieRMj4.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhPfMgP295rJF2WPpn6k8fjGfcspGpLdAWTERn3uv8sbWe22lQ7CpLp50sLhv3czpQ5A0f5PrwVC/spc/SQ-umvQsTF5QdAZixV1EONeYjfIRK8HHxgjzgil7VEHgON000DjAAlpCOI8lAA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1737500/met/1785009635,/mh/Ro/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51992867/mt/1785009382/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgVLAAKt53KbHaCLnZzYYumns1MTFHY7lxf01uflRKOdACIQCiiEdj5x_v_LOwZwy0QRWmnyEYnvD2kMJRg8EYLT7FMA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAMl9W86imGer-Dw0JWA1_BDL53jE79EHrzcHBn1XeJNAAiBZzpNGztV9dN0AtgzfRZzWPmpYqs3JSGJFSN_YxzIoUQ%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Mr Bean Animated Best Compilations! 🔴LIVE - Watch 7/24" tvg-logo="https://i.ytimg.com/vi/8nORcRZ7gqs/hqdefault.jpg?v=69b9482b&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLB0mgsGpX5cQq2fVBEUKccTPemeqA&usqp=CBc", Classic Mr Bean - Mr Bean Animated Best Compilations! 🔴LIVE - Watch 7/24
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Mr Bean Animated Best Compilations! 🔴LIVE - Watch 7/24" tvg-logo="https://i.ytimg.com/vi/8nORcRZ7gqs/hqdefault.jpg?v=69b9482b&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLWVJq2tpARGPGtEJ_wNCbNNFW5A", Classic Mr Bean - Mr Bean Animated Best Compilations! 🔴LIVE - Watch 7/24
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785031231/ei/3xVlavixNr34-LAPiP694AE/ip/138.117.221.157/id/8nORcRZ7gqs.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhM7Azuizk1qHYp3VQS__ZqY82wnU9-vZw3hPXBxxwzfq0wmsEFib_WCsRX0fRtu8m2_ujcyuIgW/spc/SQ-umorsIvtrkHwmqzBRhS8gxH1NNYchUncGU2T44TV2ZJiK3IT-4zBkGrmqeA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1737500/met/1785009632,/mh/Cr/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51992867/mt/1785009382/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAP4oSNGGqKfpvLfwNL-zMXtUqZyEdvEa7uXiphkPkpttAiEAvuO2z9KernVj6kRgw3XIgmLoS0pnBpDRGRMDd1c24-U%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgfBxOrTmrS4SQtzaXjePF4PsqFieTA46gnr7g4znN8nQCIBvAFXUGWsZT2bP7QXgh17nmWfvFmSfslM5IJRirHUgS/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!" tvg-logo="https://i.ytimg.com/vi/U__tcQKkU9w/hqdefault.jpg?v=69b9476d&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLCo8d8AyO3QVKfrwCx1_5FKNKVMdg&usqp=CBc", Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!" tvg-logo="https://i.ytimg.com/vi/U__tcQKkU9w/hqdefault.jpg?v=69b9476d&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDVyszW21SsmVk_8cCsC5lOuTISYw", Classic Mr Bean - Mr Bean Best Compilations Live Action | Classic Mr Bean 🔴 LIVE!
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785031233/ei/4RVlasHwDq-j1sQPy4mpiQs/ip/138.117.221.157/id/U__tcQKkU9w.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhNYNyFLNbseIptRyqOJPCcqGlYte1A5c_7WQbllushQ4GFNWe5tip9QrGNMfTEO_oGf7yr2gzSK/spc/SQ-umhqoA6D5L985JnzgGqOYOiPEhvPdreqO3n4Hd5KN4MyV4Kl9rlE7en5IXA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1737500/met/1785009633,/mh/rf/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51946838,51992868/mt/1785009382/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgLqVHtPBmTpD-2rmsBNzftqWrHbwlfKYfHLCvEHPpgdMCIQDuopqUipt99uJNJXasXdipPQxHZBIk84iIgYHmSA1Y4w%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgO6cIuEa-YaPIw9n6XlhHFjGmmcIVfdjGuXsiqLSHqDoCIHZeHBDNr2QJkIGj4N8JfDgkwMB9qjpJ4jJw0H0oW_33/playlist/index.m3u8
 
@@ -1546,10 +1566,6 @@ https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="CanalMetropolitanodeNoticias.br" tvg-name="Canal Metropolitano de Noticias" tvg-logo="https://i.imgur.com/G0x4xqa.png", Canal Metropolitano de Noticias
 #EXTGRP:Notícia
 https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
-
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: PL OFICIALIZA FLÁVIO COMO CANDIDATO AO PLANALTO E PT, HADDAD AO GOVERNO DE SP - AGORA CNN" tvg-logo="https://i.ytimg.com/vi/lpPxl71FIeI/hqdefault.jpg?v=6a63db10&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7mntK-8NuurFnsMYLSh02JwH_Zw", CNN Brasil - AO VIVO: PL OFICIALIZA FLÁVIO COMO CANDIDATO AO PLANALTO E PT, HADDAD AO GOVERNO DE SP - AGORA CNN
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785031229/ei/3RVlavDTEu7X1sQP9NayeQ/ip/138.117.221.157/id/lpPxl71FIeI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AZFlqhMR-cAhc2XYqy7BlXchnDa37rkXyIafL2ZZrZs5I75wRzqyMj38_Ega2hoULaFvvAns0PD-RJUD/spc/SQ-umqnPcJHKgZ8GCMEPURj8_HgInwjNV-8GDKoOaE2_7iKhOmIFu6tEpFJjeQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1737500/met/1785009629,/mh/Ga/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1785009382/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgRWA3qkYkQak-hi4qiwOepeq_Tf-OjyrcpQYCZIeKFDACIA4wgG3dlHNpvxVQZQWZOxeQT_MAAG4OVRfPT6Wp2k1Q/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAPXD2yEYeWKknRLnkldqYqqkT_SiIl9-A6ksEzLW3R4SAiEAtAqrkEwhOqkjs5dhYKEa90hiwJ6m-by8X7pB5YZIf50%3D/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="GloboNews.br" tvg-name="GloboNews Alternativo 3" tvg-logo="https://i.imgur.com/3yZyaCm.png", GloboNews Alternativo 3
 #EXTGRP:Notícia
@@ -2037,6 +2053,10 @@ https://aovivo.equipea.com.br:5443/aovivort/streams/pshRLrnv6isXq7RG474756777404
 #EXTGRP:Educação
 http://168.197.104.22:80/AGRO_CANAL/index.m3u8
 
+#EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 4" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 4
+#EXTGRP:Educação
+http://45.177.114.115:80/AGRO_CANAL/index.m3u8
+
 #EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 5" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 5
 #EXTGRP:Educação
 http://170.83.49.66:8083/AGROCANALHD/index.m3u8
@@ -2124,6 +2144,10 @@ http://45.162.64.114/BAND_SPORTS/index.m3u8
 #EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 3" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 3
 #EXTGRP:Esportes
 http://45.190.28.50/BAND_SPORTS_HD/index.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 5" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 5
+#EXTGRP:Esportes
+http://168.197.104.22:80/BANS_SPORTS/index.m3u8
 
 #EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 6" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 6
 #EXTGRP:Esportes
@@ -2215,6 +2239,10 @@ https://canalgov-stream.ebc.com.br/index.m3u8
 #EXTGRP:Legislativo
 http://168.197.104.22:80/TV_BRASIL_2/index.m3u8
 
+#EXTINF:-1 group-title="Legislativo" tvg-id="CanalGov.br" tvg-name="Canal Gov Alternativo 2" tvg-logo="https://i.imgur.com/rHPY0Yv.png", Canal Gov Alternativo 2
+#EXTGRP:Legislativo
+http://138.255.2.6:8084/TVBRASIL2/index.m3u8
+
 #EXTINF:-1 group-title="Legislativo" tvg-id="CanalGov.br" tvg-name="Canal Gov Alternativo 3" tvg-logo="https://i.imgur.com/rHPY0Yv.png", Canal Gov Alternativo 3
 #EXTGRP:Legislativo
 http://45.177.114.115:80/TV_BRASIL_2/index.m3u8
@@ -2238,6 +2266,14 @@ http://168.197.104.22:80/TV_CAMARA/index.m3u8
 #EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 4" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 4
 #EXTGRP:Legislativo
 http://138.255.2.6:8084/TVCAMARA/index.m3u8
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 5" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 5
+#EXTGRP:Legislativo
+http://45.177.114.115:80/TV_CAMARA/index.m3u8
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 6" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 6
+#EXTGRP:Legislativo
+http://170.83.49.66:8083/TVCAMARAHD/index.m3u8
 
 #EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 7" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 7
 #EXTGRP:Legislativo
@@ -2298,6 +2334,10 @@ http://45.190.28.50/FISH_TV_HD/index.m3u8
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 3" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 3
 #EXTGRP:Outdoor
 http://168.197.104.22:80/FISH_TV/index.m3u8
+
+#EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 4" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 4
+#EXTGRP:Outdoor
+http://138.255.2.6:8084/FISHTV/index.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 5" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 5
 #EXTGRP:Outdoor
