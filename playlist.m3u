@@ -87,6 +87,14 @@ http://45.190.28.50/CANAL_DO_BOI/index.m3u8
 #EXTGRP:Variedades
 http://168.197.104.22:80/CANAL_DO_BOI/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 3" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 3
+#EXTGRP:Variedades
+http://138.255.2.6:8084/CANALDOBOI/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 4" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 4
+#EXTGRP:Variedades
+http://45.177.114.115:80/CANAL_DO_BOI/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi Alternativo 5" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi Alternativo 5
 #EXTGRP:Variedades
 http://170.83.16.50:80/CANAL_DO_BOI/index.m3u8
@@ -547,6 +555,10 @@ http://45.162.64.114/REDE_TV/index.m3u8
 #EXTGRP:Variedades
 http://168.197.104.22:80/REDE_TV/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 4" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 4
+#EXTGRP:Variedades
+http://138.255.2.6:8084/REDETV/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 5" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 5
 #EXTGRP:Variedades
 http://170.83.16.50:80/REDE_TV/index.m3u8
@@ -591,7 +603,7 @@ https://run-rt-ra.otteravision.com/run/rt_ra/rt_ra_720.m3u8
 #EXTGRP:Variedades
 https://s1.micineovs.com/SBT/index.m3u8?token=16FOTt9Ae2m8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="SBT - YouTube - SBT Ao Vivo" tvg-logo="https://i.ytimg.com/vi/LLpNUqHVam8/hqdefault.jpg?v=6931e6d1&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCWjEQmE0753BwzWbin5stbK2N4gQ", SBT - YouTube - SBT Ao Vivo
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="SBT - YouTube - SBT Ao Vivo" tvg-logo="https://i.ytimg.com/vi/LLpNUqHVam8/hqdefault.jpg?v=6931e6d1&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLAVV23BUzUchJtpS3WeAMje5t-ErA", SBT - YouTube - SBT Ao Vivo
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785132339/ei/06BmasP_B8aPobIP8JrKmQ8/ip/138.117.222.54/id/LLpNUqHVam8.3/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhP5oj0-AyjfzDH43s-Q3CC4-0EQaynErVMOIWmBg16910Zmj1SNjswlfWVQgVwHCB-ngIunF6uA/spc/SQ-umr6QuTiTfetrDmZVSqbOBYe6I04MVCqV_LxvVVkEt552aTO6ZO_tULF7RQ/vprv/1/reg/0/playlist_type/DVR/hcs/sd/initcwndbps/1351250/met/1785110739,/mh/pR/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992868/mt/1785110424/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgBRkY2WanFWdWP68npFCxvOuHCveBcxdz7fXgESACsJ8CIQC-CCQJxOBmXLfMdG88CP-wiO3wQtta9tso5DcfDAvG3w%3D%3D/lsparams/hls_chunk_host,hcs,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAKzGKsPaBErY78znbPNfxORXM0QQkFMZ8hykkX0Q3XecAiBBSmhf3nQzO7OSEamhFJBSgxrwCuvYjIj4F5AnX9jK8Q%3D%3D/playlist/index.m3u8
 
@@ -738,6 +750,10 @@ http://45.190.28.50/TV_BRASIL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 2
 #EXTGRP:Variedades
 http://168.197.104.22:80/TV_BRASIL/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 3
+#EXTGRP:Variedades
+http://138.255.2.6:8084/TVBRASIL/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 4
 #EXTGRP:Variedades
@@ -1103,6 +1119,10 @@ https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8
 #EXTGRP:Variedades
 https://video02.logicahost.com.br/tvpetropolis/tvpetropolis/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="TVProfissao.br" tvg-name="TV Profissao" tvg-logo="https://i.imgur.com/c33suOT.png", TV Profissao
+#EXTGRP:Variedades
+https://stmv.webtvninjas.com.br/tvprofissao/tvprofissao/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="TVRaTimBum.br" tvg-name="TV Ra Tim Bum" tvg-logo="https://i.imgur.com/JIQwz0w.png", TV Ra Tim Bum
 #EXTGRP:Variedades
 http://45.190.28.50/RATIMBUM/index.m3u8
@@ -1345,7 +1365,7 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
 #EXTGRP:Séries
-https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFHDswoiVOMjCDCtXVkP1wHI_KUp3mJhwm1tcdjp7ZGvdrtSPYGPk7Sr1ipIqQTeCx1u7lKIfDZZdShmJRlzgaQ-JnfHgxZh19Ub6wO20ENiDL-XwuLsPwBXK6wOR5bQgd2Bk8d0wamO3U0By1RYosRHBYRdpbb3f6Pixatk8rvT5D0j3DTBxvISITMuKJUm108Z045Bu1Ny-fA6PmkjssELmAYPIaqf-fpHMyZGnCLPOoaEcWlolVYfOSzx_DxvwiT9whetV6jCjSquh7zvA5i7HqxRk36wLImia2QD34ramjmh7X_05r2T2dYyP8s0IT5hzbTda43O22Gs-GFTzGnggCgBdM6SJbuE5u1G0F-Ihj0MB1KoHzPC5i69l2zTxynd6kHZ5ENzgCvCOYkx-hQcNZ0_OHOhKTrlohx4ugwYq5vZoXHFRjUG94qK5sLgwgpgwFznwprDpGY5QpvM2xKI4Q-d2kHl-PuBGv6ep9Hu5RCJ1yDEARmPP49lQysdTvWuUJEm3gfTxLaCl4p7DwVTUCUi8SbNYG6mDM0UJmbyhYxSWr9ofaLch5kvfZRilAFF5jCe_BMTQ6p1z_qs7Qo3nmtJTN2rDhlswK_jJyrD_HoYY39Pb9W37F4eOvIb47Q6VfAgHDdGigpbaC9KuFDYZb_yB3HLm63T5yc3VkcI3Ig2WDEELT7_9qQKOljmBv5ESAA_sdA6KViZbIaGJQpeBBRVC9Mr2yQovviHsNIcd5hMu84GsMs82RJOWFNV1eIO9K2Iz1aglP96UYf5kruivusU88rNLyxHEf3wgY-6aoQbhH4_4qWt2q4Cm8nbEnf_o87MSVoeUklvAPdey8W1O2PhhqWh-l0pEvT-RigHap2ol7L6UlEKilwCBktv4d6Cji00EsyXzIanzCspFd6uMaDEtLAVHSsTOMd-kw7CABKgl1cy1lYXN0LTIw2A8.m3u8
+https://fa723fc1b171.sae13.playlist.live-video.net/v1/playlist/CrEFAaEXJ-eSyuElPwUu6mWZbHd8xufz_iImpeJOg57RfsxYJXDnfX22P4jnyLHNsQ9mUUp6LXGnON2-zX4x0kpe552d90VQWiVr53_rD2Y7KfGVB3s61CGyRVx4lzL__neb8wXi-4rgC6GUNSgg9hQzhXYttBRaX6SHcqjTn7UHK3XDRWwT4JA5mh8LSNFaPOfYJTHYBTXoITMYNaMjgVI8gYw1tm6HVmUVZ1akQ3vPUZNSw5EFImN_LFBFa5bdlaHR5vPt4CMm_A2bXNJ378gxY3bkJ1_9IRJp_a9hq0wxblLIfB_TVgYS08MvJEzFji4svT96wJWuWTo_xPzvT4GMX3eDJo_BYd2Oqp9MgtWp_7-7e-3TIovXGpVlXq1XS7o-bwODXIh2vZOD_JdX0CdAZ-0qbghTCuLJE9GuakV2V6fg5_tiyAtpPWJi1BsugTqIIv4bn6wQvDOo7BKx19v-YqJOlNrn4X6SVs7aHCQg8jBaiHHcgAOHZeHjHWjHgcq3467AuUpvZNojvB7SgZ13Iw3WD-_7mqYo7Hb3qjrH8P950GMrjGqA0swvHQDQyC4JDW1gp7g_EhmhtRh8lRGHFlMfcp8p6PqL8_Jex6-KeoL55lY8XE9oE5vUvAR_bi7B3kwlmoQhMWgk3ksZPqRlcz0WkWjyqcXWmDRLPvYzPP45ZKsw8wavwfURHaStw0U8nhMgN6XQSAmDsYw2s1zyaMlt1Xabund0zPPbCgj14Oog5l0wJRX5CphpUgA34Hxk95WoVkYRcQ7k4L7HojJ9cPa89BQBcIbAR2RIhNcdc-xQLE3jFH1oPMi_SeRGp-W0bSbszVEyKEYV27RSyCGWajQBFENcM23nE4w47eUQp0NX4EoKN3DoSnvp-eoHnD7oeWfQsCdTV5YV5qv8hpRi9ogaDH5vQjtaNhHERCrl1CABKgl1cy1lYXN0LTIw2A8.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
@@ -1381,7 +1401,7 @@ http://138.255.2.6:8084/BOXKIDS/index.m3u8
 #EXTGRP:Infantil
 http://170.83.49.66:8083/BOXKIDSHD/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Cartoon Network Brasil - 📼🎮 APENAS UM SHOW EM MODO MARATONA DE MINISÓDIOS + BÔNUS DE AS FITAS PERDIDAS! 🔥✨ | CARTOON NETWORK" tvg-logo="https://i.ytimg.com/vi/zW1pGSWhpw8/hqdefault.jpg?v=6a6285cf&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLD37ApCV4BhV9LRgb70Tl5ffZqVyw&usqp=CBc", Cartoon Network Brasil - 📼🎮 APENAS UM SHOW EM MODO MARATONA DE MINISÓDIOS + BÔNUS DE AS FITAS PERDIDAS! 🔥✨ | CARTOON NETWORK
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Cartoon Network Brasil - 📼🎮 APENAS UM SHOW EM MODO MARATONA DE MINISÓDIOS + BÔNUS DE AS FITAS PERDIDAS! 🔥✨ | CARTOON NETWORK" tvg-logo="https://i.ytimg.com/vi/zW1pGSWhpw8/hqdefault.jpg?v=6a6285cf&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCvnV0FGg1KnTnpLYwdJE-9LHRWgw", Cartoon Network Brasil - 📼🎮 APENAS UM SHOW EM MODO MARATONA DE MINISÓDIOS + BÔNUS DE AS FITAS PERDIDAS! 🔥✨ | CARTOON NETWORK
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785132344/ei/2KBmatm6NaGP-LAPt8iwmAc/ip/138.117.222.54/id/zW1pGSWhpw8.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhOa9rOu1bFSU4OWCxujk9vmn9gzBNMnFgehbNmuDbhOTNNQs-1lcusAOkDZJ4WLi_nAZUFxodfG/spc/SQ-umpIpvvuUnpyMIZ8P_BMerrH3nId1dAaoS5YA8Sntv6lzfKbovpx-L28LcQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1543750/met/1785110745,/mh/SS/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1785110182/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgYkk0y9fJ31LpptdHBMfYEmw-Cx2Js2A9KMuqR_4-a2kCIQD7p8sZ5ZfUDDCnxHlSOlEQEBdrWDxJbnIAH_POtxkznQ%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgVCSzqiG8Q29eKe_Fo7BM1_6qyyq8yOpBMI6p1yuo2vICIDNeCBrrGkVRlrrHGQtog9_1Zys-fNOmJOsZITSujYGH/playlist/index.m3u8
 
@@ -1523,7 +1543,7 @@ http://177.52.24.163/GLOBO-NEWS-HD/index.m3u8
 #EXTGRP:Notícia
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hqdefault.jpg?v=658ae6ef&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvQeaNyjO5SbndUBg35ixCJqeeUQ", Jovem Pan Live - Jovem Pan News Av. Paulista
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hqdefault.jpg?v=658ae6ef&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLB9hsip6OJ2nj_o0MjJn6p2XswylA&usqp=CBc", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785132340/ei/1KBmav-QGOuGobIPyKLjoQk/ip/138.117.222.54/id/eTz4XgOQaAE.4/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AZFlqhMaYRxyFhvmjusXTV6v1tyVqKQoZtd1MhGgdnQS1VZBPXP2al0Av4uAmYZcah9-9F3yFNREFifZ/spc/SQ-ump2y1BeAc6JmpKi2XUg3OO1rhezDHGMoHd13HOQujZ_Wkz1uQm65xQ7CTw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1543750/met/1785110740,/mh/Ro/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,51992867/mt/1785110182/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgJWGN9g14MayMRb8reWQhznHtcyRt8k016PD25o-XW38CIBI44-riFEpvXiutKkYWxjoV9yEujGwJ0UsIyrbj7wVL/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgJ1j4-qAx5i8sEbzlQJv19Vg2zcR7KUBPYHZWkOXzyVQCIQDN48kzvGKG-h-2ZTvgTuOBM0Y8_yqHWsXFtLt2ThEaUQ%3D%3D/playlist/index.m3u8
 
@@ -1749,6 +1769,10 @@ http://138.255.2.6:8084/HISTORY/index.m3u8
 #EXTGRP:Documentário
 http://45.177.114.114:80/HISTORY/index.m3u8
 
+#EXTINF:-1 group-title="Documentário" tvg-id="History.br" tvg-name="History Alternativo 4" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 4
+#EXTGRP:Documentário
+http://170.83.16.50:80/HISTORY/index.m3u8
+
 ### Canais Religião
 
 #EXTINF:-1 group-title="Religião" tvg-id="DespertarTV.br" tvg-name="Despertar TV" tvg-logo="https://res.cloudinary.com/dpkehkbpv/image/upload/v1721839192/logo/mixtv/despertar_tv_ieb2l3.png", Despertar TV
@@ -1879,7 +1903,7 @@ http://170.83.49.66:8083/RITHD/index.m3u8
 #EXTGRP:Religião
 http://170.84.165.204:80/RIT_TV/index.m3u8
 
-#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hqdefault.jpg?v=6871817d&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACkz7ris78jvaS-R5FyeoIcJZ1ww", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
+#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hqdefault.jpg?v=6871817d&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLCEkrVXWBzlOmBqc06CFgPT0WnPIQ", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
 #EXTGRP:Religião
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785132348/ei/3KBmau20OfesobIP8fr0kAo/ip/138.117.222.54/id/juUt-rN5CVo.27/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AZFlqhNqsOiSNMwyaGYIP-46BEa3bfMznAlOXmKh40IwHUNJQ2jXTf6FuSgzkZBJtj4XwsncznpJdZ9p/spc/SQ-umpJjsigtTZaOX3LK4AF92GUAtkJz0LMKZhKRcls9LebyZLV3YfLDeip0Bg/vprv/1/reg/0/playlist_type/LIVE/initcwndbps/1782500/met/1785110749,/mh/tn/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,51992867/mt/1785110420/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgbYYZI8SSf3Qx_zhFn44p1h3_hQcapKz4yqdjDbSOb3kCIQCaispNWbOuxWMTXF-97_UPLIsm02m0p9GmZKH1GrecCw%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgC84NKwydwNSjohztrKtFuTNwm9gJKos-zqRlw4YNTzsCIQC2NnjNp1izVHWFFPDFFgfo9apqAZ7Wo8h-O5vl_sdCMw%3D%3D/playlist/index.m3u8
 
@@ -1989,6 +2013,10 @@ https://aovivo.equipea.com.br:5443/aovivort/streams/pshRLrnv6isXq7RG474756777404
 #EXTGRP:Educação
 http://168.197.104.22:80/AGRO_CANAL/index.m3u8
 
+#EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 4" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 4
+#EXTGRP:Educação
+http://45.177.114.115:80/AGRO_CANAL/index.m3u8
+
 #EXTINF:-1 group-title="Educação" tvg-id="AgroCanal.br" tvg-name="AgroCanal Alternativo 5" tvg-logo="https://i.imgur.com/5XyopHf.png", AgroCanal Alternativo 5
 #EXTGRP:Educação
 http://170.83.49.66:8083/AGROCANALHD/index.m3u8
@@ -2008,6 +2036,10 @@ https://canaleducacao-stream.ebc.com.br/index.m3u8
 #EXTINF:-1 group-title="Educação" tvg-id="CanalEducacao.br" tvg-name="Canal Educacao Alternativo 2" tvg-logo="https://i.imgur.com/OOB7nrS.png", Canal Educacao Alternativo 2
 #EXTGRP:Educação
 http://168.197.104.22:80/CANAL_EDUCACAO/index.m3u8
+
+#EXTINF:-1 group-title="Educação" tvg-id="CanalEducacao.br" tvg-name="Canal Educacao Alternativo 3" tvg-logo="https://i.imgur.com/OOB7nrS.png", Canal Educacao Alternativo 3
+#EXTGRP:Educação
+http://138.255.2.6:8084/TVESCOLA/index.m3u8
 
 #EXTINF:-1 group-title="Educação" tvg-id="CanalEducacao.br" tvg-name="Canal Educacao Alternativo 4" tvg-logo="https://i.imgur.com/OOB7nrS.png", Canal Educacao Alternativo 4
 #EXTGRP:Educação
@@ -2069,6 +2101,10 @@ http://45.162.64.114/BAND_SPORTS/index.m3u8
 #EXTGRP:Esportes
 http://45.190.28.50/BAND_SPORTS_HD/index.m3u8
 
+#EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 5" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 5
+#EXTGRP:Esportes
+http://168.197.104.22:80/BANS_SPORTS/index.m3u8
+
 #EXTINF:-1 group-title="Esportes" tvg-id="BandSports.br" tvg-name="Band Sports Alternativo 6" tvg-logo="https://i.imgur.com/EuPvzJe.png", Band Sports Alternativo 6
 #EXTGRP:Esportes
 http://138.255.2.6:8084/BANDSPORTS/index.m3u8
@@ -2113,6 +2149,10 @@ https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/Globo/GE_Fast_BR/GE_Fast.m3u8
 #EXTGRP:Esportes
 https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt.m3u8
 
+#EXTINF:-1 group-title="Esportes" tvg-id="SporTV3.br" tvg-name="SporTV 3 Alternativo 1" tvg-logo="https://i.imgur.com/mWOR8pi.png", SporTV 3 Alternativo 1
+#EXTGRP:Esportes
+http://170.83.49.66:8083/SPORTV3HD/index.m3u8
+
 ### Canais Viagem
 
 #EXTINF:-1 group-title="Viagem" tvg-id="TravelBoxBrazil.br" tvg-name="Travel Box Brazil" tvg-logo="https://i.imgur.com/3tBJERH.png", Travel Box Brazil
@@ -2155,6 +2195,10 @@ https://canalgov-stream.ebc.com.br/index.m3u8
 #EXTGRP:Legislativo
 http://168.197.104.22:80/TV_BRASIL_2/index.m3u8
 
+#EXTINF:-1 group-title="Legislativo" tvg-id="CanalGov.br" tvg-name="Canal Gov Alternativo 2" tvg-logo="https://i.imgur.com/rHPY0Yv.png", Canal Gov Alternativo 2
+#EXTGRP:Legislativo
+http://138.255.2.6:8084/TVBRASIL2/index.m3u8
+
 #EXTINF:-1 group-title="Legislativo" tvg-id="CanalGov.br" tvg-name="Canal Gov Alternativo 3" tvg-logo="https://i.imgur.com/rHPY0Yv.png", Canal Gov Alternativo 3
 #EXTGRP:Legislativo
 http://45.177.114.115:80/TV_BRASIL_2/index.m3u8
@@ -2178,6 +2222,14 @@ http://168.197.104.22:80/TV_CAMARA/index.m3u8
 #EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 4" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 4
 #EXTGRP:Legislativo
 http://138.255.2.6:8084/TVCAMARA/index.m3u8
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 5" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 5
+#EXTGRP:Legislativo
+http://45.177.114.115:80/TV_CAMARA/index.m3u8
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 6" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 6
+#EXTGRP:Legislativo
+http://170.83.49.66:8083/TVCAMARAHD/index.m3u8
 
 #EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara Alternativo 7" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara Alternativo 7
 #EXTGRP:Legislativo
@@ -2234,6 +2286,10 @@ http://45.190.28.50/FISH_TV_HD/index.m3u8
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 3" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 3
 #EXTGRP:Outdoor
 http://168.197.104.22:80/FISH_TV/index.m3u8
+
+#EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 4" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 4
+#EXTGRP:Outdoor
+http://138.255.2.6:8084/FISHTV/index.m3u8
 
 #EXTINF:-1 group-title="Outdoor" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 5" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 5
 #EXTGRP:Outdoor
