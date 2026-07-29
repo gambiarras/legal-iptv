@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-29T16:00:47.027136+00:00",
+  "generated_at": "2026-07-29T16:15:07.293217+00:00",
   "total_input_channels": 765,
   "selected_channels": 565,
   "extra_channels": 41,
@@ -20,10 +20,10 @@
     "fetch_live_stream_catalog": 0.001,
     "load_epg_aliases": 0.008,
     "enrich_epg_metadata": 0.003,
-    "select_channels": 0.006,
-    "filter_cached_offline_channels": 0.003,
+    "select_channels": 0.007,
+    "refresh_stream_status": 0.985,
     "render_m3u": 0.001,
-    "total": 0.025
+    "total": 1.007
   },
   "epg_aliases_count": 7496
 }
