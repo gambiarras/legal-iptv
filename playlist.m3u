@@ -83,6 +83,10 @@ https://cdn-tiva-stream01-msolutionbrasil-com-br.smartbit.co/hls/canal25/live.m3
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="Canal29.br" tvg-name="Canal 29 Alternativo 1" tvg-logo="https://i.postimg.cc/3Rf8d64W/canal-29-logo.png", Canal 29 Alternativo 1
+#EXTGRP:Variedades
+https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Canal 5 TR" tvg-logo="https://www.canal5tr.com.br/imagens/canal5_logo.png", Canal 5 TR
 #EXTGRP:Variedades
 https://video05.logicahost.com.br/canal05/canal05/playlist.m3u8
@@ -238,10 +242,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Diário TV Teresópolis - DIÁRIO TV AO VIVO - Programação da Diário TV Teresópolis - Inscreva-se no nosso canal" tvg-logo="https://i.ytimg.com/vi/eTNH3m0WyVY/hqdefault.jpg?v=6a6c976f&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMOp7KVnO5BLMqy3nHdr3cinVvZw", Diário TV Teresópolis - DIÁRIO TV AO VIVO - Programação da Diário TV Teresópolis - Inscreva-se no nosso canal
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785740424/ei/KOhvasTkIqSyobIPq_bk4Ac/ip/138.117.222.145/id/eTNH3m0WyVY.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhPFM1i4O1mozdInyu8Ro_zMMVrBKs7I_tad1w5Yb5YAEHHVFgs9QRZi0KDaK3d3kevE9NyxXGNT/spc/KBGBcoL7eAjzZDu8-ldwbWThyWPh5aPKMyTM1fC83AIPznaYaEmelc6U172cuA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1786250/met/1785718824,/mh/KS/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1785718358/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgOVicwU5K5m2Yni0r9xw2SaKpYET5qV0XMZB3HaHzlNICIQC-Kab7QPhyuU2yNC6p4QeW4X-fl4eCl8hUYa15pGvl6w%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAJ0rlbJMN7FSvcVC6_Kn7DLOUdOeTEm7kl1YSUFRRZ_WAiEAgBxkGUig5fd0NrTVG9rY44ms8lBBqTAvcc8Hz5f3aMw%3D/playlist/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Em breve novo canal" tvg-logo="https://i.postimg.cc/25pdPvHj/aviso-mais-um-canal.jpg", Em breve novo canal
-#EXTGRP:Variedades
-https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
@@ -1703,6 +1703,10 @@ https://novelas.maissbt.com/v1/master/215c0da80606fed29372070168106400a6ca7e1a/N
 #EXTGRP:Séries
 https://stmv1.srvif.com/canal29/canal29/playlist.m3u8
 
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
+#EXTGRP:Séries
+https://fa723fc1b171.sae12.playlist.live-video.net/v1/playlist/CrIFiSwKU4zEnaNws0bioHT7L7S_Shrq7pht0Bc5RbtQsP3v-aCTiEp2m7H6hAWngmVbXf4Cy4i32nhUDNXWOcjd7R9h5EHnTdXB_KAkpa6ZLegtbNY6RRtT9WbmLOYaa8OTdSOjxG3vzhRBl1xqyXV3dMxemmZi-xD9El-BiZbZwk4L1hYkwuY4s5BTAcHfGEiZhTSHCb6xldf7ZLvg4libhJyP00H6br8dHdcaXV6GgGzjd7YqavM-aZDUrTA5tT0NrFioezFcRKXho8y-rrZ6IU6ceJXQ9tCbD6yCjVKYOQRjinoof14isUcTBdKNMPsIzTTQ1E6avxVr_-8paqJvqEP9WozBq9eHbirZHwfve25lsN2YmocQ1FioBqjKfLngGjYkJ0xBwpZmT40Jeh-mObQQxi0WdKqONArC5ZaInWQAq5OJJfN7lWZxSELRuA-c-lw74lo1CN6wTEdy8a8_1yw3SnHjyjI9QPJuBZ9ZyxHEfFhN8ZzkYToZkFoI3kNnKcBYLWy1rDjLKg_I1uOaB3Pv9PIhfE9tMnQ9IfrWlQMITG1WyQT1EozUo1nKGXSUj9rDlfasrZtICA5mkf7GUDV4Ad8j_tuXxusElVfX5MDPxoDyIonVN61PSNJDFy8KAQskG8IiyRVmSfaT2iyzyMWA0oQ4z4ghSU9gmVyuRcRnHBYeL2kBLCOp6FAtAbgT610WxlMsDs2LuGXghCXoTDuzhmXL70mzuEaUwYUTV6mDGM78GnQmqCItx3LNr_U5Ul9o_1hy2sGFrQXFsd0h6Gveu9uyvn4oJDRNZdMp6nCgwGqxbLMUPY2jHXkHqQVRHezSDeO-1zECXduLYSBM_9k_82MKyyRSgCTaoRbbiQBRbXj1Hu7rstHfF3oDEVL1nAwZjLRorXI3sbNdnZpwHCJiGgyBllGTsElwTw6oxbEgASoJdXMtZWFzdC0yMN8P.m3u8
+
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
@@ -1721,7 +1725,7 @@ https://cdn-tiva-video10-logicahost-com-br.smartbit.co/serieclassic/serieclassic
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Séries #1" tvg-logo="", Séries #1
 #EXTGRP:Séries
-https://sae11.playlist.ttvnw.net/v1/playlist/CtIErgBlKVNZFeVSEw09ylAjIt2bieXsmmCfR97xKAzlU2ZvB0e7PBr1jf82SwvJNsyUpiWKcz3RixqcVatWvLumaipU1qb3ZydNQKyOfHyqf8c0zHU4ig6T3nIURP14IyrbyxO4PeEFLSyMAS3nmwyIn1iB2EoCCsS35DfhhxYgZHVtNbVClHH8q4jLgN7wS1OBIuoD9-rINeW9KwRTd1zr-6mX4JhYsT6pm41TDNUiIJ5q_Zy-neTPOx5qFWkUKjNsYRlCBbJF6XxKlk--oND1nPaZj00Ocu45LEiIIEh70Yj5_9sdUSkDoQ7Z2Qmmm2WOLJFuN0dqc1_KFnXCilTaWOgSiFpiWp_Hfn2imGc7FyNkcOfyit2nJb81L0wMKakx3Im6O4pMekWxiZzhE-hWWESsnssgPdg4KwxC-pK2kIFy--dnxmmPeqojzIgV3ZHfCCPCP8RcRDanLPEpY81j-gu4A9fLYH7Wcm8clddQDabalpCkX170_SYYcTinKpQKrZJ-zd_PVuqPbBg00atDskel7u964RHNkFuBPlk_U95Y-GkovXmsy2CgbzQesm1XLwhI7tLyiyRFJLJswbdInA-mgs916dO7XKTLYT71-xevZAqKaXebG-Ketc0mz_DXyn61FqK2xt2wLJBMJ4XETbApAOQYNugmfSs4rKA7p_H_8cYxj--5Lz_geFsvxoUATcapRpuT3UTKsv7w9QHxvmPNPIRQQdbwaXwavmelMGnmKzVgNru1PTx8nj0CBcvZ2bfKsqKj_YrHXQKdcgKDSvmRGgzKt5SEo-2E2RzA6lkgASoJdXMtZWFzdC0yMN8P.m3u8
+https://sae11.playlist.ttvnw.net/v1/playlist/CtIE_7uJ8FxHzpADy_5nNjr2Qk4_saP0SmuXLqphB20oyfoa_kB9wsAVIDYAkMS54qihViyTVjMEiu60NvWM1QqEb1CnQW79ORVBhG5TnUMHIgmKUWcX_bSqCK3IGZSk7IBqFZ9eElpIB_gtGK5h5lw6HCa7HNDD18W0dVue14AEZMyyyXnKSOHcxrpcKeMZ77UPpHRIGpDbG2T-F8fu9whfifE76pAE425uhiAJQmofX_6P88PSpAyITjvICf5QhoPrnL8zP0s9JcUHgoBTJ6EXpf2SkRPH7P3HBxdRdETrs_WU8qST64VpXFN80FYHdJun_qLs45-Q_PuuVvB-7VqjaZG1d66-sX0zdlxb7xz2_tX9O19sz7KHMCgwewOx5KO9ZSXuuMrmtHbDJKt0SJaV0NjH9Vc40DumHZttI-eX9z5_hrQQ-t6npNyHU_9_CA3TUXcyc1scdtf42UYl-aMQdW5o3De8RtuM1FJu1rkOHy2ruZwk8O6ufJVm3Xg0htzgXtk2Zrd8w6Cp77XLLckp6L9gA_5Zbkil2Ax2KGg5UuCOhhz6J2CLEak5K4Rs9rAdwc-b7MNL6RZ3j5rcvYac7yaXeQB1hyaaqkq38iZQBTQjXcZuOGEGfvqTskEC5wzMNTatUbIzmG7Cp6dJkC4Yub2GWTAxssovK0yb8bOR_V8imu6ZVk_2YuvsKVTWA3ooAzBUEBLQ2zDy_aSzFW6oZsgKeQj5vUy-iUt-ABeILlLS_6t56uxFjp_c9kCWft8mAShraiMjGwVfEKDMyeb_0DT5Ggw3Ona-3F3yGagvjCUgASoJdXMtZWFzdC0yMN8P.m3u8
 
 ### Canais Infantil
 
@@ -1737,7 +1741,7 @@ http://138.255.2.6:8084/BOXKIDS/index.m3u8
 #EXTGRP:Infantil
 http://170.83.49.66:8083/BOXKIDSHD/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Cartoon Network Brasil - 🦸‍♂️⚡ PEQUENOS E GRANDES SUPER-HERÓIS COM OS JOVENS TITÃS EM AÇÃO! 💥🦸‍♀️ | CARTOON NETWORK" tvg-logo="https://i.ytimg.com/vi/ozQcWXVZlho/hqdefault.jpg?v=6a6a2537&sqp=-oaymwEfCNACELwBSFXyq4qpAxEIARUAAIhCGAFwAcABBrgCFw==&rs=AOn4CLAm-bmwrdfmuXM0rlTliC4sUGcsow&usqp=CBc", Cartoon Network Brasil - 🦸‍♂️⚡ PEQUENOS E GRANDES SUPER-HERÓIS COM OS JOVENS TITÃS EM AÇÃO! 💥🦸‍♀️ | CARTOON NETWORK
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Cartoon Network Brasil - 🦸‍♂️⚡ PEQUENOS E GRANDES SUPER-HERÓIS COM OS JOVENS TITÃS EM AÇÃO! 💥🦸‍♀️ | CARTOON NETWORK" tvg-logo="https://i.ytimg.com/vi/ozQcWXVZlho/hqdefault.jpg?v=6a6a2537&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6zXEfOHNXMtP_v56DmFGVaVaidA", Cartoon Network Brasil - 🦸‍♂️⚡ PEQUENOS E GRANDES SUPER-HERÓIS COM OS JOVENS TITÃS EM AÇÃO! 💥🦸‍♀️ | CARTOON NETWORK
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785740425/ei/KehvaprDLMGO-LAPq7ri4Qg/ip/138.117.222.145/id/ozQcWXVZlho.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AZFlqhPNh2OrIn1RRESfKvC-AaumHLukpSgFKGWTwdPsExoNHF9rUGYl1SGDuY6dmz_6WDi3LqqDkhFJ/spc/KBGBcoWHvnIQlogDmLZjorxG9asNoRc-WPwgaznVEE3QTH-sHGP1VOSbKOacdw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1786250/met/1785718826,/mh/AX/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116/mt/1785718358/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAM5Roz7Fspqh7YGsHnY2wym09p6hgGaooCj9sChoCXyjAiAriRgtmP_G79cQb2dt-5VZmsyTEHoPWKSRG-Z-lM6ddQ%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgbS1gNVfeacJM-00ncBIG4ZcI53U-1OwFcF1KE8bwXJICIQC79tFNUbJq9-NDM0IunynDIy_aOPE7r3PI17eWVnR3XA%3D%3D/playlist/index.m3u8
 
@@ -2401,7 +2405,7 @@ http://170.83.49.66:8083/RITHD/index.m3u8
 #EXTGRP:Religião
 http://170.84.165.204:80/RIT_TV/index.m3u8
 
-#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hqdefault.jpg?v=6871817d&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACkz7ris78jvaS-R5FyeoIcJZ1ww", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
+#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hqdefault.jpg?v=6871817d&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLCEkrVXWBzlOmBqc06CFgPT0WnPIQ", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
 #EXTGRP:Religião
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1785740431/ei/L-hvaq-jEfXi1AH64bvBDA/ip/138.117.222.145/id/juUt-rN5CVo.27/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AZFlqhPjNOodyG84gBVnaGFI4VsQL_juxA5TkG7x9OUF3eNyBhSiQifMU1Zsx5okff1fyAioadi2w7uc/spc/KBGBcjXTbB7UdrA3y050Fum6IelByy82kAmjrvGN0mmi8mz-xdt-BgkGtGIOaQ/vprv/1/reg/0/playlist_type/LIVE/initcwndbps/1786250/met/1785718831,/mh/tn/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1785718358/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAJoh8I-O466hgGQ59jnkEsXAK6TKlCS1aR8A0InkqYwwAiEAikBKoNNaeF-6WbemRR9SlVryhw30MiUt3lBLNBJFOTI%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgJlNPIcODviKPKC-c-xwdGML-MdJyYTiYuv7Se9gwTpYCIGRW97bdFmkHM4dEkSuXRP_yG8LU2m-1uxfBYwl6wkT2/playlist/index.m3u8
 
