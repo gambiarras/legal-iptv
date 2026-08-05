@@ -191,10 +191,6 @@ https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/play
 #EXTGRP:Variedades
 https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -686,6 +682,10 @@ http://170.83.16.50:80/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/bwFySFN9/tes_tv.jpg", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -1385,7 +1385,7 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
 #EXTGRP:Séries
-https://fa723fc1b171.sae11.playlist.live-video.net/v1/playlist/CrEFeLyVHB_l8HdeAI8VbDnN6TezBScYI-Ny0NSq1nld5E54vkaRtFceDJMJnyFVCg-6s8aTWIfvY9dGV0h6F6ACIs6rYWwb4kzGz9ei8SAWWV62HZB8BT-yd0BIkQ4nCeGZ5rATAuq1xsf45rVJ90YVb0ssL_A9tVRcFQnAdBeGg9RXENE-Y-WNRsgrTARv1rfk80ABNtAVg7RS8xh-LQak4hJlYkIkRcyeMRTmcRYoEBjNz36O1M9hiCmQwwiHcnogN4RC7nKs2zMKp6Ve0PHOXSujKRHXylxCBuYW9RItap8gQhQQkrqSV4NXJSBZ9BjhtH5cfAhncBbr015Zsp5DP503mxeWt9VfPujX6Rc2tDEpdUq3a2dP6pDQ_B03EtROHm0PrqHR905g3MuYBei2k7QSdFtZvnJZF8h9GiBPW6XvFlYMmXFw5l7yAFFBKe2YTEZrWxcDGHSStE02M1BiuSfRZ-wuDC9sEoItxV2CaBUa3Vny9nYAzMIYzu0oaS4vpIKxc4sKluj11r-ZFKj0U2_ZV3vkS-wx1yT2BCn8HyZHj9TpU7SBRZH5J23z7Sa58zYTk__qe4tyYVr12ZOxNJZWnWGI7PoR-ralozP6dxHZaZ719hnBwIwkc7DDWwiYIASv7YZGLmS4T5KL0AvpG8loQg7jYcnxLf_Iet9fglidDyDxpfAbFywCfaiwejH5hkuUyPDAEFESwGJnHCP2djRB6TSEk4rdmM5bRzKw7GYEd6YIOAIeQ-28xklFYuYARwyYr7HRGCToiKEGWTe-aX3NYcRZhq3xP8qRpuYUFQIAzvxgYZ-obXzJoFVQs6Mg_nxJpuw1U75KbWkYCLw6mP3iovK2JaeCwiIprDhUMcZTpVPaRrUa9M84JPI60q8BwJJi1lBoM992uzKuQUJB5qoaDGQAvmMdLYNkPvOe5yABKgl1cy1lYXN0LTIw4Q8.m3u8
+https://fa723fc1b171.sae13.playlist.live-video.net/v1/playlist/CrIFy17p5IdbELxt3Psv62SGavRF3OyZabhpZBXO0z8tHHrz99RpAjcxAUEivR_cR9wmjimIEqq9ExxQruC53TNWeZ6NOyTng4JMAnsmkjh3QUdhEpChPhhP47CvyS9BOdjc4kvBhE0UMTuEGGLfMnQybeXiKhIuKu8rWIsausL8zWyuQdYgvdKQ1oMeY1CetA9zj6TR2af_KdupMwaXvw_qa-KvludDIrAkRSlceq27wXTOMcBRn5EivP6aurl0-CDOCZtKFSm5UBGPsijudQYUfIHbFOlmXqDTUPxtXSKQx5Yu5IiLjvmnyvWaBJLfne3Tz3x50APDRIUhZ6ncoKLD4fpqaFXG504wxYT6TIRGryEBBElfYAD6NbQv-0Bvmz6EUjNN3Gq6ywa5GuNetCxNPfJd48QVZNgOrPE5ntj29WxZcEQdtfjmF-9z3OVbuLpG7j8DR-mlcGDDCU4IhyYMv3rnfOQzrHVacu16cQAzJwQZiFDfDUA2BD2d33asHAiSdFJbVpInwKULsyFHKlHgTvVn1PyAkiEooGxXDq4ZS1CT8W7yOv_83n08hI9x5lELOef_20UlYi0Gv2pRh-eQzYf8-IfNCtlwsRe6RpJJ95kTbaWgJSlkhjjX_VAHpTJoDYk6tM60GxCV2NcUVsM8Lkh7oNFC3u4u8wqqacNeP7xrX0EzuEg64AkD1VEN-Az_q_qdK8JDF_Y4dpq_4c25vJhA4V6LxtnFLJeqMQvHRVzxiuzi5LAze5C26j1YL8sxb6fAQyv_8pKfgI71x8UoyhPeg5x5Jh7DXbAIVYHh5kwQo4Bbvky5xipMmmMJ8cR-n8iUC_uxWUAhEokDKWWGKxOA17FAh93Eq6gspn0KNxQVcgTv8Apxtocz-9PlGvAyTGItwV1v1lB6bPhrf-XqeZ-hGgxgFkSBPOwweR3FWF0gASoJdXMtZWFzdC0yMOEP.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
@@ -1397,7 +1397,7 @@ https://cdn-tiva-video10-logicahost-com-br.smartbit.co/serieclassic/serieclassic
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Séries #1" tvg-logo="", Séries #1
 #EXTGRP:Séries
-https://sae13.playlist.ttvnw.net/v1/playlist/CtIE8rPP8P6JXrmdEmFgw7H54aSS1Dis46fs43SF75NZkrfSEcPg4EdMO62esODSyTeQR64tTQgrsucX8FGtVzp_c7XOEqaJJD-JWn2rwuB9lRkqpNuhfztKmzIV_-TmqXVZl0BKnSWO0fRxGNPAQTSEwlyQL14WCqI4N4vIBhloqnmQ0ChXpewrF4aVH7fNUddeDq5Y2kdbwY6DsR6B9QLpThNSv8-VmHKL41DDfI4KKFDrv9d70HI6_Iir3yz2fineFQu733tSAs-A0gkS6aRhgeCLhvBZFfO_jNlE1SwTXzdiOZzhNH08g5bcaQuGvVmHuSYvR1uOuDWbvR-Q8E_xcGnSQfw_bSO6bmIJs95qnmZGAEA9HO-NpfmZtD_4bZ4kdXpYztIexaoHb_-csIOkGEFnI2ICUZMkXa1EjS7kpO_YeRDPZ2L0XV1sK3NLwGfJWEnbfryo-mkqC9upM-k5_CTbEtJwQrgGXbnJhma6dsQkeWOqK3qODJ3UNzUkhCSf7B-RHFs2dwQbVaQgjsFW9SsHv3bKC5tEfX1QoU7Qg_3FL8xn-j4WTRgYmoOLzKQQMIOzRinyol394APIn34n8vMpqJspWXlpR2ojaCki2SkAyCywuU-qJymHUgxHt_UXljyzsW-gnzaxA0k44xlNM3X9SbkeLhDMbDIG0Q4OIXE1HwAHKbai6nIFLGKC_w8dnE1GY3gUgEWbvF_VWVx6F3-PSaYCSvJGTLnWnd_DqxC1TtoQEIJbRoPQyh_6bbCCKLXSlAVdkudcVOaVjNtY4v9aGgxw2iBgQGdL2kR4aHcgASoJdXMtZWFzdC0yMOEP.m3u8
+https://sae13.playlist.ttvnw.net/v1/playlist/CtIEpPQUzIQUZK5aIsEkeOy2aLfLY-PcD389K9cq1Wgef1G2EkrNv5Yy8qEyQ9FXkyaYXrLgQb0eHhXgcknH9m348yebEimLd5nnaNmbj45_SA4k_Fgng_z6hqi-hgoe87rArNVn31642Um_aD2I4WlGjFofhsFh5U71nBmwT9AYx4xbSwDE8nnJNH8AOncJKAr_OYOl6k6r5GaFZOWT-TYtaZsboHOEJ0nDnAIy3CET5YKlZjcd6eMov5xXVNcexCW6e5llt8CTaYvDTxcQwxeZszXPJ1HmEc_aWgsqdSakfg4faeovtSMr_3Y0z9RiE2TC0mqUMX21TdDBt5yxfPY7NvMjTf94rhGwEOahCf6_3GKYq42MFIH0d4zOobst8lIv7j6-n2Flwe0QyxqEFZk6n7S_mdGp04dX9vfzeYs5XeNU6NltW-1WEdnYHx5sVm0utkyBRv4ymkpFlpj5qm6XRkwOBUzRtt9oSp6TgG1bJGwdp46D5Z9Ssr6usvMbfG1Vp21SoDaPAOnf5nw2TUzfjBvUT34qB_HLCwwxrb2mq0yfFfrjsCjCwrntzWTwQwrwzK9RhEvF7qr3wAGC9WIWzNK8hWkQPl35h69INb3uaEy9ZmISA77dniwXgMBRDB1jbOV53ZgAuJolEbxhWzH9bCJzM8lLIXi7hT3qZCMb40AQ6rCYXzm9DkjXPVT-BWof4nu6keEpFLIeje3Nn02CCpYIr2nibB0M-l7iFPd-ALab6IcS6Eufa4az--hzYFiZaKDKTeBHsMabH07fFz9CUrFcGgzizHPDM9wHJeXNQkQgASoJdXMtZWFzdC0yMOEP.m3u8
 
 ### Canais Infantil
 
