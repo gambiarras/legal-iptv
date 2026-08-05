@@ -1,5 +1,9 @@
 # legal-iptv
 
+<!-- hy-mt2-i18n:start -->
+**English** | [中文](./README_zh-CN.md) | [日本語](./README_ja.md) | [Español](./README_es.md)
+<!-- hy-mt2-i18n:end -->
+
 Aggregates public IPTV and live streaming sources into a static M3U playlist.
 
 This project combines channels from multiple sources such as:
@@ -143,3 +147,4 @@ legal_iptv/
   services/     # aggregation, selection and metadata logic
   exporters/    # playlist rendering
   resources/    # static resources such as extra channels
+```
