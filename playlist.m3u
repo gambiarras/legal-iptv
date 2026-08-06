@@ -191,6 +191,10 @@ https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/play
 #EXTGRP:Variedades
 https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -678,10 +682,6 @@ http://170.83.16.50:80/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/bwFySFN9/tes_tv.jpg", TES TV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -1369,7 +1369,7 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
 #EXTGRP:Séries
-https://fa723fc1b171.sae12.playlist.live-video.net/v1/playlist/CrIFyk9FjJ22MTRNR6OXXXlQclbDl5TnGFGQdg7W2smigOSj1VR88qdmHotqbwmbae86-Kghnx-KWyM50OUv4VeombRmAD8tGJZhd64JCBM6eu-5mgw7UiZSd-o-S5iiuFIZPnMs4sPMaoJJ1EDIfkq7d1Rps4tnhostDFI2GvCsVlV7hCf0XgpG69y0ikHxiynCQgfMaTp8fdDjP3lDV7BdrzHZsK0LuRGWaxBbS5ToOj1a41LQGg4oSdDuuYt6FSetfVNnD-pCs2NYRJ3Pcc5bjloNPJWubzbdc0OlBcckUn0jpVP69I_0jJ0MFOeTtE5uF8Vvw548DGkfaF4iFs453y2y5fqpFvCB9qQDI6mOruZ7loOcENhOE9EAV-GWnZUcmd22f2T6BqmTqdNZJSbfrygEILK_tr0b3DsCj4NMy-wDteMNIQYkIunvhf_nPoqYpnncigzzHt1hRvWq0EpfSuLLfq0P55szgVnxhMTc2gllw7V7lmGkCfNCkTcDtYbiC_Yos_dtLj1dJWL8lmRatMAwFLMEXJtGcF56cCVd7uUe0rSMDf2l62IbHQWAmRbu19tsQGmCx1cneuMX6hSSMdmOvvdubvvjYoQAGfAmo7nBaaW_S8EQ0e-QkNOMzxqQ3BUPsiLU9J2-BJ5zUiMhyRy3tGI0Zu71CX4IQlJtRkQoNG7yMqOCn3wALQcCvKRCRzJmPA2LfFqp8OZwxVeZK3LeGwDkpSDEIHO2rnrL0U1iCwpzAyYHwoUYfrRJdChc_TZUjBPt9ph33gupgbAZFXq6BFbfNudT3_tsyvRdhpb0dNKt57KcJHo5JTxKjzaP9QEUGs9YzkAzp5NScrL7tCByUPNGwA1b1OIc6jU8meEJtwnG9ucUqN0jbeZy_9ZmaW5_-HZGyq2fjEVUCC4rnKh3GgzhpgrEqWagAgmsZ0YgASoJdXMtZWFzdC0yMOIP.m3u8
+https://fa723fc1b171.sae12.playlist.live-video.net/v1/playlist/CrIFlkEQ25lXwFAGWrv45iyEcdt24RqTAkaMSR1sFj_Tc1HsPni1YwpsDcsFDW_FjETdPtpd8naOQ9wqDkuqIT1VWUvFH6N56Dl6BiBNjWWAfcn1m1nMDKNX7O42MWyszeG91BoOYOSwfhdClvwMxxo4m-9mCsEJGNHpnvKLTjmxYjyC_KHXuNmFtvWcp8TChwriWhGevKfRFh1n6jsnusmWoyLP7X8kgEz_22Q5BluGhMs63tFwQ4oQvRSwrAOYF7ap-N6CR-jT1lr9u1AHT3LCA302IIhNhTDuBo-6Oqz-xwiItUTDFpa-bZoQza9wvd6x5R5UzPn_qG0xI9i4Ag9Y0QA4_eOJy-yeIUWK1q18TO6ZOA26eoiIxF9Tbhe8LTmMRdJIEybvnHjboH6qm2xXvLHMCLSNR81bFfQllRfNGJGmtSla-ojP1uq9tdT2YuyonL2A2GHjmcPS2GD3JLF-QeudpgP7hrsjFE6PoA0luC4Ff5QiB-4akbpGLAHx6v4y9xxRVOfDDskWzr9a4rG0BnI8yShrS_hH5Rayx2-Gvt6ecUViG1n_LjsmXtYik2u7j3m7y7ag4GfqzGq9lRTx-XDr_SHwoegh4CzNXxopnge9_0fc4EPb3veP7ZNt8L2RNtz908x3J3Ae1Kca_7EO-i35Q8_Snk5h3tl26nrbDRUuSskb2TGwZShjI8fVQGkw-aFMBS_NwPmvzwwuII_Zw8ZwV1B3xEX0tNgCLgAHJZMGbNIjz4asqMltupkoINZ_p90EMMnuHLlw-KIJkUfGNHWWa8ikvB9BQU-Zxpv4TiNpdUViwJckmOLJXcjyenpfiKNus4PsVM50j5W_TPb5E-KjW8kxBcrQVXUu5io9l8CFMWXfgur_P8TLxmpP0f7K5LWrQCgroriGjrFK8OQUltxCGgzY0ZTFyrmcToyx1XQgASoJdXMtZWFzdC0yMOIP.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
