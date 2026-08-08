@@ -243,10 +243,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1786158046/ei/fkd2aojCNITNnOAPhd3HuQU/ip/138.117.222.145/id/eTNH3m0WyVY.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AZFlqhMGJU6KZXjrw8MJ8ZAu-0PerDsxuJACPTYb5rtICxy9HPWtp9NlibkrirLse9ta5bnCPp4Ipn1j/spc/KBGBcrV8iwK3UDLARZ7bePPDA9qesXwZvBjBd5SdA433GlomjMydTPDA7Tx6Ng/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2303750/met/1786136447,/mh/KS/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52089682/mt/1786135978/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgL1ga8SnXFKsWGUxeAFY1Dlhk8pPEO4-GFzxElFqS_MUCIQC1fy0ezrSkMICK8KikaTHHAWGJ2RyOnrbv7H5EHjRaAg%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgVa0YJdVmDpm9n7XT75FtFy7bnbZHAhDI-wR_j_s9ohgCIGqOyqKvK0t2-pkGqvhqdX7Z7Fb1s5ZTc4K-cYKvFmG8/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -834,6 +830,10 @@ http://170.83.16.50:80/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/bwFySFN9/tes_tv.jpg", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -1713,7 +1713,7 @@ https://stmv1.srvif.com/canal29/canal29/playlist.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
 #EXTGRP:Séries
-https://fa723fc1b171.sae13.playlist.live-video.net/v1/playlist/CrAFBJbYRM0odso4rR2jicZQb1I1vycasu2RqC6a5r49igrPyP1ZFd4ccYr3h_52Q0cIChm4C9vJevjY7DUqIy83a9hbXMlpcSuqMoUxaslA-Id7xQeyKs8iOL0hD1P0JoHEB74jBkdCC_7lvYlTUlYj5nd9nDLvPhdh5ZaaJb9lbE7zI-k5PdcV8VfySPphdDuhWkNzM4qxOqbSOSKj8bPvNgf3smQvsfhERPZMUWIWWyI0qed9rUw8JhhO8lsOwRetUTGVCpk4D1ZkgIWGUvytqm0LEuoMCuS4B_WkVkaiq2yl4DhucdrBorgWThFKTS8Aiqx67LZsrsFRUn8jvWB3Dz6eU1OQPp_NJspXTK5cvReoh-tps_NcN3xKmre48VK9YGpw-fG1VBfcU4tq1TRRKOGyomooa6uc-BzZrwa_eswptespJeHQYzWjT0ToPI-pPrADYjqdQQiCJVVzqTDEOVFeppoV56uS8T8urEakg3DlCDENguQGJO2aQevYLDxlGa9MLcLtUTwS09nQLvDtP7Dg-iw7swV2fu3qRw2UWB6Jmy43-egb7BHaX6RCnNckled6sUSgfm4iVaS8QGYCkR3gaAzwxck4KCQqfzTBMm7U-_JFSpC4YPrZhv5rs01CKv87Vk5m7FAmI28Dg_pwTxkLqk8Puq_tdxPCAvJzD_neU8lts6wUZQoTMdGUoMFQzDlsN0eOy8ws9jJnWmuTKMLLRs8w4yP_vphO3GTBgpsl3Muei1_fBR0iEWwXZgWgRAWQXN1ejknMiZ2TY2edgL3hC6E7NEiGs0d4iRh8iygvrN5zWbfTQfCs441MLFoZRrmwrhN1OG4Q3yg_GTg3s4aKL5t9VmyvkO0DJ78rUJnWqxWJsaU2CWBpxKK4q87CPHpNn8Of-M_Plu-osffAyhoMTpaaePCvc9kEd2nfIAEqCXVzLWVhc3QtMjDkDw.m3u8
+https://fa723fc1b171.sae12.playlist.live-video.net/v1/playlist/CrEFB8XukO3uFDUF4SXbyS5K2dx0LPhILi77_tz70j9JmmZ1mfK7Nx_axpWhN8owRr-L-5U7iK8O1lgbow2a1YgE14EOay0z0qkQrXJbSDb68P70VtCqSM3IDLrlYKT0KGSDuoGz5Xile76JOK62pdNIqFMgO4ZVKIW2BCX2vmtjMA9AnzXLVQ545oUZBGsKipboHYTkLBT-tdGn--ZCeAA6_XQ7mTf8I70ic5V1YrhcXnqAOJ625ABgN94YUJQvZGwUPQ7ZPcJKsmvZWWFrVhuXqpSVWkcEn0-99vrLjK9m35WNummzM3ZWJ4sNR2gzHDjvQSAfEcFt4NYy9dMPGNuWh5goHf3Dns7TdhaRgbS_6OinDf_vXZofV3EMjR6Oi1oIWjIxUjLK4PzozCzxj-ieNny1i8BXI89fzn1ehKUQ7K1pIWgRwdaEoE2EwBwyRJiM2s148T7QPB-I34xwtPIlhQv-wDokY-TE25N-Nff8sajNpyJst2txMXmHsGbYi1WSRRp2voGMOYF2zG94dYNQ0E9HVyRgadE5LfzpnXllsiIjAe16ChUCP7DtJ7guK4coMDWzz5mfoYjOGaV7jO0TMVSxxuRM5_jznB6-QJetMxPca0ihSeb6l10qCd34YhgPXOpg9qAzvTY4EWD93Bv7DgnmA263JJzZoMa5vbzvehyyFLnYn-XdV5UEM5qyWCMG5Kuv38ZlDQntFjkd8Zizu687VSU2_Y7pg5HNfgXTx4olfivrDWtP-VVcQUNjxHj2_h_WQg5MjjUpH9hcmrwW6MYh_wUg4Gs6mowCRBTrOV-cmnfgeUlycUL6J2kqmWPYqzomU4T9wvfJmKoN2GoTHOtihcckdvsbexJ79KCYlXa-p6zBBh5xiL44G95BHE2JbrXyrqTyHq_DJQz1qh__TqIaDJOns1pZz8Ok4rDyIiABKgl1cy1lYXN0LTIw5A8.m3u8
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
@@ -1967,7 +1967,7 @@ http://170.82.202.31/GNT/index.m3u8
 #EXTGRP:Notícia
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hqdefault.jpg?v=658ae6ef&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvQeaNyjO5SbndUBg35ixCJqeeUQ", Jovem Pan Live - Jovem Pan News Av. Paulista
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hqdefault.jpg?v=658ae6ef&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLC9qmkV94bLtzFiwnXu5eaYC2sj0w", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1786158042/ei/ekd2av-WE5GNobIPgfeJmQg/ip/138.117.222.145/id/eTz4XgOQaAE.4/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AZFlqhN9Df8qUCbh79Vp6XwIeSJVirhZeu0932k96XF5NC5jqnKOZNRpDk9m7HLdSsznKG6LV9mRdCgQ/spc/KBGBcpxZMpllKrg7Hfmbq3drR8g41ht-PQSb56r_vMMhn0TXqRO5YLD2T6Jacg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2303750/met/1786136442,/mh/Ro/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52089682/mt/1786135978/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgGSEG1m6VFsIMyk9gx5wwLpwH_uZloJW87vxkw5sG3BsCIDtF1LETQXR7hja06DpOjWWLKhYvaYwNqk89sp-CUdg-/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAP_USme948k1ERpZrYT93g3grQMQ-UCXtn2-iQpBT-RDAiA7QF6dsCJrFvyBiUlEA7qCd81dca5-_TWcvJ36Y9yJlQ%3D%3D/playlist/index.m3u8
 
