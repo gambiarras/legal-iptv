@@ -123,7 +123,7 @@ https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="CazeTV.br" tvg-name="CazeTV" tvg-logo="https://i.postimg.cc/JnTJzqd5/cazetv.jpg", CazeTV
+#EXTINF:-1 group-title="Variedades" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 1" tvg-logo="https://i.postimg.cc/JnTJzqd5/cazetv.jpg", CazeTV Alternativo 1
 #EXTGRP:Variedades
 https://amg01391-amg01391c10-tcl-br-9630.playouts.now.amagi.tv/1080p-cc/index.m3u8
 
@@ -1343,10 +1343,6 @@ http://170.83.16.50:80/SONY_MOVIES/index.m3u8
 
 ### Canais Séries
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chaves 24H" tvg-logo="https://static-cdn.jtvnw.net/jtv_user_pictures/ddca22fb-c604-4609-b129-6613ac861ed5-profile_image-70x70.png", Chaves 24H
-#EXTGRP:Séries
-https://fa723fc1b171.sae13.playlist.live-video.net/v1/playlist/CrAFVZ5W04aMT3x_sFGDcu777pxunuzaPu9-8sPPvdoMs_SMW6WEdNtrZFuSSj0EAm1pcKNJ50rIkFjQsAiEIwwyHdf5bNbLDqGbNiTGu5uuVZ5RMI8jLvtXvUl4labaMS3eKQAAid-HpabTBkrYdcqAog9bwgZfTdbgyOMrwTvLZjRAbc2V0Q-8G2tJgES_VonQE4HWdnNRKBY0NyWMsEobK1OsSAoY1MA_J2tPyIxZ4BS0Bk3GAxlJl5qQ-E6kJi1wKxVJcF9mzCUpHh_7EiExp1I5xpl1btDaVUysSyud786839c9_n4wuCJGnT44vo2RQnV0s97oP_SRjJyPd1kMcB2r_tQoPXsPL3C5VUvJ2VuRSJUHShIQJVGcIZ7HzOhwJtABZ59SDUQh-ppxtv9qELC6BqaHGFPHu-UfvYTjYxzYJCFiRLqJ_2Y6AYBZJd8UfmJHbNIkV8BgzoOCAdGjsVGdG8ymaxgNtUkPfW2TbgNv-XWRuXayy73H2lat-E0XDEPtDNk8rMtMCWf0pZPaVhlP_psxQwcJr0XxNF4QRsbqTm_Na8ktb74_1cXLUbf5Y6qxwphOF9-CmYWRNZ6YAw27n_39gvtZFAjJ7-sbvtGQHGJqsBK9YhiU_CMfqO44-Ejmj8Gjo_4iK5jC0zhASfia5i-sJ8oysyOFPycg5bpng4rYTTM3cXRxJTXrzftB3zHjzv1Ba4s0PzxER1Vgyhe8iq1PfRaReDuhr9Yt-HSkKPGQdBBpUQhPoBi5v6HCeQBJdFgqnw-nz_nmXFWWu1IX7JPfn3x2Q_IfU1LllkEHztiMsEyXTLnUQG1YNg5TLte35upU7WhQIW-Jb8WSlCmrLPXBdvlIPGudjN-q2YLBG_zYJctVD2Z5rIbUTvxpdFePD830glw09XSpzAVLAhoMyjcLFBoPcCpMduNgIAEqCXVzLWVhc3QtMjDmDw.m3u8
-
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Chespirito" tvg-logo="https://github.com/gambiarras/legal-iptv/raw/main/legal_iptv/resources/images/chespirito-logo.png", Chespirito
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
@@ -2057,7 +2053,11 @@ http://170.83.16.50:80/BAND_SPORTS/index.m3u8
 #EXTGRP:Esportes
 http://170.83.49.66:8083/BANDSPORTSHD/index.m3u8
 
-#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png", CazeTV Alternativo 1
+#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV" tvg-logo="https://yt3.googleusercontent.com/4oHE9WPNm2O_OCXfv-z1ikfOHAWLe46KViKgZNwBGiRQKfLDPlHmnBQ9rbuXvWasG4YixvFA=s176-c-k-c0x00ffffff-no-rj", CazeTV
+#EXTGRP:Esportes
+https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1786404616/ei/qAp6aoWAIZaR-LAPhpuuAQ/ip/138.117.222.145/id/jRI0eKG2ro8.1/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/ctier/SPL/playlist_duration/30/manifest_duration/30/gcr/br/bui/AZFlqhME-lLpvV3X1I2jl-UMnB91uSwL5MuCK6kEVGPqQI_VTp7JBekTNb75q4WLQk1-IQYnny6PwUzY/spc/KBGBcitxcrdRU9i2Tnd7ete4RjPLlmkG06HBsrgy-ofHo7HHSJuAfOhz3sz11w/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1816250/met/1786383017,/mh/VT/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52089683/mt/1786382678/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,ctier,playlist_duration,manifest_duration,gcr,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAMsthEEu9t-KDXyQnOKHAci1NRyMCmoQvYO6IvzGhJBwAiEAxZGY-aNQoRBVNZEbkBhQXj693Swdbv6n2w4vod1zHG0%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgYcSlommSep_oZgD4UUAZOvprDWYSgyaQ_LhBKGTlekACICT6xh-1HKVJEd5QGTgFTyalllREeA2eNgfsSK6h9F12/playlist/index.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png", CazeTV Alternativo 2
 #EXTGRP:Esportes
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
 
