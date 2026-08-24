@@ -235,6 +235,10 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787614229/ei/
 #EXTGRP:Variedades
 https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -826,10 +830,6 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1769,7 +1769,7 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787614233/ei/
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787614232/ei/uH-MaoHCBdCQ-LAP58fd4Qs/ip/138.117.221.249/id/bK03WDeq5SI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAlV5jhfdy4UdGq8kuPbBHTK5RNSN88_E41nhHk5bLK19M1c_uke40NXCOTKyiHxP_WJdP5U0Edu/spc/KBGBcqbVQSJnYbV3TYKQp5UzaYl7-I6ArgP_yOgJPujo2ddnWMLv8jdcFeV47w/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2028750/met/1787592632,/mh/VC/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1787591577/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgbzV0IeulSpEh3m3gbPv9pqqFqC5kO9c3DLjkEWFx7hsCIFZ18GNJRfxtBfwUWnt0gWafNHSwAiM2oI6UFXt2xPEE/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAJbTn8Q003p15ErsO94AcibVSMI0MzdkNsPOtHX-uQz2AiAh17KD5TuiqPYmg21ijjn-KhTGeXDByuIfdC3WyyunbQ%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças" tvg-logo="https://i.ytimg.com/vi/cQHlHWNg5zA/hq720.jpg?v=6a0d8090&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmMWf6nxX5oy1Jp82eFkbTLMss3w", PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças" tvg-logo="https://i.ytimg.com/vi/cQHlHWNg5zA/hq720.jpg?v=6a0d8090&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLCFdJwcZtcH9uRRcpuEBfs7rkR2NA", PowerRangers TV - 🔴 Power Rangers AO VIVO | Dino Fury | Séries para Crianças
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787614228/ei/s3-MaqzTPO-f-LAPpPatsQY/ip/138.117.221.249/id/cQHlHWNg5zA.90/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAm05LXct-5srnskLfOje5LxmaxKZ5lCx_n0BQfAQH00WPkrAY6YE_S0ODfduK1t8nBK5a3Ycuw3/spc/KBGBcqYnZ9-IdBScYm91rA73DHp1ANXZxpSMG_IgPMlPbZqq662EWh1cqdobZA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2028750/met/1787592628,/mh/El/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787591577/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgdRZ7EVGrDt0u2pZNn8gTIhqf1dl_xUJjhzweLLFsQSoCIQDjYn3ZZ4cnQhM8yUU7-V3aFrXC0LDPJB55XY-Yd4Y6AQ%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAJMHJxHUemwn59pcIO3TVovdxhmQLLKVtxulV_lpeXPwAiEA1d_1SLGUax_hwHx8ywPyV6-3zP34vN-8a2nZY0aoiBc%3D/playlist/index.m3u8
 
@@ -2003,11 +2003,11 @@ http://170.84.165.204/Record_news/index.m3u8
 #EXTGRP:Notícia
 http://186.219.52.187/record_news/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/vLzno5z62bI/hq720.jpg?v=6a8c37f2&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDVaDWuWwHr4ZBZml4dTTyxU5cF5g", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/vLzno5z62bI/hq720.jpg?v=6a8c37f2&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCteCn8Us52PteNlmvkp8dZ7EPxpA", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787598021/ei/ZUCMar-bIMuO-LAPtPuTuQs/ip/138.117.222.145/id/vLzno5z62bI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmDLVZBADtNASD7c8Lr-el55On7Y091ydFzXyX5UQtUo36KfreIbqAqnwK7Yn1fFDNm1QMfHnIk/spc/KBGBctkEthiNvJdAAIEO925cVQJclyZG3O8HgsLqQS04fbr6gg23SBEchFZksg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1071250/met/1787576422,/mh/i2/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116/mt/1787575944/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgVc5122Od1uTzsyMfLhtNAsufn11JU58WJL2Z2Q1_CFwCIQCbzeL0Zd8quSm7UDcCZuBcAb61JshDNSexS1vL821iJg%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAL4C0H_DF-RGTav6Q9gAjLtdO9sJ9snYgqvl8SQr-r0WAiBFn_4ujlyE5_sGjsS73OfuPyWUPcwUT36M-C8PfBrKLw%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Conexão Record News - 24/08/2026" tvg-logo="https://i.ytimg.com/vi/3M3Wb4XChm8/hq720.jpg?v=6a8c709c&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCH2ejkSKZDp6-k3NqUjvB9q4Ss-Q", Record News Live - Conexão Record News - 24/08/2026
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Conexão Record News - 24/08/2026" tvg-logo="https://i.ytimg.com/vi/3M3Wb4XChm8/hq720.jpg?v=6a8c709c&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDs3Bp4rEUHSoCFj8HPAnQBA3qp8A", Record News Live - Conexão Record News - 24/08/2026
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787610620/ei/nHGMatGAIqCb-LAPpse86A0/ip/138.117.222.145/id/3M3Wb4XChm8.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAliYHeCQ3Lfw4QEiSa76B0dDOc37FszcRbMHFm0EQnKaLbrZDh46mieR2NPBhajnd7-ACR6cd0a/spc/KBGBcqZ2XQ51GR7R2-8q08jbjTCZFJ_t_HvzSYMUVyw16hALxXWwI7o6TT0svQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1537500/met/1787589021,/mh/9n/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1787588443/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAOi3hsaHUY3w30L1N3xYYWdSHsA4j5rUeHms-Q1iOGpZAiEA1uLwmjBogqxaIXWgAJSJHfXnSmDDunHRnGjJG-M7_4A%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhALm7NGxsHHho_V71QdvZG_NadgqTykTzmDtBNRvQ7dIqAiEA2zx0b0Y7DejKmMVxvGPVkw6f1TYrwgonPmLINp3C1yo%3D/playlist/index.m3u8
 
