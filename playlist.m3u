@@ -235,10 +235,6 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787614229/ei/
 #EXTGRP:Variedades
 https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -830,6 +826,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1701,7 +1701,7 @@ https://cdn-tiva-video10-logicahost-com-br.smartbit.co/serieclassic/serieclassic
 
 #EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Séries #1" tvg-logo="", Séries #1
 #EXTGRP:Séries
-https://sae13.playlist.ttvnw.net/v1/playlist/CtQEYsPCIjpzYUjCnWk6J-UJCxtjUkLdwu7XrwredSUs0-5NSUZSMut6K_KZQJqRJ3oKagz6iBHLReW0MetPX65KCxDrJGiWUNrYpOsmknHbbErV0wezF3jX0snx1mAUxAyUlZPujkThqVN1oMZAA5JIPDl6I_7_4wG07IjbASpkZOUYF2hTRLjr6TpVIQ6HH6je6JJDj3n3B17r6vp6mYqSrNUQYqxBbZB_6a2zMlSH2UiBhP5hEvCHUCnAoj6OGzsBDDkYy7u2n1a3f3Q7hD8y3fM9bavwn7euCSoEdsUiUDz-LkG6BCCEK68tx5HeSZTTrHlDiogU39W_r1dU2vCO6lUyHk1WbctaE2KJjJuXmtne3X70-9q-ReZ432sve6I-kIIjEY13Nx2yn18N0PG0BKWj_A5TBQcMxuGOM1f45FZRrHuKuL0nXA-BM5SGsBZLJvUZIF0J71COjrpGjhFqhrw2vKmNkVTcw8oyaZ9GdC3FLx6XnH0FZ_paEvuPuKhuHGqIJ0ltGF1uh0-sTXgO2Fzeu1mRrIkiBBkX-CyCUFxuGwHklnK_zUJZDMspi1vQKDryfoSxNXrF0457NcMUPHTdeRIxd3a0miKSuOeV85N78f7iXv6_OylqJjlmZuRqZahW-h9iLGDyZRGRHWU-8LT4XXEGsMAYqd_8SCRF_ZZATjI6SwU_HVCJY16-7nl4UUdzi_1ISBdqjv63V2hSltEkbvty6Mi272nBKh2fXRB_8-U5ksxZjvZgIwXHz4q48YmM_8KuWCWqyZ2-8OzjvCIA7dgaDPxdnet3Z9wy3iyFJSABKgl1cy1lYXN0LTIw9A8.m3u8
+https://sae11.playlist.ttvnw.net/v1/playlist/CtQEhQKMuahJ_TLkP_MIoaORROqBgqxeluyVhN_pAOje6RZRsDeEfKE_GWwSjmJ5jKE-7465T1kfgYsBe0F6TdWl56fWCkHI5zltQB3ueSDfSR_6WKFX-b_rHHt-2gJCIlPg5vSZ0iDTGxxFnI5GXoSdVvLCeeuu-MNFqPQaPSTnDHKbaZ7uM2xwmd21BTou0YuGqkCm0A54fZIuhaD_seGBC1t2M0Fd0HY9yutQBOmIkOvT2-T0qjRGiJ4x08DtbyZ9fuEbKiw7Z4z_JTeTqflxDba6HGLcqkSdTOpZywGZKo9BfFkyCJ3c9HEneVowwvky7Nic-CQHdCe6g5czxtIIM7L6btmbH4s848GgSWFehvPXtx5CL4-XDyMceHEtU3tbklKC1RcKOh79I8X8zVx8N3EV560xwxRIFIP2P6qmBmENlA3hYXLKnHA4blJxTW_U2lOgORJDH0CnndxngBOcbAo0Jh1vIxEk7xDF2wukPljuGM5DfDaQZsgcK4tMd_DpV7SLwLuA9sIQz_AEoAS42SFpJy3mXgAtJN6HcoWto0CkCNvdXtN8bC8rkCc62rdT5PyNS04Ef4UAXY74YRiA8x1NFWUplPg_8wTz5Uy3HyRn510ZuPl4spjuK_MhwPBsfcW9J-RRhtCsMr50ubSnzBx1l5GhaLQISEW784r8uEYajv8m1LXzAO3RQANMVcnB0oe9OX_n-pnXOJGDzYDQzNPWbaj0K3k31lHDLGKJ-AhxLORbF2-FD6luSv0-7StP0vLpYtmofRioDUOVy2c8IsE5mooaDNdMtX1o2GvmIys4VCABKgl1cy1lYXN0LTIw9A8.m3u8
 
 ### Canais Infantil
 
@@ -1911,7 +1911,7 @@ https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
 #EXTGRP:Notícia
 https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: EUA: TRUMP PEDE QUE PAÍSES CORTEM LAÇOS COM IRÃ | CNN 360º" tvg-logo="https://i.ytimg.com/vi/Et20C5kcu2I/hqdefault.jpg?v=6a88c268&sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLAUUI6nRp8TH1iO4mMXp0V3fPCoqw", CNN Brasil - AO VIVO: EUA: TRUMP PEDE QUE PAÍSES CORTEM LAÇOS COM IRÃ | CNN 360º
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: EUA: TRUMP PEDE QUE PAÍSES CORTEM LAÇOS COM IRÃ | CNN 360º" tvg-logo="https://i.ytimg.com/vi/Et20C5kcu2I/hq720.jpg?v=6a88c268&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2uR7RBgiW28iqlfqjl8n1ROWQfw", CNN Brasil - AO VIVO: EUA: TRUMP PEDE QUE PAÍSES CORTEM LAÇOS COM IRÃ | CNN 360º
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787616020/ei/tIaMau7cN87y1sQPm4rk-AE/ip/138.117.221.249/id/Et20C5kcu2I.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AR3QkAmyQlq3BL4rFM5vn9bhaWYcl6rjkZfuvaB4OF7y_hQhU2Y7cuptmoSdzju41GUdd4dIGmR8apzr/spc/KBGBcn4AMFIm8VAhLv_DKy9J60J5-bPQo8d4iyA3lbpF_rn2NwmMZJocH8omhg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2107500/met/1787594421,/mh/cB/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1787593503/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAL6LkFublsvJ6QJt_1uF7UssZyFFN6j1WMzFW7STvb9zAiBub8R9y_s-ezkyOvt0QZ7TeLK3JlLEqmtlWz45OvioUw%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAPGOCXTX0nTpaQyZCeMoH8WfLvXa1K6sl6gqVI6oU3fFAiEA6jdsaogR5rz5-D9vZf_4ndXrS2NiGrdSycAa5aC9qWM%3D/playlist/index.m3u8
 
@@ -2003,11 +2003,11 @@ http://170.84.165.204/Record_news/index.m3u8
 #EXTGRP:Notícia
 http://186.219.52.187/record_news/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/vLzno5z62bI/hqdefault.jpg?v=6a8c37f2&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCE6HJoZmoHow_tp8Xe0MMgw6rIQQ", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/vLzno5z62bI/hq720.jpg?v=6a8c37f2&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDVaDWuWwHr4ZBZml4dTTyxU5cF5g", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787598021/ei/ZUCMar-bIMuO-LAPtPuTuQs/ip/138.117.222.145/id/vLzno5z62bI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmDLVZBADtNASD7c8Lr-el55On7Y091ydFzXyX5UQtUo36KfreIbqAqnwK7Yn1fFDNm1QMfHnIk/spc/KBGBctkEthiNvJdAAIEO925cVQJclyZG3O8HgsLqQS04fbr6gg23SBEchFZksg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1071250/met/1787576422,/mh/i2/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116/mt/1787575944/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgVc5122Od1uTzsyMfLhtNAsufn11JU58WJL2Z2Q1_CFwCIQCbzeL0Zd8quSm7UDcCZuBcAb61JshDNSexS1vL821iJg%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAL4C0H_DF-RGTav6Q9gAjLtdO9sJ9snYgqvl8SQr-r0WAiBFn_4ujlyE5_sGjsS73OfuPyWUPcwUT36M-C8PfBrKLw%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Conexão Record News - 24/08/2026" tvg-logo="https://i.ytimg.com/vi/3M3Wb4XChm8/hqdefault.jpg?v=6a8c709c&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCWPIFQmMyaO06gA3rq5ydQk5B4jQ", Record News Live - Conexão Record News - 24/08/2026
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Conexão Record News - 24/08/2026" tvg-logo="https://i.ytimg.com/vi/3M3Wb4XChm8/hq720.jpg?v=6a8c709c&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCH2ejkSKZDp6-k3NqUjvB9q4Ss-Q", Record News Live - Conexão Record News - 24/08/2026
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787610620/ei/nHGMatGAIqCb-LAPpse86A0/ip/138.117.222.145/id/3M3Wb4XChm8.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAliYHeCQ3Lfw4QEiSa76B0dDOc37FszcRbMHFm0EQnKaLbrZDh46mieR2NPBhajnd7-ACR6cd0a/spc/KBGBcqZ2XQ51GR7R2-8q08jbjTCZFJ_t_HvzSYMUVyw16hALxXWwI7o6TT0svQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1537500/met/1787589021,/mh/9n/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115/mt/1787588443/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAOi3hsaHUY3w30L1N3xYYWdSHsA4j5rUeHms-Q1iOGpZAiEA1uLwmjBogqxaIXWgAJSJHfXnSmDDunHRnGjJG-M7_4A%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhALm7NGxsHHho_V71QdvZG_NadgqTykTzmDtBNRvQ7dIqAiEA2zx0b0Y7DejKmMVxvGPVkw6f1TYrwgonPmLINp3C1yo%3D/playlist/index.m3u8
 
