@@ -239,10 +239,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787781624/ei/mA2Pata5DqeWobIP76-MiAI/ip/138.117.221.249/id/cg7GkdA9k8M.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAkufa58vioDqJS6Iy1-owbyVFYIgcY0x6MvoVXqWuZ0N1W0r1_1ZOHlSZMWrXMsgPEwXPA4W08t/spc/KBGBcsBQXfrqGfaiK1z4_6ToGhEOqdDP2MMPYjtyBzfPDYj5HpjouCt3ZN5OQQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2197500/met/1787760024,/mh/3l/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787759571/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAKzOc0IWFNWkN27CKmHBdP-slIBBngxaUZUCwI8XIfv5AiEAp63GrcYYbKKU-j13jvhxEGJT1X7EjOXkSXxJdhoJIZc%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAJowCkmXlgfno9BRwOI1H3X9FpZYz6tLZ0L0nFKsCl0mAiBbGqE_FLtvCV2InrO8jpuyq_hamKBsC_r4hzhownjCGA%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -835,6 +831,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
 https://tv.rbti.tv.br/rbti4/index.m3u8
@@ -1035,7 +1035,7 @@ https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=
 #EXTGRP:Variedades
 https://srv1.streaminghd.net.br/tvconecta/tvconecta/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Correio da Manhã - Transmissão TV Correio da Manhã" tvg-logo="https://i.ytimg.com/vi/p6ORNg85AAU/hq720.jpg?v=6a8c15c7&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBCliKHeYIyzoHbD2JSEAorRW3rWw", TV Correio da Manhã - Transmissão TV Correio da Manhã
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Correio da Manhã - Transmissão TV Correio da Manhã" tvg-logo="https://i.ytimg.com/vi/p6ORNg85AAU/hq720.jpg?v=6a8c15c7&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4JgvtWoHhfI5giO9TGLS6u3aNXw", TV Correio da Manhã - Transmissão TV Correio da Manhã
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787781635/ei/ow2PauTCCMLf4dUPg_WugAg/ip/138.117.221.249/id/p6ORNg85AAU.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AR3QkAmQ_fkfrU10U-Pyx6Wd5hNbXd3U39aYJkjOu-iJs6m9YhgJi1duDULKeBp6lFq6x8KzZv92VJ_w/spc/KBGBchefdHdducGhujfwfBow0z0AKK56krHsTVzUc31vW85qCz5pvx_-SmVCPQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2197500/met/1787760035,/mh/q1/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787759571/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgU6lgZyNXg3q0SBp8Ca6qJ0OxgxV4OoVLEVLpbGKRfqoCIEvArIGx6LikmI8HR_gx64IW_7wTsoiWmPsk58hd90UT/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgG7gtphu2XFsINy2YaEyqa9Mot2YjlnN2zxKYV0P0fBICIAxvKGMe8Re5THYmtxaoqM9lP2FTQSe2KGkDD_AVuGJc/playlist/index.m3u8
 
@@ -1919,10 +1919,6 @@ https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787788822/ei/timParKgMaCd-LAPqs-v-A0/ip/138.117.221.249/id/js6xQfoLSKo.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AR3QkAlzN7bb97CPsEwJ15IpHWSJtAfyWl3CEfA1AVM1PF3smgf0jturghiz7HQh2CeQC1Fixs3QA8C9/spc/KBGBcvH1gBBmv6bxJhu0If4w5XehuMghuc93xxzRS1dQrSV5kCmsFcZNgJ_0Gw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2428750/met/1787767223,/mh/ns/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787766784/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgFLudObwBmk-4ezE5R1cgJ_asvHL07q6cpm54nx2uAp8CIF0-BiGuQO8B7WRDosPP1hluWFzn8gwJleZAsJtxXTxV/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAMuIeYy0BVERgH2ELlija1WabSs5tiEmLD5gml70J0tIAiEAj_iwkO_XWfNddqrJ9fyJfWnMraU0jXlYLn5NZzDBzBE%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: TUDO QUE SE SABE SOBRE A ENCHENTE ENTRE NEPAL E CHINA | BASTIDORES CNN" tvg-logo="https://i.ytimg.com/vi/xkwf2yJcb0U/hq720.jpg?v=6a8df040&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMdbKfwH7mdboiYGACYGDlb6pcqw", CNN Brasil - AO VIVO: TUDO QUE SE SABE SOBRE A ENCHENTE ENTRE NEPAL E CHINA | BASTIDORES CNN
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787778021/ei/hf-OasX2NYbeobIP4vbtiAY/ip/138.117.221.249/id/xkwf2yJcb0U.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmoGSaotnLX2yIekywuM6sbDjSFaOYivyoLe0WcWf45ZWP3I-WFA1Z6B8lEd1uumLkQQrmK5OMM/spc/KBGBchRLJ4DuD4OBSOankl99wz0ziHjIlMlJx4u26MkGZ3Z1RGhMEVsH6z3-PQ/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2432500/met/1787756422,/mh/cO/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787755996/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAN3OhxKGkmO-1JB2mnHlJca9oxKyIYgfTTZzP_gfiNj5AiEAnbpmn09IfVfe6O1x_hNosisxRRPHE-Wvoa9wDR0uG9s%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAM5MytqqKfNUOmwui2EeLYPr4Ew59EsiG0tEJiRFeIy-AiBIDEl-CsXWnS3kDt5hem8Vj4uT40WjtXsrQwV5GNZYfg%3D%3D/playlist/index.m3u8
-
 #EXTINF:-1 group-title="Notícia" tvg-id="GloboNews.br" tvg-name="GloboNews" tvg-logo="https://i.imgur.com/3yZyaCm.png", GloboNews
 #EXTGRP:Notícia
 http://177.52.24.163/GLOBO-NEWS-HD/index.m3u8
@@ -2367,7 +2363,7 @@ http://170.84.165.204/RIT_TV/index.m3u8
 #EXTGRP:Religião
 https://cdn-5.nxplay.com.br/RIT_TV/index.m3u8
 
-#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hq720.jpg?v=6871817d&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDn5j6nje4Wuy6BC_CBMdyOgz9FIg", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
+#EXTINF:-1 group-title="Religião" tvg-id="" tvg-name="Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe" tvg-logo="https://i.ytimg.com/vi/juUt-rN5CVo/hq720.jpg?v=6871817d&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCD3cP5NpvEP_ZaUWWqC408qTopkg", Santuário Nacional de Aparecida - Santuário Nacional AO VIVO - Você em constante Oração na Casa da Mãe
 #EXTGRP:Religião
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787781629/ei/nQ2ParTSMqSjobIPjb-ooAw/ip/138.117.221.249/id/juUt-rN5CVo.27/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/bui/AR3QkAk-f5noT0rcPfHVkMPEgLw8QV8YKAzSgl8jWEYZcsXvuky1d0BzI7d6QQFKGqoKmIVOcmcC1MCC/spc/KBGBchInE8rBjPIPKgbmeUwVD9tY6ReTprfCo9IDjtgr3Ys__maoqY1-8srqnw/vprv/1/reg/0/playlist_type/LIVE/initcwndbps/2197500/met/1787760030,/mh/tn/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787759571/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhALCBb-aMFglJeRAWTkuwaxrqFIpl_Qh9AII4Q1soGwT7AiEAp8QXCub7VXXqp_8u9C5jLylJRwbXU5v18yLCQl76WZw%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAISEmyAQLnpdt2VYCKiQ_3xhWAFmjIS6880Yah4ans9HAiEA-Knj59DvwOOCS1xbETcvx2w2BA0pjdKB0-Qv3cvj4Vk%3D/playlist/index.m3u8
 
