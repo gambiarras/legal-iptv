@@ -167,7 +167,7 @@ https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 1" tvg-logo="https://i.postimg.cc/JnTJzqd5/cazetv.jpg", CazeTV Alternativo 1
+#EXTINF:-1 group-title="Variedades" tvg-id="CazeTV.br" tvg-name="CazeTV" tvg-logo="https://i.postimg.cc/JnTJzqd5/cazetv.jpg", CazeTV
 #EXTGRP:Variedades
 https://amg01391-amg01391c10-tcl-br-9630.playouts.now.amagi.tv/1080p-cc/index.m3u8
 
@@ -238,10 +238,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Diário TV Teresópolis - DIÁRIO TV AO VIVO - Programação da Diário TV Teresópolis - Inscreva-se no nosso canal" tvg-logo="https://i.ytimg.com/vi/cg7GkdA9k8M/hq720.jpg?v=6a7f82d8&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAFKxbsCpGPvO22J7N3ub6I7Dq9sA", Diário TV Teresópolis - DIÁRIO TV AO VIVO - Programação da Diário TV Teresópolis - Inscreva-se no nosso canal
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787871628/ei/LG2QatrQB9yzobIP35a4oAk/ip/138.117.221.249/id/cg7GkdA9k8M.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmIQYvZSQ9IDiEvpA112O10C4VlVUfqyPVWF-JBCvGObiAbJ8tgiy5ybzmWKrVM4urTbZN_bP-8/spc/KBGBciBlz7LaCGSl6wHU_PnZeLmCDiZPELAt0nI0RJqJ25vrGLN3FK27RiEhGw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1988750/met/1787850028,/mh/3l/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1787849795/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgTY5lAkw2bvt78dMc0Wi1744Hn0LqZ6FOQ5ZvMDKFxSgCIHXfzC3ReT8dja6weJNG8_XobNvu7-VVHzDczwqZihEh/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAIc_R0Mk6UXxqmCi3ipAmhFeezcGliELr2UzpgLGz7OwAiEAtHLiDWtugEhA1GIxAf-TVRpTMgOndO_Iuv5GBzDTMqE%3D/playlist/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
@@ -834,6 +830,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -2617,13 +2617,13 @@ http://170.83.49.66:8083/BANDSPORTSHD/index.m3u8
 #EXTGRP:Esportes
 https://video01.soultv.com.br/internacional/internacional/playlist.m3u8
 
-#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV" tvg-logo="https://yt3.googleusercontent.com/4oHE9WPNm2O_OCXfv-z1ikfOHAWLe46KViKgZNwBGiRQKfLDPlHmnBQ9rbuXvWasG4YixvFA=s176-c-k-c0x00ffffff-no-rj", CazeTV
-#EXTGRP:Esportes
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787875218/ei/MnuQape5Mbnw4dUPoK-H4QM/ip/138.117.221.249/id/TDFBtodGRCs.1/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/bui/AR3QkAk_QscXejKtQyHeJeA6icRg5fyGvhrI4bQ6we2XOpVabNMi0hWUK8VqFjKWJZfuq4kYSA1pMTIQ/spc/KBGBcuS8xincnWtaDcHd5D7lKstlfPIFGZINKzk6Z1LPGZ6jS5qMHVPx7Wz1KA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1710000/met/1787853619,/mh/XM/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787853154/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgVq5sRP3a8oDliiuXGQlLX43TBTlzxnU_xy4zqAFAFN4CIGdNueV5zKuEoMOM5iveMfc9I4WNi7uLVZI1YksmCfIN/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgK6gl5MTcdAwXsm921YBDaDEy3vp9p23lwMOmIxvJ00cCIQCodtuKqzyNflijSjwWutrS9nTIIktt9Qi8ELL3mbgZ5w%3D%3D/playlist/index.m3u8
-
-#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png", CazeTV Alternativo 2
+#EXTINF:-1 group-title="Esportes" tvg-id="CazeTV.br" tvg-name="CazeTV Alternativo 1" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png", CazeTV Alternativo 1
 #EXTGRP:Esportes
 https://dfr80qz435crc.cloudfront.net/MNOP/Amagi/Caze/Caze_TV_BR/Caze_TV.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="CazéTV - AO VIVO: BARCELONA X ATHLETIC CLUB BILBAO | LALIGA 26/27 | 1ª RODADA" tvg-logo="https://i.ytimg.com/vi/TDFBtodGRCs/hq720.jpg?v=6a87431a&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAD9c5h3Ialdsw3-1LFrGJasVzuJg", CazéTV - AO VIVO: BARCELONA X ATHLETIC CLUB BILBAO | LALIGA 26/27 | 1ª RODADA
+#EXTGRP:Esportes
+https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787875518/ei/XnyQavLkBLPP4dUPwc2VsAk/ip/138.117.221.249/id/TDFBtodGRCs.1/itag/301/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D299/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/bui/AR3QkAkQqxaBOW-8lwPZTTZ92RGA3RtO36_E8h6dYr5tzYxPNs3m_-SuNQyDrjYbvae1tZ_qeMGNNYw6/spc/KBGBcpGMgxMJZSxGcijrryykpjIurCXAMIEkSI6oGvt52uFkcxE_SYvVfA5kLA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1921250/met/1787853918,/mh/XM/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1787853392/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgIgyj9PyLzpw7JA2xOZt4rDhr4H8IQQdtr2PYwPiW7RYCIEjCwxUyGkaq5Qy-gHk7BMeF24i-qavwm8ZygtJViqXj/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgOA_m9Txo_LZTLCZqiZ_mmNAI10-sLCGFEW8OkumhnkcCIGKAA0BmbrGm1WQN7oOCsbGmIefLAVKSBPXJrWxQlF3-/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Esportes" tvg-id="Combate.br" tvg-name="Combate" tvg-logo="https://i.imgur.com/ZPYK5jr.png", Combate
 #EXTGRP:Esportes
