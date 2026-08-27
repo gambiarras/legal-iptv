@@ -235,10 +235,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787850023/ei/xxiQauaoFM_21sQPjrqo2Ak/ip/138.117.221.249/id/cg7GkdA9k8M.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmZVtrwMgJvpKgF5NKpKCyTMHBwNDyDvD8YPvuVyQ9z1zjbDhQegd7DaoW_7LQ7W-8Lckjf9pwm/spc/KBGBcqZ0mbY9DIk-_7YknwrIvd_uJWJ_CAtP2uCW_RXZiY0hyvQspDL7P3VMfw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2121250/met/1787828423,/mh/3l/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787827970/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgIWqQK3qPNd0pP9Fy-7nWWVEpjcTQNei0wYJlEHUYI-cCIFIhQNJXG5vMm-0JlxL1D5D3GVXSsVnwpwcyOPvpSUcN/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhAOLHHaCdQ_9SKR_BEoO5TbN4T955eHMDbbTtXzLaVs2yAiADVg3C_vpG4VYBuJGtWi6S5bTDrVmOzfwxxX5aQqR89g%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -830,6 +826,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1675,7 +1675,7 @@ https://stmv1.srvif.com/canal29/canal29/playlist.m3u8
 #EXTGRP:Séries
 http://168.205.87.198:8555/live/1492/123456/159.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes" tvg-logo="https://i.ytimg.com/vi/mF3s5-6mIH4/hq720.jpg?v=6a86ec87&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLB1uLrG3o9E5b_TLE03mJUn--ZK_w", Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes" tvg-logo="https://i.ytimg.com/vi/mF3s5-6mIH4/hq720.jpg?v=6a86ec87&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOMiWNBbJweq_yH7IpI2b7slDssQ", Classic Mr Bean - Classic Mr Bean 🔴 LIVE! - All Episodes
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787850028/ei/zBiQauaOFufw4dUPwr6QqQk/ip/138.117.221.249/id/mF3s5-6mIH4.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/gcr/br/ss/1/ssa/1/bui/AR3QkAml8_0WJIVFaeJ9XaG3G2Q5rk3KizV4gPxO-cEIgD7rdoHjj2HEK7JYcRj2MDJbxxPKorWWlViP/spc/KBGBcoaVSAJp6VT_2G7LxbmR-X9hQoE-miJH5T252_RFYVnkBOyX_-MEVf50vg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2121250/met/1787828428,/mh/He/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787827970/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,gcr,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAMkRNs3oGYhnQPemE9SMGNem5qj719W8nhPZWCtyat5OAiEA_JKqUmYr18fkJtdNclAb1dNWeekxPID5aTmoKYQa8fo%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgE_6skA7MWPd1ev7zHiLKjLuOG8tghgYf4bcPJ7Lho9QCIA59kvjDJ4DtTUg-1lDifcYZoSGRNFbsB87F-bA-r16Y/playlist/index.m3u8
 
@@ -1753,11 +1753,11 @@ https://amg00627-banijay-amg00627c35-plex-us-4257.playouts.now.amagi.tv/playlist
 #EXTGRP:Infantil
 https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios" tvg-logo="https://i.ytimg.com/vi/xIs3odCrjZs/hq720.jpg?v=696e66d9&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCcftGqLk9tX38BJPW5bc7dyowMSQ", Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios" tvg-logo="https://i.ytimg.com/vi/xIs3odCrjZs/hq720.jpg?v=696e66d9&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAP7Z-OWV0LZLNRcI8M9feCy5njhg", Pica-Pau - LIVE 🔴 Pica-Pau derretendo com o calor 🧊🍦 Pica-Pau em Português 📺 Maratona de Episódios
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787850026/ei/yhiQarS3Eb2ZobIP_KiGgQY/ip/138.117.221.249/id/xIs3odCrjZs.2/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAkJ-mMEeAU9BmYrPVUQsSpf43UEElNWLJtgTEkIvDk9cKysTevp76IFmpAuS_1U7h_Gne9HJYeJ/spc/KBGBctSWDBkci7DhsqsISoXKz5aQM71mSHC4vt6QAJl58v9xW2cyt68bTunqRg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2256250/met/1787828426,/mh/HB/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1787828220/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgUnRExN-huYb77tQbmD7LUWG8IJeWHOZs02aGPkP6FLACIQDm0LRfvC1V3UzyJnt2-vGERhdoXy_GQnRwxTHLPJQKkw%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAMRAFyKw7BYsB3ADUKsPFhXoqqFW0X5-YXYfEWYcWAczAiEA8BiH3CJN-asKnGPPgNRkEGH2ZA3FCx0MdC4f2mqS7xA%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos" tvg-logo="https://i.ytimg.com/vi/bK03WDeq5SI/hq720.jpg?v=69bd7a4f&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCvSb7TBHzyRNCGt7PZOsKfuAX3PQ", Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos
+#EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos" tvg-logo="https://i.ytimg.com/vi/bK03WDeq5SI/hq720.jpg?v=69bd7a4f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3GDBFWnHmwvlSY0_0WlNgTWnHkg", Pica-Pau - LIVE 🔴 Pica-Pau é o Melhor Pescador! + Mais! 🎣 Pica-Pau Antigo 🔴 Maratona de Episódios Antigos
 #EXTGRP:Infantil
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787850024/ei/yBiQavn-Oqe74dUP4KyG0Ac/ip/138.117.221.249/id/bK03WDeq5SI.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAk3a1nI8XpgzKfdC0bXcVhu4mhDlp0AUlNJi40YgQbeVBgVcPYY0VvEA6ar2Urii_sNulU7Zw3I/spc/KBGBcgxFDPhM5pm3JQetRq6A3eIHfq8t8yXm5ojoaue3upH90vu78PJZ5nCWZw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2121250/met/1787828425,/mh/VC/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1787827970/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAJ87t5CHi4-1IDYceod-0etPaw4vdbU0t019sso3h3yFAiAbWoDCO0J-m8yEFlAvKSzutz1CmLEk93jpwc6kBbjx4g%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgDomGkWXikVmaTEl_ZO4D_QN0irYxtpgMm3NSUZWUojwCIQDgZmZf2y8w_uGOwRjeZTrExkJy-eVEVDPJW-bwnGxyUw%3D%3D/playlist/index.m3u8
 
