@@ -239,10 +239,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787936423/ei/R2qRao6NLoaV-LAP8-GqSA/ip/138.117.221.249/id/cg7GkdA9k8M.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAkR6zbHHoyoXOR5f8eQkWlsX5MmHunjhiC5dQmRYXUrTAOl35xMcFPjyZadVoq3y-1ZqUUTfxxj/spc/KBGBcopRmLmlbh60WccPbrSm6ETq1oOpkRUm_UZ0l1Azd73yEPgnVykJPlWLfAtR/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1630000/met/1787914824,/mh/3l/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52112905,52135441/mt/1787914588/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAOomgxFge8mElDXVSk-xxsLfDDBIHgUDlBmtmCNmHZTLAiEAl3UfKjSsC0parOnw-VQeSIDG_myL6jrfcVRZFb4_Uw8%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgOsQPXHT1VpWh5eIaIjYT88rRmDBCqbDDO1XpbQjooEQCIE2PHF4lMaBhIKrDiu_CaDMtf8tGw6BkJRNN1OMbmBuI/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -834,6 +830,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1907,7 +1907,7 @@ https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
 #EXTGRP:Notícia
 https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: LIVE CNN - 28/08/2026" tvg-logo="https://i.ytimg.com/vi/2FDg1zhkE68/hq720.jpg?v=6a906d63&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAkfoGpAmolFF9UWlU7QoXYl4UkbQ", CNN Brasil - AO VIVO: LIVE CNN - 28/08/2026
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: GUERRA COM IRÃ COMPLETA SEIS MESES SEM SINAL DE ACORDO - LIVE CNN" tvg-logo="https://i.ytimg.com/vi/2FDg1zhkE68/hq720.jpg?v=6a906d63&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLBYwO1DLhve-aZ6_6xLZ8yJj8wq1g", CNN Brasil - AO VIVO: GUERRA COM IRÃ COMPLETA SEIS MESES SEM SINAL DE ACORDO - LIVE CNN
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1787940019/ei/U3iRauaxGZqP-LAPiceFwQM/ip/138.117.221.249/id/2FDg1zhkE68.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AR3QkAmxnbZmqv2bnjAvtI6vuXwL-Sxepx08XnUkwmApJ56wc_NT3EZ04QJA_Zss6OpiBsp6fwxBnjgK/spc/KBGBcvBXbw0_a8cx-S45qqytTgnw-46c6zCSsp6XDUxmuirFSBiuSVfWt7-Z-A/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1936250/met/1787918419,/mh/Va/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1787917975/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgArNW056wLhuPfhI6Z2FmZv3w3WfI_lUxzn5u5eG83voCIQC1C_YpGBTUD1NrURL3K8LOpd9fK1mKEmFRmFqlmz5-3A%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAKJt0OBZ18wShoh8TgBwXxsZzR-QH4tAsz0kFtArgVXTAiEAkawObSry7EsoPvpZF1kYFSN2cySSbjniXavyTbn6UIM%3D/playlist/index.m3u8
 
