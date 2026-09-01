@@ -239,10 +239,6 @@ https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788316224/ei/4DWXatPXMdiU-LAPrd2WqAc/ip/138.117.222.11/id/cAGqgeL4Ym4.1/itag/95/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D136/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAk0TzjGBUVGmsQVZazpsAXDoVod8nlkhfBGbLK2nfj2YtuF97yKGVPOAKSAOFfcAO1wxBT5BYzA/spc/I-rgIdsKp1mYc0HJbCyWFT-2ZMPnTkKaIBAiu2nx-GjHBmot-fbiO4y11NxCQw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1936250/met/1788294625,/mh/_p/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788294278/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgNG5mdh51f3bIsCA68an2dUEqLeCmH0Dmz_56crRpX8MCIQCqk3itI_qoDqanh7OJiKKdp4g8km0cdP8e5bjZb8Ya7w%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgW5Taz0EsBecctZZeHeFaUOzTjj2Xuz1uU55bxkyiXkECICzjkWn9na51gXgMPId_D5byvhHjg7035_Z15OvE7LXZ/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -831,6 +827,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
 https://tv.rbti.tv.br/rbti4/index.m3u8
@@ -1031,7 +1031,7 @@ https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=
 #EXTGRP:Variedades
 https://srv1.streaminghd.net.br/tvconecta/tvconecta/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Correio da Manhã - Transmissão TV Correio da Manhã" tvg-logo="https://i.ytimg.com/vi/NTebHSPw1-8/hq720.jpg?v=6a970d6e&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDChCyDjMaJHav-rSJXhZG01VB2rQ", TV Correio da Manhã - Transmissão TV Correio da Manhã
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Correio da Manhã - Transmissão TV Correio da Manhã" tvg-logo="https://i.ytimg.com/vi/NTebHSPw1-8/hq720.jpg?v=6a970d6e&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLD3K1IyAkw05FvqdItYOzabX00ftQ", TV Correio da Manhã - Transmissão TV Correio da Manhã
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788307221/ei/tRKXare_Jtai1sQP54zZ6Qo/ip/138.117.222.11/id/NTebHSPw1-8.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/bui/AR3QkAk1Uay2nEAe6BW702LQja9S9jihDEIyFWOoO4Bvd4GzfaEwZvYCPrjnAI-GnYrHTsv1ASN499g0/spc/KBGBcqfxmyWXjCOX4ubGvFEIiqmF66lm_LRtvE-IpwAM_LVYUuM/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2405000/met/1788285621,/mh/eL/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788285164/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgNqe2Oj9xBB7kVA885EeQbphiyiNxU6yFxNVJHyZUsGMCIDNZ8j1w7xltOHbaizWqbMvJpKPR-9vM0mzYxLZl4ISI/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAIxObfT28_FVDRT1IGqheyKQ3O9m49AD6t_o6zleMKNdAiEAimIrH3uILLPzqXjQ13JgMe4TXHqzD_M_Jnk4c47gNCk%3D/playlist/index.m3u8
 
@@ -1687,11 +1687,11 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788316228/ei/
 #EXTGRP:Séries
 https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00353-lionsgatestudio-mvsphrecomedia-samsungbr/playlist.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Mr Bean - Mr. Bean Cartoon S1 LIVE: Hilarious Trouble Starts Here!" tvg-logo="https://i.ytimg.com/vi/oPonPGALYaU/hq720.jpg?v=6a70b205&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmCSDK0IQ8JAwHetfWMsjmAfOw6Q", Mr Bean - Mr. Bean Cartoon S1 LIVE: Hilarious Trouble Starts Here!
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Mr Bean - Mr. Bean Cartoon S1 LIVE: Hilarious Trouble Starts Here!" tvg-logo="https://i.ytimg.com/vi/oPonPGALYaU/hq720.jpg?v=6a70b205&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDL6q8YCSbzwe0eK6YQXq-O_Zkdiw", Mr Bean - Mr. Bean Cartoon S1 LIVE: Hilarious Trouble Starts Here!
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788316231/ei/5zWXavnmBKTe4dUPwIuJuQw/ip/138.117.222.11/id/oPonPGALYaU.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAkSTrYygLke5GR-9qOnsfolj0PR4j79MVjmgvamdQY1gU43Wb4yOxX7crxxXv7xpjmgFuL9ogHy/spc/KBGBctkOhLod7PJEecb82Z2GABg1xyvv-JfLdiADTTmAARYazab68Vv_A0cLpg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1936250/met/1788294631,/mh/Oj/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1788294278/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgd8Tj3ovdY1lrRpCbm-IXtrNPa7xrcwT25Gkhs-NtPIMCIG7riZ2KaO2UF6ornMXKk35dlsgxP5jZWZvUSdQaCNZb/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgbuYKb-txMLiMe46wmtdxo1wH7NVAUY03mHsIXSK0fDICIQCt7VATiWH2RIa9Tpa9fqPOOLbZf0e-PwIvj9kXPCK9JQ%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Mr Bean - 🔴 Mr Bean LIVE! Classic Comedy | Full Episodes" tvg-logo="https://i.ytimg.com/vi/S_71wzZMf0M/hq720.jpg?v=6a70ac13&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7PfE0I4U1GrIJTa2gkbLsXzgjbw", Mr Bean - 🔴 Mr Bean LIVE! Classic Comedy | Full Episodes
+#EXTINF:-1 group-title="Séries" tvg-id="" tvg-name="Mr Bean - 🔴 Mr Bean LIVE! Classic Comedy | Full Episodes" tvg-logo="https://i.ytimg.com/vi/S_71wzZMf0M/hq720.jpg?v=6a70ac13&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAhyFeX2FN6C3PCBwUlcSm5nhwSiw", Mr Bean - 🔴 Mr Bean LIVE! Classic Comedy | Full Episodes
 #EXTGRP:Séries
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788316232/ei/6DWXapDBJKegobIPgOGW8Qo/ip/138.117.222.11/id/S_71wzZMf0M.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAnix-c7qQKvhbt_S-kSXGDiuR530WKd3A0ezPg8mjL8bL4bxsFNEWFzlklCUXzZs81JWyLjsP6s/spc/I-rgIfvEDUxFVLr8T8CMMFY572iueP7I5q8w7F9eU1YdKAcB2wfcgm5xVJrN_A/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1936250/met/1788294632,/mh/P6/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1788294278/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAL7Ih6DO2g8zSTjvUtsLa0iN57zOVTfYYpwGs7-WYzOVAiBzGY-cdkmc6heN0UoF2IU_GyzrYlPR-cP4Kw5GLj8gIg%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRgIhAMMht1VsUNQEOKmCrENXPTAXRSXqTemsg3PM-u3i_5BvAiEAnWVKnjqW4-MuwAr6GrEHV-CZVA7EvJIeZnlrjZCZ_G4%3D/playlist/index.m3u8
 
@@ -1922,10 +1922,6 @@ http://170.82.202.31/GNT/index.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="J3NEWSTV.br" tvg-name="J3NEWS TV" tvg-logo="https://i.imgur.com/lezIQyL.png", J3NEWS TV
 #EXTGRP:Notícia
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
-
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - 3 EM 1 - 01/09/2026" tvg-logo="https://i.ytimg.com/vi/Qhh2vABQ4m8/hq720.jpg?v=6a95ed8c&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBP642XHqXQgX1QU0IagZeFoxbBIQ", Jovem Pan Live - 3 EM 1 - 01/09/2026
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788310822/ei/xSCXauv_PKGP-LAPtpHiiQY/ip/138.117.222.11/id/Qhh2vABQ4m8.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAkUMr9acjGqbKIr1NCZ_nZeTfU4kFO8US_phEq9xNLRo7j_mqfmB1nnESwfPBI_HLQ3XMEG9T0U/spc/I-rgIX_cX7ydg175B4rQVgn5W9ORhLI0W1NhGabSLr-2J7_sIhEl79ixu-hbkg/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2905000/met/1788289222,/mh/HT/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788288752/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgcRM7GWtUpmUjz_10W4gwmFS5phGb3zQjk85M_c4VHgECICA9yywq-XLufOmEceA5nEBQqmlhk_ZOR8kelUXNb0VZ/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhANcO0e6BDLWCdHT6M1OWp9Gccs3a1YG7OhcTcbbvgjycAiBiUZ5W43Q-Ik5gsjWrxJUbIBRGeVRNi7ssqi_3cHkH_g%3D%3D/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hq720.jpg?v=658ae6ef&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAw0kQoDfubC8DajR_ydi9tidcB-g", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
