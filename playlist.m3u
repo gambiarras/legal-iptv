@@ -243,10 +243,6 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788393621/ei/
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788393620/ei/NGSYapqlGtHknOAPr6HTyQw/ip/138.117.222.11/id/ZqwK3iYoqv8.1/itag/95/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D136/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAlv9HsagU1uIYUmLcA97vAP7jEgR7-p0YhoLVZV5yxzHWY4lWEAYAe_PFC0d_4WRssyMiDcrxmE/spc/KBGBcoAzCQFjMed5TyXo7Vmhf977S4sHPxvVqU4EJVCwPRRB9Ks/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1793750/met/1788372020,/mh/yE/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788371325/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAPaCk17eq_MB8QlvPdcVb9UYpUZR-6xIYMk9-REXUO17AiAgAyjRA1La4kQLesvKwwmz58OX_v50Oap8aNqoIbANUA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhALqAErwd2mnlmj0TtQAkRGxD2ibik0pQ7trnsC_X0RWBAiBfN2QkwdTOpYqd-qC82fdNDXMA4-7BW8jpVopX2PFdQQ%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -866,6 +862,10 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1943,7 +1943,7 @@ https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
 #EXTGRP:Notícia
 https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H" tvg-logo="https://i.ytimg.com/vi/eLYlNTs3EsM/hq720.jpg?v=6a972aa5&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEPh1N_ROalOclEpGLusZ6bshvgw", CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H" tvg-logo="https://i.ytimg.com/vi/eLYlNTs3EsM/hq720.jpg?v=6a972aa5&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLDAZ7tdON7dQ51OJzQ4wSu3uIkLQg", CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788404423/ei/Z46YarnTJdyU-LAPz6Ph6Q4/ip/138.117.222.11/id/eLYlNTs3EsM.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AR3QkAnIFYGlb6DU7MoxmE8VIG8aTqfpV8UOnpaLHYqfavL6q6Wya9sjub01eWKZ_pQuhliYgtsN5q9W/spc/I-rgIWS0B0fZbYbaX_9v0y0xcCswJJBjACLTJlY8fy6kebF-ejM/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2017500/met/1788382824,/mh/FD/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788382346/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgJVRpPU4EwHZhki_WGseZ1jOj6Ex9pGkJCAu_xxMIj04CIQDwgOtDhguea_mDUgAA6p-pEKM1Qf14ZxpWkaUIiO3AOQ%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgONT1DFe5ndR_73WkcWyH90P62y8wnJ1QB9i0XJIIsakCIQCS12aWcNQyezsp5COu6m7UJkOndW2-cSHDLBWOCSGgjA%3D%3D/playlist/index.m3u8
 
@@ -1958,10 +1958,6 @@ http://170.82.202.31/GNT/index.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="J3NEWSTV.br" tvg-name="J3NEWS TV" tvg-logo="https://i.imgur.com/lezIQyL.png", J3NEWS TV
 #EXTGRP:Notícia
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
-
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - 3 EM 1 - 02/09/2026" tvg-logo="https://i.ytimg.com/vi/lkgYEGk6QI0/hq720.jpg?v=6a974bd7&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzQFQGYtltg-MVnJd86tJWDfPowA", Jovem Pan Live - 3 EM 1 - 02/09/2026
-#EXTGRP:Notícia
-https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788397221/ei/RHKYavv5O7SZ-LAPx_GCoQc/ip/138.117.222.11/id/lkgYEGk6QI0.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAko0_qMP1jGwDnr2IDWk8bH_xACfF_r3skabT3Js9DUqipTt6YoDqaJerqRHaPwOSPLoe2Q3_cs/spc/I-rgIaDQMaxjZxEfm110ct9dHUQVA2y9y888IzPsKgm1A7EBpwO6sOXE-BS7qA/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1733750/met/1788375621,/mh/bJ/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1788375151/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRAIgYQBgAakPzLHPqX6-_TikFuHT2uXwVQXb6jWRTmMAnjcCIC_Bzxqf35iQOwAbWM2FgFXvchhIATqGrxpJg5dMHoNK/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRAIgfd3N5DDhfNouvau3TUJ4OiCQuwtUFzp6Gms6bAQ4114CIE4qdobw8BqBgGKtlohbiKoSsj7TAyFC1iG41gGErwrN/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hq720.jpg?v=658ae6ef&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAw0kQoDfubC8DajR_ydi9tidcB-g", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
@@ -2039,11 +2035,11 @@ http://170.84.165.204/Record_news/index.m3u8
 #EXTGRP:Notícia
 http://186.219.52.187/record_news/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/0rOwzDR01vg/hq720.jpg?v=6a96c940&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLD4B4e5PhCppxt8X3c_giU7hSba5A", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News" tvg-logo="https://i.ytimg.com/vi/0rOwzDR01vg/hq720.jpg?v=6a96c940&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAe_iqi_VnKLpI0QXtJbZGzZ3bAvA", Record News Live - AO VIVO: Acompanhe as principais notícias do dia na Record News
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788388223/ei/H0-Yapy3JoqDobIPm5LT6Q4/ip/138.117.222.11/id/0rOwzDR01vg.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAnYmCSyFWa-y6rrW0yJhsqfa3sSI0H6bNIxVTBO-rgpKy0CLIgNdTw7RG8NfkSH4T8C7CxqAX3o/spc/KBGBci1aH38vcOkOi2bPP6b_h4UQFLk85aeiNOWTjfRPMtWG6Kw/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2253750/met/1788366624,/mh/ek/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1788366285/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAPpbf89WddHlRXSik2Wekthz-wvxY3pyc9IUXsocw0uyAiArb2DhnVJ_fXlx4MLXkaVSGsAaXVUqHXbYd-6fcTCwXA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgED4Jw5Bz2daY3EcgaSsVoibLIfYvJcFDNNXmwXRF7lQCIQC5-5PpSvHzbisSoQ_dEBH7bweJqxNMpdaStM3qQ90AXQ%3D%3D/playlist/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Link News - 02/09/2026" tvg-logo="https://i.ytimg.com/vi/ZThaDVEWa-o/hq720.jpg?v=6a987399&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAj2it71xmMmP6X85BbX-9rGgNXDA", Record News Live - Link News - 02/09/2026
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Record News Live - Link News - 02/09/2026" tvg-logo="https://i.ytimg.com/vi/ZThaDVEWa-o/hq720.jpg?v=6a987399&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBoMFo_h8Xh2kokuWKIJGLGOrg4bQ", Record News Live - Link News - 02/09/2026
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788399019/ei/S3mYatyTHL2hobIPwo_AkQQ/ip/138.117.222.11/id/ZThaDVEWa-o.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAmf4ez76FpxZ7VGPx8_yeZZ2t88GwLmPYw4d5SYsmC3feAlJ18KxZ6_8C6vmxOuY7cayrTce33b/spc/KBGBcqSRxILQd616sJLlHwWZGY37K0wI9ikNPeVoI4IoTvkJIXI/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1621250/met/1788377420,/mh/vX/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52135441/mt/1788377072/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAKf5FJAKW7Pcdkoe2jHc-ePfZ8FpXTto-aJjygHC9J2xAiBAeBY8zsMrgRCSHTlGZTGdXQfw_Nc37Y_9tTlUNjbe_g%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgKPsR_7q2jv5eQVViC3KYxjW9NQ1MlAn76zfMAGwlDB4CIQDida_8eoQDyk3eSdmHv-iZaY0jg8WRwdaK-1qGfRUJqw%3D%3D/playlist/index.m3u8
 
