@@ -45,7 +45,7 @@ def _has_sensitive_url(url) -> bool:
         return True
     return any(
         name.casefold() in SENSITIVE_QUERY_NAMES
-        for name, _ in parse_qsl(parsed.query)
+        for name, _ in parse_qsl(parsed.query, keep_blank_values=True)
     )
 
 

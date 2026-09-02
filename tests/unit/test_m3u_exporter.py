@@ -168,6 +168,14 @@ class M3UExporterTest(unittest.TestCase):
                 group="TV Aberta",
                 source="live_stream_catalog",
             ),
+            Channel(
+                id="empty-token",
+                name="Empty Token",
+                stream_url="https://blank.example.test/live.m3u8?token=",
+                logo="",
+                group="TV Aberta",
+                source="iptv_org",
+            ),
         ]
 
         playlist = render_m3u(
