@@ -243,6 +243,10 @@ https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788393621/ei/
 #EXTGRP:Variedades
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788393620/ei/NGSYapqlGtHknOAPr6HTyQw/ip/138.117.222.11/id/ZqwK3iYoqv8.1/itag/95/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D136/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAlv9HsagU1uIYUmLcA97vAP7jEgR7-p0YhoLVZV5yxzHWY4lWEAYAe_PFC0d_4WRssyMiDcrxmE/spc/KBGBcoAzCQFjMed5TyXo7Vmhf977S4sHPxvVqU4EJVCwPRRB9Ks/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1793750/met/1788372020,/mh/yE/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788371325/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIhAPaCk17eq_MB8QlvPdcVb9UYpUZR-6xIYMk9-REXUO17AiAgAyjRA1La4kQLesvKwwmz58OX_v50Oap8aNqoIbANUA%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIhALqAErwd2mnlmj0TtQAkRGxD2ibik0pQ7trnsC_X0RWBAiBfN2QkwdTOpYqd-qC82fdNDXMA4-7BW8jpVopX2PFdQQ%3D%3D/playlist/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Euro News" tvg-logo="https://i.postimg.cc/wTmhJgZD/canal_news.jpg", Euro News
 #EXTGRP:Variedades
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
@@ -862,10 +866,6 @@ https://cdn-5.nxplay.com.br/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TUBACAST TV+" tvg-logo="https://i.postimg.cc/ZYp28CFk/tubacast.png", TUBACAST TV+
 #EXTGRP:Variedades
@@ -1943,7 +1943,7 @@ https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
 #EXTGRP:Notícia
 https://video01.soultv.com.br/cnnbrasil/cnnbrasil/chunklist_w2109874759.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H" tvg-logo="https://i.ytimg.com/vi/eLYlNTs3EsM/hq720.jpg?v=6a972aa5&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLDAZ7tdON7dQ51OJzQ4wSu3uIkLQg", CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H" tvg-logo="https://i.ytimg.com/vi/eLYlNTs3EsM/hq720.jpg?v=6a972aa5&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEPh1N_ROalOclEpGLusZ6bshvgw", CNN Brasil - AO VIVO: FACHIN CONSULTA MINISTROS ANTES DE DECISÃO SOBRE MORAES | HORA H
 #EXTGRP:Notícia
 https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788404423/ei/Z46YarnTJdyU-LAPz6Ph6Q4/ip/138.117.222.11/id/eLYlNTs3EsM.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr2---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/bui/AR3QkAnIFYGlb6DU7MoxmE8VIG8aTqfpV8UOnpaLHYqfavL6q6Wya9sjub01eWKZ_pQuhliYgtsN5q9W/spc/I-rgIWS0B0fZbYbaX_9v0y0xcCswJJBjACLTJlY8fy6kebF-ejM/vprv/1/reg/0/playlist_type/DVR/initcwndbps/2017500/met/1788382824,/mh/FD/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/2/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565116,52135441/mt/1788382346/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRQIgJVRpPU4EwHZhki_WGseZ1jOj6Ex9pGkJCAu_xxMIj04CIQDwgOtDhguea_mDUgAA6p-pEKM1Qf14ZxpWkaUIiO3AOQ%3D%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgONT1DFe5ndR_73WkcWyH90P62y8wnJ1QB9i0XJIIsakCIQCS12aWcNQyezsp5COu6m7UJkOndW2-cSHDLBWOCSGgjA%3D%3D/playlist/index.m3u8
 
@@ -1958,6 +1958,10 @@ http://170.82.202.31/GNT/index.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="J3NEWSTV.br" tvg-name="J3NEWS TV" tvg-logo="https://i.imgur.com/lezIQyL.png", J3NEWS TV
 #EXTGRP:Notícia
 https://video01.brascast.com/d92ebb4f/d92ebb4f/playlist.m3u8
+
+#EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Flamengo x Mirassol - AO VIVO - 02/09/2026 - Brasileirão" tvg-logo="https://i.ytimg.com/vi/mxBbIGpq-EU/hq720.jpg?v=6a9893ff&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDB1k8QmQ3GvGr-cwQxCnrQ3Tb8Cg", Jovem Pan Live - Flamengo x Mirassol - AO VIVO - 02/09/2026 - Brasileirão
+#EXTGRP:Notícia
+https://manifest.googlevideo.com/api/manifest/hls_playlist/expire/1788406221/ei/bZWYavfyBM--obIPgbK8gA8/ip/138.117.222.11/id/mxBbIGpq-EU.1/itag/96/source/yt_live_broadcast/requiressl/yes/ratebypass/yes/live/1/sgoap/gir%3Dyes%3Bitag%3D140/sgovp/gir%3Dyes%3Bitag%3D137/rqh/1/hls_chunk_host/rr1---sn-n0hpjput-bpbk.googlevideo.com/xpc/EgVo2aDSNQ%3D%3D/playlist_duration/30/manifest_duration/30/ss/1/ssa/1/bui/AR3QkAnSWJJndr5mq_q6gQiGbpuFpXBbLmPbNB-acJO_1xH2n7VbP1e3ff_LqxqJOEdj32PoowX4LPJ1/spc/KBGBckhELJvVAF6p29AnERyQ0CwYBN4JmH5mRqf0luHnWGwq4Uk/vprv/1/reg/0/playlist_type/DVR/initcwndbps/1762500/met/1788384621,/mh/xi/mm/44/mn/sn-n0hpjput-bpbk/ms/lva/mv/m/mvi/1/pl/24/rms/lva,lva/dover/11/pacing/0/keepalive/yes/fexp/51565115,52112904,52135441/mt/1788384270/sparams/expire,ei,ip,id,itag,source,requiressl,ratebypass,live,sgoap,sgovp,rqh,xpc,playlist_duration,manifest_duration,ss,ssa,bui,spc,vprv,reg,playlist_type/sig/AE0s2JYwRgIhAM2iSskDbsgelPpdGP0sYjXZcRcOrSodqgqi9AqqScz7AiEAvNwS-cFJv-dp3Lx6sefASI7K6iLz-2qkryvuR_i3bvI%3D/lsparams/hls_chunk_host,initcwndbps,met,mh,mm,mn,ms,mv,mvi,pl,rms/lsig/APaTxxMwRQIgHIjSvxwyFBANR0G6mVX2uvcnq8PzYl5fzJ4jl4ahHOoCIQCVWGv3wyp-p-4zpdNJiAlNUgehO0m-sEx-RUczrj9Fpw%3D%3D/playlist/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="" tvg-name="Jovem Pan Live - Jovem Pan News Av. Paulista" tvg-logo="https://i.ytimg.com/vi/eTz4XgOQaAE/hq720.jpg?v=658ae6ef&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAw0kQoDfubC8DajR_ydi9tidcB-g", Jovem Pan Live - Jovem Pan News Av. Paulista
 #EXTGRP:Notícia
