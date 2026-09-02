@@ -3,6 +3,9 @@
     "id": "primary",
     "url_env": "IPTV_EPG_PRIMARY_URL",
     "headers_env": "IPTV_EPG_PRIMARY_HEADERS",
+    "city_env": "IPTV_EPG_PRIMARY_CITY",
+    "days_env": "IPTV_EPG_PRIMARY_DAYS",
+    "days": 2,
     "format_env": "IPTV_EPG_PRIMARY_FORMAT",
     "format": "xmltv"
   },
