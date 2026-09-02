@@ -21,6 +21,10 @@ from legal_iptv.services.epg_sources import EPG_INDEX_URLS
 ALIASES_RESOURCE_NAME = "epg_aliases.json"
 GENERIC_TVG_ID_PATTERN = re.compile(r"^(script[_-]?catalog|youtube|live)[._-]", re.IGNORECASE)
 DISPLAY_NAME_PREFIX_PATTERN = re.compile(r"^[A-Z]{2}\s+-\s+")
+VARIANT_SUFFIX_PATTERN = re.compile(
+    r"\s+(?:\[(?:4K|FHD|HD|SD|HEVC)\])(?:\s+\[(?:4K|FHD|HD|SD|HEVC)\])*$",
+    re.IGNORECASE,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +62,7 @@ def _find_mapping(
     candidates = [
         channel.tvg_id or "",
         channel.name,
+        VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip(),
     ]
 
     for value in candidates:

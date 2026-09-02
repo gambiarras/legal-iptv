@@ -13,6 +13,7 @@ def make_config(
     temp_dir: str,
     *,
     validate_streams: bool = False,
+    profile: str = "base",
 ) -> AppConfig:
     base_path = Path(temp_dir)
     return AppConfig(
@@ -32,6 +33,8 @@ def make_config(
         iptv_org_cache_file=base_path / "iptv-org-cache.json",
         iptv_org_cache_ttl_seconds=43200,
         refresh_iptv_org_cache=False,
+        profile=profile,
+        guide_url="https://guide.example.test/guide.xml",
     )
 
 
@@ -188,6 +191,60 @@ class AggregateTest(unittest.TestCase):
         self.assertEqual(metadata["stream_filtered_channels"], 1)
         self.assertEqual(metadata["deduplicated_channels"], 1)
         self.assertEqual(metadata["selected_channels"], 0)
+
+    @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
+    @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")
+    @patch("legal_iptv.services.aggregate.extra_channels.fetch_channels")
+    @patch("legal_iptv.services.aggregate.filter_cached_offline_channels")
+    def test_full_profile_writes_only_playlist_m3u_with_provider_priority(
+        self,
+        filter_cached_mock: Mock,
+        extra_mock: Mock,
+        iptv_mock: Mock,
+        live_mock: Mock,
+    ):
+        lower = Channel(
+            id="lower",
+            name="Example",
+            stream_url="https://lower.example/live.m3u8",
+            logo="",
+            group="Variedades",
+            raw_group="general",
+            source="iptv_org",
+            provider_id="iptv_org",
+            tvg_id="Example.br",
+        )
+        higher = Channel(
+            id="higher",
+            name="Example [FHD]",
+            stream_url="https://higher.example/live.m3u8",
+            logo="",
+            group="Variedades",
+            raw_group="TV Aberta",
+            source="live_stream_catalog",
+            source_type="stremio_addon",
+            provider_id="addon_catalog_1",
+            tvg_id="Example.br",
+            status="resolved",
+        )
+        extra_mock.return_value = []
+        iptv_mock.return_value = [lower]
+        live_mock.return_value = [higher]
+        filter_cached_mock.return_value = [lower, higher]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            config = make_config(temp_dir, profile="full")
+
+            run_aggregation(config)
+
+            playlist = config.output_path.read_text(encoding="utf-8")
+            playlist_names = sorted(path.name for path in Path(temp_dir).glob("*.m3u"))
+
+        self.assertIn("https://higher.example/live.m3u8", playlist)
+        self.assertNotIn("https://lower.example/live.m3u8", playlist)
+        self.assertIn('group-title="TV Aberta"', playlist)
+        self.assertIn('x-tvg-url="https://guide.example.test/guide.xml"', playlist)
+        self.assertEqual(playlist_names, ["playlist.m3u"])
 
 
 if __name__ == "__main__":
