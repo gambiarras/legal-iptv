@@ -1,23 +1,41 @@
 import logging
+import re
 import time
 from collections.abc import Callable
 
 from legal_iptv.clients import HttpClient
 from legal_iptv.config import AppConfig
 from legal_iptv.exporters import render_m3u
-from legal_iptv.io import write_json_atomic
+from legal_iptv.io import write_json_atomic, write_text_atomic
 from legal_iptv.models import Channel
-from legal_iptv.services.channel_selector import select_best_channels
-from legal_iptv.services.epg_mapper import enrich_epg_metadata, load_xmltv_aliases
+from legal_iptv.services.epg_mapper import (
+    enrich_epg_metadata,
+    load_xmltv_aliases,
+    parse_xmltv_aliases,
+)
+from legal_iptv.services.guide import ensure_guide
 from legal_iptv.services.link_validator import (
     filter_cached_offline_channels,
     refresh_stream_status,
 )
 from legal_iptv.services.metadata import build_run_metadata
+from legal_iptv.services.profile_config import load_playlist_configuration
+from legal_iptv.services.profile_selector import select_profile_channels
 from legal_iptv.sources import extra_channels, iptv_org, live_stream_catalog
 
 
 logger = logging.getLogger(__name__)
+PRIVATE_ERROR_PATTERN = re.compile(
+    r"https?://|(?:token|cookie|authorization|bearer|signature)=?",
+    re.IGNORECASE,
+)
+
+
+def _public_error(exc: Exception) -> str:
+    message = " ".join(str(exc).split())
+    if not message or PRIVATE_ERROR_PATTERN.search(message):
+        return type(exc).__name__
+    return message[:200]
 
 
 def _fetch_source(
@@ -28,8 +46,12 @@ def _fetch_source(
     try:
         return fetcher()
     except Exception as exc:
-        logger.exception("Failed to fetch source=%s error=%s", source_name, exc)
-        source_errors[source_name] = str(exc)
+        logger.error(
+            "Failed to fetch source=%s error_type=%s",
+            source_name,
+            type(exc).__name__,
+        )
+        source_errors[source_name] = _public_error(exc)
         return []
 
 
@@ -50,9 +72,10 @@ def run_aggregation(config: AppConfig) -> None:
 
     try:
         source_errors: dict[str, str] = {}
+        playlist_configuration = load_playlist_configuration(config.profile_config_file)
         extra = _timed(timings, "fetch_extra", lambda: _fetch_source(
             "extra",
-            extra_channels.fetch_channels,
+            lambda: extra_channels.fetch_channels(config.extra_removed_file),
             source_errors,
         ))
         iptv = _timed(timings, "fetch_iptv_org", lambda: _fetch_source(
@@ -76,19 +99,66 @@ def run_aggregation(config: AppConfig) -> None:
         ))
 
         all_channels = extra + iptv + live
-        xmltv_aliases = _timed(timings, "load_epg_aliases", lambda: load_xmltv_aliases(
-            client,
-            cache_file=config.epg_cache_file,
-            cache_ttl_seconds=config.epg_cache_ttl_seconds,
-            force_refresh=config.refresh_epg_cache,
-        ))
+        if config.ensure_guide_enabled:
+            _timed(
+                timings,
+                "ensure_guide",
+                lambda: ensure_guide(
+                    client,
+                    output_path=config.guide_output_path,
+                    diagnostics_path=config.guide_diagnostics_file,
+                    ttl_seconds=config.guide_ttl_seconds,
+                    lkg_seconds=config.guide_lkg_seconds,
+                    min_coverage_ratio=config.guide_min_coverage_ratio,
+                ),
+            )
+
+        def load_epg_aliases():
+            aliases = {}
+            if config.guide_output_path.exists():
+                try:
+                    aliases.update(
+                        parse_xmltv_aliases(
+                            config.guide_output_path.read_bytes(),
+                            require_programmes=True,
+                        )
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Local guide cannot be used for aliases error_type=%s",
+                        type(exc).__name__,
+                    )
+            fallback_aliases = load_xmltv_aliases(
+                client,
+                cache_file=config.epg_cache_file,
+                cache_ttl_seconds=config.epg_cache_ttl_seconds,
+                force_refresh=config.refresh_epg_cache,
+            )
+            for key, value in fallback_aliases.items():
+                aliases.setdefault(key, value)
+            return aliases
+
+        xmltv_aliases = _timed(timings, "load_epg_aliases", load_epg_aliases)
         enriched_channels = _timed(
             timings,
             "enrich_epg_metadata",
             lambda: enrich_epg_metadata(all_channels, xmltv_aliases=xmltv_aliases),
         )
-        selected = _timed(timings, "select_channels", lambda: select_best_channels(enriched_channels))
-        selected_before_stream_filter = len(selected)
+        if config.profile == "base":
+            selected = _timed(
+                timings,
+                "select_channels",
+                lambda: select_profile_channels(
+                    enriched_channels,
+                    playlist_configuration,
+                    "base",
+                    player_profile=config.player_profile,
+                ),
+            )
+            selected_before_stream_filter = len(selected)
+        else:
+            selected = enriched_channels
+            selected_before_stream_filter = 0
 
         if config.validate_streams:
             selected = _timed(
@@ -100,6 +170,7 @@ def run_aggregation(config: AppConfig) -> None:
                     max_workers=config.validation_max_workers,
                     timeout=config.validation_timeout,
                     max_age_seconds=config.stream_status_max_age,
+                    extra_removed_file=config.extra_removed_file,
                 ),
             )
         else:
@@ -113,8 +184,37 @@ def run_aggregation(config: AppConfig) -> None:
                 ),
             )
 
-        playlist = _timed(timings, "render_m3u", lambda: render_m3u(selected))
-        config.output_path.write_text(playlist, encoding="utf-8")
+        if config.profile != "base":
+            selected = _timed(
+                timings,
+                "select_channels",
+                lambda: select_profile_channels(
+                    selected,
+                    playlist_configuration,
+                    config.profile,
+                    player_profile=config.player_profile,
+                ),
+            )
+            selected_before_stream_filter = len(selected)
+
+        guide_url = config.guide_url or playlist_configuration.guide_url
+        playlist = _timed(
+            timings,
+            "render_m3u",
+            lambda: render_m3u(
+                selected,
+                guide_url=guide_url,
+                player_profile=config.player_profile,
+                category_order=(
+                    None
+                    if config.profile == "base"
+                    else playlist_configuration.group_order
+                ),
+                legacy_guide_urls=config.profile == "base",
+                enforce_capabilities=config.profile != "base",
+            ),
+        )
+        write_text_atomic(config.output_path, playlist)
         timings["total"] = round(time.perf_counter() - started_at, 3)
 
         metadata = build_run_metadata(

@@ -12,6 +12,7 @@ from legal_iptv.services.link_validator import (
     is_url_active,
     load_offline_urls,
     refresh_stream_status,
+    UrlValidation,
     validate_urls,
 )
 
@@ -66,6 +67,16 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertTrue(session.get.return_value.closed)
 
     @patch("legal_iptv.services.link_validator._get_session")
+    def test_head_404_requires_get_confirmation(self, get_session_mock: Mock):
+        session = Mock()
+        session.head.return_value = FakeResponse(404)
+        session.get.return_value = FakeResponse(200)
+        get_session_mock.return_value = session
+
+        self.assertTrue(is_url_active("https://example.test/live.m3u8", timeout=1))
+        session.get.assert_called_once()
+
+    @patch("legal_iptv.services.link_validator._get_session")
     def test_url_status_is_unknown_when_head_is_rate_limited(self, get_session_mock: Mock):
         session = Mock()
         session.head.return_value = FakeResponse(429)
@@ -87,6 +98,30 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
         self.assertTrue(session.get.return_value.closed)
 
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_refresh_persists_definitive_extra_404(
+        self,
+        validate_details_mock: Mock,
+    ):
+        url = "https://example.test/missing.m3u8"
+        validate_details_mock.return_value = {url: UrlValidation(False, 404)}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            channel = make_channel("manual", url, source="extra")
+            active = refresh_stream_status(
+                [channel],
+                status_file=root / "stream-status.json",
+                max_workers=1,
+                timeout=1,
+                max_age_seconds=14400,
+                extra_removed_file=root / "extra-removed.json",
+            )
+            removed = json.loads((root / "extra-removed.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(active, [])
+        self.assertEqual(removed["channels"]["manual"]["reason"], "http_404")
+
     @patch("legal_iptv.services.link_validator._get_session")
     def test_filter_active_channels_validates_each_url_once(self, get_session_mock: Mock):
         session = Mock()
@@ -94,6 +129,7 @@ class LinkValidatorTest(unittest.TestCase):
             FakeResponse(200),
             FakeResponse(404),
         ]
+        session.get.return_value = FakeResponse(404)
         get_session_mock.return_value = session
         active_url = "https://example.test/active.m3u8"
         inactive_url = "https://example.test/inactive.m3u8"

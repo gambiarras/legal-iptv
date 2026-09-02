@@ -2,6 +2,7 @@ import logging
 import random
 import time
 from typing import Optional
+from urllib.parse import urlsplit, urlunsplit
 
 import requests
 
@@ -22,6 +23,15 @@ BROWSER_USER_AGENTS = [
     "Mozilla/5.0 (X11; Linux x86_64; rv:123.0) "
     "Gecko/20100101 Firefox/123.0",
 ]
+
+
+def _safe_url(url: str) -> str:
+    parsed = urlsplit(url)
+    hostname = parsed.hostname or ""
+    netloc = hostname
+    if parsed.port:
+        netloc = f"{hostname}:{parsed.port}"
+    return urlunsplit((parsed.scheme, netloc, parsed.path, "", ""))
 
 
 def build_headers(
@@ -79,12 +89,14 @@ class HttpClient:
         self,
         url: str,
         referer: Optional[str] = None,
+        headers: dict[str, str] | None = None,
     ) -> bytes:
         return self._request(
             url=url,
             expect_json=False,
             referer=referer,
             as_bytes=True,
+            extra_headers=headers,
         )
 
     def _request(
@@ -93,6 +105,7 @@ class HttpClient:
         expect_json: bool,
         referer: Optional[str] = None,
         as_bytes: bool = False,
+        extra_headers: dict[str, str] | None = None,
     ):
         last_error = None
         last_status = None
@@ -106,6 +119,8 @@ class HttpClient:
                     else "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
                 ),
             )
+            if extra_headers:
+                headers.update(extra_headers)
 
             try:
                 response = self.session.get(
@@ -119,7 +134,7 @@ class HttpClient:
                     logger.warning(
                         "Blocked or rate-limited (status=%s) url=%s attempt=%s",
                         response.status_code,
-                        url,
+                        _safe_url(url),
                         attempt + 1,
                     )
                     self._sleep_before_retry(attempt)
@@ -138,18 +153,18 @@ class HttpClient:
             except requests.RequestException as exc:
                 last_error = exc
                 logger.warning(
-                    "Request failed (attempt %s/%s) url=%s error=%s",
+                    "Request failed (attempt %s/%s) url=%s error_type=%s",
                     attempt + 1,
                     self.retries,
-                    url,
-                    exc,
+                    _safe_url(url),
+                    type(exc).__name__,
                 )
                 self._sleep_before_retry(attempt)
 
         if last_error is not None:
-            raise RuntimeError(f"Failed to fetch {url}: {last_error}")
+            raise RuntimeError(f"Failed to fetch {_safe_url(url)}: {type(last_error).__name__}")
 
-        raise RuntimeError(f"Failed to fetch {url}: last_status={last_status}")
+        raise RuntimeError(f"Failed to fetch {_safe_url(url)}: last_status={last_status}")
 
     def _sleep_before_retry(self, attempt: int) -> None:
         if attempt >= self.retries - 1:

@@ -275,6 +275,22 @@ class EPGMapperTest(unittest.TestCase):
 
         self.assertEqual(enriched[0].tvg_id, "Band.epg-pw")
 
+    def test_matches_variant_name_without_quality_suffix(self):
+        channel = make_channel(
+            id="addon.channel.4k",
+            name="Example Channel [4K] [HEVC]",
+            source="live_stream_catalog",
+        )
+        aliases = {
+            "example channel": parse_xmltv_aliases(
+                b'<tv><channel id="Example.br"><display-name>Example Channel</display-name></channel></tv>'
+            )["example channel"]
+        }
+
+        enriched = enrich_epg_metadata([channel], xmltv_aliases=aliases)
+
+        self.assertEqual(enriched[0].tvg_id, "Example.br")
+
     def test_clears_unreliable_tvg_id_when_no_mapping_exists(self):
         channel = make_channel(
             id="script_catalog_1.99",

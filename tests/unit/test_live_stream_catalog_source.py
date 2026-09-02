@@ -171,6 +171,50 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
         self.assertGreater(channels[0].ttl_seconds, 900)
         self.assertLessEqual(channels[0].ttl_seconds, 3600)
 
+    def test_preserves_extended_channel_transport_contract(self):
+        payload = [
+            {
+                "id": "channel.4k",
+                "name": "Channel [4K] [HEVC]",
+                "stream_url": "https://example.test/channel.mpd",
+                "group": "TV Aberta",
+                "source_type": "stremio_addon",
+                "provider_id": "addon_catalog_1",
+                "logical_channel_id": "logical.channel",
+                "variant_id": "variant.4k",
+                "variant_label": "4K HEVC",
+                "resolution": "2160p",
+                "codec": "hevc",
+                "protocol": "dash",
+                "request_headers": {"Referer": "https://player.example.test/"},
+                "publishable_static": True,
+                "status": "resolved",
+            }
+        ]
+
+        channels = fetch_channels(FakeClient(payload), min_live_ttl=900)
+
+        self.assertEqual(len(channels), 1)
+        self.assertEqual(channels[0].provider_id, "addon_catalog_1")
+        self.assertEqual(channels[0].logical_channel_id, "logical.channel")
+        self.assertEqual(channels[0].variant_label, "4K HEVC")
+        self.assertEqual(channels[0].protocol, "dash")
+        self.assertEqual(channels[0].raw_group, "TV Aberta")
+
+    def test_ignores_removed_catalog_entries(self):
+        payload = [
+            {
+                "id": "removed.channel",
+                "name": "Removed",
+                "stream_url": "https://example.test/removed.m3u8",
+                "group": "web",
+                "status": "removed",
+                "removed": True,
+            }
+        ]
+
+        self.assertEqual(fetch_channels(FakeClient(payload), min_live_ttl=900), [])
+
 
 if __name__ == "__main__":
     unittest.main()

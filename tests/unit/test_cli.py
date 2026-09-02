@@ -3,7 +3,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-from legal_iptv.cli import parse_args, positive_int
+from legal_iptv.cli import coverage_ratio, parse_args, positive_int
 from legal_iptv.config import AppConfig
 
 
@@ -18,6 +18,13 @@ class CLITest(unittest.TestCase):
         with self.assertRaises(argparse.ArgumentTypeError):
             positive_int("-1")
 
+    def test_coverage_ratio_is_bounded(self):
+        self.assertEqual(coverage_ratio("0.5"), 0.5)
+        with self.assertRaises(argparse.ArgumentTypeError):
+            coverage_ratio("0")
+        with self.assertRaises(argparse.ArgumentTypeError):
+            coverage_ratio("1.1")
+
     def test_parse_args_sets_epg_cache_defaults(self):
         with patch.object(sys, "argv", ["legal-iptv"]):
             args = parse_args()
@@ -28,6 +35,10 @@ class CLITest(unittest.TestCase):
         self.assertEqual(args.iptv_org_cache_file, "iptv-org-cache.json")
         self.assertEqual(args.iptv_org_cache_ttl, 43200)
         self.assertFalse(args.refresh_iptv_org_cache)
+        self.assertEqual(args.profile, "full")
+        self.assertEqual(args.player_profile, "portable")
+        self.assertEqual(args.guide_output, "guide.xml")
+        self.assertFalse(args.skip_guide)
 
     def test_app_config_reads_epg_cache_args(self):
         with patch.object(

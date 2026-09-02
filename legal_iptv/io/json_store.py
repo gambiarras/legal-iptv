@@ -12,3 +12,12 @@ def write_json_atomic(path: Path, payload: list | dict) -> None:
         temp_path = Path(tmp.name)
 
     temp_path.replace(path)
+
+
+def write_text_atomic(path: Path, value: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with NamedTemporaryFile("w", delete=False, encoding="utf-8", dir=path.parent) as tmp:
+        tmp.write(value)
+        tmp.flush()
+        temp_path = Path(tmp.name)
+    temp_path.replace(path)
