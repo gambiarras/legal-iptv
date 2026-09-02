@@ -2,6 +2,7 @@ import json
 import logging
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -10,15 +11,22 @@ import requests
 from legal_iptv.clients.http_client import build_headers
 from legal_iptv.io import write_json_atomic
 from legal_iptv.models import Channel
+from legal_iptv.services.extra_removal import update_extra_removals
 
 
 logger = logging.getLogger(__name__)
 
-FALLBACK_STATUSES = {403, 405}
+FALLBACK_STATUSES = {403, 404, 405, 410}
 UNKNOWN_STATUSES = {429}
 TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
 
 _thread_local = threading.local()
+
+
+@dataclass(slots=True, frozen=True)
+class UrlValidation:
+    active: bool | None
+    http_status: int | None = None
 
 
 def _is_success_status(status_code: int) -> bool:
@@ -44,7 +52,7 @@ def _get_session() -> requests.Session:
     return session
 
 
-def is_url_active(url: str, timeout: int) -> bool | None:
+def inspect_url(url: str, timeout: int) -> UrlValidation:
     headers = build_headers(accept="*/*")
     session = _get_session()
 
@@ -57,10 +65,13 @@ def is_url_active(url: str, timeout: int) -> bool | None:
         )
 
         if _is_success_status(response.status_code):
-            return True
+            return UrlValidation(True, response.status_code)
 
         if response.status_code not in FALLBACK_STATUSES:
-            return _status_to_activity(response.status_code)
+            return UrlValidation(
+                _status_to_activity(response.status_code),
+                response.status_code,
+            )
 
     except requests.RequestException:
         pass
@@ -74,12 +85,45 @@ def is_url_active(url: str, timeout: int) -> bool | None:
             stream=True,
         )
         try:
-            return _status_to_activity(response.status_code)
+            return UrlValidation(
+                _status_to_activity(response.status_code),
+                response.status_code,
+            )
         finally:
             response.close()
 
     except requests.RequestException:
-        return False
+        return UrlValidation(False)
+
+
+def is_url_active(url: str, timeout: int) -> bool | None:
+    return inspect_url(url, timeout).active
+
+
+def validate_url_details(
+    urls: list[str],
+    *,
+    max_workers: int,
+    timeout: int,
+) -> dict[str, UrlValidation]:
+    if not urls:
+        return {}
+
+    worker_count = max(1, min(max_workers, len(urls)))
+    results: dict[str, UrlValidation] = {}
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        futures = {executor.submit(inspect_url, url, timeout): url for url in urls}
+        for future in as_completed(futures):
+            url = futures[future]
+            try:
+                results[url] = future.result()
+            except Exception as exc:
+                logger.warning(
+                    "Stream validation failed error_type=%s",
+                    type(exc).__name__,
+                )
+                results[url] = UrlValidation(False)
+    return results
 
 
 def validate_urls(
@@ -105,7 +149,10 @@ def validate_urls(
             try:
                 status_by_url[url] = future.result()
             except Exception as exc:
-                logger.warning("Stream validation failed url=%s error=%s", url, exc)
+                logger.warning(
+                    "Stream validation failed error_type=%s",
+                    type(exc).__name__,
+                )
                 status_by_url[url] = False
 
     return status_by_url
@@ -393,6 +440,7 @@ def refresh_stream_status(
     max_workers: int,
     timeout: int,
     max_age_seconds: int,
+    extra_removed_file: Path | None = None,
 ) -> list[Channel]:
     urls = sorted({channel.stream_url for channel in channels if channel.stream_url})
     previous_records = _read_status_records(status_file)
@@ -404,11 +452,28 @@ def refresh_stream_status(
     }
     urls_to_validate = [url for url in urls if url not in fresh_records]
 
-    status_by_url = validate_urls(
-        urls_to_validate,
-        max_workers=max_workers,
-        timeout=timeout,
-    )
+    http_status_by_url: dict[str, int | None] = {}
+    if extra_removed_file is None:
+        status_by_url = validate_urls(
+            urls_to_validate,
+            max_workers=max_workers,
+            timeout=timeout,
+        )
+    else:
+        validation_details = validate_url_details(
+            urls_to_validate,
+            max_workers=max_workers,
+            timeout=timeout,
+        )
+        status_by_url = {
+            url: result.active
+            for url, result in validation_details.items()
+        }
+        http_status_by_url = {
+            url: result.http_status
+            for url, result in validation_details.items()
+        }
+        update_extra_removals(channels, http_status_by_url, extra_removed_file)
     for url in _transient_live_urls(channels):
         if status_by_url.get(url) is False:
             status_by_url[url] = None
@@ -426,6 +491,8 @@ def refresh_stream_status(
                 metadata=metadata,
                 validation="validated",
             )
+            if http_status_by_url.get(url) is not None:
+                records_by_url[url]["http_status"] = http_status_by_url[url]
             continue
 
         cached_record = dict(fresh_records[url])
