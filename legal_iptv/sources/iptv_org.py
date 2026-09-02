@@ -133,6 +133,19 @@ def _build_channels(raw: dict[str, list[dict]]) -> list[Channel]:
                     source="iptv_org",
                     tvg_id=channel["id"],
                     feed_id=feed_id,
+                    provider_id="iptv_org",
+                    logical_channel_id=channel["id"],
+                    variant_id=(
+                        f"{channel['id']}.{feed_id}"
+                        if feed_id
+                        else channel["id"]
+                    ),
+                    protocol=(
+                        "hls" if stream["url"].split("?", 1)[0].endswith(".m3u8")
+                        else "dash" if stream["url"].split("?", 1)[0].endswith(".mpd")
+                        else None
+                    ),
+                    raw_group=category,
                 )
             )
 

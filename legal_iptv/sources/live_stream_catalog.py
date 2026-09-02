@@ -11,6 +11,22 @@ LIVE_STREAM_CATALOG_URL = "https://raw.githubusercontent.com/gambiarras/live-str
 TTL_FILTER_EXEMPT_SOURCE_TYPES = {"kick"}
 
 
+def _as_bool(value, default: bool = False) -> bool:
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        normalized = value.strip().casefold()
+        if normalized in {"true", "1", "yes"}:
+            return True
+        if normalized in {"false", "0", "no", ""}:
+            return False
+    if isinstance(value, (int, float)):
+        return value != 0
+    return default
+
+
 def _parse_datetime(value: str | None) -> datetime | None:
     if not value:
         return None
@@ -39,6 +55,8 @@ def _should_filter_by_ttl(item: dict) -> bool:
 
 
 def _is_usable(item: dict, min_live_ttl: int) -> bool:
+    if _as_bool(item.get("removed")) or item.get("status") == "removed":
+        return False
     if item.get("status") != "resolved":
         return False
 
@@ -91,6 +109,46 @@ def fetch_channels(
                 resolved_at=item.get("resolved_at"),
                 expires_at=item.get("expires_at"),
                 ttl_seconds=_current_ttl_seconds(item),
+                provider_id=item.get("provider_id") or item.get("source_type"),
+                logical_channel_id=item.get("logical_channel_id") or item.get("id"),
+                variant_id=item.get("variant_id") or item.get("id"),
+                variant_label=item.get("variant_label"),
+                resolution=item.get("resolution"),
+                codec=item.get("codec"),
+                bitrate=item.get("bitrate"),
+                protocol=item.get("protocol"),
+                request_headers=(
+                    {
+                        str(key): str(value)
+                        for key, value in item.get("request_headers", {}).items()
+                    }
+                    if isinstance(item.get("request_headers"), dict)
+                    else {}
+                ),
+                secret_refs=(
+                    {
+                        str(key): str(value)
+                        for key, value in item.get("secret_refs", {}).items()
+                    }
+                    if isinstance(item.get("secret_refs"), dict)
+                    else {}
+                ),
+                requires_dynamic_resolution=_as_bool(
+                    item.get("requires_dynamic_resolution")
+                ),
+                publishable_static=_as_bool(
+                    item.get("publishable_static"),
+                    default=True,
+                ),
+                delivery_mode=str(item.get("delivery_mode") or "direct").casefold(),
+                drm=item.get("drm") if isinstance(item.get("drm"), dict) else None,
+                removed=_as_bool(item.get("removed")),
+                removal_reason=item.get("removal_reason"),
+                raw_group=str(item.get("group", "web")),
+                is_adult=any(
+                    _as_bool(item.get(key))
+                    for key in ("adult", "is_adult", "is_nsfw")
+                ),
             )
         )
 
