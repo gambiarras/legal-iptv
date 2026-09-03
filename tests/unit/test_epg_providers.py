@@ -141,6 +141,49 @@ class EpgProvidersTest(unittest.TestCase):
         self.assertEqual(stats.programmes, 2)
         self.assertEqual(root.findtext("channel/display-name"), "Example")
         self.assertIn("1_1196", client.programme_query["q"][0])
+        self.assertEqual(client.programme_query["rows"], ["250"])
+        self.assertEqual(client.programme_query["start"], ["0"])
+
+    def test_paginates_large_solr_programme_responses(self):
+        now = datetime(2026, 9, 2, 12, tzinfo=timezone.utc)
+
+        class Client:
+            def __init__(self):
+                self.starts = []
+
+            def get_bytes(self, url, headers=None):
+                parsed = urlsplit(url)
+                query = parse_qs(parsed.query)
+                if parsed.path.endswith("/cidade/select"):
+                    return b'{"response":{"docs":[{"id_cidade":1}]}}'
+                if parsed.path.endswith("/canal/select"):
+                    return b'{"response":{"docs":[{"id_canal":1196,"st_canal":"Example"}]}}'
+                if parsed.path.endswith("/exibicao/select"):
+                    start = int(query["start"][0])
+                    self.starts.append(start)
+                    if start == 0:
+                        return (
+                            b'{"response":{"docs":[{"id_canal":1196,"titulo":"First",'
+                            b'"dh_inicio":"2026-09-02T11:00:00Z",'
+                            b'"dh_fim":"2026-09-02T12:00:00Z"}]}}'
+                        )
+                    return b'{"response":{"docs":[]}}'
+                raise AssertionError(url)
+
+        client = Client()
+        with patch(
+            "legal_iptv.services.epg_providers.SOLR_PROGRAMME_PAGE_SIZE",
+            1,
+        ):
+            root = solr_epg_to_xmltv(
+                client,
+                "https://provider.example/gatekeeper",
+                city="Rio de Janeiro-RJ",
+                now=now,
+            )
+
+        self.assertEqual(client.starts, [0, 1])
+        self.assertEqual(len(root.findall("programme")), 1)
 
 
 if __name__ == "__main__":

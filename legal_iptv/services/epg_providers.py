@@ -13,6 +13,8 @@ from legal_iptv.clients import HttpClient
 
 
 RESOURCE_NAME = "epg_providers.json"
+SOLR_PROGRAMME_BATCH_SIZE = 5
+SOLR_PROGRAMME_PAGE_SIZE = 250
 
 
 @dataclass(slots=True, frozen=True)
@@ -241,43 +243,50 @@ def solr_epg_to_xmltv(
         f"{range_stop.strftime('%Y-%m-%dT%H:%M:%SZ')}]"
     )
 
-    for offset in range(0, len(reveal_ids), 50):
-        batch = reveal_ids[offset : offset + 50]
-        programme_payload = _fetch_json(
-            client,
-            _query_url(
-                f"{base_url}/exibicao/select",
-                {
-                    "q": f"id_revel:({' '.join(batch)}) AND id_cidade:{city_id}",
-                    "wt": "json",
-                    "rows": 100000,
-                    "start": 0,
-                    "sort": "id_canal asc,dh_inicio asc",
-                    "fl": (
-                        "dh_fim dh_inicio st_titulo titulo id_programa "
-                        "id_canal id_cidade id_revel"
-                    ),
-                    "fq": date_filter,
-                },
-            ),
-            headers,
-        )
-        for programme in _solr_documents(programme_payload):
-            raw_channel_id = programme.get("id_canal") or programme.get("id_revel")
-            channel_id = channel_ids.get(str(raw_channel_id))
-            if channel_id is None and raw_channel_id is not None:
-                channel_id = channel_ids.get(str(raw_channel_id).split("_")[-1])
-            start = _xmltv_timestamp(programme.get("dh_inicio"))
-            stop = _xmltv_timestamp(programme.get("dh_fim"))
-            title = programme.get("titulo") or programme.get("st_titulo")
-            if not channel_id or not start or not stop or not title:
-                continue
-            element = ET.SubElement(
-                root,
-                "programme",
-                {"channel": channel_id, "start": start, "stop": stop},
+    for offset in range(0, len(reveal_ids), SOLR_PROGRAMME_BATCH_SIZE):
+        batch = reveal_ids[offset : offset + SOLR_PROGRAMME_BATCH_SIZE]
+        page_start = 0
+        while True:
+            programme_payload = _fetch_json(
+                client,
+                _query_url(
+                    f"{base_url}/exibicao/select",
+                    {
+                        "q": f"id_revel:({' '.join(batch)}) AND id_cidade:{city_id}",
+                        "wt": "json",
+                        "rows": SOLR_PROGRAMME_PAGE_SIZE,
+                        "start": page_start,
+                        "sort": "id_canal asc,dh_inicio asc",
+                        "fl": (
+                            "dh_fim dh_inicio st_titulo titulo id_programa "
+                            "id_canal id_cidade id_revel"
+                        ),
+                        "fq": date_filter,
+                    },
+                ),
+                headers,
             )
-            ET.SubElement(element, "title", {"lang": "pt"}).text = str(title)
+            programme_documents = _solr_documents(programme_payload)
+            for programme in programme_documents:
+                raw_channel_id = programme.get("id_canal") or programme.get("id_revel")
+                channel_id = channel_ids.get(str(raw_channel_id))
+                if channel_id is None and raw_channel_id is not None:
+                    channel_id = channel_ids.get(str(raw_channel_id).split("_")[-1])
+                start = _xmltv_timestamp(programme.get("dh_inicio"))
+                stop = _xmltv_timestamp(programme.get("dh_fim"))
+                title = programme.get("titulo") or programme.get("st_titulo")
+                if not channel_id or not start or not stop or not title:
+                    continue
+                element = ET.SubElement(
+                    root,
+                    "programme",
+                    {"channel": channel_id, "start": start, "stop": stop},
+                )
+                ET.SubElement(element, "title", {"lang": "pt"}).text = str(title)
+
+            if len(programme_documents) < SOLR_PROGRAMME_PAGE_SIZE:
+                break
+            page_start += len(programme_documents)
     return root
 
 
