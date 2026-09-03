@@ -39,13 +39,19 @@ def enrich_epg_metadata(
     channels: list[Channel],
     xmltv_aliases: dict[str, EPGMapping] | None = None,
 ) -> list[Channel]:
-    aliases = _load_aliases()
+    aliases, prefix_aliases = _load_alias_configuration()
     xmltv_aliases = xmltv_aliases or {}
     discovered_aliases = _discover_aliases(channels)
 
     enriched: list[Channel] = []
     for channel in channels:
-        mapping = _find_mapping(channel, aliases, xmltv_aliases, discovered_aliases)
+        mapping = _find_mapping(
+            channel,
+            aliases,
+            prefix_aliases,
+            xmltv_aliases,
+            discovered_aliases,
+        )
         tvg_id = _resolved_tvg_id(channel, mapping)
         name = mapping.display_name if mapping and mapping.display_name else channel.name
         enriched.append(replace(channel, name=name, tvg_id=tvg_id))
@@ -56,13 +62,15 @@ def enrich_epg_metadata(
 def _find_mapping(
     channel: Channel,
     aliases: dict[str, EPGMapping],
+    prefix_aliases: tuple[tuple[str, EPGMapping], ...],
     xmltv_aliases: dict[str, EPGMapping],
     discovered_aliases: dict[str, EPGMapping],
 ) -> EPGMapping | None:
+    base_name = VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip()
     candidates = [
         channel.tvg_id or "",
+        base_name,
         channel.name,
-        VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip(),
     ]
 
     for value in candidates:
@@ -74,6 +82,12 @@ def _find_mapping(
         key = _normalize(value)
         if key in aliases:
             return aliases[key]
+
+    for value in candidates:
+        key = _normalize(value)
+        for prefix, mapping in prefix_aliases:
+            if key == prefix or key.startswith(f"{prefix} "):
+                return mapping
 
     for value in candidates:
         key = _normalize(value)
@@ -149,9 +163,8 @@ def parse_xmltv_aliases(
     require_programmes: bool = False,
 ) -> dict[str, EPGMapping]:
     data = gzip.decompress(payload) if compressed else payload
-    channel_candidates: dict[str, dict[str, set[EPGMapping]]] = {}
+    channel_candidates: list[tuple[str, dict[str, set[EPGMapping]]]] = []
     programmed_channel_ids: set[str] = set()
-    candidates: dict[str, set[EPGMapping]] = defaultdict(set)
 
     for _, element in ET.iterparse(BytesIO(data), events=("end",)):
         if element.tag == "programme":
@@ -178,17 +191,19 @@ def parse_xmltv_aliases(
             _add_candidate(item_candidates, text, mapping)
             _add_candidate(item_candidates, _strip_display_prefix(text), mapping)
 
-        channel_candidates[tvg_id] = item_candidates
+        channel_candidates.append((tvg_id, item_candidates))
         element.clear()
 
-    for tvg_id, item_candidates in channel_candidates.items():
+    aliases: dict[str, EPGMapping] = {}
+    for tvg_id, item_candidates in channel_candidates:
         if require_programmes and tvg_id not in programmed_channel_ids:
             continue
 
         for key, mappings in item_candidates.items():
-            candidates[key].update(mappings)
+            if key not in aliases and len(mappings) == 1:
+                aliases[key] = next(iter(mappings))
 
-    return _unique_mappings(candidates)
+    return aliases
 
 
 def _add_candidate(
@@ -199,14 +214,6 @@ def _add_candidate(
     key = _normalize(value)
     if key:
         candidates[key].add(mapping)
-
-
-def _unique_mappings(candidates: dict[str, set[EPGMapping]]) -> dict[str, EPGMapping]:
-    return {
-        key: next(iter(values))
-        for key, values in candidates.items()
-        if len(values) == 1
-    }
 
 
 def _load_fresh_xmltv_aliases_cache(
@@ -334,13 +341,17 @@ def _discover_aliases(channels: list[Channel]) -> dict[str, EPGMapping]:
 
 
 @lru_cache(maxsize=1)
-def _load_aliases() -> dict[str, EPGMapping]:
+def _load_alias_configuration() -> tuple[
+    dict[str, EPGMapping],
+    tuple[tuple[str, EPGMapping], ...],
+]:
     resource = resources.files("legal_iptv.resources").joinpath(ALIASES_RESOURCE_NAME)
     if not resource.is_file():
-        return {}
+        return {}, ()
 
     raw = json.loads(resource.read_text(encoding="utf-8"))
     aliases: dict[str, EPGMapping] = {}
+    prefix_aliases: list[tuple[str, EPGMapping]] = []
 
     for item in raw:
         mapping = EPGMapping(
@@ -349,8 +360,12 @@ def _load_aliases() -> dict[str, EPGMapping]:
         )
         for alias in item.get("aliases", []):
             aliases[_normalize(alias)] = mapping
+        for prefix in item.get("prefixes", []):
+            normalized = _normalize(prefix)
+            if normalized:
+                prefix_aliases.append((normalized, mapping))
 
-    return aliases
+    return aliases, tuple(prefix_aliases)
 
 
 def _is_reliable_tvg_id(value: str | None) -> bool:

@@ -1,4 +1,7 @@
+PRIMARY_EPG_URL = "https://bit.ly/legal-epg"
+
 EPG_URLS = [
+    PRIMARY_EPG_URL,
     "https://epg.pw/xmltv/epg_BR.xml",
     "https://iptv-epg.org/files/epg-br.xml",
     "https://i.mjh.nz/Plex/all.xml",

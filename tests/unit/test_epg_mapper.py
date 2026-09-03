@@ -2,6 +2,7 @@ import gzip
 import json
 import tempfile
 import unittest
+from importlib import resources
 from pathlib import Path
 from unittest.mock import patch
 
@@ -32,6 +33,25 @@ def make_channel(
 
 
 class EPGMapperTest(unittest.TestCase):
+    def test_every_configured_exact_alias_resolves_to_its_declared_tvg_id(self):
+        resource = resources.files("legal_iptv.resources").joinpath(
+            "epg_aliases.json"
+        )
+        configured = json.loads(resource.read_text(encoding="utf-8"))
+
+        for item_index, item in enumerate(configured):
+            for alias_index, alias in enumerate(item.get("aliases", ())):
+                with self.subTest(alias=alias):
+                    channel = make_channel(
+                        id=f"alias.{item_index}.{alias_index}",
+                        name=alias,
+                        source="live_stream_catalog",
+                    )
+
+                    enriched = enrich_epg_metadata([channel])
+
+                    self.assertEqual(enriched[0].tvg_id, item["tvg_id"])
+
     def test_parses_xmltv_aliases_from_display_names(self):
         payload = b"""<?xml version="1.0" encoding="UTF-8"?>
 <tv>
@@ -64,6 +84,18 @@ class EPGMapperTest(unittest.TestCase):
         aliases = parse_xmltv_aliases(payload, require_programmes=True)
 
         self.assertEqual(aliases["band"].tvg_id, "Band.br")
+
+    def test_duplicate_name_prefers_first_programmed_channel(self):
+        payload = b"""<tv>
+  <channel id="primary"><display-name>Warner Channel</display-name></channel>
+  <channel id="fallback"><display-name>Warner Channel</display-name></channel>
+  <programme channel="primary" start="20260714000000 +0000" stop="20260714010000 +0000"/>
+  <programme channel="fallback" start="20260714000000 +0000" stop="20260714010000 +0000"/>
+</tv>"""
+
+        aliases = parse_xmltv_aliases(payload, require_programmes=True)
+
+        self.assertEqual(aliases["warner channel"].tvg_id, "primary")
 
     def test_load_xmltv_aliases_prefers_first_source_with_programming(self):
         class FakeClient:
@@ -243,6 +275,57 @@ class EPGMapperTest(unittest.TestCase):
         self.assertEqual(enriched[0].tvg_id, "TVGloboSaoPaulo.br")
         self.assertEqual(enriched[0].name, "Globo SP")
 
+    def test_maps_user_approved_aliases(self):
+        approved = {
+            "AgroMais": "2353",
+            "Adult Swim": "417185",
+            "TV Gazeta SP": "523302",
+            "Kenan e Kel": "5ffcc5130fd98c0007f2e216",
+        }
+
+        for index, (name, tvg_id) in enumerate(approved.items()):
+            with self.subTest(name=name):
+                channel = make_channel(
+                    id=f"approved.{index}",
+                    name=name,
+                    source="live_stream_catalog",
+                )
+
+                enriched = enrich_epg_metadata([channel])
+
+                self.assertEqual(enriched[0].tvg_id, tvg_id)
+                self.assertEqual(enriched[0].name, name)
+
+    def test_uses_configured_regional_fallback_prefixes(self):
+        channels = [
+            make_channel(
+                id="globo.unknown",
+                name="Globo Afiliada Sem EPG",
+                source="live_stream_catalog",
+            ),
+            make_channel(
+                id="record.unknown",
+                name="RecordTV Afiliada Sem EPG",
+                source="live_stream_catalog",
+            ),
+        ]
+
+        enriched = enrich_epg_metadata(channels)
+
+        self.assertEqual(enriched[0].tvg_id, "GloboInternacional.br")
+        self.assertEqual(enriched[1].tvg_id, "RecordTVInternational.br")
+
+    def test_exact_regional_alias_precedes_configured_prefix(self):
+        channel = make_channel(
+            id="record.roraima",
+            name="RecordTV Roraima",
+            source="live_stream_catalog",
+        )
+
+        enriched = enrich_epg_metadata([channel])
+
+        self.assertEqual(enriched[0].tvg_id, "RecordTVBrasil.br")
+
     def test_maps_name_from_xmltv_aliases(self):
         channel = make_channel(
             id="script_catalog_1.52",
@@ -290,6 +373,33 @@ class EPGMapperTest(unittest.TestCase):
         enriched = enrich_epg_metadata([channel], xmltv_aliases=aliases)
 
         self.assertEqual(enriched[0].tvg_id, "Example.br")
+
+    def test_variants_share_primary_logical_channel_tvg_id(self):
+        aliases = parse_xmltv_aliases(
+            b"""<tv>
+  <channel id="2438"><display-name>Warner Channel</display-name></channel>
+  <channel id="2445"><display-name>Warner Channel HD</display-name></channel>
+  <programme channel="2438" start="20260714000000 +0000" stop="20260714010000 +0000"/>
+  <programme channel="2445" start="20260714000000 +0000" stop="20260714010000 +0000"/>
+</tv>""",
+            require_programmes=True,
+        )
+        channels = [
+            make_channel(
+                id="warner.fhd",
+                name="Warner Channel [FHD]",
+                source="live_stream_catalog",
+            ),
+            make_channel(
+                id="warner.sd",
+                name="Warner Channel [SD]",
+                source="live_stream_catalog",
+            ),
+        ]
+
+        enriched = enrich_epg_metadata(channels, xmltv_aliases=aliases)
+
+        self.assertEqual({channel.tvg_id for channel in enriched}, {"2438"})
 
     def test_clears_unreliable_tvg_id_when_no_mapping_exists(self):
         channel = make_channel(
