@@ -5,6 +5,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
 
+import requests
+
 from legal_iptv.models import Channel
 from legal_iptv.services.link_validator import (
     filter_active_channels,
@@ -98,6 +100,23 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
         self.assertTrue(session.get.return_value.closed)
 
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_status_is_unknown_on_server_error(self, get_session_mock: Mock):
+        session = Mock()
+        session.head.return_value = FakeResponse(503)
+        get_session_mock.return_value = session
+
+        self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_status_is_unknown_when_requests_time_out(self, get_session_mock: Mock):
+        session = Mock()
+        session.head.side_effect = requests.Timeout("head timeout")
+        session.get.side_effect = requests.Timeout("get timeout")
+        get_session_mock.return_value = session
+
+        self.assertIsNone(is_url_active("https://example.test/live.m3u8", timeout=1))
+
     @patch("legal_iptv.services.link_validator.validate_url_details")
     def test_refresh_persists_definitive_extra_404(
         self,
@@ -152,7 +171,7 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(session.head.call_count, 2)
 
     @patch("legal_iptv.services.link_validator.is_url_active")
-    def test_validate_urls_marks_unexpected_errors_offline(self, is_url_active_mock: Mock):
+    def test_validate_urls_marks_unexpected_errors_unknown(self, is_url_active_mock: Mock):
         is_url_active_mock.side_effect = RuntimeError("boom")
 
         with self.assertLogs("legal_iptv.services.link_validator", level="WARNING"):
@@ -162,7 +181,7 @@ class LinkValidatorTest(unittest.TestCase):
                 timeout=1,
             )
 
-        self.assertEqual(status_by_url, {"https://example.test/live.m3u8": False})
+        self.assertEqual(status_by_url, {"https://example.test/live.m3u8": None})
 
     def test_loads_fresh_offline_urls_from_status_file(self):
         checked_at = datetime.now(timezone.utc).isoformat()
@@ -174,6 +193,11 @@ class LinkValidatorTest(unittest.TestCase):
                     {
                         "urls": {
                             "https://example.test/offline.m3u8": {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/timeout.m3u8": {
                                 "active": False,
                                 "checked_at": checked_at,
                             },
@@ -206,6 +230,7 @@ class LinkValidatorTest(unittest.TestCase):
                         "urls": {
                             "https://example.test/offline.m3u8": {
                                 "active": False,
+                                "http_status": 404,
                                 "checked_at": checked_at,
                             }
                         }
@@ -231,6 +256,7 @@ class LinkValidatorTest(unittest.TestCase):
                         "urls": {
                             offline_url: {
                                 "active": False,
+                                "http_status": 404,
                                 "checked_at": checked_at,
                             }
                         }
@@ -264,10 +290,12 @@ class LinkValidatorTest(unittest.TestCase):
                         "urls": {
                             transient_url: {
                                 "active": False,
+                                "http_status": 404,
                                 "checked_at": checked_at,
                             },
                             static_url: {
                                 "active": False,
+                                "http_status": 404,
                                 "checked_at": checked_at,
                             },
                         }

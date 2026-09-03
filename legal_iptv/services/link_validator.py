@@ -17,7 +17,7 @@ from legal_iptv.services.extra_removal import update_extra_removals
 logger = logging.getLogger(__name__)
 
 FALLBACK_STATUSES = {403, 404, 405, 410}
-UNKNOWN_STATUSES = {429}
+TERMINAL_OFFLINE_STATUSES = {404, 410}
 TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
 
 _thread_local = threading.local()
@@ -37,10 +37,10 @@ def _status_to_activity(status_code: int) -> bool | None:
     if _is_success_status(status_code):
         return True
 
-    if status_code in UNKNOWN_STATUSES:
-        return None
+    if status_code in TERMINAL_OFFLINE_STATUSES:
+        return False
 
-    return False
+    return None
 
 
 def _get_session() -> requests.Session:
@@ -93,7 +93,7 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
             response.close()
 
     except requests.RequestException:
-        return UrlValidation(False)
+        return UrlValidation(None)
 
 
 def is_url_active(url: str, timeout: int) -> bool | None:
@@ -122,7 +122,7 @@ def validate_url_details(
                     "Stream validation failed error_type=%s",
                     type(exc).__name__,
                 )
-                results[url] = UrlValidation(False)
+                results[url] = UrlValidation(None)
     return results
 
 
@@ -153,7 +153,7 @@ def validate_urls(
                     "Stream validation failed error_type=%s",
                     type(exc).__name__,
                 )
-                status_by_url[url] = False
+                status_by_url[url] = None
 
     return status_by_url
 
@@ -381,7 +381,10 @@ def load_offline_urls(
         if not _is_fresh_record(record, max_age_seconds=max_age_seconds):
             continue
 
-        if record.get("active") is False:
+        if (
+            record.get("active") is False
+            and record.get("http_status") in TERMINAL_OFFLINE_STATUSES
+        ):
             offline_urls.add(url)
 
     return offline_urls
