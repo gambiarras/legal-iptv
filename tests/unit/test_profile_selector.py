@@ -23,6 +23,7 @@ def channel(
     tvg_id: str | None = None,
     variant: str | None = None,
     raw_group: str = "general",
+    logical_id: str = "logical.channel",
     **values,
 ) -> Channel:
     return Channel(
@@ -34,7 +35,7 @@ def channel(
         source=source,
         source_type=source_type or provider,
         provider_id=provider,
-        logical_channel_id="logical.channel",
+        logical_channel_id=logical_id,
         variant_id=variant or id,
         tvg_id=tvg_id,
         raw_group=raw_group,
@@ -112,6 +113,47 @@ class ProfileSelectorTest(unittest.TestCase):
 
         self.assertEqual({item.id for item in selected}, {"high.fhd", "high.4k"})
         self.assertEqual({item.tvg_id for item in selected}, {"Canal.br"})
+        selected_by_id = {item.id: item for item in selected}
+        self.assertEqual(selected_by_id["high.4k"].group, "Variedades")
+        self.assertEqual(selected_by_id["high.fhd"].group, "Alternativos")
+
+    def test_full_places_named_alternative_in_final_group(self):
+        candidate = channel(
+            "alternative",
+            "Canal Alternativo 1",
+            "https://example.test/alternative.m3u8",
+            provider="addon_catalog_1",
+        )
+
+        selected = select_profile_channels([candidate], self.configuration, "full")
+
+        self.assertEqual(selected[0].group, "Alternativos")
+
+    def test_full_groups_same_named_variants_even_when_source_logical_ids_differ(self):
+        channels = [
+            channel(
+                "channel.fhd",
+                "Canal [FHD]",
+                "https://example.test/fhd.m3u8",
+                provider="addon_catalog_1",
+                tvg_id="Canal.br",
+                logical_id="source.channel.first",
+            ),
+            channel(
+                "channel.sd",
+                "Canal [SD]",
+                "https://example.test/sd.m3u8",
+                provider="addon_catalog_1",
+                tvg_id="Canal.br",
+                logical_id="source.channel.second",
+            ),
+        ]
+
+        selected = select_profile_channels(channels, self.configuration, "full")
+        selected_by_id = {item.id: item for item in selected}
+
+        self.assertEqual(selected_by_id["channel.fhd"].group, "Variedades")
+        self.assertEqual(selected_by_id["channel.sd"].group, "Alternativos")
 
     def test_full_uses_explicit_logical_id_across_different_names(self):
         high = channel(
@@ -176,6 +218,7 @@ class ProfileSelectorTest(unittest.TestCase):
                         "urls": {
                             high.stream_url: {
                                 "active": False,
+                                "http_status": 404,
                                 "checked_at": datetime.now(timezone.utc).isoformat(),
                             }
                         }
@@ -192,6 +235,47 @@ class ProfileSelectorTest(unittest.TestCase):
         selected = select_profile_channels(available, self.configuration, "full")
 
         self.assertEqual([item.id for item in selected], ["low"])
+
+    def test_full_keeps_higher_priority_provider_after_cached_timeout(self):
+        high = channel(
+            "high",
+            "Canal",
+            "https://high.example/live.m3u8",
+            provider="addon_catalog_1",
+            tvg_id="Canal.br",
+        )
+        low = channel(
+            "low",
+            "Canal",
+            "https://low.example/live.m3u8",
+            provider="iptv_org",
+            source="iptv_org",
+            tvg_id="Canal.br",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            status_path = Path(directory) / "stream-status.json"
+            status_path.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            high.stream_url: {
+                                "active": False,
+                                "checked_at": datetime.now(timezone.utc).isoformat(),
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            available = filter_cached_offline_channels(
+                [high, low],
+                status_file=status_path,
+                max_age_seconds=14400,
+            )
+
+        selected = select_profile_channels(available, self.configuration, "full")
+
+        self.assertEqual([item.id for item in selected], ["high"])
 
     def test_full_normalizes_variant_suffix_from_transport_metadata(self):
         candidate = channel(

@@ -18,6 +18,7 @@ class M3UExporterTest(unittest.TestCase):
         playlist = render_m3u([channel])
 
         self.assertTrue(playlist.startswith("#EXTM3U"))
+        self.assertIn('x-tvg-url="https://bit.ly/legal-epg,', playlist)
         self.assertIn('group-title="Web Live"', playlist)
         self.assertIn('tvg-id=""', playlist)
         self.assertIn("https://example.test/live.m3u8", playlist)
@@ -78,7 +79,10 @@ class M3UExporterTest(unittest.TestCase):
             enforce_capabilities=True,
         )
 
-        self.assertIn('x-tvg-url="https://guide.example.test/guide.xml"', playlist)
+        self.assertIn(
+            'x-tvg-url="https://bit.ly/legal-epg,https://guide.example.test/guide.xml"',
+            playlist,
+        )
         self.assertIn("manifest.mpd|Referer=https%3A%2F%2Fplayer.example.test%2F", playlist)
         self.assertNotIn("#KODIPROP", playlist)
 
@@ -187,6 +191,37 @@ class M3UExporterTest(unittest.TestCase):
 
         self.assertNotIn("private", playlist)
         self.assertNotIn("example.test", playlist)
+
+    def test_places_configured_alternatives_group_last(self):
+        channels = [
+            Channel(
+                id="alternative",
+                name="Canal [HD]",
+                stream_url="https://alternative.test/live.m3u8",
+                logo="",
+                group="Opções",
+                source="live_stream_catalog",
+            ),
+            Channel(
+                id="primary",
+                name="Canal [4K]",
+                stream_url="https://primary.test/live.m3u8",
+                logo="",
+                group="TV Aberta",
+                source="live_stream_catalog",
+            ),
+        ]
+
+        playlist = render_m3u(
+            channels,
+            category_order=("Opções", "TV Aberta"),
+            alternatives_group="Opções",
+        )
+
+        self.assertLess(
+            playlist.index("### Canais TV Aberta"),
+            playlist.index("### Canais Opções"),
+        )
 
 
 if __name__ == "__main__":

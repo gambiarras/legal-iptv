@@ -27,6 +27,7 @@ QUALITY_PATTERN = re.compile(
     re.IGNORECASE,
 )
 HEVC_PATTERN = re.compile(r"(?<![a-z0-9])(hevc|h\.?265)(?![a-z0-9])", re.IGNORECASE)
+ALTERNATIVE_NAME_PATTERN = re.compile(r"\s+alternativo(?:\s+\d+)?$", re.IGNORECASE)
 
 
 @lru_cache(maxsize=8192)
@@ -219,6 +220,81 @@ def _select_logical_providers(
     return _unique_ids(selected)
 
 
+def _variant_logical_key(channel: Channel) -> str:
+    base_name = VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip()
+    if channel.tvg_id and base_name:
+        return (
+            f"provider:{_normalize(_provider_key(channel))}:"
+            f"tvg:{_normalize(channel.tvg_id)}:name:{_normalize(base_name)}"
+        )
+    if channel.logical_channel_id:
+        return f"logical:{_normalize(channel.logical_channel_id)}"
+    return _logical_key(channel)
+
+
+def _variant_quality_score(
+    channel: Channel,
+    configuration: PlaylistConfiguration,
+) -> tuple[int, int, int]:
+    values = " ".join(
+        str(value)
+        for value in (
+            channel.name,
+            channel.variant_label,
+            channel.resolution,
+        )
+        if value
+    )
+    match = QUALITY_PATTERN.search(values)
+    quality = ""
+    if match:
+        token = re.sub(r"\s+", "", match.group(1).casefold())
+        if token in {"2160p", "4k", "uhd"}:
+            quality = "4K"
+        elif token in {"1080p", "fullhd", "fhd"}:
+            quality = "FHD"
+        elif token in {"720p", "hd"}:
+            quality = "HD"
+        else:
+            quality = "SD"
+    ranks = {
+        label: len(configuration.variant_quality_order) - index
+        for index, label in enumerate(configuration.variant_quality_order)
+    }
+    return (
+        ranks.get(quality, 0),
+        channel.bitrate or 0,
+        1 if channel.status == "resolved" else 0,
+    )
+
+
+def _place_alternative_variants(
+    channels: list[Channel],
+    configuration: PlaylistConfiguration,
+) -> list[Channel]:
+    logical_groups: dict[str, list[Channel]] = {}
+    for channel in channels:
+        logical_groups.setdefault(_variant_logical_key(channel), []).append(channel)
+
+    result: list[Channel] = []
+    for variants in logical_groups.values():
+        ranked = sorted(
+            enumerate(variants),
+            key=lambda item: (_variant_quality_score(item[1], configuration), -item[0]),
+            reverse=True,
+        )
+        primary_index = ranked[0][0]
+        for index, channel in enumerate(variants):
+            is_alternative = (
+                index != primary_index
+                or bool(ALTERNATIVE_NAME_PATTERN.search(channel.name))
+            )
+            if is_alternative and channel.group != configuration.alternatives_group:
+                channel = replace(channel, group=configuration.alternatives_group)
+            result.append(channel)
+    return result
+
+
 def select_profile_channels(
     channels: list[Channel],
     configuration: PlaylistConfiguration,
@@ -258,4 +334,5 @@ def select_profile_channels(
         for channel in candidates
         if is_exportable(channel, player_profile)
     ]
-    return _select_logical_providers(candidates, configuration)
+    selected = _select_logical_providers(candidates, configuration)
+    return _place_alternative_variants(selected, configuration)

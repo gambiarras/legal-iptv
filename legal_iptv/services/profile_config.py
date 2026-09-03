@@ -53,6 +53,8 @@ class PlaylistConfiguration:
     provider_priorities: dict[str, int]
     category_map: dict[str, str]
     group_order: tuple[str, ...]
+    alternatives_group: str
+    variant_quality_order: tuple[str, ...]
     overrides: dict[str, dict] = field(default_factory=dict)
 
     def profile(self, name: str) -> PlaylistProfile:
@@ -92,6 +94,11 @@ def load_playlist_configuration(path: Path | None = None) -> PlaylistConfigurati
             for key, value in raw.get("category_map", {}).items()
         },
         group_order=tuple(str(item) for item in raw.get("group_order", ())),
+        alternatives_group=str(raw.get("alternatives_group", "Alternativos")),
+        variant_quality_order=tuple(
+            str(item).upper()
+            for item in raw.get("variant_quality_order", ("4K", "FHD", "HD", "SD"))
+        ),
         overrides={
             str(key): value
             for key, value in raw.get("overrides", {}).items()

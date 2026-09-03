@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import CATEGORY_ORDER
-from legal_iptv.services.epg_sources import EPG_URLS
+from legal_iptv.services.epg_sources import EPG_URLS, PRIMARY_EPG_URL
 from legal_iptv.services.publication import is_exportable
 
 
@@ -19,7 +19,12 @@ def _sanitize_display_name(value: str) -> str:
 
 
 def _render_header(guide_url: str | None = None, *, legacy_guide_urls: bool = True) -> str:
-    tvg_urls = guide_url or (",".join(EPG_URLS) if legacy_guide_urls else "")
+    candidates = [PRIMARY_EPG_URL]
+    if guide_url:
+        candidates.extend(item.strip() for item in guide_url.split(","))
+    elif legacy_guide_urls:
+        candidates.extend(EPG_URLS)
+    tvg_urls = ",".join(dict.fromkeys(item for item in candidates if item))
     if not tvg_urls:
         return '#EXTM3U refresh="3600"'
     return f'#EXTM3U refresh="3600" x-tvg-url="{tvg_urls}" tvg-url="{tvg_urls}"'
@@ -84,6 +89,7 @@ def render_m3u(
     category_order: tuple[str, ...] | list[str] | None = None,
     legacy_guide_urls: bool = True,
     enforce_capabilities: bool = False,
+    alternatives_group: str = "Alternativos",
 ) -> str:
     grouped: dict[str, list[Channel]] = defaultdict(list)
 
@@ -97,12 +103,12 @@ def render_m3u(
     ordered_categories = list(category_order or CATEGORY_ORDER)
     if category_order is not None:
         remaining = sorted(
-            set(grouped).difference(ordered_categories, {"Alternativos"}),
+            set(grouped).difference(ordered_categories, {alternatives_group}),
             key=str.casefold,
         )
-        alternative = ["Alternativos"] if "Alternativos" in grouped else []
+        alternative = [alternatives_group] if alternatives_group in grouped else []
         ordered_categories = [
-            category for category in ordered_categories if category != "Alternativos"
+            category for category in ordered_categories if category != alternatives_group
         ] + remaining + alternative
 
     for category in ordered_categories:

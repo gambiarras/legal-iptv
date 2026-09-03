@@ -212,6 +212,7 @@ def run_aggregation(config: AppConfig) -> None:
                 ),
                 legacy_guide_urls=config.profile == "base",
                 enforce_capabilities=config.profile != "base",
+                alternatives_group=playlist_configuration.alternatives_group,
             ),
         )
         write_text_atomic(config.output_path, playlist)

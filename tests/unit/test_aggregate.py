@@ -34,7 +34,10 @@ def make_config(
         iptv_org_cache_ttl_seconds=43200,
         refresh_iptv_org_cache=False,
         profile=profile,
+        guide_output_path=base_path / "guide.xml",
         guide_url="https://guide.example.test/guide.xml",
+        guide_diagnostics_file=base_path / "guide-diagnostics.json",
+        extra_removed_file=base_path / "extra-removed.json",
     )
 
 
@@ -243,7 +246,10 @@ class AggregateTest(unittest.TestCase):
         self.assertIn("https://higher.example/live.m3u8", playlist)
         self.assertNotIn("https://lower.example/live.m3u8", playlist)
         self.assertIn('group-title="TV Aberta"', playlist)
-        self.assertIn('x-tvg-url="https://guide.example.test/guide.xml"', playlist)
+        self.assertIn(
+            'x-tvg-url="https://bit.ly/legal-epg,https://guide.example.test/guide.xml"',
+            playlist,
+        )
         self.assertEqual(playlist_names, ["playlist.m3u"])
 
 
