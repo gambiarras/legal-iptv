@@ -81,7 +81,7 @@ class ProfileSelectorTest(unittest.TestCase):
         self.assertEqual(render_m3u(selected), legacy)
         self.assertNotIn("new.m3u8", legacy)
 
-    def test_full_keeps_all_variants_from_winning_provider(self):
+    def test_full_keeps_only_best_variant_from_winning_provider(self):
         channels = [
             channel(
                 "high.fhd",
@@ -111,11 +111,9 @@ class ProfileSelectorTest(unittest.TestCase):
 
         selected = select_profile_channels(channels, self.configuration, "full")
 
-        self.assertEqual({item.id for item in selected}, {"high.fhd", "high.4k"})
+        self.assertEqual([item.id for item in selected], ["high.4k"])
         self.assertEqual({item.tvg_id for item in selected}, {"Canal.br"})
-        selected_by_id = {item.id: item for item in selected}
-        self.assertEqual(selected_by_id["high.4k"].group, "Variedades")
-        self.assertEqual(selected_by_id["high.fhd"].group, "Alternativos")
+        self.assertEqual(selected[0].group, "Variedades")
 
     def test_full_places_named_alternative_in_final_group(self):
         candidate = channel(
@@ -150,10 +148,8 @@ class ProfileSelectorTest(unittest.TestCase):
         ]
 
         selected = select_profile_channels(channels, self.configuration, "full")
-        selected_by_id = {item.id: item for item in selected}
 
-        self.assertEqual(selected_by_id["channel.fhd"].group, "Variedades")
-        self.assertEqual(selected_by_id["channel.sd"].group, "Alternativos")
+        self.assertEqual([item.id for item in selected], ["channel.fhd"])
 
     def test_full_uses_explicit_logical_id_across_different_names(self):
         high = channel(
@@ -174,7 +170,7 @@ class ProfileSelectorTest(unittest.TestCase):
 
         self.assertEqual([item.id for item in selected], ["high"])
 
-    def test_full_treats_different_url_queries_as_distinct_variants(self):
+    def test_full_keeps_best_variant_when_urls_differ_only_by_query(self):
         first = channel(
             "first",
             "Canal [HD]",
@@ -192,7 +188,50 @@ class ProfileSelectorTest(unittest.TestCase):
 
         selected = select_profile_channels([first, second], self.configuration, "full")
 
-        self.assertEqual({item.id for item in selected}, {"first", "second"})
+        self.assertEqual([item.id for item in selected], ["second"])
+
+    def test_full_falls_back_to_lower_quality_after_terminal_failure(self):
+        high = channel(
+            "channel.4k",
+            "Canal [4K]",
+            "https://example.test/4k.m3u8",
+            provider="addon_catalog_1",
+            tvg_id="Canal.br",
+            variant="4k",
+        )
+        fallback = channel(
+            "channel.fhd",
+            "Canal [FHD]",
+            "https://example.test/fhd.m3u8",
+            provider="addon_catalog_1",
+            tvg_id="Canal.br",
+            variant="fhd",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            status_path = Path(directory) / "stream-status.json"
+            status_path.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            high.stream_url: {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": datetime.now(timezone.utc).isoformat(),
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            available = filter_cached_offline_channels(
+                [high, fallback],
+                status_file=status_path,
+                max_age_seconds=14400,
+            )
+
+        selected = select_profile_channels(available, self.configuration, "full")
+
+        self.assertEqual([item.id for item in selected], ["channel.fhd"])
 
     def test_full_falls_back_when_higher_priority_provider_is_cached_offline(self):
         high = channel(

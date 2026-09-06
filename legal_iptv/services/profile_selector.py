@@ -268,7 +268,7 @@ def _variant_quality_score(
     )
 
 
-def _place_alternative_variants(
+def _select_best_variants(
     channels: list[Channel],
     configuration: PlaylistConfiguration,
 ) -> list[Channel]:
@@ -278,20 +278,16 @@ def _place_alternative_variants(
 
     result: list[Channel] = []
     for variants in logical_groups.values():
-        ranked = sorted(
+        _, winner = max(
             enumerate(variants),
             key=lambda item: (_variant_quality_score(item[1], configuration), -item[0]),
-            reverse=True,
         )
-        primary_index = ranked[0][0]
-        for index, channel in enumerate(variants):
-            is_alternative = (
-                index != primary_index
-                or bool(ALTERNATIVE_NAME_PATTERN.search(channel.name))
-            )
-            if is_alternative and channel.group != configuration.alternatives_group:
-                channel = replace(channel, group=configuration.alternatives_group)
-            result.append(channel)
+        if (
+            ALTERNATIVE_NAME_PATTERN.search(winner.name)
+            and winner.group != configuration.alternatives_group
+        ):
+            winner = replace(winner, group=configuration.alternatives_group)
+        result.append(winner)
     return result
 
 
@@ -335,4 +331,4 @@ def select_profile_channels(
         if is_exportable(channel, player_profile)
     ]
     selected = _select_logical_providers(candidates, configuration)
-    return _place_alternative_variants(selected, configuration)
+    return _select_best_variants(selected, configuration)
