@@ -359,6 +359,10 @@ http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -530,10 +534,6 @@ http://45.190.28.50/SONY_HD/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -928,10 +928,6 @@ http://45.235.0.78/Gloob/playlist.m3u8
 #EXTINF:-1 group-title="Infantil" tvg-id="Gloobinho.br" tvg-name="Gloobinho" tvg-logo="https://i.imgur.com/UWkHErt.png", Gloobinho
 #EXTGRP:Infantil
 http://177.52.24.163/GLOOBINHO-HD/index.m3u8
-
-#EXTINF:-1 group-title="Infantil" tvg-id="Nickelodeon.br" tvg-name="Nickelodeon" tvg-logo="https://i.imgur.com/E84jnP8.png", Nickelodeon
-#EXTGRP:Infantil
-https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
 
 #EXTINF:-1 group-title="Infantil" tvg-id="" tvg-name="Os Jetsons" tvg-logo="https://i.imgur.com/sqUlcaY.png", Os Jetsons
 #EXTGRP:Infantil
@@ -4372,6 +4368,10 @@ https://stmv2.srvif.com/emlsilva/emlsilva/playlist.m3u8?hls_ctx=h517o66o
 #EXTINF:-1 group-title="Infantis" tvg-id="" tvg-name="Ministério Infantil TV" tvg-logo="https://i.postimg.cc/GtrgvgjN/ministerio_infantil.jpg", Ministério Infantil TV
 #EXTGRP:Infantis
 https://stmv4.voxtvhd.com.br/1990/1990/playlist.m3u8
+
+#EXTINF:-1 group-title="Infantis" tvg-id="Nickelodeon.br" tvg-name="Nickelodeon" tvg-logo="https://i.postimg.cc/J7fhgC5R/Nickelodeon-logo.png", Nickelodeon
+#EXTGRP:Infantis
+https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
 
 #EXTINF:-1 group-title="Infantis" tvg-id="" tvg-name="Nickonline" tvg-logo="https://i.postimg.cc/BQcPnGB4/nick-online.jpg", Nickonline
 #EXTGRP:Infantis
