@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T04:30:26.961032+00:00",
+  "generated_at": "2026-09-09T05:00:28.312708+00:00",
   "total_input_channels": 1945,
   "selected_channels": 1363,
   "extra_channels": 41,
@@ -18,13 +18,13 @@
     "fetch_extra": 0.0,
     "fetch_iptv_org": 0.005,
     "fetch_live_stream_catalog": 0.014,
-    "ensure_guide": 4.217,
-    "load_epg_aliases": 0.869,
-    "enrich_epg_metadata": 0.013,
-    "filter_cached_offline_channels": 0.006,
-    "select_channels": 0.04,
+    "ensure_guide": 4.244,
+    "load_epg_aliases": 0.952,
+    "enrich_epg_metadata": 0.014,
+    "filter_cached_offline_channels": 0.007,
+    "select_channels": 0.043,
     "render_m3u": 0.006,
-    "total": 5.171
+    "total": 5.287
   },
   "epg_aliases_count": 8642
 }
