@@ -435,10 +435,6 @@ http://45.162.64.114/PLAY_TV/index.m3u8
 #EXTGRP:Variedades
 http://200.194.238.229:8383/live/primer/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Prisma TV" tvg-logo="https://i.postimg.cc/B6vG8y1d/prisma-tv.jpg", Prisma TV
-#EXTGRP:Variedades
-https://stmv2.srvif.com/famasi/famasi/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="RBATV.br" tvg-name="RBATV" tvg-logo="https://i.imgur.com/ZWFxlU1.png", RBATV
 #EXTGRP:Variedades
 https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8
@@ -450,6 +446,10 @@ https://stmv.webtvninjas.com.br/rctv/rctv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="1899" tvg-name="Record" tvg-logo="https://i.imgur.com/sz9gTTr.png", Record
 #EXTGRP:Variedades
 http://170.84.165.204/Record_HD/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Cidade" tvg-logo="https://i.postimg.cc/L5HBzBL4/rede-cidade.jpg", Rede Cidade
+#EXTGRP:Variedades
+https://stmv2.srvif.com/famasi/famasi/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Clouding TV" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/1c3207336ef93a99e4678042297cd0a6.webp", Rede Clouding TV
 #EXTGRP:Variedades
