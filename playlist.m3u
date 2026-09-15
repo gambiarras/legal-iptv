@@ -379,10 +379,6 @@ http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -574,6 +570,10 @@ http://170.83.16.50/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -1589,7 +1589,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A Grande Familia" tvg-logo="http://24horas.cc:80/images/2d7237ce9e23a187279646c86674b536.jpg", A Grande Familia
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzc0MTgubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzc0MTMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A Guarda do Leao" tvg-logo="http://24horas.cc:80/images/079f94a60f19a6c81ff71f9c3bb65960.jpg", A Guarda do Leao
 #EXTGRP:Canais de TV
@@ -1785,7 +1785,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="BandSP.br" tvg-name="Band SP [FHD]" tvg-logo="https://logos.imperioapps.top/BAND.png", Band SP [FHD]
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC83OTMxMS5tM3U4.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMDQ5NDMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1021" tvg-name="Band Sports [4K]" tvg-logo="https://logos.imperioapps.top/BAND_SPORTS.png", Band Sports [4K]
 #EXTGRP:Canais de TV
@@ -2077,7 +2077,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Chaves" tvg-logo="http://24horas.cc:80/images/c88f48965dab4d85830e1fea88fa0319.jpg", Chaves
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzcxNDUubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzcxMzkubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Chaves Em Desenho Animado" tvg-logo="http://24horas.cc:80/images/ddef6c327b41ab41bbdf7c316916f0d1.jpg", Chaves Em Desenho Animado
 #EXTGRP:Canais de TV
@@ -2205,7 +2205,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Digimon Digital Monsters" tvg-logo="http://24horas.cc:80/images/9b20057dd78dc771db73ccc2a3b3e489.jpg", Digimon Digital Monsters
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzgwNzYubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzgwODAubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Digimon Savers" tvg-logo="http://24horas.cc:80/images/2e6c2f8a940dc1fbfd3b95c85cbd77e4.jpg", Digimon Savers
 #EXTGRP:Canais de TV
@@ -2505,7 +2505,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Game of Thrones" tvg-logo="http://24horas.cc:80/images/c47390a15164a23a44368afcdf44a98b.jpg", Game of Thrones
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzU1MzIubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzU1MzQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Game Shakers" tvg-logo="http://24horas.cc:80/images/e1b30a8cf50dbe4b7da802f634c686b3.jpg", Game Shakers
 #EXTGRP:Canais de TV
@@ -3409,7 +3409,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Nicky Ricky Dicky e Dawn" tvg-logo="http://24horas.cc:80/images/fa42fec0efcb2f9a242913cad45ccba8.jpg", Nicky Ricky Dicky e Dawn
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xNDU5MzkubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xNDU5NDIubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Nilba e os Desastronautas" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5Lu66hhUxE19uaoFw0BzwuOTjl7.jpg", Nilba e os Desastronautas
 #EXTGRP:Canais de TV
@@ -3701,7 +3701,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="CA51000018R" tvg-name="Pokemon" tvg-logo="http://24horas.cc:80/images/f71cde6285b43fb9846df83a3a9f06a4.jpg", Pokemon
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzg3OTEubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzg4MDgubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1365" tvg-name="Premiere 1 [4K]" tvg-logo="http://www.fontedecanais.tv/logos/canais/premiere.png", Premiere 1 [4K]
 #EXTGRP:Canais de TV
@@ -4517,7 +4517,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Xena A Princesa Guerreira" tvg-logo="http://24horas.cc:80/images/e0827e5589f4854f7b18555f84eb0467.jpg", Xena A Princesa Guerreira
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzcxMTcubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzcxMjIubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Yabba Dabba Dinossauros" tvg-logo="http://24horas.cc:80/images/5a2da2da44949249b753d0fce9d6cd4b.jpg", Yabba Dabba Dinossauros
 #EXTGRP:Canais de TV
@@ -4533,7 +4533,7 @@ https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2x
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Yu-Gi-Oh - Duel Monsters" tvg-logo="http://24horas.cc:80/images/2697605ab03a5a6901e41709858ea641.jpg", Yu-Gi-Oh - Duel Monsters
 #EXTGRP:Canais de TV
-https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzgwMTIubTN1OA.m3u8
+https://frostviewrelease.squareweb.app/proxy/hls/aHR0cDovL3ByYWlhMTMuY29tOjgwL2xpdmUvOTM5MDQxLzhTQTlzaC8xMzgwMTYubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="2165" tvg-name="Zoomoo [4K]" tvg-logo="https://logos.imperioapps.top/ZOOMOO.png", Zoomoo [4K]
 #EXTGRP:Canais de TV
