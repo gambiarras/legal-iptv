@@ -20,6 +20,7 @@ class AppConfig:
     iptv_org_cache_file: Path
     iptv_org_cache_ttl_seconds: int
     refresh_iptv_org_cache: bool
+    validation_failure_threshold: int = 2
     profile: str = "base"
     player_profile: str = "portable"
     profile_config_file: Path | None = None
@@ -51,6 +52,7 @@ class AppConfig:
             iptv_org_cache_file=Path(args.iptv_org_cache_file),
             iptv_org_cache_ttl_seconds=args.iptv_org_cache_ttl,
             refresh_iptv_org_cache=args.refresh_iptv_org_cache,
+            validation_failure_threshold=args.validation_failure_threshold,
             profile=args.profile,
             player_profile=args.player_profile,
             profile_config_file=(

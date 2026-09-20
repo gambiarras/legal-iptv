@@ -170,6 +170,7 @@ def run_aggregation(config: AppConfig) -> None:
                     max_workers=config.validation_max_workers,
                     timeout=config.validation_timeout,
                     max_age_seconds=config.stream_status_max_age,
+                    failure_threshold=config.validation_failure_threshold,
                     extra_removed_file=config.extra_removed_file,
                 ),
             )

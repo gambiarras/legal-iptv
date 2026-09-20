@@ -124,6 +124,7 @@ class AggregateTest(unittest.TestCase):
 
         refresh_mock.assert_called_once()
         self.assertEqual(refresh_mock.call_args.kwargs["max_age_seconds"], 14400)
+        self.assertEqual(refresh_mock.call_args.kwargs["failure_threshold"], 2)
 
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")

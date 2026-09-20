@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 FALLBACK_STATUSES = {403, 404, 405, 410}
 TERMINAL_OFFLINE_STATUSES = {404, 410}
 TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
+TEMPORARILY_UNAVAILABLE_STATUS = "temporarily_unavailable"
 
 _thread_local = threading.local()
 
@@ -27,6 +28,7 @@ _thread_local = threading.local()
 class UrlValidation:
     active: bool | None
     http_status: int | None = None
+    error_type: str | None = None
 
 
 def _is_success_status(status_code: int) -> bool:
@@ -55,6 +57,7 @@ def _get_session() -> requests.Session:
 def inspect_url(url: str, timeout: int) -> UrlValidation:
     headers = build_headers(accept="*/*")
     session = _get_session()
+    head_status: int | None = None
 
     try:
         response = session.head(
@@ -63,14 +66,15 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
             timeout=timeout,
             allow_redirects=True,
         )
+        head_status = response.status_code
 
-        if _is_success_status(response.status_code):
-            return UrlValidation(True, response.status_code)
+        if _is_success_status(head_status):
+            return UrlValidation(True, head_status)
 
-        if response.status_code not in FALLBACK_STATUSES:
+        if head_status not in FALLBACK_STATUSES:
             return UrlValidation(
-                _status_to_activity(response.status_code),
-                response.status_code,
+                _status_to_activity(head_status),
+                head_status,
             )
 
     except requests.RequestException:
@@ -92,8 +96,14 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
         finally:
             response.close()
 
-    except requests.RequestException:
-        return UrlValidation(None)
+    except requests.RequestException as exc:
+        if head_status is not None:
+            return UrlValidation(
+                _status_to_activity(head_status),
+                head_status,
+                type(exc).__name__,
+            )
+        return UrlValidation(None, error_type=type(exc).__name__)
 
 
 def is_url_active(url: str, timeout: int) -> bool | None:
@@ -122,7 +132,7 @@ def validate_url_details(
                     "Stream validation failed error_type=%s",
                     type(exc).__name__,
                 )
-                results[url] = UrlValidation(None)
+                results[url] = UrlValidation(None, error_type=type(exc).__name__)
     return results
 
 
@@ -217,6 +227,17 @@ def _activity_status(is_active: bool | None) -> str:
     return "unknown"
 
 
+def _previous_failure_count(record: dict | None) -> int:
+    if not isinstance(record, dict):
+        return 0
+
+    value = record.get("consecutive_failures")
+    if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+        return value
+
+    return 0 if record.get("active") is True else 1
+
+
 def _read_status_records(status_file: Path) -> dict[str, dict]:
     if not status_file.exists():
         return {}
@@ -299,14 +320,64 @@ def _status_record(
     checked_at: str,
     metadata: dict | None = None,
     validation: str = "validated",
+    status: str | None = None,
+    consecutive_failures: int = 0,
+    http_status: int | None = None,
+    error_type: str | None = None,
 ) -> dict:
-    return {
+    record = {
         "active": is_active,
-        "status": _activity_status(is_active),
+        "status": status or _activity_status(is_active),
         "checked_at": checked_at,
         "validation": validation,
+        "consecutive_failures": consecutive_failures,
         **(metadata or {}),
     }
+    if http_status is not None:
+        record["http_status"] = http_status
+    if error_type:
+        record["error_type"] = error_type
+    return record
+
+
+def _validated_status_record(
+    result: UrlValidation,
+    previous_record: dict | None,
+    *,
+    checked_at: str,
+    metadata: dict,
+    failure_threshold: int,
+    allow_suppression: bool,
+) -> dict:
+    if result.active is True:
+        return _status_record(
+            True,
+            checked_at=checked_at,
+            metadata=metadata,
+            consecutive_failures=0,
+            http_status=result.http_status,
+        )
+
+    consecutive_failures = _previous_failure_count(previous_record) + 1
+    if result.active is False and allow_suppression:
+        active: bool | None = False
+        status = "offline"
+    elif allow_suppression and consecutive_failures >= failure_threshold:
+        active = False
+        status = TEMPORARILY_UNAVAILABLE_STATUS
+    else:
+        active = None
+        status = "unknown"
+
+    return _status_record(
+        active,
+        checked_at=checked_at,
+        metadata=metadata,
+        status=status,
+        consecutive_failures=consecutive_failures,
+        http_status=result.http_status,
+        error_type=result.error_type,
+    )
 
 
 def _write_stream_status_records(
@@ -317,7 +388,12 @@ def _write_stream_status_records(
     validated_urls: int,
     cached_urls: int,
 ) -> None:
-    status_counts = {"active": 0, "offline": 0, "unknown": 0}
+    status_counts = {
+        "active": 0,
+        "offline": 0,
+        "unknown": 0,
+        TEMPORARILY_UNAVAILABLE_STATUS: 0,
+    }
     source_counts: dict[str, int] = {}
     source_type_counts: dict[str, int] = {}
 
@@ -378,6 +454,13 @@ def load_offline_urls(
     offline_urls: set[str] = set()
 
     for url, record in records.items():
+        if (
+            record.get("active") is False
+            and record.get("status") == TEMPORARILY_UNAVAILABLE_STATUS
+        ):
+            offline_urls.add(url)
+            continue
+
         if not _is_fresh_record(record, max_age_seconds=max_age_seconds):
             continue
 
@@ -443,8 +526,10 @@ def refresh_stream_status(
     max_workers: int,
     timeout: int,
     max_age_seconds: int,
+    failure_threshold: int = 2,
     extra_removed_file: Path | None = None,
 ) -> list[Channel]:
+    failure_threshold = max(1, failure_threshold)
     urls = sorted({channel.stream_url for channel in channels if channel.stream_url})
     previous_records = _read_status_records(status_file)
     fresh_records = {
@@ -452,50 +537,38 @@ def refresh_stream_status(
         for url in urls
         if url in previous_records
         and _is_fresh_record(previous_records[url], max_age_seconds=max_age_seconds)
+        and previous_records[url].get("active") is True
     }
     urls_to_validate = [url for url in urls if url not in fresh_records]
 
-    http_status_by_url: dict[str, int | None] = {}
-    if extra_removed_file is None:
-        status_by_url = validate_urls(
-            urls_to_validate,
-            max_workers=max_workers,
-            timeout=timeout,
-        )
-    else:
-        validation_details = validate_url_details(
-            urls_to_validate,
-            max_workers=max_workers,
-            timeout=timeout,
-        )
-        status_by_url = {
-            url: result.active
-            for url, result in validation_details.items()
-        }
-        http_status_by_url = {
-            url: result.http_status
-            for url, result in validation_details.items()
-        }
+    validation_details = validate_url_details(
+        urls_to_validate,
+        max_workers=max_workers,
+        timeout=timeout,
+    )
+    http_status_by_url = {
+        url: result.http_status
+        for url, result in validation_details.items()
+    }
+    if extra_removed_file is not None:
         update_extra_removals(channels, http_status_by_url, extra_removed_file)
-    for url in _transient_live_urls(channels):
-        if status_by_url.get(url) is False:
-            status_by_url[url] = None
 
     checked_at = _utc_now().isoformat()
     metadata_by_url = _url_metadata(channels)
     records_by_url: dict[str, dict] = {}
+    transient_live_urls = _transient_live_urls(channels)
 
     for url in urls:
         metadata = metadata_by_url.get(url, {})
-        if url in status_by_url:
-            records_by_url[url] = _status_record(
-                status_by_url[url],
+        if url in validation_details:
+            records_by_url[url] = _validated_status_record(
+                validation_details[url],
+                previous_records.get(url),
                 checked_at=checked_at,
                 metadata=metadata,
-                validation="validated",
+                failure_threshold=failure_threshold,
+                allow_suppression=url not in transient_live_urls,
             )
-            if http_status_by_url.get(url) is not None:
-                records_by_url[url]["http_status"] = http_status_by_url[url]
             continue
 
         cached_record = dict(fresh_records[url])

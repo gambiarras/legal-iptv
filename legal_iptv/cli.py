@@ -29,6 +29,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--validate-streams", action="store_true")
     parser.add_argument("--validation-max-workers", type=positive_int, default=32)
     parser.add_argument("--validation-timeout", type=positive_int, default=6)
+    parser.add_argument("--validation-failure-threshold", type=positive_int, default=2)
     parser.add_argument("--stream-status-file", default="stream-status.json")
     parser.add_argument("--stream-status-max-age", type=positive_int, default=14400)
     parser.add_argument("--epg-cache-file", default="epg-cache.json")

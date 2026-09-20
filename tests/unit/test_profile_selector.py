@@ -233,6 +233,51 @@ class ProfileSelectorTest(unittest.TestCase):
 
         self.assertEqual([item.id for item in selected], ["channel.fhd"])
 
+    def test_full_falls_back_to_lower_quality_after_repeated_transient_failure(self):
+        high = channel(
+            "channel.4k",
+            "Canal [4K]",
+            "https://example.test/4k.m3u8",
+            provider="addon_catalog_1",
+            tvg_id="Canal.br",
+            variant="4k",
+        )
+        fallback = channel(
+            "channel.fhd",
+            "Canal [FHD]",
+            "https://example.test/fhd.m3u8",
+            provider="addon_catalog_1",
+            tvg_id="Canal.br",
+            variant="fhd",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            status_path = Path(directory) / "stream-status.json"
+            status_path.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            high.stream_url: {
+                                "active": False,
+                                "status": "temporarily_unavailable",
+                                "http_status": 408,
+                                "consecutive_failures": 2,
+                                "checked_at": datetime.now(timezone.utc).isoformat(),
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            available = filter_cached_offline_channels(
+                [high, fallback],
+                status_file=status_path,
+                max_age_seconds=14400,
+            )
+
+        selected = select_profile_channels(available, self.configuration, "full")
+
+        self.assertEqual([item.id for item in selected], ["channel.fhd"])
+
     def test_full_falls_back_when_higher_priority_provider_is_cached_offline(self):
         high = channel(
             "high",
