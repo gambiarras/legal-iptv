@@ -111,6 +111,10 @@ https://tvchannel.tvr.ovh/video28392/video28392/playlist.m3u8
 #EXTGRP:Recomendados
 https://video10.logicahost.com.br/cidadefarroupilha/cidadefarroupilha/playlist.m3u8
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV Cidade- Afiliada à TV Gazeta" tvg-logo="https://i.postimg.cc/3RYQT2Vx/tv-cidade-afiliada-gazeta.jpg", TV Cidade- Afiliada à TV Gazeta
+#EXTGRP:Recomendados
+https://video08.logicahost.com.br/tvc21/tvc21/playlist.m3u8
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV Com" tvg-logo="https://i.postimg.cc/vZDMM775/tvcom.png", TV Com
 #EXTGRP:Recomendados
 https://video11.logicahost.com.br/comunidadefm/comunidadefm/playlist.m3u8
@@ -171,6 +175,10 @@ https://stmv2.srvsh.com.br/daniel8121/daniel8121/chunklist_w1486298669.m3u8
 #EXTGRP:Recomendados
 https://tv02.zas.media:1936/tvtudo/tvtudo/playlist.m3u8
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV+ News" tvg-logo="https://i.postimg.cc/t47nvJ2j/tvmais_news.jpg", TV+ News
+#EXTGRP:Recomendados
+https://stmv2.samcast.com.br/adao6116/adao6116/playlist.m3u8
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="Ultra TV" tvg-logo="https://i.postimg.cc/RhK7vDL2/ultra-tv.jpg", Ultra TV
 #EXTGRP:Recomendados
 https://stmv8.samcast.com.br/jcbrasil7363/jcbrasil7363/playlist.m3u8
@@ -188,6 +196,10 @@ https://video11.logicahost.com.br/xtremetv/xtremetv/playlist.m3u8
 #EXTINF:-1 group-title="TV Aberta" tvg-id="408" tvg-name="Band" tvg-logo="https://i.postimg.cc/Gh8y0j93/tv-bandeirantes.jpg", Band
 #EXTGRP:TV Aberta
 https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/chunklist.m3u8
+
+#EXTINF:-1 group-title="TV Aberta" tvg-id="1864" tvg-name="Gazeta" tvg-logo="https://i.postimg.cc/tTf06J3D/tvgazeta-logo.jpg", Gazeta
+#EXTGRP:TV Aberta
+https://video08.logicahost.com.br/tvc21/tvc21/chunklist_w1728739889.m3u8
 
 #EXTINF:-1 group-title="TV Aberta" tvg-id="RecordTV.br" tvg-name="Record" tvg-logo="https://i.postimg.cc/PfKLvRv5/record-tv.png", Record
 #EXTGRP:TV Aberta
@@ -234,6 +246,10 @@ https://awtv.nuvemplay.live/hls/stream.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="408" tvg-name="Band" tvg-logo="https://i.imgur.com/1r5T6Pw.png", Band
 #EXTGRP:Variedades
 https://media.cdntvms.com.br/band_sat/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Canal 5 TR" tvg-logo="https://www.canal5tr.com.br/imagens/canal5_logo.png", Canal 5 TR
 #EXTGRP:Variedades
@@ -739,10 +755,6 @@ https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 #EXTGRP:Animação
 https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
 
-#EXTINF:-1 group-title="Animação" tvg-id="NickOnlineBobEsponja.br" tvg-name="NickOnline Bob Esponja" tvg-logo="https://x1colegal.com/nickonlinebobesponja.png", NickOnline Bob Esponja
-#EXTGRP:Animação
-https://bob.x1colegal.com/hls/stream.m3u8
-
 ### Canais Notícia
 
 #EXTINF:-1 group-title="Notícia" tvg-id="2353" tvg-name="AgroMais" tvg-logo="https://i.imgur.com/sFcOZeo.png", AgroMais
@@ -1155,6 +1167,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3NjMubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A Culpa e do Cabral Na Estrada" tvg-logo="http://24horas.cc:80/images/9d2d8ddb162c0827a1e12bb80c32f575.jpg", A Culpa e do Cabral Na Estrada
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3NjQubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A Diarista" tvg-logo="http://24horas.cc:80/images/8ec3496f0decd062d4399a2540806006.jpg", A Diarista
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzkyNzMubTN1OA.m3u8
@@ -1303,6 +1319,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTc3NC5tM3U4.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Animaniacs" tvg-logo="http://24horas.cc:80/images/55c0f4102c30c3f50ec9c465add0f761.jpg", Animaniacs
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzU1NDAubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Arlequina" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bl4hQISOR5QNu4cITDuN1E4zLAJ.jpg", Arlequina
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4MzMubTN1OA.m3u8
@@ -1318,6 +1338,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1073" tvg-name="Arte 1 [4K]" tvg-logo="https://logos.imperioapps.top/ARTE_1.png", Arte 1 [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM1MzEubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="As Irmãs Grimm" tvg-logo="", As Irmãs Grimm
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0NDkubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="As Meninas Superpoderosas" tvg-logo="http://24horas.cc:80/images/de04b0a79d5ccf0794e513cc8ec345f3.jpg", As Meninas Superpoderosas
 #EXTGRP:Canais de TV
@@ -1375,6 +1399,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4MzEubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Beat Bugs" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eVC1dtvG9CqWSkxixoj8R5X7w1b.jpg", Beat Bugs
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjUzMjgubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Ben 10" tvg-logo="http://24horas.cc:80/images/af8a118a629056bc6c13d5e4ee5f0102.jpg", Ben 10
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg3MTUubTN1OA.m3u8
@@ -1390,6 +1418,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="6a1610bebdf296985fd95603-69a1f84e8d9f2822f6f50639" tvg-name="Beyblade" tvg-logo="http://24horas.cc:80/images/b4e132cba0f017040678e1bd1b4efb70.jpg", Beyblade
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA1NDMubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Beyblade Metal Fusion" tvg-logo="http://24horas.cc:80/images/5f15050da92808048cd848caca2e943d.jpg", Beyblade Metal Fusion
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA1NDYubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Bibo Pai e Bobi Filho" tvg-logo="http://24horas.cc:80/images/2d54ec7f834940af9e8bd184a485a1cc.jpg", Bibo Pai e Bobi Filho
 #EXTGRP:Canais de TV
@@ -1595,17 +1627,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yOTU0NzkubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="2350" tvg-name="CNN Brasil [4K]" tvg-logo="https://logos.imperioapps.top/CNN_BRASIL.png", CNN Brasil [4K]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="2350" tvg-name="CNN Brasil [FHD]" tvg-logo="https://logos.imperioapps.top/CNN_BRASIL.png", CNN Brasil [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTc5OC5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTgzNy5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Cobra Kai" tvg-logo="http://24horas.cc:80/images/36ff57355c09404d5262181d2f3c6349.jpg", Cobra Kai
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg3MTIubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="62d969fd8451a30007f0fd94" tvg-name="Cocorico" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xDivDzd1yF7NG6GW6ccz7ramLuv.jpg", Cocorico
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTY2NTMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="487" tvg-name="Combate [FHD]" tvg-logo="https://logos.imperioapps.top/COMBATE.png", Combate [FHD]
 #EXTGRP:Canais de TV
@@ -1623,9 +1651,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0NTIubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Corrida Maluca" tvg-logo="http://24horas.cc:80/images/0db043eab05443c04f574f99cd2417a2.jpg", Corrida Maluca
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Cosmos Mundos Possiveis" tvg-logo="http://24horas.cc:80/images/7b25f679b359fb6568a7d753dc2a8078.jpg", Cosmos Mundos Possiveis
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDUzNzgubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3ODAubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="Cultura.br" tvg-name="Cultura [4K]" tvg-logo="https://logos.imperioapps.top/CULTURA.png", Cultura [4K]
 #EXTGRP:Canais de TV
@@ -1634,6 +1662,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1053" tvg-name="Curta [4K]" tvg-logo="https://logos.imperioapps.top/CURTA.png", Curta [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM1MTIubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DAZN 1 [FHD]" tvg-logo="https://logos.imperioapps.top/DANZ.png", DAZN 1 [FHD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xODQ1NTAubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Dennis o Pimentinha" tvg-logo="http://24horas.cc:80/images/fd7e2b08ce07a11f2616e12e37ae4a95.jpg", Dennis o Pimentinha
 #EXTGRP:Canais de TV
@@ -1695,9 +1727,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMjkzNDUubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Disney Plus 3 [FHD]" tvg-logo="https://logos.imperioapps.top/DISNEY+.png", Disney Plus 3 [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Disney Plus 3 [HD]" tvg-logo="https://logos.imperioapps.top/DISNEY+.png", Disney Plus 3 [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDIwMzYubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMjkzNDYubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="2289" tvg-name="DOG TV [FHD]" tvg-logo="https://logos.imperioapps.top/DOGTV.png", DOG TV [FHD]
 #EXTGRP:Canais de TV
@@ -1803,9 +1835,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzgwMjgubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="523329" tvg-name="ESPN 3 [HD]" tvg-logo="https://logos.imperioapps.top/ESPN_3.png", ESPN 3 [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="418722" tvg-name="ESPN 2 [FHD]" tvg-logo="https://logos.imperioapps.top/ESPN_2.png", ESPN 2 [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTkwOS5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTkxOS5tM3U4.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="523329" tvg-name="ESPN 3 [FHD]" tvg-logo="https://logos.imperioapps.top/ESPN_3.png", ESPN 3 [FHD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTkwNy5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1034" tvg-name="ESPN 4 [4K]" tvg-logo="https://logos.imperioapps.top/ESPN_4.png", ESPN 4 [4K]
 #EXTGRP:Canais de TV
@@ -1815,9 +1851,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTk1Mi5tM3U4.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="417391" tvg-name="ESPN 6 [FHD]" tvg-logo="https://logos.imperioapps.top/ESPN_6.png", ESPN 6 [FHD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTkxNS5tM3U4.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="426" tvg-name="ESPN [4K]" tvg-logo="https://logos.imperioapps.top/ESPN.png", ESPN [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDY0MC5tM3U4.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Esquadrao Especial Winspector" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/cjATkbcmt9dM8LmrwK1u5tFQCRi.jpg", Esquadrao Especial Winspector
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTY2NTQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Esquadrao Relampago Changeman" tvg-logo="http://24horas.cc:80/images/0cae89c158ecab7b3b1e02ddf083eb7e.jpg", Esquadrao Relampago Changeman
 #EXTGRP:Canais de TV
@@ -1851,9 +1895,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0ODMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="523354" tvg-name="Film&Arts [SD]" tvg-logo="https://logos.imperioapps.top/FILM&ART.png", Film&Arts [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="523354" tvg-name="Film&Arts [FHD]" tvg-logo="https://logos.imperioapps.top/FILM&ART.png", Film&Arts [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDQ5MTYubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDQ5MTQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1202" tvg-name="Fish TV [4K]" tvg-logo="https://logos.imperioapps.top/FISH_TV.png", Fish TV [4K]
 #EXTGRP:Canais de TV
@@ -1870,10 +1914,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Food Truck - A Batalha" tvg-logo="", Food Truck - A Batalha
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzUwNzIubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Formula 1 Dirigir Para Viver" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nS7zz9clFz4WfXCvffMEbDLFIvC.jpg", Formula 1 Dirigir Para Viver
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTIwMTUubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="6a1610bebdf296985fd95603-678fe7959407a53556d3e8eb" tvg-name="France 24 [4K]" tvg-logo="", France 24 [4K]
 #EXTGRP:Canais de TV
@@ -1931,9 +1971,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTEubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="EPTVCampinas.br" tvg-name="Globo EPTV Campinas [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo EPTV Campinas [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="EPTVCampinas.br" tvg-name="Globo EPTV Campinas [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo EPTV Campinas [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTAubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTk3Ny5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="EPTVRibeiraoPreto.br" tvg-name="Globo EPTV Ribeirao Preto [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo EPTV Ribeirao Preto [FHD]
 #EXTGRP:Canais de TV
@@ -1963,13 +2003,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMTQubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Minas [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Minas [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Inter TV Serra Mar [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Inter TV Serra Mar [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTkubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTk5NS5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="523341" tvg-name="Globo News [SD]" tvg-logo="https://logos.imperioapps.top/GLOBO_NEWS.png", Globo News [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Minas [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Minas [SD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMTIubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzEyMDkubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="523341" tvg-name="Globo News [FHD]" tvg-logo="https://logos.imperioapps.top/GLOBO_NEWS.png", Globo News [FHD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTk5Ny5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Nordeste [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Nordeste [FHD]
 #EXTGRP:Canais de TV
@@ -1978,6 +2022,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo NSC TV Blumenau [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo NSC TV Blumenau [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAwNC5tM3U4.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo NSC TV Centro Oeste [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo NSC TV Centro Oeste [SD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzU0MzQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo NSC TV Chapeco [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo NSC TV Chapeco [FHD]
 #EXTGRP:Canais de TV
@@ -1995,17 +2043,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY3NDkubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Caxias do Sul [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Caxias do Sul [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Caxias do Sul [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Caxias do Sul [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNjAubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAxNC5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Cruz Alta [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Cruz Alta [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMTg4MjcubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Erechim [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Erechim [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Erechim [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Erechim [SD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2ODMubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2ODUubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Passo Fundo [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Passo Fundo [FHD]
 #EXTGRP:Canais de TV
@@ -2018,14 +2066,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Porto Alegre [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Porto Alegre [HD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAxNy5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Santa Rosa [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Santa Rosa [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2ODAubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RBS TV Uruguaiana [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RBS TV Uruguaiana [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2NzkubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonas Arquemes [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonas Arquemes [HD]
 #EXTGRP:Canais de TV
@@ -2043,9 +2083,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAxOS5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonica Porto Velho [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonica Porto Velho [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonica Porto Velho [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonica Porto Velho [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExODQubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDg2ODQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonica Rio Branco [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonica Rio Branco [FHD]
 #EXTGRP:Canais de TV
@@ -2055,17 +2095,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMjMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Bahia TV Oeste [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Bahia TV Oeste [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2MTIubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Bahia TV Santa Cruz [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Bahia TV Santa Cruz [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY3ODIubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboRJ.br" tvg-name="Globo RJ [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RJ [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboRJ.br" tvg-name="Globo RJ [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RJ [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNjMubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAyNS5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RPC Cascavel [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RPC Cascavel [FHD]
 #EXTGRP:Canais de TV
@@ -2091,17 +2127,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2NzQubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RPC TV Maringa [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RPC TV Maringa [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RPC TV Maringa [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RPC TV Maringa [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMjUubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMDEubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RPC TV Ponta Grossa [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RPC TV Ponta Grossa [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMzMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboSP.br" tvg-name="Globo SP [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo SP [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboSP.br" tvg-name="Globo SP [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo SP [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzEyMTIubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjA0MC5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboAnhanguera.br" tvg-name="Globo TV Anhanguera [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Anhanguera [HD]
 #EXTGRP:Canais de TV
@@ -2110,10 +2146,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Anhanguera Anapolis [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Anhanguera Anapolis [HD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY3NTMubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Anhanguera Itumbiara [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Anhanguera Itumbiara [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY2NTMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Anhanguera Luziania [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Anhanguera Luziania [FHD]
 #EXTGRP:Canais de TV
@@ -2147,17 +2179,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExOTYubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Diario Mogi das Cruzes [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Diario Mogi das Cruzes [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Diario Mogi das Cruzes [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Diario Mogi das Cruzes [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExMDAubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85NzU5Ni5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Fronteira Presidente Prudente [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Fronteira Presidente Prudente [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Fronteira Presidente Prudente [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Fronteira Presidente Prudente [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNzcubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85NzU4Ny5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="TVGazetaAlagoas.br" tvg-name="Globo TV Gazeta Alagoas [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Gazeta Alagoas [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="TVGazetaAlagoas.br" tvg-name="Globo TV Gazeta Alagoas [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Gazeta Alagoas [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTgubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzEyMTQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Gazeta Sul [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Gazeta Sul [HD]
 #EXTGRP:Canais de TV
@@ -2191,9 +2223,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzMwNTEubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Liberal Belem [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Liberal Belem [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Liberal Belem [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Liberal Belem [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTIubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjA3MS5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Liberal Castanhal [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Liberal Castanhal [FHD]
 #EXTGRP:Canais de TV
@@ -2227,17 +2259,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY3ODUubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Sergipe [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Sergipe [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Sergipe [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Sergipe [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTYubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExODEubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Sudoeste [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Sudoeste [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjA5Mi5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV TEM Sao Jose do Rio Preto [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV TEM Sao Jose do Rio Preto [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTUubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="TVTEMSorocaba.br" tvg-name="Globo TV TEM Sorocaba [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV TEM Sorocaba [FHD]
 #EXTGRP:Canais de TV
@@ -2255,25 +2283,25 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDAzNzUubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Verdes Mares [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Verdes Mares [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Verdes Mares [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Verdes Mares [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNjEubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjA5Ni5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo TV Verdes Mares Cariri [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo TV Verdes Mares Cariri [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwNzUubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboplayNovelas.br" tvg-name="Globoplay Novelas [FHD]" tvg-logo="https://logos.imperioapps.top/GLOBOPLAY_NOVELAS.png", Globoplay Novelas [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboplayNovelas.br" tvg-name="Globoplay Novelas [4K]" tvg-logo="https://logos.imperioapps.top/GLOBOPLAY_NOVELAS.png", Globoplay Novelas [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjQyNy5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NTAubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1042" tvg-name="Gloob [FHD]" tvg-logo="https://logos.imperioapps.top/GLOOB.png", Gloob [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExNTMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="2417" tvg-name="Gloobinho [FHD]" tvg-logo="https://logos.imperioapps.top/GLOBINHO.png", Gloobinho [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="2417" tvg-name="Gloobinho [4K]" tvg-logo="https://logos.imperioapps.top/GLOBINHO.png", Gloobinho [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDYzMS5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0OTcubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="433" tvg-name="GNT [4K]" tvg-logo="https://logos.imperioapps.top/GNT.png", GNT [4K]
 #EXTGRP:Canais de TV
@@ -2282,6 +2310,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Go Go Loser Ranger" tvg-logo="http://24horas.cc:80/images/612d264f5fd278e8b54163b0dea1f6b1.jpg", Go Go Loser Ranger
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4MzUubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="CA2300001VX" tvg-name="Grizzy e os Lemmings" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qA3NM3luPVFqSpjxtK8de8Foe7M.jpg", Grizzy e os Lemmings
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4NDQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Gus O Pequeno Cavaleiro" tvg-logo="http://paldi.pro/images/c04478fffdd1d92588d434abcb00a339.jpg", Gus O Pequeno Cavaleiro
 #EXTGRP:Canais de TV
@@ -2299,9 +2331,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTQ3NTYubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="436" tvg-name="HBO 2 [FHD]" tvg-logo="https://logos.imperioapps.top/HBO_2.png", HBO 2 [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="436" tvg-name="HBO 2 [4K]" tvg-logo="https://logos.imperioapps.top/HBO_2.png", HBO 2 [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjExMS5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDI0Ni5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="2331" tvg-name="HBO [FHD]" tvg-logo="https://logos.imperioapps.top/HBO.png", HBO [FHD]
 #EXTGRP:Canais de TV
@@ -2391,10 +2423,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzU1NjcubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Jellystone" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/smfSBRiIYwC7zF7erKXaIPUJbNv.jpg", Jellystone
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTY2NTcubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Jessie" tvg-logo="http://24horas.cc:80/images/fd9d9d438bbc76176331bc9b095ec710.jpg", Jessie
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzkyOTQubTN1OA.m3u8
@@ -2451,6 +2479,14 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzkyNzUubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Kick Buttowski" tvg-logo="http://24horas.cc:80/images/b8edcc64db588084b5e21ca04c891e3d.jpg", Kick Buttowski
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA1MzMubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Kiff" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/h7xhJ1uWu7FurJ3W5iKzrfiPF3K.jpg", Kiff
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4MzQubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Kung Fu Panda Lendas do Dragao Guerreiro" tvg-logo="http://24horas.cc:80/images/c62c915769937b7c65e02a27809ef9bc.jpg", Kung Fu Panda Lendas do Dragao Guerreiro
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg5NDgubTN1OA.m3u8
@@ -2463,17 +2499,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg5NDkubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Largados e Pelados" tvg-logo="http://24horas.cc:80/images/2246772d199347c5251faaac1a270575.jpg", Largados e Pelados
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDU5MjgubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Largados e Pelados Brasil" tvg-logo="http://24horas.cc:80/images/877ec1eb555e21f891938910c7abadc6.jpg", Largados e Pelados Brasil
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTQ3NjMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="531" tvg-name="Lifetime [FHD]" tvg-logo="https://logos.imperioapps.top/LIFETIME.png", Lifetime [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="531" tvg-name="Lifetime [4K]" tvg-logo="https://logos.imperioapps.top/LIFETIME.png", Lifetime [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjE1NC5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0OTIubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Liga da Justica" tvg-logo="http://paldi.pro/images/2494d056a9fca8ef02f578e8153ea7ec.jpg", Liga da Justica
 #EXTGRP:Canais de TV
@@ -2495,9 +2527,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4NTIubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Markket [SD]" tvg-logo="", Markket [SD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Markket [FHD]" tvg-logo="", Markket [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNjQwMjgubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNjQwMzAubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Marvels M.O.D.O.K" tvg-logo="http://24horas.cc:80/images/23e7649c3b89b2b9d3bdc17ff9952651.jpg", Marvels M.O.D.O.K
 #EXTGRP:Canais de TV
@@ -2518,6 +2550,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Mega Man Potencia Maxima" tvg-logo="http://24horas.cc:80/images/a976791b0d45ccd5603e7ce22a329936.jpg", Mega Man Potencia Maxima
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcxMjgubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="532" tvg-name="Mega TV [HD]" tvg-logo="", Mega TV [HD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDQ5MjUubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="532" tvg-name="Megapix [FHD]" tvg-logo="https://logos.imperioapps.top/MEGAPIX.png", Megapix [FHD]
 #EXTGRP:Canais de TV
@@ -2563,6 +2599,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4NDEubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="CA1700005X1" tvg-name="Mr. Bean A Serie Animada" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1V2PSez4pNZ9a4Bbomm7KZiQJ44.jpg", Mr. Bean A Serie Animada
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4NDIubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Mucha Lucha" tvg-logo="http://24horas.cc:80/images/76f472c867c6cae1d3f0d382e3a3900f.jpg", Mucha Lucha
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg5NTIubTN1OA.m3u8
@@ -2595,9 +2635,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjE4NC5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Nicky Ricky Dicky e Dawn" tvg-logo="http://24horas.cc:80/images/fa42fec0efcb2f9a242913cad45ccba8.jpg", Nicky Ricky Dicky e Dawn
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Nilba e os Desastronautas" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5Lu66hhUxE19uaoFw0BzwuOTjl7.jpg", Nilba e os Desastronautas
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDU5MzkubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4NDMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Não é uma Caixa" tvg-logo="", Não é uma Caixa
 #EXTGRP:Canais de TV
@@ -2631,10 +2671,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDU5NDMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Maskara" tvg-logo="http://24horas.cc:80/images/82216aa32f85f763bb831e8c05e6c37c.jpg", O Maskara
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDUzODAubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Mundo de Any Malu" tvg-logo="", O Mundo de Any Malu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzUwNzkubTN1OA.m3u8
@@ -2646,14 +2682,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Mundo Maravilhosamente Estranho de Gumball" tvg-logo="", O Mundo Maravilhosamente Estranho de Gumball
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0NjAubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Mundo Maravilhoso de Mickey Mouse" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/luOC3wRRJBUvP8x8mpnNXkLTXCp.jpg", O Mundo Maravilhoso de Mickey Mouse
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTE2MjEubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Novo Show do Pica Pau" tvg-logo="http://24horas.cc:80/images/f79bcb884e527ee6b4fec8e12ffab733.jpg", O Novo Show do Pica Pau
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDUzODEubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="O Rancho" tvg-logo="http://24horas.cc:80/images/2eca1eb67060a6f3975109a5c23ca684.jpg", O Rancho
 #EXTGRP:Canais de TV
@@ -2751,6 +2779,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcxNjkubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Os Incriveis Espioes" tvg-logo="http://24horas.cc:80/images/42328002e26a63d990d79b254a20cc92.jpg", Os Incriveis Espioes
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3NDQubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Os Jetsons" tvg-logo="http://24horas.cc:80/images/7fb3281f1452aeeec851ae03a1272be9.jpg", Os Jetsons
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcxNjUubTN1OA.m3u8
@@ -2810,10 +2842,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="ParamountChannel.br" tvg-name="Paramount Plus 4 [4K]" tvg-logo="https://www.fontedecanais.one/logos/canais/paramountplus.png", Paramount Plus 4 [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM1MjEubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Patrulha Canina" tvg-logo="http://24horas.cc:80/images/51a9a083b2e5c7f4babdd23e639dddab.jpg", Patrulha Canina
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzU1NDcubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Pe na Cova" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkLmjNcFwJposbG7vm1RQ7PDcJS.jpg", Pe na Cova
 #EXTGRP:Canais de TV
@@ -2875,10 +2903,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjI1Ny5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="Premiere8.br" tvg-name="Premiere 8 [FHD]" tvg-logo="http://www.fontedecanais.tv/logos/canais/premiere.png", Premiere 8 [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xODAxNTgubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1071" tvg-name="Prime Box Brazil [FHD]" tvg-logo="https://logos.imperioapps.top/PRIME_BOX.png", Prime Box Brazil [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjI2Ny5tM3U4.m3u8
@@ -2899,9 +2923,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjI3MS5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Itapoan [HD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Itapoan [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVGoiás.br" tvg-name="RecordTV Goias [HD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Goias [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjI4NC5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMTg4MjMubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Itapoan [FHD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Itapoan [FHD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTc0MDYubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVSP.br" tvg-name="RecordTV Leste [FHD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Leste [FHD]
 #EXTGRP:Canais de TV
@@ -2963,9 +2991,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83NzY1NC5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Thathi Campinas [FHD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Thathi Campinas [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Thathi Campinas [HD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Thathi Campinas [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMTg3ODcubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMTg3ODgubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Vila Real [FHD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV Vila Real [FHD]
 #EXTGRP:Canais de TV
@@ -3015,13 +3043,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMTIwMTcubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="CA2000002N3" tvg-name="Sailor Moon" tvg-logo="http://24horas.cc:80/images/cdd465b40567396b9067061edcf9ca65.jpg", Sailor Moon
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3NTUubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Salsicha e Scooby Atras das Pistas" tvg-logo="http://24horas.cc:80/images/03d98245940210022bd9110ec74f3ecf.jpg", Salsicha e Scooby Atras das Pistas
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4NjEubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="SBTRJ.br" tvg-name="SBT RJ [SD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT RJ [SD]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDg2ODMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT RS [FHD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT RS [FHD]
 #EXTGRP:Canais de TV
@@ -3031,17 +3059,17 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83Nzk2My5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT Thathi Vale [HD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT Thathi Vale [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT Thathi Vale [FHD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT Thathi Vale [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwOTcubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwOTYubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT TV Alterosa [FHD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT TV Alterosa [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMTgzNjYubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT VTV Santos Campinas [HD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT VTV Santos Campinas [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SBT VTV Santos Campinas [FHD]" tvg-logo="https://logos.imperioapps.top/sbt.png", SBT VTV Santos Campinas [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwOTQubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwOTMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Scooby Doo Mistério SA" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/mu8zU2jQfPbGO5bC6RHYrSypxUd.jpg", Scooby Doo Mistério SA
 #EXTGRP:Canais de TV
@@ -3075,6 +3103,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4MjcubTN1OA.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Solar Opposites" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/dPClRec0BXzWG7B9jsTdimoeJpM.jpg", Solar Opposites
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4MzUubTN1OA.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Soltos em Floripa" tvg-logo="http://24horas.cc:80/images/f0e2938948d52380ad6a365a13195f29.jpg", Soltos em Floripa
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcwMjgubTN1OA.m3u8
@@ -3095,9 +3127,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDYzMy5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="470" tvg-name="SporTV 2 [FHD]" tvg-logo="https://logos.imperioapps.top/SPORTV2_4K.png", SporTV 2 [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="470" tvg-name="SporTV 2 [4K]" tvg-logo="https://logos.imperioapps.top/SPORTV2_4K.png", SporTV 2 [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjMyMS5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NzIubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1023" tvg-name="SporTV 3 [4K]" tvg-logo="http://logos.imperioapps.top/SPORTV3.png", SporTV 3 [4K]
 #EXTGRP:Canais de TV
@@ -3110,6 +3142,10 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="471" tvg-name="SporTV [4K]" tvg-logo="http://logos.imperioapps.top/SPORTV.png", SporTV [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzExODgubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SportyNet 1 [4K]" tvg-logo="https://logos.imperioapps.top/SPORTYNET.png", SportyNet 1 [4K]
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xODQ1NzIubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="SportyNet 4 [SD]" tvg-logo="https://logos.imperioapps.top/SPORTYNET.png", SportyNet 4 [SD]
 #EXTGRP:Canais de TV
@@ -3191,10 +3227,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcwMjQubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Ta Puxado" tvg-logo="http://24horas.cc:80/images/3daec235aae4221c826efc523a750ca6.jpg", Ta Puxado
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA3NTYubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Tapas e Beijos" tvg-logo="http://24horas.cc:80/images/c2dbafa12cdd41b1a384ea0b5bd88e45.jpg", Tapas e Beijos
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzcxMTEubTN1OA.m3u8
@@ -3215,21 +3247,21 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDIzNy5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="475" tvg-name="Telecine Touch [FHD]" tvg-logo="https://logos.imperioapps.top/TCTouch.png", Telecine Touch [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="475" tvg-name="Telecine Touch [4K]" tvg-logo="https://logos.imperioapps.top/TCTouch.png", Telecine Touch [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDY1My5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The Archie Show" tvg-logo="http://24horas.cc:80/images/09f349cfeee3339b9539889673f0c45c.jpg", The Archie Show
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDU5NDcubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The Big Bang Theory" tvg-logo="http://24horas.cc:80/images/c0171aeb6aef301892834b590d8a5025.jpg", The Big Bang Theory
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzU0NTYubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NTQubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The Last Kingdom" tvg-logo="", The Last Kingdom
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0OTUubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The Loud House" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eYT0lEqErG0ULMLYkUH89JitCPU.jpg", The Loud House
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4MzYubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The Loud House Uma Verdadeira Familia Barulhenta" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/sMQiGeozy1xUWjhlbcp2QArtnPV.jpg", The Loud House Uma Verdadeira Familia Barulhenta
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjM4MzcubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="The O.C. Um Estranho no Paraiso" tvg-logo="http://24horas.cc:80/images/75cb845c40dff806ca1f2a34f8489891.jpg", The O.C. Um Estranho no Paraiso
 #EXTGRP:Canais de TV
@@ -3247,9 +3279,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDk1NDMubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="1512" tvg-name="TLC [HD]" tvg-logo="https://logos.imperioapps.top/TLC.png", TLC [HD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="1512" tvg-name="TLC [FHD]" tvg-logo="https://logos.imperioapps.top/TLC.png", TLC [FHD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjM3My5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjM3MS5tM3U4.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="478" tvg-name="TNT [4K]" tvg-logo="https://logos.imperioapps.top/TNT.png", TNT [4K]
 #EXTGRP:Canais de TV
@@ -3275,33 +3307,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzg5MzgubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Catolicas 2024" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Catolicas 2024
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzIubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Gospel 2021" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Gospel 2021
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA0OTQubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Gospel 2022" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Gospel 2022
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzMubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Gospel 2023" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Gospel 2023
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzQubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Gospel 2024" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Gospel 2024
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzUubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 MPB 2022" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 MPB 2022
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzYubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 MPB 2023" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 MPB 2023
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3NzcubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 MPB 2024" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 MPB 2024
 #EXTGRP:Canais de TV
@@ -3319,10 +3331,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3ODAubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Sertanejo 2024" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Sertanejo 2024
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3ODEubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Spotify 2021" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Spotify 2021
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDA0OTYubTN1OA.m3u8
@@ -3335,13 +3343,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yNTM3ODQubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top Chef Brasil" tvg-logo="http://24horas.cc:80/images/c141db28409f6d336d5246dfb6c30080.jpg", Top Chef Brasil
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNDU5NDgubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top Gospel 2025/2026 - As Mais Tocadas" tvg-logo="", Top Gospel 2025/2026 - As Mais Tocadas
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzUwODQubTN1OA.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top MPB 2025/2026 - As Mais Tocadas" tvg-logo="", Top MPB 2025/2026 - As Mais Tocadas
+#EXTGRP:Canais de TV
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzUwODMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top Sertanejo 2025/2026 - As Mais Tocadas" tvg-logo="", Top Sertanejo 2025/2026 - As Mais Tocadas
 #EXTGRP:Canais de TV
@@ -3403,13 +3411,13 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjQwNC5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="523302" tvg-name="TV Gazeta SP [FHD]" tvg-logo="http://paldi.pro/images/2baf5152b328307749ffbafedb684497.png", TV Gazeta SP [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="523302" tvg-name="TV Gazeta SP [HD]" tvg-logo="http://paldi.pro/images/2baf5152b328307749ffbafedb684497.png", TV Gazeta SP [HD]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDQ5MTcubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjQwNi5tM3U4.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="TVNovoTempo.br" tvg-name="TV Novo Tempo [FHD]" tvg-logo="https://logos.imperioapps.top/NOVO_TEMPO.png", TV Novo Tempo [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="TVNovoTempo.br" tvg-name="TV Novo Tempo [4K]" tvg-logo="https://logos.imperioapps.top/NOVO_TEMPO.png", TV Novo Tempo [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjQwOC5tM3U4.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NTkubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="TV Quack O Pato Donald e Seus Sobrinhos" tvg-logo="http://24horas.cc:80/images/77e05d7b581e0102ca5c626fb3828190.jpg", TV Quack O Pato Donald e Seus Sobrinhos
 #EXTGRP:Canais de TV
@@ -3439,10 +3447,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzgwMTAubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Uma Familia da Pesada" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg", Uma Familia da Pesada
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNTU0NTQubTN1OA.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Uma Maldicao de Familia" tvg-logo="http://24horas.cc:80/images/4e46940f1bd9c600d8e183f38776368b.jpg", Uma Maldicao de Familia
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zMDY4NjUubTN1OA.m3u8
@@ -3454,10 +3458,6 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTINF:-1 group-title="Canais de TV" tvg-id="483" tvg-name="Universal TV [4K]" tvg-logo="https://logos.imperioapps.top/UNIVERSAL.png", Universal TV [4K]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDYzMi5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Ursinhos em Curso" tvg-logo="https://www.themoviedb.org/t/p/original/kHGEyUh0O4A7o5lGi8A11WJvdD2.jpg", Ursinhos em Curso
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8yMjUzMzEubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="USA Network [FHD]" tvg-logo="https://logos.imperioapps.top/USANETWORK.png", USA Network [FHD]
 #EXTGRP:Canais de TV
@@ -3527,9 +3527,9 @@ https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3Rvbmlu
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMzgwMTIubTN1OA.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="2165" tvg-name="Zoomoo [FHD]" tvg-logo="https://logos.imperioapps.top/ZOOMOO.png", Zoomoo [FHD]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="2165" tvg-name="Zoomoo [4K]" tvg-logo="https://logos.imperioapps.top/ZOOMOO.png", Zoomoo [4K]
 #EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDQ5MzQubTN1OA.m3u8
+https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xNzg1MzMubTN1OA.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Zorro" tvg-logo="http://24horas.cc:80/images/0ce1cfa72377b1ac6cdad3155d500320.jpg", Zorro
 #EXTGRP:Canais de TV
