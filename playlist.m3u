@@ -3,6 +3,10 @@
 
 ### Canais Recomendados
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="AG TV" tvg-logo="https://i.postimg.cc/63D86yTn/ag-tv.jpg", AG TV
+#EXTGRP:Recomendados
+https://video01.brascast.com/grezzana1839/grezzana1839/playlist.m3u8?hls_ctx=x105h921
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="BDC TV" tvg-logo="https://i.postimg.cc/D0Wwhpkn/bdc-tv.jpg", BDC TV
 #EXTGRP:Recomendados
 https://video01.brascast.com/bdctv/bdctv/playlist.m3u8
@@ -418,6 +422,10 @@ http://168.205.87.198:8555/live/1368/123456/150.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeFamilia.br" tvg-name="Rede Familia" tvg-logo="https://i.imgur.com/7KVFCrQ.png", Rede Familia
 #EXTGRP:Variedades
 http://168.197.104.22/REDE_FAMILIA/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Maischeti" tvg-logo="https://i.postimg.cc/Bv6KcQPV/rede-maischeti.jpg", Rede Maischeti
+#EXTGRP:Variedades
+https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeMeioNorte.br" tvg-name="Rede Meio Norte" tvg-logo="https://i.imgur.com/KVdTi0M.png", Rede Meio Norte
 #EXTGRP:Variedades
