@@ -179,10 +179,6 @@ https://video08.logicahost.com.br/tvolhodagua/tvolhodagua/playlist.m3u8
 #EXTGRP:Recomendados
 https://stmv2.srvsh.com.br/daniel8121/daniel8121/chunklist_w1486298669.m3u8
 
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV Tudo" tvg-logo="https://i.postimg.cc/bJ8ZhTGZ/tv-tudo.jpg", TV Tudo
-#EXTGRP:Recomendados
-https://tv02.zas.media:1936/tvtudo/tvtudo/playlist.m3u8
-
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV+ News" tvg-logo="https://i.postimg.cc/t47nvJ2j/tvmais_news.jpg", TV+ News
 #EXTGRP:Recomendados
 https://stmv2.samcast.com.br/adao6116/adao6116/playlist.m3u8
@@ -212,6 +208,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/chunklist.m3u
 #EXTINF:-1 group-title="TV Aberta" tvg-id="1864" tvg-name="Gazeta" tvg-logo="https://i.postimg.cc/tTf06J3D/tvgazeta-logo.jpg", Gazeta
 #EXTGRP:TV Aberta
 https://video08.logicahost.com.br/tvc21/tvc21/chunklist_w1728739889.m3u8
+
+#EXTINF:-1 group-title="TV Aberta" tvg-id="GloboInternacional.br" tvg-name="Globo TV Morena MG" tvg-logo="https://i.postimg.cc/TY6wHCzf/redeglobo.jpg", Globo TV Morena MG
+#EXTGRP:TV Aberta
+https://media2.cdntvms.com.br/tv_morena_dorados/index.m3u8
 
 #EXTINF:-1 group-title="TV Aberta" tvg-id="RecordTV.br" tvg-name="Record" tvg-logo="https://i.postimg.cc/PfKLvRv5/record-tv.png", Record
 #EXTGRP:TV Aberta
@@ -370,6 +370,10 @@ https://www.latinasat.com.br/hls/live/stream/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Lucas TV" tvg-logo="https://i.postimg.cc/76cC5fk1/lucas-tv-logo.jpg", Lucas TV
 #EXTGRP:Variedades
 https://stmv1.srvif.com/lucastv/lucastv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Mais Um" tvg-logo="https://i.postimg.cc/NFWhnwMH/mais_um.jpg", Mais Um
+#EXTGRP:Variedades
+https://stream.ichibansys.com:3230/hybrid/play.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="MBCBrasilTV.br" tvg-name="MBC Brasil TV" tvg-logo="https://eswqkrogupaisirwcsys.supabase.co/storage/v1/object/public/mbc-media/canais/1775702325773-d10vtu076za.png", MBC Brasil TV
 #EXTGRP:Variedades
@@ -634,10 +638,6 @@ https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u
 #EXTINF:-1 group-title="Variedades" tvg-id="TVPassoFundo.br" tvg-name="TV Passo Fundo" tvg-logo="https://i.imgur.com/QFE6TiV.png", TV Passo Fundo
 #EXTGRP:Variedades
 https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVPetropolis.br" tvg-name="TV Petropolis" tvg-logo="https://web2.petropolis.rj.gov.br/imc/film-commission/uploads/profissional/perfil/785b645d9c574b4d88504a85dbd6ef37.png", TV Petropolis
-#EXTGRP:Variedades
-https://video02.logicahost.com.br/tvpetropolis/tvpetropolis/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVRaTimBum.br" tvg-name="TV Ra Tim Bum" tvg-logo="https://i.imgur.com/JIQwz0w.png", TV Ra Tim Bum
 #EXTGRP:Variedades
@@ -977,6 +977,10 @@ https://igrejamundial.nuvemplay.live/hls/stream.m3u8
 #EXTGRP:Religião
 http://45.162.64.114/NOVO_TEMPO/index.m3u8
 
+#EXTINF:-1 group-title="Religião" tvg-id="PlenitudeTV.br" tvg-name="Plenitude TV" tvg-logo="", Plenitude TV
+#EXTGRP:Religião
+https://strv.painelvox.top/plenitude/plenitude/playlist.m3u8
+
 #EXTINF:-1 group-title="Religião" tvg-id="RedeGospel.br" tvg-name="Rede Gospel" tvg-logo="https://i.imgur.com/mttSwgO.png", Rede Gospel
 #EXTGRP:Religião
 https://cdn.live.br1.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -1160,84 +1164,6 @@ https://crtvg-europa.flumotion.cloud/playlist_dvr.m3u8
 #EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="Way TV" tvg-logo="https://i.postimg.cc/BnvwkBj7/way_tv.jpg", Way TV
 #EXTGRP:Internacional
 https://live.wayone.cloud/waytv/waytv1/playlist.m3u8
-
-### Canais Canais de TV
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="2353" tvg-name="AgroMais [FHD]" tvg-logo="http://www.acstatic.co/logos/canais/agromais.png", AgroMais [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTc2NC5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="1073" tvg-name="Arte 1 [HD]" tvg-logo="https://logos.imperioapps.top/ARTE_1.png", Arte 1 [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTc3OS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="482" tvg-name="AXN [4K]" tvg-logo="https://logos.imperioapps.top/AXN.png", AXN [4K]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDY0NS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="1022" tvg-name="Band News [FHD]" tvg-logo="https://logos.imperioapps.top/BAND_NEWS.png", Band News [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MTc4OS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="426" tvg-name="ESPN [4K]" tvg-logo="https://logos.imperioapps.top/ESPN.png", ESPN [4K]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MDY0MC5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Gladiadores da Natureza" tvg-logo="", Gladiadores da Natureza
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE0NTYubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo NSC TV Florianopolis [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo NSC TV Florianopolis [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjAxMC5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonas Arquemes [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonas Arquemes [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNTAwODUubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo Rede Amazonica Boa Vista [SD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo Rede Amazonica Boa Vista [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85MzU4OS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboInternacional.br" tvg-name="Globo RPC TV Maringa [HD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo RPC TV Maringa [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85Njg4OC5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="GloboSP.br" tvg-name="Globo SP [FHD]" tvg-logo="https://logos.imperioapps.top/globo.png", Globo SP [FHD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjA0MC5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="2363" tvg-name="History [SD]" tvg-logo="https://logos.imperioapps.top/HISTORY.png", History [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjE0OS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="RecordTVRJ.br" tvg-name="RecordTV RJ [SD]" tvg-logo="https://logos.imperioapps.top/RECORD.png", RecordTV RJ [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy85NjUyNi5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="484" tvg-name="Rede Vida [4K]" tvg-logo="https://logos.imperioapps.top/REDE_VIDA.png", Rede Vida [4K]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NzUubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="899" tvg-name="Telecine Fun [SD]" tvg-logo="https://logos.imperioapps.top/TCFun.png", Telecine Fun [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjM1Ny5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="473" tvg-name="Telecine Premium [SD]" tvg-logo="https://logos.imperioapps.top/TCPremium.png", Telecine Premium [SD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy83MjM2NS5tM3U4.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="TVAparecida.br" tvg-name="TV Aparecida [4K]" tvg-logo="https://logos.imperioapps.top/APARECIDA.png", TV Aparecida [4K]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NjQubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="TVNovoTempo.br" tvg-name="TV Novo Tempo [4K]" tvg-logo="https://logos.imperioapps.top/NOVO_TEMPO.png", TV Novo Tempo [4K]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8xMDM0NTkubTN1OA.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Vikings" tvg-logo="", Vikings
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/aHR0cDovL3BhbGRpLnBybzo4MC9saXZlL3RvbmluaG8wMi9DYjQ5ODAzNy8zNzE1MDAubTN1OA.m3u8
 
 ### Canais Clássico
 
@@ -1718,6 +1644,10 @@ https://jmp2.uk/plu-63dac32bda711800088a2ba3.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="TravelBoxBrazil.br" tvg-name="Travel Box Brazil Alternativo 1" tvg-logo="https://i.imgur.com/3tBJERH.png", Travel Box Brazil Alternativo 1
 #EXTGRP:Alternativos
 http://170.83.49.66:8083/TRAVELBOXHD/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVAparecida.br" tvg-name="TV Aparecida Alternativo 1" tvg-logo="https://i.postimg.cc/SKyxZqvt/tv-aparecida.jpg", TV Aparecida Alternativo 1
+#EXTGRP:Alternativos
+https://cdn.live.br1.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/chunklist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVBrasil.br" tvg-name="TV Brasil Alternativo 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil Alternativo 1
 #EXTGRP:Alternativos
