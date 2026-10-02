@@ -717,6 +717,10 @@ https://run-rufb.otteravision.com/run/rufb/rufb_480.m3u8
 #EXTGRP:Filmes
 http://45.162.64.114/SONY_MOVIES/index.m3u8
 
+#EXTINF:-1 group-title="Filmes" tvg-id="TelecineAction.br" tvg-name="Telecine Action" tvg-logo="https://i.imgur.com/BHYWG0h.png", Telecine Action
+#EXTGRP:Filmes
+http://46.151.196.223:14326/
+
 #EXTINF:-1 group-title="Filmes" tvg-id="" tvg-name="TVNA filmes" tvg-logo="https://i.postimg.cc/pTFJ912p/tvna-filmes.png", TVNA filmes
 #EXTGRP:Filmes
 https://stmv6.voxtvhd.com.br/tvnafilmes/tvnafilmes/playlist.m3u8
