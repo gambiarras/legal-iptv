@@ -435,6 +435,10 @@ https://video10.logicahost.com.br/serieclassic/serieclassic/playlist.m3u8
 #EXTGRP:Variedades
 http://45.162.64.114/SESC_TV/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SICTV.br" tvg-name="SIC TV" tvg-logo="https://i.imgur.com/mHxQyB2.png", SIC TV
+#EXTGRP:Variedades
+https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Sonata TV" tvg-logo="https://i.postimg.cc/bNK96RZH/tvsonata.png", Sonata TV
 #EXTGRP:Variedades
 https://video04.logicahost.com.br/isonata/isonata/chunklist_w910221052.m3u8
@@ -3878,6 +3882,10 @@ https://video10.logicahost.com.br/canaanews/canaanews/playlist.m3u8
 #EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Rabelo" tvg-logo="https://i.postimg.cc/kgRYS85n/tv-rabelo.jpg", Rabelo
 #EXTGRP:Religiosos
 https://s1.tvr.ovh/video10934/video10934/playlist.m3u8
+
+#EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Rede Super TV" tvg-logo="https://i.postimg.cc/KzBqPDvc/rede-supertv.jpg", Rede Super TV
+#EXTGRP:Religiosos
+https://tv02.zas.media:1936/redesuper/redesuper/chunklist_w232136848.m3u8
 
 #EXTINF:-1 group-title="Religiosos" tvg-id="484" tvg-name="Rede Vida" tvg-logo="https://i.postimg.cc/C5n51dFq/rede-vidatv.png", Rede Vida
 #EXTGRP:Religiosos
