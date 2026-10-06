@@ -271,6 +271,10 @@ https://cdn.jsdelivr.net/gh/batistabtc/embreve/playlist.m3u8
 #EXTGRP:Variedades
 https://v-us-01.wisestream.io/memfs/e4ade538-7924-4359-81ef-b9d4dd229e91.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CanalSete.br" tvg-name="Canal Sete" tvg-logo="https://i.imgur.com/0cq0BPp.png", Canal Sete
+#EXTGRP:Variedades
+http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanalUOL.br" tvg-name="Canal UOL" tvg-logo="https://conteudo.imguol.com.br/c/play/logo_canaluol_2024.svg", Canal UOL
 #EXTGRP:Variedades
 https://video24.mais.uol.com.br/live/6146.m3u8
@@ -522,10 +526,6 @@ http://45.162.64.114/TV_BRASIL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Brasil Angola" tvg-logo="https://i.postimg.cc/BvSXPFDQ/tvbraasil-angola.jpg", TV Brasil Angola
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/tvbrasilangola/tvbrasilangola/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVBrasilOeste.br" tvg-name="TV Brasil Oeste" tvg-logo="https://i.imgur.com/noqGfuy.png", TV Brasil Oeste
-#EXTGRP:Variedades
-https://5ad482a77183d.streamlock.net/operacaotbomt.com/operacaotbomt.com/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Brasil Sinop" tvg-logo="https://i.postimg.cc/fWYmFj7D/tv_brasil_sinop.jpg", TV Brasil Sinop
 #EXTGRP:Variedades
@@ -916,6 +916,10 @@ https://stmv1.srvsite.com/ely/ely/playlist.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="PetloversTV.br" tvg-name="Petlovers TV" tvg-logo="https://petloverstv.com.br/storage/357/config/yqP4nOugWRxRFCmgLqXF4gRKyM9ybsAOfHgUaqPt.png", Petlovers TV
 #EXTGRP:Entretenimento
 https://video04.logicahost.com.br/petloverstv/petloverstv/playlist.m3u8
+
+#EXTINF:-1 group-title="Entretenimento" tvg-id="RedeNGT.br" tvg-name="Rede NGT" tvg-logo="https://i.imgur.com/ZFN1R4B.png", Rede NGT
+#EXTGRP:Entretenimento
+https://isaocorp.cloudecast.com/ngt/index.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="TVCuruca.br" tvg-name="TV Curuca" tvg-logo="https://i.imgur.com/JdCKNZ4.png", TV Curuca
 #EXTGRP:Entretenimento
