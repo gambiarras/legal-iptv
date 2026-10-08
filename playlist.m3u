@@ -499,6 +499,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-20715/LVW20715_50E3x2MCm2/playlist.m3u8
 #EXTGRP:Variedades
 https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="TVAliancaCatarinense.br" tvg-name="TV Alianca Catarinense" tvg-logo="https://i.imgur.com/eqmOhtP.png", TV Alianca Catarinense
+#EXTGRP:Variedades
+https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="TVAlternativa.br" tvg-name="TV Alternativa" tvg-logo="https://i.imgur.com/wM9xXhc.png", TV Alternativa
 #EXTGRP:Variedades
 https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8
@@ -674,10 +678,6 @@ https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVEBahia.br" tvg-name="TVE Bahia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png", TVE Bahia
 #EXTGRP:Variedades
 http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVitape.br" tvg-name="TVitape" tvg-logo="https://i.imgur.com/XeqcwKe.png", TVitape
-#EXTGRP:Variedades
-https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVNBN.br" tvg-name="TVNBN" tvg-logo="https://i.imgur.com/zoHBxn1.png", TVNBN
 #EXTGRP:Variedades
@@ -908,6 +908,10 @@ https://adylnet.streampool.net/10324/live/hls/Conecta/index.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="ElementalChannel.br" tvg-name="Elemental Channel" tvg-logo="https://i.imgur.com/8upyApg.png", Elemental Channel
 #EXTGRP:Entretenimento
 https://stmv1.samcast.com.br/ricardo2194/ricardo2194/playlist.m3u8
+
+#EXTINF:-1 group-title="Entretenimento" tvg-id="ElyTV.br" tvg-name="ElyTV" tvg-logo="https://i.imgur.com/1eHNe91.png", ElyTV
+#EXTGRP:Entretenimento
+https://stmv1.srvsite.com/ely/ely/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="PetloversTV.br" tvg-name="Petlovers TV" tvg-logo="https://petloverstv.com.br/storage/357/config/yqP4nOugWRxRFCmgLqXF4gRKyM9ybsAOfHgUaqPt.png", Petlovers TV
 #EXTGRP:Entretenimento
@@ -1289,10 +1293,6 @@ https://app.tvufop.com.br/hls/tvufop.m3u8
 #EXTGRP:Religiosos
 https://video04.logicahost.com.br/tvavivandonacoes/tvavivandonacoes/playlist.m3u8
 
-#EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Canaã News TV" tvg-logo="https://i.postimg.cc/9fKggKJZ/cana-news.png", Canaã News TV
-#EXTGRP:Religiosos
-https://video10.logicahost.com.br/canaanews/canaanews/playlist.m3u8
-
 #EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Rabelo" tvg-logo="https://i.postimg.cc/kgRYS85n/tv-rabelo.jpg", Rabelo
 #EXTGRP:Religiosos
 https://s1.tvr.ovh/video10934/video10934/playlist.m3u8
@@ -1448,6 +1448,10 @@ http://168.197.104.22/ZOOMOO/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="DumDum.br" tvg-name="DumDum Alternativo 2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c0/DumDum_logo.svg", DumDum Alternativo 2
 #EXTGRP:Alternativos
 http://186.219.52.187/zoomoo/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="EUTV.br" tvg-name="EUTV Alternativo 1" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV Alternativo 1
+#EXTGRP:Alternativos
+https://video01.logicahost.com.br/ypetv/ypetv/playlist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 1" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 1
 #EXTGRP:Alternativos
