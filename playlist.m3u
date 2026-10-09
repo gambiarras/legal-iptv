@@ -679,6 +679,10 @@ https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8
 #EXTGRP:Variedades
 http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="TVitape.br" tvg-name="TVitape" tvg-logo="https://i.imgur.com/XeqcwKe.png", TVitape
+#EXTGRP:Variedades
+https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="TVNBN.br" tvg-name="TVNBN" tvg-logo="https://i.imgur.com/zoHBxn1.png", TVNBN
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8
@@ -802,6 +806,10 @@ https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 #EXTINF:-1 group-title="Animação" tvg-id="Loading.br" tvg-name="Loading" tvg-logo="https://i.imgur.com/R0aflu1.png", Loading
 #EXTGRP:Animação
 https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
+
+#EXTINF:-1 group-title="Animação" tvg-id="NickOnlineBobEsponja.br" tvg-name="NickOnline Bob Esponja" tvg-logo="https://x1colegal.com/nickonlinebobesponja.png", NickOnline Bob Esponja
+#EXTGRP:Animação
+https://bob.x1colegal.com/hls/stream.m3u8
 
 ### Canais Notícia
 
