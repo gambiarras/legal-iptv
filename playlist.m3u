@@ -247,10 +247,6 @@ https://awtv.nuvemplay.live/hls/stream.m3u8
 #EXTGRP:Variedades
 https://media.cdntvms.com.br/band_sat/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -675,10 +671,6 @@ https://srv5.zcast.com.br/tvcommaceio/tvcommaceio/playlist.m3u8
 #EXTGRP:Variedades
 http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="TVitape.br" tvg-name="TVitape" tvg-logo="https://i.imgur.com/XeqcwKe.png", TVitape
-#EXTGRP:Variedades
-https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="TVNBN.br" tvg-name="TVNBN" tvg-logo="https://i.imgur.com/zoHBxn1.png", TVNBN
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8410/LVW8410_uiZOVm6vz1/playlist.m3u8
@@ -1091,7 +1083,7 @@ http://195.178.110.110/sportv2/index.m3u8
 
 #EXTINF:-1 group-title="Esportes" tvg-id="SporTV3.br" tvg-name="SporTV 3" tvg-logo="https://i.imgur.com/mWOR8pi.png", SporTV 3
 #EXTGRP:Esportes
-http://170.83.49.66:8083/SPORTV3HD/index.m3u8
+http://195.178.110.110/sportv3/index.m3u8
 
 ### Canais Música
 
@@ -1648,10 +1640,6 @@ http://168.197.104.22/SONY_MOVIES/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="SonyMovies.br" tvg-name="Sony Movies Alternativo 3" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_Movies_Logo.svg/500px-Sony_Movies_Logo.svg.png", Sony Movies Alternativo 3
 #EXTGRP:Alternativos
 http://170.83.16.50/SONY_MOVIES/index.m3u8
-
-#EXTINF:-1 group-title="Alternativos" tvg-id="SporTV3.br" tvg-name="SporTV 3 Alternativo 1" tvg-logo="https://i.imgur.com/mWOR8pi.png", SporTV 3 Alternativo 1
-#EXTGRP:Alternativos
-http://195.178.110.110/sportv3/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="847" tvg-name="Terra Viva Alternativo 1" tvg-logo="https://i.imgur.com/wnYsE3O.png", Terra Viva Alternativo 1
 #EXTGRP:Alternativos
