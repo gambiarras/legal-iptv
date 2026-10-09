@@ -59,6 +59,10 @@ https://video11.logicahost.com.br/detetives/detetives/playlist.m3u8
 #EXTGRP:Recomendados
 https://tv.rbti.tv.br/rbti1/index.m3u8
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="RedeBrasil.br" tvg-name="Rede Brasil" tvg-logo="https://i.postimg.cc/rFzfZmQc/rede-brasil-tv.jpg", Rede Brasil
+#EXTGRP:Recomendados
+https://video09.logicahost.com.br/redebrasiloficial/redebrasiloficial/chunklist_w230245795.m3u8
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS PLAY" tvg-logo="https://i.postimg.cc/dtf9QmD7/rs-play.png", RS PLAY
 #EXTGRP:Recomendados
 https://video05.logicahost.com.br/rsnews/rsnews/playlist.m3u8
@@ -406,10 +410,6 @@ https://media.cdntvms.com.br/record_nacional_sat/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="RecordTVInternational.br" tvg-name="RecordTV Interior SP" tvg-logo="https://i.imgur.com/VcHy0fu.png", RecordTV Interior SP
 #EXTGRP:Variedades
 http://200.77.176.130:8000/udp/224.0.0.4:49152
-
-#EXTINF:-1 group-title="Variedades" tvg-id="RedeBrasil.br" tvg-name="Rede Brasil" tvg-logo="https://i.imgur.com/TXJKwzZ.png", Rede Brasil
-#EXTGRP:Variedades
-https://redebrasil.nuvemplay.live/hls/stream.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Cidade" tvg-logo="https://i.postimg.cc/L5HBzBL4/rede-cidade.jpg", Rede Cidade
 #EXTGRP:Variedades
@@ -865,6 +865,10 @@ https://live.tcm10.com.br/tcm10hd/stream.m3u8
 #EXTGRP:Notícia
 https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8
 
+#EXTINF:-1 group-title="Notícia" tvg-id="TVBrusque.br" tvg-name="TV Brusque" tvg-logo="https://i.imgur.com/J2EAZPS.png", TV Brusque
+#EXTGRP:Notícia
+https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
+
 #EXTINF:-1 group-title="Notícia" tvg-id="TVSimCachoeiro.br" tvg-name="TV Sim Cachoeiro" tvg-logo="https://i.imgur.com/t5oUK3C.png", TV Sim Cachoeiro
 #EXTGRP:Notícia
 https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8
@@ -1180,6 +1184,10 @@ https://stmv1.srvif.com/tvmontana/tvmontana/playlist.m3u8
 #EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="TV Moçambique" tvg-logo="https://i.postimg.cc/x8stbKJF/tv_mana_mocanbique.jpg", TV Moçambique
 #EXTGRP:Internacional
 https://w2.manasat.com/tvmana-mz/smil:tvmana-mz.smil/playlist.m3u8
+
+#EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="TV Zimbo" tvg-logo="https://i.postimg.cc/VkS1V5jW/tv-zimbo.jpg", TV Zimbo
+#EXTGRP:Internacional
+https://sgn-cdn-video.vods2africa.com/Tv-Zimbo/index.fmp4.m3u8
 
 #EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="TVG" tvg-logo="https://i.postimg.cc/44SHK77w/television.jpg", TVG
 #EXTGRP:Internacional
