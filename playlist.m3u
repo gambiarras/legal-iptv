@@ -423,13 +423,13 @@ https://maystreaming.cloudecast.com/redemeio/index.m3u8
 #EXTGRP:Variedades
 https://video01.logicahost.com.br/websptv/websptv/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV!" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV!
-#EXTGRP:Variedades
-http://45.162.64.114/REDE_TV/index.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTVMais.br" tvg-name="Rede TV! Mais" tvg-logo="https://i.ibb.co/F0Tm2WP/2103f4c07b851d64b4c96955765a9a95.png", Rede TV! Mais
 #EXTGRP:Variedades
 https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! SD" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD
+#EXTGRP:Variedades
+http://45.162.64.114/REDE_TV/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Vivax TV" tvg-logo="https://i.postimg.cc/MGcsm3ng/vivax-tv.png", Rede Vivax TV
 #EXTGRP:Variedades
@@ -1549,19 +1549,19 @@ http://170.83.49.66:8083/REDEGOSPELHD/index.m3u8
 #EXTGRP:Alternativos
 http://186.219.52.187/seculo21/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 1" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 1
+#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! SD Alternativo 1" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD Alternativo 1
 #EXTGRP:Alternativos
 http://168.197.104.22/REDE_TV/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 2" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 2
+#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! SD Alternativo 2" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD Alternativo 2
 #EXTGRP:Alternativos
 http://170.83.16.50/REDE_TV/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 3" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 3
+#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! SD Alternativo 3" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD Alternativo 3
 #EXTGRP:Alternativos
 http://170.83.49.66:8083/REDETVHD/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! Alternativo 4" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! Alternativo 4
+#EXTINF:-1 group-title="Alternativos" tvg-id="RedeTV.br" tvg-name="Rede TV! SD Alternativo 4" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD Alternativo 4
 #EXTGRP:Alternativos
 http://186.219.52.187/rede_tv/index.m3u8
 
