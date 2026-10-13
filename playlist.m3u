@@ -231,6 +231,10 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -513,7 +517,7 @@ https://porbrics.mediacdn.ru/cdn/brics/portuguese/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova
 #EXTGRP:Variedades
-http://45.162.64.114/CANCAO_NOVA/index.m3u8
+https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCarioca.br" tvg-name="TV Carioca" tvg-logo="https://i.postimg.cc/0QCKYQpS/tv-carioca.jpg", TV Carioca
 #EXTGRP:Variedades
@@ -1655,13 +1659,17 @@ https://stream3.camara.gov.br/tv1/manifest.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 1" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 1
 #EXTGRP:Alternativos
-http://168.197.104.22/CANCAO_NOVA/index.m3u8
+http://45.162.64.114/CANCAO_NOVA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 2" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 2
 #EXTGRP:Alternativos
-http://170.83.16.50/CANCAO_NOVA/index.m3u8
+http://168.197.104.22/CANCAO_NOVA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 3" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 3
+#EXTGRP:Alternativos
+http://170.83.16.50/CANCAO_NOVA/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 4" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 4
 #EXTGRP:Alternativos
 http://186.219.52.187/cancao_nova/index.m3u8
 
