@@ -119,6 +119,10 @@ https://video08.logicahost.com.br/tvc21/tvc21/playlist.m3u8
 #EXTGRP:Recomendados
 https://video11.logicahost.com.br/comunidadefm/comunidadefm/playlist.m3u8
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV Conecta" tvg-logo="https://i.postimg.cc/bYWc1jjz/tv-conecta.png", TV Conecta
+#EXTGRP:Recomendados
+https://srv1954587.hstgr.cloud:8888/video01/index.m3u8
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV da Cidade Joinville" tvg-logo="https://i.postimg.cc/q7j5bqbB/tv-cidade-joinville.jpg", TV da Cidade Joinville
 #EXTGRP:Recomendados
 https://cdn.live.br1.jmvstream.com/w/LVW-8855/LVW8855_u7a7C4Oa4F/chunklist.m3u8
@@ -1056,18 +1060,6 @@ http://181.78.197.59:8000/play/a07n/index.m3u8
 #EXTINF:-1 group-title="Esportes" tvg-id="geFast.br" tvg-name="ge Fast" tvg-logo="https://i.ibb.co/WGXHDnF/logo-ge-fast.png", ge Fast
 #EXTGRP:Esportes
 https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8
-
-#EXTINF:-1 group-title="Esportes" tvg-id="SporTV.br" tvg-name="SporTV" tvg-logo="https://i.postimg.cc/gr9x3z71/Spor-TV-2021.png", SporTV
-#EXTGRP:Esportes
-http://195.178.110.110/sportv/index.m3u8
-
-#EXTINF:-1 group-title="Esportes" tvg-id="SporTV2.br" tvg-name="SporTV 2" tvg-logo="https://i.imgur.com/pBiUnb2.png", SporTV 2
-#EXTGRP:Esportes
-http://195.178.110.110/sportv2/index.m3u8
-
-#EXTINF:-1 group-title="Esportes" tvg-id="SporTV3.br" tvg-name="SporTV 3" tvg-logo="https://i.imgur.com/mWOR8pi.png", SporTV 3
-#EXTGRP:Esportes
-http://195.178.110.110/sportv3/index.m3u8
 
 ### Canais Música
 
