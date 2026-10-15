@@ -263,10 +263,6 @@ https://cdn.jsdelivr.net/gh/batistabtc/embreve/playlist.m3u8
 #EXTGRP:Variedades
 https://v-us-01.wisestream.io/memfs/e4ade538-7924-4359-81ef-b9d4dd229e91.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="CanalSete.br" tvg-name="Canal Sete" tvg-logo="https://i.imgur.com/0cq0BPp.png", Canal Sete
-#EXTGRP:Variedades
-http://play.canalsete.com.br:1935/canalsete/xpl-c7_source/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="CanalUOL.br" tvg-name="Canal UOL" tvg-logo="https://conteudo.imguol.com.br/c/play/logo_canaluol_2024.svg", Canal UOL
 #EXTGRP:Variedades
 https://video24.mais.uol.com.br/live/6146.m3u8
@@ -547,10 +543,6 @@ https://5c483b9d1019c.streamlock.net/8186/8186/playlist.m3u8
 #EXTGRP:Variedades
 https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Cruzeiro do Brasil" tvg-logo="https://i.postimg.cc/02RwkYfs/tv-cruzeirobrasil.png", TV Cruzeiro do Brasil
-#EXTGRP:Variedades
-https://stmv2.voxtvhd.com.br/joao1366/joao1366/playlist.m3u8?1789135064
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Cultural [HD]" tvg-logo="https://i.postimg.cc/yNv6z14Q/tv-cultura-hd.jpg", TV Cultural [HD]
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/culturaltvhd/culturaltvhd/playlist.m3u8
@@ -782,6 +774,10 @@ https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 #EXTINF:-1 group-title="Animação" tvg-id="Loading.br" tvg-name="Loading" tvg-logo="https://i.imgur.com/R0aflu1.png", Loading
 #EXTGRP:Animação
 https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
+
+#EXTINF:-1 group-title="Animação" tvg-id="NickOnlineBobEsponja.br" tvg-name="NickOnline Bob Esponja" tvg-logo="https://x1colegal.com/nickonlinebobesponja.png", NickOnline Bob Esponja
+#EXTGRP:Animação
+https://bob.x1colegal.com/hls/stream.m3u8
 
 ### Canais Notícia
 
