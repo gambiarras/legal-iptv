@@ -375,10 +375,6 @@ http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8
 #EXTGRP:Variedades
 https://stmv8.samcast.com.br/novatvi2098/novatvi2098/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="NTV.br" tvg-name="NTV" tvg-logo="https://i.imgur.com/n79nkVC.png", NTV
-#EXTGRP:Variedades
-https://cdn.livespanel.com/nossatv/nossatv/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="ODiaTV.br" tvg-name="O Dia TV" tvg-logo="https://i.imgur.com/1LUbAVP.png", O Dia TV
 #EXTGRP:Variedades
 https://6836041ea1117.streamlock.net/tvodia/tvodia/playlist.m3u8
@@ -533,7 +529,7 @@ https://porbrics.mediacdn.ru/cdn/brics/portuguese/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova
 #EXTGRP:Variedades
-https://5c65286fc6ace.streamlock.net/cancaonova/CancaoNova.stream_720p/playlist.m3u8
+http://45.162.64.114/CANCAO_NOVA/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVCarioca.br" tvg-name="TV Carioca" tvg-logo="https://i.postimg.cc/0QCKYQpS/tv-carioca.jpg", TV Carioca
 #EXTGRP:Variedades
@@ -578,6 +574,10 @@ https://stmv4.voxtvhd.com.br/tvgalinhachoca/tvgalinhachoca/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGazeta.br" tvg-name="TV Gazeta" tvg-logo="https://i.imgur.com/0sksWse.png", TV Gazeta
 #EXTGRP:Variedades
 http://45.162.64.114/GAZETA/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="TVGuara.br" tvg-name="TV Guara" tvg-logo="https://i.imgur.com/8PErNBT.png", TV Guara
+#EXTGRP:Variedades
+https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGuarapari.br" tvg-name="TV Guarapari" tvg-logo="https://i.imgur.com/eDNzwK0.png", TV Guarapari
 #EXTGRP:Variedades
@@ -1066,6 +1066,10 @@ http://181.78.197.59:8000/play/a07n/index.m3u8
 https://amg00716-globo-amg00716c1-tcl-br-9495.playouts.now.amagi.tv/playlist.m3u8
 
 ### Canais Música
+
+#EXTINF:-1 group-title="Música" tvg-id="KpopTVPlay.br" tvg-name="KpopTV Play" tvg-logo="https://i.imgur.com/Tf0vweF.png", KpopTV Play
+#EXTGRP:Música
+https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
 
 #EXTINF:-1 group-title="Música" tvg-id="1072" tvg-name="Music Box Brazil" tvg-logo="https://i.imgur.com/CDPCF2X.png", Music Box Brazil
 #EXTGRP:Música
@@ -1671,17 +1675,13 @@ https://stream3.camara.gov.br/tv1/manifest.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 1" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 1
 #EXTGRP:Alternativos
-http://45.162.64.114/CANCAO_NOVA/index.m3u8
+http://168.197.104.22/CANCAO_NOVA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 2" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 2
 #EXTGRP:Alternativos
-http://168.197.104.22/CANCAO_NOVA/index.m3u8
-
-#EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 3" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 3
-#EXTGRP:Alternativos
 http://170.83.16.50/CANCAO_NOVA/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 4" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 4
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVCancaoNova.br" tvg-name="TV Cancao Nova Alternativo 3" tvg-logo="https://i.imgur.com/OaM9hkH.png", TV Cancao Nova Alternativo 3
 #EXTGRP:Alternativos
 http://186.219.52.187/cancao_nova/index.m3u8
 
@@ -1691,29 +1691,25 @@ http://45.162.64.114/TV_CULTURA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 2" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 2
 #EXTGRP:Alternativos
-http://45.177.114.115/TV_CULTURA/index.m3u8
+http://168.197.104.22/TV_CULTURA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 3" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 3
 #EXTGRP:Alternativos
-http://168.197.104.22/TV_CULTURA/index.m3u8
+http://170.83.16.50/CULTURA/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 4" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 4
 #EXTGRP:Alternativos
-http://170.83.16.50/CULTURA/index.m3u8
+http://186.219.52.187/cultura/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 5" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 5
 #EXTGRP:Alternativos
-http://186.219.52.187/cultura/index.m3u8
+https://v-us-01.wisestream.io/memfs/e8740862-7a1f-45f3-acb2-4f357e144059.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 6" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 6
 #EXTGRP:Alternativos
-https://v-us-01.wisestream.io/memfs/e8740862-7a1f-45f3-acb2-4f357e144059.m3u8
-
-#EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 7" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 7
-#EXTGRP:Alternativos
 https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 8" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 8
+#EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 7" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 7
 #EXTGRP:Alternativos
 https://jmp2.uk/plu-62e010e6cd663f0007e57dc8.m3u8
 
