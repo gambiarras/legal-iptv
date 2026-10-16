@@ -239,6 +239,10 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -498,6 +502,10 @@ https://tvbrasil-stream.ebc.com.br/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasil.br" tvg-name="TV Brasil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png", TV Brasil
 #EXTGRP:Variedades
 http://45.162.64.114/TV_BRASIL/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV Brasil Angola" tvg-logo="https://i.postimg.cc/BvSXPFDQ/tvbraasil-angola.jpg", TV Brasil Angola
+#EXTGRP:Variedades
+https://video10.logicahost.com.br/tvbrasilangola/tvbrasilangola/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVBrasilOeste.br" tvg-name="TV Brasil Oeste" tvg-logo="https://i.imgur.com/noqGfuy.png", TV Brasil Oeste
 #EXTGRP:Variedades
@@ -1105,6 +1113,10 @@ https://5cf4a2c2512a2.streamlock.net/tvmuzangala/tvmuzangala/playlist.m3u8
 #EXTGRP:Internacional
 https://appletree-mytimespain-rakuten.amagi.tv/playlist.m3u8
 
+#EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="On FM" tvg-logo="https://i.postimg.cc/BnwqQwzm/on_fm.jpg", On FM
+#EXTGRP:Internacional
+https://5ce9406b73c33.streamlock.net/ONFM/livestream/playlist.m3u8
+
 #EXTINF:-1 group-title="Internacional" tvg-id="" tvg-name="TV Maná 1" tvg-logo="https://i.postimg.cc/d0KnDL0d/tv_mana_1.jpg", TV Maná 1
 #EXTGRP:Internacional
 https://w1.manasat.com/tvmana-1/smil:tvmana-1.smil/chunklist_w461217886_b413000_sleng.m3u8
@@ -1250,6 +1262,10 @@ https://video04.logicahost.com.br/tvavivandonacoes/tvavivandonacoes/playlist.m3u
 #EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Canaã News TV" tvg-logo="https://i.postimg.cc/9fKggKJZ/cana-news.png", Canaã News TV
 #EXTGRP:Religiosos
 https://video10.logicahost.com.br/canaanews/canaanews/playlist.m3u8
+
+#EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Rede Super TV" tvg-logo="https://i.postimg.cc/KzBqPDvc/rede-supertv.jpg", Rede Super TV
+#EXTGRP:Religiosos
+https://tv02.zas.media:1936/redesuper/redesuper/chunklist_w232136848.m3u8
 
 #EXTINF:-1 group-title="Religiosos" tvg-id="484" tvg-name="Rede Vida" tvg-logo="https://i.postimg.cc/C5n51dFq/rede-vidatv.png", Rede Vida
 #EXTGRP:Religiosos
