@@ -171,10 +171,6 @@ https://video08.logicahost.com.br/tvolhodagua/tvolhodagua/playlist.m3u8
 #EXTGRP:Recomendados
 https://tv02.zas.media:1936/tvtudo/tvtudo/playlist.m3u8
 
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV+ News" tvg-logo="https://i.postimg.cc/t47nvJ2j/tvmais_news.jpg", TV+ News
-#EXTGRP:Recomendados
-https://stmv2.samcast.com.br/adao6116/adao6116/playlist.m3u8
-
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TVBC" tvg-logo="https://rokuimagens.logicahost.com.br/logos/52tvbc.png", TVBC
 #EXTGRP:Recomendados
 https://stmv2.samcast.com.br/sandro9822/sandro9822/playlist.m3u8
@@ -829,6 +825,10 @@ http://45.162.64.114/BAND_NEWS/index.m3u8
 #EXTGRP:Notícia
 https://jmp2.uk/plu-666c9c60a7efd40008f552f0.m3u8
 
+#EXTINF:-1 group-title="Notícia" tvg-id="Canal38.br" tvg-name="Canal 38" tvg-logo="https://i.imgur.com/co7TCWC.png", Canal 38
+#EXTGRP:Notícia
+https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8
+
 #EXTINF:-1 group-title="Notícia" tvg-id="CanalMetropolitanodeNoticias.br" tvg-name="Canal Metropolitano de Noticias" tvg-logo="https://i.imgur.com/G0x4xqa.png", Canal Metropolitano de Noticias
 #EXTGRP:Notícia
 https://stmv5.samcast.com.br/claudio8701/claudio8701/playlist.m3u8
@@ -924,10 +924,6 @@ https://adylnet.streampool.net/10324/live/hls/Conecta/index.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="ElementalChannel.br" tvg-name="Elemental Channel" tvg-logo="https://i.imgur.com/8upyApg.png", Elemental Channel
 #EXTGRP:Entretenimento
 https://stmv1.samcast.com.br/ricardo2194/ricardo2194/playlist.m3u8
-
-#EXTINF:-1 group-title="Entretenimento" tvg-id="ElyTV.br" tvg-name="ElyTV" tvg-logo="https://i.imgur.com/1eHNe91.png", ElyTV
-#EXTGRP:Entretenimento
-https://stmv1.srvsite.com/ely/ely/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="PetloversTV.br" tvg-name="Petlovers TV" tvg-logo="https://petloverstv.com.br/storage/357/config/yqP4nOugWRxRFCmgLqXF4gRKyM9ybsAOfHgUaqPt.png", Petlovers TV
 #EXTGRP:Entretenimento
