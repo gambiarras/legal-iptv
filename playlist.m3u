@@ -201,6 +201,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/chunklist.m3u
 #EXTGRP:TV Aberta
 https://video08.logicahost.com.br/tvc21/tvc21/chunklist_w1728739889.m3u8
 
+#EXTINF:-1 group-title="TV Aberta" tvg-id="GloboInternacional.br" tvg-name="Globo TV (SP)" tvg-logo="https://i.postimg.cc/TY6wHCzf/redeglobo.jpg", Globo TV (SP)
+#EXTGRP:TV Aberta
+https://stream.s23-cloudfront-net.lat/8e8e8b142192ea65/globosp.m3u8
+
 #EXTINF:-1 group-title="TV Aberta" tvg-id="RecordTV.br" tvg-name="Record" tvg-logo="https://i.postimg.cc/PfKLvRv5/record-tv.png", Record
 #EXTGRP:TV Aberta
 https://cdn.live.br1.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8
@@ -306,6 +310,10 @@ https://video04.logicahost.com.br/cloudingtv/cloudingtv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="COMBrasil.br" tvg-name="COM Brasil" tvg-logo="https://i.imgur.com/GrjGwKM.png", COM Brasil
 #EXTGRP:Variedades
 https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Comedy Central WebTV" tvg-logo="https://i.postimg.cc/7ZHB90cg/comedy-centralwebtv.jpg", Comedy Central WebTV
+#EXTGRP:Variedades
+https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Comedy Club" tvg-logo="https://i.postimg.cc/25fbwYpT/comedy-club.jpg", Comedy Club
 #EXTGRP:Variedades
@@ -1212,10 +1220,6 @@ https://stmv4.voxtvhd.com.br/bnxkids/bnxkids/playlist.m3u8
 #EXTINF:-1 group-title="Infantis" tvg-id="" tvg-name="Nick WebTV" tvg-logo="https://i.postimg.cc/C5n7Z4RH/nick-web-tv.jpg", Nick WebTV
 #EXTGRP:Infantis
 https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8
-
-#EXTINF:-1 group-title="Infantis" tvg-id="Nickelodeon.br" tvg-name="Nickelodeon" tvg-logo="https://i.postimg.cc/L818292V/nickloaden-logo2-removebg-preview.png", Nickelodeon
-#EXTGRP:Infantis
-https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
 
 #EXTINF:-1 group-title="Infantis" tvg-id="" tvg-name="Nickonline" tvg-logo="https://i.postimg.cc/BQcPnGB4/nick-online.jpg", Nickonline
 #EXTGRP:Infantis
