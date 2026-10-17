@@ -171,6 +171,10 @@ https://stmv2.samcast.com.br/adao6116/adao6116/playlist.m3u8
 #EXTGRP:Recomendados
 https://stmv2.samcast.com.br/sandro9822/sandro9822/playlist.m3u8
 
+#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="Ultra TV" tvg-logo="https://i.postimg.cc/RhK7vDL2/ultra-tv.jpg", Ultra TV
+#EXTGRP:Recomendados
+https://stmv8.samcast.com.br/jcbrasil7363/jcbrasil7363/playlist.m3u8
+
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="Viva a Vida TV" tvg-logo="https://i.postimg.cc/L8dKWjPX/viva-vida-tv.png", Viva a Vida TV
 #EXTGRP:Recomendados
 https://stmv1.srvif.com/vivavida/vivavida/playlist.m3u8
@@ -238,10 +242,6 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="AWTV.br" tvg-name="AWTV" tvg-logo="https://i.postimg.cc/9XdkfK7s/awtv-logo.jpg", AWTV
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
@@ -643,10 +643,6 @@ http://45.162.64.114/TV_SENADO/index.m3u8
 #EXTGRP:Variedades
 https://stmv8.samcast.com.br/raimundoanselmolimamororo1908/raimundoanselmolimamororo1908/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="TVSulBahia.br" tvg-name="TV Sul Bahia" tvg-logo="https://i.imgur.com/qM6nMWm.png", TV Sul Bahia
-#EXTGRP:Variedades
-https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV São Gabriel" tvg-logo="https://i.postimg.cc/s2wN6x62/tv-sao-gabriel.jpg", TV São Gabriel
 #EXTGRP:Variedades
 https://video11.logicahost.com.br/tvsaogabriel/tvsaogabriel/playlist.m3u8
@@ -861,6 +857,10 @@ https://cdn.live.br1.jmvstream.com/webtv/AVJ-12952/playlist/playlist.m3u8
 #EXTGRP:Notícia
 https://live.tcm10.com.br/tcm10hd/stream.m3u8
 
+#EXTINF:-1 group-title="Notícia" tvg-id="TVAFolha.br" tvg-name="TV A Folha" tvg-logo="https://i.imgur.com/I7XGMhj.png", TV A Folha
+#EXTGRP:Notícia
+https://video01.logicahost.com.br/tvafolha/tvafolha/playlist.m3u8
+
 #EXTINF:-1 group-title="Notícia" tvg-id="TVBrusque.br" tvg-name="TV Brusque" tvg-logo="https://i.imgur.com/J2EAZPS.png", TV Brusque
 #EXTGRP:Notícia
 https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
@@ -932,10 +932,6 @@ https://stmv1.srvif.com/tvcurucasp/tvcurucasp/playlist.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="TVGRANDENATALHDTVBRASIL.br" tvg-name="TV GRANDE NATAL HDTV BRASIL" tvg-logo="https://i.imgur.com/MTuErdw.png", TV GRANDE NATAL HDTV BRASIL
 #EXTGRP:Entretenimento
 http://tvgrandenatalhd.duckdns.org:8080/hls/live.m3u8
-
-#EXTINF:-1 group-title="Entretenimento" tvg-id="TVVicosa.br" tvg-name="TV Vicosa" tvg-logo="https://i.imgur.com/TZF55f9.png", TV Vicosa
-#EXTGRP:Entretenimento
-http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="TVZoom.br" tvg-name="TV Zoom" tvg-logo="https://i.imgur.com/jCGrjf5.png", TV Zoom
 #EXTGRP:Entretenimento
