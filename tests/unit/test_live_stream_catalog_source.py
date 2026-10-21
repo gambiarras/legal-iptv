@@ -4,6 +4,9 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from legal_iptv.services.profile_config import load_playlist_configuration
+from legal_iptv.services.profile_selector import select_profile_channels
+from legal_iptv.exporters import render_m3u
 from legal_iptv.sources.live_stream_catalog import LIVE_STREAM_CATALOG_URL, fetch_channels
 
 
@@ -18,6 +21,83 @@ class FakeClient:
 
 
 class LiveStreamCatalogSourceTest(unittest.TestCase):
+    def test_extensionless_addon_stream_reaches_full_playlist(self):
+        payload = [
+            {
+                "id": f"addon.channel.{quality.lower()}",
+                "name": f"Example Channel [{quality}]",
+                "stream_url": f"https://media.example.test/relay/{quality.lower()}",
+                "source_type": "stremio_addon",
+                "provider_id": "addon_catalog_1",
+                "logical_channel_id": "addon.channel",
+                "variant_label": quality,
+                "group": "general",
+                "status": "resolved",
+                "protocol": "https",
+                "requires_dynamic_resolution": False,
+                "publishable_static": True,
+                "ttl_seconds": None,
+            }
+            for quality in ("FHD", "SD")
+        ]
+        configuration = load_playlist_configuration()
+        with tempfile.TemporaryDirectory() as directory:
+            catalog_path = Path(directory) / "channels.json"
+            catalog_path.write_text(json.dumps(payload), encoding="utf-8")
+            client = FakeClient()
+
+            channels = fetch_channels(client, min_live_ttl=900, local_file=catalog_path)
+            selected = select_profile_channels(channels, configuration, "full")
+            base = select_profile_channels(channels, configuration, "base")
+
+        self.assertEqual(client.requested_urls, [])
+        self.assertEqual(len(channels), 2)
+        self.assertEqual([item.id for item in selected], ["addon.channel.fhd"])
+        self.assertEqual(base, [])
+        for player_profile in ("portable", "kodi"):
+            with self.subTest(player_profile=player_profile):
+                playlist = render_m3u(
+                    selected,
+                    player_profile=player_profile,
+                    category_order=configuration.group_order,
+                    enforce_capabilities=True,
+                )
+
+                self.assertEqual(playlist.count("#EXTINF:"), 1)
+                self.assertIn("https://media.example.test/relay/fhd\n", playlist)
+                self.assertNotIn("https://media.example.test/relay/sd", playlist)
+
+    def test_full_playlist_keeps_excluding_restricted_addon_streams(self):
+        configuration = load_playlist_configuration()
+        restrictions = {
+            "dynamic": {"requires_dynamic_resolution": True},
+            "not_publishable": {"publishable_static": False},
+            "drm": {"drm": {"type": "widevine"}},
+            "cookie": {"request_headers": {"Cookie": "session=private"}},
+            "ssai": {"delivery_mode": "ssai"},
+        }
+        for name, restriction in restrictions.items():
+            with self.subTest(restriction=name):
+                client = FakeClient([{
+                    "id": "addon.channel",
+                    "name": "Example Channel",
+                    "stream_url": "https://media.example.test/relay/channel",
+                    "source_type": "stremio_addon",
+                    "status": "resolved",
+                    "publishable_static": True,
+                    **restriction,
+                }])
+
+                channels = fetch_channels(client, min_live_ttl=900)
+                selected = select_profile_channels(channels, configuration, "full")
+
+                self.assertEqual(len(channels), 1)
+                self.assertEqual(selected, [])
+                self.assertNotIn(
+                    "#EXTINF:",
+                    render_m3u(selected, enforce_capabilities=True),
+                )
+
     def test_loads_usable_channels_from_local_catalog(self):
         payload = [
             {
