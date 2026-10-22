@@ -55,6 +55,10 @@ https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi
 #EXTGRP:Variedades
 http://45.162.64.114/CANAL_DO_BOI/index.m3u8
@@ -158,10 +162,6 @@ https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="RedeTV.br" tvg-name="Rede TV! SD" tvg-logo="https://i.imgur.com/ZJgD38F.png", Rede TV! SD
 #EXTGRP:Variedades
 http://45.162.64.114/REDE_TV/index.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Nacional" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional
 #EXTGRP:Variedades
@@ -770,10 +770,6 @@ http://45.177.114.115/RIT_TV/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="RITtv.br" tvg-name="RIT TV Alternativo 2" tvg-logo="https://i.imgur.com/Unjs1wi.png", RIT TV Alternativo 2
 #EXTGRP:Alternativos
 http://170.83.49.66:8083/RITHD/index.m3u8
-
-#EXTINF:-1 group-title="Alternativos" tvg-id="SBTNacional.br" tvg-name="SBT Nacional Alternativo 1" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional Alternativo 1
-#EXTGRP:Alternativos
-https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="SESCTV.br" tvg-name="SESC TV Alternativo 1" tvg-logo="https://i.imgur.com/Mu8O6CV.png", SESC TV Alternativo 1
 #EXTGRP:Alternativos
