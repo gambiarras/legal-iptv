@@ -71,6 +71,10 @@ https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CanaldoBoi.br" tvg-name="Canal do Boi" tvg-logo="https://i.imgur.com/pVM5MhS.png", Canal do Boi
 #EXTGRP:Variedades
 http://45.162.64.114/CANAL_DO_BOI/index.m3u8
@@ -434,10 +438,6 @@ https://live.tcm10.com.br/tcm10hd/stream.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="TVBrusque.br" tvg-name="TV Brusque" tvg-logo="https://i.imgur.com/J2EAZPS.png", TV Brusque
 #EXTGRP:Notícia
 https://5ad482a77183d.streamlock.net/rodrigotvbrusque.com.br/5d880199c902eb4a1e8df00d/playlist.m3u8
-
-#EXTINF:-1 group-title="Notícia" tvg-id="TVSimCachoeiro.br" tvg-name="TV Sim Cachoeiro" tvg-logo="https://i.imgur.com/t5oUK3C.png", TV Sim Cachoeiro
-#EXTGRP:Notícia
-https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="VEJAPlusTV.br" tvg-name="VEJA+ TV" tvg-logo="https://i.imgur.com/n0pxHo4.png", VEJA+ TV
 #EXTGRP:Notícia
