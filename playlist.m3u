@@ -467,6 +467,10 @@ https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8
 #EXTGRP:Variedades
 https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTNovaMutum.br" tvg-name="SBT Nova Mutum" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d0/Logotipo_do_SBT_Nova_Mutum.png", SBT Nova Mutum
 #EXTGRP:Variedades
 https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8
@@ -764,6 +768,10 @@ https://run-rufb.otteravision.com/run/rufb/rufb_480.m3u8
 #EXTINF:-1 group-title="Filmes" tvg-id="SonyMovies.br" tvg-name="Sony Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_Movies_Logo.svg/500px-Sony_Movies_Logo.svg.png", Sony Movies
 #EXTGRP:Filmes
 http://45.162.64.114/SONY_MOVIES/index.m3u8
+
+#EXTINF:-1 group-title="Filmes" tvg-id="TelecineAction.br" tvg-name="Telecine Action" tvg-logo="https://i.imgur.com/BHYWG0h.png", Telecine Action
+#EXTGRP:Filmes
+http://46.151.196.223:14326/
 
 #EXTINF:-1 group-title="Filmes" tvg-id="" tvg-name="TVNA filmes" tvg-logo="https://i.postimg.cc/pTFJ912p/tvna-filmes.png", TVNA filmes
 #EXTGRP:Filmes
