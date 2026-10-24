@@ -295,10 +295,6 @@ https://5b33b873179a2.streamlock.net:1443/radiocamera/livestream/playlist.m3u8
 #EXTGRP:Variedades
 https://5b33b873179a2.streamlock.net:1443/mastertv/livestream/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="Catve2.br" tvg-name="Catve2" tvg-logo="https://i.imgur.com/qiVfsfB.png", Catve2
-#EXTGRP:Variedades
-https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="CBTV Play" tvg-logo="https://i.postimg.cc/htgntm8L/cbtv-play.jpg", CBTV Play
 #EXTGRP:Variedades
 https://stmv2.samcast.com.br/carla7379/carla7379/playlist.m3u8
@@ -463,10 +459,6 @@ https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8
 #EXTGRP:Variedades
 https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Nacional" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional
 #EXTGRP:Variedades
 https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8
@@ -599,6 +591,10 @@ https://stmv4.voxtvhd.com.br/tvgalinhachoca/tvgalinhachoca/playlist.m3u8
 #EXTGRP:Variedades
 http://45.162.64.114/TV_GAZETA/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="TVGuara.br" tvg-name="TV Guara" tvg-logo="https://i.imgur.com/8PErNBT.png", TV Guara
+#EXTGRP:Variedades
+https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="TVGuarapari.br" tvg-name="TV Guarapari" tvg-logo="https://i.imgur.com/eDNzwK0.png", TV Guarapari
 #EXTGRP:Variedades
 https://video.welltecnologia.com.br/tvguarapari/tvguarapari/playlist.m3u8
@@ -658,10 +654,6 @@ http://45.162.64.114/TV_SENADO/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVShowFortaleza.br" tvg-name="TV Show Fortaleza" tvg-logo="https://static.wixstatic.com/media/9af6b8_e963e864c8fb40d3954f5c1c8cab1b40~mv2.png", TV Show Fortaleza
 #EXTGRP:Variedades
 https://stmv8.samcast.com.br/raimundoanselmolimamororo1908/raimundoanselmolimamororo1908/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVSulBahia.br" tvg-name="TV Sul Bahia" tvg-logo="https://i.imgur.com/qM6nMWm.png", TV Sul Bahia
-#EXTGRP:Variedades
-https://live.cdn.upx.com/00046/myStream.sdp/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVVilaReal.br" tvg-name="TV Vila Real" tvg-logo="https://i.imgur.com/Z1uWe7g.png", TV Vila Real
 #EXTGRP:Variedades
@@ -971,6 +963,10 @@ http://45.177.114.114/HISTORY/index.m3u8
 #EXTGRP:Religião
 https://br.conectmy.com.br/DespertarTV/index.m3u8
 
+#EXTINF:-1 group-title="Religião" tvg-id="FonteTV.br" tvg-name="Fonte TV" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV
+#EXTGRP:Religião
+http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8
+
 #EXTINF:-1 group-title="Religião" tvg-id="GospelCartoon.br" tvg-name="Gospel Cartoon" tvg-logo="https://i.imgur.com/yxjPno5.png", Gospel Cartoon
 #EXTGRP:Religião
 https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8
@@ -1060,6 +1056,10 @@ http://181.78.197.59:8000/play/a081/index.m3u8
 http://181.78.197.59:8000/play/a07n/index.m3u8
 
 ### Canais Música
+
+#EXTINF:-1 group-title="Música" tvg-id="KpopTVPlay.br" tvg-name="KpopTV Play" tvg-logo="https://i.imgur.com/Tf0vweF.png", KpopTV Play
+#EXTGRP:Música
+https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
 
 #EXTINF:-1 group-title="Música" tvg-id="1072" tvg-name="Music Box Brazil" tvg-logo="https://i.imgur.com/CDPCF2X.png", Music Box Brazil
 #EXTGRP:Música
@@ -3995,6 +3995,10 @@ http://186.219.52.187/zoomoo/index.m3u8
 #EXTGRP:Alternativos
 http://170.83.16.50/FISH_TV/index.m3u8
 
+#EXTINF:-1 group-title="Alternativos" tvg-id="FonteTV.br" tvg-name="Fonte TV Alternativo 1" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV Alternativo 1
+#EXTGRP:Alternativos
+https://59fb88a1b1108.streamlock.net/fonte/_definst_/fontetv/chunklist_w1224511652.m3u8
+
 #EXTINF:-1 group-title="Alternativos" tvg-id="2363" tvg-name="History Alternativo 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 1
 #EXTGRP:Alternativos
 http://170.83.16.50/HISTORY/index.m3u8
@@ -4070,10 +4074,6 @@ http://170.83.49.66:8083/RITHD/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="608049aefa2b8ae93c2c3a63-668431d0702b9db9f817725e" tvg-name="RunTime Alternativo 1" tvg-logo="https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_1920x1080_0.jpg", RunTime Alternativo 1
 #EXTGRP:Alternativos
 https://run-rt-br.otteravision.com/run/rt_br/rt_br_720p_high.m3u8
-
-#EXTINF:-1 group-title="Alternativos" tvg-id="SBTNacional.br" tvg-name="SBT Nacional Alternativo 1" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional Alternativo 1
-#EXTGRP:Alternativos
-https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="697347be-9993-4e73-9686-7bd1a1c3e0e2" tvg-name="SBT News Alternativo 1" tvg-logo="https://i.postimg.cc/NF5jbN5d/sbt_news.jpg", SBT News Alternativo 1
 #EXTGRP:Alternativos
