@@ -963,6 +963,10 @@ http://45.177.114.114/HISTORY/index.m3u8
 #EXTGRP:Religião
 https://br.conectmy.com.br/DespertarTV/index.m3u8
 
+#EXTINF:-1 group-title="Religião" tvg-id="FonteTV.br" tvg-name="Fonte TV" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV
+#EXTGRP:Religião
+http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8
+
 #EXTINF:-1 group-title="Religião" tvg-id="GospelCartoon.br" tvg-name="Gospel Cartoon" tvg-logo="https://i.imgur.com/yxjPno5.png", Gospel Cartoon
 #EXTGRP:Religião
 https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8
@@ -1301,10 +1305,6 @@ https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cm
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzEzNTU1OS5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTM1NTU5Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTM1NTU5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiYXJiaWUtZHJlYW1ob3VzZS1hZHZlbnR1cmVzIn0.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Barney e Seus Amigos [HD]" tvg-logo="http://24horas.cc:80/images/bd416561a28691b4c15c34f33d027c36.jpg", Barney e Seus Amigos [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MTQ5NC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQxNDk0Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQxNDk0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiYXJuZXktZS1zZXVzLWFtaWdvcyJ9.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Beat Bugs [HD]" tvg-logo="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/eVC1dtvG9CqWSkxixoj8R5X7w1b.jpg", Beat Bugs [HD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzIyNTMyOC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMjI1MzI4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMjI1MzI4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiZWF0LWJ1Z3MifQ.m3u8
@@ -1320,10 +1320,6 @@ https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwi
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Beyblade Metal Fusion [HD]" tvg-logo="http://24horas.cc:80/images/5f15050da92808048cd848caca2e943d.jpg", Beyblade Metal Fusion [HD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MDU0Ni5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQ2Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQ2Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiZXlibGFkZS1tZXRhbC1mdXNpb24ifQ.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Beyblade V Force [HD]" tvg-logo="http://24horas.cc:80/images/9728f7becc817edde0c4878636bbfa80.png", Beyblade V Force [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MDU0NC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQ0Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQ0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiZXlibGFkZS12LWZvcmNlIn0.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Bibo Pai e Bobi Filho [HD]" tvg-logo="http://24horas.cc:80/images/2d54ec7f834940af9e8bd184a485a1cc.jpg", Bibo Pai e Bobi Filho [HD]
 #EXTGRP:Canais de TV
@@ -1428,10 +1424,6 @@ https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cm
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Copa do Brasil 3 [FHD]" tvg-logo="", Copa do Brasil 3 [FHD]
 #EXTGRP:Canais de TV
 https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MjA0MC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQyMDQwLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQyMDQwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3BhLWRvLWJyYXNpbC0zIn0.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Corrida Maluca [HD]" tvg-logo="http://24horas.cc:80/images/0db043eab05443c04f574f99cd2417a2.jpg", Corrida Maluca [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0NTM3OC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQ1Mzc4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQ1Mzc4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3JyaWRhLW1hbHVjYSJ9.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Cosmos Mundos Possiveis [HD]" tvg-logo="http://24horas.cc:80/images/7b25f679b359fb6568a7d753dc2a8078.jpg", Cosmos Mundos Possiveis [HD]
 #EXTGRP:Canais de TV
@@ -2429,10 +2421,6 @@ https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cm
 #EXTGRP:Canais de TV
 https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzcyMzgyLm0zdTgiLCJyb290IjoiaHR0cDovL3JldmVuZGFpbXBlcmlvLm5ldC9saXZlL0NsYXVkaW9zdjg2NzIvOUVWazFxMTAwMC83MjM4Mi5tM3U4IiwicmVuZXciOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzcyMzgyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0bnQtc2VyaWVzIn0.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Catolicas 2021 [HD]" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Catolicas 2021 [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MDU0MS5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQxLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNTQxLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0b3AtMTAwLWNhdG9saWNhcy0yMDIxIn0.m3u8
-
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Top 100 Catolicas 2024 [HD]" tvg-logo="http://24horas.cc:80/images/1355579d41e116191e150a6c66b8ff97.png", Top 100 Catolicas 2024 [HD]
 #EXTGRP:Canais de TV
 https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzI1Mzc3Mi5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMjUzNzcyLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMjUzNzcyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0b3AtMTAwLWNhdG9saWNhcy0yMDI0In0.m3u8
@@ -2480,10 +2468,6 @@ https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cm
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Transformers War for Cybertron O Nascer da Terra [HD]" tvg-logo="http://24horas.cc:80/images/5df13d1f7f56049a90170cc531fe4cb5.jpg", Transformers War for Cybertron O Nascer da Terra [HD]
 #EXTGRP:Canais de TV
 https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzEzNTUwMy5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTM1NTAzLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTM1NTAzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0cmFuc2Zvcm1lcnMtd2FyLWZvci1jeWJlcnRyb24tby1uYXNjZXItZGEtdGVycmEifQ.m3u8
-
-#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="Tres Espias Demais [HD]" tvg-logo="http://24horas.cc:80/images/b38fe2f6c5884c6d2de18e4cb0cf86b4.jpg", Tres Espias Demais [HD]
-#EXTGRP:Canais de TV
-https://frostview.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vcmV2ZW5kYWltcGVyaW8ubmV0L2xpdmUvQ2xhdWRpb3N2ODY3Mi85RVZrMXExMDAwLzE0MDc1OC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNzU4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9yZXZlbmRhaW1wZXJpby5uZXQvbGl2ZS9DbGF1ZGlvc3Y4NjcyLzlFVmsxcTEwMDAvMTQwNzU4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0cmVzLWVzcGlhcy1kZW1haXMifQ.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="5f997e44949bc70007a6941e" tvg-name="Turma da Monica [HD]" tvg-logo="http://24horas.cc:80/images/f28ffaadfd02314ad8bf6ab09f06cca7.jpg", Turma da Monica [HD]
 #EXTGRP:Canais de TV
@@ -2667,6 +2651,10 @@ https://video04.logicahost.com.br/tvavivandonacoes/tvavivandonacoes/playlist.m3u
 #EXTGRP:Religiosos
 https://video10.logicahost.com.br/canaanews/canaanews/playlist.m3u8
 
+#EXTINF:-1 group-title="Religiosos" tvg-id="" tvg-name="Rede Super TV" tvg-logo="https://i.postimg.cc/KzBqPDvc/rede-supertv.jpg", Rede Super TV
+#EXTGRP:Religiosos
+https://tv02.zas.media:1936/redesuper/redesuper/chunklist_w232136848.m3u8
+
 #EXTINF:-1 group-title="Religiosos" tvg-id="484" tvg-name="Rede Vida" tvg-logo="https://i.postimg.cc/C5n51dFq/rede-vidatv.png", Rede Vida
 #EXTGRP:Religiosos
 https://d12e4o88jd8gex.cloudfront.net/out/v1/cea3de0b76ac4e82ab8ee0fd3f17ce12/index_1.m3u8
@@ -2798,6 +2786,10 @@ http://186.219.52.187/zoomoo/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="FishTV.br" tvg-name="Fish TV Alternativo 1" tvg-logo="https://www.fishtv.com/public/site/images/logos/fishtv.svg", Fish TV Alternativo 1
 #EXTGRP:Alternativos
 http://170.83.16.50/FISH_TV/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="FonteTV.br" tvg-name="Fonte TV Alternativo 1" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV Alternativo 1
+#EXTGRP:Alternativos
+https://59fb88a1b1108.streamlock.net/fonte/_definst_/fontetv/chunklist_w1224511652.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="2363" tvg-name="History Alternativo 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png", History Alternativo 1
 #EXTGRP:Alternativos
