@@ -1,34 +1,36 @@
-import json
 import logging
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 
 from legal_iptv.clients.http_client import build_headers
-from legal_iptv.io import write_json_atomic
 from legal_iptv.models import Channel
+from legal_iptv.io.stream_status_store import (
+    _read_status_records,
+    _write_stream_status_records,
+)
+from legal_iptv.models.stream_validation import UrlValidation
+from legal_iptv.services.stream_status import (
+    TEMPORARILY_UNAVAILABLE_STATUS,
+    TERMINAL_OFFLINE_STATUSES,
+    _activity_status,
+    _is_fresh_record,
+    _record_activity,
+    _status_record,
+    _utc_now,
+    _validated_status_record,
+)
 from legal_iptv.services.extra_removal import update_extra_removals
 
 
 logger = logging.getLogger(__name__)
 
 FALLBACK_STATUSES = {403, 404, 405, 410}
-TERMINAL_OFFLINE_STATUSES = {404, 410}
 TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
-TEMPORARILY_UNAVAILABLE_STATUS = "temporarily_unavailable"
 
 _thread_local = threading.local()
-
-
-@dataclass(slots=True, frozen=True)
-class UrlValidation:
-    active: bool | None
-    http_status: int | None = None
-    error_type: str | None = None
 
 
 def _is_success_status(status_code: int) -> bool:
@@ -200,83 +202,6 @@ def filter_active_channels(
     return active_channels
 
 
-def _utc_now() -> datetime:
-    return datetime.now(timezone.utc)
-
-
-def _parse_datetime(value: str | None) -> datetime | None:
-    if not value:
-        return None
-
-    try:
-        parsed = datetime.fromisoformat(value)
-    except ValueError:
-        return None
-
-    if parsed.tzinfo is None:
-        return parsed.replace(tzinfo=timezone.utc)
-
-    return parsed
-
-
-def _activity_status(is_active: bool | None) -> str:
-    if is_active is True:
-        return "active"
-    if is_active is False:
-        return "offline"
-    return "unknown"
-
-
-def _previous_failure_count(record: dict | None) -> int:
-    if not isinstance(record, dict):
-        return 0
-
-    value = record.get("consecutive_failures")
-    if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
-        return value
-
-    return 0 if record.get("active") is True else 1
-
-
-def _read_status_records(status_file: Path) -> dict[str, dict]:
-    if not status_file.exists():
-        return {}
-
-    try:
-        payload = json.loads(status_file.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        logger.warning("Failed to read stream status file path=%s", status_file)
-        return {}
-
-    records = payload.get("urls", {})
-    if not isinstance(records, dict):
-        return {}
-
-    return {url: record for url, record in records.items() if isinstance(record, dict)}
-
-
-def _is_fresh_record(record: dict, *, max_age_seconds: int) -> bool:
-    checked_at = _parse_datetime(record.get("checked_at"))
-    if checked_at is None:
-        return False
-
-    if checked_at < _utc_now() - timedelta(seconds=max_age_seconds):
-        return False
-
-    return record.get("active") in {True, False, None}
-
-
-def _record_activity(record: dict | None) -> bool | None:
-    if not isinstance(record, dict):
-        return False
-
-    active = record.get("active")
-    if active is True or active is False or active is None:
-        return active
-
-    return False
-
-
 def _url_metadata(channels: list[Channel]) -> dict[str, dict]:
     metadata: dict[str, dict] = {}
 
@@ -312,119 +237,6 @@ def _url_metadata(channels: list[Channel]) -> dict[str, dict]:
         }
         for url, item in metadata.items()
     }
-
-
-def _status_record(
-    is_active: bool | None,
-    *,
-    checked_at: str,
-    metadata: dict | None = None,
-    validation: str = "validated",
-    status: str | None = None,
-    consecutive_failures: int = 0,
-    http_status: int | None = None,
-    error_type: str | None = None,
-) -> dict:
-    record = {
-        "active": is_active,
-        "status": status or _activity_status(is_active),
-        "checked_at": checked_at,
-        "validation": validation,
-        "consecutive_failures": consecutive_failures,
-        **(metadata or {}),
-    }
-    if http_status is not None:
-        record["http_status"] = http_status
-    if error_type:
-        record["error_type"] = error_type
-    return record
-
-
-def _validated_status_record(
-    result: UrlValidation,
-    previous_record: dict | None,
-    *,
-    checked_at: str,
-    metadata: dict,
-    failure_threshold: int,
-    allow_suppression: bool,
-) -> dict:
-    if result.active is True:
-        return _status_record(
-            True,
-            checked_at=checked_at,
-            metadata=metadata,
-            consecutive_failures=0,
-            http_status=result.http_status,
-        )
-
-    consecutive_failures = _previous_failure_count(previous_record) + 1
-    if result.active is False and allow_suppression:
-        active: bool | None = False
-        status = "offline"
-    elif allow_suppression and consecutive_failures >= failure_threshold:
-        active = False
-        status = TEMPORARILY_UNAVAILABLE_STATUS
-    else:
-        active = None
-        status = "unknown"
-
-    return _status_record(
-        active,
-        checked_at=checked_at,
-        metadata=metadata,
-        status=status,
-        consecutive_failures=consecutive_failures,
-        http_status=result.http_status,
-        error_type=result.error_type,
-    )
-
-
-def _write_stream_status_records(
-    status_file: Path,
-    records_by_url: dict[str, dict],
-    *,
-    generated_at: str,
-    validated_urls: int,
-    cached_urls: int,
-) -> None:
-    status_counts = {
-        "active": 0,
-        "offline": 0,
-        "unknown": 0,
-        TEMPORARILY_UNAVAILABLE_STATUS: 0,
-    }
-    source_counts: dict[str, int] = {}
-    source_type_counts: dict[str, int] = {}
-
-    for record in records_by_url.values():
-        status = record.get("status")
-        if status in status_counts:
-            status_counts[status] += 1
-
-        for source in record.get("sources", []):
-            source_counts[source] = source_counts.get(source, 0) + 1
-
-        for source_type in record.get("source_types", []):
-            source_type_counts[source_type] = source_type_counts.get(source_type, 0) + 1
-
-    payload = {
-        "generated_at": generated_at,
-        "summary": {
-            "total_urls": len(records_by_url),
-            "validated_urls": validated_urls,
-            "cached_urls": cached_urls,
-            "status_counts": status_counts,
-            "source_counts": source_counts,
-            "source_type_counts": source_type_counts,
-        },
-        "urls": {
-            url: records_by_url[url]
-            for url in sorted(records_by_url)
-        },
-    }
-
-    write_json_atomic(status_file, payload)
 
 
 def write_stream_status(
