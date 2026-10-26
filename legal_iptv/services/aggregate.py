@@ -10,8 +10,8 @@ from legal_iptv.io import write_json_atomic, write_text_atomic
 from legal_iptv.models import Channel
 from legal_iptv.services.epg_mapper import (
     enrich_epg_metadata,
+    load_local_xmltv_aliases,
     load_xmltv_aliases,
-    parse_xmltv_aliases,
 )
 from legal_iptv.services.guide import ensure_guide
 from legal_iptv.services.link_validator import (
@@ -117,12 +117,7 @@ def run_aggregation(config: AppConfig) -> None:
             aliases = {}
             if config.guide_output_path.exists():
                 try:
-                    aliases.update(
-                        parse_xmltv_aliases(
-                            config.guide_output_path.read_bytes(),
-                            require_programmes=True,
-                        )
-                    )
+                    aliases.update(load_local_xmltv_aliases(config.guide_output_path))
                 except Exception as exc:
                     logger.warning(
                         "Local guide cannot be used for aliases error_type=%s",

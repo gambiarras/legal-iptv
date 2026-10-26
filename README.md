@@ -124,6 +124,17 @@ Only offline statuses newer than `--stream-status-max-age` are applied, so stale
 
 ## Development
 
+Local XMLTV channel aliases are indexed next to the guide in
+`.cache/<guide-filename>.aliases.json`. Repeated runs verify the guide's SHA-256
+and reuse the index without parsing XML again. Guide content changes, index
+version changes, and invalid indexes trigger a rebuild. An unwritable cache
+does not prevent playlist generation.
+
+This local index is separate from `epg-cache.json`, which caches remote aliases.
+It does not skip guide freshness or temporal coverage validation, and does not
+change channel selection or remote fallback precedence. The index is disposable,
+ignored by Git, and should not be published with the playlist.
+
 Run the unit tests:
 
 ```bash

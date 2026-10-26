@@ -1,12 +1,16 @@
 import json
 import tempfile
 import unittest
+from dataclasses import replace
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
 
 from legal_iptv.config import AppConfig
 from legal_iptv.models import Channel
 from legal_iptv.services.aggregate import run_aggregation
+from legal_iptv.services.epg_mapper import EPGMapping, parse_xmltv_aliases
+from legal_iptv.services.guide import ensure_guide
 
 
 def make_config(
@@ -61,6 +65,111 @@ class AggregateTest(unittest.TestCase):
         )
         self.epg_patcher.start()
         self.addCleanup(self.epg_patcher.stop)
+
+    def test_local_alias_cache_preserves_playlist_fallback_and_guide_validation(self):
+        now = datetime.now(timezone.utc)
+        start = (now - timedelta(hours=1)).strftime("%Y%m%d%H%M%S %z")
+        middle = (now + timedelta(hours=1)).strftime("%Y%m%d%H%M%S %z")
+        stop = (now + timedelta(hours=2)).strftime("%Y%m%d%H%M%S %z")
+        guide = (
+            '<tv><channel id="Fixture.local"><display-name>Fixture Local</display-name>'
+            f'</channel><programme channel="Fixture.local" start="{start}" stop="{middle}">'
+            '<title>Present</title></programme><programme channel="Fixture.local" '
+            f'start="{middle}" stop="{stop}"><title>Future</title></programme></tv>'
+        )
+        catalog = [
+            {
+                "id": f"fixture.{name}",
+                "name": f"Fixture {name}",
+                "stream_url": f"https://example.test/{name}.m3u8",
+                "status": "resolved",
+                "source_type": "json_catalog",
+                "group": "general",
+            }
+            for name in ("Local", "Remote")
+        ]
+        remote_aliases = {
+            "fixture local": EPGMapping("Wrong.remote"),
+            "fixture remote": EPGMapping("Fixture.remote"),
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            config = replace(make_config(temp_dir, profile="full"), ensure_guide_enabled=True)
+            config.guide_output_path.write_text(guide, encoding="utf-8")
+            config.live_catalog_file.write_text(json.dumps(catalog), encoding="utf-8")
+            with patch(
+                "legal_iptv.services.aggregate.extra_channels.fetch_channels", return_value=[]
+            ), patch(
+                "legal_iptv.services.aggregate.iptv_org.fetch_channels", return_value=[]
+            ), patch(
+                "legal_iptv.services.aggregate.load_xmltv_aliases", return_value=remote_aliases
+            ), patch("legal_iptv.clients.http_client.requests.Session.get") as network:
+                with patch(
+                    "legal_iptv.services.aggregate.ensure_guide", wraps=ensure_guide
+                ) as validate_guide, patch(
+                    "legal_iptv.services.epg_mapper.parse_xmltv_aliases",
+                    wraps=parse_xmltv_aliases,
+                ) as parser:
+                    run_aggregation(config)
+                    cold_playlist = config.output_path.read_bytes()
+                    cold_meta = json.loads(config.meta_output_path.read_text())
+                    run_aggregation(config)
+                    warm_playlist = config.output_path.read_bytes()
+                    warm_meta = json.loads(config.meta_output_path.read_text())
+
+                self.assertEqual(parser.call_count, 1)
+                self.assertEqual(validate_guide.call_count, 2)
+                self.assertEqual(cold_playlist, warm_playlist)
+                self.assertIn(b'tvg-id="Fixture.local"', warm_playlist)
+                self.assertIn(b'tvg-id="Fixture.remote"', warm_playlist)
+                self.assertNotIn(b"Wrong.remote", warm_playlist)
+                self.assertEqual(config.guide_output_path.read_text(), guide)
+                for meta in (cold_meta, warm_meta):
+                    meta.pop("generated_at")
+                    meta.pop("timings_seconds")
+                self.assertEqual(cold_meta, warm_meta)
+
+                expired = guide.replace(start, "20000101000000 +0000")
+                expired = expired.replace(middle, "20000101010000 +0000")
+                expired = expired.replace(stop, "20000101020000 +0000")
+                config.guide_output_path.write_text(expired)
+                with patch("legal_iptv.services.guide.load_epg_providers", return_value=[]):
+                    with self.assertRaisesRegex(RuntimeError, "No EPG provider"):
+                        run_aggregation(config)
+                self.assertEqual(config.output_path.read_bytes(), warm_playlist)
+                network.assert_not_called()
+
+    def test_invalid_local_guide_uses_remote_aliases_after_cache_was_created(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            config = make_config(temp_dir, profile="full")
+            config.guide_output_path.write_text(
+                '<tv><channel id="Fixture.local"><display-name>Fixture Local</display-name>'
+                '</channel><programme channel="Fixture.local"/></tv>'
+            )
+            config.live_catalog_file.write_text(json.dumps([{
+                "id": "fixture.local",
+                "name": "Fixture Local",
+                "stream_url": "https://example.test/local.m3u8",
+                "status": "resolved",
+                "source_type": "json_catalog",
+            }]))
+            with patch(
+                "legal_iptv.services.aggregate.extra_channels.fetch_channels", return_value=[]
+            ), patch(
+                "legal_iptv.services.aggregate.iptv_org.fetch_channels", return_value=[]
+            ), patch(
+                "legal_iptv.services.aggregate.load_xmltv_aliases",
+                return_value={"fixture local": EPGMapping("Fixture.remote")},
+            ):
+                run_aggregation(config)
+                self.assertIn('tvg-id="Fixture.local"', config.output_path.read_text())
+                config.guide_output_path.write_text("<invalid")
+                with self.assertLogs("legal_iptv.services.aggregate", level="WARNING"):
+                    run_aggregation(config)
+                playlist = config.output_path.read_text()
+
+            self.assertIn('tvg-id="Fixture.remote"', playlist)
+            self.assertNotIn('tvg-id="Fixture.local"', playlist)
 
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")

@@ -1,4 +1,5 @@
 import gzip
+import hashlib
 import json
 import logging
 import re
@@ -19,6 +20,7 @@ from legal_iptv.services.epg_sources import EPG_INDEX_URLS
 
 
 ALIASES_RESOURCE_NAME = "epg_aliases.json"
+LOCAL_XMLTV_ALIASES_CACHE_VERSION = 1
 GENERIC_TVG_ID_PATTERN = re.compile(r"^(script[_-]?catalog|youtube|live)[._-]", re.IGNORECASE)
 DISPLAY_NAME_PREFIX_PATTERN = re.compile(r"^[A-Z]{2}\s+-\s+")
 VARIANT_SUFFIX_PATTERN = re.compile(
@@ -134,6 +136,87 @@ def load_xmltv_aliases(
             return stale_aliases
 
     return aliases
+
+
+def load_local_xmltv_aliases(guide_path: Path) -> dict[str, EPGMapping]:
+    """Load programmed channel aliases, reusing an index of identical guide bytes.
+
+    This index does not validate temporal coverage; guide validation remains
+    the caller's responsibility. Cache failures fall back to parsing the guide.
+    """
+    cache_file = guide_path.parent / ".cache" / f"{guide_path.name}.aliases.json"
+    cached = _read_local_xmltv_aliases_cache(cache_file)
+
+    with guide_path.open("rb") as guide:
+        if cached is not None:
+            content_sha256, aliases = cached
+            if hashlib.file_digest(guide, "sha256").hexdigest() == content_sha256:
+                logger.info(
+                    "Loaded local EPG aliases from cache aliases=%s", len(aliases)
+                )
+                return aliases
+            guide.seek(0)
+        payload = guide.read()
+
+    aliases = parse_xmltv_aliases(payload, require_programmes=True)
+    cache_payload = {
+        "version": LOCAL_XMLTV_ALIASES_CACHE_VERSION,
+        "require_programmes": True,
+        "content_sha256": hashlib.sha256(payload).hexdigest(),
+        "aliases": {
+            key: {"tvg_id": mapping.tvg_id, "display_name": mapping.display_name}
+            for key, mapping in sorted(aliases.items())
+        },
+    }
+    try:
+        write_json_atomic(cache_file, cache_payload)
+    except OSError as exc:
+        logger.warning(
+            "Cannot write local EPG aliases cache error_type=%s", type(exc).__name__
+        )
+    return aliases
+
+
+def _read_local_xmltv_aliases_cache(
+    cache_file: Path,
+) -> tuple[str, dict[str, EPGMapping]] | None:
+    """Reject incomplete or incompatible indexes instead of using partial aliases."""
+    try:
+        payload = json.loads(cache_file.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return None
+
+    if not isinstance(payload, dict):
+        return None
+    if (
+        type(payload.get("version")) is not int
+        or payload["version"] != LOCAL_XMLTV_ALIASES_CACHE_VERSION
+        or payload.get("require_programmes") is not True
+    ):
+        return None
+    content_sha256 = payload.get("content_sha256")
+    if not isinstance(content_sha256, str) or not re.fullmatch(
+        r"[0-9a-f]{64}", content_sha256
+    ):
+        return None
+    raw_aliases = payload.get("aliases")
+    if not isinstance(raw_aliases, dict):
+        return None
+
+    aliases: dict[str, EPGMapping] = {}
+    for key, item in raw_aliases.items():
+        if not isinstance(key, str) or not key or not isinstance(item, dict):
+            return None
+        tvg_id = item.get("tvg_id")
+        display_name = item.get("display_name")
+        if (
+            not isinstance(tvg_id, str)
+            or not tvg_id
+            or (display_name is not None and not isinstance(display_name, str))
+        ):
+            return None
+        aliases[key] = EPGMapping(tvg_id=tvg_id, display_name=display_name)
+    return content_sha256, aliases
 
 
 def _fetch_xmltv_aliases(client: HttpClient) -> dict[str, EPGMapping]:
