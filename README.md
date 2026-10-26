@@ -151,6 +151,8 @@ Counters cover the lifetime of a retained series, starting with the first real
 observation under the new format. They are sampled HTTP results, not continuous
 uptime, manifest validation or confirmed playback on a device. HEAD/GET attempt
 counts exclude redirects performed internally by Requests.
+Channels that never reach validation, such as failed discovery/resolution
+results, are not counted by this history.
 
 Inactive series expire after 30 days. Each transport/channel/provider collection
 retains at most 5,000 recently checked series, with at most 20 recent events per
@@ -163,6 +165,12 @@ History and rankings omit transport URLs, headers and free-form exception
 messages. The compatibility `urls` map still contains operational URLs: keep
 the snapshot private and out of Git/public artifacts. No dashboard deployment
 or change in verification frequency is required for this delivery.
+
+`playlist.meta.json` also separates the input/output counts of stream filtering
+from `selection_filtered_channels` (profile exclusions, provider/variant choice
+and deduplication). The legacy `deduplicated_channels` field remains an alias
+for selection removals; it is not a count of URL duplicates alone. These metrics
+do not alter the channels selected for the playlist.
 
 ---
 

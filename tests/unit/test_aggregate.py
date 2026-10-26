@@ -58,6 +58,45 @@ def make_channel(id: str, stream_url: str) -> Channel:
 
 
 class AggregateTest(unittest.TestCase):
+    def test_full_profile_separates_offline_discard_from_selection(self):
+        preferred = make_channel("fixture.live", "https://example.test/live.m3u8")
+        preferred.name = "Fixture"
+        preferred.tvg_id = "Fixture.br"
+        duplicate = replace(preferred, id="fixture.extra", source="extra")
+        offline = make_channel("fixture.offline", "https://example.test/offline.m3u8")
+        with tempfile.TemporaryDirectory() as directory:
+            config = make_config(directory, profile="full")
+            with (
+                patch(
+                    "legal_iptv.services.aggregate.extra_channels.fetch_channels",
+                    return_value=[duplicate],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.iptv_org.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.live_stream_catalog.fetch_channels",
+                    return_value=[preferred, offline],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.filter_cached_offline_channels",
+                    return_value=[preferred, duplicate],
+                ),
+            ):
+                run_aggregation(config)
+            metadata = json.loads(config.meta_output_path.read_text())
+            playlist = config.output_path.read_text()
+
+        self.assertEqual(metadata["total_input_channels"], 3)
+        self.assertEqual(metadata["selected_before_stream_filter"], 3)
+        self.assertEqual(metadata["selected_after_stream_filter"], 2)
+        self.assertEqual(metadata["stream_filtered_channels"], 1)
+        self.assertEqual(metadata["selection_filtered_channels"], 1)
+        self.assertEqual(metadata["selected_channels"], 1)
+        self.assertIn(preferred.stream_url, playlist)
+        self.assertNotIn(offline.stream_url, playlist)
+
     def setUp(self):
         self.epg_patcher = patch(
             "legal_iptv.services.aggregate.load_xmltv_aliases",
@@ -94,22 +133,35 @@ class AggregateTest(unittest.TestCase):
         }
 
         with tempfile.TemporaryDirectory() as temp_dir:
-            config = replace(make_config(temp_dir, profile="full"), ensure_guide_enabled=True)
+            config = replace(
+                make_config(temp_dir, profile="full"), ensure_guide_enabled=True
+            )
             config.guide_output_path.write_text(guide, encoding="utf-8")
             config.live_catalog_file.write_text(json.dumps(catalog), encoding="utf-8")
-            with patch(
-                "legal_iptv.services.aggregate.extra_channels.fetch_channels", return_value=[]
-            ), patch(
-                "legal_iptv.services.aggregate.iptv_org.fetch_channels", return_value=[]
-            ), patch(
-                "legal_iptv.services.aggregate.load_xmltv_aliases", return_value=remote_aliases
-            ), patch("legal_iptv.clients.http_client.requests.Session.get") as network:
-                with patch(
-                    "legal_iptv.services.aggregate.ensure_guide", wraps=ensure_guide
-                ) as validate_guide, patch(
-                    "legal_iptv.services.epg_mapper.parse_xmltv_aliases",
-                    wraps=parse_xmltv_aliases,
-                ) as parser:
+            with (
+                patch(
+                    "legal_iptv.services.aggregate.extra_channels.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.iptv_org.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.load_xmltv_aliases",
+                    return_value=remote_aliases,
+                ),
+                patch("legal_iptv.clients.http_client.requests.Session.get") as network,
+            ):
+                with (
+                    patch(
+                        "legal_iptv.services.aggregate.ensure_guide", wraps=ensure_guide
+                    ) as validate_guide,
+                    patch(
+                        "legal_iptv.services.epg_mapper.parse_xmltv_aliases",
+                        wraps=parse_xmltv_aliases,
+                    ) as parser,
+                ):
                     run_aggregation(config)
                     cold_playlist = config.output_path.read_bytes()
                     cold_meta = json.loads(config.meta_output_path.read_text())
@@ -133,7 +185,9 @@ class AggregateTest(unittest.TestCase):
                 expired = expired.replace(middle, "20000101010000 +0000")
                 expired = expired.replace(stop, "20000101020000 +0000")
                 config.guide_output_path.write_text(expired)
-                with patch("legal_iptv.services.guide.load_epg_providers", return_value=[]):
+                with patch(
+                    "legal_iptv.services.guide.load_epg_providers", return_value=[]
+                ):
                     with self.assertRaisesRegex(RuntimeError, "No EPG provider"):
                         run_aggregation(config)
                 self.assertEqual(config.output_path.read_bytes(), warm_playlist)
@@ -146,20 +200,32 @@ class AggregateTest(unittest.TestCase):
                 '<tv><channel id="Fixture.local"><display-name>Fixture Local</display-name>'
                 '</channel><programme channel="Fixture.local"/></tv>'
             )
-            config.live_catalog_file.write_text(json.dumps([{
-                "id": "fixture.local",
-                "name": "Fixture Local",
-                "stream_url": "https://example.test/local.m3u8",
-                "status": "resolved",
-                "source_type": "json_catalog",
-            }]))
-            with patch(
-                "legal_iptv.services.aggregate.extra_channels.fetch_channels", return_value=[]
-            ), patch(
-                "legal_iptv.services.aggregate.iptv_org.fetch_channels", return_value=[]
-            ), patch(
-                "legal_iptv.services.aggregate.load_xmltv_aliases",
-                return_value={"fixture local": EPGMapping("Fixture.remote")},
+            config.live_catalog_file.write_text(
+                json.dumps(
+                    [
+                        {
+                            "id": "fixture.local",
+                            "name": "Fixture Local",
+                            "stream_url": "https://example.test/local.m3u8",
+                            "status": "resolved",
+                            "source_type": "json_catalog",
+                        }
+                    ]
+                )
+            )
+            with (
+                patch(
+                    "legal_iptv.services.aggregate.extra_channels.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.iptv_org.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.load_xmltv_aliases",
+                    return_value={"fixture local": EPGMapping("Fixture.remote")},
+                ),
             ):
                 run_aggregation(config)
                 self.assertIn('tvg-id="Fixture.local"', config.output_path.read_text())
@@ -286,7 +352,9 @@ class AggregateTest(unittest.TestCase):
             source="iptv_org",
             status=None,
         )
-        selected_channel = make_channel("same.channel", "https://example.test/live.m3u8")
+        selected_channel = make_channel(
+            "same.channel", "https://example.test/live.m3u8"
+        )
         extra_mock.return_value = []
         iptv_mock.return_value = [duplicate_low_priority]
         live_mock.return_value = [selected_channel]

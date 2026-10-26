@@ -16,6 +16,19 @@ def make_channel(source: str, id: str) -> Channel:
 
 
 class MetadataTest(unittest.TestCase):
+    def test_counts_stream_filter_and_later_selection_separately(self):
+        channels = [make_channel("extra", str(i)) for i in range(5)]
+        metadata = build_run_metadata(
+            channels,
+            channels[:2],
+            selected_before_stream_filter=5,
+            selected_after_stream_filter=4,
+        ).to_dict()
+        self.assertEqual(metadata["stream_filtered_channels"], 1)
+        self.assertEqual(metadata["selection_filtered_channels"], 2)
+        self.assertEqual(metadata["selected_after_stream_filter"], 4)
+        self.assertEqual(metadata["deduplicated_channels"], 2)
+
     def test_builds_rich_run_metadata(self):
         all_channels = [
             make_channel("extra", "extra"),

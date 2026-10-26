@@ -18,6 +18,7 @@ def build_run_metadata(
     *,
     source_errors: dict[str, str] | None = None,
     selected_before_stream_filter: int | None = None,
+    selected_after_stream_filter: int | None = None,
     timings_seconds: dict[str, float] | None = None,
     epg_aliases_count: int = 0,
 ) -> RunMetadata:
@@ -26,6 +27,13 @@ def build_run_metadata(
         if selected_before_stream_filter is None
         else selected_before_stream_filter
     )
+    selected_after_filter = (
+        len(selected)
+        if selected_after_stream_filter is None
+        else selected_after_stream_filter
+    )
+    stream_filtered = max(0, selected_before_filter - selected_after_filter)
+    selection_filtered = max(0, len(all_channels) - stream_filtered - len(selected))
 
     input_by_source = _count_by_source(all_channels)
 
@@ -38,8 +46,10 @@ def build_run_metadata(
         live_stream_catalog_channels=input_by_source.get("live_stream_catalog", 0),
         source_errors=source_errors or {},
         selected_before_stream_filter=selected_before_filter,
-        stream_filtered_channels=max(0, selected_before_filter - len(selected)),
-        deduplicated_channels=max(0, len(all_channels) - selected_before_filter),
+        selected_after_stream_filter=selected_after_filter,
+        stream_filtered_channels=stream_filtered,
+        selection_filtered_channels=selection_filtered,
+        deduplicated_channels=selection_filtered,
         selected_by_source=_count_by_source(selected),
         timings_seconds=timings_seconds or {},
         epg_aliases_count=epg_aliases_count,

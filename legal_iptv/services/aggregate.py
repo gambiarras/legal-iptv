@@ -23,7 +23,6 @@ from legal_iptv.services.profile_config import load_playlist_configuration
 from legal_iptv.services.profile_selector import select_profile_channels
 from legal_iptv.sources import extra_channels, iptv_org, live_stream_catalog
 
-
 logger = logging.getLogger(__name__)
 PRIVATE_ERROR_PATTERN = re.compile(
     r"https?://|(?:token|cookie|authorization|bearer|signature)=?",
@@ -150,11 +149,10 @@ def run_aggregation(config: AppConfig) -> None:
                     player_profile=config.player_profile,
                 ),
             )
-            selected_before_stream_filter = len(selected)
         else:
             selected = enriched_channels
-            selected_before_stream_filter = 0
 
+        selected_before_stream_filter = len(selected)
         if config.validate_streams:
             selected = _timed(
                 timings,
@@ -180,6 +178,7 @@ def run_aggregation(config: AppConfig) -> None:
                 ),
             )
 
+        selected_after_stream_filter = len(selected)
         if config.profile != "base":
             selected = _timed(
                 timings,
@@ -191,7 +190,6 @@ def run_aggregation(config: AppConfig) -> None:
                     player_profile=config.player_profile,
                 ),
             )
-            selected_before_stream_filter = len(selected)
 
         guide_url = config.guide_url or playlist_configuration.guide_url
         playlist = _timed(
@@ -219,6 +217,7 @@ def run_aggregation(config: AppConfig) -> None:
             selected,
             source_errors=source_errors,
             selected_before_stream_filter=selected_before_stream_filter,
+            selected_after_stream_filter=selected_after_stream_filter,
             timings_seconds=timings,
             epg_aliases_count=len(xmltv_aliases),
         )
