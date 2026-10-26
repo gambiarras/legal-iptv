@@ -120,6 +120,50 @@ python3.11 -m legal_iptv \
 
 Only offline statuses newer than `--stream-status-max-age` are applied, so stale failures do not block channels forever.
 
+### Validation history and metrics
+
+`stream-status.json` now uses an additive `schema_version: 2`. Existing `urls`,
+`active`, `checked_at` and summary counts remain available to older consumers.
+Temporary suppression also expires according to `--stream-status-max-age`;
+missing, invalid or future observation timestamps do not suppress channels.
+
+The snapshot provides:
+
+| Field | Meaning |
+| --- | --- |
+| `summary.validation_metrics` | This run's actual checks, cache hits, HTTP status/error counts, measured duration and HEAD/GET call attempts |
+| `summary.top_failing_channels` | Up to 20 channel/provider/feed identities, ordered by unsuccessful observation count, with sample counts and rates |
+| `summary.provider_metrics` | Observation totals and rates attributed to each provider |
+| `history.transports` | History for each exact URL, identified by SHA-256 |
+| `history.channels` | History keyed by provider, logical channel and feed, independent of URL/variant rotation when that identity is available |
+| `history.providers` | History attributed to providers, without assuming a commercial identity from adapter type |
+
+Only real checks increment history. Reusing a cached result preserves its
+original timestamp and does not count as another success. HTTP 404/410 results
+are recorded separately from inconclusive failures such as timeout, 429 or 503.
+Repeated inconclusive checks can trigger temporary suppression, while their
+history remains `unknown_checks`, not confirmed `offline_checks`.
+
+One shared URL is one global observation; attribution to several channels or
+providers can make their totals differ from the global total. Duplicate entries
+for the same provider/logical channel/feed do not multiply that attribution.
+Counters cover the lifetime of a retained series, starting with the first real
+observation under the new format. They are sampled HTTP results, not continuous
+uptime, manifest validation or confirmed playback on a device. HEAD/GET attempt
+counts exclude redirects performed internally by Requests.
+
+Inactive series expire after 30 days. Each transport/channel/provider collection
+retains at most 5,000 recently checked series, with at most 20 recent events per
+series; recent events also expire after 30 days. Cumulative counters for a
+continuously observed series can cover a longer period. Legacy snapshots do not
+create fabricated historical observations. Invalid history is rebuilt without
+discarding valid current URL state.
+
+History and rankings omit transport URLs, headers and free-form exception
+messages. The compatibility `urls` map still contains operational URLs: keep
+the snapshot private and out of Git/public artifacts. No dashboard deployment
+or change in verification frequency is required for this delivery.
+
 ---
 
 ## Development

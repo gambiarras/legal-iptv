@@ -9,13 +9,13 @@ import requests
 
 from legal_iptv.models import Channel
 from legal_iptv.services.link_validator import (
+    UrlValidation,
     filter_active_channels,
     filter_cached_offline_channels,
     inspect_url,
     is_url_active,
     load_offline_urls,
     refresh_stream_status,
-    UrlValidation,
     validate_urls,
 )
 
@@ -49,6 +49,96 @@ def make_channel(
 
 class LinkValidatorTest(unittest.TestCase):
     @patch("legal_iptv.services.link_validator._get_session")
+    def test_probe_measures_attempts_and_duration_and_closes_head(
+        self, get_session_mock
+    ):
+        session = Mock()
+        session.head.return_value = FakeResponse(405)
+        session.get.return_value = FakeResponse(206)
+        get_session_mock.return_value = session
+        with patch(
+            "legal_iptv.services.link_validator.time.perf_counter",
+            side_effect=[10, 10.025],
+        ):
+            result = inspect_url("https://example.test/live.m3u8", timeout=1)
+        self.assertEqual(result.duration_ms, 25)
+        self.assertEqual(result.request_count, 2)
+        self.assertTrue(session.head.return_value.closed)
+        self.assertTrue(session.get.return_value.closed)
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_history_tracks_unknown_suppression_and_cache_without_inflating_checks(
+        self, validate_details
+    ):
+        url = "https://example.test/metrics.m3u8"
+        channel = make_channel("metrics", url)
+        channel.provider_id = "provider-a"
+        channel.logical_channel_id = "logical-a"
+        validate_details.side_effect = [
+            {url: UrlValidation(None, 503)},
+            {url: UrlValidation(None, 503)},
+            {url: UrlValidation(True, 200)},
+            {},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "stream-status.json"
+            arguments = dict(
+                status_file=path, max_workers=1, timeout=1, max_age_seconds=14400
+            )
+            refresh_stream_status([channel], **arguments)
+            refresh_stream_status([channel], **arguments)
+            suppressed = json.loads(path.read_text())
+            refresh_stream_status([channel], **arguments)
+            recovered = json.loads(path.read_text())
+            refresh_stream_status([channel], **arguments)
+            cached = json.loads(path.read_text())
+
+        self.assertEqual(suppressed["schema_version"], 2)
+        self.assertEqual(
+            suppressed["summary"]["validation_metrics"]["suppressed_urls"], 1
+        )
+        series = next(iter(suppressed["history"]["channels"].values()))
+        self.assertEqual(series["unknown_checks"], 2)
+        self.assertEqual(series["offline_checks"], 0)
+        self.assertEqual(cached["history"], recovered["history"])
+        self.assertEqual(
+            cached["urls"][url]["checked_at"], recovered["urls"][url]["checked_at"]
+        )
+        self.assertEqual(cached["summary"]["validation_metrics"]["checks"], 0)
+        self.assertEqual(cached["summary"]["provider_metrics"][0]["checks"], 3)
+        self.assertEqual(cached["summary"]["provider_counts"], {"provider-a": 1})
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_corrupt_history_does_not_discard_valid_legacy_cache(
+        self, validate_details
+    ):
+        url = "https://example.test/cached.m3u8"
+        checked_at = datetime.now(timezone.utc).isoformat()
+        validate_details.return_value = {}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "stream-status.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "history": [],
+                        "urls": {url: {"active": True, "checked_at": checked_at}},
+                    }
+                )
+            )
+            active = refresh_stream_status(
+                [make_channel("cached", url)],
+                status_file=path,
+                max_workers=1,
+                timeout=1,
+                max_age_seconds=14400,
+            )
+            payload = json.loads(path.read_text())
+        self.assertEqual(len(active), 1)
+        self.assertEqual(payload["urls"][url]["checked_at"], checked_at)
+        self.assertEqual(payload["history"]["channels"], {})
+        self.assertEqual(payload["summary"]["validation_metrics"]["checks"], 0)
+
+    @patch("legal_iptv.services.link_validator._get_session")
     def test_url_is_active_when_head_succeeds(self, get_session_mock: Mock):
         session = Mock()
         session.head.return_value = FakeResponse(200)
@@ -80,7 +170,9 @@ class LinkValidatorTest(unittest.TestCase):
         session.get.assert_called_once()
 
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_status_is_unknown_when_head_is_rate_limited(self, get_session_mock: Mock):
+    def test_url_status_is_unknown_when_head_is_rate_limited(
+        self, get_session_mock: Mock
+    ):
         session = Mock()
         session.head.return_value = FakeResponse(429)
         get_session_mock.return_value = session
@@ -152,13 +244,17 @@ class LinkValidatorTest(unittest.TestCase):
                 max_age_seconds=14400,
                 extra_removed_file=root / "extra-removed.json",
             )
-            removed = json.loads((root / "extra-removed.json").read_text(encoding="utf-8"))
+            removed = json.loads(
+                (root / "extra-removed.json").read_text(encoding="utf-8")
+            )
 
         self.assertEqual(active, [])
         self.assertEqual(removed["channels"]["manual"]["reason"], "http_404")
 
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_filter_active_channels_validates_each_url_once(self, get_session_mock: Mock):
+    def test_filter_active_channels_validates_each_url_once(
+        self, get_session_mock: Mock
+    ):
         session = Mock()
         session.head.side_effect = [
             FakeResponse(200),
@@ -187,7 +283,9 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(session.head.call_count, 2)
 
     @patch("legal_iptv.services.link_validator.is_url_active")
-    def test_validate_urls_marks_unexpected_errors_unknown(self, is_url_active_mock: Mock):
+    def test_validate_urls_marks_unexpected_errors_unknown(
+        self, is_url_active_mock: Mock
+    ):
         is_url_active_mock.side_effect = RuntimeError("boom")
 
         with self.assertLogs("legal_iptv.services.link_validator", level="WARNING"):
@@ -271,7 +369,7 @@ class LinkValidatorTest(unittest.TestCase):
 
         self.assertEqual(offline_urls, set())
 
-    def test_keeps_stale_temporarily_unavailable_url_suppressed(self):
+    def test_expires_stale_temporarily_unavailable_suppression(self):
         checked_at = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -294,10 +392,7 @@ class LinkValidatorTest(unittest.TestCase):
 
             offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
 
-        self.assertEqual(
-            offline_urls,
-            {"https://example.test/suppressed.m3u8"},
-        )
+        self.assertEqual(offline_urls, set())
 
     def test_filters_channels_using_cached_offline_urls(self):
         checked_at = datetime.now(timezone.utc).isoformat()
@@ -403,7 +498,9 @@ class LinkValidatorTest(unittest.TestCase):
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
-        self.assertEqual([channel.id for channel in active_channels], ["active", "unknown"])
+        self.assertEqual(
+            [channel.id for channel in active_channels], ["active", "unknown"]
+        )
         self.assertIsInstance(payload["generated_at"], str)
         self.assertEqual(payload["summary"]["validated_urls"], 3)
         self.assertEqual(payload["summary"]["cached_urls"], 0)
@@ -412,7 +509,9 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(payload["urls"][active_url]["http_status"], 200)
         self.assertEqual(payload["urls"][active_url]["consecutive_failures"], 0)
         self.assertEqual(payload["urls"][active_url]["validation"], "validated")
-        self.assertEqual(payload["urls"][active_url]["sources"], ["live_stream_catalog"])
+        self.assertEqual(
+            payload["urls"][active_url]["sources"], ["live_stream_catalog"]
+        )
         self.assertIsInstance(payload["urls"][active_url]["checked_at"], str)
         self.assertFalse(payload["urls"][offline_url]["active"])
         self.assertEqual(payload["urls"][offline_url]["status"], "offline")
@@ -424,7 +523,6 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(payload["urls"][unknown_url]["http_status"], 408)
         self.assertEqual(payload["urls"][unknown_url]["consecutive_failures"], 1)
         self.assertIsInstance(payload["urls"][unknown_url]["checked_at"], str)
-
 
     @patch("legal_iptv.services.link_validator.validate_url_details")
     def test_refresh_stream_status_reuses_fresh_cached_records(
@@ -586,9 +684,7 @@ class LinkValidatorTest(unittest.TestCase):
         validate_details_mock: Mock,
     ):
         transient_url = "https://manifest.googlevideo.com/live.m3u8"
-        validate_details_mock.return_value = {
-            transient_url: UrlValidation(False, 404)
-        }
+        validate_details_mock.return_value = {transient_url: UrlValidation(False, 404)}
 
         with tempfile.TemporaryDirectory() as temp_dir:
             status_file = Path(temp_dir) / "stream-status.json"

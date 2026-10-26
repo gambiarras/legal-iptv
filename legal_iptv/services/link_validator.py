@@ -1,17 +1,21 @@
 import logging
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import requests
 
 from legal_iptv.clients.http_client import build_headers
-from legal_iptv.models import Channel
 from legal_iptv.io.stream_status_store import (
     _read_status_records,
     _write_stream_status_records,
+    read_stream_status,
+    status_records,
 )
+from legal_iptv.models import Channel
 from legal_iptv.models.stream_validation import UrlValidation
+from legal_iptv.services.extra_removal import update_extra_removals
 from legal_iptv.services.stream_status import (
     TEMPORARILY_UNAVAILABLE_STATUS,
     TERMINAL_OFFLINE_STATUSES,
@@ -21,9 +25,13 @@ from legal_iptv.services.stream_status import (
     _status_record,
     _utc_now,
     _validated_status_record,
+    offline_urls,
 )
-from legal_iptv.services.extra_removal import update_extra_removals
-
+from legal_iptv.services.validation_metrics import (
+    build_validation_metrics,
+    safe_metric_label,
+    transport_id,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -57,24 +65,44 @@ def _get_session() -> requests.Session:
 
 
 def inspect_url(url: str, timeout: int) -> UrlValidation:
+    started_at = time.perf_counter()
+    request_count = 0
+
+    def result(
+        active: bool | None,
+        http_status: int | None = None,
+        error_type: str | None = None,
+    ) -> UrlValidation:
+        return UrlValidation(
+            active,
+            http_status,
+            error_type,
+            duration_ms=round((time.perf_counter() - started_at) * 1000, 3),
+            request_count=request_count,
+        )
+
     headers = build_headers(accept="*/*")
     session = _get_session()
     head_status: int | None = None
 
     try:
+        request_count += 1
         response = session.head(
             url,
             headers=headers,
             timeout=timeout,
             allow_redirects=True,
         )
-        head_status = response.status_code
+        try:
+            head_status = response.status_code
+        finally:
+            response.close()
 
         if _is_success_status(head_status):
-            return UrlValidation(True, head_status)
+            return result(True, head_status)
 
         if head_status not in FALLBACK_STATUSES:
-            return UrlValidation(
+            return result(
                 _status_to_activity(head_status),
                 head_status,
             )
@@ -83,6 +111,7 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
         pass
 
     try:
+        request_count += 1
         response = session.get(
             url,
             headers={**headers, "Range": "bytes=0-0"},
@@ -91,7 +120,7 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
             stream=True,
         )
         try:
-            return UrlValidation(
+            return result(
                 _status_to_activity(response.status_code),
                 response.status_code,
             )
@@ -100,12 +129,12 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
 
     except requests.RequestException as exc:
         if head_status is not None:
-            return UrlValidation(
+            return result(
                 _status_to_activity(head_status),
                 head_status,
                 type(exc).__name__,
             )
-        return UrlValidation(None, error_type=type(exc).__name__)
+        return result(None, error_type=type(exc).__name__)
 
 
 def is_url_active(url: str, timeout: int) -> bool | None:
@@ -151,10 +180,7 @@ def validate_urls(
     status_by_url: dict[str, bool | None] = {}
 
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {
-            executor.submit(is_url_active, url, timeout): url
-            for url in urls
-        }
+        futures = {executor.submit(is_url_active, url, timeout): url for url in urls}
 
         for future in as_completed(futures):
             url = futures[future]
@@ -215,6 +241,7 @@ def _url_metadata(channels: list[Channel]) -> dict[str, dict]:
                 "channels": [],
                 "sources": set(),
                 "source_types": set(),
+                "provider_ids": set(),
             },
         )
         item["channels"].append(
@@ -223,17 +250,29 @@ def _url_metadata(channels: list[Channel]) -> dict[str, dict]:
                 "name": channel.name,
                 "source": channel.source,
                 "source_type": channel.source_type,
+                "provider_id": channel.provider_id
+                or channel.source_type
+                or channel.source,
+                "logical_channel_id": channel.logical_channel_id or channel.id,
+                "feed_id": channel.feed_id,
             }
         )
         item["sources"].add(channel.source)
         if channel.source_type:
             item["source_types"].add(channel.source_type)
+        item["provider_ids"].add(
+            safe_metric_label(
+                channel.provider_id or channel.source_type or channel.source
+            )
+        )
 
     return {
         url: {
+            "transport_id": transport_id(url),
             "channels": item["channels"],
             "sources": sorted(item["sources"]),
             "source_types": sorted(item["source_types"]),
+            "provider_ids": sorted(item["provider_ids"]),
         }
         for url, item in metadata.items()
     }
@@ -262,27 +301,11 @@ def load_offline_urls(
     *,
     max_age_seconds: int,
 ) -> set[str]:
-    records = _read_status_records(status_file)
-    offline_urls: set[str] = set()
-
-    for url, record in records.items():
-        if (
-            record.get("active") is False
-            and record.get("status") == TEMPORARILY_UNAVAILABLE_STATUS
-        ):
-            offline_urls.add(url)
-            continue
-
-        if not _is_fresh_record(record, max_age_seconds=max_age_seconds):
-            continue
-
-        if (
-            record.get("active") is False
-            and record.get("http_status") in TERMINAL_OFFLINE_STATUSES
-        ):
-            offline_urls.add(url)
-
-    return offline_urls
+    return offline_urls(
+        _read_status_records(status_file),
+        max_age_seconds=max_age_seconds,
+        now=_utc_now(),
+    )
 
 
 def filter_cached_offline_channels(
@@ -343,12 +366,16 @@ def refresh_stream_status(
 ) -> list[Channel]:
     failure_threshold = max(1, failure_threshold)
     urls = sorted({channel.stream_url for channel in channels if channel.stream_url})
-    previous_records = _read_status_records(status_file)
+    previous_snapshot = read_stream_status(status_file)
+    previous_records = status_records(previous_snapshot)
+    freshness_now = _utc_now()
     fresh_records = {
         url: previous_records[url]
         for url in urls
         if url in previous_records
-        and _is_fresh_record(previous_records[url], max_age_seconds=max_age_seconds)
+        and _is_fresh_record(
+            previous_records[url], max_age_seconds=max_age_seconds, now=freshness_now
+        )
         and previous_records[url].get("active") is True
     }
     urls_to_validate = [url for url in urls if url not in fresh_records]
@@ -359,13 +386,13 @@ def refresh_stream_status(
         timeout=timeout,
     )
     http_status_by_url = {
-        url: result.http_status
-        for url, result in validation_details.items()
+        url: result.http_status for url, result in validation_details.items()
     }
     if extra_removed_file is not None:
         update_extra_removals(channels, http_status_by_url, extra_removed_file)
 
-    checked_at = _utc_now().isoformat()
+    checked_now = _utc_now()
+    checked_at = checked_now.isoformat()
     metadata_by_url = _url_metadata(channels)
     records_by_url: dict[str, dict] = {}
     transient_live_urls = _transient_live_urls(channels)
@@ -389,12 +416,27 @@ def refresh_stream_status(
         cached_record["validation"] = "cached"
         records_by_url[url] = cached_record
 
+    metrics = build_validation_metrics(
+        previous_snapshot,
+        validation_details,
+        metadata_by_url,
+        now=checked_now,
+        cached_urls=len(fresh_records),
+        suppressed_urls=sum(
+            record.get("status") == TEMPORARILY_UNAVAILABLE_STATUS
+            for record in records_by_url.values()
+        ),
+    )
     _write_stream_status_records(
         status_file,
         records_by_url,
         generated_at=checked_at,
         validated_urls=len(urls_to_validate),
         cached_urls=len(fresh_records),
+        history=metrics.history,
+        validation_metrics=metrics.summary,
+        top_failing_channels=metrics.top_failing_channels,
+        provider_metrics=metrics.providers,
     )
 
     active_channels = [
@@ -404,8 +446,7 @@ def refresh_stream_status(
         and _record_activity(records_by_url.get(channel.stream_url)) is not False
     ]
     unknown_count = sum(
-        1 for record in records_by_url.values()
-        if _record_activity(record) is None
+        1 for record in records_by_url.values() if _record_activity(record) is None
     )
 
     logger.info(
