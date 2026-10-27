@@ -67,6 +67,45 @@ class CLITest(unittest.TestCase):
         self.assertEqual(config.iptv_org_cache_ttl_seconds, 240)
         self.assertTrue(config.refresh_iptv_org_cache)
 
+    def test_adaptive_validation_defaults_and_overrides(self):
+        with patch.object(sys, "argv", ["legal-iptv"]):
+            config = AppConfig.from_args(parse_args())
+        self.assertEqual(config.validation_max_success_age, 86400)
+        self.assertEqual(config.validation_retry_delay, 900)
+        self.assertFalse(config.force_validation)
+        with patch.object(
+            sys,
+            "argv",
+            [
+                "legal-iptv",
+                "--validate-streams",
+                "--force-validation",
+                "--validation-max-success-age",
+                "43200",
+                "--validation-retry-delay",
+                "600",
+            ],
+        ):
+            config = AppConfig.from_args(parse_args())
+        self.assertEqual(config.validation_max_success_age, 43200)
+        self.assertEqual(config.validation_retry_delay, 600)
+        self.assertTrue(config.force_validation)
+
+    def test_force_requires_validation_and_intervals_must_be_positive(self):
+        for flags in (
+            ["--force-validation"],
+            ["--validation-max-success-age", "0"],
+            ["--validation-retry-delay", "-1"],
+        ):
+            with (
+                self.subTest(flags=flags),
+                patch.object(sys, "argv", ["legal-iptv", *flags]),
+                patch("sys.stderr"),
+                self.assertRaises(SystemExit) as error,
+            ):
+                parse_args()
+            self.assertEqual(error.exception.code, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

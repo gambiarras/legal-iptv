@@ -107,7 +107,9 @@ python3.11 -m legal_iptv \
   --validation-timeout 6
 ```
 
-Validation is disabled by default because it performs network checks against every unique stream URL. When enabled, it writes `stream-status.json` with the latest status for each URL.
+Validation is disabled by default because it performs network checks. When enabled,
+it checks due transport contexts and writes `stream-status.json`; ordinary generation
+only reads cached failures and does not initiate probes.
 
 For scheduled environments, run validation periodically, for example every 4 hours, outside this repository. Normal playlist generation reads `stream-status.json` and skips URLs recently marked offline:
 
@@ -119,6 +121,50 @@ python3.11 -m legal_iptv \
 ```
 
 Only offline statuses newer than `--stream-status-max-age` are applied, so stale failures do not block channels forever.
+
+### Adaptive validation
+
+Scheduling is based on observed results for the exact URL, declared request
+headers and transport context, rather than a provider's name. With default
+settings, consecutive HTTP successes schedule checks after **4, 8, 12 and
+24 hours**, capped at 24 hours. A cache hit preserves the original `checked_at`,
+deadline and streak; it is not another success. Unknown/offline results reset
+the success streak and schedule retries after **15, 30, 60, 120 and 240 minutes**,
+capped at the base interval. With a validation job every four hours, retries
+still wait for that job; this change does not modify the external scheduler.
+
+| Option | Default | Purpose |
+| --- | --- | --- |
+| `--stream-status-max-age` | `14400` | Base success interval, maximum retry interval and freshness of cached suppression |
+| `--validation-max-success-age` | `86400` | Maximum success interval; use `14400` to retain a four-hour ceiling |
+| `--validation-retry-delay` | `900` | Initial unsuccessful retry interval |
+| `--force-validation` | off | Ignore scheduling for eligible transports; requires `--validate-streams` |
+
+Larger success intervals reduce HTTP work while increasing potential failure
+detection delay. New or changed contexts and legacy records without a context
+fingerprint are checked before reuse. Malformed/future state cannot suppress a
+channel through the scheduling cache. A late job rechecks due state but can
+retain its streak for less than twice the larger of the base and success cap
+(48 hours with defaults), without extending the cache validity.
+
+Known expiration bounds the deadline. `expires_at` is authoritative because
+ingestion recalculates the remaining TTL on each load; `resolved_at + ttl_seconds`
+is a fallback only when no absolute expiration was provided. Expired or invalid
+explicit validity declarations are not probed or selected, including with force;
+the producing catalog must renew those transports. YouTube/Twitch/Kick live
+transports keep the base success ceiling rather than advancing to 24 hours.
+
+Declared transport headers are used by both HEAD and fallback GET. Fingerprints,
+not header values, are written to the status state. Redirects to another origin
+drop custom headers so credentials do not follow the stream to a different host.
+This remains an HTTP reachability check, not a manifest or player compatibility
+test.
+
+Two contexts sharing a URL are checked and filtered independently. A single
+context keeps the legacy flat `urls[url]` record. Multiple contexts are stored
+under `urls[url].contexts[context_id]`; their legacy URL summary is `unknown`,
+preventing old URL-only readers from suppressing every context. Context-aware
+generation applies each context's actual result. Status remains private.
 
 ### Validation history and metrics
 
@@ -134,7 +180,8 @@ The snapshot provides:
 | `summary.validation_metrics` | This run's actual checks, cache hits, HTTP status/error counts, measured duration and HEAD/GET call attempts |
 | `summary.top_failing_channels` | Up to 20 channel/provider/feed identities, ordered by unsuccessful observation count, with sample counts and rates |
 | `summary.provider_metrics` | Observation totals and rates attributed to each provider |
-| `history.transports` | History for each exact URL, identified by SHA-256 |
+| `summary.scheduling` | Total, validated, cached and expired transport context counts |
+| `history.transports` | History for each exact transport context, identified by SHA-256; prior URL-only series remain until retention expires |
 | `history.channels` | History keyed by provider, logical channel and feed, independent of URL/variant rotation when that identity is available |
 | `history.providers` | History attributed to providers, without assuming a commercial identity from adapter type |
 
@@ -144,9 +191,14 @@ are recorded separately from inconclusive failures such as timeout, 429 or 503.
 Repeated inconclusive checks can trigger temporary suppression, while their
 history remains `unknown_checks`, not confirmed `offline_checks`.
 
-One shared URL is one global observation; attribution to several channels or
+One transport context is one global observation; attribution to several channels or
 providers can make their totals differ from the global total. Duplicate entries
 for the same provider/logical channel/feed do not multiply that attribution.
+The legacy `summary.validated_urls` and `summary.cached_urls` still count unique
+URLs (a partially checked URL counts as validated). `summary.validation_metrics`
+counts contexts and declares `cache_unit: transport_context`; its `cached_urls`
+field is retained as a compatibility alias for cached contexts. Distinct headers
+at one URL therefore produce separate observations and HTTP attempt counts.
 Counters cover the lifetime of a retained series, starting with the first real
 observation under the new format. They are sampled HTTP results, not continuous
 uptime, manifest validation or confirmed playback on a device. HEAD/GET attempt

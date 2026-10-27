@@ -21,6 +21,7 @@ from legal_iptv.services.link_validator import (
 from legal_iptv.services.metadata import build_run_metadata
 from legal_iptv.services.profile_config import load_playlist_configuration
 from legal_iptv.services.profile_selector import select_profile_channels
+from legal_iptv.services.validation_schedule import ValidationPolicy
 from legal_iptv.sources import extra_channels, iptv_org, live_stream_catalog
 
 logger = logging.getLogger(__name__)
@@ -165,6 +166,12 @@ def run_aggregation(config: AppConfig) -> None:
                     max_age_seconds=config.stream_status_max_age,
                     failure_threshold=config.validation_failure_threshold,
                     extra_removed_file=config.extra_removed_file,
+                    policy=ValidationPolicy(
+                        base_seconds=config.stream_status_max_age,
+                        max_success_seconds=config.validation_max_success_age,
+                        retry_seconds=config.validation_retry_delay,
+                    ),
+                    force=config.force_validation,
                 ),
             )
         else:

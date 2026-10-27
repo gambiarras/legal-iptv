@@ -18,6 +18,11 @@ from legal_iptv.services.link_validator import (
     refresh_stream_status,
     validate_urls,
 )
+from legal_iptv.services.validation_schedule import (
+    ValidationPolicy,
+    context_for_channel,
+    schedule_record,
+)
 
 
 class FakeResponse:
@@ -44,6 +49,22 @@ def make_channel(
         group="Web Live",
         source=source,
         source_type=source_type,
+    )
+
+
+def scheduled_record(channel, checked_at):
+    return schedule_record(
+        {
+            "active": True,
+            "status": "active",
+            "checked_at": checked_at,
+            "consecutive_failures": 0,
+        },
+        None,
+        context_for_channel(channel),
+        ValidationPolicy(),
+        now=datetime.fromisoformat(checked_at),
+        active=True,
     )
 
 
@@ -85,10 +106,10 @@ class LinkValidatorTest(unittest.TestCase):
             arguments = dict(
                 status_file=path, max_workers=1, timeout=1, max_age_seconds=14400
             )
-            refresh_stream_status([channel], **arguments)
-            refresh_stream_status([channel], **arguments)
+            refresh_stream_status([channel], **arguments, force=True)
+            refresh_stream_status([channel], **arguments, force=True)
             suppressed = json.loads(path.read_text())
-            refresh_stream_status([channel], **arguments)
+            refresh_stream_status([channel], **arguments, force=True)
             recovered = json.loads(path.read_text())
             refresh_stream_status([channel], **arguments)
             cached = json.loads(path.read_text())
@@ -109,7 +130,7 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(cached["summary"]["provider_counts"], {"provider-a": 1})
 
     @patch("legal_iptv.services.link_validator.validate_url_details")
-    def test_corrupt_history_does_not_discard_valid_legacy_cache(
+    def test_corrupt_history_does_not_discard_valid_context_cache(
         self, validate_details
     ):
         url = "https://example.test/cached.m3u8"
@@ -121,7 +142,11 @@ class LinkValidatorTest(unittest.TestCase):
                 json.dumps(
                     {
                         "history": [],
-                        "urls": {url: {"active": True, "checked_at": checked_at}},
+                        "urls": {
+                            url: scheduled_record(
+                                make_channel("cached", url), checked_at
+                            )
+                        },
                     }
                 )
             )
@@ -540,11 +565,9 @@ class LinkValidatorTest(unittest.TestCase):
                 json.dumps(
                     {
                         "urls": {
-                            cached_url: {
-                                "active": True,
-                                "status": "active",
-                                "checked_at": checked_at,
-                            }
+                            cached_url: scheduled_record(
+                                make_channel("cached", cached_url), checked_at
+                            )
                         }
                     }
                 ),
@@ -605,6 +628,7 @@ class LinkValidatorTest(unittest.TestCase):
                 max_workers=1,
                 timeout=2,
                 max_age_seconds=14400,
+                force=True,
             )
             second_payload = json.loads(status_file.read_text(encoding="utf-8"))
             cached_filtered = filter_cached_offline_channels(
@@ -619,6 +643,7 @@ class LinkValidatorTest(unittest.TestCase):
                 max_workers=1,
                 timeout=2,
                 max_age_seconds=14400,
+                force=True,
             )
             recovered_payload = json.loads(status_file.read_text(encoding="utf-8"))
 
@@ -668,6 +693,7 @@ class LinkValidatorTest(unittest.TestCase):
                 max_workers=1,
                 timeout=2,
                 max_age_seconds=14400,
+                force=True,
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
@@ -705,6 +731,7 @@ class LinkValidatorTest(unittest.TestCase):
                 max_workers=4,
                 timeout=2,
                 max_age_seconds=14400,
+                force=True,
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 

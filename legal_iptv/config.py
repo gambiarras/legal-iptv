@@ -32,6 +32,9 @@ class AppConfig:
     guide_min_coverage_ratio: float = 0.5
     guide_diagnostics_file: Path = Path("guide-diagnostics.json")
     extra_removed_file: Path = Path("extra-removed.json")
+    validation_max_success_age: int = 86400
+    validation_retry_delay: int = 900
+    force_validation: bool = False
 
     @classmethod
     def from_args(cls, args) -> "AppConfig":
@@ -40,7 +43,9 @@ class AppConfig:
             meta_output_path=Path(args.meta_output),
             log_level=args.log_level.upper(),
             min_live_ttl=args.min_live_ttl,
-            live_catalog_file=Path(args.live_catalog_file) if args.live_catalog_file else None,
+            live_catalog_file=(
+                Path(args.live_catalog_file) if args.live_catalog_file else None
+            ),
             validate_streams=args.validate_streams,
             validation_max_workers=args.validation_max_workers,
             validation_timeout=args.validation_timeout,
@@ -56,9 +61,7 @@ class AppConfig:
             profile=args.profile,
             player_profile=args.player_profile,
             profile_config_file=(
-                Path(args.profile_config_file)
-                if args.profile_config_file
-                else None
+                Path(args.profile_config_file) if args.profile_config_file else None
             ),
             guide_output_path=Path(args.guide_output),
             guide_url=args.guide_url,
@@ -68,4 +71,7 @@ class AppConfig:
             guide_min_coverage_ratio=args.guide_min_coverage_ratio,
             guide_diagnostics_file=Path(args.guide_diagnostics),
             extra_removed_file=Path(args.extra_removed_file),
+            validation_max_success_age=args.validation_max_success_age,
+            validation_retry_delay=args.validation_retry_delay,
+            force_validation=args.force_validation,
         )

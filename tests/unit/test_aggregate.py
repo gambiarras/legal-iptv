@@ -58,6 +58,45 @@ def make_channel(id: str, stream_url: str) -> Channel:
 
 
 class AggregateTest(unittest.TestCase):
+    def test_adaptive_validation_preserves_generation_and_force_checks_again(self):
+        channel = make_channel("fixture.live", "https://example.test/live.m3u8")
+        session = Mock()
+        session.head.return_value.status_code = 200
+        now = datetime(2026, 10, 27, 12, tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as directory:
+            config = make_config(directory, validate_streams=True, profile="full")
+            with (
+                patch(
+                    "legal_iptv.services.aggregate.extra_channels.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.iptv_org.fetch_channels",
+                    return_value=[],
+                ),
+                patch(
+                    "legal_iptv.services.aggregate.live_stream_catalog.fetch_channels",
+                    return_value=[channel],
+                ),
+                patch(
+                    "legal_iptv.services.link_validator._get_session",
+                    return_value=session,
+                ),
+                patch("legal_iptv.services.link_validator._utc_now", return_value=now),
+            ):
+                run_aggregation(config)
+                first = config.output_path.read_text()
+                run_aggregation(config)
+                self.assertEqual(config.output_path.read_text(), first)
+                status = config.stream_status_file.read_bytes()
+                run_aggregation(replace(config, validate_streams=False))
+                self.assertEqual(config.output_path.read_text(), first)
+                self.assertEqual(config.stream_status_file.read_bytes(), status)
+                self.assertEqual(session.head.call_count, 1)
+                run_aggregation(replace(config, force_validation=True))
+                self.assertEqual(config.output_path.read_text(), first)
+                self.assertEqual(session.head.call_count, 2)
+
     def test_full_profile_separates_offline_discard_from_selection(self):
         preferred = make_channel("fixture.live", "https://example.test/live.m3u8")
         preferred.name = "Fixture"
@@ -300,6 +339,11 @@ class AggregateTest(unittest.TestCase):
         refresh_mock.assert_called_once()
         self.assertEqual(refresh_mock.call_args.kwargs["max_age_seconds"], 14400)
         self.assertEqual(refresh_mock.call_args.kwargs["failure_threshold"], 2)
+        self.assertEqual(
+            refresh_mock.call_args.kwargs["policy"].max_success_seconds, 86400
+        )
+        self.assertEqual(refresh_mock.call_args.kwargs["policy"].base_seconds, 14400)
+        self.assertFalse(refresh_mock.call_args.kwargs["force"])
 
     @patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels")
     @patch("legal_iptv.services.aggregate.iptv_org.fetch_channels")

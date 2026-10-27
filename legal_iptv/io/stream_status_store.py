@@ -46,6 +46,7 @@ def _write_stream_status_records(
     validation_metrics: dict[str, Any] | None = None,
     top_failing_channels: list[dict[str, Any]] | None = None,
     provider_metrics: list[dict[str, Any]] | None = None,
+    scheduling_summary: dict[str, int] | None = None,
 ) -> None:
     status_counts = {
         "active": 0,
@@ -84,6 +85,7 @@ def _write_stream_status_records(
             "validation_metrics": validation_metrics or {},
             "top_failing_channels": top_failing_channels or [],
             "provider_metrics": provider_metrics or [],
+            "scheduling": scheduling_summary or {},
         },
         "history": history or {},
         "urls": {url: records_by_url[url] for url in sorted(records_by_url)},

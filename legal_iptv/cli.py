@@ -27,6 +27,23 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-live-ttl", type=positive_int, default=900)
     parser.add_argument("--live-catalog-file", default=None)
     parser.add_argument("--validate-streams", action="store_true")
+    parser.add_argument(
+        "--force-validation",
+        action="store_true",
+        help="Check all eligible transports; requires --validate-streams",
+    )
+    parser.add_argument(
+        "--validation-max-success-age",
+        type=positive_int,
+        default=86400,
+        help="Maximum reuse interval after consistent HTTP successes (seconds)",
+    )
+    parser.add_argument(
+        "--validation-retry-delay",
+        type=positive_int,
+        default=900,
+        help="Initial retry interval for offline/unknown observations (seconds)",
+    )
     parser.add_argument("--validation-max-workers", type=positive_int, default=32)
     parser.add_argument("--validation-timeout", type=positive_int, default=6)
     parser.add_argument("--validation-failure-threshold", type=positive_int, default=2)
@@ -53,4 +70,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--guide-min-coverage-ratio", type=coverage_ratio, default=0.5)
     parser.add_argument("--guide-diagnostics", default="guide-diagnostics.json")
     parser.add_argument("--extra-removed-file", default="extra-removed.json")
-    return parser.parse_args()
+    args = parser.parse_args()
+    if args.force_validation and not args.validate_streams:
+        parser.error("--force-validation requires --validate-streams")
+    return args

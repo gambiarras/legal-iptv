@@ -3,6 +3,7 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import requests
 
@@ -19,8 +20,6 @@ from legal_iptv.services.extra_removal import update_extra_removals
 from legal_iptv.services.stream_status import (
     TEMPORARILY_UNAVAILABLE_STATUS,
     TERMINAL_OFFLINE_STATUSES,
-    _activity_status,
-    _is_fresh_record,
     _record_activity,
     _status_record,
     _utc_now,
@@ -32,6 +31,15 @@ from legal_iptv.services.validation_metrics import (
     safe_metric_label,
     transport_id,
 )
+from legal_iptv.services.validation_schedule import (
+    ValidationContext,
+    ValidationPolicy,
+    can_reuse,
+    context_for_channel,
+    matching_record,
+    previous_observation,
+    schedule_record,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -39,6 +47,33 @@ FALLBACK_STATUSES = {403, 404, 405, 410}
 TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
 
 _thread_local = threading.local()
+
+
+class StreamProbeSession(requests.Session):
+    """Keep transport credentials off other origins during redirects."""
+
+    def rebuild_auth(
+        self, prepared_request: requests.PreparedRequest, response: requests.Response
+    ) -> None:
+        super().rebuild_auth(prepared_request, response)
+        before = urlsplit(response.request.url)
+        after = urlsplit(prepared_request.url)
+        if (before.scheme, before.hostname, before.port) != (
+            after.scheme,
+            after.hostname,
+            after.port,
+        ):
+            safe = {
+                "accept",
+                "accept-encoding",
+                "accept-language",
+                "connection",
+                "user-agent",
+                "range",
+            }
+            for name in list(prepared_request.headers):
+                if name.casefold() not in safe:
+                    del prepared_request.headers[name]
 
 
 def _is_success_status(status_code: int) -> bool:
@@ -58,13 +93,15 @@ def _status_to_activity(status_code: int) -> bool | None:
 def _get_session() -> requests.Session:
     session = getattr(_thread_local, "session", None)
     if session is None:
-        session = requests.Session()
+        session = StreamProbeSession()
         _thread_local.session = session
 
     return session
 
 
-def inspect_url(url: str, timeout: int) -> UrlValidation:
+def inspect_url(
+    url: str, timeout: int, request_headers: dict[str, str] | None = None
+) -> UrlValidation:
     started_at = time.perf_counter()
     request_count = 0
 
@@ -82,6 +119,12 @@ def inspect_url(url: str, timeout: int) -> UrlValidation:
         )
 
     headers = build_headers(accept="*/*")
+    if request_headers:
+        # Requests uses case-insensitive names; avoid duplicate casing here too.
+        headers = {name.casefold(): value for name, value in headers.items()}
+        headers.update(
+            {name.casefold(): value for name, value in request_headers.items()}
+        )
     session = _get_session()
     head_status: int | None = None
 
@@ -146,6 +189,7 @@ def validate_url_details(
     *,
     max_workers: int,
     timeout: int,
+    request_headers_by_url: dict[str, dict[str, str]] | None = None,
 ) -> dict[str, UrlValidation]:
     if not urls:
         return {}
@@ -153,7 +197,12 @@ def validate_url_details(
     worker_count = max(1, min(max_workers, len(urls)))
     results: dict[str, UrlValidation] = {}
     with ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {executor.submit(inspect_url, url, timeout): url for url in urls}
+        futures = {
+            executor.submit(
+                inspect_url, url, timeout, (request_headers_by_url or {}).get(url)
+            ): url
+            for url in urls
+        }
         for future in as_completed(futures):
             url = futures[future]
             try:
@@ -314,26 +363,38 @@ def filter_cached_offline_channels(
     status_file: Path,
     max_age_seconds: int,
 ) -> list[Channel]:
-    offline_urls = load_offline_urls(
-        status_file,
-        max_age_seconds=max_age_seconds,
-    )
-
-    if not offline_urls:
-        return channels
-
-    filtered_channels = [
-        channel
-        for channel in channels
-        if channel.stream_url not in offline_urls or _is_transient_live_channel(channel)
-    ]
+    records = _read_status_records(status_file)
+    now = _utc_now()
+    filtered_channels = []
+    for channel in channels:
+        context = context_for_channel(channel)
+        if context.expired(now):
+            continue
+        record = records.get(channel.stream_url)
+        matched = matching_record(record, context)
+        # Legacy suppression is only safe for transports without declared headers.
+        if (
+            matched is None
+            and record
+            and "context_id" not in record
+            and "contexts" not in record
+            and not channel.request_headers
+        ):
+            matched = record
+        suppressed = offline_urls(
+            {channel.stream_url: matched} if matched else {},
+            max_age_seconds=max_age_seconds,
+            now=now,
+        )
+        if not suppressed or _is_transient_live_channel(channel):
+            filtered_channels.append(channel)
 
     logger.info(
         "Cached stream status filter finished total=%s kept=%s skipped=%s offline_urls=%s",
         len(channels),
         len(filtered_channels),
         len(channels) - len(filtered_channels),
-        len(offline_urls),
+        len(channels) - len(filtered_channels),
     )
 
     return filtered_channels
@@ -346,12 +407,68 @@ def _is_transient_live_channel(channel: Channel) -> bool:
     )
 
 
-def _transient_live_urls(channels: list[Channel]) -> set[str]:
-    return {
-        channel.stream_url
-        for channel in channels
-        if channel.stream_url and _is_transient_live_channel(channel)
-    }
+def _validate_contexts(
+    contexts: dict[str, ValidationContext],
+    *,
+    max_workers: int,
+    timeout: int,
+) -> dict[str, UrlValidation]:
+    """Batch distinct URLs while probing separate contexts for shared URLs."""
+    batches: list[dict[str, ValidationContext]] = []
+    counts: dict[str, int] = {}
+    for context in contexts.values():
+        index = counts.get(context.url, 0)
+        if index == len(batches):
+            batches.append({})
+        batches[index][context.url] = context
+        counts[context.url] = index + 1
+    results: dict[str, UrlValidation] = {}
+    for batch in batches:
+        header_options = (
+            {
+                "request_headers_by_url": {
+                    url: context.headers for url, context in batch.items()
+                }
+            }
+            if any(context.headers for context in batch.values())
+            else {}
+        )
+        observed = validate_url_details(
+            sorted(batch),
+            max_workers=max_workers,
+            timeout=timeout,
+            **header_options,
+        )
+        for url, context in batch.items():
+            results[context.id] = observed.get(
+                url, UrlValidation(None, error_type="MissingProbeResult")
+            )
+    return results
+
+
+def _url_summaries(
+    contexts: dict[str, ValidationContext],
+    records: dict[str, dict],
+    metadata: dict[str, dict],
+) -> dict[str, dict]:
+    """Preserve the URL reader contract without merging context observations."""
+    grouped: dict[str, dict[str, dict]] = {}
+    for cid, context in contexts.items():
+        grouped.setdefault(context.url, {})[cid] = records[cid]
+    summaries = {}
+    for url, members in grouped.items():
+        if len(members) == 1:
+            summaries[url] = next(iter(members.values()))
+            continue
+        # A mixed URL summary cannot suppress all its contexts in legacy readers.
+        summaries[url] = {
+            **metadata[url],
+            "active": None,
+            "status": "unknown",
+            "validation": "context_summary",
+            "contexts": members,
+        }
+    return summaries
 
 
 def refresh_stream_status(
@@ -363,90 +480,149 @@ def refresh_stream_status(
     max_age_seconds: int,
     failure_threshold: int = 2,
     extra_removed_file: Path | None = None,
+    policy: ValidationPolicy | None = None,
+    force: bool = False,
 ) -> list[Channel]:
     failure_threshold = max(1, failure_threshold)
-    urls = sorted({channel.stream_url for channel in channels if channel.stream_url})
+    policy = policy or ValidationPolicy(base_seconds=max_age_seconds)
+    channel_contexts = [
+        (channel, context_for_channel(channel))
+        for channel in channels
+        if channel.stream_url
+    ]
+    contexts = {context.id: context for channel, context in channel_contexts}
+    channels_by_context: dict[str, list[Channel]] = {cid: [] for cid in contexts}
+    for channel, context in channel_contexts:
+        channels_by_context[context.id].append(channel)
     previous_snapshot = read_stream_status(status_file)
     previous_records = status_records(previous_snapshot)
     freshness_now = _utc_now()
-    fresh_records = {
-        url: previous_records[url]
-        for url in urls
-        if url in previous_records
-        and _is_fresh_record(
-            previous_records[url], max_age_seconds=max_age_seconds, now=freshness_now
+    previous_by_context = {
+        cid: previous_observation(
+            previous_records.get(context.url), context, policy, now=freshness_now
         )
-        and previous_records[url].get("active") is True
+        for cid, context in contexts.items()
     }
-    urls_to_validate = [url for url in urls if url not in fresh_records]
-
-    validation_details = validate_url_details(
-        urls_to_validate,
+    fresh_records = {
+        cid: dict(previous_by_context[cid])
+        for cid, context in contexts.items()
+        if can_reuse(
+            previous_by_context[cid], context, policy, now=freshness_now, force=force
+        )
+    }
+    pending = {
+        cid: context
+        for cid, context in contexts.items()
+        if cid not in fresh_records and not context.expired(freshness_now)
+    }
+    validation_details = _validate_contexts(
+        pending,
         max_workers=max_workers,
         timeout=timeout,
     )
-    http_status_by_url = {
-        url: result.http_status for url, result in validation_details.items()
-    }
     if extra_removed_file is not None:
-        update_extra_removals(channels, http_status_by_url, extra_removed_file)
+        update_extra_removals(
+            channels,
+            {},
+            extra_removed_file,
+            http_status_by_channel={
+                channel.id: result.http_status
+                for cid, result in validation_details.items()
+                for channel in channels_by_context[cid]
+                if channel.source == "extra"
+            },
+        )
 
     checked_now = _utc_now()
     checked_at = checked_now.isoformat()
     metadata_by_url = _url_metadata(channels)
-    records_by_url: dict[str, dict] = {}
-    transient_live_urls = _transient_live_urls(channels)
-
-    for url in urls:
-        metadata = metadata_by_url.get(url, {})
-        if url in validation_details:
-            records_by_url[url] = _validated_status_record(
-                validation_details[url],
-                previous_records.get(url),
+    metadata_by_context = {
+        cid: {
+            **_url_metadata(members)[contexts[cid].url],
+            "transport_id": transport_id(cid),
+        }
+        for cid, members in channels_by_context.items()
+    }
+    records_by_context: dict[str, dict] = {}
+    for cid, context in contexts.items():
+        metadata = metadata_by_context[cid]
+        if cid in validation_details:
+            result = validation_details[cid]
+            record = _validated_status_record(
+                result,
+                previous_by_context[cid],
                 checked_at=checked_at,
                 metadata=metadata,
                 failure_threshold=failure_threshold,
-                allow_suppression=url not in transient_live_urls,
+                allow_suppression=not context.transient,
+            )
+            records_by_context[cid] = schedule_record(
+                record,
+                previous_by_context[cid],
+                context,
+                policy,
+                now=checked_now,
+                active=result.active,
             )
             continue
+        if cid in fresh_records:
+            records_by_context[cid] = {
+                **fresh_records[cid],
+                **metadata,
+                "validation": "cached",
+            }
+        else:
+            records_by_context[cid] = {
+                **metadata,
+                "context_id": cid,
+                "active": None,
+                "status": "unknown",
+                "validation": "expired",
+            }
 
-        cached_record = dict(fresh_records[url])
-        cached_record.update(metadata)
-        cached_record["status"] = _activity_status(cached_record.get("active"))
-        cached_record["validation"] = "cached"
-        records_by_url[url] = cached_record
+    records_by_url = _url_summaries(contexts, records_by_context, metadata_by_url)
 
     metrics = build_validation_metrics(
         previous_snapshot,
         validation_details,
-        metadata_by_url,
+        metadata_by_context,
         now=checked_now,
         cached_urls=len(fresh_records),
         suppressed_urls=sum(
             record.get("status") == TEMPORARILY_UNAVAILABLE_STATUS
-            for record in records_by_url.values()
+            for record in records_by_context.values()
         ),
     )
+    metrics.summary["cache_unit"] = "transport_context"
     _write_stream_status_records(
         status_file,
         records_by_url,
         generated_at=checked_at,
-        validated_urls=len(urls_to_validate),
-        cached_urls=len(fresh_records),
+        validated_urls=len({context.url for context in pending.values()}),
+        cached_urls=len(
+            {context.url for cid, context in contexts.items() if cid in fresh_records}
+            - {context.url for context in pending.values()}
+        ),
         history=metrics.history,
         validation_metrics=metrics.summary,
         top_failing_channels=metrics.top_failing_channels,
         provider_metrics=metrics.providers,
+        scheduling_summary={
+            "total_contexts": len(contexts),
+            "validated_contexts": len(pending),
+            "cached_contexts": len(fresh_records),
+            "expired_contexts": len(contexts) - len(pending) - len(fresh_records),
+        },
     )
 
     active_channels = [
         channel
-        for channel in channels
-        if channel.stream_url
-        and _record_activity(records_by_url.get(channel.stream_url)) is not False
+        for channel, context in channel_contexts
+        if not context.expired(checked_now)
+        and _record_activity(records_by_context.get(context.id)) is not False
     ]
     unknown_count = sum(
-        1 for record in records_by_url.values() if _record_activity(record) is None
+        1 for record in records_by_context.values() if _record_activity(record) is None
     )
 
     logger.info(
@@ -455,8 +631,8 @@ def refresh_stream_status(
         len(active_channels),
         len(channels) - len(active_channels),
         unknown_count,
-        len(urls),
-        len(urls_to_validate),
+        len(records_by_url),
+        len(pending),
         len(fresh_records),
         status_file,
     )

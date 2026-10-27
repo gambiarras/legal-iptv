@@ -5,7 +5,6 @@ from pathlib import Path
 from legal_iptv.io import write_json_atomic
 from legal_iptv.models import Channel
 
-
 TERMINAL_HTTP_STATUSES = {404, 410}
 
 
@@ -13,6 +12,8 @@ def update_extra_removals(
     channels: list[Channel],
     http_status_by_url: dict[str, int | None],
     output_path: Path,
+    *,
+    http_status_by_channel: dict[str, int | None] | None = None,
 ) -> None:
     existing: dict[str, dict] = {}
     if output_path.exists():
@@ -24,9 +25,7 @@ def update_extra_removals(
             existing = {}
 
     configured_by_id = {
-        channel.id: channel
-        for channel in channels
-        if channel.source == "extra"
+        channel.id: channel for channel in channels if channel.source == "extra"
     }
     records: dict[str, dict] = {}
     for channel_id, record in existing.items():
@@ -38,7 +37,11 @@ def update_extra_removals(
 
     now = datetime.now(timezone.utc).isoformat()
     for channel in configured_by_id.values():
-        status = http_status_by_url.get(channel.stream_url)
+        status = (
+            http_status_by_channel.get(channel.id)
+            if http_status_by_channel is not None
+            else http_status_by_url.get(channel.stream_url)
+        )
         if status in TERMINAL_HTTP_STATUSES:
             records[channel.id] = {
                 "url": channel.stream_url,
@@ -53,8 +56,7 @@ def update_extra_removals(
         {
             "updated_at": now,
             "channels": {
-                channel_id: records[channel_id]
-                for channel_id in sorted(records)
+                channel_id: records[channel_id] for channel_id in sorted(records)
             },
         },
     )
