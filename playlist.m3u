@@ -59,10 +59,6 @@ https://video11.logicahost.com.br/detetives/detetives/playlist.m3u8
 #EXTGRP:Recomendados
 https://tv.rbti.tv.br/rbti1/index.m3u8
 
-#EXTINF:-1 group-title="Recomendados" tvg-id="RedeBrasil.br" tvg-name="Rede Brasil" tvg-logo="https://i.postimg.cc/rFzfZmQc/rede-brasil-tv.jpg", Rede Brasil
-#EXTGRP:Recomendados
-https://video09.logicahost.com.br/redebrasiloficial/redebrasiloficial/chunklist_w230245795.m3u8
-
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS PLAY" tvg-logo="https://i.postimg.cc/dtf9QmD7/rs-play.png", RS PLAY
 #EXTGRP:Recomendados
 https://video05.logicahost.com.br/rsnews/rsnews/playlist.m3u8
@@ -403,6 +399,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="RedeBrasil.br" tvg-name="Rede Brasil" tvg-logo="https://i.imgur.com/TXJKwzZ.png", Rede Brasil
+#EXTGRP:Variedades
+https://redebrasil.nuvemplay.live/hls/stream.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Cidade" tvg-logo="https://i.postimg.cc/L5HBzBL4/rede-cidade.jpg", Rede Cidade
 #EXTGRP:Variedades
 https://stmv2.srvif.com/famasi/famasi/playlist.m3u8
@@ -642,10 +642,6 @@ https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u
 #EXTINF:-1 group-title="Variedades" tvg-id="TVPassoFundo.br" tvg-name="TV Passo Fundo" tvg-logo="https://i.imgur.com/QFE6TiV.png", TV Passo Fundo
 #EXTGRP:Variedades
 https://5a57bda70564a.streamlock.net/tvpasso/tvpasso.sdp/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVPetropolis.br" tvg-name="TV Petropolis" tvg-logo="https://web2.petropolis.rj.gov.br/imc/film-commission/uploads/profissional/perfil/785b645d9c574b4d88504a85dbd6ef37.png", TV Petropolis
-#EXTGRP:Variedades
-https://video02.logicahost.com.br/tvpetropolis/tvpetropolis/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVRaTimBum.br" tvg-name="TV Ra Tim Bum" tvg-logo="https://i.imgur.com/JIQwz0w.png", TV Ra Tim Bum
 #EXTGRP:Variedades
@@ -1018,6 +1014,10 @@ http://186.219.52.187/rede_vida/index.m3u8
 #EXTINF:-1 group-title="Religião" tvg-id="RITtv.br" tvg-name="RIT TV" tvg-logo="https://i.imgur.com/Unjs1wi.png", RIT TV
 #EXTGRP:Religião
 https://acesso.ecast.site:3648/live/ritlive.m3u8
+
+#EXTINF:-1 group-title="Religião" tvg-id="TVEvangelizar.br" tvg-name="TV Evangelizar" tvg-logo="https://i.imgur.com/IrYR7Kp.png", TV Evangelizar
+#EXTGRP:Religião
+http://45.162.64.114/EVANGELIZAR/index.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="TVPadreCicero.br" tvg-name="TV Padre Cicero" tvg-logo="https://i.imgur.com/Y7b29VG.png", TV Padre Cicero
 #EXTGRP:Religião
@@ -2559,10 +2559,6 @@ https://d12e4o88jd8gex.cloudfront.net/out/v1/cea3de0b76ac4e82ab8ee0fd3f17ce12/in
 #EXTGRP:Religiosos
 https://stmv1.srvif.com/tvadorando/tvadorando/playlist.m3u8
 
-#EXTINF:-1 group-title="Religiosos" tvg-id="TVEvangelizar.br" tvg-name="TV Evangelizar" tvg-logo="https://i.postimg.cc/9fW8VhLV/gln-tv-capa.jpg", TV Evangelizar
-#EXTGRP:Religiosos
-https://tvevangelizar.brasilstream.com.br/hls/tvevangelizar/index.m3u8
-
 ### Canais Viagem
 
 #EXTINF:-1 group-title="Viagem" tvg-id="TravelBoxBrazil.br" tvg-name="Travel Box Brazil" tvg-logo="https://i.imgur.com/3tBJERH.png", Travel Box Brazil
@@ -2822,6 +2818,18 @@ https://player-tvcultura.stream.uol.com.br/live/tvcultura.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="523305" tvg-name="TV Cultura Alternativo 6" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png", TV Cultura Alternativo 6
 #EXTGRP:Alternativos
 https://jmp2.uk/plu-62e010e6cd663f0007e57dc8.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVEvangelizar.br" tvg-name="TV Evangelizar Alternativo 1" tvg-logo="https://i.imgur.com/IrYR7Kp.png", TV Evangelizar Alternativo 1
+#EXTGRP:Alternativos
+http://170.83.16.50/TV_EVANGELIZAR/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVEvangelizar.br" tvg-name="TV Evangelizar Alternativo 2" tvg-logo="https://i.imgur.com/IrYR7Kp.png", TV Evangelizar Alternativo 2
+#EXTGRP:Alternativos
+http://170.83.49.66:8083/EVANGELIZARHD/index.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="TVEvangelizar.br" tvg-name="TV Evangelizar Alternativo 3" tvg-logo="https://i.imgur.com/IrYR7Kp.png", TV Evangelizar Alternativo 3
+#EXTGRP:Alternativos
+http://186.219.52.187/tv_evangelizar/index.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="TVGazeta.br" tvg-name="TV Gazeta Alternativo 1" tvg-logo="https://i.imgur.com/0sksWse.png", TV Gazeta Alternativo 1
 #EXTGRP:Alternativos
