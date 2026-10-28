@@ -451,6 +451,10 @@ https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8
 #EXTGRP:Variedades
 https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SBTInterior.br" tvg-name="SBT Interior" tvg-logo="https://i.imgur.com/IkZfa4j.png", SBT Interior
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTNacional.br" tvg-name="SBT Nacional" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional
 #EXTGRP:Variedades
 https://6836041ea1117.streamlock.net/cverde/cverde/playlist.m3u8
@@ -966,6 +970,10 @@ http://170.83.16.50/HISTORY/index.m3u8
 #EXTINF:-1 group-title="Religião" tvg-id="DespertarTV.br" tvg-name="Despertar TV" tvg-logo="https://res.cloudinary.com/dpkehkbpv/image/upload/v1721839192/logo/mixtv/despertar_tv_ieb2l3.png", Despertar TV
 #EXTGRP:Religião
 https://br.conectmy.com.br/DespertarTV/index.m3u8
+
+#EXTINF:-1 group-title="Religião" tvg-id="FonteTV.br" tvg-name="Fonte TV" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV
+#EXTGRP:Religião
+http://flash.softhost.com.br:1935/fonte/fontetv/live.m3u8
 
 #EXTINF:-1 group-title="Religião" tvg-id="GospelCartoon.br" tvg-name="Gospel Cartoon" tvg-logo="https://i.imgur.com/yxjPno5.png", Gospel Cartoon
 #EXTGRP:Religião
@@ -2799,6 +2807,10 @@ http://186.219.52.187/zoomoo/index.m3u8
 #EXTGRP:Alternativos
 http://170.83.16.50/FISH_TV/index.m3u8
 
+#EXTINF:-1 group-title="Alternativos" tvg-id="FonteTV.br" tvg-name="Fonte TV Alternativo 1" tvg-logo="https://i.imgur.com/7q2BmNc.png", Fonte TV Alternativo 1
+#EXTGRP:Alternativos
+https://59fb88a1b1108.streamlock.net/fonte/_definst_/fontetv/chunklist_w1224511652.m3u8
+
 #EXTINF:-1 group-title="Alternativos" tvg-id="ISTV.br" tvg-name="ISTV Alternativo 1" tvg-logo="https://i.postimg.cc/GmZSkzZZ/logo-istv.png", ISTV Alternativo 1
 #EXTGRP:Alternativos
 https://video10.logicahost.com.br/redeistv/redeistv/chunklist_w1732472063.m3u8
@@ -2870,6 +2882,10 @@ http://170.83.49.66:8083/RITHD/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="608049aefa2b8ae93c2c3a63-668431d0702b9db9f817725e" tvg-name="RunTime Alternativo 1" tvg-logo="https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_1920x1080_0.jpg", RunTime Alternativo 1
 #EXTGRP:Alternativos
 https://run-rt-br.otteravision.com/run/rt_br/rt_br_720p_high.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="SBTNacional.br" tvg-name="SBT Nacional Alternativo 1" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional Alternativo 1
+#EXTGRP:Alternativos
+https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="697347be-9993-4e73-9686-7bd1a1c3e0e2" tvg-name="SBT News Alternativo 1" tvg-logo="https://i.postimg.cc/NF5jbN5d/sbt_news.jpg", SBT News Alternativo 1
 #EXTGRP:Alternativos
