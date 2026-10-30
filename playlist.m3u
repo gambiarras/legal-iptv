@@ -391,10 +391,6 @@ http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -590,6 +586,10 @@ http://170.83.16.50/SONY_CHANNEL/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
@@ -897,7 +897,7 @@ https://amg00740-sofa-amg00740c7-lg-br-7305.playouts.now.amagi.tv/1080p-cc-hevc/
 #EXTGRP:Filmes
 http://170.83.16.50/AXN/index.m3u8
 
-#EXTINF:-1 group-title="Filmes" tvg-id="6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721" tvg-name="CINDIE TV" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV
+#EXTINF:-1 group-title="Filmes" tvg-id="608049aefa2b8ae93c2c3a63-6685abbe59703916799193a7" tvg-name="CINDIE TV" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV
 #EXTGRP:Filmes
 https://d20xuwbyc4yoag.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-CINDIE/387.m3u8?ads.vf=grWTpG3NQNi
 
@@ -3911,7 +3911,7 @@ https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cm
 #EXTGRP:Canais de TV
 https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vZnZoMjEuY29tL2xpdmUvYnJ1Njc1bmI4L2JmVDc5LzE2MjM3OC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9mdmgyMS5jb20vbGl2ZS9icnU2NzVuYjgvYmZUNzkvMTYyMzc4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9mdmgyMS5jb20vbGl2ZS9icnU2NzVuYjgvYmZUNzkvMTYyMzc4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0b3BvLWdpZ2lvIn0.m3u8
 
-#EXTINF:-1 group-title="Canais de TV" tvg-id="697140a85d851f5e69414688-6329474265c8569187176338" tvg-name="Trace Brazuca [4K]" tvg-logo="https://i.imgur.com/ZXe9A7X.png", Trace Brazuca [4K]
+#EXTINF:-1 group-title="Canais de TV" tvg-id="6a1610bebdf296985fd95603-6329474265c8569187176338" tvg-name="Trace Brazuca [4K]" tvg-logo="https://i.imgur.com/ZXe9A7X.png", Trace Brazuca [4K]
 #EXTGRP:Canais de TV
 https://frostviewr1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vZnZoMjEuY29tL2xpdmUvYnJ1Njc1bmI4L2JmVDc5LzEwMzQ1My5tM3U4Iiwicm9vdCI6Imh0dHA6Ly9mdmgyMS5jb20vbGl2ZS9icnU2NzVuYjgvYmZUNzkvMTAzNDUzLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly9mdmgyMS5jb20vbGl2ZS9icnU2NzVuYjgvYmZUNzkvMTAzNDUzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDp0cmFjZS1icmF6dWNhIn0.m3u8
 
@@ -4429,7 +4429,7 @@ https://eitv7.cdn.broadpeak.io/account351-i1495/event/canalsaude/format720p.m3u8
 #EXTGRP:Alternativos
 https://amg01391-amg01391c10-tcl-br-9630.playouts.now.amagi.tv/1080p-cc/index.m3u8
 
-#EXTINF:-1 group-title="Alternativos" tvg-id="6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721" tvg-name="CINDIE TV Alternativo 1" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV Alternativo 1
+#EXTINF:-1 group-title="Alternativos" tvg-id="608049aefa2b8ae93c2c3a63-6685abbe59703916799193a7" tvg-name="CINDIE TV Alternativo 1" tvg-logo="https://a.jsrdn.com/hls/23208/cindie-tv/logo_20250225_222520_68.png", CINDIE TV Alternativo 1
 #EXTGRP:Alternativos
 https://cc-hqw8u5r1nshjc.akamaized.net/scheduler/scheduleMaster/352.m3u8
 
