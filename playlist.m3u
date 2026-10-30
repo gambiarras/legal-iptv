@@ -4269,6 +4269,10 @@ http://200.189.113.201/hls/tve.m3u8
 
 ### Canais Alternativos
 
+#EXTINF:-1 group-title="Alternativos" tvg-id="1001Noites.br" tvg-name="1001 Noites Alternativo 1" tvg-logo="https://i.imgur.com/dWA9y2J.png", 1001 Noites Alternativo 1
+#EXTGRP:Alternativos
+https://cpbr.appflux.com.br:2000/hls/1001noites/1001noites.m3u8
+
 #EXTINF:-1 group-title="Alternativos" tvg-id="AgroBrasilTV.br" tvg-name="AgroBrasil TV Alternativo 1" tvg-logo="https://i.imgur.com/aNkP7Zd.png", AgroBrasil TV Alternativo 1
 #EXTGRP:Alternativos
 https://server.flixtv.com.br/agrobrasiltv/agrobrasiltv/playlist.m3u8
