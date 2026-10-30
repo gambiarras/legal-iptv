@@ -507,6 +507,10 @@ https://video04.logicahost.com.br/isonata/isonata/chunklist_w910221052.m3u8
 #EXTGRP:Variedades
 http://170.83.16.50/SONY_CHANNEL/index.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SOUTV.br" tvg-name="SOU TV" tvg-logo="https://i.ibb.co/8cKmCNm/ezgif-com-gif-maker.png", SOU TV
+#EXTGRP:Variedades
+https://video10.logicahost.com.br/soutv/soutv/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TV 100% Caipira" tvg-logo="https://i.postimg.cc/c1wbFHtp/tv-caipira.jpg", TV 100% Caipira
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/caipira/caipira/playlist.m3u8
@@ -1092,6 +1096,10 @@ http://181.78.197.59:8000/play/a081/index.m3u8
 http://181.78.197.59:8000/play/a07n/index.m3u8
 
 ### Canais Música
+
+#EXTINF:-1 group-title="Música" tvg-id="KpopTVPlay.br" tvg-name="KpopTV Play" tvg-logo="https://i.imgur.com/Tf0vweF.png", KpopTV Play
+#EXTGRP:Música
+https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
 
 #EXTINF:-1 group-title="Música" tvg-id="1072" tvg-name="Music Box Brazil" tvg-logo="https://i.imgur.com/CDPCF2X.png", Music Box Brazil
 #EXTGRP:Música
