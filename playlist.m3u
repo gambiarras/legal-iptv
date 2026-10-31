@@ -247,10 +247,6 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
-#EXTGRP:Variedades
-https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -310,10 +306,6 @@ https://video04.logicahost.com.br/cloudingtv/cloudingtv/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="COMBrasil.br" tvg-name="COM Brasil" tvg-logo="https://i.imgur.com/GrjGwKM.png", COM Brasil
 #EXTGRP:Variedades
 https://br5093.streamingdevideo.com.br/abc/abc/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Comedy Central WebTV" tvg-logo="https://i.postimg.cc/7ZHB90cg/comedy-centralwebtv.jpg", Comedy Central WebTV
-#EXTGRP:Variedades
-https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Comedy Club" tvg-logo="https://i.postimg.cc/25fbwYpT/comedy-club.jpg", Comedy Club
 #EXTGRP:Variedades
@@ -5476,6 +5468,10 @@ http://170.83.49.66:8083/RITHD/index.m3u8
 #EXTINF:-1 group-title="Alternativos" tvg-id="608049aefa2b8ae93c2c3a63-668431d0702b9db9f817725e" tvg-name="RunTime Alternativo 1" tvg-logo="https://img1.static-ottera.com/prod/run/linear_channel/logo/366x206/runtime_br_1920x1080_0.jpg", RunTime Alternativo 1
 #EXTGRP:Alternativos
 https://run-rt-br.otteravision.com/run/rt_br/rt_br_720p_high.m3u8
+
+#EXTINF:-1 group-title="Alternativos" tvg-id="SBTNacional.br" tvg-name="SBT Nacional Alternativo 1" tvg-logo="https://i.imgur.com/tc1ALuu.png", SBT Nacional Alternativo 1
+#EXTGRP:Alternativos
+https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u8
 
 #EXTINF:-1 group-title="Alternativos" tvg-id="697347be-9993-4e73-9686-7bd1a1c3e0e2" tvg-name="SBT News Alternativo 1" tvg-logo="https://i.postimg.cc/NF5jbN5d/sbt_news.jpg", SBT News Alternativo 1
 #EXTGRP:Alternativos
