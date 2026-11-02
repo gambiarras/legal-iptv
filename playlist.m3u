@@ -247,6 +247,10 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTGRP:Variedades
 https://awtv.nuvemplay.live/hls/stream.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="BoasNovas.br" tvg-name="Boas Novas" tvg-logo="https://i.imgur.com/ZqhizdP.png", Boas Novas
+#EXTGRP:Variedades
+https://cdn.jmvstream.com/w/LVW-9375/LVW9375_6i0wPBCHYc/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="Canal25Jundiai.br" tvg-name="Canal 25 Jundiai" tvg-logo="https://i.imgur.com/7igGMwH.png", Canal 25 Jundiai
 #EXTGRP:Variedades
 https://stream01.msolutionbrasil.com.br/hls/canal25/live.m3u8
@@ -442,10 +446,6 @@ https://cdn.live.br1.jmvstream.com/webtv/AVJ-15235/playlist/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="Rede Vivax TV" tvg-logo="https://i.postimg.cc/MGcsm3ng/vivax-tv.png", Rede Vivax TV
 #EXTGRP:Variedades
 https://stmv2.samcast.com.br/marcus8647/marcus8647/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="RedeTVParana.br" tvg-name="RedeTV! Parana" tvg-logo="https://i.imgur.com/D8R0Af4.png", RedeTV! Parana
-#EXTGRP:Variedades
-https://tv01.zas.media:1936/redetvparana/redetvparana/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="SBTCuiaba.br" tvg-name="SBT Cuiaba" tvg-logo="https://i.imgur.com/EZJWQ3i.png", SBT Cuiaba
 #EXTGRP:Variedades
@@ -1367,6 +1367,10 @@ https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjIubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjIubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNDIyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDphLWdyYW5kZS1mYW1pbGlhLTA2In0~ckZo995OcHj8qvuOmiBhJ3GM9I77GbzJ.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A GRANDE FAMILIA 11 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPLFHzrd4-mwOGS_z91Z4s_8.png", A GRANDE FAMILIA 11 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjcubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjcubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNDI3Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDphLWdyYW5kZS1mYW1pbGlhLTExIn0~UOX8fBnz4qUpKP5-sk7FMZYgMMhslKxj.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="A GRANDE FAMILIA 12 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPLFHzrd4-mwOGS_z91Z4s_8.png", A GRANDE FAMILIA 12 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjgubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MjgubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNDI4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDphLWdyYW5kZS1mYW1pbGlhLTEyIn0~9w_HOyVzfjctwsnVTRcHH1p3CNbHp1pq.m3u8
@@ -1627,6 +1631,10 @@ https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI4MzE4My5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgzMTgzLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgzMTgzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiaXMifQ~dZ4cFB7xlJUuRR5hys_d30oaC4u7qe10.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="BITA E OS ANIMAIS [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", BITA E OS ANIMAIS [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5MzUubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5MzUubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTM1Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpiaXRhLWUtb3MtYW5pbWFpcyJ9~6Xt03YSn1shx3uqnhQlsrB1VUoTGUGqG.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="BLACK MIRROR 01 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPLFHzrd4-mwOGS_z91Z4s_8.png", BLACK MIRROR 01 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MTMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0MTMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNDEzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpibGFjay1taXJyb3ItMDEifQ~CL-7UDi-ujc_pD_XqtWJY7QY6rnPLIph.m3u8
@@ -1703,6 +1711,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NTIubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NTIubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTUyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpib2Item9vbS0xIn0~qEFS8CB4y0ZQXQmHkNRia-KLZ0OQDD5e.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="BOB ZOOM 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", BOB ZOOM 2 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NTMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NTMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTUzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpib2Item9vbS0yIn0~_VzF3DwNTp5vqSFjRLZ2bfimIzShCPnU.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="BOBS BURGERS 03 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPLFHzrd4-mwOGS_z91Z4s_8.png", BOBS BURGERS 03 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA1MzMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA1MzMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNTMzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpib2JzLWJ1cmdlcnMtMDMifQ~fF_yvc606RawXnN7B7XB-IYr5_LVFTuF.m3u8
@@ -1763,6 +1775,10 @@ https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTE0MTAzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjYW5hbC1nb2F0LTA2In0~VTQxagvzcVmXygHEHwKAAuGSDojndAX7.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CANAL GOAT 07 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1ua-vlH-6Z3PGx9_IONjiC38ENrJMipYVdIWn0H669z4.png", CANAL GOAT 07 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDQubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDQubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTE0MTA0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjYW5hbC1nb2F0LTA3In0~v5VNLBndy-J8coiicQbIKwJOwXF9hgCn.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CANAL GOAT 08 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1ua-vlH-6Z3PGx9_IONjiC38ENrJMipYVdIWn0H669z4.png", CANAL GOAT 08 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDUubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTQxMDUubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTE0MTA1Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjYW5hbC1nb2F0LTA4In0~kGpcyFf2aCOkcNWDxCMECO7vaukHs51W.m3u8
@@ -1822,6 +1838,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CAVALEIROS DO ZODIACO 5 [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", CAVALEIROS DO ZODIACO 5 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyMjkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyMjkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MjI5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjYXZhbGVpcm9zLWRvLXpvZGlhY28tNSJ9~Pr96RKu0X3Ifs8lE_xMrUFPkwjgcdTkG.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CAVALEIROS DO ZODIACO 6 [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", CAVALEIROS DO ZODIACO 6 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyMzAubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyMzAubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MjMwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjYXZhbGVpcm9zLWRvLXpvZGlhY28tNiJ9~VY15aIWOIKFIHolH_hx71eTTy_Bv4cCI.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CAVALEIROS DO ZODIACO [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", CAVALEIROS DO ZODIACO [HD]
 #EXTGRP:Canais de TV
@@ -1951,6 +1971,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3Lzc2Nzc3My5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3NzczLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3NzczLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjaW5lLXNreS0xNCJ9~7NM0PfX-2nU91vfTMP3zz0EeG8aET7Ed.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CINE SKY 15 [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1iT1xQFAqbwLSnkckHT317mHvZ28dgR91gRBnUoPXW8x.png", CINE SKY 15 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3Lzc2Nzc3NC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3Nzc0Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3Nzc0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjaW5lLXNreS0xNSJ9~cKSa_mDNtuVaFrh7ePPi5FmF4H7FfnUu.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1041" tvg-name="CINEMAX [4K]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1t2baJCdqpzX3dHRli0mqjZyUExyhmJpBiQj-RbDwrdI.png", CINEMAX [4K]
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3Lzc2NzY3OC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3Njc4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3Njc4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjaW5lbWF4In0~TnVJq7s7xQwi2U8Q-sG3MyQx7xSqYF_V.m3u8
@@ -1999,6 +2023,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzUyNTE5OC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI1MTk4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI1MTk4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb21iYXRlIn0~6jl0iMiOqK5yPj8cTFAKhFXspt-lqRek.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CORAGEM O CÃO COVARDE 1 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", CORAGEM O CÃO COVARDE 1 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NjgubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NjgubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTY4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3JhZ2VtLW8tY2FvLWNvdmFyZGUtMSJ9~mFicwN-VGglLr2KEHZCBrxVooY1G7B0N.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CORAGEM O CÃO COVARDE 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", CORAGEM O CÃO COVARDE 2 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NjkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NjkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTY5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3JhZ2VtLW8tY2FvLWNvdmFyZGUtMiJ9~JNFRKhCmVw5nLL8gfMUga1YCNAm8oMd3.m3u8
@@ -2014,6 +2042,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CORRIDA MALUCA 3 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", CORRIDA MALUCA 3 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzIubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzIubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTcyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3JyaWRhLW1hbHVjYS0zIn0~kJsroF-_y2MTA_6tIlOia8TXANu1KKTJ.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="CORRIDA MALUCA 4 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", CORRIDA MALUCA 4 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTczLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpjb3JyaWRhLW1hbHVjYS00In0~8mhhk7s5yFCcYDVOJI7dSyOHolv2iGjy.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1053" tvg-name="CURTA [4K]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1pn-si3Wgn5_TLUl_kdEWI6YUR2ykV3aP-aB_WkOp_hC.png", CURTA [4K]
 #EXTGRP:Canais de TV
@@ -2219,6 +2251,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTAzMzQubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTAzMzQubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwMzM0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkb2lzLWhvbWVucy1lLW1laW8tMDUifQ~hHpYseYbHJuAzXk1fYVJod46m1A7T8Gp.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DORA AVENTUREIRA 1 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", DORA AVENTUREIRA 1 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzgubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzgubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTc4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkb3JhLWF2ZW50dXJlaXJhLTEifQ~treF2k7On5P4P0MxZA0mcWBoOEkbMsiH.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DORA AVENTUREIRA 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", DORA AVENTUREIRA 2 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5NzkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTc5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkb3JhLWF2ZW50dXJlaXJhLTIifQ~qPOI7r5-x-pv3mO4DQSojxNKolvW_L13.m3u8
@@ -2258,6 +2294,14 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DRAGON BALL 24HS 1 [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", DRAGON BALL 24HS 1 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MjQzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkcmFnb24tYmFsbC0yNGhzLTEifQ~gjZ6roiimlCm5INaPCS1ofQTcDPlF1Vk.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DRAGON BALL 24HS 3 [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", DRAGON BALL 24HS 3 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDUubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDUubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MjQ1Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkcmFnb24tYmFsbC0yNGhzLTMifQ~uJiLa3mf8KCy38sES5AHUHCY55-0yGgP.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DRAGON BALL 24HS 4 [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", DRAGON BALL 24HS 4 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDYubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgyNDYubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MjQ2Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpkcmFnb24tYmFsbC0yNGhzLTQifQ~Z5V4xMof5BKBzmR6tn9g-dgsfM1ZQNul.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="DRAGON BALL [HD]" tvg-logo="https://i.imgur.com/m9yVZBW.png", DRAGON BALL [HD]
 #EXTGRP:Canais de TV
@@ -2543,6 +2587,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0NDYubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzExMTA0NDYubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8xMTEwNDQ2Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpnYW1lLW9mLXRocm9uZXMtMDIifQ~bRpdyuTbk_xoThCZ3UWvUZ_zIhrCSrt5.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="GARFIELD 1 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", GARFIELD 1 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5ODkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5ODkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTg5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpnYXJmaWVsZC0xIn0~M1xIL0rJGJrv2GFGtSuRdPNx-4mfSyNl.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="GARFIELD 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", GARFIELD 2 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5OTAubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5OTAubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTkwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpnYXJmaWVsZC0yIn0~ErpY0GrERUiwt0AGjDdNuCD2ibAFGIpX.m3u8
@@ -2707,6 +2755,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5OTkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDc5OTkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3OTk5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpob21lbS1kZS1mZXJyby0yIn0~YXMtbkfpF6A2y0v7I9d_B6AuXX0EifCm.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="HOMEM DE FERRO 3 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", HOMEM DE FERRO 3 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDAubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDAubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDAwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpob21lbS1kZS1mZXJyby0zIn0~ModzOFxR7tYEdn7MiHQ38rn0xLbkNmNC.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="HTO FILMES [HD]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPJ2qkxax4V2wjDSX4_ru8uQ.png", HTO FILMES [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzUyNDg0NC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI0ODQ0Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI0ODQ0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpodG8tZmlsbWVzIn0~2YKCo89vfhWHCcqGQTv2ZIAmNTICSysW.m3u8
@@ -2751,6 +2803,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDcwMDIubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDcwMDIubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA3MDAyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDppdHVpdXRhYmEifQ~zoHm5IEvQtt8fsyh2IwOO9KMz3FQlqX7.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="JACARELVIS [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", JACARELVIS [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDMubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDMubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDAzLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpqYWNhcmVsdmlzIn0~V9AtvrvaLdQ9OBqzJdMTvNjmcZZKqsmJ.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="JIRAYA [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", JIRAYA [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDQubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDQubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDA0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpqaXJheWEifQ~m8sukm840vY4g4VVQJFlMeQ-FEuYFSpE.m3u8
@@ -2791,6 +2847,10 @@ https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI4MTI3Mi5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgxMjcyLm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgxMjcyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpqb3ZlbS1wYW4tbmV3cyJ9~3W9UWspmJAzmkelF0CthNVHX-vCgji4t.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="5ffcc5130fd98c0007f2e216" tvg-name="KENAN E KEL [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", KENAN E KEL [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDcubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMDcubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDA3Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDprZW5hbi1lLWtlbCJ9~w5C_-R33oWPZYk5clXhqcQsJWiqN3gKS.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="KIDS MAIS [4K]" tvg-logo="http://mdrive.meuserver.sbs:80/images/YTfCHDcUk_RWIyKDFjwlPJjVeRsfTQoXCCN8if4VlUI.png", KIDS MAIS [4K]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzUyNTEwNC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI1MTA0Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNTI1MTA0Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpraWRzLW1haXMifQ~L3FvGNCel52eMDg7AgcnwZFXJgaze1rG.m3u8
@@ -2822,6 +2882,10 @@ https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="LIGA DA JUSTICA [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", LIGA DA JUSTICA [HD]
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMTEubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMTEubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDExLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpsaWdhLWRhLWp1c3RpY2EifQ~TFtLr_pFXmkl7yR8Tq7eDDcgYR0bt4O2.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="LIGA FUTSAL 2 [4K]" tvg-logo="https://i.imgur.com/T58cKvG.png", LIGA FUTSAL 2 [4K]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzIzOTg2ODUubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzIzOTg2ODUubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yMzk4Njg1Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpsaWdhLWZ1dHNhbC0yIn0~5PqUIZPk2ue9LHC-8uVbbpnemABre89f.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="LIKE [4K]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1j56O7jQQt2rIyin3Jn1uCnIVrhM-Yr47QpW0X5ByaxHijJ7q435txIQbVbUrO4ATw.png", LIKE [4K]
 #EXTGRP:Canais de TV
@@ -2953,7 +3017,7 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="1054" tvg-name="MODO VIAGEM [4K]" tvg-logo="http://mdrive.meuserver.sbs:80/images/UQquyTMkyj-9iTfT_jvW1pGKVdSNY11H6r5ObCWFbd1Mh-r6N2-pB-nZmRxyJxO0.png", MODO VIAGEM [4K]
 #EXTGRP:Canais de TV
-https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3Lzc2NzcyOS5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3NzI5Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvNzY3NzI5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDptb2RvLXZpYWdlbSJ9~luVF-FBRYUqoEJ6hu9gHuFgJWaRBxuuK.m3u8
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI4MzIxOC5tM3U4Iiwicm9vdCI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgzMjE4Lm0zdTgiLCJyZW5ldyI6Imh0dHA6Ly90cm95c2F0LmNvbS9saXZlLzQ1NDU0MzcwMC80Nzg4ODUwMTcvMjgzMjE4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDptb2RvLXZpYWdlbSJ9~jLvyxSbAzuWWPwqDTD9-vdWPU_EJZdCz.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="MORANGUINHO 1 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", MORANGUINHO 1 [HD]
 #EXTGRP:Canais de TV
@@ -3199,6 +3263,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzAubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzAubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDMwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1wYWRyaW5ob3MtbWFnaWNvcy0xIn0~3JLTAwDs1hvjL3IgE4lOk4Kwf4cpJ4lm.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS PADRINHOS MÁGICOS 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS PADRINHOS MÁGICOS 2 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzEubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzEubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDMxLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1wYWRyaW5ob3MtbWFnaWNvcy0yIn0~tkEBYidJDZMCkIctSfz38LjA6Gkl_zOb.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS PADRINHOS MÁGICOS 3 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS PADRINHOS MÁGICOS 3 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzIubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwMzIubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDMyLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1wYWRyaW5ob3MtbWFnaWNvcy0zIn0~Zpq7dPsqojOtm_kCDXjJ1xOm--lZNLtX.m3u8
@@ -3267,9 +3335,17 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTGRP:Canais de TV
 https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNDgubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNDgubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDQ4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy0yMCJ9~tC9TUqnOKyYsnOAMyePm32vRi0SMvp7g.m3u8
 
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 21 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 21 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNDkubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNDkubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDQ5Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy0yMSJ9~XbpGXe9SUb44Cn-v1AHrDEv4l643Qblz.m3u8
+
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 22 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 22 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNTAubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNTAubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDUwLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy0yMiJ9~oarWoxux8jebTSPYc4kggh7rdTdNa6sf.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 23 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 23 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNTEubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNTEubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDUxLm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy0yMyJ9~I8qNojXSq19h0XS4F6qgTu7U88X6jnAh.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 25 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 25 [HD]
 #EXTGRP:Canais de TV
@@ -3322,6 +3398,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 5 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 5 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNjUubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNjUubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDY1Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy01In0~wW4w-ou93Rr84iqOQ3Qq8DoXTOu3O-wd.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 6 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 6 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNjYubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwNjYubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDY2Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpvcy1zaW1wc29ucy02In0~fAD-PzpjrlaWwWYD3OkXgrOVKu9GMsf7.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="OS SIMPSONS 7 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", OS SIMPSONS 7 [HD]
 #EXTGRP:Canais de TV
@@ -3426,6 +3506,10 @@ https://frostview-s2.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1c
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="PERNALONGA 1 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", PERNALONGA 1 [HD]
 #EXTGRP:Canais de TV
 https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwODcubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwODcubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDg3Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpwZXJuYWxvbmdhLTEifQ~w8xCdhdemloSh6HQKqoEVLxOU5Wx7oDJ.m3u8
+
+#EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="PERNALONGA 2 [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", PERNALONGA 2 [HD]
+#EXTGRP:Canais de TV
+https://frostview-s1.squareweb.app/relay/m/eyJ2IjoyLCJraW5kIjoibWFuaWZlc3QiLCJ1cmwiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwODgubTN1OCIsInJvb3QiOiJodHRwOi8vdHJveXNhdC5jb20vbGl2ZS80NTQ1NDM3MDAvNDc4ODg1MDE3LzI0MDgwODgubTN1OCIsInJlbmV3IjoiaHR0cDovL3Ryb3lzYXQuY29tL2xpdmUvNDU0NTQzNzAwLzQ3ODg4NTAxNy8yNDA4MDg4Lm0zdTgiLCJjaGFubmVsX2lkIjoiY3M6Y2hhbm5lbDpwZXJuYWxvbmdhLTIifQ~_nEiLk_nSX1fyDUpLfNR1AYOP5HY7Sj_.m3u8
 
 #EXTINF:-1 group-title="Canais de TV" tvg-id="" tvg-name="PERNALONGA E SUA TURMA [HD]" tvg-logo="https://i.imgur.com/Qsbxc2F.png", PERNALONGA E SUA TURMA [HD]
 #EXTGRP:Canais de TV
