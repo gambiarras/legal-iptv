@@ -39,17 +39,9 @@ https://video11.logicahost.com.br/gramadotv/gramadotv/playlist.m3u8
 #EXTGRP:Recomendados
 https://video04.logicahost.com.br/schamlztv/schamlztv/playlist.m3u8
 
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="K Pop TV Play" tvg-logo="https://kpoptv.htforum.net/wp-content/uploads/2024/11/logokpoptvplay.png", K Pop TV Play
-#EXTGRP:Recomendados
-https://183.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/chunks.m3u8
-
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="Lamore Rock Show" tvg-logo="https://i.postimg.cc/5tBsBfWb/lamore-web-show.jpg", Lamore Rock Show
 #EXTGRP:Recomendados
 https://a.cdni.live/rodrigo2364/rodrigo2364/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="NSports.br" tvg-name="N Sports" tvg-logo="https://i.postimg.cc/V6znXV4w/nsports.jpg", N Sports
-#EXTGRP:Recomendados
-https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt_720p.m3u8
 
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="ON TV" tvg-logo="https://i.postimg.cc/Y9mq7Rhr/rede-on-tv.jpg", ON TV
 #EXTGRP:Recomendados
@@ -74,26 +66,6 @@ https://video03.logicahost.com.br/rfptv/rfptv/playlist.m3u8
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS PLAY" tvg-logo="https://i.postimg.cc/dtf9QmD7/rs-play.png", RS PLAY
 #EXTGRP:Recomendados
 https://video05.logicahost.com.br/rsnews/rsnews/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS SPORTS" tvg-logo="https://i.postimg.cc/Ghfj3J9t/rs-sport01.png", RS SPORTS
-#EXTGRP:Recomendados
-https://video07.logicahost.com.br/rssports01/rssports01/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS SPORTS 2" tvg-logo="https://i.postimg.cc/jd1hqQCL/rs-sport02.png", RS SPORTS 2
-#EXTGRP:Recomendados
-https://video07.logicahost.com.br/rssports02/rssports02/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS SPORTS 3" tvg-logo="https://i.postimg.cc/28txjF3L/rs-sport03.png", RS SPORTS 3
-#EXTGRP:Recomendados
-https://video07.logicahost.com.br/rssports03/rssports03/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS SPORTS 4" tvg-logo="https://i.postimg.cc/dtf9QmDy/rs-sport04.png", RS SPORTS 4
-#EXTGRP:Recomendados
-https://video07.logicahost.com.br/rssports04/rssports04/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS SPORTS 5" tvg-logo="https://i.postimg.cc/c4zc1M6Y/rs-sport05.png", RS SPORTS 5
-#EXTGRP:Recomendados
-https://video07.logicahost.com.br/rssports05/rssports05/playlist.m3u8
 
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="RS TV" tvg-logo="https://i.postimg.cc/SNPGQ7jC/rs-tv.png", RS TV
 #EXTGRP:Recomendados
@@ -138,10 +110,6 @@ https://cdn.live.br1.jmvstream.com/w/LVW-8855/LVW8855_u7a7C4Oa4F/chunklist.m3u8
 #EXTINF:-1 group-title="Recomendados" tvg-id="TVGazin.br" tvg-name="TV Gazin" tvg-logo="https://i.postimg.cc/PJZcjPSP/tv-gazin.jpg", TV Gazin
 #EXTGRP:Recomendados
 https://video09.logicahost.com.br/tvgazin/tvgazin/playlist.m3u8
-
-#EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV Grande Natal" tvg-logo="https://i.postimg.cc/zGdkPV39/tv-grande-natal.jpg", TV Grande Natal
-#EXTGRP:Recomendados
-https://tvgrandenatalhdtv.duckdns.org:3334/hls/live.m3u8
 
 #EXTINF:-1 group-title="Recomendados" tvg-id="" tvg-name="TV História" tvg-logo="https://i.postimg.cc/s2Bn4HBF/tv-historia.png", TV História
 #EXTGRP:Recomendados
@@ -1349,6 +1317,30 @@ http://190.83.2.182:8090/ESPN3/index.m3u8
 #EXTGRP:Esportes
 http://181.78.197.59:8000/play/a07n/index.m3u8
 
+#EXTINF:-1 group-title="Esportes" tvg-id="NSports.br" tvg-name="N Sports" tvg-logo="https://i.postimg.cc/V6znXV4w/nsports.jpg", N Sports
+#EXTGRP:Esportes
+https://ogc-nsprt-tcl-roku-syndication.otteravision.com/ogc/nsprt/nsprt_720p.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="RS SPORTS" tvg-logo="https://i.postimg.cc/Ghfj3J9t/rs-sport01.png", RS SPORTS
+#EXTGRP:Esportes
+https://video07.logicahost.com.br/rssports01/rssports01/playlist.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="RS SPORTS 2" tvg-logo="https://i.postimg.cc/jd1hqQCL/rs-sport02.png", RS SPORTS 2
+#EXTGRP:Esportes
+https://video07.logicahost.com.br/rssports02/rssports02/playlist.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="RS SPORTS 3" tvg-logo="https://i.postimg.cc/28txjF3L/rs-sport03.png", RS SPORTS 3
+#EXTGRP:Esportes
+https://video07.logicahost.com.br/rssports03/rssports03/playlist.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="RS SPORTS 4" tvg-logo="https://i.postimg.cc/dtf9QmDy/rs-sport04.png", RS SPORTS 4
+#EXTGRP:Esportes
+https://video07.logicahost.com.br/rssports04/rssports04/playlist.m3u8
+
+#EXTINF:-1 group-title="Esportes" tvg-id="" tvg-name="RS SPORTS 5" tvg-logo="https://i.postimg.cc/c4zc1M6Y/rs-sport05.png", RS SPORTS 5
+#EXTGRP:Esportes
+https://video07.logicahost.com.br/rssports05/rssports05/playlist.m3u8
+
 #EXTINF:-1 group-title="Esportes" tvg-id="SporTV2.br" tvg-name="SporTV 2" tvg-logo="https://i.imgur.com/pBiUnb2.png", SporTV 2
 #EXTGRP:Esportes
 http://195.178.110.110/sportv2/index.m3u8
@@ -1367,6 +1359,10 @@ http://cdn.tvmatic.net/fight.m3u8
 #EXTGRP:Música
 https://stmv1.srvstm.com/catedraldorock/catedraldorock/playlist.m3u8
 
+#EXTINF:-1 group-title="Música" tvg-id="" tvg-name="K Pop TV Play" tvg-logo="https://kpoptv.htforum.net/wp-content/uploads/2024/11/logokpoptvplay.png", K Pop TV Play
+#EXTGRP:Música
+https://183.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/chunks.m3u8
+
 #EXTINF:-1 group-title="Música" tvg-id="KpopTVPlay.br" tvg-name="KpopTV Play" tvg-logo="https://i.imgur.com/Tf0vweF.png", KpopTV Play
 #EXTGRP:Música
 https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8
@@ -1378,6 +1374,10 @@ http://168.197.104.22/MUSIC/index.m3u8
 #EXTINF:-1 group-title="Música" tvg-id="63dac32bda711800088a2ba3" tvg-name="TikTok Radio Brasil" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/f/f4/TikTok_Radio.svg", TikTok Radio Brasil
 #EXTGRP:Música
 https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99992529
+
+#EXTINF:-1 group-title="Música" tvg-id="" tvg-name="TV Grande Natal" tvg-logo="https://i.postimg.cc/zGdkPV39/tv-grande-natal.jpg", TV Grande Natal
+#EXTGRP:Música
+https://tvgrandenatalhdtv.duckdns.org:3334/hls/live.m3u8
 
 ### Canais Internacional
 
