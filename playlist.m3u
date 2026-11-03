@@ -155,10 +155,6 @@ http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8
 #EXTGRP:Variedades
 https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="ESTV" tvg-logo="https://i.postimg.cc/nhPBDrTF/estv-logo.jpg", ESTV
-#EXTGRP:Variedades
-https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="EUTV.br" tvg-name="EUTV" tvg-logo="https://i.imgur.com/8PxpamC.png", EUTV
 #EXTGRP:Variedades
 https://cdn.jmvstream.com/w/LVW-8719/LVW8719_AcLVAxWy5J/playlist.m3u8
@@ -290,6 +286,10 @@ https://slbps-ml-sambatech.akamaized.net/samba-live/2472/7424/8a00fe7cc36ac263b2
 #EXTINF:-1 group-title="Variedades" tvg-id="SonyChannel.br" tvg-name="Sony Channel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sony_Channel_Logo.png/960px-Sony_Channel_Logo.png", Sony Channel
 #EXTGRP:Variedades
 http://170.83.16.50/SONY_CHANNEL/index.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="" tvg-name="TES TV" tvg-logo="https://i.postimg.cc/fWjYNFsd/rede-tes-tv.png", TES TV
+#EXTGRP:Variedades
+https://stmv3.voxtvhd.com.br/tves14edson/tves14edson/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TV3Curitiba.br" tvg-name="TV 3 Curitiba" tvg-logo="https://eswqkrogupaisirwcsys.supabase.co/storage/v1/object/public/mbc-media/canais/1776133208960-o2l2f7f02f.png", TV 3 Curitiba
 #EXTGRP:Variedades
