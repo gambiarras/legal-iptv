@@ -1,1 +1,12 @@
 #EXTM3U refresh="3600"
+
+
+### Canais YouTube
+
+#EXTINF:-1 group-title="YouTube" tvg-id="Companion.YouTube.mrbean" tvg-name="Mr Bean" tvg-logo="https://i.ytimg.com/vi/S_71wzZMf0M/hq720.jpg?v=6a70ac13&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7PfE0I4U1GrIJTa2gkbLsXzgjbw", Mr Bean
+#EXTGRP:YouTube
+plugin://plugin.video.youtube/play/?video_id=S_71wzZMf0M
+
+#EXTINF:-1 group-title="YouTube" tvg-id="Companion.YouTube.tresespiasdemais" tvg-name="Três Espiãs Demais" tvg-logo="https://i.ytimg.com/vi/VikYJ5l3XsM/hq720.jpg?v=6aa2b7fd&sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC8xg=&rs=AOn4CLAfkKodGZsi4YyqWZZ_n3_9YG-uFw", Três Espiãs Demais
+#EXTGRP:YouTube
+plugin://plugin.video.youtube/play/?video_id=VikYJ5l3XsM

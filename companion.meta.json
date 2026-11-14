@@ -1,9 +1,9 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-14T22:00:43.044753+00:00",
+  "generated_at": "2026-11-14T22:30:43.181527+00:00",
   "selected_channels": 68,
-  "youtube_selected_channels": 0,
+  "youtube_selected_channels": 2,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -3640,7 +3640,16 @@
   ],
   "youtube": {
     "player": "Kodi with configured YouTube addon",
-    "channels": [],
+    "channels": [
+      {
+        "id": "mr-bean.tv.S_71wzZMf0M",
+        "name": "Mr Bean"
+      },
+      {
+        "id": "tres-espias-demais.br.VikYJ5l3XsM",
+        "name": "Três Espiãs Demais"
+      }
+    ],
     "skipped": [
       {
         "name": "Cartoon Network Brasil",
@@ -3653,6 +3662,10 @@
       {
         "name": "Classic Mr Bean",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
       },
       {
         "name": "CNN Brasil",
@@ -3673,14 +3686,6 @@
       {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "Mr Bean",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Mr Bean",
@@ -3713,10 +3718,6 @@
       {
         "name": "SBT",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Três Espiãs Demais",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Três Espiãs Demais",
