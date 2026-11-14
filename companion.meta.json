@@ -1,7 +1,7 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-14T21:00:55.264402+00:00",
+  "generated_at": "2026-11-14T21:31:27.733488+00:00",
   "selected_channels": 68,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -15,22 +15,22 @@
       "horizon_at": null
     },
     "633dcebd80386500074a2461": {
-      "programmes": 5,
+      "programmes": 7,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T07:31:10+00:00"
+      "horizon_at": "2026-11-15T10:45:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 9,
+      "programmes": 11,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T08:30:00+00:00"
+      "horizon_at": "2026-11-15T10:30:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 29,
+      "programmes": 15,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T00:03:35+00:00"
+      "horizon_at": "2026-11-16T00:06:51+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -261,10 +261,10 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 95,
+      "programmes": 105,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T16:30:00+00:00"
+      "horizon_at": "2026-11-17T22:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -3690,10 +3690,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
