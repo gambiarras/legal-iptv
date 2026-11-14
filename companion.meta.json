@@ -1,9 +1,9 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-14T22:30:43.181527+00:00",
+  "generated_at": "2026-11-14T23:00:45.272075+00:00",
   "selected_channels": 68,
-  "youtube_selected_channels": 2,
+  "youtube_selected_channels": 3,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -21,13 +21,13 @@
       "horizon_at": "2026-11-15T10:45:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 10,
+      "programmes": 9,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-15T10:30:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 15,
+      "programmes": 14,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-16T00:06:51+00:00"
@@ -297,7 +297,7 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 65,
+      "programmes": 64,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
@@ -3642,11 +3642,15 @@
     "player": "Kodi with configured YouTube addon",
     "channels": [
       {
-        "id": "mr-bean.tv.S_71wzZMf0M",
-        "name": "Mr Bean"
+        "id": "pica-pau.br.U0T0obz7nxs",
+        "name": "Pica-Pau"
       },
       {
-        "id": "tres-espias-demais.br.VikYJ5l3XsM",
+        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
+        "name": "Santuário Nacional de Aparecida"
+      },
+      {
+        "id": "tres-espias-demais.br.nfs5DPFMrcc",
         "name": "Três Espiãs Demais"
       }
     ],
@@ -3692,11 +3696,11 @@
         "reason": "not_a_recent_resolved_video"
       },
       {
-        "name": "NBA Brasil",
+        "name": "Mr Bean",
         "reason": "not_a_recent_resolved_video"
       },
       {
-        "name": "Pica-Pau",
+        "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
       },
       {
@@ -3710,10 +3714,6 @@
       {
         "name": "Record News Live",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Santuário Nacional de Aparecida",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "SBT",
