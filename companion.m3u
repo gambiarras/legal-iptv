@@ -15,10 +15,6 @@ https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8
 
 ### Canais Educação
 
-#EXTINF:-1 group-title="Educação" tvg-id="CanalSaude.br" tvg-name="Canal Saude" tvg-logo="https://i.imgur.com/ht4tUOc.png", Canal Saude
-#EXTGRP:Educação
-https://eitv7.cdn.broadpeak.io/account351-i1495/event/canalsaude/format720p.m3u8
-
 #EXTINF:-1 group-title="Educação" tvg-id="RedeMinas.br" tvg-name="Rede Minas" tvg-logo="https://i.imgur.com/MtQWAHv.png", Rede Minas
 #EXTGRP:Educação
 https://8hzcavccys.zoeweb.tv/redeminas/ngrp:redeminas_all/playlist.m3u8
@@ -32,10 +28,6 @@ https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="RedeNGT.br" tvg-name="Rede NGT" tvg-logo="https://i.imgur.com/ZFN1R4B.png", Rede NGT
 #EXTGRP:Entretenimento
 https://isaocorp.cloudecast.com/ngt/index.m3u8
-
-#EXTINF:-1 group-title="Entretenimento" tvg-id="RedePremiumTV.br" tvg-name="Rede Premium TV" tvg-logo="https://i.imgur.com/jMHaHAR.png", Rede Premium TV
-#EXTGRP:Entretenimento
-https://cdn-tiva-stmv2-samcast-com-br.smartbit.co/leonardo9878/leonardo9878/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="UMATV.br" tvg-name="UMA TV" tvg-logo="https://i.imgur.com/m0RVb79.png", UMA TV
 #EXTGRP:Entretenimento
@@ -105,9 +97,9 @@ https://cpbr.appflux.com.br:2000/hls/1001noites/1001noites.m3u8
 
 ### Canais Séries
 
-#EXTINF:-1 group-title="Séries" tvg-id="SeriesClassic.br" tvg-name="Series Classic" tvg-logo="https://storage.googleapis.com/soultv-prod-media/media/img/mobile/featured/bg_mobile.jpg", Series Classic
+#EXTINF:-1 group-title="Séries" tvg-id="SeriesClassic.br" tvg-name="Séries Classic" tvg-logo="https://d14vd6r4ppsx57.cloudfront.net/media/brand/S%C3%A9ries_Classic_70_Channel_100x100_RYYThZ7.png", Séries Classic
 #EXTGRP:Séries
-https://cdn-tiva-video10-logicahost-com-br.smartbit.co/serieclassic/serieclassic/playlist.m3u8
+https://video10.logicahost.com.br/serieclassic/serieclassic/chunklist_w625230327.m3u8
 
 ### Canais Variedades
 
@@ -149,7 +141,7 @@ https://video11.logicahost.com.br/comedyclub/comedyclub/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="DemaisTV.br" tvg-name="Demais TV" tvg-logo="https://i.imgur.com/Md3xibE.png", Demais TV
 #EXTGRP:Variedades
-https://cdn-tiva-stmv1-samcast-com-br.smartbit.co/demaistv6503/demaistv6503/playlist.m3u8
+https://stmv1.samcast.com.br/demaistv6503/demaistv6503/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Companion.famatv.br" tvg-name="Fama TV" tvg-logo="https://i.postimg.cc/mg6b26n8/tv_fama.jpg", Fama TV
 #EXTGRP:Variedades
@@ -159,17 +151,9 @@ https://tv2.fastcast4u.com:3310/live/famatvlive.m3u8
 #EXTGRP:Variedades
 https://amg00740-sofa-amg00740c8-tcl-us-7180.playouts.now.amagi.tv/1080p-cc/index.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="Companion.ipptv.br" tvg-name="IPP TV" tvg-logo="https://i.postimg.cc/mrWx6hXb/rede-ipptvp-logo.jpg", IPP TV
-#EXTGRP:Variedades
-https://tv.ippmais.com.br/live/26092358420999225499.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="ISTV.br" tvg-name="ISTV" tvg-logo="https://i.postimg.cc/GmZSkzZZ/logo-istv.png", ISTV
 #EXTGRP:Variedades
 https://video10.logicahost.com.br/redeistv/redeistv/chunklist_w1732472063.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="Companion.kpoptvplay.br" tvg-name="K Pop TV Play" tvg-logo="https://kpoptv.htforum.net/wp-content/uploads/2024/11/logokpoptvplay.png", K Pop TV Play
-#EXTGRP:Variedades
-https://183.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/chunks.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Companion.lucastv.br" tvg-name="Lucas TV" tvg-logo="https://i.postimg.cc/76cC5fk1/lucas-tv-logo.jpg", Lucas TV
 #EXTGRP:Variedades
@@ -199,10 +183,6 @@ https://5ce9406b73c33.streamlock.net/ONFM/livestream/playlist.m3u8
 #EXTGRP:Variedades
 https://video11.logicahost.com.br/detetives/detetives/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="Companion.redemetropole.br" tvg-name="Rede Metrópole de Televisão" tvg-logo="https://i.postimg.cc/R03PLpW8/rede-metropolis.png", Rede Metrópole de Televisão
-#EXTGRP:Variedades
-https://isaocorp.cloudecast.com/metropole/index.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="RetroCartoon.br" tvg-name="Retrô Cartoon" tvg-logo="https://i.postimg.cc/pXFrrsjk/retrocartoon.jpg", Retrô Cartoon
 #EXTGRP:Variedades
 https://stmv1.video.brstream.com.br/retrotv/retrotv/chunklist_w1857106462.m3u8
@@ -227,10 +207,6 @@ https://video04.logicahost.com.br/tvaracati/tvaracati/chunklist_w1923731983.m3u8
 #EXTGRP:Variedades
 https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="TVCarioca.br" tvg-name="TV Carioca" tvg-logo="https://i.imgur.com/mVWydMw.png", TV Carioca
-#EXTGRP:Variedades
-https://cdn-tiva-video03-logicahost-com-br.smartbit.co/cariocainternacional1/cariocainternacional1/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="Companion.tvchannelnetwork.br" tvg-name="TV Channel Network" tvg-logo="https://i.postimg.cc/fRGNBrnn/tv_channel_network.jpg", TV Channel Network
 #EXTGRP:Variedades
 https://tvchannel.tvr.ovh/video28392/video28392/playlist.m3u8
@@ -238,10 +214,6 @@ https://tvchannel.tvr.ovh/video28392/video28392/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="TVDifusao.br" tvg-name="TV Difusao" tvg-logo="https://storage.googleapis.com/soultv-prod-media/media/brand/LOGO_TV_DIFUS%C3%83O_100x100px_doiivZN.png", TV Difusao
 #EXTGRP:Variedades
 https://tvdsoultv.acessaradios.com.br/tvdsoultv/tvdsoultv.stream/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="TVFuturo.br" tvg-name="TV Futuro" tvg-logo="https://i.imgur.com/xonrNBf.png", TV Futuro
-#EXTGRP:Variedades
-https://tv02.zas.media:1936/tvfuturo/tvfuturo/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Companion.tvgrandenatal.br" tvg-name="TV Grande Natal" tvg-logo="https://i.postimg.cc/zGdkPV39/tv-grande-natal.jpg", TV Grande Natal
 #EXTGRP:Variedades
