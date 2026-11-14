@@ -1,5 +1,14 @@
 [
   {
+    "id": "foxkids",
+    "enabled_env": "IPTV_EPG_FOXKIDS_ENABLED",
+    "format": "foxkids",
+    "days": 3,
+    "urls": [
+      "https://raw.githubusercontent.com/listamake/sitefkweb/main/catlog.xml"
+    ]
+  },
+  {
     "id": "primary",
     "url_env": "IPTV_EPG_PRIMARY_URL",
     "headers_env": "IPTV_EPG_PRIMARY_HEADERS",
@@ -17,6 +26,16 @@
     "format": "xmltv"
   },
   {
+    "id": "guiadetv",
+    "url_env": "IPTV_EPG_GUIADETV_URL",
+    "format": "guiadetv"
+  },
+  {
+    "id": "meuguia",
+    "url_env": "IPTV_EPG_MEUGUIA_URL",
+    "format": "meuguia"
+  },
+  {
     "id": "fallback",
     "urls_env": "IPTV_EPG_FALLBACK_URLS",
     "format": "xmltv",
@@ -25,7 +44,8 @@
       "https://iptv-epg.org/files/epg-br.xml",
       "https://i.mjh.nz/Plex/all.xml",
       "https://i.mjh.nz/SamsungTVPlus/all.xml",
-      "https://i.mjh.nz/PlutoTV/br.xml"
+      "https://i.mjh.nz/PlutoTV/br.xml",
+      "https://www.open-epg.com/files/brazil3.xml"
     ]
   }
 ]

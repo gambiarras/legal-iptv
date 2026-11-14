@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-11-14T15:38:29.073647+00:00",
+  "channel_id": "fkids.br",
+  "source": "configured extra_channels.json URL; media URL intentionally omitted",
+  "requests": 2,
+  "manifest_status": 206,
+  "manifest_content_type": "application/vnd.apple.mpegurl",
+  "manifest_bytes": 396,
+  "manifest_hls": true,
+  "manifest_kind": "media playlist directly; no child manifest needed",
+  "listed_segments": 8,
+  "sample_status": 206,
+  "sample_bytes": 65536,
+  "sample_content_type": "text/vnd.trolltech.linguist",
+  "sample_transport": "mpegts",
+  "sample_evidence": "TS sync byte present at offsets 0,188,376",
+  "limits": [
+    "No decoder or TV playback test",
+    "No repeated playlist request to prove sequence progression",
+    "No encryption keys fetched",
+    "Unexpected segment MIME; transport recognized by bytes"
+  ]
+}

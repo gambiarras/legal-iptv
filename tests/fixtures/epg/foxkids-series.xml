@@ -1,0 +1,28 @@
+<catalog>
+  <prog id="background" type="block"><display-name>Bloco base declarado</display-name>
+    <length units="minutes">1440</length><hour days="todos">000000</hour>
+  </prog>
+  <prog id="series" onair="yes" repeat="1" start="20261116">
+    <display-name>Série de dias úteis</display-name><length units="minutes">30</length>
+    <hour days="seg,ter,qua,qui,sex" type="o">120000</hour>
+    <hour days="seg,ter,qua,qui,sex" type="r">130000</hour>
+    <hour days="seg,ter,qua,qui,sex" type="r">000000</hour>
+  </prog>
+  <programme progid="series"><episode-num>S01E01</episode-num><sub-title>Não inferir este episódio</sub-title></programme>
+  <programme progid="series"><episode-num>S01E02</episode-num></programme>
+  <prog id="restarted" repeat="1"><display-name>Ciclo reiniciado</display-name>
+    <length units="minutes">30</length>
+    <date start="20261116"><hour days="todos" type="o">113000</hour></date>
+    <date start="20261119"><hour days="todos" type="o">113000</hour></date>
+  </prog>
+  <programme progid="restarted"><episode-num>S01E01</episode-num></programme>
+  <prog id="newer" start="20261117" repeat="1"><display-name>Substituição mais recente</display-name>
+    <length units="minutes">30</length><hour days="todos" type="o">120000</hour>
+  </prog>
+  <programme progid="newer"><episode-num>S01E01</episode-num></programme>
+  <prog id="event" type="event" repeat="1" start="20261116">
+    <display-name>Especial associado à série</display-name>
+    <length units="minutes">30</length><hour days="seg" type="o">120000</hour>
+    <block><ass id="series" eps="S01E01"/></block>
+  </prog>
+</catalog>

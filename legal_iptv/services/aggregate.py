@@ -14,6 +14,7 @@ from legal_iptv.services.epg_mapper import (
     load_xmltv_aliases,
 )
 from legal_iptv.services.guide import ensure_guide
+from legal_iptv.services.companion import enrich_companion_candidates, run_companion
 from legal_iptv.services.link_validator import (
     filter_cached_offline_channels,
     refresh_stream_status,
@@ -110,6 +111,7 @@ def run_aggregation(config: AppConfig) -> None:
                     ttl_seconds=config.guide_ttl_seconds,
                     lkg_seconds=config.guide_lkg_seconds,
                     min_coverage_ratio=config.guide_min_coverage_ratio,
+                    required_channel_ids=("FoxKids.br",) if config.companion_output_path else (),
                 ),
             )
 
@@ -216,6 +218,10 @@ def run_aggregation(config: AppConfig) -> None:
                 alternatives_group=playlist_configuration.alternatives_group,
             ),
         )
+        if config.companion_output_path:
+            _timed(timings, "generate_companion", lambda: run_companion(
+                enrich_companion_candidates(all_channels, xmltv_aliases), config, client,
+            ))
         write_text_atomic(config.output_path, playlist)
         timings["total"] = round(time.perf_counter() - started_at, 3)
 

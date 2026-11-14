@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 
 def positive_int(value: str) -> int:
@@ -70,7 +71,24 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--guide-min-coverage-ratio", type=coverage_ratio, default=0.5)
     parser.add_argument("--guide-diagnostics", default="guide-diagnostics.json")
     parser.add_argument("--extra-removed-file", default="extra-removed.json")
+    parser.add_argument("--companion-output", default=None)
+    parser.add_argument("--companion-meta-output", default=None)
+    parser.add_argument("--companion-guide-output", default=None)
+    parser.add_argument("--companion-youtube-output", default=None)
+    parser.add_argument("--companion-guide-url", default=None)
+    parser.add_argument("--companion-reference-file", default=None,
+                        help="Sanitized Saimo/Televisao reference snapshot for offline generation")
+    parser.add_argument("--companion-reference-cache", default=None)
     args = parser.parse_args()
     if args.force_validation and not args.validate_streams:
         parser.error("--force-validation requires --validate-streams")
+    companion_paths = (args.companion_output, args.companion_meta_output, args.companion_guide_output)
+    if any(companion_paths) and not all(companion_paths):
+        parser.error("Companion requires --companion-output, --companion-meta-output and --companion-guide-output")
+    if args.companion_youtube_output and not args.companion_output:
+        parser.error("--companion-youtube-output requires Companion outputs")
+    outputs = [args.output, args.meta_output, args.guide_output,
+               *[path for path in (*companion_paths, args.companion_youtube_output) if path]]
+    if len({Path(path).resolve() for path in outputs}) != len(outputs):
+        parser.error("Output paths must be distinct")
     return args

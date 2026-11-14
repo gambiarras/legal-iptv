@@ -1,4 +1,5 @@
 import copy
+import json
 import logging
 import os
 import re
@@ -86,6 +87,24 @@ def validate_guide_file(path: Path, *, now: datetime | None = None) -> GuideStat
     return validate_guide_root(ET.parse(path).getroot(), now=now)
 
 
+def validate_required_channels(root: ET.Element, channel_ids: tuple[str, ...], *,
+                               now: datetime | None = None) -> dict[str, dict]:
+    """A current programme on some other channel cannot satisfy a priority feed."""
+    now = now or datetime.now(timezone.utc)
+    result = {}
+    known = {channel.get("id") for channel in root.findall("channel")}
+    for channel_id in channel_ids:
+        programmes = [item for item in root.findall("programme") if item.get("channel") == channel_id]
+        windows = [(parse_xmltv_time(item.get("start", "")), parse_xmltv_time(item.get("stop", ""))) for item in programmes]
+        present = sum(start <= now < stop for start, stop in windows)
+        future = sum(start > now for start, stop in windows)
+        result[channel_id] = {"present_programmes": present, "future_programmes": future,
+                              "last_stop": max((stop for _, stop in windows), default=now).isoformat()}
+        if channel_id not in known or not present or not future:
+            raise ValueError(f"Required EPG channel lacks current or future coverage: {channel_id}")
+    return result
+
+
 def merge_provider_guides(roots: list[ET.Element]) -> ET.Element:
     merged = ET.Element("tv", {"generator-info-name": "local-xmltv-generator"})
     channel_ids: set[str] = set()
@@ -146,28 +165,59 @@ def ensure_guide(
     lkg_seconds: int,
     min_coverage_ratio: float,
     providers: list[EpgProvider] | None = None,
+    required_channel_ids: tuple[str, ...] = (),
 ) -> GuideResult:
+    fresh_base: ET.Element | None = None
     if _is_fresh(output_path, ttl_seconds):
         try:
-            stats = validate_guide_file(output_path)
-            return GuideResult("fresh", stats)
+            loaded = ET.parse(output_path).getroot()
+            stats = validate_guide_root(loaded)
+            try:
+                validate_required_channels(loaded, required_channel_ids)
+                return GuideResult("fresh", stats)
+            except ValueError:
+                # A healthy broad guide can be repaired by its priority
+                # collector without downloading all the large fallback feeds.
+                if set(required_channel_ids) == {"FoxKids.br"}:
+                    fresh_base = loaded
         except (OSError, ET.ParseError, ValueError):
             logger.warning("Fresh guide is invalid; generating a replacement")
 
     previous_stats: GuideStats | None = None
-    if output_path.exists():
+    if output_path.exists() and fresh_base is None:
         try:
-            previous_stats = validate_guide_file(output_path)
+            previous_root = ET.parse(output_path).getroot()
+            previous_stats = validate_guide_root(previous_root)
+            validate_required_channels(previous_root, required_channel_ids)
         except (OSError, ET.ParseError, ValueError):
             previous_stats = None
 
     roots: list[ET.Element] = []
     provider_diagnostics: list[dict] = []
-    for provider in providers if providers is not None else load_epg_providers():
+    selected_providers = providers if providers is not None else load_epg_providers()
+    if fresh_base is not None:
+        targeted = [provider for provider in selected_providers
+                    if isinstance(provider, EpgProvider) and provider.format == "foxkids"]
+        if targeted:
+            selected_providers = targeted
+            for element in list(fresh_base):
+                if element.get("id") in required_channel_ids or element.get("channel") in required_channel_ids:
+                    fresh_base.remove(element)
+            roots.append(fresh_base)
+        else:
+            fresh_base = None
+    for provider in selected_providers:
         try:
-            root = provider.fetch(client)
-            roots.append(root)
-            provider_diagnostics.append({"id": provider.id, "status": "ok"})
+            root = (provider.fetch(client, cache_dir=output_path.parent / ".epg-cache")
+                    if isinstance(provider, EpgProvider) else provider.fetch(client))
+            roots.insert(0, root) if fresh_base is not None else roots.append(root)
+            diagnostic = {"id": provider.id, "status": "ok"}
+            for attribute, key in (("data-granularity", "granularity"), ("data-origin", "origin")):
+                if root.get(attribute):
+                    diagnostic[key] = root.get(attribute)
+            if root.get("data-failed-channels"):
+                diagnostic["failed_channels"] = json.loads(root.get("data-failed-channels"))
+            provider_diagnostics.append(diagnostic)
         except Exception as exc:
             logger.warning("EPG provider failed id=%s error_type=%s", provider.id, type(exc).__name__)
             provider_diagnostics.append(
@@ -179,6 +229,7 @@ def ensure_guide(
             raise RuntimeError("No EPG provider produced a candidate")
         candidate = merge_provider_guides(roots)
         stats = validate_guide_root(candidate)
+        channel_diagnostics = validate_required_channels(candidate, required_channel_ids)
         if previous_stats and stats.programmes < previous_stats.programmes * min_coverage_ratio:
             raise ValueError("Guide programme count dropped below the configured ratio")
         if previous_stats and stats.channels < previous_stats.channels * min_coverage_ratio:
@@ -191,6 +242,7 @@ def ensure_guide(
                 "status": "updated",
                 "stats": asdict(stats),
                 "providers": provider_diagnostics,
+                "required_channels": channel_diagnostics,
             },
         )
         return GuideResult("updated", stats)
@@ -203,6 +255,7 @@ def ensure_guide(
                 "status": "retained" if retained else "failed",
                 "error_type": type(exc).__name__,
                 "providers": provider_diagnostics,
+                "required_channel_ids": list(required_channel_ids),
             },
         )
         if retained:

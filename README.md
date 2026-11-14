@@ -10,6 +10,21 @@ This project combines channels from multiple sources such as:
 
 The output is a static `playlist.m3u` file that can be published through GitHub without requiring paid hosting.
 
+## Companion pilot
+
+The separate [Companion playlist](companion.m3u) complements Saimo TV without
+replacing the complete playlist. It excludes FrostView, reviewed paid/alternative
+channels and channels already visible in Saimo. Its [XMLTV guide](companion-guide.xml)
+requires current and future Fox Kids programming. The optional
+[YouTube playlist](companion-youtube.kodi.m3u) requires Kodi's YouTube add-on.
+
+See [selection, generation and player setup](docs/companion.md) and
+[EPG sources and collectors](docs/epg-collectors.md). GuideDeTV/MeuGuia HTML
+collectors are opt-in; they are disabled in the public pilot pending source
+redistribution conditions. Open EPG and the Fox Kids declared-schedule adapter
+are included by default. Deployment of the matching ops version is needed for
+automatic refresh; committing a guide does not keep its schedule fresh forever.
+
 ---
 
 ## ⚠️ Disclaimer / Legal Notice

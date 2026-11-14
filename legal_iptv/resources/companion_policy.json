@@ -1,0 +1,30 @@
+{
+  "name": "Companion",
+  "version": 1,
+  "batista_provider_ids": ["rest_catalog_1"],
+  "excluded_provider_fragments": ["frostview", "addon_catalog", "stremio_addon"],
+  "approved_extra_ids": ["fkids.br", "RetroCartoon.br", "MrBeanCartoon.br"],
+  "required_channel_ids": ["FoxKids.br"],
+  "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/companion-guide.xml",
+  "paid_name_prefixes": [
+    "hbo", "telecine", "espn", "sportv", "premiere", "combate", "tnt", "amc",
+    "warner", "sony", "axn", "universal", "studiouniversal", "megapix",
+    "cinemax", "canaloff", "discovery", "history", "ae", "animalplanet",
+    "cartoonnetwork", "cartoonito", "boomerang", "tooncast", "gloob",
+    "nickelodeon", "nickjr", "multishow", "gnt", "bis", "arte1", "tlc",
+    "globonews", "bandsports", "bandnews", "ufcfightpass", "dazn",
+    "disneyplus", "appletv", "amazonprime", "paramountplus", "globoplay",
+    "canalbrasil", "canalviva", "eurochannel", "travelboxbrazil"
+  ],
+  "aliases": {
+    "redetv": "redetv", "redetvbrasil": "redetv",
+    "playtv": "playtv", "cazetv": "cazetv", "cazetv1": "cazetv",
+    "jovempanlive": "jovempannews", "recordnewslive": "recordnews",
+    "canaleducacao": "canaleducacao", "tvcanaleducacao": "canaleducacao",
+    "combrasil": "combrasil", "combrasiltv": "combrasil",
+    "tvcancaonova": "cancaonova", "cancaonova": "cancaonova",
+    "foxkids": "foxkids", "retrotv": "retrocartoon",
+    "redemetropoledetelevisao": "redemetropole",
+    "tvculturafast": "culturafast"
+  }
+}

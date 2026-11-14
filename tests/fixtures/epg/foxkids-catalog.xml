@@ -1,0 +1,35 @@
+<catalog>
+  <prog id="morning" type="block" onair="yes">
+    <display-name>Manhã animada</display-name><length units="minutes">150</length>
+    <hour days="todos" type="o">110000</hour>
+  </prog>
+  <prog id="afternoon" type="block" onair="yes">
+    <display-name>Tarde animada</display-name><length units="minutes">150</length>
+    <hour days="todos" type="o">133000</hour>
+  </prog>
+  <prog id="overnight" type="block" start="20261114" onair="yes">
+    <display-name>Madrugada</display-name><length units="minutes">60</length>
+    <hour days="sab" type="o">233000</hour>
+  </prog>
+  <prog id="replacement" type="block" start="20261115" onair="yes">
+    <display-name>Nova temporada</display-name><length units="minutes">30</length>
+    <hour days="todos" type="o">110000</hour>
+  </prog>
+  <prog id="expired-event" type="event" start="20261107" repeat="1" onair="yes">
+    <display-name>Evento encerrado</display-name><length units="minutes">30</length>
+    <hour days="sab" type="o">110000</hour>
+  </prog>
+  <prog id="special" type="event" start="20261114" repeat="1" onair="yes">
+    <display-name>Especial de sábado</display-name><length units="minutes">30</length>
+    <hour days="sab" type="o">140000</hour>
+  </prog>
+  <prog id="movie" type="mirror" onair="yes" repeat="1">
+    <display-name>Filme de domingo</display-name><category>Movie</category>
+    <length units="minutes">120</length>
+    <date start="20261115"><hour days="dom" type="o">120000</hour></date>
+  </prog>
+  <prog id="disabled" type="block" onair="no">
+    <display-name>Fora da grade</display-name><length units="minutes">150</length>
+    <hour days="todos" type="o">110000</hour>
+  </prog>
+</catalog>

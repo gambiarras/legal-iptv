@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from importlib import resources
+from pathlib import Path
 from urllib.parse import urlencode
 
 from legal_iptv.clients import HttpClient
@@ -26,7 +27,13 @@ class EpgProvider:
     city: str | None = None
     days: int = 2
 
-    def fetch(self, client: HttpClient) -> ET.Element:
+    def fetch(self, client: HttpClient, *, cache_dir: Path | None = None) -> ET.Element:
+        if self.format in {"foxkids", "guiadetv", "meuguia"}:
+            from legal_iptv.services.epg_collectors import fetch_foxkids, fetch_html_schedules
+
+            if self.format == "foxkids":
+                return fetch_foxkids(client, self.url, cache_dir=cache_dir, days=self.days)
+            return fetch_html_schedules(client, self.url, self.format, cache_dir=cache_dir)
         if self.format in {"solr", "solr_json"}:
             return solr_epg_to_xmltv(
                 client,
@@ -52,6 +59,9 @@ def load_epg_providers() -> list[EpgProvider]:
     providers: list[EpgProvider] = []
 
     for item in raw:
+        enabled = os.environ.get(str(item.get("enabled_env") or ""), str(item.get("enabled", True)))
+        if enabled.casefold() in {"0", "false", "no", "off"}:
+            continue
         provider_format = str(
             os.environ.get(str(item.get("format_env") or ""), item.get("format", "xmltv"))
         ).casefold()

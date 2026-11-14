@@ -18,8 +18,9 @@ def _sanitize_display_name(value: str) -> str:
     return " ".join(value.split())
 
 
-def _render_header(guide_url: str | None = None, *, legacy_guide_urls: bool = True) -> str:
-    candidates = [PRIMARY_EPG_URL]
+def _render_header(guide_url: str | None = None, *, legacy_guide_urls: bool = True,
+                   include_primary_guide: bool = True) -> str:
+    candidates = [PRIMARY_EPG_URL] if include_primary_guide else []
     if guide_url:
         candidates.extend(item.strip() for item in guide_url.split(","))
     elif legacy_guide_urls:
@@ -90,6 +91,7 @@ def render_m3u(
     legacy_guide_urls: bool = True,
     enforce_capabilities: bool = False,
     alternatives_group: str = "Alternativos",
+    include_primary_guide: bool = True,
 ) -> str:
     grouped: dict[str, list[Channel]] = defaultdict(list)
 
@@ -98,7 +100,8 @@ def render_m3u(
             continue
         grouped[channel.group].append(channel)
 
-    lines = [_render_header(guide_url, legacy_guide_urls=legacy_guide_urls), "", ""]
+    lines = [_render_header(guide_url, legacy_guide_urls=legacy_guide_urls,
+                            include_primary_guide=include_primary_guide), "", ""]
 
     ordered_categories = list(category_order or CATEGORY_ORDER)
     if category_order is not None:

@@ -35,6 +35,13 @@ class AppConfig:
     validation_max_success_age: int = 86400
     validation_retry_delay: int = 900
     force_validation: bool = False
+    companion_output_path: Path | None = None
+    companion_meta_output_path: Path | None = None
+    companion_guide_output_path: Path | None = None
+    companion_youtube_output_path: Path | None = None
+    companion_guide_url: str | None = None
+    companion_reference_file: Path | None = None
+    companion_reference_cache_path: Path | None = None
 
     @classmethod
     def from_args(cls, args) -> "AppConfig":
@@ -74,4 +81,11 @@ class AppConfig:
             validation_max_success_age=args.validation_max_success_age,
             validation_retry_delay=args.validation_retry_delay,
             force_validation=args.force_validation,
+            companion_output_path=Path(args.companion_output) if args.companion_output else None,
+            companion_meta_output_path=Path(args.companion_meta_output) if args.companion_meta_output else None,
+            companion_guide_output_path=Path(args.companion_guide_output) if args.companion_guide_output else None,
+            companion_youtube_output_path=Path(args.companion_youtube_output) if args.companion_youtube_output else None,
+            companion_guide_url=args.companion_guide_url,
+            companion_reference_file=Path(args.companion_reference_file) if args.companion_reference_file else None,
+            companion_reference_cache_path=Path(args.companion_reference_cache) if args.companion_reference_cache else None,
         )
