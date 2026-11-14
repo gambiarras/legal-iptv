@@ -1,8 +1,8 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-14T15:44:29.567846+00:00",
-  "selected_channels": 69,
+  "generated_at": "2026-11-14T19:30:52.727635+00:00",
+  "selected_channels": 68,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -15,22 +15,22 @@
       "horizon_at": null
     },
     "633dcebd80386500074a2461": {
-      "programmes": 7,
+      "programmes": 6,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T05:22:41+00:00"
+      "horizon_at": "2026-11-15T07:31:10+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 12,
+      "programmes": 11,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T04:30:00+00:00"
+      "horizon_at": "2026-11-15T08:30:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 18,
+      "programmes": 29,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-16T00:06:51+00:00"
+      "horizon_at": "2026-11-17T00:03:35+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -123,12 +123,6 @@
       "horizon_at": null
     },
     "Companion.megaonetv.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Companion.mrbeancartoon.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -267,10 +261,10 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 97,
+      "programmes": 96,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T16:00:00+00:00"
+      "horizon_at": "2026-11-17T16:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -303,7 +297,7 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 72,
+      "programmes": 68,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
@@ -423,17 +417,18 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-14T15:29:05.690931+00:00",
+  "reference_generated_at": "2026-11-14T19:30:51.586937+00:00",
   "reference_retained": false,
   "saimo_channels": 249,
   "televisao_reference_channels": 371,
   "excluded_by_reason": {
-    "already_in_saimo": 141,
+    "already_in_saimo": 139,
     "alternative": 1,
-    "duplicate_variant": 27,
-    "not_in_reviewed_public_selection": 314,
+    "duplicate_variant": 26,
+    "not_in_reviewed_public_selection": 309,
     "not_portable_or_sensitive": 8,
-    "paid_channel": 41
+    "paid_channel": 41,
+    "unavailable": 8
   },
   "excluded_channels": [
     {
@@ -479,7 +474,7 @@
     {
       "id": "Canal29.br",
       "name": "Canal 29",
-      "reason": "not_in_reviewed_public_selection"
+      "reason": "unavailable"
     },
     {
       "id": "ComediaBrasil.tv",
@@ -499,12 +494,17 @@
     {
       "id": "TVCancaoNova.br",
       "name": "TV Canção Nova",
-      "reason": "already_in_saimo"
+      "reason": "unavailable"
     },
     {
       "id": "DMaisTV.br",
       "name": "D+ TV",
-      "reason": "not_in_reviewed_public_selection"
+      "reason": "unavailable"
+    },
+    {
+      "id": "TVCarioca.br",
+      "name": "TV Carioca",
+      "reason": "unavailable"
     },
     {
       "id": "VintageTV.br",
@@ -514,7 +514,7 @@
     {
       "id": "XtremeTV.br",
       "name": "Xtreme TV",
-      "reason": "not_in_reviewed_public_selection"
+      "reason": "unavailable"
     },
     {
       "id": "RedeCloudingTV.br",
@@ -559,12 +559,12 @@
     {
       "id": "TVKidmais.br",
       "name": "TV Kidmais",
-      "reason": "not_in_reviewed_public_selection"
+      "reason": "unavailable"
     },
     {
       "id": "OtakuSignTV.br",
       "name": "Otaku Sign TV",
-      "reason": "already_in_saimo"
+      "reason": "unavailable"
     },
     {
       "id": "TVLoading.br",
@@ -590,6 +590,11 @@
       "id": "CNNBrasil.br",
       "name": "CNN Brasil",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "MrBeanCartoon.br",
+      "name": "Mr. Bean - Cartoon",
+      "reason": "unavailable"
     },
     {
       "id": "Canal5TR.br",
@@ -1892,11 +1897,6 @@
       "reason": "already_in_saimo"
     },
     {
-      "id": "TVCarioca.br",
-      "name": "TV Carioca",
-      "reason": "duplicate_variant"
-    },
-    {
       "id": "TVCidadedePetropolis.br",
       "name": "TV Cidade de Petropolis",
       "reason": "not_in_reviewed_public_selection"
@@ -2430,11 +2430,6 @@
       "id": "rest_catalog_1.106",
       "name": "TV Brasil",
       "reason": "already_in_saimo"
-    },
-    {
-      "id": "rest_catalog_1.107",
-      "name": "TV Tudo",
-      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "rest_catalog_1.108",
@@ -3179,14 +3174,6 @@
       "epg_future": true
     },
     {
-      "id": "MrBeanCartoon.br",
-      "name": "Mr. Bean - Cartoon",
-      "tvg_id": "Companion.mrbeancartoon.br",
-      "provider_id": "extra",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "BMCNews.br",
       "name": "BM&C News",
       "tvg_id": "666c9c60a7efd40008f552f0",
@@ -3703,6 +3690,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
