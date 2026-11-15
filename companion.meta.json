@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T14:52:20.235415+00:00",
-  "selected_channels": 228,
+  "generated_at": "2026-11-15T15:01:43.852722+00:00",
+  "selected_channels": 227,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 382,
+      "programmes": 385,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T13:25:00+00:00"
+      "horizon_at": "2026-11-18T19:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 35,
@@ -35,10 +35,10 @@
       "horizon_at": "2026-11-18T00:26:42+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 18,
+      "programmes": 33,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T00:03:35+00:00"
+      "horizon_at": "2026-11-18T01:16:47+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -209,16 +209,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 122,
+      "programmes": 127,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T12:30:00+00:00"
+      "horizon_at": "2026-11-18T15:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 182,
+      "programmes": 192,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T12:10:00+00:00"
+      "horizon_at": "2026-11-18T15:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -362,7 +362,7 @@
       "programmes": 39,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T13:00:00+00:00"
+      "horizon_at": "2026-11-18T16:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -964,12 +964,6 @@
       "future": false,
       "horizon_at": null
     },
-    "RBATV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "RITtv.br": {
       "programmes": 0,
       "current": false,
@@ -977,10 +971,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 61,
+      "programmes": 63,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T12:50:00+00:00"
+      "horizon_at": "2026-11-18T15:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1349,10 +1343,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 216,
+      "programmes": 223,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T12:30:00+00:00"
+      "horizon_at": "2026-11-18T15:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1384,7 +1378,7 @@
   "saimo_channels": 249,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 65
+    "already_in_saimo": 64
   },
   "excluded_channels": [
     {
@@ -1705,11 +1699,6 @@
     {
       "id": "rest_catalog_1.19",
       "name": "GeekDot",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "rest_catalog_1.41",
-      "name": "Band",
       "reason": "already_in_saimo"
     }
   ],
@@ -3115,14 +3104,6 @@
       "epg_future": false
     },
     {
-      "id": "RBATV.br",
-      "name": "RBATV",
-      "tvg_id": "RBATV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "RecordTVInteriorSP.br",
       "name": "RecordTV Interior SP",
       "tvg_id": "RecordTVInteriorSP.br",
@@ -3580,10 +3561,6 @@
       }
     ],
     "skipped": [
-      {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
