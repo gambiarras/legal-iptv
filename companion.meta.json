@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T15:52:06.269273+00:00",
+  "generated_at": "2026-11-15T16:00:48.478267+00:00",
   "selected_channels": 228,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-18T00:26:42+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 33,
+      "programmes": 32,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T01:16:47+00:00"
@@ -215,7 +215,7 @@
       "horizon_at": "2026-11-18T16:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 192,
+      "programmes": 191,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T16:00:00+00:00"
@@ -359,7 +359,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 38,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T16:00:00+00:00"
@@ -1349,7 +1349,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 223,
+      "programmes": 222,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T16:00:00+00:00"
@@ -3550,7 +3550,7 @@
         "name": "Diário TV Teresópolis"
       },
       {
-        "id": "mr-bean.tv.oPonPGALYaU",
+        "id": "mr-bean.tv.S_71wzZMf0M",
         "name": "Mr Bean"
       },
       {
@@ -3580,6 +3580,14 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
+      },
+      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
@@ -3594,6 +3602,10 @@
       {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "NBA Brasil",
