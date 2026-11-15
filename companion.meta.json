@@ -1,7 +1,7 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-14T23:30:48.720176+00:00",
+  "generated_at": "2026-11-15T00:00:51.724600+00:00",
   "selected_channels": 61,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -21,7 +21,7 @@
       "horizon_at": "2026-11-15T10:45:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 9,
+      "programmes": 8,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-15T10:30:00+00:00"
@@ -237,7 +237,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 105,
+      "programmes": 104,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T22:00:00+00:00"
@@ -273,7 +273,7 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 64,
+      "programmes": 63,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
@@ -2567,6 +2567,10 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
