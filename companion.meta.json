@@ -1,7 +1,7 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-15T02:30:48.500219+00:00",
+  "generated_at": "2026-11-15T03:01:31.387398+00:00",
   "selected_channels": 61,
   "youtube_selected_channels": 10,
   "required_epg_ids": [
@@ -15,22 +15,22 @@
       "horizon_at": null
     },
     "633dcebd80386500074a2461": {
-      "programmes": 5,
+      "programmes": 9,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T10:45:30+00:00"
+      "horizon_at": "2026-11-15T17:21:31+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 6,
+      "programmes": 12,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-15T10:30:00+00:00"
+      "horizon_at": "2026-11-15T17:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 13,
+      "programmes": 25,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-16T00:06:51+00:00"
+      "horizon_at": "2026-11-17T00:03:35+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -237,10 +237,10 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 102,
+      "programmes": 112,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T22:00:00+00:00"
+      "horizon_at": "2026-11-18T03:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -273,10 +273,10 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 61,
+      "programmes": 68,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T15:00:00+00:00"
+      "horizon_at": "2026-11-17T23:00:00+00:00"
     },
     "RedeMinas.br": {
       "programmes": 0,
@@ -2571,10 +2571,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
