@@ -1,9 +1,9 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-15T00:30:49.443245+00:00",
+  "generated_at": "2026-11-15T01:00:53.158409+00:00",
   "selected_channels": 61,
-  "youtube_selected_channels": 9,
+  "youtube_selected_channels": 10,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -15,19 +15,19 @@
       "horizon_at": null
     },
     "633dcebd80386500074a2461": {
-      "programmes": 6,
+      "programmes": 5,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-15T10:45:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 8,
+      "programmes": 7,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-15T10:30:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 14,
+      "programmes": 13,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-16T00:06:51+00:00"
@@ -273,7 +273,7 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 63,
+      "programmes": 62,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
@@ -2544,6 +2544,10 @@
         "name": "Mr Bean"
       },
       {
+        "id": "NBABrasil.tv.BbZIX8eyLNc",
+        "name": "NBA Brasil"
+      },
+      {
         "id": "pica-pau.br.mUB69Xk0qwY",
         "name": "Pica-Pau"
       },
@@ -2574,6 +2578,10 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
+      },
+      {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
       },
@@ -2584,10 +2592,6 @@
       {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
