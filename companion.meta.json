@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T19:22:06.399849+00:00",
-  "selected_channels": 228,
+  "generated_at": "2026-11-15T19:32:00.694967+00:00",
+  "selected_channels": 231,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 384,
+      "programmes": 385,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T19:00:00+00:00"
+      "horizon_at": "2026-11-18T20:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 32,
@@ -209,16 +209,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 127,
+      "programmes": 135,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T16:00:00+00:00"
+      "horizon_at": "2026-11-18T20:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 184,
+      "programmes": 194,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T16:00:00+00:00"
+      "horizon_at": "2026-11-18T20:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -298,6 +298,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.canaldousuario.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.canalinfantil.br": {
       "programmes": 0,
       "current": false,
@@ -359,10 +365,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 35,
+      "programmes": 38,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T16:00:00+00:00"
+      "horizon_at": "2026-11-18T20:45:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -784,6 +790,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvmanaargentina.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvmanabrasil.br": {
       "programmes": 0,
       "current": false,
@@ -851,6 +863,12 @@
       "horizon_at": null
     },
     "Local.tvriopreto.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvsaogabriel.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -971,10 +989,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 61,
+      "programmes": 63,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T18:30:00+00:00"
+      "horizon_at": "2026-11-18T20:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1349,10 +1367,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 218,
+      "programmes": 224,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T16:00:00+00:00"
+      "horizon_at": "2026-11-18T22:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2166,6 +2184,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.78",
+      "name": "TV Maná Argentina",
+      "tvg_id": "Local.tvmanaargentina.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.81",
       "name": "TV Maná Brasil",
       "tvg_id": "Local.tvmanabrasil.br",
@@ -2870,6 +2896,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.4",
+      "name": "Canal do Usuário",
+      "tvg_id": "Local.canaldousuario.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "CanalFDR.br",
       "name": "Canal FDR",
       "tvg_id": "CanalFDR.br",
@@ -3470,6 +3504,14 @@
       "epg_future": true
     },
     {
+      "id": "rest_catalog_1.54",
+      "name": "TV São Gabriel",
+      "tvg_id": "Local.tvsaogabriel.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVVilaReal.br",
       "name": "TV Vila Real",
       "tvg_id": "TVVilaReal.br",
@@ -3586,6 +3628,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
