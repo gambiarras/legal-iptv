@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T22:52:05.800642+00:00",
+  "generated_at": "2026-11-15T23:00:58.920516+00:00",
   "selected_channels": 231,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 380,
+      "programmes": 379,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T20:00:00+00:00"
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-18T01:30:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 30,
+      "programmes": 29,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T00:26:42+00:00"
@@ -215,7 +215,7 @@
       "horizon_at": "2026-11-18T20:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 186,
+      "programmes": 185,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T20:00:00+00:00"
@@ -365,7 +365,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 37,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T20:45:00+00:00"
@@ -1326,8 +1326,8 @@
     },
     "TVSonata.br": {
       "programmes": 1,
-      "current": false,
-      "future": true,
+      "current": true,
+      "future": false,
       "horizon_at": "2026-11-16T02:00:00+00:00"
     },
     "TVTerceiroAnjo.br": {
@@ -1367,7 +1367,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 220,
+      "programmes": 219,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T22:00:00+00:00"
@@ -1397,7 +1397,7 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-15T16:30:45.593089+00:00",
+  "reference_generated_at": "2026-11-15T23:00:46.349911+00:00",
   "reference_retained": false,
   "saimo_channels": 249,
   "televisao_reference_channels": 0,
@@ -3500,8 +3500,8 @@
       "name": "TV Sonata",
       "tvg_id": "TVSonata.br",
       "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": true
+      "epg_current": true,
+      "epg_future": false
     },
     {
       "id": "rest_catalog_1.54",
@@ -3619,6 +3619,14 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
