@@ -1,9 +1,9 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-15T03:30:47.147645+00:00",
+  "generated_at": "2026-11-15T04:00:44.761652+00:00",
   "selected_channels": 68,
-  "youtube_selected_channels": 10,
+  "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -21,7 +21,7 @@
       "horizon_at": "2026-11-15T17:21:31+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 12,
+      "programmes": 11,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-15T17:00:00+00:00"
@@ -297,7 +297,7 @@
       "horizon_at": null
     },
     "RITtv.br": {
-      "programmes": 68,
+      "programmes": 67,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T23:00:00+00:00"
@@ -3643,10 +3643,6 @@
         "name": "Mr Bean"
       },
       {
-        "id": "NBABrasil.tv.BbZIX8eyLNc",
-        "name": "NBA Brasil"
-      },
-      {
         "id": "pica-pau.br.mUB69Xk0qwY",
         "name": "Pica-Pau"
       },
@@ -3683,6 +3679,10 @@
       {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "NBA Brasil",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
