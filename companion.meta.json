@@ -1,8 +1,8 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-15T03:15:23.907681+00:00",
-  "selected_channels": 61,
+  "generated_at": "2026-11-15T03:30:47.147645+00:00",
+  "selected_channels": 68,
   "youtube_selected_channels": 10,
   "required_epg_ids": [
     "FoxKids.br"
@@ -56,6 +56,12 @@
       "future": false,
       "horizon_at": null
     },
+    "CanalSaude.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Companion.caravanaplay.br": {
       "programmes": 0,
       "current": false,
@@ -92,6 +98,18 @@
       "future": false,
       "horizon_at": null
     },
+    "Companion.ipptv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Companion.kpoptvplay.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Companion.lucastv.br": {
       "programmes": 0,
       "current": false,
@@ -123,6 +141,12 @@
       "horizon_at": null
     },
     "Companion.osdetetives.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Companion.redemetropole.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -237,7 +261,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 112,
+      "programmes": 111,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T03:30:00+00:00"
@@ -290,6 +314,12 @@
       "future": false,
       "horizon_at": null
     },
+    "RedePremiumTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "RedeSeculo21.br": {
       "programmes": 0,
       "current": false,
@@ -332,6 +362,12 @@
       "future": false,
       "horizon_at": null
     },
+    "TVCarioca.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVDifusao.br": {
       "programmes": 0,
       "current": false,
@@ -339,6 +375,12 @@
       "horizon_at": null
     },
     "TVERS.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVFuturo.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -380,12 +422,13 @@
   "saimo_channels": 249,
   "televisao_reference_channels": 371,
   "excluded_by_reason": {
-    "already_in_saimo": 99,
+    "already_in_saimo": 139,
     "alternative": 1,
-    "duplicate_variant": 13,
-    "not_in_reviewed_public_selection": 190,
-    "not_portable_or_sensitive": 4,
-    "paid_channel": 22
+    "duplicate_variant": 26,
+    "not_in_reviewed_public_selection": 306,
+    "not_portable_or_sensitive": 8,
+    "paid_channel": 41,
+    "unavailable": 8
   },
   "excluded_channels": [
     {
@@ -419,8 +462,68 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "SoulCineClube.br",
+      "name": "Soul Cine Clube",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "Revry.br",
+      "name": "Revry Brasil",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "Canal29.br",
+      "name": "Canal 29",
+      "reason": "unavailable"
+    },
+    {
+      "id": "ComediaBrasil.tv",
+      "name": "Comédia Brasil",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "Jetsons.br",
       "name": "Os Jetsons",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RakutenTV.pt",
+      "name": "Rakuten TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVCancaoNova.br",
+      "name": "TV Canção Nova",
+      "reason": "unavailable"
+    },
+    {
+      "id": "DMaisTV.br",
+      "name": "D+ TV",
+      "reason": "unavailable"
+    },
+    {
+      "id": "TVCarioca.br",
+      "name": "TV Carioca",
+      "reason": "unavailable"
+    },
+    {
+      "id": "VintageTV.br",
+      "name": "Vintage TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "XtremeTV.br",
+      "name": "Xtreme TV",
+      "reason": "unavailable"
+    },
+    {
+      "id": "RedeCloudingTV.br",
+      "name": "Rede Clouding TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RakutenTVDocumentarios.br",
+      "name": "Rakuten TV Documentários",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -429,9 +532,39 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "CatedralRockTV.br",
+      "name": "Catedral do Rock TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "AniTV.br",
+      "name": "AniTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "GLNFilmes.br",
+      "name": "GLN Filmes",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "ChespiritoTV.br",
       "name": "Chespirito",
       "reason": "not_portable_or_sensitive"
+    },
+    {
+      "id": "TVOsorio.br",
+      "name": "TV Osório",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVKidmais.br",
+      "name": "TV Kidmais",
+      "reason": "unavailable"
+    },
+    {
+      "id": "OtakuSignTV.br",
+      "name": "Otaku Sign TV",
+      "reason": "unavailable"
     },
     {
       "id": "TVLoading.br",
@@ -439,13 +572,53 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "Tooncast.br",
+      "name": "Tooncast",
+      "reason": "paid_channel"
+    },
+    {
       "id": "NovaTVI.br",
       "name": "Nova TVI Petrópolis",
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "Kanade.br",
+      "name": "Kanade",
+      "reason": "not_portable_or_sensitive"
+    },
+    {
+      "id": "CNNBrasil.br",
+      "name": "CNN Brasil",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "MrBeanCartoon.br",
+      "name": "Mr. Bean - Cartoon",
+      "reason": "unavailable"
+    },
+    {
       "id": "Canal5TR.br",
       "name": "Canal 5 TR",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "1001Noites.br",
+      "name": "1001 Noites",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "AgroBrasilTV.br",
+      "name": "AgroBrasil TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "AgroBrasilTV.br",
+      "name": "AgroBrasil TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "AgroCanal.br",
+      "name": "AgroCanal",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -464,6 +637,21 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "AgroMais.br",
+      "name": "AgroMais",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "AgroMais.br",
+      "name": "AgroMais",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "AlphaChannel.br",
+      "name": "Alpha Channel",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "AmazonSat.br",
       "name": "Amazon Sat",
       "reason": "not_in_reviewed_public_selection"
@@ -479,6 +667,16 @@
       "reason": "paid_channel"
     },
     {
+      "id": "Arte1.br",
+      "name": "Arte 1",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "AugeTV.br",
+      "name": "Auge TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "AXN.br",
       "name": "AXN",
       "reason": "paid_channel"
@@ -486,6 +684,26 @@
     {
       "id": "AXN.br",
       "name": "AXN",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "Band.br",
+      "name": "Band",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "Band.br",
+      "name": "Band",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "BandNews.br",
+      "name": "BandNews",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "BandNews.br",
+      "name": "BandNews",
       "reason": "paid_channel"
     },
     {
@@ -496,6 +714,11 @@
     {
       "id": "BandNews.br",
       "name": "BandNews",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "BandSports.br",
+      "name": "Band Sports",
       "reason": "paid_channel"
     },
     {
@@ -514,6 +737,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "BemMelhor.br",
+      "name": "Bem Melhor",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "Blitstv.br",
       "name": "Blitstv",
       "reason": "already_in_saimo"
@@ -521,6 +749,21 @@
     {
       "id": "BoxKidsTV.br",
       "name": "Box Kids TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "BR8TV.br",
+      "name": "BR8 TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "CaboFrioTV.br",
+      "name": "Cabo Frio TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "Canal25Jundiai.br",
+      "name": "Canal 25 Jundiai",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -549,6 +792,21 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "CanaldoCriador.br",
+      "name": "Canal do Criador",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "CanaldoInter.br",
+      "name": "Canal do Inter",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "CanalEducacao.br",
+      "name": "Canal Educacao",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "CanalEducacao.br",
       "name": "Canal Educacao",
       "reason": "already_in_saimo"
@@ -574,8 +832,23 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "CanalGov.br",
+      "name": "Canal Gov",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "CanalLibras.br",
+      "name": "Canal Libras",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "CanalMetropolitanodeNoticias.br",
       "name": "Canal Metropolitano de Noticias",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "CanalRicos.br",
+      "name": "Canal Ricos",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -589,8 +862,18 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "CanalSaude.br",
+      "name": "Canal Saude",
+      "reason": "duplicate_variant"
+    },
+    {
       "id": "CanalSete.br",
       "name": "Canal Sete",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "CanalSTART.br",
+      "name": "Canal START",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -624,6 +907,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "CINDIETV.br",
+      "name": "CINDIE TV",
+      "reason": "duplicate_variant"
+    },
+    {
       "id": "CinturaoVerde.br",
       "name": "Cinturao Verde",
       "reason": "not_in_reviewed_public_selection"
@@ -637,6 +925,16 @@
       "id": "CNNBrasil.br",
       "name": "CNN Brasil",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "Combate.br",
+      "name": "Combate",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "Combate.br",
+      "name": "Combate",
+      "reason": "paid_channel"
     },
     {
       "id": "COMBrasil.br",
@@ -659,6 +957,11 @@
       "reason": "not_portable_or_sensitive"
     },
     {
+      "id": "ConectaMaisTV.br",
+      "name": "Conecta Mais TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "ConecTVBrasil.br",
       "name": "ConecTV Brasil",
       "reason": "not_in_reviewed_public_selection"
@@ -679,6 +982,16 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "CulturaPara.br",
+      "name": "Cultura Para",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "DemaisTV.br",
+      "name": "Demais TV",
+      "reason": "duplicate_variant"
+    },
+    {
       "id": "DespertarTV.br",
       "name": "Despertar TV",
       "reason": "not_in_reviewed_public_selection"
@@ -694,8 +1007,28 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "ElementalChannel.br",
+      "name": "Elemental Channel",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "ElyTV.br",
+      "name": "ElyTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "ESPN.br",
       "name": "ESPN",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "ESPN.br",
+      "name": "ESPN",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "ESPN3.br",
+      "name": "ESPN 3",
       "reason": "paid_channel"
     },
     {
@@ -714,9 +1047,19 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "EUTV.br",
+      "name": "EUTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "FalaLitoral.br",
       "name": "Fala Litoral",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "FishTV.br",
+      "name": "Fish TV",
+      "reason": "already_in_saimo"
     },
     {
       "id": "FishTV.br",
@@ -729,8 +1072,23 @@
       "reason": "duplicate_variant"
     },
     {
+      "id": "ForaTedioTV.br",
+      "name": "Fora Tedio TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "Futura.br",
       "name": "Futura",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "Geekdot.br",
+      "name": "Geekdot",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "GhostTV.br",
+      "name": "Ghost TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -744,9 +1102,34 @@
       "reason": "paid_channel"
     },
     {
+      "id": "GloboplayNovelas.br",
+      "name": "Globoplay Novelas",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "Gloob.br",
+      "name": "Gloob",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "GloobWeb.br",
+      "name": "Gloob Web",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "GNT.br",
+      "name": "GNT",
+      "reason": "paid_channel"
+    },
+    {
       "id": "GospelCartoon.br",
       "name": "Gospel Cartoon",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "History.br",
+      "name": "History",
+      "reason": "paid_channel"
     },
     {
       "id": "History.br",
@@ -779,8 +1162,23 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "JovemPanNews.br",
+      "name": "Jovem Pan News",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "LaboralTV.br",
+      "name": "Laboral TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "LamoreRockShowWebTV.br",
       "name": "Lamore Rock Show WebTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "LiderTV.br",
+      "name": "Lider TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -796,6 +1194,11 @@
     {
       "id": "MBCBrasilTV.br",
       "name": "MBC Brasil TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "MKKWebTV.br",
+      "name": "MKK Web TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -824,8 +1227,18 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "NSports.br",
+      "name": "N Sports",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "NTV.br",
       "name": "NTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "NuevoTiempo.br",
+      "name": "Nuevo Tiempo",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -837,6 +1250,11 @@
       "id": "PetloversTV.br",
       "name": "Petlovers TV",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "PlayTV.br",
+      "name": "Play TV",
+      "reason": "already_in_saimo"
     },
     {
       "id": "PlayTV.br",
@@ -857,6 +1275,21 @@
       "id": "RBATV.br",
       "name": "RBATV",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RCTVBrasil.br",
+      "name": "RCTV Brasil",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "Record.br",
+      "name": "Record",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "Record.br",
+      "name": "Record",
+      "reason": "already_in_saimo"
     },
     {
       "id": "Record.br",
@@ -884,14 +1317,84 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "RecordNews.br",
+      "name": "Record News",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RecordNews.br",
+      "name": "Record News",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RecordNews.br",
+      "name": "Record News",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RecordNews.br",
+      "name": "Record News",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RecordRS.br",
+      "name": "Record RS",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVBelem.br",
+      "name": "RecordTV Belem",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVBrasilia.br",
+      "name": "RecordTV Brasilia",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVGoias.br",
+      "name": "RecordTV Goias",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "RecordTVInteriorSP.br",
       "name": "RecordTV Interior SP",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVItapoan.br",
+      "name": "RecordTV Itapoan",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVRio.br",
+      "name": "RecordTV Rio",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RecordTVSaoPaulo.br",
+      "name": "RecordTV Sao Paulo",
       "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "RedeBrasil.br",
       "name": "Rede Brasil",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "RedeBrasil.br",
+      "name": "Rede Brasil",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RedeBrasil.br",
+      "name": "Rede Brasil",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RedeCNTRiodeJaneiro.br",
+      "name": "Rede CNT Rio de Janeiro",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "RedeCNTRiodeJaneiro.br",
@@ -914,6 +1417,21 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "RedeGlobo.br",
+      "name": "Rede Globo",
+      "reason": "not_portable_or_sensitive"
+    },
+    {
+      "id": "RedeGlobo.br",
+      "name": "Rede Globo",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RedeGospel.br",
+      "name": "Rede Gospel",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "RedeGospel.br",
       "name": "Rede Gospel",
       "reason": "already_in_saimo"
@@ -934,9 +1452,29 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "RedeMinas.br",
+      "name": "Rede Minas",
+      "reason": "not_portable_or_sensitive"
+    },
+    {
+      "id": "RedeNGT.br",
+      "name": "Rede NGT",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "RedeRC.br",
+      "name": "Rede RC",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "RedeSPTV.br",
       "name": "Rede SPTV",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "RedeTV.br",
+      "name": "Rede TV! SD",
+      "reason": "already_in_saimo"
     },
     {
       "id": "RedeTV.br",
@@ -974,6 +1512,16 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "RedeVida.br",
+      "name": "Rede Vida",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "RedeVida.br",
+      "name": "Rede Vida",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "RetroCartoon.br",
       "name": "Retrô Cartoon",
       "reason": "duplicate_variant"
@@ -984,8 +1532,48 @@
       "reason": "duplicate_variant"
     },
     {
+      "id": "RITTV.br",
+      "name": "RIT TV",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "RITTV.br",
+      "name": "RIT TV",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "RITTV.br",
+      "name": "RIT TV",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "SantaCeciliaTV.br",
+      "name": "Santa Cecilia TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SantaCeciliaTV.br",
+      "name": "Santa Cecilia TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SBTCuiaba.br",
+      "name": "SBT Cuiaba",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "SBTInterior.br",
       "name": "SBT Interior",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SBTKids.br",
+      "name": "SBT Kids",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SBTNacional.br",
+      "name": "SBT Nacional",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1009,6 +1597,21 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "SBTRondonopolis.br",
+      "name": "SBT Rondonopolis",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SeriesClassic.br",
+      "name": "Séries Classic",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "SertaoTV.br",
+      "name": "Sertao TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "SESCTV.br",
       "name": "SESC TV",
       "reason": "already_in_saimo"
@@ -1017,6 +1620,16 @@
       "id": "SESCTV.br",
       "name": "SESC TV",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "SESCTV.br",
+      "name": "SESC TV",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "ShowdoMilhao.br",
+      "name": "Show do Milhao",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "SICTV.br",
@@ -1029,6 +1642,16 @@
       "reason": "paid_channel"
     },
     {
+      "id": "SonyChannel.br",
+      "name": "Sony Channel",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "SonyMovies.br",
+      "name": "Sony Movies",
+      "reason": "paid_channel"
+    },
+    {
       "id": "SonyMovies.br",
       "name": "Sony Movies",
       "reason": "paid_channel"
@@ -1037,6 +1660,21 @@
       "id": "SOUTV.br",
       "name": "SOU TV",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "SporTV2.br",
+      "name": "SporTV 2",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "SporTV3.br",
+      "name": "SporTV 3",
+      "reason": "paid_channel"
+    },
+    {
+      "id": "SporTV3.br",
+      "name": "SporTV 3",
+      "reason": "paid_channel"
     },
     {
       "id": "STZTV.br",
@@ -1084,9 +1722,24 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "TerraViva.br",
+      "name": "Terra Viva",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "TikTokRadioBrasil.br",
       "name": "TikTok Radio Brasil",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TikTokRadioBrasil.br",
+      "name": "TikTok Radio Brasil",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TimesBrasil.br",
+      "name": "Times Brasil",
+      "reason": "not_portable_or_sensitive"
     },
     {
       "id": "TravelBoxBrazil.br",
@@ -1094,9 +1747,19 @@
       "reason": "paid_channel"
     },
     {
+      "id": "TV3Curitiba.br",
+      "name": "TV 3 Curitiba",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVACritica.br",
       "name": "TV A Critica",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVAdorar.br",
+      "name": "TV Adorar",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "TVAldeia.br",
@@ -1129,9 +1792,49 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "TVAparecida.br",
+      "name": "TV Aparecida",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVAssembleiaCeara.br",
+      "name": "TV Assembleia Ceara",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVAssembleiaPiaui.br",
+      "name": "TV Assembleia Piaui",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVBahia.br",
       "name": "TV Bahia",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVBirigui.br",
+      "name": "TV Birigui",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVBirigui.br",
+      "name": "TV Birigui",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVBirigui.br",
+      "name": "TV Birigui",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVBrasil.br",
+      "name": "TV Brasil",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVBrasil.br",
+      "name": "TV Brasil",
+      "reason": "already_in_saimo"
     },
     {
       "id": "TVBrasil.br",
@@ -1174,6 +1877,16 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "TVCamara2.br",
+      "name": "TV Camara 2",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVCamaraSalvador.br",
+      "name": "TV Camara Salvador",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVCancaoNova.br",
       "name": "TV Cancao Nova",
       "reason": "already_in_saimo"
@@ -1182,6 +1895,11 @@
       "id": "TVCancaoNova.br",
       "name": "TV Cancao Nova",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVCidadedePetropolis.br",
+      "name": "TV Cidade de Petropolis",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "TVCidadeVerdeCuiaba.br",
@@ -1202,6 +1920,26 @@
       "id": "TVComunitaria.br",
       "name": "TV Comunitaria",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVCRio.br",
+      "name": "TVC-Rio",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVCultura.br",
+      "name": "TV Cultura",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVCultura.br",
+      "name": "TV Cultura",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVCultura.br",
+      "name": "TV Cultura",
+      "reason": "already_in_saimo"
     },
     {
       "id": "TVCultura.br",
@@ -1234,13 +1972,68 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVdasArtes.br",
+      "name": "TV das Artes",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVDestak.br",
+      "name": "TV Destak",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVDestak.br",
+      "name": "TV Destak",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVDestak.br",
+      "name": "TV Destak",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVDiarioMacapa.br",
       "name": "TV Diario Macapa",
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVDifusoraLeste.br",
+      "name": "TV Difusora Leste",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVDigitalBirigui.br",
+      "name": "TV Digital Birigui",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVEBahia.br",
       "name": "TVE Bahia",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVEBahia.br",
+      "name": "TVE Bahia",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVEmpire.br",
+      "name": "TV Empire",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVEncontrodasAguas.br",
+      "name": "TV Encontro das Aguas",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVEvangelizar.br",
+      "name": "TV Evangelizar",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVEvangelizar.br",
+      "name": "TV Evangelizar",
       "reason": "already_in_saimo"
     },
     {
@@ -1269,13 +2062,43 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "TVGazeta.br",
+      "name": "TV Gazeta",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVGazin.br",
+      "name": "TV Gazin",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVGideoes.br",
+      "name": "TV Gideoes",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVGloboBrasilia.br",
       "name": "TV Globo Brasilia",
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVGloboSaoPaulo.br",
+      "name": "TV Globo Sao Paulo",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVGloboSaoPaulo.br",
+      "name": "TV Globo Sao Paulo",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVGRANDENATALHDTVBRASIL.br",
       "name": "TV GRANDE NATAL HDTV BRASIL",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVGraoPara.br",
+      "name": "TV Grao Para",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1292,6 +2115,11 @@
       "id": "TVideoNews.br",
       "name": "TVideoNews",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "TVInterlagos.br",
+      "name": "TV Interlagos",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "TVJustica.br",
@@ -1314,6 +2142,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVLiberdade.br",
+      "name": "TV Liberdade",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVLifeAmerica.br",
       "name": "TV Life America",
       "reason": "not_in_reviewed_public_selection"
@@ -1324,6 +2157,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVMackenzie.br",
+      "name": "TV Mackenzie",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVMaisMarica.br",
       "name": "TV Mais Marica",
       "reason": "not_in_reviewed_public_selection"
@@ -1331,6 +2169,41 @@
     {
       "id": "TVMarajoara.br",
       "name": "TV Marajoara",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticComedy.br",
+      "name": "TVMatic Comedy",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticCrafts.br",
+      "name": "TVMatic Crafts",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticFacebook.br",
+      "name": "TVMatic Facebook",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticFight.br",
+      "name": "TVMatic Fight",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticFunny.br",
+      "name": "TVMatic Funny",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMaticTikTok.br",
+      "name": "TVMatic TikTok",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMeio.br",
+      "name": "TV Meio",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1369,6 +2242,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVParaense.br",
+      "name": "TV Paraense",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVParanaTurismo.br",
       "name": "TV Parana Turismo",
       "reason": "not_in_reviewed_public_selection"
@@ -1387,6 +2265,16 @@
       "id": "TVPlusPet.br",
       "name": "TV+Pet",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVProfissao.br",
+      "name": "TV Profissao",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVRaTimBum.br",
+      "name": "TV Ra Tim Bum",
+      "reason": "already_in_saimo"
     },
     {
       "id": "TVRaTimBum.br",
@@ -1439,8 +2327,28 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "TVSolComunidade.br",
+      "name": "TV Sol Comunidade",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVSuldeMinas.br",
+      "name": "TV Sul de Minas",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "TVTerceiroAnjo.br",
       "name": "TV Terceiro Anjo",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVThathi.br",
+      "name": "TV Thathi",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVUFG.br",
+      "name": "TV UFG",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1464,6 +2372,11 @@
       "reason": "not_portable_or_sensitive"
     },
     {
+      "id": "UniTVPortoAlegre.br",
+      "name": "UniTV Porto Alegre",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "VEJAPlusTV.br",
       "name": "VEJA+ TV",
       "reason": "not_in_reviewed_public_selection"
@@ -1482,10 +2395,20 @@
       "id": "WooHoo.br",
       "name": "WooHoo",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "RedeMetropole.br",
+      "name": "Rede Metropole",
+      "reason": "duplicate_variant"
     },
     {
       "id": "rest_catalog_1.102",
       "name": "Gramado TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.103",
+      "name": "BS TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1554,9 +2477,19 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "rest_catalog_1.129",
+      "name": "Rede Mariana",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "rest_catalog_1.13",
       "name": "RunTime",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "rest_catalog_1.130",
+      "name": "Rede Cidade",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "rest_catalog_1.131",
@@ -1566,6 +2499,16 @@
     {
       "id": "rest_catalog_1.132",
       "name": "Rede Maranhão",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.133",
+      "name": "ESTV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.134",
+      "name": "TV Conecta",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1664,6 +2607,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "KpopTVPlay.br",
+      "name": "KpopTV Play",
+      "reason": "duplicate_variant"
+    },
+    {
       "id": "rest_catalog_1.156",
       "name": "Comedy Central WebTV",
       "reason": "not_in_reviewed_public_selection"
@@ -1671,6 +2619,16 @@
     {
       "id": "rest_catalog_1.157",
       "name": "TV Nova MT",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.158",
+      "name": "TV Cruzeiro do Brasil",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.159",
+      "name": "Atrios TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1684,8 +2642,28 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "rest_catalog_1.162",
+      "name": "TV 131 Virtual",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "rest_catalog_1.164",
       "name": "Viva a Vida TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.165",
+      "name": "Rede Classic",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.166",
+      "name": "TV Novelas",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.167",
+      "name": "L A TV",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1697,6 +2675,11 @@
       "id": "rest_catalog_1.19",
       "name": "GeekDot",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "rest_catalog_1.20",
+      "name": "Cine Clássicos de Cinema",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "AWTV.br",
@@ -1749,6 +2732,11 @@
       "reason": "already_in_saimo"
     },
     {
+      "id": "rest_catalog_1.33",
+      "name": "SBT (SP)",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "rest_catalog_1.35",
       "name": "AG TV",
       "reason": "not_in_reviewed_public_selection"
@@ -1762,6 +2750,11 @@
       "id": "rest_catalog_1.4",
       "name": "Canal do Usuário",
       "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.40",
+      "name": "N Sports",
+      "reason": "already_in_saimo"
     },
     {
       "id": "rest_catalog_1.41",
@@ -1784,6 +2777,16 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "VRTChannel.br",
+      "name": "VRT Channel",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "rest_catalog_1.48",
+      "name": "TES TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "LucasTV.br",
       "name": "LucasTV",
       "reason": "duplicate_variant"
@@ -1796,6 +2799,11 @@
     {
       "id": "rest_catalog_1.52",
       "name": "Globo TV (SP)",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.53",
+      "name": "IBT",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1837,6 +2845,11 @@
       "id": "rest_catalog_1.62",
       "name": "MyTime Movie Network",
       "reason": "already_in_saimo"
+    },
+    {
+      "id": "rest_catalog_1.65",
+      "name": "Melodie TV",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "rest_catalog_1.67",
@@ -1894,9 +2907,19 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "rest_catalog_1.86",
+      "name": "Uni TV",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
       "id": "PlusMaisUm.br",
       "name": "+MaisUm",
       "reason": "duplicate_variant"
+    },
+    {
+      "id": "rest_catalog_1.88",
+      "name": "Rabelo",
+      "reason": "not_in_reviewed_public_selection"
     },
     {
       "id": "rest_catalog_1.93",
@@ -1916,6 +2939,11 @@
     {
       "id": "rest_catalog_1.97",
       "name": "TV Notícias Agrícolas",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "rest_catalog_1.98",
+      "name": "TV Club",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -1989,6 +3017,11 @@
       "reason": "not_in_reviewed_public_selection"
     },
     {
+      "id": "rest_catalog_1.tv-evangelizar",
+      "name": "TV Evangelizar",
+      "reason": "already_in_saimo"
+    },
+    {
       "id": "rest_catalog_1.tv-gazin",
       "name": "TV Gazin",
       "reason": "not_in_reviewed_public_selection"
@@ -2001,6 +3034,16 @@
     {
       "id": "rest_catalog_1.tv-megaastral",
       "name": "TV Astral",
+      "reason": "not_in_reviewed_public_selection"
+    },
+    {
+      "id": "TVMon.br",
+      "name": "TV Mon",
+      "reason": "duplicate_variant"
+    },
+    {
+      "id": "rest_catalog_1.tv-singular",
+      "name": "TV Singular",
       "reason": "not_in_reviewed_public_selection"
     },
     {
@@ -2052,6 +3095,14 @@
       "epg_future": false
     },
     {
+      "id": "CanalSaude.br",
+      "name": "Canal Saude",
+      "tvg_id": "CanalSaude.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "RedeMinas.br",
       "name": "Rede Minas",
       "tvg_id": "RedeMinas.br",
@@ -2071,6 +3122,14 @@
       "id": "RedeNGT.br",
       "name": "Rede NGT",
       "tvg_id": "RedeNGT.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "RedePremiumTV.br",
+      "name": "Rede Premium TV",
+      "tvg_id": "RedePremiumTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -2189,9 +3248,9 @@
     },
     {
       "id": "SeriesClassic.br",
-      "name": "Séries Classic",
+      "name": "Series Classic",
       "tvg_id": "SeriesClassic.br",
-      "provider_id": "extra",
+      "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
     },
@@ -2292,9 +3351,25 @@
       "epg_future": true
     },
     {
+      "id": "rest_catalog_1.rede-ipptv",
+      "name": "IPP TV",
+      "tvg_id": "Companion.ipptv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.rede-istv",
       "name": "ISTV",
       "tvg_id": "ISTV.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.155",
+      "name": "K Pop TV Play",
+      "tvg_id": "Companion.kpoptvplay.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2356,6 +3431,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.101",
+      "name": "Rede Metrópole de Televisão",
+      "tvg_id": "Companion.redemetropole.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.retro-cartoon",
       "name": "Retrô Cartoon",
       "tvg_id": "RetroCartoon.br",
@@ -2404,6 +3487,14 @@
       "epg_future": false
     },
     {
+      "id": "TVCarioca.br",
+      "name": "TV Carioca",
+      "tvg_id": "TVCarioca.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.56",
       "name": "TV Channel Network",
       "tvg_id": "Companion.tvchannelnetwork.br",
@@ -2415,6 +3506,14 @@
       "id": "TVDifusao.br",
       "name": "TV Difusao",
       "tvg_id": "TVDifusao.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVFuturo.br",
+      "name": "TV Futuro",
+      "tvg_id": "TVFuturo.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
