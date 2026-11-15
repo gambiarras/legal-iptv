@@ -70,7 +70,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "new",
                 "New provider",
                 "https://example.test/new.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 source_type="stremio_addon",
             ),
         ]
@@ -87,7 +87,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "high.fhd",
                 "Canal [FHD]",
                 "https://high.example/fhd.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 tvg_id="Canal.br",
                 variant="fhd",
             ),
@@ -95,7 +95,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "high.4k",
                 "Canal [4K]",
                 "https://high.example/4k.mpd",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 tvg_id="Canal.br",
                 variant="4k",
             ),
@@ -115,17 +115,17 @@ class ProfileSelectorTest(unittest.TestCase):
         self.assertEqual({item.tvg_id for item in selected}, {"Canal.br"})
         self.assertEqual(selected[0].group, "Variedades")
 
-    def test_full_places_named_alternative_in_final_group(self):
+    def test_full_excludes_named_alternative(self):
         candidate = channel(
             "alternative",
             "Canal Alternativo 1",
             "https://example.test/alternative.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
         )
 
         selected = select_profile_channels([candidate], self.configuration, "full")
 
-        self.assertEqual(selected[0].group, "Alternativos")
+        self.assertEqual(selected, [])
 
     def test_full_groups_same_named_variants_even_when_source_logical_ids_differ(self):
         channels = [
@@ -133,7 +133,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "channel.fhd",
                 "Canal [FHD]",
                 "https://example.test/fhd.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 tvg_id="Canal.br",
                 logical_id="source.channel.first",
             ),
@@ -141,7 +141,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "channel.sd",
                 "Canal [SD]",
                 "https://example.test/sd.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 tvg_id="Canal.br",
                 logical_id="source.channel.second",
             ),
@@ -151,12 +151,12 @@ class ProfileSelectorTest(unittest.TestCase):
 
         self.assertEqual([item.id for item in selected], ["channel.fhd"])
 
-    def test_full_uses_explicit_logical_id_across_different_names(self):
+    def test_full_preserves_different_named_regional_feeds_even_with_shared_upstream_id(self):
         high = channel(
             "high",
             "Canal Região [FHD]",
             "https://high.example/live.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
         )
         low = channel(
             "low",
@@ -168,21 +168,21 @@ class ProfileSelectorTest(unittest.TestCase):
 
         selected = select_profile_channels([low, high], self.configuration, "full")
 
-        self.assertEqual([item.id for item in selected], ["high"])
+        self.assertEqual({item.id for item in selected}, {"high", "low"})
 
     def test_full_keeps_best_variant_when_urls_differ_only_by_query(self):
         first = channel(
             "first",
             "Canal [HD]",
             "https://example.test/live.m3u8?variant=hd",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             variant="hd",
         )
         second = channel(
             "second",
             "Canal [FHD]",
             "https://example.test/live.m3u8?variant=fhd",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             variant="fhd",
         )
 
@@ -195,7 +195,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "channel.4k",
             "Canal [4K]",
             "https://example.test/4k.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
             variant="4k",
         )
@@ -203,7 +203,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "channel.fhd",
             "Canal [FHD]",
             "https://example.test/fhd.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
             variant="fhd",
         )
@@ -238,7 +238,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "channel.4k",
             "Canal [4K]",
             "https://example.test/4k.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
             variant="4k",
         )
@@ -246,7 +246,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "channel.fhd",
             "Canal [FHD]",
             "https://example.test/fhd.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
             variant="fhd",
         )
@@ -283,7 +283,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "high",
             "Canal",
             "https://high.example/live.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
         )
         low = channel(
@@ -325,7 +325,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "high",
             "Canal",
             "https://high.example/live.m3u8",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             tvg_id="Canal.br",
         )
         low = channel(
@@ -366,7 +366,7 @@ class ProfileSelectorTest(unittest.TestCase):
             "channel.4k",
             "Canal",
             "https://example.test/channel.mpd",
-            provider="addon_catalog_1",
+            provider="televisao_tv",
             variant="4k",
             resolution="2160p",
             codec="h265",
@@ -382,14 +382,14 @@ class ProfileSelectorTest(unittest.TestCase):
                 "adult-swim",
                 "Adult Swim",
                 "https://example.test/adult-swim.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 raw_group="animation",
             ),
             channel(
                 "explicit",
                 "Explicit +18",
                 "https://example.test/explicit.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 raw_group="entertainment",
             ),
         ]
@@ -405,7 +405,7 @@ class ProfileSelectorTest(unittest.TestCase):
                 "dynamic",
                 "Dynamic",
                 "https://example.test/dynamic.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 requires_dynamic_resolution=True,
                 publishable_static=False,
             ),
@@ -413,14 +413,14 @@ class ProfileSelectorTest(unittest.TestCase):
                 "secret",
                 "Secret",
                 "https://example.test/secret.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 secret_refs={"headers": "PRIVATE_HEADERS"},
             ),
             channel(
                 "dai",
                 "DAI",
                 "https://example.test/dai.m3u8",
-                provider="addon_catalog_1",
+                provider="televisao_tv",
                 delivery_mode="dai",
             ),
         ]

@@ -1,7 +1,7 @@
 import logging
 import threading
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -19,13 +19,16 @@ from legal_iptv.models.stream_validation import UrlValidation
 from legal_iptv.services.extra_removal import update_extra_removals
 from legal_iptv.services.stream_status import (
     TEMPORARILY_UNAVAILABLE_STATUS,
-    TERMINAL_OFFLINE_STATUSES,
+    _parse_datetime,
     _record_activity,
     _status_record,
     _utc_now,
     _validated_status_record,
     offline_urls,
+    rejected_record,
+    retain_rejected_records,
 )
+from legal_iptv.services.transport_probe import PROBE_VERSION, probe_transport
 from legal_iptv.services.validation_metrics import (
     build_validation_metrics,
     safe_metric_label,
@@ -43,14 +46,20 @@ from legal_iptv.services.validation_schedule import (
 
 logger = logging.getLogger(__name__)
 
-FALLBACK_STATUSES = {403, 404, 405, 410}
-TRANSIENT_LIVE_SOURCE_TYPES = {"youtube", "twitch", "kick"}
-
 _thread_local = threading.local()
+MAX_PROBE_WORKERS = 32
 
 
 class StreamProbeSession(requests.Session):
     """Keep transport credentials off other origins during redirects."""
+
+    def __init__(self):
+        super().__init__()
+        adapter = requests.adapters.HTTPAdapter(
+            pool_connections=4, pool_maxsize=1, max_retries=0, pool_block=True
+        )
+        self.mount("https://", adapter)
+        self.mount("http://", adapter)
 
     def rebuild_auth(
         self, prepared_request: requests.PreparedRequest, response: requests.Response
@@ -76,20 +85,6 @@ class StreamProbeSession(requests.Session):
                     del prepared_request.headers[name]
 
 
-def _is_success_status(status_code: int) -> bool:
-    return 200 <= status_code < 400
-
-
-def _status_to_activity(status_code: int) -> bool | None:
-    if _is_success_status(status_code):
-        return True
-
-    if status_code in TERMINAL_OFFLINE_STATUSES:
-        return False
-
-    return None
-
-
 def _get_session() -> requests.Session:
     session = getattr(_thread_local, "session", None)
     if session is None:
@@ -99,85 +94,20 @@ def _get_session() -> requests.Session:
     return session
 
 
+def _initialize_probe_thread(sessions: list[requests.Session]) -> None:
+    session = StreamProbeSession()
+    _thread_local.session = session
+    sessions.append(session)
+
+
 def inspect_url(
     url: str, timeout: int, request_headers: dict[str, str] | None = None
 ) -> UrlValidation:
-    started_at = time.perf_counter()
-    request_count = 0
-
-    def result(
-        active: bool | None,
-        http_status: int | None = None,
-        error_type: str | None = None,
-    ) -> UrlValidation:
-        return UrlValidation(
-            active,
-            http_status,
-            error_type,
-            duration_ms=round((time.perf_counter() - started_at) * 1000, 3),
-            request_count=request_count,
-        )
-
     headers = build_headers(accept="*/*")
+    headers = {name.casefold(): value for name, value in headers.items()}
     if request_headers:
-        # Requests uses case-insensitive names; avoid duplicate casing here too.
-        headers = {name.casefold(): value for name, value in headers.items()}
-        headers.update(
-            {name.casefold(): value for name, value in request_headers.items()}
-        )
-    session = _get_session()
-    head_status: int | None = None
-
-    try:
-        request_count += 1
-        response = session.head(
-            url,
-            headers=headers,
-            timeout=timeout,
-            allow_redirects=True,
-        )
-        try:
-            head_status = response.status_code
-        finally:
-            response.close()
-
-        if _is_success_status(head_status):
-            return result(True, head_status)
-
-        if head_status not in FALLBACK_STATUSES:
-            return result(
-                _status_to_activity(head_status),
-                head_status,
-            )
-
-    except requests.RequestException:
-        pass
-
-    try:
-        request_count += 1
-        response = session.get(
-            url,
-            headers={**headers, "Range": "bytes=0-0"},
-            timeout=timeout,
-            allow_redirects=True,
-            stream=True,
-        )
-        try:
-            return result(
-                _status_to_activity(response.status_code),
-                response.status_code,
-            )
-        finally:
-            response.close()
-
-    except requests.RequestException as exc:
-        if head_status is not None:
-            return result(
-                _status_to_activity(head_status),
-                head_status,
-                type(exc).__name__,
-            )
-        return result(None, error_type=type(exc).__name__)
+        headers.update({name.casefold(): value for name, value in request_headers.items()})
+    return probe_transport(_get_session(), url, timeout, headers)
 
 
 def is_url_active(url: str, timeout: int) -> bool | None:
@@ -194,25 +124,34 @@ def validate_url_details(
     if not urls:
         return {}
 
-    worker_count = max(1, min(max_workers, len(urls)))
+    worker_count = max(1, min(max_workers, len(urls), MAX_PROBE_WORKERS))
     results: dict[str, UrlValidation] = {}
-    with ThreadPoolExecutor(max_workers=worker_count) as executor:
-        futures = {
-            executor.submit(
-                inspect_url, url, timeout, (request_headers_by_url or {}).get(url)
-            ): url
-            for url in urls
-        }
-        for future in as_completed(futures):
-            url = futures[future]
-            try:
-                results[url] = future.result()
-            except Exception as exc:
-                logger.warning(
-                    "Stream validation failed error_type=%s",
-                    type(exc).__name__,
-                )
-                results[url] = UrlValidation(None, error_type=type(exc).__name__)
+    sessions: list[requests.Session] = []
+    try:
+        with ThreadPoolExecutor(
+            max_workers=worker_count,
+            initializer=_initialize_probe_thread,
+            initargs=(sessions,),
+        ) as executor:
+            futures = {
+                executor.submit(
+                    inspect_url, url, timeout, (request_headers_by_url or {}).get(url)
+                ): url
+                for url in urls
+            }
+            for future in as_completed(futures):
+                url = futures[future]
+                try:
+                    results[url] = future.result()
+                except Exception as exc:
+                    logger.warning(
+                        "Stream validation failed error_type=%s",
+                        type(exc).__name__,
+                    )
+                    results[url] = UrlValidation(None, error_type=type(exc).__name__)
+    finally:
+        for session in sessions:
+            session.close()
     return results
 
 
@@ -386,7 +325,7 @@ def filter_cached_offline_channels(
             max_age_seconds=max_age_seconds,
             now=now,
         )
-        if not suppressed or _is_transient_live_channel(channel):
+        if not suppressed:
             filtered_channels.append(channel)
 
     logger.info(
@@ -400,11 +339,64 @@ def filter_cached_offline_channels(
     return filtered_channels
 
 
-def _is_transient_live_channel(channel: Channel) -> bool:
-    return (
-        channel.source == "live_stream_catalog"
-        and channel.source_type in TRANSIENT_LIVE_SOURCE_TYPES
+def _media_success_at(record: dict | None) -> datetime | None:
+    if not isinstance(record, dict) or (
+        record.get("probe_version") != PROBE_VERSION
+        or record.get("validation_level") != "transport_sample"
+    ):
+        return None
+    value = record.get("last_media_success_at")
+    if record.get("active") is True:
+        # Version 2 sampled records predate the explicit last-success field.
+        value = record.get("checked_at")
+    return _parse_datetime(value)
+
+
+def filter_media_confirmed_channels(
+    channels: list[Channel],
+    *,
+    status_file: Path,
+    max_age_seconds: int = 86400,
+) -> list[Channel]:
+    """Publish only recent sampled media or one bounded inconclusive retry.
+
+    The ordinary negative-cache API remains permissive for legacy consumers;
+    production selection can explicitly require this positive proof instead.
+    This function performs no requests and never changes observation timestamps.
+    """
+    records = _read_status_records(status_file)
+    now = _utc_now()
+    confirmed: list[Channel] = []
+    for channel in channels:
+        context = context_for_channel(channel)
+        if context.expired(now):
+            continue
+        record = matching_record(records.get(context.url), context)
+        if not record or record.get("active") is False or rejected_record(record, now=now):
+            continue
+        if record.get("status") != (
+            "active" if record.get("active") is True else "unknown"
+        ):
+            continue
+        checked = _parse_datetime(record.get("checked_at"))
+        success = _media_success_at(record)
+        if checked is None or checked > now or success is None:
+            continue
+        age = (now - success).total_seconds()
+        if not 0 <= age <= max_age_seconds:
+            continue
+        failures = record.get("consecutive_failures", 0)
+        if record.get("active") is None and (
+            type(failures) is not int or not 0 <= failures <= 1
+        ):
+            continue
+        if record.get("active") is True or record.get("active") is None:
+            confirmed.append(channel)
+    logger.info(
+        "Media proof filter finished total=%s confirmed=%s unconfirmed=%s",
+        len(channels), len(confirmed), len(channels) - len(confirmed),
     )
+    return confirmed
 
 
 def _validate_contexts(
@@ -503,12 +495,25 @@ def refresh_stream_status(
         )
         for cid, context in contexts.items()
     }
+    for cid, context in contexts.items():
+        saved = previous_records.get(context.url)
+        raw = matching_record(saved, context)
+        if (
+            raw is None and saved and not context.headers
+            and "context_id" not in saved and "contexts" not in saved
+        ):
+            raw = saved
+        if rejected_record(raw, now=freshness_now):
+            previous_by_context[cid] = raw
+        elif previous_by_context[cid] and previous_by_context[cid].get("probe_version") != PROBE_VERSION:
+            # A legacy HEAD success is not transport evidence or a success streak.
+            previous_by_context[cid] = None
     fresh_records = {
         cid: dict(previous_by_context[cid])
         for cid, context in contexts.items()
-        if can_reuse(
-            previous_by_context[cid], context, policy, now=freshness_now, force=force
-        )
+        if previous_by_context[cid]
+        and previous_by_context[cid].get("probe_version") == PROBE_VERSION
+        and can_reuse(previous_by_context[cid], context, policy, now=freshness_now, force=force)
     }
     pending = {
         cid: context
@@ -525,8 +530,8 @@ def refresh_stream_status(
             channels,
             {},
             extra_removed_file,
-            http_status_by_channel={
-                channel.id: result.http_status
+            validation_by_channel={
+                channel.id: result
                 for cid, result in validation_details.items()
                 for channel in channels_by_context[cid]
                 if channel.source == "extra"
@@ -554,8 +559,17 @@ def refresh_stream_status(
                 checked_at=checked_at,
                 metadata=metadata,
                 failure_threshold=failure_threshold,
-                allow_suppression=not context.transient,
+                allow_suppression=True,
             )
+            record["probe_version"] = PROBE_VERSION
+            record["validation_level"] = "transport_sample"
+            if result.active is True:
+                record["last_media_success_at"] = checked_at
+            elif result.active is None:
+                previous = matching_record(previous_records.get(context.url), context)
+                last_success = _media_success_at(previous)
+                if last_success is not None and last_success <= checked_now:
+                    record["last_media_success_at"] = last_success.isoformat()
             records_by_context[cid] = schedule_record(
                 record,
                 previous_by_context[cid],
@@ -580,7 +594,11 @@ def refresh_stream_status(
                 "validation": "expired",
             }
 
-    records_by_url = _url_summaries(contexts, records_by_context, metadata_by_url)
+    records_by_url = retain_rejected_records(
+        previous_records,
+        _url_summaries(contexts, records_by_context, metadata_by_url),
+        now=checked_now,
+    )
 
     metrics = build_validation_metrics(
         previous_snapshot,
@@ -594,6 +612,8 @@ def refresh_stream_status(
         ),
     )
     metrics.summary["cache_unit"] = "transport_context"
+    metrics.summary["validation_level"] = "transport_sample"
+    metrics.summary["probe_version"] = PROBE_VERSION
     _write_stream_status_records(
         status_file,
         records_by_url,

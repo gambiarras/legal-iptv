@@ -42,6 +42,8 @@ class AppConfig:
     companion_guide_url: str | None = None
     companion_reference_file: Path | None = None
     companion_reference_cache_path: Path | None = None
+    validation_due_only: bool = False
+    require_media_proof: bool = False
 
     @classmethod
     def from_args(cls, args) -> "AppConfig":
@@ -88,4 +90,6 @@ class AppConfig:
             companion_guide_url=args.companion_guide_url,
             companion_reference_file=Path(args.companion_reference_file) if args.companion_reference_file else None,
             companion_reference_cache_path=Path(args.companion_reference_cache) if args.companion_reference_cache else None,
+            validation_due_only=args.validation_due_only,
+            require_media_proof=args.require_media_proof,
         )

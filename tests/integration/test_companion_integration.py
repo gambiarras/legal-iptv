@@ -12,7 +12,7 @@ from legal_iptv.models import Channel
 
 
 class CompanionIntegrationTest(unittest.TestCase):
-    def test_real_cli_keeps_main_and_generates_a_matched_companion_bundle(self):
+    def test_real_cli_generates_matching_playlists_with_one_shared_guide(self):
         now = datetime.now(timezone.utc)
         with tempfile.TemporaryDirectory() as directory:
             work = Path(directory)
@@ -42,7 +42,7 @@ class CompanionIntegrationTest(unittest.TestCase):
                           Channel(id="sbt", name="SBT", tvg_id="SBT.br",
                                  stream_url="https://sbt.example.test/live.m3u8", logo="",
                                  group="TV Aberta", source="extra")]
-            argv = ["legal-iptv", "--output", str(work / "main.m3u"),
+            argv = ["legal-iptv", "--no-require-media-proof", "--output", str(work / "main.m3u"),
                     "--meta-output", str(work / "main.meta.json"),
                     "--guide-output", str(work / "guide.xml"),
                     "--live-catalog-file", str(work / "catalog.json"),
@@ -65,7 +65,9 @@ class CompanionIntegrationTest(unittest.TestCase):
             self.assertIn("SBT", full)
             self.assertNotIn("SBT", companion)
             self.assertIn('tvg-id="FoxKids.br"', companion)
-            self.assertNotIn("legal-epg", companion)
+            self.assertEqual(full.splitlines()[0], companion.splitlines()[0])
+            self.assertIn("guide.xml,https://bit.ly/legal-epg", companion.splitlines()[0])
+            self.assertEqual((work / "guide.xml").read_bytes(), (work / "companion-guide.xml").read_bytes())
             root = ET.parse(work / "companion-guide.xml").getroot()
             self.assertEqual({item.get("channel") for item in root.findall("programme")}, {"FoxKids.br"})
             metadata = json.loads((work / "companion.meta.json").read_text())

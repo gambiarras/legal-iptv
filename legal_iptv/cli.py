@@ -28,6 +28,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-live-ttl", type=positive_int, default=900)
     parser.add_argument("--live-catalog-file", default=None)
     parser.add_argument("--validate-streams", action="store_true")
+    parser.add_argument("--require-media-proof", action=argparse.BooleanOptionalAction, default=True,
+                        help="Publish only transports with recent media sampling evidence (default)")
+    parser.add_argument("--validation-due-only", action="store_true",
+                        help="Validate due transports using existing catalog, source and EPG caches only")
     parser.add_argument(
         "--force-validation",
         action="store_true",
@@ -80,6 +84,13 @@ def parse_args() -> argparse.Namespace:
                         help="Sanitized Saimo/Televisao reference snapshot for offline generation")
     parser.add_argument("--companion-reference-cache", default=None)
     args = parser.parse_args()
+    if args.validation_due_only:
+        args.validate_streams = True
+        args.skip_guide = True
+        if not args.live_catalog_file:
+            parser.error("--validation-due-only requires --live-catalog-file")
+        if args.force_validation or args.refresh_epg_cache or args.refresh_iptv_org_cache:
+            parser.error("--validation-due-only cannot force checks or refresh caches")
     if args.force_validation and not args.validate_streams:
         parser.error("--force-validation requires --validate-streams")
     companion_paths = (args.companion_output, args.companion_meta_output, args.companion_guide_output)

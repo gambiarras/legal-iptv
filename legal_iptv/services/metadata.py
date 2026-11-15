@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+from collections import Counter
 
 from legal_iptv.models import Channel, RunMetadata
 
@@ -51,6 +52,9 @@ def build_run_metadata(
         selection_filtered_channels=selection_filtered,
         deduplicated_channels=selection_filtered,
         selected_by_source=_count_by_source(selected),
+        selected_by_provider=dict(sorted(Counter(
+            channel.provider_id or channel.source_type or channel.source for channel in selected
+        ).items())),
         timings_seconds=timings_seconds or {},
         epg_aliases_count=epg_aliases_count,
     )

@@ -20,10 +20,12 @@ def _sanitize_display_name(value: str) -> str:
 
 def _render_header(guide_url: str | None = None, *, legacy_guide_urls: bool = True,
                    include_primary_guide: bool = True) -> str:
-    candidates = [PRIMARY_EPG_URL] if include_primary_guide else []
+    candidates = []
     if guide_url:
         candidates.extend(item.strip() for item in guide_url.split(","))
-    elif legacy_guide_urls:
+    if include_primary_guide:
+        candidates.append(PRIMARY_EPG_URL)
+    if legacy_guide_urls:
         candidates.extend(EPG_URLS)
     tvg_urls = ",".join(dict.fromkeys(item for item in candidates if item))
     if not tvg_urls:

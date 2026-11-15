@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-11-15T04:55:42.337192+00:00",
+  "main_channels": 294,
+  "companion_channels": 229,
+  "catalog_channels": 193,
+  "selected_by_provider": {
+    "extra": 10,
+    "iptv_org": 149,
+    "rest_catalog_1": 133,
+    "televisao": 2
+  },
+  "media_proof_required": true,
+  "guide_bytes": 995025,
+  "declared_channel_ids": 294,
+  "programmes": 3604,
+  "channels_with_programmes": 44,
+  "fox_kids_programmes": 114,
+  "tv_sonata_programmes": 3,
+  "nova_tvi_programmes": 0,
+  "shared_guide_same_inode": true,
+  "companion_saimo_overlap": 0,
+  "main_duplicate_identities": 0,
+  "chespirito_published": false,
+  "private_epg_cache_bytes": 105527436,
+  "warm_generation_seconds": 0.538,
+  "projection_benchmark": {
+    "source_bytes": 96291985,
+    "selected_bytes": 1162961,
+    "elapsed_seconds": 3.828,
+    "process_peak_rss_bytes": 46907392,
+    "ids_requested": 228,
+    "note": "Standalone process peak; projection of fresh public snapshot, not server or browser measurement"
+  },
+  "notes": [
+    "Snapshot and sampled transport observations, not continuous playback or permanent availability",
+    "Missing schedules remain missing; declarations do not fabricate programmes",
+    "Public guide includes compaction of metadata as well as channel/window filtering"
+  ]
+}

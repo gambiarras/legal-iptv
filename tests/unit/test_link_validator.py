@@ -26,9 +26,15 @@ from legal_iptv.services.validation_schedule import (
 
 
 class FakeResponse:
-    def __init__(self, status_code: int):
+    def __init__(self, status_code: int, body=None):
         self.status_code = status_code
         self.closed = False
+        self.headers = {}
+        self.raw = None
+        self.body = body if body is not None else (b"G" + b"\0" * 187) * 4
+
+    def iter_content(self, chunk_size):
+        yield self.body
 
     def close(self):
         self.closed = True
@@ -59,6 +65,7 @@ def scheduled_record(channel, checked_at):
             "status": "active",
             "checked_at": checked_at,
             "consecutive_failures": 0,
+            "probe_version": 2,
         },
         None,
         context_for_channel(channel),
@@ -70,22 +77,15 @@ def scheduled_record(channel, checked_at):
 
 class LinkValidatorTest(unittest.TestCase):
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_probe_measures_attempts_and_duration_and_closes_head(
-        self, get_session_mock
-    ):
+    def test_probe_measures_one_get_and_closes_response(self, get_session_mock):
         session = Mock()
-        session.head.return_value = FakeResponse(405)
         session.get.return_value = FakeResponse(206)
         get_session_mock.return_value = session
-        with patch(
-            "legal_iptv.services.link_validator.time.perf_counter",
-            side_effect=[10, 10.025],
-        ):
-            result = inspect_url("https://example.test/live.m3u8", timeout=1)
-        self.assertEqual(result.duration_ms, 25)
-        self.assertEqual(result.request_count, 2)
-        self.assertTrue(session.head.return_value.closed)
+        result = inspect_url("https://example.test/live.ts", timeout=1)
+        self.assertGreaterEqual(result.duration_ms, 0)
+        self.assertEqual(result.request_count, 1)
         self.assertTrue(session.get.return_value.closed)
+        session.head.assert_not_called()
 
     @patch("legal_iptv.services.link_validator.validate_url_details")
     def test_history_tracks_unknown_suppression_and_cache_without_inflating_checks(
@@ -164,88 +164,33 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertEqual(payload["summary"]["validation_metrics"]["checks"], 0)
 
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_is_active_when_head_succeeds(self, get_session_mock: Mock):
+    def test_url_requires_media_content_and_not_successful_head(self, get_session_mock):
         session = Mock()
-        session.head.return_value = FakeResponse(200)
+        session.get.side_effect = [FakeResponse(200), FakeResponse(200, b"<html>Error</html>")]
         get_session_mock.return_value = session
-
-        self.assertTrue(is_url_active("https://example.test/live.m3u8", timeout=1))
+        self.assertTrue(is_url_active("https://example.test/live.ts", timeout=1))
+        self.assertFalse(is_url_active("https://example.test/error", timeout=1))
+        session.head.assert_not_called()
 
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_uses_get_fallback_when_head_is_not_allowed(
-        self,
-        get_session_mock: Mock,
-    ):
+    def test_url_http_statuses_are_not_video_evidence(self, get_session_mock):
         session = Mock()
-        session.head.return_value = FakeResponse(405)
-        session.get.return_value = FakeResponse(206)
         get_session_mock.return_value = session
-
-        self.assertTrue(is_url_active("https://example.test/live.m3u8", timeout=1))
-        self.assertTrue(session.get.return_value.closed)
+        for status, active in ((404, False), (410, False), (429, None), (503, None)):
+            with self.subTest(status=status):
+                response = FakeResponse(status)
+                session.get.return_value = response
+                result = inspect_url("https://example.test/live.m3u8", timeout=1)
+                self.assertIs(result.active, active)
+                self.assertEqual(result.http_status, status)
+                self.assertTrue(response.closed)
 
     @patch("legal_iptv.services.link_validator._get_session")
-    def test_head_404_requires_get_confirmation(self, get_session_mock: Mock):
+    def test_url_status_is_unknown_when_requests_time_out(self, get_session_mock):
         session = Mock()
-        session.head.return_value = FakeResponse(404)
-        session.get.return_value = FakeResponse(200)
+        session.get.side_effect = requests.Timeout("private endpoint")
         get_session_mock.return_value = session
-
-        self.assertTrue(is_url_active("https://example.test/live.m3u8", timeout=1))
-        session.get.assert_called_once()
-
-    @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_status_is_unknown_when_head_is_rate_limited(
-        self, get_session_mock: Mock
-    ):
-        session = Mock()
-        session.head.return_value = FakeResponse(429)
-        get_session_mock.return_value = session
-
         result = inspect_url("https://example.test/live.m3u8", timeout=1)
-
-        self.assertIsNone(result.active)
-        self.assertEqual(result.http_status, 429)
-        session.get.assert_not_called()
-
-    @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_status_is_unknown_when_get_fallback_is_rate_limited(
-        self,
-        get_session_mock: Mock,
-    ):
-        session = Mock()
-        session.head.return_value = FakeResponse(405)
-        session.get.return_value = FakeResponse(429)
-        get_session_mock.return_value = session
-
-        result = inspect_url("https://example.test/live.m3u8", timeout=1)
-
-        self.assertIsNone(result.active)
-        self.assertEqual(result.http_status, 429)
-        self.assertIsNone(result.error_type)
-        self.assertTrue(session.get.return_value.closed)
-
-    @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_status_is_unknown_on_server_error(self, get_session_mock: Mock):
-        session = Mock()
-        session.head.return_value = FakeResponse(503)
-        get_session_mock.return_value = session
-
-        result = inspect_url("https://example.test/live.m3u8", timeout=1)
-
-        self.assertIsNone(result.active)
-        self.assertEqual(result.http_status, 503)
-        self.assertIsNone(result.error_type)
-
-    @patch("legal_iptv.services.link_validator._get_session")
-    def test_url_status_is_unknown_when_requests_time_out(self, get_session_mock: Mock):
-        session = Mock()
-        session.head.side_effect = requests.Timeout("head timeout")
-        session.get.side_effect = requests.Timeout("get timeout")
-        get_session_mock.return_value = session
-
-        result = inspect_url("https://example.test/live.m3u8", timeout=1)
-
         self.assertIsNone(result.active)
         self.assertIsNone(result.http_status)
         self.assertEqual(result.error_type, "Timeout")
@@ -281,11 +226,7 @@ class LinkValidatorTest(unittest.TestCase):
         self, get_session_mock: Mock
     ):
         session = Mock()
-        session.head.side_effect = [
-            FakeResponse(200),
-            FakeResponse(404),
-        ]
-        session.get.return_value = FakeResponse(404)
+        session.get.side_effect = [FakeResponse(200), FakeResponse(404)]
         get_session_mock.return_value = session
         active_url = "https://example.test/active.m3u8"
         inactive_url = "https://example.test/inactive.m3u8"
@@ -305,7 +246,7 @@ class LinkValidatorTest(unittest.TestCase):
             [channel.id for channel in active_channels],
             ["active.one", "active.two"],
         )
-        self.assertEqual(session.head.call_count, 2)
+        self.assertEqual(session.get.call_count, 2)
 
     @patch("legal_iptv.services.link_validator.is_url_active")
     def test_validate_urls_marks_unexpected_errors_unknown(
@@ -370,7 +311,7 @@ class LinkValidatorTest(unittest.TestCase):
             },
         )
 
-    def test_ignores_stale_offline_urls_from_status_file(self):
+    def test_retains_stale_offline_urls_until_observed_recovery(self):
         checked_at = (datetime.now(timezone.utc) - timedelta(hours=5)).isoformat()
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -392,9 +333,9 @@ class LinkValidatorTest(unittest.TestCase):
 
             offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
 
-        self.assertEqual(offline_urls, set())
+        self.assertEqual(offline_urls, {"https://example.test/offline.m3u8"})
 
-    def test_expires_stale_temporarily_unavailable_suppression(self):
+    def test_retains_stale_temporary_suppression_until_observed_recovery(self):
         checked_at = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -417,7 +358,7 @@ class LinkValidatorTest(unittest.TestCase):
 
             offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
 
-        self.assertEqual(offline_urls, set())
+        self.assertEqual(offline_urls, {"https://example.test/suppressed.m3u8"})
 
     def test_filters_channels_using_cached_offline_urls(self):
         checked_at = datetime.now(timezone.utc).isoformat()
@@ -453,7 +394,7 @@ class LinkValidatorTest(unittest.TestCase):
 
         self.assertEqual([channel.id for channel in filtered_channels], ["active"])
 
-    def test_cached_offline_filter_keeps_transient_live_catalog_urls(self):
+    def test_cached_offline_filter_holds_failed_transient_urls(self):
         checked_at = datetime.now(timezone.utc).isoformat()
         transient_url = "https://manifest.googlevideo.com/live.m3u8"
         static_url = "https://example.test/offline.m3u8"
@@ -490,7 +431,7 @@ class LinkValidatorTest(unittest.TestCase):
                 max_age_seconds=14400,
             )
 
-        self.assertEqual([channel.id for channel in filtered_channels], ["youtube"])
+        self.assertEqual(filtered_channels, [])
 
     @patch("legal_iptv.services.link_validator.validate_url_details")
     def test_refresh_stream_status_writes_cache_and_filters_only_offline_channels(
@@ -705,7 +646,7 @@ class LinkValidatorTest(unittest.TestCase):
         self.assertNotIn("http_status", record)
 
     @patch("legal_iptv.services.link_validator.validate_url_details")
-    def test_refresh_stream_status_marks_transient_live_failures_as_unknown(
+    def test_refresh_stream_status_suppresses_failed_transient_transport(
         self,
         validate_details_mock: Mock,
     ):
@@ -735,9 +676,9 @@ class LinkValidatorTest(unittest.TestCase):
             )
             payload = json.loads(status_file.read_text(encoding="utf-8"))
 
-        self.assertEqual([channel.id for channel in active_channels], ["youtube"])
-        self.assertIsNone(payload["urls"][transient_url]["active"])
-        self.assertEqual(payload["urls"][transient_url]["status"], "unknown")
+        self.assertEqual(active_channels, [])
+        self.assertFalse(payload["urls"][transient_url]["active"])
+        self.assertEqual(payload["urls"][transient_url]["status"], "offline")
         self.assertEqual(payload["urls"][transient_url]["http_status"], 404)
         self.assertEqual(payload["urls"][transient_url]["consecutive_failures"], 2)
         self.assertIsInstance(payload["urls"][transient_url]["checked_at"], str)

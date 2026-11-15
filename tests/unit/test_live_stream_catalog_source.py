@@ -21,15 +21,15 @@ class FakeClient:
 
 
 class LiveStreamCatalogSourceTest(unittest.TestCase):
-    def test_extensionless_addon_stream_reaches_full_playlist(self):
+    def test_extensionless_reviewed_stream_reaches_full_playlist(self):
         payload = [
             {
-                "id": f"addon.channel.{quality.lower()}",
+                "id": f"televisao.channel.{quality.lower()}",
                 "name": f"Example Channel [{quality}]",
                 "stream_url": f"https://media.example.test/relay/{quality.lower()}",
-                "source_type": "stremio_addon",
-                "provider_id": "addon_catalog_1",
-                "logical_channel_id": "addon.channel",
+                "source_type": "televisao",
+                "provider_id": "televisao",
+                "logical_channel_id": "televisao.channel",
                 "variant_label": quality,
                 "group": "general",
                 "status": "resolved",
@@ -52,7 +52,7 @@ class LiveStreamCatalogSourceTest(unittest.TestCase):
 
         self.assertEqual(client.requested_urls, [])
         self.assertEqual(len(channels), 2)
-        self.assertEqual([item.id for item in selected], ["addon.channel.fhd"])
+        self.assertEqual([item.id for item in selected], ["televisao.channel.fhd"])
         self.assertEqual(base, [])
         for player_profile in ("portable", "kodi"):
             with self.subTest(player_profile=player_profile):

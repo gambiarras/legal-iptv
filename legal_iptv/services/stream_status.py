@@ -5,6 +5,15 @@ from legal_iptv.models.stream_validation import UrlValidation
 
 TERMINAL_OFFLINE_STATUSES = {404, 410}
 TEMPORARILY_UNAVAILABLE_STATUS = "temporarily_unavailable"
+UNSUPPORTED_PROBE_ERRORS = frozenset({
+    "DashSamplingUnsupported", "EncryptedHlsUnsupported", "HlsByteRangeUnsupported",
+    "UnsupportedMediaSample", "UnsupportedMediaUrl", "HlsVariantLimit",
+    "ProbeByteLimit", "ProbeRequestLimit",
+})
+
+
+def unsupported_probe_error(value: object) -> bool:
+    return isinstance(value, str) and value in UNSUPPORTED_PROBE_ERRORS
 
 
 def _utc_now() -> datetime:
@@ -66,20 +75,80 @@ def _is_fresh_record(
 def offline_urls(
     records: dict[str, dict[str, Any]], *, max_age_seconds: int, now: datetime
 ) -> set[str]:
-    """Apply cached suppression only while the observation is still fresh."""
+    """A retry deadline expiring never converts rejection into recovery.
+
+    ``max_age_seconds`` remains an API-compatible scheduling input; it is not
+    permission to republish a known rejected transport without a real success.
+    """
     return {
         url
         for url, record in records.items()
-        if _is_fresh_record(record, max_age_seconds=max_age_seconds, now=now)
-        and record.get("active") is False
-        and (
-            record.get("status") == TEMPORARILY_UNAVAILABLE_STATUS
-            or (
-                type(record.get("http_status")) is int
-                and record["http_status"] in TERMINAL_OFFLINE_STATUSES
-            )
-        )
+        if rejected_record(record, now=now)
     }
+
+
+def rejected_record(record: dict | None, *, now: datetime) -> bool:
+    if not isinstance(record, dict) or record.get("active") is not False:
+        return False
+    checked = _parse_datetime(record.get("checked_at"))
+    status = record.get("status")
+    http_status = record.get("http_status")
+    return checked is not None and checked <= now and (
+        status == "offline" or status == TEMPORARILY_UNAVAILABLE_STATUS
+        or type(http_status) is int and http_status in TERMINAL_OFFLINE_STATUSES
+    )
+
+
+def retain_rejected_records(
+    previous: dict[str, dict], current: dict[str, dict], *, now: datetime
+) -> dict[str, dict]:
+    """Keep unobserved rejections when a profile or tombstone omitted a channel.
+
+    Contexts stay independent. The hard limit fails closed instead of silently
+    forgetting failures and admitting transports when storage fills up.
+    """
+    result = dict(current)
+    for url, record in previous.items():
+        nested = record.get("contexts")
+        old = (
+            nested if isinstance(nested, dict)
+            else {record.get("context_id", "legacy"): record}
+        )
+        negatives = {
+            key: item for key, item in old.items()
+            if rejected_record(item, now=now)
+        }
+        if not negatives:
+            continue
+        present = result.get(url)
+        if present is None:
+            result[url] = (
+                record if not isinstance(nested, dict)
+                else {**record, "contexts": negatives}
+            )
+            continue
+        existing = present.get("contexts")
+        members = (
+            dict(existing) if isinstance(existing, dict)
+            else {present.get("context_id", "legacy"): present}
+        )
+        for cid, item in negatives.items():
+            if cid != "legacy" and cid not in members:
+                members[cid] = item
+        if len(members) > 1:
+            result[url] = {
+                "active": None,
+                "status": "unknown",
+                "validation": "context_summary",
+                "contexts": members,
+            }
+    total = sum(
+        len(item["contexts"]) if isinstance(item.get("contexts"), dict) else 1
+        for item in result.values()
+    )
+    if total > 10_000:
+        raise ValueError("Stream status context budget exceeded; refusing to forget rejected transports")
+    return result
 
 
 def _record_activity(record: dict[str, Any] | None) -> bool | None:
@@ -137,11 +206,18 @@ def _validated_status_record(
             http_status=result.http_status,
         )
 
-    consecutive_failures = _previous_failure_count(previous_record) + 1
+    unsupported = unsupported_probe_error(result.error_type)
+    consecutive_failures = (
+        (_previous_failure_count(previous_record) if previous_record else 0)
+        + (0 if unsupported else 1)
+    )
     if result.active is False and allow_suppression:
         active: bool | None = False
         status = "offline"
-    elif allow_suppression and consecutive_failures >= failure_threshold:
+    elif rejected_record(previous_record, now=_parse_datetime(checked_at) or _utc_now()):
+        active = False
+        status = TEMPORARILY_UNAVAILABLE_STATUS
+    elif not unsupported and allow_suppression and consecutive_failures >= failure_threshold:
         active = False
         status = TEMPORARILY_UNAVAILABLE_STATUS
     else:

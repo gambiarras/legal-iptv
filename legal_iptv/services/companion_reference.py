@@ -15,7 +15,7 @@ from legal_iptv.io import write_json_atomic
 SAIMO_BASE = "https://canais-saimo.pages.dev/"
 DISABLED_URL = "https://saimo-tv.pages.dev/fontes-desativadas.json"
 TELEVISAO_URL = "https://televisao.tv/channels-data.php"
-REFERENCE_VERSION = 2
+REFERENCE_VERSION = 3
 QUALITY = re.compile(r"\b(?:2160p|1080p|720p|480p|4k|uhd|fhd|hd|sd|hevc|h[ .]?26[45])\b", re.I)
 
 
@@ -104,7 +104,7 @@ def _android_key(name: str) -> str:
     return " ".join(tokens)
 
 
-def build_reference(catalogue: str, extras: str, disabled, television) -> dict:
+def build_reference(catalogue: str, extras: str, disabled, television=None) -> dict:
     disabled_hosts = _disabled_hosts(disabled)
     published = _extras(extras)
     extra_by_key = {_android_key(name): hosts for name, hosts in published}
@@ -118,6 +118,9 @@ def build_reference(catalogue: str, extras: str, disabled, television) -> dict:
         merged.append((name, hosts))
     merged.extend((name, hosts) for name, hosts in published if _android_key(name) not in used)
     names = sorted(name for name, hosts in merged if hosts - disabled_hosts)
+    has_directory = television is not None
+    if television is None:
+        television = []
     if isinstance(television, dict):
         if television.get("ok") is not True:
             raise ValueError("Televisao reference reported failure")
@@ -127,7 +130,7 @@ def build_reference(catalogue: str, extras: str, disabled, television) -> dict:
     directory_names = sorted({row["name"].strip() for row in television
                               if isinstance(row, dict) and isinstance(row.get("name"), str)
                               and row["name"].strip()})
-    if len(names) < 20 or len(directory_names) < 20:
+    if len(names) < 20 or (has_directory and len(directory_names) < 20):
         raise ValueError("Reference unexpectedly empty or incomplete")
     # Deliberately omit media URLs, hosts and raw payloads from cache/diagnostics.
     return {
@@ -139,14 +142,14 @@ def build_reference(catalogue: str, extras: str, disabled, television) -> dict:
         "extras_sha256": hashlib.sha256(extras.encode()).hexdigest(),
         "disabled_sha256": hashlib.sha256(json.dumps(disabled, sort_keys=True).encode()).hexdigest(),
         "sources": [SAIMO_BASE + "catalogo.txt", SAIMO_BASE + "canais.txt",
-                    DISABLED_URL, TELEVISAO_URL],
+                    DISABLED_URL] + ([TELEVISAO_URL] if has_directory else []),
     }
 
 
 def validate_reference(payload: dict, *, max_age_seconds: int = 172800) -> dict:
     if not isinstance(payload, dict):
         raise ValueError("Companion reference must be an object")
-    if payload.get("version") != REFERENCE_VERSION:
+    if payload.get("version") not in {2, REFERENCE_VERSION}:
         raise ValueError("Unsupported Companion reference version")
     generated = datetime.fromisoformat(payload["generated_at"].replace("Z", "+00:00"))
     if generated.tzinfo is None:
@@ -156,7 +159,8 @@ def validate_reference(payload: dict, *, max_age_seconds: int = 172800) -> dict:
         raise ValueError("Companion reference is expired or from the future")
     for field in ("saimo_channels", "televisao_channels"):
         names = payload.get(field)
-        if not isinstance(names, list) or len(names) < 20 or not all(
+        minimum = 20 if field == "saimo_channels" or payload["version"] == 2 else 0
+        if not isinstance(names, list) or not minimum <= len(names) <= 5000 or not all(
             isinstance(name, str) and 0 < len(name) <= 300 and "://" not in name
             for name in names
         ):
@@ -179,7 +183,6 @@ def load_reference(client: HttpClient, cache_file: Path, *, local_file: Path | N
             client.get_text(SAIMO_BASE + "catalogo.txt"),
             client.get_text(SAIMO_BASE + "canais.txt"),
             client.get_json(DISABLED_URL),
-            client.get_json(TELEVISAO_URL),
         )
         validate_reference(payload)
         write_json_atomic(cache_file, payload)

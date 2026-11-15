@@ -1,10 +1,10 @@
-import gzip
 import json
 import os
 import re
 import unicodedata
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
+from collections.abc import Collection
 from datetime import datetime, timedelta, timezone
 from importlib import resources
 from pathlib import Path
@@ -27,36 +27,81 @@ class EpgProvider:
     city: str | None = None
     days: int = 2
 
-    def fetch(self, client: HttpClient, *, cache_dir: Path | None = None) -> ET.Element:
-        if self.format in {"foxkids", "guiadetv", "meuguia"}:
-            from legal_iptv.services.epg_collectors import fetch_foxkids, fetch_html_schedules
+    def fetch(self, client: HttpClient, *, cache_dir: Path | None = None,
+              channel_ids: Collection[str] | None = None, now: datetime | None = None,
+              days: int = 3, inventory: dict | None = None,
+              channel_names: dict[str, str] | None = None) -> ET.Element:
+        from legal_iptv.services.guide import _programme_window, read_xmltv_source
+        from legal_iptv.services.epg_cache import cached_source
 
-            if self.format == "foxkids":
-                return fetch_foxkids(client, self.url, cache_dir=cache_dir, days=self.days)
-            return fetch_html_schedules(client, self.url, self.format, cache_dir=cache_dir)
-        if self.format in {"solr", "solr_json"}:
-            return solr_epg_to_xmltv(
-                client,
-                self.url,
-                city=self.city or "",
-                days=self.days,
-                headers=self.headers,
+        now = now or datetime.now(timezone.utc)
+        if self.format in {"foxkids", "guiadetv", "meuguia", "tvsonata", "novatvi", "meuguia_mapped", "guiadetv_mapped"}:
+            from legal_iptv.services.epg_collectors import (
+                fetch_foxkids, fetch_html_schedules, fetch_official_schedule,
+                fetch_mapped_schedules,
             )
-        payload = client.get_bytes(self.url, headers=self.headers)
-        if self.format == "json":
-            return json_epg_to_xmltv(json.loads(payload))
-        if payload.startswith(b"\x1f\x8b") or self.url.endswith(".gz"):
-            payload = gzip.decompress(payload)
-        root = ET.fromstring(payload)
-        if root.tag != "tv":
-            raise ValueError("EPG provider did not return XMLTV")
-        return root
+            if self.format == "foxkids":
+                root = fetch_foxkids(client, self.url, cache_dir=cache_dir, days=days, now=now)
+            elif self.format in {"tvsonata", "novatvi"}:
+                root = fetch_official_schedule(client, self.url, self.format, cache_dir=cache_dir,
+                                              now=now, days=days, channel_ids=channel_ids)
+            elif self.format.endswith("_mapped"):
+                root = fetch_mapped_schedules(client, self.format.removesuffix("_mapped"),
+                                             cache_dir=cache_dir, now=now, channel_ids=channel_ids,
+                                             channel_names=channel_names)
+            else:
+                root = fetch_html_schedules(client, self.url, self.format, cache_dir=cache_dir,
+                                            now=now, channel_ids=channel_ids)
+        elif self.format in {"solr", "solr_json"}:
+            root = solr_epg_to_xmltv(client, self.url, city=self.city or "", days=days, headers=self.headers)
+        elif self.format == "json":
+            with cached_source(client, self.url, cache_dir=cache_dir, ttl_seconds=1800,
+                               lkg_seconds=21600, now=now, headers=self.headers) as cached:
+                with cached.path.open("r", encoding="utf-8") as source:
+                    root = json_epg_to_xmltv(json.load(source))
+        else:
+            with cached_source(client, self.url, cache_dir=cache_dir, ttl_seconds=1800,
+                               lkg_seconds=21600, now=now, headers=self.headers) as cached:
+                root = read_xmltv_source(cached.path, channel_ids=channel_ids, now=now,
+                                         days=days, inventory=inventory)
+                root.set("data-cache-origin", cached.origin)
+                root.set("data-collected-at", cached.fetched_at.isoformat())
+                return root
+        # Non-XMLTV collectors are small already, but still observe the same
+        # final selection/window and publish their names into the private index.
+        wanted = set(channel_ids) if channel_ids is not None else None
+        filtered = ET.Element("tv", dict(root.attrib))
+        for channel in root.findall("channel"):
+            identifier = channel.get("id", "")
+            if inventory is not None and identifier:
+                record = inventory.setdefault(identifier, {"id": identifier, "names": [], "programme_count": 0, "current": False, "future": False})
+                for name in channel.findall("display-name"):
+                    text = (name.text or "").strip()
+                    if text and text not in record["names"]:
+                        record["names"].append(text[:256])
+            if wanted is None or identifier in wanted:
+                filtered.append(channel)
+        horizon = now + timedelta(days=max(1, min(days, 7)))
+        for programme in root.findall("programme"):
+            window = _programme_window(programme, now, horizon)
+            if window is None:
+                continue
+            identifier = programme.get("channel")
+            if inventory is not None and identifier in inventory:
+                record = inventory[identifier]
+                record["programme_count"] += 1
+                record["current"] |= window[0] <= now < window[1]
+                record["future"] |= window[0] > now
+            if wanted is None or identifier in wanted:
+                filtered.append(programme)
+        return filtered
 
 
 def load_epg_providers() -> list[EpgProvider]:
     resource = resources.files("legal_iptv.resources").joinpath(RESOURCE_NAME)
     raw = json.loads(resource.read_text(encoding="utf-8"))
     providers: list[EpgProvider] = []
+    seen_contexts = set()
 
     for item in raw:
         enabled = os.environ.get(str(item.get("enabled_env") or ""), str(item.get("enabled", True)))
@@ -99,6 +144,10 @@ def load_epg_providers() -> list[EpgProvider]:
             urls.extend(str(value) for value in item.get("urls", ()) if value)
 
         for index, url in enumerate(urls, start=1):
+            context = (url, provider_format, tuple(sorted((headers or {}).items())), city, days)
+            if context in seen_contexts:
+                continue
+            seen_contexts.add(context)
             suffix = f"_{index}" if len(urls) > 1 else ""
             providers.append(
                 EpgProvider(

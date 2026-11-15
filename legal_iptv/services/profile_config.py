@@ -17,6 +17,7 @@ class PlaylistProfile:
     include_live_source_types: tuple[str, ...] = ()
     exclude_explicit_adult: bool = False
     require_publishable_static: bool = False
+    curated_sources: bool = False
     include_ids: frozenset[str] = frozenset()
     exclude_ids: frozenset[str] = frozenset()
     include_groups: frozenset[str] = frozenset()
@@ -36,6 +37,7 @@ class PlaylistProfile:
             ),
             exclude_explicit_adult=bool(value.get("exclude_explicit_adult", False)),
             require_publishable_static=bool(value.get("require_publishable_static", False)),
+            curated_sources=bool(value.get("curated_sources", False)),
             include_ids=frozenset(str(item) for item in value.get("include_ids", ())),
             exclude_ids=frozenset(str(item) for item in value.get("exclude_ids", ())),
             include_groups=frozenset(str(item) for item in value.get("include_groups", ())),

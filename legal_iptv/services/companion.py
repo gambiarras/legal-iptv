@@ -1,13 +1,15 @@
 """A separate, conservative playlist that complements the visible Saimo catalogue."""
 
 import copy
+import os
+import shutil
+import tempfile
 import json
 import re
 import xml.etree.ElementTree as ET
 from collections import Counter
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
-from importlib import resources
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
@@ -17,20 +19,17 @@ from legal_iptv.exporters import render_m3u
 from legal_iptv.io import write_json_atomic, write_text_atomic
 from legal_iptv.models import Channel
 from legal_iptv.services.companion_reference import identity_key, load_reference
+from legal_iptv.services.channel_identity import canonical_key, load_policy, rejection_reason
+from legal_iptv.services.profile_config import load_playlist_configuration
+from legal_iptv.services.profile_selector import select_profile_channels
 from legal_iptv.services.guide import parse_xmltv_time
 from legal_iptv.services.epg_mapper import enrich_epg_metadata
-from legal_iptv.services.link_validator import filter_cached_offline_channels
 from legal_iptv.services.publication import is_exportable
 from legal_iptv.sources.live_stream_catalog import LIVE_STREAM_CATALOG_URL
 
 ALTERNATIVE = re.compile(r"\b(?:alternativ[oa]s?|alternative|backup|reserva)\b", re.I)
 ADULT = re.compile(r"(?:\b(?:xxx|porn|adultos?|adults?|nsfw)\b|\+18|18\+)", re.I)
 VIDEO_ID = re.compile(r"[A-Za-z0-9_-]{11}\Z")
-
-
-def load_policy() -> dict:
-    return json.loads(resources.files("legal_iptv.resources").joinpath(
-        "companion_policy.json").read_text(encoding="utf-8"))
 
 
 def enrich_companion_candidates(channels: list[Channel], xmltv_aliases: dict) -> list[Channel]:
@@ -40,24 +39,7 @@ def enrich_companion_candidates(channels: list[Channel], xmltv_aliases: dict) ->
 
 
 def _key(name: str, policy: dict) -> str:
-    key = identity_key(name)
-    return policy["aliases"].get(key, key)
-
-
-def _frost_or_unreviewed(channel: Channel, policy: dict) -> bool:
-    provenance = " ".join(str(value or "") for value in (
-        channel.provider_id, channel.source_type, channel.id,
-        channel.source_url, channel.stream_url,
-    )).casefold()
-    return any(part in provenance for part in policy["excluded_provider_fragments"])
-
-
-def _paid(name: str, policy: dict) -> bool:
-    key = identity_key(name)
-    return any(key == prefix or (
-        (len(prefix) >= 4 or prefix in {"hbo", "tnt", "axn", "gnt", "tlc", "amc"})
-        and key.startswith(prefix)
-    ) for prefix in policy["paid_name_prefixes"])
+    return canonical_key(name, policy)
 
 
 def _transport_safe(channel: Channel) -> bool:
@@ -79,72 +61,29 @@ def _transport_safe(channel: Channel) -> bool:
     return channel.protocol not in {"embed", "youtube"}
 
 
-def _score(channel: Channel, policy: dict) -> tuple[int, int, int]:
-    provider = channel.provider_id or channel.source
-    priority = (800 if provider in policy["batista_provider_ids"] else
-                750 if provider in {"televisao", "televisao_tv"} else
-                600 if channel.source == "iptv_org" else 500)
-    quality = " ".join(str(v or "") for v in (channel.resolution, channel.variant_label, channel.name)).casefold()
-    resolution = 4 if re.search(r"4k|2160", quality) else 3 if re.search(r"fhd|1080", quality) else 2 if re.search(r"\bhd\b|720", quality) else 1
-    return priority, resolution, channel.bitrate or 0
-
-
 def select_companion_channels(channels: list[Channel], reference: dict,
-                              policy: dict | None = None) -> tuple[list[Channel], list[dict]]:
+                              policy: dict | None = None, *,
+                              preselected: bool = False) -> tuple[list[Channel], list[dict]]:
+    """Subtract Saimo identities from the same winners used by the main list."""
     policy = policy or load_policy()
     saimo = {_key(name, policy) for name in reference["saimo_channels"]}
-    directory = {_key(name, policy) for name in reference["televisao_channels"]}
-    selected: dict[str, Channel] = {}
-    excluded: list[dict] = []
+    excluded = []
+    eligible = []
     for channel in channels:
-        key = _key(channel.name, policy)
-        text = " ".join(str(value or "") for value in (channel.name, channel.group, channel.raw_group))
-        provider = channel.provider_id or channel.source
-        reason = None
-        if _frost_or_unreviewed(channel, policy):
-            reason = "excluded_provider"
-        elif channel.removed or channel.status in {"offline", "removed"}:
+        reason = rejection_reason(channel, policy)
+        if not reason and (channel.removed or channel.status in {"offline", "removed"}):
             reason = "unavailable"
-        elif channel.is_adult or ADULT.search(text):
-            reason = "adult"
-        elif ALTERNATIVE.search(text):
-            reason = "alternative"
-        elif _paid(channel.name, policy):
-            reason = "paid_channel"
-        elif key in saimo:
-            reason = "already_in_saimo"
-        elif "radio" in identity_key(channel.raw_group or channel.group):
-            reason = "radio"
-        elif not _transport_safe(channel):
+        if not reason and not _transport_safe(channel):
             reason = "not_portable_or_sensitive"
-        elif not (
-            channel.id in policy["approved_extra_ids"]
-            or (key in directory and (
-                provider in policy["batista_provider_ids"]
-                or provider in {"televisao", "televisao_tv"} or channel.source in {"iptv_org", "extra"}
-            ))
-        ):
-            reason = "not_in_reviewed_public_selection"
+        if not reason and _key(channel.name, policy) in saimo:
+            reason = "already_in_saimo"
         if reason:
             excluded.append({"id": channel.id, "name": channel.name, "reason": reason})
-            continue
-        current = selected.get(key)
-        if current is not None and _score(current, policy) >= _score(channel, policy):
-            excluded.append({"id": channel.id, "name": channel.name, "reason": "duplicate_variant"})
-            continue
-        if current is not None:
-            excluded.append({"id": current.id, "name": current.name, "reason": "duplicate_variant"})
-        tvg_id = "FoxKids.br" if channel.id == "fkids.br" or key == "foxkids" else (
-            channel.tvg_id or "Companion." + key + ".br")
-        selected[key] = replace(channel, tvg_id=tvg_id)
-    # Cross-provider aliases can share the same transport: publish it only once.
-    by_url: dict[str, Channel] = {}
-    for channel in sorted(selected.values(), key=lambda item: _score(item, policy), reverse=True):
-        if channel.stream_url in by_url:
-            excluded.append({"id": channel.id, "name": channel.name, "reason": "duplicate_transport"})
         else:
-            by_url[channel.stream_url] = channel
-    return sorted(by_url.values(), key=lambda item: (item.group.casefold(), item.name.casefold())), excluded
+            eligible.append(channel)
+    selected = (eligible if preselected else select_profile_channels(
+        eligible, load_playlist_configuration(), "full"))
+    return sorted(selected, key=lambda item: (item.group.casefold(), item.name.casefold())), excluded
 
 
 def build_companion_guide(guide_file: Path, channels: list[Channel], *,
@@ -253,7 +192,8 @@ def youtube_channels(raw: list[dict], reference: dict, *, policy: dict | None = 
     return sorted(chosen.values(), key=lambda item: item.name.casefold()), skipped
 
 
-def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient) -> dict:
+def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient, *,
+                  reference: dict | None = None) -> dict:
     companion_paths = (config.companion_output_path, config.companion_meta_output_path,
                        config.companion_guide_output_path)
     if not all(companion_paths):
@@ -265,32 +205,33 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
     if len({path.resolve() for path in outputs}) != len(outputs):
         raise ValueError("Companion output paths must be distinct from the main outputs")
     policy = load_policy()
-    reference = load_reference(
+    reference = reference or load_reference(
         client, config.companion_reference_cache_path or
         config.epg_cache_file.parent / ".cache" / "companion-reference.json",
         local_file=config.companion_reference_file,
     )
-    candidates = filter_cached_offline_channels(
-        channels, status_file=config.stream_status_file,
-        max_age_seconds=config.stream_status_max_age,
-    )
-    selected, excluded = select_companion_channels(candidates, reference, policy)
-    required = tuple(policy["required_channel_ids"])
-    guide, coverage = build_companion_guide(config.guide_output_path, selected, required_ids=required)
-    raw = (json.loads(config.live_catalog_file.read_text(encoding="utf-8"))
-           if config.live_catalog_file else client.get_json(LIVE_STREAM_CATALOG_URL))
-    youtube, youtube_skipped = youtube_channels(raw, reference, policy=policy)
+    selected, excluded = select_companion_channels(channels, reference, policy, preselected=True)
+    required = tuple(value for value in policy["required_channel_ids"]
+                     if any(channel.tvg_id == value for channel in selected))
+    _, coverage = build_companion_guide(config.guide_output_path, selected, required_ids=required)
+    youtube, youtube_skipped = [], []
+    if config.companion_youtube_output_path:
+        raw = (json.loads(config.live_catalog_file.read_text(encoding="utf-8"))
+               if config.live_catalog_file else client.get_json(LIVE_STREAM_CATALOG_URL))
+        youtube, youtube_skipped = youtube_channels(raw, reference, policy=policy)
+    configuration = load_playlist_configuration(config.profile_config_file)
+    guide_url = config.guide_url or configuration.guide_url or policy["guide_url"]
     playlist = render_m3u(
-        selected, guide_url=config.companion_guide_url or policy["guide_url"],
-        category_order=tuple(dict.fromkeys(channel.group for channel in selected)),
-        legacy_guide_urls=False, include_primary_guide=False, enforce_capabilities=True,
+        selected, guide_url=guide_url, player_profile=config.player_profile,
+        category_order=configuration.group_order, legacy_guide_urls=True,
+        enforce_capabilities=True,
     )
     youtube_playlist = render_m3u(
-        youtube, category_order=("YouTube",), legacy_guide_urls=False,
-        include_primary_guide=False,
+        youtube, guide_url=guide_url, category_order=("YouTube",), legacy_guide_urls=True,
     )
     metadata = {
-        "name": policy["name"], "schema_version": 1,
+        "name": policy["name"], "schema_version": 2,
+        "guide_url": guide_url, "selection": "main_minus_saimo",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "selected_channels": len(selected), "youtube_selected_channels": len(youtube),
         "required_epg_ids": list(required), "epg_coverage": coverage,
@@ -308,13 +249,29 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
             {"id": item.id, "name": item.name} for item in youtube], "skipped": youtube_skipped},
         "limitations": ["Membership is not proof of stream playback or rights",
                         "YouTube requires a client resolver and is excluded from the portable playlist",
-                        "Saimo Android does not import EPG for Minhas listas"],
+                        "Schedule coverage depends on source availability"],
     }
     # Validate and construct the whole bundle before changing any Companion output.
-    guide_xml = ET.tostring(guide, encoding="utf-8", xml_declaration=True).decode()
-    write_text_atomic(config.companion_guide_output_path, guide_xml + "\n")
+    write_guide_alias(config.guide_output_path, config.companion_guide_output_path)
     write_text_atomic(config.companion_output_path, playlist)
     if config.companion_youtube_output_path:
         write_text_atomic(config.companion_youtube_output_path, youtube_playlist)
     write_json_atomic(config.companion_meta_output_path, metadata)
     return metadata
+
+
+def write_guide_alias(source: Path, target: Path) -> None:
+    """Compatibility name for the same guide, without a second physical copy."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    handle, name = tempfile.mkstemp(prefix=".guide-alias-", dir=target.parent)
+    os.close(handle)
+    temporary = Path(name)
+    try:
+        temporary.unlink()
+        try:
+            os.link(source, temporary)
+        except OSError:
+            shutil.copyfile(source, temporary)
+        os.replace(temporary, target)
+    finally:
+        temporary.unlink(missing_ok=True)

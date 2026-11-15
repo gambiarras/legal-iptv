@@ -29,7 +29,13 @@ def fetch_channels(
     cache_file: Path | None = None,
     cache_ttl_seconds: int = 43200,
     force_refresh: bool = False,
+    cache_only: bool = False,
 ) -> list[Channel]:
+    if cache_only:
+        channels = _load_channels_cache(cache_file, max_age_seconds=None) if cache_file else None
+        if channels is None:
+            raise RuntimeError("IPTV-org cache required for due-only validation")
+        return channels
     if cache_file is not None and not force_refresh:
         cached_channels = _load_fresh_channels_cache(
             cache_file,

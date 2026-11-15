@@ -17,7 +17,7 @@ def _removed_records(path: Path | None) -> dict[str, dict]:
     return records if isinstance(records, dict) else {}
 
 
-def fetch_channels(removed_file: Path | None = None) -> list[Channel]:
+def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = False) -> list[Channel]:
     with resources.files("legal_iptv.resources").joinpath("extra_channels.json").open("r", encoding="utf-8") as file:
         raw = json.load(file)
 
@@ -42,8 +42,8 @@ def fetch_channels(removed_file: Path | None = None) -> list[Channel]:
             variant_id=item.get("variant_id") or item["id"],
             protocol=item.get("protocol"),
             raw_group=str(item.get("group", "general")),
-            removed=removed,
-            status="removed" if removed else None,
+            removed=removed and not include_removed,
+            status="removed" if removed and not include_removed else None,
             removal_reason=(
                 str(removed_record.get("reason"))
                 if removed and removed_record.get("reason")

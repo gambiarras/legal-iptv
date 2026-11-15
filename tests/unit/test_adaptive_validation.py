@@ -10,6 +10,7 @@ import requests
 
 from legal_iptv.exporters import render_m3u
 from legal_iptv.models import Channel
+from legal_iptv.models.stream_validation import UrlValidation
 from legal_iptv.services.link_validator import (
     StreamProbeSession,
     filter_cached_offline_channels,
@@ -33,11 +34,9 @@ class AdaptiveValidationTest(unittest.TestCase):
             "legal_iptv.services.link_validator._utc_now", return_value=START
         ).start()
         self.addCleanup(patch.stopall)
-        self.session = Mock()
-        self.session.head.return_value.status_code = 200
-        self.session.get.return_value.status_code = 404
-        patch(
-            "legal_iptv.services.link_validator._get_session", return_value=self.session
+        self.probe = patch(
+            "legal_iptv.services.link_validator.inspect_url",
+            return_value=UrlValidation(True, 200, request_count=1),
         ).start()
 
     def run_validation(self, channels=None, **kwargs):
@@ -61,18 +60,17 @@ class AdaptiveValidationTest(unittest.TestCase):
             for hour in (0, 4, 12, 24):
                 self.clock.return_value = START + timedelta(hours=hour)
                 self.run_validation(policy=policy, force=True)
-            before = self.session.head.call_count
+            before = self.probe.call_count
             for hour in range(28, 49, 4):
                 self.clock.return_value = START + timedelta(hours=hour)
                 selected = self.run_validation(policy=policy)
                 output[name] = render_m3u(selected)
-            calls = self.session.head.call_count - before
+            calls = self.probe.call_count - before
             self.assertEqual(calls, 6 if name == "fixed" else 1)
             self.assertEqual(
                 self.snapshot()["summary"]["provider_metrics"][0]["checks"], 4 + calls
             )
         self.assertEqual(output["fixed"], output["adaptive"])
-        self.assertEqual(self.session.get.call_count, 0)
 
     def test_cache_does_not_extend_observation_or_streak(self):
         self.run_validation()
@@ -87,14 +85,14 @@ class AdaptiveValidationTest(unittest.TestCase):
                 cached["urls"][channel().stream_url][key],
             )
         self.assertEqual(cached["summary"]["validation_metrics"]["checks"], 0)
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
 
     def test_failure_backoff_recovers_and_resets_stability(self):
-        self.session.head.return_value.status_code = 503
+        self.probe.return_value = UrlValidation(None, 503, request_count=1)
         self.run_validation()
         self.clock.return_value += timedelta(minutes=10)
         self.assertEqual(len(self.run_validation()), 1)
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
         self.clock.return_value += timedelta(minutes=5)
         self.assertEqual(self.run_validation(), [])
         second = self.snapshot()["urls"][channel().stream_url]
@@ -106,17 +104,17 @@ class AdaptiveValidationTest(unittest.TestCase):
             self.snapshot()["urls"][channel().stream_url]["status"],
             "temporarily_unavailable",
         )
-        self.assertEqual(self.session.head.call_count, 2)
-        self.session.head.return_value.status_code = 200
+        self.assertEqual(self.probe.call_count, 2)
+        self.probe.return_value = UrlValidation(True, 200, request_count=1)
         self.clock.return_value += timedelta(minutes=10)
         self.assertEqual(len(self.run_validation()), 1)
         recovered = self.snapshot()["urls"][channel().stream_url]
         self.assertEqual(recovered["consecutive_failures"], 0)
         self.assertEqual(recovered["consecutive_successes"], 1)
-        self.assertEqual(self.session.head.call_count, 3)
+        self.assertEqual(self.probe.call_count, 3)
 
-    def test_negative_suppression_expires_without_probes_during_generation(self):
-        self.session.head.return_value.status_code = 404
+    def test_negative_suppression_survives_retry_deadline_without_probes(self):
+        self.probe.return_value = UrlValidation(False, 404, request_count=1)
         self.run_validation()
         self.assertEqual(
             filter_cached_offline_channels(
@@ -129,9 +127,9 @@ class AdaptiveValidationTest(unittest.TestCase):
             filter_cached_offline_channels(
                 [channel()], status_file=self.path, max_age_seconds=14400
             ),
-            [channel()],
+            [],
         )
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
 
     def test_url_headers_or_quality_change_require_a_new_probe(self):
         original = channel(request_headers={"Authorization": "private-a"})
@@ -139,7 +137,7 @@ class AdaptiveValidationTest(unittest.TestCase):
         self.run_validation(
             [replace(original, request_headers={"authorization": "private-a"})]
         )
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
         for current in (
             replace(original, request_headers={"Authorization": "private-b"}),
             replace(original, stream_url=original.stream_url + "?new=1"),
@@ -148,7 +146,7 @@ class AdaptiveValidationTest(unittest.TestCase):
             self.run_validation([current])
             record = self.snapshot()["urls"][current.stream_url]
             self.assertEqual(record["consecutive_successes"], 1)
-        self.assertEqual(self.session.head.call_count, 4)
+        self.assertEqual(self.probe.call_count, 4)
         text = self.path.read_text()
         self.assertNotIn("private-a", text)
         self.assertNotIn("private-b", text)
@@ -156,10 +154,10 @@ class AdaptiveValidationTest(unittest.TestCase):
     def test_shared_url_contexts_have_independent_outcomes_and_removals(self):
         good = channel("good", request_headers={"Authorization": "private-good"})
         bad = channel("bad", request_headers={"Authorization": "private-bad"})
-        self.session.head.side_effect = lambda url, **kwargs: Mock(
-            status_code=(
-                200 if kwargs["headers"]["authorization"] == "private-good" else 404
-            )
+        self.probe.side_effect = lambda url, timeout, headers: UrlValidation(
+            headers["authorization"] == "private-good",
+            200 if headers["authorization"] == "private-good" else 404,
+            request_count=1,
         )
         removed = Path(self.directory.name) / "removed.json"
         self.assertEqual(
@@ -170,7 +168,7 @@ class AdaptiveValidationTest(unittest.TestCase):
         self.assertEqual(first["summary"]["scheduling"]["validated_contexts"], 2)
         self.assertEqual(first["summary"]["validation_metrics"]["checks"], 2)
         self.assertEqual(
-            first["summary"]["validation_metrics"]["http_request_attempts"], 3
+            first["summary"]["validation_metrics"]["http_request_attempts"], 2
         )
         self.assertEqual(set(json.loads(removed.read_text())["channels"]), {"bad"})
         self.assertEqual(
@@ -180,14 +178,14 @@ class AdaptiveValidationTest(unittest.TestCase):
             [good],
         )
         self.run_validation([good, bad], extra_removed_file=removed)
-        self.assertEqual(self.session.head.call_count, 2)
+        self.assertEqual(self.probe.call_count, 2)
         self.assertEqual(set(json.loads(removed.read_text())["channels"]), {"bad"})
         self.assertNotIn("private-", self.path.read_text())
 
     def test_changed_headers_do_not_inherit_negative_cache(self):
         bad = channel(request_headers={"Authorization": "private-a"})
         good = replace(bad, request_headers={"Authorization": "private-b"})
-        self.session.head.return_value.status_code = 404
+        self.probe.return_value = UrlValidation(False, 404, request_count=1)
         self.run_validation([bad])
         self.assertEqual(
             filter_cached_offline_channels(
@@ -195,7 +193,7 @@ class AdaptiveValidationTest(unittest.TestCase):
             ),
             [good],
         )
-        self.session.head.return_value.status_code = 200
+        self.probe.return_value = UrlValidation(True, 200, request_count=1)
         self.assertEqual(self.run_validation([good]), [good])
 
     def test_other_sources_with_the_same_channel_id_do_not_remove_an_extra(self):
@@ -203,8 +201,9 @@ class AdaptiveValidationTest(unittest.TestCase):
         other = replace(
             channel("shared-id", url="https://example.test/bad.m3u8"), source="iptv_org"
         )
-        self.session.head.side_effect = lambda url, **kwargs: Mock(
-            status_code=200 if url == extra.stream_url else 404
+        self.probe.side_effect = lambda url, timeout, headers: UrlValidation(
+            url == extra.stream_url, 200 if url == extra.stream_url else 404,
+            request_count=1,
         )
         removed = Path(self.directory.name) / "removed.json"
         self.assertEqual(
@@ -227,7 +226,7 @@ class AdaptiveValidationTest(unittest.TestCase):
         )
         self.run_validation()
         self.run_validation()
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
         self.assertEqual(
             self.snapshot()["urls"][channel().stream_url]["consecutive_successes"], 1
         )
@@ -235,7 +234,7 @@ class AdaptiveValidationTest(unittest.TestCase):
     def test_force_checks_fresh_transports(self):
         self.run_validation()
         self.run_validation(force=True)
-        self.assertEqual(self.session.head.call_count, 2)
+        self.assertEqual(self.probe.call_count, 2)
 
     def test_decreasing_remaining_ttl_does_not_invalidate_an_absolute_expiry(self):
         current = channel(
@@ -247,14 +246,14 @@ class AdaptiveValidationTest(unittest.TestCase):
         self.clock.return_value += timedelta(hours=1)
         reloaded = replace(current, ttl_seconds=25200)
         self.assertEqual(self.run_validation([reloaded]), [reloaded])
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
 
     def test_expiration_limits_cache_and_force_never_approves_an_expired_url(self):
         expiring = channel(expires_at=(START + timedelta(minutes=30)).isoformat())
         self.assertEqual(self.run_validation([expiring]), [expiring])
         self.clock.return_value += timedelta(minutes=30)
         self.assertEqual(self.run_validation([expiring], force=True), [])
-        self.assertEqual(self.session.head.call_count, 1)
+        self.assertEqual(self.probe.call_count, 1)
         snapshot = self.snapshot()
         self.assertEqual(snapshot["summary"]["scheduling"]["expired_contexts"], 1)
         self.assertEqual(snapshot["summary"]["validation_metrics"]["checks"], 0)
@@ -262,31 +261,78 @@ class AdaptiveValidationTest(unittest.TestCase):
     def test_empty_catalog_is_valid(self):
         self.assertEqual(self.run_validation([]), [])
         self.assertEqual(self.snapshot()["summary"]["total_urls"], 0)
-        self.session.head.assert_not_called()
+        self.probe.assert_not_called()
 
-    def test_declared_headers_reach_both_head_and_fallback_get(self):
-        self.session.head.return_value.status_code = 405
-        self.session.get.return_value.status_code = 206
-        self.run_validation(
-            [
-                channel(
-                    request_headers={
-                        "Referer": "https://example.test/watch",
-                        "User-Agent": "custom-client",
-                    }
-                )
-            ]
-        )
-        self.assertEqual(
-            self.session.head.call_args.kwargs["headers"]["referer"],
-            "https://example.test/watch",
-        )
-        self.assertEqual(
-            self.session.get.call_args.kwargs["headers"]["user-agent"], "custom-client"
-        )
-        self.assertEqual(
-            self.session.get.call_args.kwargs["headers"]["Range"], "bytes=0-0"
-        )
+    def test_declared_headers_reach_transport_probe(self):
+        self.run_validation([channel(request_headers={"Referer": "https://example.test/watch", "User-Agent": "custom-client"})])
+        headers = self.probe.call_args.args[2]
+        self.assertEqual(headers["referer"], "https://example.test/watch")
+        self.assertEqual(headers["user-agent"], "custom-client")
+
+    def test_unsupported_sampler_never_suppresses_after_repeated_probes(self):
+        for error in ('DashSamplingUnsupported', 'EncryptedHlsUnsupported', 'HlsByteRangeUnsupported', 'UnsupportedMediaSample'):
+            with self.subTest(error=error):
+                self.path.unlink(missing_ok=True)
+                self.probe.return_value = UrlValidation(None, 200, error, request_count=1)
+                for _ in range(3):
+                    self.assertEqual(self.run_validation(force=True), [channel()])
+                record = self.snapshot()["urls"][channel().stream_url]
+                self.assertIsNone(record["active"])
+                self.assertEqual(record["consecutive_failures"], 0)
+                self.assertEqual(record["next_check_at"], (self.clock.return_value + timedelta(hours=4)).isoformat())
+                before = self.probe.call_count
+                self.clock.return_value += timedelta(hours=2)
+                self.assertEqual(self.run_validation(), [channel()])
+                self.assertEqual(self.probe.call_count, before)
+
+    def test_unsupported_reprobe_cannot_revive_a_known_rejection(self):
+        self.probe.return_value = UrlValidation(False, 404, request_count=1)
+        self.assertEqual(self.run_validation(), [])
+        self.probe.return_value = UrlValidation(None, 200, 'DashSamplingUnsupported', request_count=1)
+        self.assertEqual(self.run_validation(force=True), [])
+        self.assertFalse(self.snapshot()["urls"][channel().stream_url]["active"])
+
+    def test_omitted_rejection_survives_catalog_filter_and_unknown_reprobe(self):
+        bad = channel()
+        self.probe.return_value = UrlValidation(False, 404, request_count=1)
+        self.assertEqual(self.run_validation([bad]), [])
+        rejected = self.snapshot()["urls"][bad.stream_url]
+        self.clock.return_value += timedelta(days=60)
+        self.run_validation([])
+        self.assertEqual(self.snapshot()["urls"][bad.stream_url], rejected)
+        self.assertEqual(filter_cached_offline_channels([bad], status_file=self.path, max_age_seconds=14400), [])
+        self.probe.return_value = UrlValidation(None, 503, request_count=1)
+        self.assertEqual(self.run_validation([bad]), [])
+        self.probe.return_value = UrlValidation(True, 200, request_count=2)
+        self.assertEqual(self.run_validation([bad], force=True), [bad])
+        self.assertEqual(filter_cached_offline_channels([bad], status_file=self.path, max_age_seconds=14400), [bad])
+
+    def test_omitted_header_context_does_not_disappear_when_other_context_recovers(self):
+        bad = channel(request_headers={"Authorization": "bad-private"})
+        good = replace(bad, request_headers={"Authorization": "good-private"})
+        self.probe.return_value = UrlValidation(False, 404, request_count=1)
+        self.run_validation([bad])
+        self.probe.return_value = UrlValidation(True, 200, request_count=2)
+        self.run_validation([good])
+        self.assertEqual(filter_cached_offline_channels([good, bad], status_file=self.path, max_age_seconds=14400), [good])
+        self.assertEqual(len(self.snapshot()["urls"][bad.stream_url]["contexts"]), 2)
+        self.assertNotIn("private", self.path.read_text())
+
+    def test_legacy_rejection_survives_inconclusive_reprobe(self):
+        current = channel()
+        self.path.write_text(json.dumps({"urls": {current.stream_url: {"active": False, "status": "offline", "checked_at": (START - timedelta(days=30)).isoformat(), "http_status": 404}}}))
+        self.probe.return_value = UrlValidation(None, 503, request_count=1)
+        self.assertEqual(self.run_validation([current]), [])
+        self.assertFalse(self.snapshot()["urls"][current.stream_url]["active"])
+
+    def test_previous_head_success_does_not_skip_transport_probe(self):
+        self.run_validation()
+        snapshot = self.snapshot()
+        snapshot["urls"][channel().stream_url]["probe_version"] = 1
+        self.path.write_text(json.dumps(snapshot))
+        self.run_validation()
+        self.assertEqual(self.probe.call_count, 2)
+        self.assertEqual(self.snapshot()["urls"][channel().stream_url]["consecutive_successes"], 1)
 
     def test_redirects_strip_custom_headers_only_when_origin_changes(self):
         session = StreamProbeSession()

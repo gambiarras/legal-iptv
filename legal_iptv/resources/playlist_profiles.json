@@ -4,12 +4,20 @@
   "profiles": {
     "base": {
       "selection_mode": "legacy",
-      "include_sources": ["extra", "iptv_org", "live_stream_catalog"],
-      "include_live_source_types": ["script_discovered", "youtube", "twitch", "kick"]
+      "include_sources": [
+        "extra",
+        "iptv_org",
+        "live_stream_catalog"
+      ],
+      "include_live_source_types": [
+        "script_discovered",
+        "youtube",
+        "twitch",
+        "kick"
+      ]
     },
     "full": {
       "selection_mode": "logical_provider",
-      "inherits": "base",
       "exclude_explicit_adult": true,
       "require_publishable_static": true,
       "include_ids": [],
@@ -17,22 +25,21 @@
       "include_groups": [],
       "exclude_groups": [],
       "include_variants": [],
-      "exclude_variants": []
+      "exclude_variants": [],
+      "curated_sources": true
     }
   },
   "provider_priorities": {
-    "addon_catalog_1": 800,
-    "stremio_addon": 800,
-    "json_catalog_1": 700,
-    "json_catalog": 700,
-    "rest_catalog_1": 600,
-    "script_discovered": 600,
-    "iptv_org": 500,
-    "extra": 400,
-    "youtube": 300,
-    "twitch": 200,
-    "kick": 100,
-    "live_stream_catalog": 50
+    "televisao_tv": 900,
+    "televisao": 900,
+    "rest_catalog_1": 800,
+    "script_discovered": 800,
+    "iptv_org": 700,
+    "youtube": 600,
+    "extra": 500,
+    "live_stream_catalog": 0,
+    "twitch": 0,
+    "kick": 0
   },
   "category_map": {
     "tv aberta": "TV Aberta",
@@ -71,7 +78,12 @@
     "web": "Web Live"
   },
   "alternatives_group": "Alternativos",
-  "variant_quality_order": ["4K", "FHD", "HD", "SD"],
+  "variant_quality_order": [
+    "4K",
+    "FHD",
+    "HD",
+    "SD"
+  ],
   "group_order": [
     "Recomendados",
     "TV Aberta",
@@ -97,5 +109,6 @@
     "Web Live",
     "Alternativos"
   ],
-  "overrides": {}
+  "overrides": {},
+  "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml"
 }

@@ -56,6 +56,7 @@ class MetadataTest(unittest.TestCase):
         self.assertEqual(metadata["stream_filtered_channels"], 1)
         self.assertEqual(metadata["deduplicated_channels"], 1)
         self.assertEqual(metadata["selected_by_source"], {"live_stream_catalog": 1})
+        self.assertEqual(metadata["selected_by_provider"], {"live_stream_catalog": 1})
         self.assertEqual(metadata["timings_seconds"], {"total": 1.23})
         self.assertEqual(metadata["epg_aliases_count"], 42)
 

@@ -1,9 +1,10 @@
 """Public schedule adapters. No playback URL or downloaded code is evaluated."""
 
 import copy
-import hashlib
+import io
 import json
 import logging
+import os
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -11,7 +12,6 @@ from dataclasses import dataclass, replace
 from datetime import date, datetime, time as day_time, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from tempfile import NamedTemporaryFile
 from zoneinfo import ZoneInfo
 
 from legal_iptv.clients import HttpClient
@@ -27,28 +27,16 @@ MAX_PAYLOAD = 25 * 1024 * 1024
 
 
 def cached_payload(client: HttpClient, url: str, *, cache_dir: Path | None,
-                   ttl_seconds: int, now: datetime, headers: dict | None = None) -> bytes:
-    """Reuse recent source bytes only; outages never extend their freshness."""
-    target = cache_dir / (hashlib.sha256(url.encode()).hexdigest() + ".data") if cache_dir else None
-    if target and target.is_file():
-        age = now.timestamp() - target.stat().st_mtime
-        if 0 <= age < ttl_seconds:
-            payload = target.read_bytes()
-            if 0 < len(payload) <= MAX_PAYLOAD:
-                return payload
-    payload = client.get_bytes(url, headers=headers)
-    if not payload or len(payload) > MAX_PAYLOAD:
-        raise ValueError("EPG source payload is empty or too large")
-    if target:
-        try:
-            target.parent.mkdir(parents=True, exist_ok=True)
-            with NamedTemporaryFile("wb", dir=target.parent, delete=False) as temporary:
-                temporary.write(payload)
-                temporary_path = Path(temporary.name)
-            temporary_path.replace(target)
-        except OSError:
-            logger.warning("EPG collector cache could not be written")
-    return payload
+                   ttl_seconds: int, now: datetime, headers: dict | None = None,
+                   lkg_seconds: int = 0, metadata: dict | None = None) -> bytes:
+    from legal_iptv.services.epg_cache import cached_source
+
+    with cached_source(client, url, cache_dir=cache_dir, ttl_seconds=ttl_seconds,
+                       now=now, headers=headers, max_bytes=MAX_PAYLOAD,
+                       lkg_seconds=lkg_seconds) as source:
+        if metadata is not None:
+            metadata.update(origin=source.origin, fetched_at=source.fetched_at.isoformat())
+        return source.path.read_bytes()
 
 
 def _xmltv_time(value: str) -> datetime:
@@ -74,22 +62,32 @@ def has_coverage(root: ET.Element, channel_id: str, now: datetime) -> bool:
 
 
 def _fox_xmltv(payload: bytes, now: datetime) -> ET.Element:
-    upstream = ET.fromstring(payload)
-    if upstream.tag != "tv":
-        raise ValueError("Fox Kids source is not XMLTV")
     root = ET.Element("tv", {"source-info-url": FOXKIDS_PAGE, "data-granularity": "programme"})
-    for element in upstream:
-        attribute = "id" if element.tag == "channel" else "channel"
-        if element.tag not in {"channel", "programme"} or element.get(attribute, "").casefold() not in {"fkids.br", "foxkids.br"}:
+    upstream = None
+    depth = 0
+    for event, element in ET.iterparse(io.BytesIO(payload), events=("start", "end")):
+        if event == "start":
+            depth += 1
+            if upstream is None:
+                upstream = element
+                if element.tag != "tv":
+                    raise ValueError("Fox Kids source is not XMLTV")
             continue
-        copied = copy.deepcopy(element)
-        copied.set(attribute, FOXKIDS_ID)
-        if copied.tag == "programme":
-            start = _xmltv_time(copied.get("start", ""))
-            stop = _xmltv_time(copied.get("stop", ""))
-            if stop <= start or stop <= now:
-                continue
-        root.append(copied)
+        if depth == 2:
+            attribute = "id" if element.tag == "channel" else "channel"
+            if element.tag in {"channel", "programme"} and element.get(attribute, "").casefold() in {"fkids.br", "foxkids.br"}:
+                valid = True
+                if element.tag == "programme":
+                    start = _xmltv_time(element.get("start", ""))
+                    stop = _xmltv_time(element.get("stop", ""))
+                    valid = stop > start and stop > now
+                if valid:
+                    copied = copy.deepcopy(element)
+                    copied.set(attribute, FOXKIDS_ID)
+                    root.append(copied)
+            element.clear()
+            upstream.remove(element)
+        depth -= 1
     if not any(channel.get("id") == FOXKIDS_ID for channel in root.findall("channel")) or not has_coverage(root, FOXKIDS_ID, now):
         raise ValueError("Published Fox Kids XMLTV lacks current and future coverage")
     return root
@@ -516,17 +514,23 @@ def parse_meuguia_html(payload: bytes, *, now: datetime, zone: ZoneInfo = SCHEDU
 
 
 def fetch_html_schedules(client: HttpClient, manifest_url: str, source: str, *,
-                         cache_dir: Path | None = None, now: datetime | None = None) -> ET.Element:
+                         cache_dir: Path | None = None, now: datetime | None = None,
+                         channel_ids: set[str] | None = None) -> ET.Element:
     """Opt-in explicit channel manifest; bounded sequential collection.
 
     The manifest maps canonical IDs and region-specific page URLs. No broad
     channel discovery or source-owned alias table is imported automatically.
     """
-    from urllib.parse import urlsplit
-
     now = now or datetime.now(timezone.utc)
     payload = cached_payload(client, manifest_url, cache_dir=cache_dir, ttl_seconds=3600, now=now)
     manifest = json.loads(payload)
+    return _collect_html_manifest(client, manifest, source, cache_dir=cache_dir, now=now,
+                                  channel_ids=channel_ids)
+
+
+def _collect_html_manifest(client, manifest, source, *, cache_dir, now, channel_ids=None):
+    from urllib.parse import urlsplit
+
     zone = ZoneInfo(manifest.get("timezone", "America/Sao_Paulo"))
     channels = manifest.get("channels")
     if not isinstance(channels, list) or not 1 <= len(channels) <= 32:
@@ -536,7 +540,10 @@ def fetch_html_schedules(client: HttpClient, manifest_url: str, source: str, *,
         raise ValueError("Unknown HTML EPG source")
     root = ET.Element("tv", {"data-granularity": "programme"})
     failures = []
+    partial = []
     seen = set()
+    channels = [item for item in channels if channel_ids is None or item.get("id") in channel_ids]
+    previous_network = False
     for index, item in enumerate(channels):
         channel_id = str(item.get("id", "")).strip()
         url = str(item.get("url", ""))
@@ -544,10 +551,14 @@ def fetch_html_schedules(client: HttpClient, manifest_url: str, source: str, *,
         if not channel_id or channel_id in seen or parsed.scheme != "https" or parsed.hostname not in allowed[source]:
             raise ValueError("HTML EPG manifest has an invalid channel ID or source URL")
         seen.add(channel_id)
-        if index:
+        if index and previous_network:
             time.sleep(1)
         try:
-            data = cached_payload(client, url, cache_dir=cache_dir, ttl_seconds=1800, now=now)
+            previous_network = True
+            metadata = {}
+            data = cached_payload(client, url, cache_dir=cache_dir, ttl_seconds=1800, now=now,
+                                  lkg_seconds=21600, metadata=metadata)
+            previous_network = metadata.get("origin") == "network"
             slots = parse_guiadetv_html(data, zone=zone) if source == "guiadetv" else parse_meuguia_html(data, now=now, zone=zone)
             single = ET.Element("tv")
             channel = ET.SubElement(single, "channel", {"id": channel_id})
@@ -555,13 +566,163 @@ def fetch_html_schedules(client: HttpClient, manifest_url: str, source: str, *,
             for slot in slots:
                 if slot.stop > now and slot.start < now + timedelta(days=3):
                     _append_programme(single, channel_id, slot)
+            if not single.findall("programme"):
+                raise ValueError("Channel schedule has no dated programmes in the window")
             if not has_coverage(single, channel_id, now):
-                raise ValueError("Channel schedule has no current and future coverage")
+                partial.append(channel_id)
             root.extend(single)
         except Exception as exc:
             logger.warning("HTML EPG channel failed id=%s error_type=%s", channel_id, type(exc).__name__)
             failures.append(channel_id)
-    if not root.findall("programme"):
-        raise ValueError("No HTML EPG channel has current and future coverage")
+    if channels and not root.findall("programme"):
+        raise ValueError("No HTML EPG channel has dated programmes in the window")
     root.set("data-failed-channels", json.dumps(failures))
+    root.set("data-partial-channels", json.dumps(partial))
+    return root
+
+
+def parse_tvsonata_html(payload: bytes, day: date, *, zone: ZoneInfo = SCHEDULE_ZONE) -> list[Slot]:
+    """Read dated HTML rows and inert JSON metadata, never evaluate onclick."""
+    document = _Document(payload.decode("utf-8")).root
+    slots = []
+    for row in document.iter("div"):
+        if "group" not in row.get("class", "").split():
+            continue
+        clocks = [_text(item) for item in row.iter("span")
+                  if re.fullmatch(r"\d{2}:\d{2}", _text(item))]
+        title = _text(row.find(".//h3"))
+        if len(clocks) != 2 or not title:
+            continue
+        metadata = {}
+        for button in row.iter("button"):
+            match = re.fullmatch(r"\s*abrirDetalhes\((\{.*\})\)\s*;?\s*", button.get("onclick", ""), re.DOTALL)
+            if match:
+                try:
+                    value = json.loads(match.group(1))
+                    if isinstance(value, dict):
+                        metadata = value
+                except ValueError:
+                    pass
+        if metadata.get("tipo") == "event" and metadata.get("evt_titulo"):
+            title = str(metadata["evt_titulo"])
+        start = datetime.combine(day, day_time.fromisoformat(clocks[0]), zone)
+        stop = datetime.combine(day, day_time.fromisoformat(clocks[1]), zone)
+        if stop < start:
+            stop += timedelta(days=1)
+        if stop <= start or stop - start > timedelta(days=1):
+            continue
+        # A programme title and its declared interval are sufficient; film
+        # descriptions/season/episode are not guessed from session labels.
+        slots.append(Slot(start, stop, title, category=str(metadata.get("prog_formato") or "")))
+    return sorted(set(slots), key=lambda slot: slot.start)
+
+
+def parse_novatvi_html(payload: bytes, *, now: datetime, zone: ZoneInfo = SCHEDULE_ZONE) -> list[Slot]:
+    """Only explicit dated structured events are usable; an empty week stays empty."""
+    text = payload.decode("iso-8859-1")
+    # Accept future factual BroadcastEvent records should the publisher add
+    # them, rather than extrapolating a weekly grid without validity dates.
+    return parse_guiadetv_html(text.encode("utf-8"), zone=zone)
+
+
+def fetch_official_schedule(client: HttpClient, url: str, source: str, *,
+                            cache_dir: Path | None = None, now: datetime | None = None,
+                            days: int = 3, channel_ids=None) -> ET.Element:
+    from urllib.parse import urlencode, urlsplit, urlunsplit, parse_qsl
+
+    if source not in {"tvsonata", "novatvi"}:
+        raise ValueError("Unknown official EPG source")
+    now = now or datetime.now(timezone.utc)
+    channel_id = "TVSonata.br" if source == "tvsonata" else "NovaTVI.br"
+    title = "TV Sonata" if source == "tvsonata" else "Nova TVI Petrópolis"
+    root = ET.Element("tv", {"data-origin": "official-html", "data-granularity": "programme"})
+    if channel_ids is not None and channel_id not in channel_ids:
+        return root
+    zone_name = os.environ.get("IPTV_EPG_TVSONATA_TIMEZONE" if source == "tvsonata" else "IPTV_EPG_NOVATVI_TIMEZONE", "America/Sao_Paulo")
+    zone = ZoneInfo(zone_name)
+    slots = []
+    failed_dates = []
+    observations = []
+    if source == "tvsonata":
+        for offset in range(max(1, min(days, 3))):
+            day = now.astimezone(zone).date() + timedelta(days=offset)
+            parsed = urlsplit(url)
+            query = dict(parse_qsl(parsed.query))
+            query["data"] = day.isoformat()
+            endpoint = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), ""))
+            observation = {}
+            try:
+                payload = cached_payload(client, endpoint, cache_dir=cache_dir, ttl_seconds=900,
+                                         lkg_seconds=21600, now=now, metadata=observation)
+                slots.extend(parse_tvsonata_html(payload, day, zone=zone))
+                observations.append(observation)
+            except (OSError, RuntimeError, ValueError):
+                failed_dates.append(day.isoformat())
+            if offset + 1 < max(1, min(days, 3)):
+                time.sleep(0.5)
+    else:
+        observation = {}
+        payload = cached_payload(client, url, cache_dir=cache_dir, ttl_seconds=1800,
+                                 lkg_seconds=21600, now=now, metadata=observation)
+        slots = parse_novatvi_html(payload, now=now, zone=zone)
+        observations.append(observation)
+    channel = ET.SubElement(root, "channel", {"id": channel_id})
+    ET.SubElement(channel, "display-name").text = title
+    for slot in slots:
+        if slot.stop > now and slot.start < now + timedelta(days=max(1, min(days, 3))):
+            _append_programme(root, channel_id, slot)
+    root.set("data-failed-dates", json.dumps(failed_dates))
+    root.set("data-schedule-state", "partial" if root.findall("programme") else "empty")
+    root.set("data-timezone", zone_name)
+    if observations:
+        root.set("data-collected-at", min(item["fetched_at"] for item in observations))
+        root.set("data-cache-origin", "lkg" if any(item["origin"] == "lkg" for item in observations) else "dated-source")
+    return root
+
+
+def fetch_mapped_schedules(client: HttpClient, source: str, *, cache_dir: Path | None = None,
+                           now: datetime | None = None, channel_ids=None,
+                           channel_names: dict[str, str] | None = None) -> ET.Element:
+    from importlib import resources
+    import unicodedata
+
+    if source not in {"guiadetv", "meuguia"}:
+        raise ValueError("Unknown mapped HTML EPG source")
+    now = now or datetime.now(timezone.utc)
+    if channel_ids is None:
+        # A broad grab of the resource map is never the default.
+        return ET.Element("tv", {"data-schedule-state": "selection-required"})
+    resource = resources.files("legal_iptv.resources").joinpath("epg_site_mappings.json")
+    mappings = json.loads(resource.read_text(encoding="utf-8"))["channels"]
+
+    def normalise(value):
+        value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().casefold()
+        return " ".join(re.findall(r"[a-z0-9]+", value))
+
+    rows = []
+    selected_names = channel_names or {}
+    for identifier in sorted(set(channel_ids)):
+        name = selected_names.get(identifier)
+        matches = [item for item in mappings if identifier in item.get("ids", []) or
+                   name is not None and normalise(name) in {normalise(alias) for alias in item["names"]}]
+        codes = {item[source] for item in matches if item.get(source)}
+        if len(codes) != 1:
+            continue
+        code = next(iter(codes))
+        endpoint = f"https://meuguia.tv/programacao/canal/{code}" if source == "meuguia" else f"https://www.guiadetv.com/canal/{code}"
+        rows.append({"id": identifier, "name": name or matches[0]["names"][0], "url": endpoint})
+    maximum = max(1, min(int(os.environ.get("IPTV_EPG_HTML_MAX_CHANNELS", "32")), 128))
+    chosen = rows[:maximum]
+    if not chosen:
+        return ET.Element("tv", {"data-schedule-state": "no-mapped-selected-channels"})
+    # Split the bounded selected set into old-compatible batches of at most 32.
+    roots = []
+    for index in range(0, len(chosen), 32):
+        batch = {"timezone": "America/Sao_Paulo", "channels": chosen[index:index + 32]}
+        roots.append(_collect_html_manifest(client, batch, source, cache_dir=cache_dir, now=now,
+                                           channel_ids=set(channel_ids)))
+    root = ET.Element("tv", {"data-origin": f"selected-{source}", "data-granularity": "programme"})
+    for item in roots:
+        root.extend(item)
+    root.set("data-skipped-channels", json.dumps([item["id"] for item in rows[maximum:]]))
     return root

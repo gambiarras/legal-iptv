@@ -80,7 +80,7 @@ class M3UExporterTest(unittest.TestCase):
         )
 
         self.assertIn(
-            'x-tvg-url="https://bit.ly/legal-epg,https://guide.example.test/guide.xml"',
+            'x-tvg-url="https://guide.example.test/guide.xml,https://bit.ly/legal-epg"',
             playlist,
         )
         self.assertIn("manifest.mpd|Referer=https%3A%2F%2Fplayer.example.test%2F", playlist)

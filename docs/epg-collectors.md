@@ -4,6 +4,84 @@ Os providers existentes XMLTV, JSON e Solr continuam compatíveis. Novos adapter
 não acessam streams nem executam JavaScript das origens. Apenas `requests` e a
 biblioteca padrão são necessários. Não se importou código do Saimo.
 
+## Um guia público, selecionado e datado
+
+`ensure_guide(..., selected_channel_ids=ids, selected_channel_names=nomes, days=3)`
+filtra os programas enquanto lê cada XMLTV em fluxo. Guarda somente programas dos
+IDs selecionados que interceptam a janela atual de três dias, além do pequeno
+inventário de canais. Não mantém a árvore inteira de cada upstream em memória.
+A leitura usa `iterparse`, limpa cada elemento e remove-o do pai: elementos vazios
+não ficam acumulados até o final de um arquivo de 96 MB.
+
+Fontes oficiais/coletores têm precedência onde publicaram intervalos válidos;
+as fontes configuradas vêm depois, seguidas dos XMLTV de reserva. O merge aplica
+prioridade por canal e intervalo. Programa vencido, sem título, intervalo inválido
+ou “No Data” não mascara programação inferior válida. Quando uma fonte inferior
+atravessa um intervalo já escolhido, somente as partes descobertas são publicadas:
+o título continua sendo o da origem, sem inventar programa ou episódio. O número
+de partes com limites recortados aparece no diagnóstico. Não há sobreposições no
+resultado. A validade de um intervalo não comprova correspondência ao vídeo real.
+
+`project_guide(source_path, target_path, channel_ids, days=3, ...)` é o recorte final
+após a seleção/enriquecimento do catálogo. Suporta `source_path == target_path`,
+usa temporário e substituição atômica e preserva o mtime da coleta: projetar não
+renova artificialmente TTL ou LKG. Em falha mantém o original e limpa o temporário
+em `finally`. As duas listas usam a mesma URL canônica; compatibilidade de nomes
+legados deve ser feita por alias, não por uma segunda geração de guia amplo.
+Todo ID publicado recebe declaração `channel`, mesmo quando sua programação é
+desconhecida; `channel_names={id: nome}` fornece o nome de apresentação nesses
+casos. Isso não cria programas: a cobertura continua `missing`. A proteção de
+queda de cobertura compara IDs com programas válidos, sem contar declarações
+vazias como cobertura anterior. Fox Kids continua exigindo programa atual e futuro.
+
+O XML compacto conserva título, subtítulo/episódio quando realmente publicados,
+categoria, ícone, data e classificação. Remove descrições longas e créditos, além
+de remover canais/programas não selecionados e dados fora da janela. Portanto a
+redução de bytes resulta de **seleção + janela + compactação de metadados**, não
+apenas de usar um parser em fluxo. Benchmark do snapshot de 96.291.985 bytes:
+1.162.961 bytes de saída, 3,828 s e pico RSS de 46.907.392 bytes no processo Darwin.
+Isso mede aquela seleção/snapshot, não uma garantia de tamanho constante.
+
+A seleção, nomes e janela têm fingerprint privado em
+`.epg-cache/guide-selection.json`. Mudá-los invalida a reutilização do guia; uma
+segunda passagem pode reler os upstreams privados já coletados sem transferi-los
+novamente. Um guia legado fresco e válido, ainda sem esse sidecar, é migrado sem
+HTTP nem alteração do mtime. A validação temporal continua obrigatória.
+
+`.epg-cache/channel-inventory.json` preserva IDs/nomes e contagens de programação
+válida observadas no parse, inclusive dos canais não publicados. Isso permite o
+enriquecimento em duas passagens sem publicar todo o XMLTV. Somente nomes unívocos
+com programas atuais/futuros na janela viram aliases; um nome compartilhado por
+vários IDs não escolhe arbitrariamente o primeiro. O timestamp do índice descreve
+o parse, não garante frescor da origem ou disponibilidade de mídia. Diagnósticos
+por ID mostram programa atual/futuro, horizonte, lacunas ou ausência. Só Fox Kids
+é obrigatório no piloto; ausência de grade de uma TV extra permanece explícita.
+
+## TV Sonata e Nova TVI
+
+O provider oficial `tvsonata` usa
+`https://www.tvsonata.com.br/render_grade.php?data=YYYY-MM-DD`, no máximo três
+consultas de datas por coleta e somente quando `TVSonata.br` está selecionado.
+Lê as horas inicial/final declaradas e o título do HTML; os metadados JSON em
+`abrirDetalhes(...)` são analisados como dados inertes, sem executar `onclick`.
+Virada de meia-noite respeita o fim declarado. Não atribui episódio/filme a uma
+sessão que só publica um título de bloco. Dia vazio e intervalos não publicados
+ficam vazios; falha de uma data não apaga os demais dias válidos.
+
+O fuso é uma configuração operacional explícita, `America/Sao_Paulo` por padrão,
+via `IPTV_EPG_TVSONATA_TIMEZONE`; a origem examinada não o declara. Na amostra de
+15/11 havia três sessões (10:15–12:05, 12:35–14:45, 20:00–23:00) e nenhuma sessão
+para 16/11. O estado `offline` da API de agora não foi interpretado como ausência
+de transporte ou motivo para fabricar programação 24 horas.
+
+O provider `novatvi` conserva a identidade `NovaTVI.br`/Nova TVI Petrópolis e lê o
+HTML em ISO-8859-1. A semana examinada em `/programacao` estava inteiramente vazia.
+Não transforma os nomes dos dias ou relógio da página em grade. O adapter só
+aceita futuros registros estruturados `BroadcastEvent` com datas/início/fim
+explícitos; caso contrário registra grade vazia. A mídia pode estar online mesmo
+quando o EPG publicado está vazio. Fuso configurável em
+`IPTV_EPG_NOVATVI_TIMEZONE`, com o mesmo default explícito.
+
 ## Fox Kids
 
 O canal canônico é **FoxKids.br**. A entrada extra conserva `id=fkids.br` para
@@ -99,15 +177,28 @@ M3U `tvg-id` e XMLTV `channel id`/`programme channel`, preservando região/afili
 
 ## GuiaDeTv e MeuGuia (opt-in)
 
-Não são habilitados em massa por padrão. Configure `IPTV_EPG_GUIADETV_URL` e/ou
-`IPTV_EPG_MEUGUIA_URL` com URL de manifesto JSON controlado pelo operador:
+O recurso `epg_site_mappings.json` contém somente nomes/IDs e identificadores de
+páginas publicados no `guia.txt` examinado, sem streams ou grade copiada. O collector
+MeuGuia mapeado fica habilitado por padrão, porém só consulta canais efetivamente
+selecionados e correspondências exatas de ID/nome; não percorre todo o mapa.
+Regiões não são aproximadas por prefixo e mapas Globo ambíguos foram excluídos.
+`IPTV_EPG_MEUGUIA_ENABLED=false` o desativa. O máximo é 32 canais mapeados por coleta,
+configurável por `IPTV_EPG_HTML_MAX_CHANNELS` até 128; excedentes aparecem como
+ignorados por orçamento, sem criar programação. Há uma consulta por página em cache
+quando múltiplos IDs a utilizam; não se renova o cache em cada reutilização.
 
-**No piloto público os dois coletores HTML ficam desativados.** A verificação
-posterior encontrou [termos do GuiaDeTV](https://www.guiadetv.com/info/termo-de-uso),
-seções 7.2–7.4, que restringem uso ao âmbito pessoal e vedam processamento/cópia
-e disponibilização pública. Os testes técnicos não autorizam republicação.
-MeuGuia não apresentou licença de redistribuição nas páginas inspecionadas.
-Habilitar coleta pública exige resolver essas condições com a origem.
+GuiaDeTV mapeado requer `IPTV_EPG_GUIADETV_ENABLED=true`; permanece desativado por
+padrão no piloto público por uma condição concreta: os
+[termos do GuiaDeTV](https://www.guiadetv.com/info/termo-de-uso), seções 7.2–7.4,
+restringem uso pessoal, processamento/cópia e disponibilização pública. A
+observação técnica não estabelece autorização de republicação. MeuGuia não
+apresentou licença expressa de redistribuição nas páginas examinadas; a coleta
+implementada é limitada a horários/títulos/categorias factuais no
+escopo desta integração, sem copiar sinopses extensas ou presumir direitos sobre
+transmissões. Essas condições e atribuição devem acompanhar a operação.
+
+Manifestos próprios continuam opcionais por `IPTV_EPG_GUIADETV_URL` e/ou
+`IPTV_EPG_MEUGUIA_URL`, com URL de JSON controlado pelo operador:
 
 Smoke privado em 14/11 confirmou os parsers para TV Brasil e TV Senado nos dois
 sites. Não foi identificado canal exclusivo da Companion coberto nesses sites;
@@ -142,18 +233,51 @@ conhecido é omitido; lacunas superiores a doze horas não viram um programa eno
 A virada dezembro/janeiro é resolvida pela data próxima à coleta no fuso informado.
 
 Coleta é sequencial com pausa de um segundo entre canais. Falha de um canal não
-elimina os demais saudáveis e aparece em `failed_channels`; cada canal admitido
-precisa ter programa atual e futuro. Não se inventam programas para contornar
+elimina os demais saudáveis e aparece em `failed_channels`; uma grade parcial datada
+pode preencher seus intervalos, com cobertura atual/futura informada separadamente. Não se inventam programas para contornar
 página alterada, vazia ou desatualizada.
 
 ## Cache, atualização e direitos
 
-Cache privado em `output_path.parent/.epg-cache`: arquivos `<sha256-da-url>.data`,
-bytes da origem e mtime de coleta, substituídos atomicamente. Limite de payload:
-25 MiB. TTL uma hora para Fox Kids e manifestos; trinta minutos para páginas HTML.
-Cache vencido não é usado em falha e não tem mtime renovado em outage. Mesmo bytes
-recentes precisam gerar cobertura temporal válida. Não publicar esse diretório
-como parte dos artifacts públicos. Pode conter conteúdo bruto ou manifesto privado.
+Cache privado em `output_path.parent/.epg-cache`: arquivos `<sha256-do-contexto>.data`,
+bytes da origem e mtime da coleta. O contexto inclui URL e headers quando presentes,
+sem salvar os valores no nome do arquivo. HTTP real usa resposta em fluxo e chunks
+de 64 KiB; não materializa `response.content` para XMLTV. Gzip é lido em fluxo e o
+limite também vale para os bytes decodificados. URLs/contextos idênticos no recurso
+de providers são deduplicados antes da coleta. Duas passagens de aliases reutilizam
+o mesmo arquivo privado, sem uma nova transferência do XMLTV.
+
+Limites padrão e variáveis operacionais:
+
+| Recurso | Default | Variável |
+|---|---:|---|
+| Cache privado total | 256 MiB | `IPTV_EPG_CACHE_MAX_BYTES` |
+| Arquivos de cache | 96 | `IPTV_EPG_CACHE_MAX_FILES` |
+| Idade máxima retida | 48 h | `IPTV_EPG_CACHE_MAX_AGE_SECONDS` |
+| Upstream individual/decodificado | 128 MiB | `IPTV_EPG_UPSTREAM_MAX_BYTES` |
+| Espaço livre mínimo | 200 MiB | `IPTV_EPG_MIN_FREE_BYTES` |
+
+Um arquivo novo também está limitado à metade do orçamento de cache, para permitir
+substituição atômica mantendo o antigo. O pruner roda antes, durante transferências
+grandes e depois da gravação; remove os mais antigos até respeitar bytes/quantidade.
+Temporários `epg-*.tmp` e `.write-*.tmp` abandonados há mais de uma hora são removidos
+somente nesse diretório privado. O espaço livre é verificado antes/durante download;
+exceder orçamento falha explicitamente. O buffer de rede e a verificação periódica
+podem acrescentar até cerca de 4 MiB transitórios ao orçamento estável; não se criam
+cópias persistentes sucessivas do XMLTV amplo.
+
+Conteúdo `.data` nunca é alterado in-place: temporário + `replace`; `utime` somente
+no novo inode. Cache hit e LKG não renovam mtime. XMLTV/JSON em fluxo só promovem o temporário
+ao cache após o consumidor concluir o parse; um HTTP 200 com XML/JSON malformado
+não substitui o payload anterior válido. Isso preserva hardlinks usados em
+seed/backup/promoção. JSON e XML usam substituição atômica e limpeza `finally`.
+
+HTML/JSON de collector tem teto adicional de 25 MiB. TTL: Fox/manifestos uma hora,
+XMLTV e páginas HTML trinta minutos, Sonata quinze minutos. LKG de upstream/HTML
+pode ser usado por até seis horas em falha, com data original nos diagnósticos;
+continua sujeito à validação real dos intervalos. Não desloca datas nem preenche
+programação ausente. Não publicar `.epg-cache` nos artifacts públicos: ele pode
+conter resposta bruta ou manifesto privado. Só o XML compacto é publicado.
 
 O TTL global do `guide.xml` continua sob configuração do pipeline. Além de manter
 cache entre execuções, o piloto deve chamar `required_channel_ids` e reagendar

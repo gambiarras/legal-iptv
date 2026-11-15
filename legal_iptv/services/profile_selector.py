@@ -8,6 +8,7 @@ from legal_iptv.models import Channel
 from legal_iptv.services.channel_selector import select_best_channels
 from legal_iptv.services.profile_config import PlaylistConfiguration, PlaylistProfile
 from legal_iptv.services.publication import is_exportable
+from legal_iptv.services.channel_identity import canonicalize_channels, rejection_reason
 
 
 VARIANT_SUFFIX_PATTERN = re.compile(
@@ -44,6 +45,8 @@ def _provider_key(channel: Channel) -> str:
 
 
 def _logical_key(channel: Channel) -> str:
+    if channel.logical_channel_id and channel.logical_channel_id.startswith("channel:"):
+        return channel.logical_channel_id
     if channel.tvg_id and "." in channel.tvg_id:
         return f"tvg:{_normalize(channel.tvg_id)}"
     if channel.logical_channel_id:
@@ -73,6 +76,8 @@ def _is_explicit_adult(channel: Channel) -> bool:
 
 
 def _allowed_by_profile(channel: Channel, profile: PlaylistProfile) -> bool:
+    if profile.curated_sources and rejection_reason(channel):
+        return False
     if channel.removed or channel.status == "removed" or not channel.stream_url:
         return False
     if profile.include_sources and channel.source not in profile.include_sources:
@@ -192,35 +197,21 @@ def _select_logical_providers(
     channels: list[Channel],
     configuration: PlaylistConfiguration,
 ) -> list[Channel]:
-    by_url: dict[str, Channel] = {}
+    # A single pass chooses source before quality. Headers remain attached to
+    # the winning transport; URL equality alone must not merge different feeds.
+    winners: dict[str, tuple[tuple, Channel]] = {}
     for channel in channels:
-        url_key = _normalized_url(channel.stream_url)
-        current = by_url.get(url_key)
-        if current is None or _priority(channel, configuration) > _priority(current, configuration):
-            by_url[url_key] = channel
-
-    logical_groups: dict[str, list[Channel]] = {}
-    for channel in by_url.values():
-        logical_groups.setdefault(_logical_key(channel), []).append(channel)
-
-    selected: list[Channel] = []
-    for candidates in logical_groups.values():
-        winning_provider = max(
-            {_provider_key(channel) for channel in candidates},
-            key=lambda provider: max(
-                _priority(channel, configuration)
-                for channel in candidates
-                if _provider_key(channel) == provider
-            ),
-        )
-        selected.extend(
-            channel for channel in candidates if _provider_key(channel) == winning_provider
-        )
-
-    return _unique_ids(selected)
+        key = _logical_key(channel)
+        score = (_priority(channel, configuration), *_variant_quality_score(channel, configuration))
+        current = winners.get(key)
+        if current is None or score > current[0]:
+            winners[key] = (score, channel)
+    return _unique_ids([item[1] for item in winners.values()])
 
 
 def _variant_logical_key(channel: Channel) -> str:
+    if channel.logical_channel_id and channel.logical_channel_id.startswith("channel:"):
+        return channel.logical_channel_id
     base_name = VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip()
     if channel.tvg_id and base_name:
         return (
@@ -299,6 +290,9 @@ def select_profile_channels(
     player_profile: str = "portable",
 ) -> list[Channel]:
     profile = configuration.profile(profile_name)
+    if profile.curated_sources:
+        channels = canonicalize_channels([channel for channel in channels
+                                          if not rejection_reason(channel)])
     if profile.selection_mode == "legacy":
         return select_best_channels(_base_candidates(channels, profile))
 
@@ -311,12 +305,15 @@ def select_profile_channels(
             player_profile=player_profile,
         )
     combined = inherited_channels + channels
-    seen_candidates: set[tuple[str, str]] = set()
+    seen_candidates: set[tuple] = set()
     candidates: list[Channel] = []
     for channel in combined:
         if not _allowed_by_profile(channel, profile):
             continue
-        candidate_key = (channel.id, channel.stream_url)
+        candidate_key = (channel.id, channel.stream_url, channel.source, _provider_key(channel),
+                         tuple(sorted((key.casefold(), value)
+                                      for key, value in channel.request_headers.items())),
+                         channel.resolution, channel.codec, channel.bitrate, channel.variant_label)
         if candidate_key in seen_candidates:
             continue
         seen_candidates.add(candidate_key)

@@ -1,4 +1,5 @@
 import logging
+import json
 import re
 import time
 from collections.abc import Callable
@@ -9,14 +10,16 @@ from legal_iptv.exporters import render_m3u
 from legal_iptv.io import write_json_atomic, write_text_atomic
 from legal_iptv.models import Channel
 from legal_iptv.services.epg_mapper import (
-    enrich_epg_metadata,
     load_local_xmltv_aliases,
     load_xmltv_aliases,
 )
-from legal_iptv.services.guide import ensure_guide
-from legal_iptv.services.companion import enrich_companion_candidates, run_companion
+from legal_iptv.services.guide import ensure_guide, project_guide, load_guide_inventory_aliases
+from legal_iptv.services.companion import enrich_companion_candidates, run_companion, _transport_safe
+from legal_iptv.services.companion_reference import load_reference, validate_reference
+from legal_iptv.services.channel_identity import canonicalize_channels, rejection_reason
 from legal_iptv.services.link_validator import (
     filter_cached_offline_channels,
+    filter_media_confirmed_channels,
     refresh_stream_status,
 )
 from legal_iptv.services.metadata import build_run_metadata
@@ -76,7 +79,8 @@ def run_aggregation(config: AppConfig) -> None:
         playlist_configuration = load_playlist_configuration(config.profile_config_file)
         extra = _timed(timings, "fetch_extra", lambda: _fetch_source(
             "extra",
-            lambda: extra_channels.fetch_channels(config.extra_removed_file),
+            lambda: extra_channels.fetch_channels(
+                config.extra_removed_file, include_removed=config.validate_streams),
             source_errors,
         ))
         iptv = _timed(timings, "fetch_iptv_org", lambda: _fetch_source(
@@ -86,6 +90,7 @@ def run_aggregation(config: AppConfig) -> None:
                 cache_file=config.iptv_org_cache_file,
                 cache_ttl_seconds=config.iptv_org_cache_ttl_seconds,
                 force_refresh=config.refresh_iptv_org_cache,
+                cache_only=config.validation_due_only,
             ),
             source_errors,
         ))
@@ -100,20 +105,18 @@ def run_aggregation(config: AppConfig) -> None:
         ))
 
         all_channels = extra + iptv + live
-        if config.ensure_guide_enabled:
-            _timed(
-                timings,
-                "ensure_guide",
-                lambda: ensure_guide(
-                    client,
-                    output_path=config.guide_output_path,
-                    diagnostics_path=config.guide_diagnostics_file,
-                    ttl_seconds=config.guide_ttl_seconds,
-                    lkg_seconds=config.guide_lkg_seconds,
-                    min_coverage_ratio=config.guide_min_coverage_ratio,
-                    required_channel_ids=("FoxKids.br",) if config.companion_output_path else (),
-                ),
-            )
+        if config.validation_due_only and source_errors:
+            raise RuntimeError("Due-only validation requires intact local source caches")
+        reference = None
+        if config.companion_output_path:
+            reference_cache = (config.companion_reference_cache_path or
+                               config.epg_cache_file.parent / ".cache" / "companion-reference.json")
+            if config.validation_due_only:
+                reference = validate_reference(json.loads(
+                    (config.companion_reference_file or reference_cache).read_text()))
+            else:
+                reference = load_reference(client, reference_cache,
+                                           local_file=config.companion_reference_file)
 
         def load_epg_aliases():
             aliases = {}
@@ -130,7 +133,12 @@ def run_aggregation(config: AppConfig) -> None:
                 cache_file=config.epg_cache_file,
                 cache_ttl_seconds=config.epg_cache_ttl_seconds,
                 force_refresh=config.refresh_epg_cache,
+                cache_only=(config.validation_due_only or config.ensure_guide_enabled
+                            or config.guide_output_path.exists()),
             )
+            inventory = load_guide_inventory_aliases(config.guide_output_path.parent / ".epg-cache")
+            for key, value in inventory.items():
+                aliases.setdefault(key, value)
             for key, value in fallback_aliases.items():
                 aliases.setdefault(key, value)
             return aliases
@@ -139,7 +147,9 @@ def run_aggregation(config: AppConfig) -> None:
         enriched_channels = _timed(
             timings,
             "enrich_epg_metadata",
-            lambda: enrich_epg_metadata(all_channels, xmltv_aliases=xmltv_aliases),
+            lambda: canonicalize_channels(enrich_companion_candidates(
+                [channel for channel in all_channels
+                 if not rejection_reason(channel) and _transport_safe(channel)], xmltv_aliases)),
         )
         if config.profile == "base":
             selected = _timed(
@@ -187,6 +197,11 @@ def run_aggregation(config: AppConfig) -> None:
                 ),
             )
 
+        if config.require_media_proof:
+            selected = _timed(timings, "filter_media_proof", lambda: filter_media_confirmed_channels(
+                selected, status_file=config.stream_status_file,
+                max_age_seconds=config.validation_max_success_age,
+            ))
         selected_after_stream_filter = len(selected)
         if config.profile != "base":
             selected = _timed(
@@ -199,6 +214,47 @@ def run_aggregation(config: AppConfig) -> None:
                     player_profile=config.player_profile,
                 ),
             )
+
+        if config.ensure_guide_enabled:
+            # Normalize the final winners before keying guide caches. Doing this
+            # only after collection made subset mappings alternate each run.
+            selected = canonicalize_channels(enrich_companion_candidates(selected, xmltv_aliases))
+            _timed(timings, "ensure_guide", lambda: ensure_guide(
+                client, output_path=config.guide_output_path,
+                diagnostics_path=config.guide_diagnostics_file,
+                ttl_seconds=config.guide_ttl_seconds,
+                lkg_seconds=config.guide_lkg_seconds,
+                min_coverage_ratio=config.guide_min_coverage_ratio,
+                selected_channel_ids={channel.tvg_id for channel in selected if channel.tvg_id},
+                selected_channel_names={channel.tvg_id: channel.name for channel in selected if channel.tvg_id},
+                required_channel_ids=("FoxKids.br",) if any(
+                    channel.tvg_id == "FoxKids.br" for channel in selected) else (),
+            ))
+            # Upstream inventory adds aliases without retaining a world-sized XMLTV.
+            inventory = load_guide_inventory_aliases(config.guide_output_path.parent / ".epg-cache")
+            if inventory:
+                updated_aliases = {**inventory, **xmltv_aliases}
+                remapped = canonicalize_channels(enrich_companion_candidates(selected, updated_aliases))
+                if {item.tvg_id for item in remapped} != {item.tvg_id for item in selected}:
+                    _timed(timings, "remap_guide", lambda: ensure_guide(
+                        client, output_path=config.guide_output_path,
+                        diagnostics_path=config.guide_diagnostics_file,
+                        ttl_seconds=config.guide_ttl_seconds,
+                        lkg_seconds=config.guide_lkg_seconds,
+                        min_coverage_ratio=config.guide_min_coverage_ratio,
+                        selected_channel_ids={item.tvg_id for item in remapped if item.tvg_id},
+                        selected_channel_names={item.tvg_id: item.name for item in remapped if item.tvg_id},
+                        required_channel_ids=("FoxKids.br",) if any(
+                            item.tvg_id == "FoxKids.br" for item in remapped) else (),
+                    ))
+                selected = remapped
+            _timed(timings, "project_guide", lambda: project_guide(
+                config.guide_output_path, config.guide_output_path,
+                {channel.tvg_id for channel in selected if channel.tvg_id},
+                channel_names={channel.tvg_id: channel.name for channel in selected if channel.tvg_id},
+                required_channel_ids=("FoxKids.br",) if any(
+                    channel.tvg_id == "FoxKids.br" for channel in selected) else (),
+            ))
 
         guide_url = config.guide_url or playlist_configuration.guide_url
         playlist = _timed(
@@ -213,14 +269,14 @@ def run_aggregation(config: AppConfig) -> None:
                     if config.profile == "base"
                     else playlist_configuration.group_order
                 ),
-                legacy_guide_urls=config.profile == "base",
+                legacy_guide_urls=True,
                 enforce_capabilities=config.profile != "base",
                 alternatives_group=playlist_configuration.alternatives_group,
             ),
         )
         if config.companion_output_path:
             _timed(timings, "generate_companion", lambda: run_companion(
-                enrich_companion_candidates(all_channels, xmltv_aliases), config, client,
+                selected, config, client, reference=reference,
             ))
         write_text_atomic(config.output_path, playlist)
         timings["total"] = round(time.perf_counter() - started_at, 3)
@@ -234,7 +290,9 @@ def run_aggregation(config: AppConfig) -> None:
             timings_seconds=timings,
             epg_aliases_count=len(xmltv_aliases),
         )
-        write_json_atomic(config.meta_output_path, metadata.to_dict())
+        payload = metadata.to_dict()
+        payload["media_proof_required"] = config.require_media_proof
+        write_json_atomic(config.meta_output_path, payload)
 
         logger.info(
             "Aggregation finished total_input=%s selected=%s source_errors=%s",

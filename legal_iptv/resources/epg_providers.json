@@ -9,6 +9,22 @@
     ]
   },
   {
+    "id": "tvsonata",
+    "format": "tvsonata",
+    "days": 3,
+    "urls": [
+      "https://www.tvsonata.com.br/render_grade.php"
+    ]
+  },
+  {
+    "id": "novatvi",
+    "format": "novatvi",
+    "days": 3,
+    "urls": [
+      "https://www.novatvipetropolis.com.br/programacao"
+    ]
+  },
+  {
     "id": "primary",
     "url_env": "IPTV_EPG_PRIMARY_URL",
     "headers_env": "IPTV_EPG_PRIMARY_HEADERS",
@@ -24,6 +40,23 @@
     "headers_env": "IPTV_EPG_ADDITIONAL_HEADERS",
     "format_env": "IPTV_EPG_ADDITIONAL_FORMAT",
     "format": "xmltv"
+  },
+  {
+    "id": "meuguia_mapped",
+    "enabled_env": "IPTV_EPG_MEUGUIA_ENABLED",
+    "format": "meuguia_mapped",
+    "urls": [
+      "resource:epg_site_mappings.json"
+    ]
+  },
+  {
+    "id": "guiadetv_mapped",
+    "enabled": false,
+    "enabled_env": "IPTV_EPG_GUIADETV_ENABLED",
+    "format": "guiadetv_mapped",
+    "urls": [
+      "resource:epg_site_mappings.json"
+    ]
   },
   {
     "id": "guiadetv",

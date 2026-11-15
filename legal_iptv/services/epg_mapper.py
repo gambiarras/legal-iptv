@@ -105,7 +105,10 @@ def load_xmltv_aliases(
     cache_file: Path | None = None,
     cache_ttl_seconds: int = 43200,
     force_refresh: bool = False,
+    cache_only: bool = False,
 ) -> dict[str, EPGMapping]:
+    if cache_only:
+        return (_load_xmltv_aliases_cache(cache_file, max_age_seconds=None) or {}) if cache_file else {}
     if cache_file is not None and not force_refresh:
         cached_aliases = _load_fresh_xmltv_aliases_cache(
             cache_file,
@@ -148,21 +151,17 @@ def load_local_xmltv_aliases(guide_path: Path) -> dict[str, EPGMapping]:
     cached = _read_local_xmltv_aliases_cache(cache_file)
 
     with guide_path.open("rb") as guide:
-        if cached is not None:
-            content_sha256, aliases = cached
-            if hashlib.file_digest(guide, "sha256").hexdigest() == content_sha256:
-                logger.info(
-                    "Loaded local EPG aliases from cache aliases=%s", len(aliases)
-                )
-                return aliases
-            guide.seek(0)
-        payload = guide.read()
+        content_sha256 = hashlib.file_digest(guide, "sha256").hexdigest()
+        if cached is not None and cached[0] == content_sha256:
+            logger.info("Loaded local EPG aliases from cache aliases=%s", len(cached[1]))
+            return cached[1]
+        guide.seek(0)
+        aliases = parse_xmltv_aliases(guide, require_programmes=True)
 
-    aliases = parse_xmltv_aliases(payload, require_programmes=True)
     cache_payload = {
         "version": LOCAL_XMLTV_ALIASES_CACHE_VERSION,
         "require_programmes": True,
-        "content_sha256": hashlib.sha256(payload).hexdigest(),
+        "content_sha256": content_sha256,
         "aliases": {
             key: {"tvg_id": mapping.tvg_id, "display_name": mapping.display_name}
             for key, mapping in sorted(aliases.items())
@@ -245,16 +244,23 @@ def parse_xmltv_aliases(
     compressed: bool = False,
     require_programmes: bool = False,
 ) -> dict[str, EPGMapping]:
-    data = gzip.decompress(payload) if compressed else payload
+    stream = BytesIO(payload) if isinstance(payload, bytes) else payload
+    if compressed:
+        stream = gzip.GzipFile(fileobj=stream)
     channel_candidates: list[tuple[str, dict[str, set[EPGMapping]]]] = []
     programmed_channel_ids: set[str] = set()
 
-    for _, element in ET.iterparse(BytesIO(data), events=("end",)):
+    context = ET.iterparse(stream, events=("start", "end"))
+    _, root = next(context)
+    for event, element in context:
+        if event != "end":
+            continue
         if element.tag == "programme":
             channel_id = element.attrib.get("channel")
             if channel_id:
                 programmed_channel_ids.add(channel_id)
             element.clear()
+            root.clear()
             continue
 
         if element.tag != "channel":
@@ -276,6 +282,7 @@ def parse_xmltv_aliases(
 
         channel_candidates.append((tvg_id, item_candidates))
         element.clear()
+        root.clear()
 
     aliases: dict[str, EPGMapping] = {}
     for tvg_id, item_candidates in channel_candidates:

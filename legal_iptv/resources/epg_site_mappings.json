@@ -1,0 +1,1300 @@
+{
+  "provenance": "Public scheduling identifiers from Saimo guia.txt inspected 2026-11-14; no stream URLs or programmes. Exact names only; ambiguous regional mappings excluded.",
+  "channels": [
+    {
+      "names": [
+        "A&E"
+      ],
+      "ids": [],
+      "meuguia": "MDO",
+      "guiadetv": "ae"
+    },
+    {
+      "names": [
+        "Animal Planet"
+      ],
+      "ids": [
+        "AnimalPlanet.br"
+      ],
+      "meuguia": "APL",
+      "guiadetv": "animal-planet"
+    },
+    {
+      "names": [
+        "Band"
+      ],
+      "ids": [
+        "Band.br"
+      ],
+      "meuguia": "BAN",
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "Cartoon Network"
+      ],
+      "ids": [
+        "CartoonNetwork.br"
+      ],
+      "meuguia": "CAR",
+      "guiadetv": "cartoon-network"
+    },
+    {
+      "names": [
+        "Cinemax"
+      ],
+      "ids": [],
+      "meuguia": "MNX",
+      "guiadetv": "cinemax"
+    },
+    {
+      "names": [
+        "Combate"
+      ],
+      "ids": [],
+      "meuguia": "135",
+      "guiadetv": "combate"
+    },
+    {
+      "names": [
+        "Discovery Kids"
+      ],
+      "ids": [
+        "DiscoveryKids.br"
+      ],
+      "meuguia": "DIK",
+      "guiadetv": "discovery-kids"
+    },
+    {
+      "names": [
+        "Discovery World"
+      ],
+      "ids": [
+        "DiscoveryWorld.br"
+      ],
+      "meuguia": "DIW",
+      "guiadetv": "discovery-world"
+    },
+    {
+      "names": [
+        "ESPN"
+      ],
+      "ids": [],
+      "meuguia": "ESP",
+      "guiadetv": "espn"
+    },
+    {
+      "names": [
+        "ESPN 2"
+      ],
+      "ids": [],
+      "meuguia": "ES2",
+      "guiadetv": "espn-2"
+    },
+    {
+      "names": [
+        "ESPN 4"
+      ],
+      "ids": [],
+      "meuguia": "ES4",
+      "guiadetv": "espn-4"
+    },
+    {
+      "names": [
+        "GNT"
+      ],
+      "ids": [],
+      "meuguia": "GNT",
+      "guiadetv": "gnt"
+    },
+    {
+      "names": [
+        "Gloob"
+      ],
+      "ids": [],
+      "meuguia": "GOB",
+      "guiadetv": "gloob"
+    },
+    {
+      "names": [
+        "HBO"
+      ],
+      "ids": [],
+      "meuguia": "HBO",
+      "guiadetv": "hbo"
+    },
+    {
+      "names": [
+        "HBO Family"
+      ],
+      "ids": [
+        "HBOFamily.br"
+      ],
+      "meuguia": "HFA",
+      "guiadetv": "hbo-family"
+    },
+    {
+      "names": [
+        "HBO Plus"
+      ],
+      "ids": [
+        "HBOPlus.br"
+      ],
+      "meuguia": "HPL",
+      "guiadetv": "hbo-plus"
+    },
+    {
+      "names": [
+        "HBO2"
+      ],
+      "ids": [
+        "HBO2.br"
+      ],
+      "meuguia": "HB2",
+      "guiadetv": "hbo-2"
+    },
+    {
+      "names": [
+        "History"
+      ],
+      "ids": [
+        "History.br"
+      ],
+      "meuguia": "HIS",
+      "guiadetv": "history"
+    },
+    {
+      "names": [
+        "Megapix"
+      ],
+      "ids": [],
+      "meuguia": "MPX",
+      "guiadetv": "megapix"
+    },
+    {
+      "names": [
+        "Record"
+      ],
+      "ids": [
+        "RecordTV.br"
+      ],
+      "meuguia": "REC",
+      "guiadetv": "record-tv"
+    },
+    {
+      "names": [
+        "SBT"
+      ],
+      "ids": [
+        "SBT.br"
+      ],
+      "meuguia": "SBT",
+      "guiadetv": "sbt"
+    },
+    {
+      "names": [
+        "Space"
+      ],
+      "ids": [
+        "Space.br"
+      ],
+      "meuguia": "SPA",
+      "guiadetv": "space"
+    },
+    {
+      "names": [
+        "SporTV"
+      ],
+      "ids": [
+        "Sportv.br"
+      ],
+      "meuguia": "SPO",
+      "guiadetv": "sportv"
+    },
+    {
+      "names": [
+        "SporTV 2"
+      ],
+      "ids": [
+        "Sportv2.br"
+      ],
+      "meuguia": "SP2",
+      "guiadetv": "sportv-2"
+    },
+    {
+      "names": [
+        "SporTV 3"
+      ],
+      "ids": [
+        "Sportv3.br"
+      ],
+      "meuguia": "SP3",
+      "guiadetv": "sportv-3"
+    },
+    {
+      "names": [
+        "TNT"
+      ],
+      "ids": [
+        "TNT.br"
+      ],
+      "meuguia": "TNT",
+      "guiadetv": "tnt"
+    },
+    {
+      "names": [
+        "TNT Séries"
+      ],
+      "ids": [
+        "TNTSeries.br"
+      ],
+      "meuguia": "TBS",
+      "guiadetv": "tnt-series"
+    },
+    {
+      "names": [
+        "Telecine Action"
+      ],
+      "ids": [],
+      "meuguia": "TC2",
+      "guiadetv": "telecine-action"
+    },
+    {
+      "names": [
+        "Telecine Pipoca"
+      ],
+      "ids": [],
+      "meuguia": "TC4",
+      "guiadetv": "telecine-pipoca"
+    },
+    {
+      "names": [
+        "Telecine Premium"
+      ],
+      "ids": [],
+      "meuguia": "TC1",
+      "guiadetv": "telecine-premium"
+    },
+    {
+      "names": [
+        "Universal TV"
+      ],
+      "ids": [
+        "UniversalTV.br"
+      ],
+      "meuguia": "USA",
+      "guiadetv": "universal-tv"
+    },
+    {
+      "names": [
+        "Warner"
+      ],
+      "ids": [
+        "WarnerChannel.br"
+      ],
+      "meuguia": "WBT",
+      "guiadetv": "warner"
+    },
+    {
+      "names": [
+        "AXN"
+      ],
+      "ids": [],
+      "meuguia": "AXN",
+      "guiadetv": "axn"
+    },
+    {
+      "names": [
+        "canal-brasil"
+      ],
+      "ids": [
+        "CanalBrasil.br"
+      ],
+      "meuguia": "CBR"
+    },
+    {
+      "names": [
+        "Discovery Channel"
+      ],
+      "ids": [
+        "DiscoveryChannel.br"
+      ],
+      "meuguia": "DIS",
+      "guiadetv": "discovery-channel"
+    },
+    {
+      "names": [
+        "Discovery Home & Health"
+      ],
+      "ids": [],
+      "meuguia": "HEA",
+      "guiadetv": "discovery-home-health"
+    },
+    {
+      "names": [
+        "Discovery Science"
+      ],
+      "ids": [
+        "DiscoveryScience.br"
+      ],
+      "meuguia": "DSC",
+      "guiadetv": "discovery-science"
+    },
+    {
+      "names": [
+        "Discovery Turbo"
+      ],
+      "ids": [
+        "DiscoveryTurbo.br"
+      ],
+      "meuguia": "DTU",
+      "guiadetv": "discovery-turbo"
+    },
+    {
+      "names": [
+        "E!"
+      ],
+      "ids": [],
+      "meuguia": "EET",
+      "guiadetv": "e"
+    },
+    {
+      "names": [
+        "Sony Channel"
+      ],
+      "ids": [
+        "SonyChannel.br"
+      ],
+      "meuguia": "SET",
+      "guiadetv": "sony"
+    },
+    {
+      "names": [
+        "Studio Universal"
+      ],
+      "ids": [],
+      "meuguia": "HAL",
+      "guiadetv": "studio-universal"
+    },
+    {
+      "names": [
+        "Band Sports"
+      ],
+      "ids": [
+        "BandSports.br"
+      ],
+      "meuguia": "BSP",
+      "guiadetv": "bandsports"
+    },
+    {
+      "names": [
+        "ESPN 3"
+      ],
+      "ids": [],
+      "meuguia": "ES3",
+      "guiadetv": "espn-3"
+    },
+    {
+      "names": [
+        "ESPN 5"
+      ],
+      "ids": [],
+      "meuguia": "ES5",
+      "guiadetv": "espn-5"
+    },
+    {
+      "names": [
+        "canal-off"
+      ],
+      "ids": [
+        "CanalOFF.br"
+      ],
+      "meuguia": "OFF",
+      "guiadetv": "off"
+    },
+    {
+      "names": [
+        "Premiere Clubes"
+      ],
+      "ids": [],
+      "meuguia": "121",
+      "guiadetv": "premiere-fc"
+    },
+    {
+      "names": [
+        "Multishow"
+      ],
+      "ids": [],
+      "meuguia": "MSH",
+      "guiadetv": "multishow"
+    },
+    {
+      "names": [
+        "Viva"
+      ],
+      "ids": [],
+      "meuguia": "VIV",
+      "guiadetv": "viva"
+    },
+    {
+      "names": [
+        "Arte 1"
+      ],
+      "ids": [],
+      "meuguia": "BQ5",
+      "guiadetv": "arte-1"
+    },
+    {
+      "names": [
+        "TLC"
+      ],
+      "ids": [],
+      "meuguia": "TRV",
+      "guiadetv": "tlc"
+    },
+    {
+      "names": [
+        "AMC"
+      ],
+      "ids": [],
+      "meuguia": "MGM",
+      "guiadetv": "amc"
+    },
+    {
+      "names": [
+        "Band News"
+      ],
+      "ids": [],
+      "meuguia": "NEW",
+      "guiadetv": "bandnews"
+    },
+    {
+      "names": [
+        "Gloobinho"
+      ],
+      "ids": [],
+      "meuguia": "GBI",
+      "guiadetv": "gloobinho"
+    },
+    {
+      "names": [
+        "RedeTV"
+      ],
+      "ids": [],
+      "meuguia": "RTV",
+      "guiadetv": "rede-tv"
+    },
+    {
+      "names": [
+        "TCM"
+      ],
+      "ids": [],
+      "meuguia": "TCM",
+      "guiadetv": "tcm"
+    },
+    {
+      "names": [
+        "Telecine Cult"
+      ],
+      "ids": [],
+      "meuguia": "TC5",
+      "guiadetv": "telecine-cult"
+    },
+    {
+      "names": [
+        "Telecine Fun"
+      ],
+      "ids": [],
+      "meuguia": "TC6",
+      "guiadetv": "telecine-fun"
+    },
+    {
+      "names": [
+        "Telecine Touch"
+      ],
+      "ids": [],
+      "meuguia": "TC3",
+      "guiadetv": "telecine-touch"
+    },
+    {
+      "names": [
+        "TV Aparecida"
+      ],
+      "ids": [
+        "TVAparecida.br"
+      ],
+      "meuguia": "TAP",
+      "guiadetv": "tv-aparecida"
+    },
+    {
+      "names": [
+        "TV Cultura",
+        "cultura"
+      ],
+      "ids": [
+        "TVCultura.br"
+      ],
+      "meuguia": "CUL",
+      "guiadetv": "tv-cultura"
+    },
+    {
+      "names": [
+        "TV Gazeta",
+        "gazeta"
+      ],
+      "ids": [
+        "TVGazeta.br"
+      ],
+      "meuguia": "GAZ",
+      "guiadetv": "tv-gazeta"
+    },
+    {
+      "names": [
+        "TV Brasil"
+      ],
+      "ids": [
+        "TVBrasil.br"
+      ],
+      "meuguia": "TED",
+      "guiadetv": "tv-brasil"
+    },
+    {
+      "names": [
+        "ae"
+      ],
+      "ids": [],
+      "guiadetv": "ae"
+    },
+    {
+      "names": [
+        "agro"
+      ],
+      "ids": [],
+      "guiadetv": "agro"
+    },
+    {
+      "names": [
+        "agro mais"
+      ],
+      "ids": [],
+      "guiadetv": "agro"
+    },
+    {
+      "names": [
+        "canal agro"
+      ],
+      "ids": [],
+      "guiadetv": "agro"
+    },
+    {
+      "names": [
+        "arte1"
+      ],
+      "ids": [],
+      "guiadetv": "arte-1"
+    },
+    {
+      "names": [
+        "band sp"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band campinas"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band curitiba"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band mg"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band para"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band recife tv tribuna"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band rn"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band rs"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band sergipe"
+      ],
+      "ids": [],
+      "guiadetv": "band"
+    },
+    {
+      "names": [
+        "band rj"
+      ],
+      "ids": [],
+      "guiadetv": "band-rj"
+    },
+    {
+      "names": [
+        "bandnews"
+      ],
+      "ids": [],
+      "guiadetv": "bandnews"
+    },
+    {
+      "names": [
+        "bandsports"
+      ],
+      "ids": [],
+      "guiadetv": "bandsports"
+    },
+    {
+      "names": [
+        "bbc world"
+      ],
+      "ids": [],
+      "guiadetv": "bbc-world"
+    },
+    {
+      "names": [
+        "bbc world news"
+      ],
+      "ids": [],
+      "guiadetv": "bbc-world"
+    },
+    {
+      "names": [
+        "bis"
+      ],
+      "ids": [],
+      "guiadetv": "bis"
+    },
+    {
+      "names": [
+        "bloomberg"
+      ],
+      "ids": [],
+      "guiadetv": "bloomberg"
+    },
+    {
+      "names": [
+        "box kids"
+      ],
+      "ids": [],
+      "guiadetv": "box-kids"
+    },
+    {
+      "names": [
+        "box kids tv"
+      ],
+      "ids": [],
+      "guiadetv": "box-kids"
+    },
+    {
+      "names": [
+        "canal educacao"
+      ],
+      "ids": [],
+      "guiadetv": "canal-educacao"
+    },
+    {
+      "names": [
+        "canal rural"
+      ],
+      "ids": [],
+      "guiadetv": "canal-rural"
+    },
+    {
+      "names": [
+        "canal uol"
+      ],
+      "ids": [],
+      "guiadetv": "canal-uol"
+    },
+    {
+      "names": [
+        "cancao nova"
+      ],
+      "ids": [],
+      "guiadetv": "cancao-nova"
+    },
+    {
+      "names": [
+        "cartoonito"
+      ],
+      "ids": [],
+      "guiadetv": "cartoonito"
+    },
+    {
+      "names": [
+        "cnn brasil"
+      ],
+      "ids": [],
+      "guiadetv": "cnn-brasil"
+    },
+    {
+      "names": [
+        "curta"
+      ],
+      "ids": [],
+      "guiadetv": "curta"
+    },
+    {
+      "names": [
+        "discovery h h"
+      ],
+      "ids": [
+        "438"
+      ],
+      "guiadetv": "discovery-home-health"
+    },
+    {
+      "names": [
+        "discovery theater"
+      ],
+      "ids": [],
+      "guiadetv": "discovery-theater"
+    },
+    {
+      "names": [
+        "discovery id"
+      ],
+      "ids": [],
+      "guiadetv": "investigacao-discovery"
+    },
+    {
+      "names": [
+        "investigacao discovery"
+      ],
+      "ids": [],
+      "guiadetv": "investigacao-discovery"
+    },
+    {
+      "names": [
+        "investigation discovery"
+      ],
+      "ids": [],
+      "guiadetv": "investigacao-discovery"
+    },
+    {
+      "names": [
+        "espn 6"
+      ],
+      "ids": [],
+      "guiadetv": "espn-6"
+    },
+    {
+      "names": [
+        "film arts"
+      ],
+      "ids": [],
+      "guiadetv": "film-arts"
+    },
+    {
+      "names": [
+        "food network"
+      ],
+      "ids": [],
+      "guiadetv": "food-network"
+    },
+    {
+      "names": [
+        "fox news"
+      ],
+      "ids": [],
+      "guiadetv": "fox-news"
+    },
+    {
+      "names": [
+        "futura"
+      ],
+      "ids": [],
+      "guiadetv": "futura"
+    },
+    {
+      "names": [
+        "canal futura"
+      ],
+      "ids": [],
+      "guiadetv": "futura"
+    },
+    {
+      "names": [
+        "ge tv"
+      ],
+      "ids": [],
+      "guiadetv": "ge-tv"
+    },
+    {
+      "names": [
+        "getv"
+      ],
+      "ids": [],
+      "guiadetv": "ge-tv"
+    },
+    {
+      "names": [
+        "hbo 2"
+      ],
+      "ids": [],
+      "guiadetv": "hbo-2"
+    },
+    {
+      "names": [
+        "hbo mundi"
+      ],
+      "ids": [],
+      "guiadetv": "hbo-mundi"
+    },
+    {
+      "names": [
+        "hbo pop"
+      ],
+      "ids": [],
+      "guiadetv": "hbo-pop"
+    },
+    {
+      "names": [
+        "hbo signature"
+      ],
+      "ids": [],
+      "guiadetv": "hbo-signature"
+    },
+    {
+      "names": [
+        "hbo xtreme"
+      ],
+      "ids": [],
+      "guiadetv": "hbo-xtreme"
+    },
+    {
+      "names": [
+        "hgtv"
+      ],
+      "ids": [],
+      "guiadetv": "hgtv"
+    },
+    {
+      "names": [
+        "history channel"
+      ],
+      "ids": [],
+      "guiadetv": "history"
+    },
+    {
+      "names": [
+        "history 2"
+      ],
+      "ids": [],
+      "guiadetv": "history-2"
+    },
+    {
+      "names": [
+        "h2"
+      ],
+      "ids": [],
+      "guiadetv": "history-2"
+    },
+    {
+      "names": [
+        "jovem pan news"
+      ],
+      "ids": [],
+      "guiadetv": "jovem-pan-news"
+    },
+    {
+      "names": [
+        "lifetime"
+      ],
+      "ids": [],
+      "guiadetv": "lifetime"
+    },
+    {
+      "names": [
+        "lifetime movies"
+      ],
+      "ids": [],
+      "guiadetv": "lifetime"
+    },
+    {
+      "names": [
+        "music box brazil"
+      ],
+      "ids": [],
+      "guiadetv": "music-box-brazil"
+    },
+    {
+      "names": [
+        "n sports"
+      ],
+      "ids": [],
+      "guiadetv": "nsports"
+    },
+    {
+      "names": [
+        "nsports"
+      ],
+      "ids": [],
+      "guiadetv": "nsports"
+    },
+    {
+      "names": [
+        "n sports jogo 1"
+      ],
+      "ids": [],
+      "guiadetv": "nsports"
+    },
+    {
+      "names": [
+        "off"
+      ],
+      "ids": [],
+      "guiadetv": "off"
+    },
+    {
+      "names": [
+        "premiere"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-fc"
+    },
+    {
+      "names": [
+        "premiere fc"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-fc"
+    },
+    {
+      "names": [
+        "premiere 2"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-2"
+    },
+    {
+      "names": [
+        "premiere 3"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-3"
+    },
+    {
+      "names": [
+        "premiere 4"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-4"
+    },
+    {
+      "names": [
+        "premiere 5"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-5"
+    },
+    {
+      "names": [
+        "premiere 6"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-6"
+    },
+    {
+      "names": [
+        "premiere 7"
+      ],
+      "ids": [],
+      "guiadetv": "premiere-7"
+    },
+    {
+      "names": [
+        "prime box brazil"
+      ],
+      "ids": [],
+      "guiadetv": "prime-box-brazil"
+    },
+    {
+      "names": [
+        "recordtv"
+      ],
+      "ids": [],
+      "guiadetv": "record-tv"
+    },
+    {
+      "names": [
+        "rede brasil"
+      ],
+      "ids": [
+        "RedeBrasil.br"
+      ],
+      "guiadetv": "rede-brasil"
+    },
+    {
+      "names": [
+        "rede familia"
+      ],
+      "ids": [],
+      "guiadetv": "rede-familia"
+    },
+    {
+      "names": [
+        "rede gospel"
+      ],
+      "ids": [],
+      "guiadetv": "rede-gospel"
+    },
+    {
+      "names": [
+        "rede tv"
+      ],
+      "ids": [],
+      "guiadetv": "rede-tv"
+    },
+    {
+      "names": [
+        "rede vida"
+      ],
+      "ids": [],
+      "guiadetv": "rede-vida"
+    },
+    {
+      "names": [
+        "sony"
+      ],
+      "ids": [],
+      "guiadetv": "sony"
+    },
+    {
+      "names": [
+        "sony movies"
+      ],
+      "ids": [],
+      "guiadetv": "sony-movies"
+    },
+    {
+      "names": [
+        "sportv2"
+      ],
+      "ids": [],
+      "guiadetv": "sportv-2"
+    },
+    {
+      "names": [
+        "sportv3"
+      ],
+      "ids": [],
+      "guiadetv": "sportv-3"
+    },
+    {
+      "names": [
+        "sportynet"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "sportynet 01"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "sportynet 4"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "sportynet 1"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "sportynet 2"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "sportynet 3"
+      ],
+      "ids": [],
+      "guiadetv": "sportynet"
+    },
+    {
+      "names": [
+        "syfy"
+      ],
+      "ids": [],
+      "guiadetv": "syfy"
+    },
+    {
+      "names": [
+        "usa network"
+      ],
+      "ids": [],
+      "guiadetv": "syfy"
+    },
+    {
+      "names": [
+        "terra viva"
+      ],
+      "ids": [],
+      "guiadetv": "terra-viva"
+    },
+    {
+      "names": [
+        "tnt novelas"
+      ],
+      "ids": [],
+      "guiadetv": "tnt-novelas"
+    },
+    {
+      "names": [
+        "tooncast"
+      ],
+      "ids": [],
+      "guiadetv": "tooncast"
+    },
+    {
+      "names": [
+        "travel box brazil"
+      ],
+      "ids": [],
+      "guiadetv": "travel-box-brasil"
+    },
+    {
+      "names": [
+        "travel box brasil"
+      ],
+      "ids": [],
+      "guiadetv": "travel-box-brasil"
+    },
+    {
+      "names": [
+        "trutv"
+      ],
+      "ids": [],
+      "guiadetv": "trutv"
+    },
+    {
+      "names": [
+        "adult swim"
+      ],
+      "ids": [
+        "417185"
+      ],
+      "guiadetv": "trutv"
+    },
+    {
+      "names": [
+        "tv camara"
+      ],
+      "ids": [
+        "TVCamara.br"
+      ],
+      "guiadetv": "tv-camara"
+    },
+    {
+      "names": [
+        "tv ra tim bum"
+      ],
+      "ids": [],
+      "guiadetv": "tv-ra-tim-bum"
+    },
+    {
+      "names": [
+        "ra tim bum"
+      ],
+      "ids": [],
+      "guiadetv": "tv-ra-tim-bum"
+    },
+    {
+      "names": [
+        "tv senado"
+      ],
+      "ids": [
+        "TVSenado.br"
+      ],
+      "guiadetv": "tv-senado"
+    },
+    {
+      "names": [
+        "universal channel"
+      ],
+      "ids": [],
+      "guiadetv": "universal-tv"
+    },
+    {
+      "names": [
+        "canal viva"
+      ],
+      "ids": [],
+      "guiadetv": "viva"
+    },
+    {
+      "names": [
+        "warner channel"
+      ],
+      "ids": [],
+      "guiadetv": "warner"
+    },
+    {
+      "names": [
+        "woohoo"
+      ],
+      "ids": [],
+      "guiadetv": "woohoo"
+    },
+    {
+      "names": [
+        "x sports"
+      ],
+      "ids": [],
+      "guiadetv": "xsports"
+    },
+    {
+      "names": [
+        "xsports"
+      ],
+      "ids": [],
+      "guiadetv": "xsports"
+    }
+  ]
+}

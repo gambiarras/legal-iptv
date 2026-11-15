@@ -1,155 +1,41 @@
-# Companion
+# Companion and the main playlist
 
-Playlist complementar ao Saimo TV Android, mantida separada da playlist completa.
-O piloto foi solicitado em 14/11/2026. Código e artefatos deste repositório podem
-ser publicados por Git; o agendamento Docker depende da versão correspondente
-do `gambiarras/iptv-ops`. Nenhuma alteração no aplicativo Saimo é necessária para
-importar canais, mas seu EPG de listas pessoais tem o limite descrito abaixo.
+Both playlists use the same M3U exporter, category order, channel IDs, playback headers and provider selection. `companion.m3u` is the selected main list minus identities already present in the visible Saimo Android catalogue. It does not select a separate set of transports or require membership in another directory. Regional affiliates remain distinct; reviewed aliases merge different labels for the same feed.
 
-## Arquivos públicos
+## Selection
 
-| Arquivo | Uso |
-| --- | --- |
-| `companion.m3u` | Seleção portátil de canais HTTP, sem FrostView e sem duplicar os canais normais visíveis do Saimo. |
-| `companion-guide.xml` | XMLTV recortado para os IDs da seleção, com Fox Kids obrigatório atual e futuro. |
-| `companion.meta.json` | Origem lógica, motivos de descarte e cobertura por canal; sem URLs de mídia ou credenciais nos diagnósticos. |
-| `companion-youtube.kodi.m3u` | Lives públicas recentes para Kodi com o complemento YouTube configurado. Arquivo separado, sem URLs de mídia assinadas. |
+The first eligible available provider wins: **Televisão.TV → Batista Play → IPTV-ORG → YouTube → extra_channels**. Quality breaks ties within a provider. Health filtering runs before this choice so a failed preferred transport can fall back to a lower source. Lower providers do not create duplicate entries. Explicit option labels such as Alternativo 1/Backup are excluded; TV Alternativa is a legitimate broadcaster. Known paid channels from Batista and FrostView/addon catalogue sources are excluded before validation/publication.
 
-Importação em player IPTV que aceita XMLTV:
+Only exportable direct public media enters the regular output. Resolver-dependent, signed, private and incompatible transports do not become permanent URLs. Existing optional YouTube addon output remains a separate compatibility artifact; it does not change the structure or membership rules of the regular Companion.
 
-- Lista: `https://raw.githubusercontent.com/gambiarras/legal-iptv/main/companion.m3u`
-- Guia: `https://raw.githubusercontent.com/gambiarras/legal-iptv/main/companion-guide.xml`
+## One guide, our URL first
 
-O cabeçalho da M3U aponta somente para o guia Companion; não acrescenta o redirect
-legado nem vários EPG conflitantes. Caso o player não importe esse cabeçalho,
-configure manualmente o XMLTV e atualize ambos os arquivos. `tvg-id="FoxKids.br"`
-é igual ao `channel id` e ao `programme channel`. O guia tem horários com fuso
-explícito. Configurar o offset do player corretamente, sem somar três horas.
+`playlist.m3u` and `companion.m3u` have the same EPG header: the configured `--guide-url` (default public `guide.xml`) first, followed by deduplicated external fallbacks. `companion-guide.xml` remains a byte-identical compatibility name, created with an atomic hardlink when supported. It is no longer a second subset collection or a separate source of truth.
 
-No Saimo Android inspecionado (`05942fd7551b4cbaaa95564f463eb19b3d53c6f2`),
-Minhas listas aceita a M3U, porém o coletor de EPG só processa `Remote.channels` e
-o leitor ignora o endereço XMLTV da M3U. Assim, **importar a Companion nesse app
-não garante EPG dos canais novos**. Para ver Fox Kids com guia, usar um cliente
-que aceite XMLTV externo ou adaptar esse caminho do app. A validação do piloto
-é de dados/transporte; não foi realizada aceitação em uma TV física.
+The public guide contains selected IDs and a three-day programme window. Official schedules and mapped collectors have interval precedence; other providers fill compatible gaps. Do not fabricate programmes for missing schedules. Fox Kids, when selected, requires present/future coverage. TV Sonata has an official dated partial schedule collector; Nova TVI currently publishes an empty weekly page and therefore has no invented guide.
 
-## Seleção e procedência
+The compact output keeps titles, subtitles, categories, episode identifiers, icons, dates and ratings; long descriptions are omitted. Size measurements therefore include field compaction as well as channel/time filtering. Upstream XML is parsed incrementally, not retained as one in-memory document. The optional compatibility guide is linked to the same output bytes.
 
-`services/companion_reference.py` reproduz a junção Android de `catalogo.txt` e
-`canais.txt`, incluindo prioridade de `tvg-id`, remoção de parênteses dos extras,
-normalização específica e filtro de hosts exatos. Preserva registros da base,
-como Rede TV! e RedeTV!, mesmo quando o filtro Companion usa outra normalização.
-Somente nomes, hashes e datas vão ao cache privado; URLs de transmissão Saimo
-podem conter credenciais e nunca são copiadas desse catálogo para a Companion.
+Guide and source cache limits, diagnostics and collector configuration are documented in [EPG collectors](epg-collectors.md). Stream checks and recovery are documented in [stream validation](stream-validation.md). A successful sample is a dated transport observation, not a permanent playback guarantee.
 
-A referência Saimo trata os canais normais atualmente visíveis, sem rádios,
-restritos ou VOD. Um canal filtrado pelo próprio Saimo pode entrar no complemento
-por outra fonte; isso permite Retrô Cartoon. Presença em catálogo não equivale
-a disponibilidade da transmissão, e o filtro não testa a saúde dos streams Saimo.
+## Generation
 
-`resources/companion_policy.json` define a curadoria reproduzível:
-
-1. Descarta provedores FrostView/addons não revisados e transportes associados,
-   adultos, rádio, nomes/grupos alternativos e sinais identificados como pagos.
-2. Preserva o nome original durante enriquecimento de EPG: o mapper não pode
-   apagar “Alternativo” ou a região antes do filtro.
-3. Remove canais coincidentes com a referência Saimo por identidade/aliases,
-   ignorando qualidade, mas preservando diferenças regionais explícitas.
-4. Admite Fox Kids/Retrô Cartoon e extras explicitamente revisados. Batista Play
-   (`rest_catalog_1`), IPTV-ORG e outros extras precisam também corresponder ao
-   diretório Televisão.TV, além de passar pelos bloqueios anteriores. Canal pago
-   conhecido continua bloqueado mesmo se listado no diretório.
-5. Seleciona um transporte por identidade: Batista Play revisado → Televisão.TV
-   revisado → IPTV-ORG → extras, depois qualidade e bitrate. Remove repetição
-   de URL. A seleção de fonte não é fallback instantâneo durante reprodução.
-
-A lista de nomes pagos é conservadora e revisável; o diretório não fornece uma
-certificação de direitos ou de que todos os canais sejam gratuitos. Candidatos
-sem correspondência revisada ficam fora. Não se infere autorização a partir
-de uma resposta HTTP pública. Mudanças da origem podem exigir nova revisão.
-
-Televisão.TV `channels-data.php` contém metadados, **não uma M3U**. `exclude`
-remove slugs literais: `exclude=sbt,tv-brasil` omite esses dois e preserva os
-demais; slug desconhecido não muda a resposta. O índice foi usado para comparar
-nomes, não como prova de playback. O adapter opt-in de descoberta no catálogo
-limita slugs e hosts revisados. Players amostrados retornaram 404 no piloto;
-nenhum HTML/iframe foi publicado como mídia. Retrô Cartoon usa fonte existente,
-independente dessa falha. Detalhes: `live-stream-catalog/docs/televisao-source.md`.
-
-## EPG
-
-Open EPG foi acrescentado aos fallbacks padrão. A geração também mantém os
-providers já existentes. Os coletores GuiaDeTv/MeuGuia têm parsers, fixtures,
-cache e manifestos explícitos; ficam opt-in e desativados no piloto público
-pelas condições de uso e pela falta de cobertura adicional confirmada. Ver
-[coletores e proveniência](epg-collectors.md).
-
-A programação Fox Kids usa o catálogo real apontado pela página do canal,
-rejeitando primeiro o XMLTV publicado quando vencido. Respeita horários, dias,
-vigência, ciclos finitos e eventos. Usa títulos genéricos de série/bloco quando
-o episódio não é seguro; não desloca datas antigas e não fabrica uma grade para
-ocultar falhas. Foram validados dias úteis, virada de dia e uma janela de sete
-dias sem lacunas no snapshot de teste. Isso verifica a agenda declarada, não a
-identidade de cada desenho transmitido no vídeo.
-
-O guia Companion descarta programas encerrados, recorta até três dias e preserva
-os horários da origem. Outros canais podem ficar sem programação; isso aparece
-individualmente no metadata. Fox Kids precisa ter agora **e** futuro, mesmo que
-o XMLTV agregado ainda tenha milhares de programas válidos de outros canais.
-
-## YouTube
-
-Uma página YouTube não é um stream HLS para Media3/TiviMate. URLs resolvidas
-podem expirar e depender do IP; não são tornadas públicas para contornar isso.
-O arquivo Kodi usa a [URI oficial do complemento](https://kodi.wiki/view/Add-on:YouTube)
-`plugin://plugin.video.youtube/play/?video_id=...` com IDs públicos de lives
-resolvidas recentemente. Exige o complemento e sua configuração no cliente;
-não foi testado em TV. Não usar essa lista no Saimo ou num player sem resolver.
-
-Seleciona uma live por identidade, exclui CazéTV e aliases de canais já Saimo,
-rádios, itens offline e observações com mais de seis horas. O metadata diferencia
-os canais Kodi da seleção portátil. As lives podem terminar antes da próxima
-rodada; não há promessa de reprodução permanente nem grade inventada para elas.
-
-## Geração e operação
-
-Com `legal-iptv` instalado no ambiente do projeto:
+Enable the existing Companion output flags together with the main outputs:
 
 ```sh
-python -m legal_iptv \
-  --live-catalog-file ../live-stream-catalog/channels.json \
+python -m legal_iptv --profile full --validate-streams \
+  --output playlist.m3u --meta-output playlist.meta.json \
+  --guide-output guide.xml \
+  --guide-url https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml \
   --companion-output companion.m3u \
   --companion-meta-output companion.meta.json \
-  --companion-guide-output companion-guide.xml \
-  --companion-youtube-output companion-youtube.kodi.m3u
+  --companion-guide-output companion-guide.xml
 ```
 
-Isso mantém a geração normal da playlist principal e acrescenta os quatro
-artefatos. Os caminhos precisam ser distintos. Em teste offline é possível
-fornecer `--companion-reference-file` com snapshot sanitizado versão 2 válido.
-`--companion-guide-url` altera apenas o endereço público do XMLTV no cabeçalho.
+The Saimo reference stores names and hashes only, never its media credentials. Each generation subtracts those normalized/aliased identities from the main winners. Its six-hour cache may fall back to the original timestamp for at most 48 hours. Without a valid reference, generation fails closed instead of publishing an unfiltered Companion. Reference version 3 reads only Saimo catalogue/extras/disabled-host endpoints; it no longer depends on the Televisão.TV directory. Version 2 caches remain readable during migration. This reference controls membership, not playback.
 
-Referências: cache privado de seis horas, retenção máxima de 48 horas em falha,
-sem renovar o timestamp antigo. Cache inválido é refeito; sem referência válida
-a geração recusa publicar uma lista sem filtro. `--companion-reference-cache`
-permite controlar o caminho. Caches dos coletores ficam em `.epg-cache/`, ignorados
-no Git, com timestamps e limites preservados pelo ops.
+`--validation-due-only --live-catalog-file channels.json` validates due transport contexts using local source/EPG/reference caches. It forbids forced refreshes and does not rediscover source catalogs or download guides. Missing required source caches fail without publishing partial output. It does not extend source timestamps, suppressed failures or transport expiry.
 
-O ops mantém geração/verificação/promoção/publicação no mesmo conjunto. Falha de
-referência, saída ou EPG obrigatório **bloqueia a rodada inteira**, preservando a
-publicação anterior. `LEGAL_COMPANION_ENABLED=false` recupera o contrato anterior
-sem gerar/promover Companion. Não há desligamento silencioso de gates. O piloto
-versionado não substitui o rebuild/redeploy do ops para renovar automaticamente
-o guia; sem agendamento, os programas acabam no horizonte escrito no XMLTV.
+The CLI requires recent media proof by default. An initial timeout or unsupported sample stays pending and cannot mask a confirmed lower provider. A first inconclusive result may retain a previous real media success within the configured maximum age; it cannot resurrect a rejected context. `--no-require-media-proof` is provided for explicit offline fixture generation, not the production operations pipeline. Library configurations retain the opt-in field for compatibility.
 
-## Verificação do piloto
-
-Testes cobrem identidade regional, aliases, alternativos/pagos, dados FrostView,
-headers/credenciais, referências incompletas, recuperação de cache, IDs XMLTV,
-cobertura presente/futura obrigatória e saída Kodi. O ops também verifica
-contagens, schemas, IDs de guia/playlist, URI Kodi estrita e rollback do conjunto.
-
-Antes de publicar um novo piloto, verificar artefatos reais com
-`iptv-ops/scripts/pipeline_artifacts.py:verify_companion`, conferir ausência de
-URLs/headers sensíveis e registrar cobertura e probes separados. Sucesso de
-manifesto/segmento HTTP não prova decodificação ou reprodução no aparelho final.
+Public artifacts are playlists, metadata and the shared guide. Stream status, removals, references and upstream caches remain private. All temporary writes are atomic with failure cleanup. The operations repository stages and verifies the complete bundle before promotion; do not use its publishing wrapper as a diagnostic command.

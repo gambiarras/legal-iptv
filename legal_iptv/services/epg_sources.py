@@ -4,6 +4,7 @@ EPG_URLS = [
     PRIMARY_EPG_URL,
     "https://epg.pw/xmltv/epg_BR.xml",
     "https://iptv-epg.org/files/epg-br.xml",
+    "https://www.open-epg.com/files/brazil3.xml",
     "https://i.mjh.nz/Plex/all.xml",
     "https://i.mjh.nz/SamsungTVPlus/all.xml",
     "https://i.mjh.nz/PlutoTV/br.xml",

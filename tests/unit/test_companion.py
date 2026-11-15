@@ -59,7 +59,7 @@ class CompanionSelectionTest(unittest.TestCase):
         selected, _ = select_companion_channels(values, reference())
         self.assertEqual({item.tvg_id for item in selected}, {"FoxKids.br", "RetroCartoon.br"})
 
-    def test_rejects_paid_alternative_frost_and_unreviewed_batista(self):
+    def test_rejects_paid_alternative_frost_but_does_not_require_directory_membership(self):
         values = [channel("HBO Mundi", provider_id="rest_catalog_1"),
                   channel("TV Pública Alternativo", provider_id="rest_catalog_1"),
                   channel("Fox Kids", provider_id="addon_catalog_1"),
@@ -67,10 +67,9 @@ class CompanionSelectionTest(unittest.TestCase):
                   channel("Unreviewed", id="other", provider_id="rest_catalog_1")]
         values[-1].source = "live_stream_catalog"
         selected, excluded = select_companion_channels(values, reference())
-        self.assertFalse(selected)
+        self.assertEqual([item.id for item in selected], ["other"])
         self.assertEqual([row["reason"] for row in excluded], [
-            "paid_channel", "alternative", "excluded_provider", "excluded_provider",
-            "not_in_reviewed_public_selection"])
+            "paid_channel", "alternative", "excluded_provider", "excluded_provider"])
 
     def test_deduplicates_quality_then_prefers_batista_for_reviewed_public_channel(self):
         values = [channel("TV Pública", id="one", source="iptv_org", resolution="1080p"),
@@ -148,6 +147,19 @@ class CompanionGuideTest(unittest.TestCase):
 
 
 class CompanionReferenceTest(unittest.TestCase):
+    def test_saimo_reference_does_not_depend_on_the_televisao_directory(self):
+        catalogue = "\n".join(f"canal: Base {i}\nfonte: https://media.example.test/{i}" for i in range(25))
+        client = Mock()
+        client.get_text.side_effect = [catalogue, "#EXTM3U"]
+        client.get_json.return_value = {"desativados": []}
+        with tempfile.TemporaryDirectory() as directory:
+            reference_data = load_reference(client, Path(directory) / "reference.json")
+        self.assertEqual(reference_data["version"], 3)
+        self.assertEqual(len(reference_data["saimo_channels"]), 25)
+        self.assertEqual(reference_data["televisao_channels"], [])
+        self.assertEqual(client.get_json.call_count, 1)
+        self.assertNotIn("channels-data.php", json.dumps(reference_data))
+
     def test_android_extras_use_tvg_id_and_preserve_distinct_base_records(self):
         catalogue = "\n".join(f"canal: Base {i}\nfonte: https://media.example.test/{i}.m3u8" for i in range(25))
         catalogue += "\ncanal: Rede TV!\nfonte: https://a.example.test/live.m3u8"

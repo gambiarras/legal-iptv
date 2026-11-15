@@ -8,6 +8,19 @@ from legal_iptv.config import AppConfig
 
 
 class CLITest(unittest.TestCase):
+    def test_due_only_uses_local_inputs_and_cannot_force_network_refresh(self):
+        with patch.object(sys, "argv", ["legal-iptv", "--validation-due-only",
+                                        "--live-catalog-file", "channels.json"]):
+            config = AppConfig.from_args(parse_args())
+        self.assertTrue(config.validation_due_only)
+        self.assertTrue(config.validate_streams)
+        self.assertFalse(config.ensure_guide_enabled)
+        for flags in (["--validation-due-only"],
+                      ["--validation-due-only", "--live-catalog-file", "channels.json", "--refresh-epg-cache"]):
+            with patch.object(sys, "argv", ["legal-iptv", *flags]), patch("sys.stderr"):
+                with self.assertRaises(SystemExit):
+                    parse_args()
+
     def test_positive_int_accepts_positive_values(self):
         self.assertEqual(positive_int("10"), 10)
 
@@ -73,6 +86,7 @@ class CLITest(unittest.TestCase):
         self.assertEqual(config.validation_max_success_age, 86400)
         self.assertEqual(config.validation_retry_delay, 900)
         self.assertFalse(config.force_validation)
+        self.assertTrue(config.require_media_proof)
         with patch.object(
             sys,
             "argv",

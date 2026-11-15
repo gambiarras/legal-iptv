@@ -265,11 +265,12 @@
    },
    {
       "id":"NovaTVI.br",
-      "tvg_id":null,
+      "tvg_id":"NovaTVI.br",
       "name":"Nova TVI Petrópolis",
       "url":"https://stmv8.samcast.com.br/novatvi2098/novatvi2098/playlist.m3u8",
       "logo":"https://pa-str.srvsite.com/arquivos/7140/cabecalho-7140-20240911033310.png",
-      "group":"general"
+      "group":"general",
+      "protocol":"hls"
    },
    {
       "id":"Kanade.br",
@@ -281,11 +282,12 @@
    },
    {
       "id":"TVSonata.br",
-      "tvg_id":null,
+      "tvg_id":"TVSonata.br",
       "name":"TV Sonata",
-      "url":"https://video04.logicahost.com.br/isonata/isonata/chunklist_w417588321.m3u8",
+      "url":"https://play.tvsonata.com.br/LiveApp/streams/tvsonata.m3u8",
       "logo":"https://tvsonata.com.br/storage/690/config/YIpr9GvubiZ14KntfgXqTob4kMpue1cFo2R5h91h.png",
-      "group":"classic"
+      "group":"classic",
+      "protocol":"hls"
    },
    {
       "id":"CNNBrasil.br",

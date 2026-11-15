@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from typing import Any
 
 from legal_iptv.models import Channel
-from legal_iptv.services.stream_status import _parse_datetime
+from legal_iptv.services.stream_status import _parse_datetime, unsupported_probe_error
 
 POLICY_VERSION = 1
 TRANSIENT_TYPES = {"youtube", "twitch", "kick"}
@@ -178,9 +178,11 @@ def can_reuse(
     streak = record.get(
         "consecutive_successes" if success is True else "consecutive_failures"
     )
-    if type(streak) is not int or streak < 1 or "last_probe_active" not in record:
+    unsupported = unsupported_probe_error(record.get("error_type"))
+    if type(streak) is not int or streak < (0 if unsupported else 1) or "last_probe_active" not in record:
         return False
-    cap = policy.interval(success is True, streak, transient=context.transient)
+    cap = (policy.base_seconds if unsupported
+           else policy.interval(success is True, streak, transient=context.transient))
     return (now - checked).total_seconds() < cap and (
         deadline - checked
     ).total_seconds() <= cap
@@ -222,10 +224,13 @@ def schedule_record(
     old = previous.get("consecutive_successes", 0) if previous else 0
     old = old if type(old) is int and old >= 0 else 0
     successes = min(old + 1, 4) if active is True else 0
-    interval = policy.interval(
-        active is True,
-        successes if active is True else record["consecutive_failures"],
-        transient=context.transient,
+    interval = (
+        policy.base_seconds if unsupported_probe_error(record.get("error_type"))
+        else policy.interval(
+            active is True,
+            successes if active is True else record["consecutive_failures"],
+            transient=context.transient,
+        )
     )
     deadline = now + timedelta(seconds=interval)
     if context.expires_at is not None:

@@ -296,7 +296,7 @@ class EPGMapperTest(unittest.TestCase):
                 self.assertEqual(enriched[0].tvg_id, tvg_id)
                 self.assertEqual(enriched[0].name, name)
 
-    def test_uses_configured_regional_fallback_prefixes(self):
+    def test_does_not_assign_international_guide_to_unknown_regional_feed(self):
         channels = [
             make_channel(
                 id="globo.unknown",
@@ -312,10 +312,10 @@ class EPGMapperTest(unittest.TestCase):
 
         enriched = enrich_epg_metadata(channels)
 
-        self.assertEqual(enriched[0].tvg_id, "GloboInternacional.br")
-        self.assertEqual(enriched[1].tvg_id, "RecordTVInternational.br")
+        self.assertIsNone(enriched[0].tvg_id)
+        self.assertIsNone(enriched[1].tvg_id)
 
-    def test_exact_regional_alias_precedes_configured_prefix(self):
+    def test_roraima_does_not_receive_an_unverified_national_schedule(self):
         channel = make_channel(
             id="record.roraima",
             name="RecordTV Roraima",
@@ -324,7 +324,7 @@ class EPGMapperTest(unittest.TestCase):
 
         enriched = enrich_epg_metadata([channel])
 
-        self.assertEqual(enriched[0].tvg_id, "RecordTVBrasil.br")
+        self.assertIsNone(enriched[0].tvg_id)
 
     def test_maps_name_from_xmltv_aliases(self):
         channel = make_channel(
