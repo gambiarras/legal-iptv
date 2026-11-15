@@ -1,7 +1,7 @@
 {
   "name": "Companion",
   "schema_version": 1,
-  "generated_at": "2026-11-15T01:00:53.158409+00:00",
+  "generated_at": "2026-11-15T01:30:49.182850+00:00",
   "selected_channels": 61,
   "youtube_selected_channels": 10,
   "required_epg_ids": [
@@ -237,7 +237,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 104,
+      "programmes": 103,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T22:00:00+00:00"
@@ -2578,16 +2578,8 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
