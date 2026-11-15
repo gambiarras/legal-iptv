@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T11:22:06.390507+00:00",
+  "generated_at": "2026-11-15T11:30:42.564780+00:00",
   "selected_channels": 227,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -209,13 +209,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 122,
+      "programmes": 121,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T11:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 189,
+      "programmes": 188,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T11:15:00+00:00"
@@ -1343,7 +1343,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 222,
+      "programmes": 221,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T11:30:00+00:00"
@@ -3566,6 +3566,10 @@
       }
     ],
     "skipped": [
+      {
+        "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
