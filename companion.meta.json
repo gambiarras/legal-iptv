@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T23:00:58.920516+00:00",
-  "selected_channels": 231,
+  "generated_at": "2026-11-15T23:32:15.394701+00:00",
+  "selected_channels": 232,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 379,
+      "programmes": 386,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T20:00:00+00:00"
+      "horizon_at": "2026-11-19T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 30,
@@ -196,6 +196,12 @@
       "future": false,
       "horizon_at": null
     },
+    "ElyTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "FalaLitoral.br": {
       "programmes": 0,
       "current": false,
@@ -209,16 +215,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 134,
+      "programmes": 142,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T20:00:00+00:00"
+      "horizon_at": "2026-11-19T00:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 185,
+      "programmes": 195,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T20:00:00+00:00"
+      "horizon_at": "2026-11-18T23:45:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -365,10 +371,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 37,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T20:45:00+00:00"
+      "horizon_at": "2026-11-19T03:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -989,10 +995,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 61,
+      "programmes": 67,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T20:00:00+00:00"
+      "horizon_at": "2026-11-19T00:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1367,10 +1373,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 219,
+      "programmes": 222,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T22:00:00+00:00"
+      "horizon_at": "2026-11-19T00:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1803,6 +1809,14 @@
       "id": "ElementalChannel.br",
       "name": "Elemental Channel",
       "tvg_id": "ElementalChannel.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "ElyTV.br",
+      "name": "ElyTV",
+      "tvg_id": "ElyTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3619,10 +3633,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
