@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-15T15:22:06.529668+00:00",
-  "selected_channels": 227,
+  "generated_at": "2026-11-15T15:31:41.949113+00:00",
+  "selected_channels": 228,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -209,16 +209,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 127,
+      "programmes": 128,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T15:30:00+00:00"
+      "horizon_at": "2026-11-18T16:00:00+00:00"
     },
     "Futura.br": {
       "programmes": 192,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T15:30:00+00:00"
+      "horizon_at": "2026-11-18T16:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -974,7 +974,7 @@
       "programmes": 63,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T15:30:00+00:00"
+      "horizon_at": "2026-11-18T18:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1115,6 +1115,12 @@
       "horizon_at": null
     },
     "TVBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1346,7 +1352,7 @@
       "programmes": 223,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-18T15:30:00+00:00"
+      "horizon_at": "2026-11-18T16:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3268,6 +3274,14 @@
       "name": "TV Brasil Angola",
       "tvg_id": "Local.tvbrasilangola.br",
       "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVBrasilOeste.br",
+      "name": "TV Brasil Oeste",
+      "tvg_id": "TVBrasilOeste.br",
+      "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
     },
