@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T14:22:06.465960+00:00",
+  "generated_at": "2026-11-16T14:30:44.903188+00:00",
   "selected_channels": 233,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 143,
+      "programmes": 142,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T13:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 203,
+      "programmes": 202,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T13:30:00+00:00"
@@ -1013,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 70,
+      "programmes": 69,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T14:30:00+00:00"
@@ -3652,10 +3652,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
