@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T11:00:45.472656+00:00",
-  "selected_channels": 234,
+  "generated_at": "2026-11-16T11:31:55.258519+00:00",
+  "selected_channels": 231,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 386,
+      "programmes": 387,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T10:25:00+00:00"
+      "horizon_at": "2026-11-19T12:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 36,
@@ -35,13 +35,13 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 10,
+      "programmes": 13,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-16T23:00:00+00:00"
+      "horizon_at": "2026-11-17T01:30:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 37,
+      "programmes": 36,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:39:06+00:00"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 139,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T08:30:00+00:00"
+      "horizon_at": "2026-11-19T12:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 190,
+      "programmes": 205,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T08:15:00+00:00"
+      "horizon_at": "2026-11-19T11:35:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T09:00:00+00:00"
+      "horizon_at": "2026-11-19T13:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1006,12 +1006,6 @@
       "future": false,
       "horizon_at": null
     },
-    "RecordTV.br": {
-      "programmes": 67,
-      "current": true,
-      "future": true,
-      "horizon_at": "2026-11-19T10:00:00+00:00"
-    },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
       "current": false,
@@ -1150,12 +1144,6 @@
       "future": false,
       "horizon_at": null
     },
-    "TVBahia.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
@@ -1193,12 +1181,6 @@
       "horizon_at": null
     },
     "TVERS.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVFronteira.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1385,10 +1367,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 201,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T08:21:00+00:00"
+      "horizon_at": "2026-11-19T12:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1415,12 +1397,12 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-16T05:30:39.163769+00:00",
+  "reference_generated_at": "2026-11-16T11:30:39.871080+00:00",
   "reference_retained": false,
   "saimo_channels": 249,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 65
+    "already_in_saimo": 64
   },
   "excluded_channels": [
     {
@@ -1581,11 +1563,6 @@
     {
       "id": "PlayTV.br",
       "name": "Play TV",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "Record.br",
-      "name": "Record",
       "reason": "already_in_saimo"
     },
     {
@@ -2871,14 +2848,6 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.30",
-      "name": "TV Record",
-      "tvg_id": "RecordTV.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": true,
-      "epg_future": true
-    },
-    {
       "id": "rest_catalog_1.93",
       "name": "TV Rio Preto",
       "tvg_id": "Local.tvriopreto.br",
@@ -3343,14 +3312,6 @@
       "epg_future": false
     },
     {
-      "id": "TVBahia.br",
-      "name": "TV Bahia",
-      "tvg_id": "TVBahia.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.126",
       "name": "TV Brasil Angola",
       "tvg_id": "Local.tvbrasilangola.br",
@@ -3418,14 +3379,6 @@
       "id": "TVDifusao.br",
       "name": "TV Difusao",
       "tvg_id": "TVDifusao.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "TVFronteira.br",
-      "name": "TV Fronteira",
-      "tvg_id": "TVFronteira.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
