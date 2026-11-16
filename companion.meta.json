@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T15:22:05.585892+00:00",
+  "generated_at": "2026-11-16T15:30:45.215820+00:00",
   "selected_channels": 234,
-  "youtube_selected_channels": 7,
+  "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 145,
+      "programmes": 144,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T15:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 205,
+      "programmes": 204,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T15:30:00+00:00"
@@ -1013,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 70,
+      "programmes": 69,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T15:30:00+00:00"
@@ -1385,7 +1385,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 216,
+      "programmes": 215,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T15:30:00+00:00"
@@ -3635,8 +3635,16 @@
         "name": "Classic Mr Bean"
       },
       {
+        "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
+        "name": "Diário TV Teresópolis"
+      },
+      {
         "id": "mr-bean.tv.oPonPGALYaU",
         "name": "Mr Bean"
+      },
+      {
+        "id": "pica-pau.br.mUB69Xk0qwY",
+        "name": "Pica-Pau"
       },
       {
         "id": "PowerRangersTV.br.cQHlHWNg5zA",
@@ -3647,7 +3655,7 @@
         "name": "Santuário Nacional de Aparecida"
       },
       {
-        "id": "tres-espias-demais.br.QdS8a_zUuk0",
+        "id": "tres-espias-demais.br.nfs5DPFMrcc",
         "name": "Três Espiãs Demais"
       },
       {
@@ -3669,14 +3677,6 @@
         "reason": "not_a_television_live"
       },
       {
-        "name": "Diário TV Teresópolis",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
       },
@@ -3689,24 +3689,12 @@
         "reason": "not_a_recent_resolved_video"
       },
       {
-        "name": "Pica-Pau",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Pica-Pau",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
         "name": "Record News Live",
         "reason": "already_in_saimo"
       },
       {
         "name": "SBT",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Três Espiãs Demais",
-        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
