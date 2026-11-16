@@ -1,4 +1,32 @@
-# Companion — piloto de 14/11/2026
+# Evidências dos pilotos
+
+As seções abaixo são snapshots datados, não status ao vivo. Veja o
+[relatório consolidado](../delivery-2026-11-15.md) para a implementação entregue.
+
+## Listas unificadas — 15/11/2026
+
+The [evolution verification](evolution-2026-11-15.json) records the updated
+selection and storage checks: 294 main channels, 229 Companion channels, no
+duplicate identities or Saimo overlap, and a shared guide of 995,025 bytes.
+The guide declares all selected IDs; only channels with actual source schedules
+have programmes. Fox Kids has 114 slots, TV Sonata three dated slots, and Nova
+TVI no invented schedule. Chespirito was not published.
+
+Companion now subtracts Saimo from the same main winners; it is no longer gated
+by membership in the Televisão.TV directory. This intentional change explains
+the larger complementary count compared with the first narrow pilot below.
+
+Media was sampled with bounded GETs on 15 November. Subsequent generation reused
+those private observations; a fresh successful sample is required for a new or
+rejected context. These checks do not prove continuous availability. The public
+evidence contains counts and timings, never private status URLs or raw caches.
+
+Warm generation took about 0.54 seconds after the selection cache stabilized.
+The separate projection benchmark processed a 96 MB source with a process peak
+RSS of approximately 47 MB. Its smaller output also omits long descriptions;
+the benchmark is not a server/browser measurement.
+
+## Piloto inicial — 14/11/2026
 
 Snapshot publicado: 69 canais HTTP na Companion e nove lives na lista Kodi,
 contra 1.383 entradas no artefato completo local de referência. O arquivo
@@ -36,25 +64,3 @@ Os dois JSON anexos contêm somente status, tamanhos, tipos e resultados das
 sondagens. Não incluem URLs de mídia ou credenciais. A renovação automática
 depende de instalar a versão atualizada do ops; o guia estático tem horizonte
 finito, e sucesso deste piloto não comprova atualização em produção.
-# Unified lists, 15 November 2026
-
-The [evolution verification](evolution-2026-11-15.json) records the updated
-selection and storage checks: 294 main channels, 229 Companion channels, no
-duplicate identities or Saimo overlap, and a shared guide of 995,025 bytes.
-The guide declares all selected IDs; only channels with actual source schedules
-have programmes. Fox Kids has 114 slots, TV Sonata three dated slots, and Nova
-TVI no invented schedule. Chespirito was not published.
-
-Companion now subtracts Saimo from the same main winners; it is no longer gated
-by membership in the Televisão.TV directory. This intentional change explains
-the larger complementary count compared with the first narrow pilot below.
-
-Media was sampled with bounded GETs on 15 November. Subsequent generation reused
-those private observations; a fresh successful sample is required for a new or
-rejected context. These checks do not prove continuous availability. The public
-evidence contains counts and timings, never private status URLs or raw caches.
-
-Warm generation took about 0.54 seconds after the selection cache stabilized.
-The separate projection benchmark processed a 96 MB source with a process peak
-RSS of approximately 47 MB. Its smaller output also omits long descriptions;
-the benchmark is not a server/browser measurement.
