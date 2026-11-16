@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T12:32:04.781078+00:00",
-  "selected_channels": 229,
+  "generated_at": "2026-11-16T13:01:56.766970+00:00",
+  "selected_channels": 233,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -35,13 +35,13 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 12,
+      "programmes": 16,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T01:30:00+00:00"
+      "horizon_at": "2026-11-17T05:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:39:06+00:00"
@@ -230,13 +230,13 @@
       "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T13:00:00+00:00"
+      "horizon_at": "2026-11-19T13:30:00+00:00"
     },
     "Futura.br": {
       "programmes": 205,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T12:45:00+00:00"
+      "horizon_at": "2026-11-19T13:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -358,6 +358,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.comedycentralwebtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.comedyclub.br": {
       "programmes": 0,
       "current": false,
@@ -370,11 +376,17 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.famatv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.gazeta.br": {
       "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T13:00:00+00:00"
+      "horizon_at": "2026-11-19T16:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -718,6 +730,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvcine.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvcom.br": {
       "programmes": 0,
       "current": false,
@@ -815,6 +833,12 @@
       "horizon_at": null
     },
     "Local.tvmocambique.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvmontanha.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -992,7 +1016,7 @@
       "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T12:50:00+00:00"
+      "horizon_at": "2026-11-19T14:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1358,7 +1382,7 @@
       "programmes": 215,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T13:00:00+00:00"
+      "horizon_at": "2026-11-19T13:15:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1729,10 +1753,10 @@
       "epg_future": false
     },
     {
-      "id": "RetroCartoon.br",
-      "name": "Retro Cartoon",
-      "tvg_id": "RetroCartoon.br",
-      "provider_id": "iptv_org",
+      "id": "TVCine.br",
+      "name": "TV Cine",
+      "tvg_id": "Local.tvcine.br",
+      "provider_id": "extra",
       "epg_current": false,
       "epg_future": false
     },
@@ -2073,6 +2097,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.retro-cartoon",
+      "name": "Retrô Cartoon",
+      "tvg_id": "RetroCartoon.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.26",
       "name": "TV Kids Mais",
       "tvg_id": "Local.tvkidsmais.br",
@@ -2084,6 +2116,14 @@
       "id": "rest_catalog_1.74",
       "name": "Euro News",
       "tvg_id": "Local.euronews.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.63",
+      "name": "Fama TV",
+      "tvg_id": "Local.famatv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2188,6 +2228,14 @@
       "id": "rest_catalog_1.79",
       "name": "TV Maná Inglês",
       "tvg_id": "Local.tvmanaingles.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.60",
+      "name": "TV Montanha",
+      "tvg_id": "Local.tvmontanha.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2833,14 +2881,6 @@
       "epg_future": false
     },
     {
-      "id": "PlusMaisUm.br",
-      "name": "+MaisUm",
-      "tvg_id": "PlusMaisUm.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.58",
       "name": "Adesso TV",
       "tvg_id": "AdessoTV.br",
@@ -2977,6 +3017,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.156",
+      "name": "Comedy Central WebTV",
+      "tvg_id": "Local.comedycentralwebtv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.118",
       "name": "Comedy Club",
       "tvg_id": "Local.comedyclub.br",
@@ -3076,6 +3124,14 @@
       "id": "rest_catalog_1.50",
       "name": "Lucas TV",
       "tvg_id": "Local.lucastv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.87",
+      "name": "Mais Um",
+      "tvg_id": "PlusMaisUm.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3605,6 +3661,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
