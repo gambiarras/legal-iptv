@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T18:00:50.911459+00:00",
+  "generated_at": "2026-11-16T18:07:08.171570+00:00",
   "selected_channels": 235,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -2901,14 +2901,6 @@
       "epg_future": false
     },
     {
-      "id": "PlusMaisUm.br",
-      "name": "+MaisUm",
-      "tvg_id": "PlusMaisUm.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.58",
       "name": "Adesso TV",
       "tvg_id": "AdessoTV.br",
@@ -3152,6 +3144,14 @@
       "id": "rest_catalog_1.50",
       "name": "Lucas TV",
       "tvg_id": "Local.lucastv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.87",
+      "name": "Mais Um",
+      "tvg_id": "PlusMaisUm.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
