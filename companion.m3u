@@ -165,11 +165,19 @@ https://utvitv.acessaradios.com.br/utvitv/utvitv.stream/chunklist_w1641872797.m3
 #EXTGRP:TV Aberta
 https://video04.logicahost.com.br/tvnovaweb/tvnovaweb/playlist.m3u8
 
+#EXTINF:-1 group-title="TV Aberta" tvg-id="RecordTV.br" tvg-name="TV Record" tvg-logo="https://i.postimg.cc/PfKLvRv5/record-tv.png", TV Record
+#EXTGRP:TV Aberta
+https://cdn.live.br1.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8
+
 #EXTINF:-1 group-title="TV Aberta" tvg-id="Local.tvriopreto.br" tvg-name="TV Rio Preto" tvg-logo="https://i.postimg.cc/y8PZh1PR/tv-rio-preto-logo.png", TV Rio Preto
 #EXTGRP:TV Aberta
 https://video02.logicahost.com.br/tvriopreto/tvriopreto/playlist.m3u8
 
 ### Canais Variedades
+
+#EXTINF:-1 group-title="Variedades" tvg-id="PlusMaisUm.br" tvg-name="+MaisUm" tvg-logo="https://i.ibb.co/ZRDvqJcf/Logo-Mais-Um-original-sem-fundo.png", +MaisUm
+#EXTGRP:Variedades
+https://stream.ichibansys.com:3230/hybrid/play.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="AdessoTV.br" tvg-name="Adesso TV" tvg-logo="https://i.postimg.cc/ZqZ88TZv/adesso-tv.jpg", Adesso TV
 #EXTGRP:Variedades
@@ -235,10 +243,6 @@ https://stmv2.samcast.com.br/carla7379/carla7379/playlist.m3u8
 #EXTGRP:Variedades
 https://video04.logicahost.com.br/cloudingtv/cloudingtv/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="Local.comedycentralwebtv.br" tvg-name="Comedy Central WebTV" tvg-logo="https://i.postimg.cc/7ZHB90cg/comedy-centralwebtv.jpg", Comedy Central WebTV
-#EXTGRP:Variedades
-https://stmv2.srvif.com/gafeab/gafeab/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.comedyclub.br" tvg-name="Comedy Club" tvg-logo="https://i.postimg.cc/25fbwYpT/comedy-club.jpg", Comedy Club
 #EXTGRP:Variedades
 https://video11.logicahost.com.br/comedyclub/comedyclub/playlist.m3u8
@@ -290,10 +294,6 @@ https://stmv3.voxtvhd.com.br/leandroenzo/leandroenzo/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.lucastv.br" tvg-name="Lucas TV" tvg-logo="https://i.postimg.cc/76cC5fk1/lucas-tv-logo.jpg", Lucas TV
 #EXTGRP:Variedades
 https://stmv1.srvif.com/lucastv/lucastv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="PlusMaisUm.br" tvg-name="Mais Um" tvg-logo="https://i.postimg.cc/NFWhnwMH/mais_um.jpg", Mais Um
-#EXTGRP:Variedades
-https://stream.ichibansys.com:3230/hybrid/play.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.nbxtv.br" tvg-name="NBX TV" tvg-logo="https://i.postimg.cc/YSLSDYj8/nbx-tv.jpg", NBX TV
 #EXTGRP:Variedades
@@ -801,10 +801,6 @@ https://tvgrandenatalhdtv.duckdns.org:3334/hls/live.m3u8
 #EXTGRP:Internacional
 https://598c4b93.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UGxleF9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8
 
-#EXTINF:-1 group-title="Internacional" tvg-id="Local.famatv.br" tvg-name="Fama TV" tvg-logo="https://i.postimg.cc/mg6b26n8/tv_fama.jpg", Fama TV
-#EXTGRP:Internacional
-https://tv2.fastcast4u.com:3310/live/famatvlive.m3u8
-
 #EXTINF:-1 group-title="Internacional" tvg-id="Local.gringotv.br" tvg-name="Gringo TV" tvg-logo="https://i.postimg.cc/QMrSVHMB/gringo_tv.jpg", Gringo TV
 #EXTGRP:Internacional
 https://amogonetworx-grjngo-2-eu.plex.wurl.tv/playlist.m3u8
@@ -857,10 +853,6 @@ https://w1.manasat.com/tvmana-brasil/smil:tvmana-brasil.smil/playlist.m3u8
 #EXTGRP:Internacional
 https://w1.manasat.com/tvmana-english/smil:tvmana-english.smil/playlist.m3u8
 
-#EXTINF:-1 group-title="Internacional" tvg-id="Local.tvmontanha.br" tvg-name="TV Montanha" tvg-logo="https://i.postimg.cc/bwnwF4dr/tv-montanha-logo.jpg", TV Montanha
-#EXTGRP:Internacional
-https://stmv1.srvif.com/tvmontana/tvmontana/playlist.m3u8
-
 #EXTINF:-1 group-title="Internacional" tvg-id="Local.tvmocambique.br" tvg-name="TV Moçambique" tvg-logo="https://i.postimg.cc/x8stbKJF/tv_mana_mocanbique.jpg", TV Moçambique
 #EXTGRP:Internacional
 https://w2.manasat.com/tvmana-mz/smil:tvmana-mz.smil/playlist.m3u8
@@ -879,9 +871,9 @@ https://live.wayone.cloud/waytv/waytv1/playlist.m3u8
 
 ### Canais Clássico
 
-#EXTINF:-1 group-title="Clássico" tvg-id="Local.tvcine.br" tvg-name="TV Cine" tvg-logo="https://www.cxtv.com.br/img/Tvs/Logo/webp-m/0d8ea456a45f1f4837ffb24db7646f8f.webp", TV Cine
+#EXTINF:-1 group-title="Clássico" tvg-id="RetroCartoon.br" tvg-name="Retro Cartoon" tvg-logo="https://i.imgur.com/hIlEfhl.png", Retro Cartoon
 #EXTGRP:Clássico
-https://stmv1.srvif.com/tvserie/tvserie/playlist.m3u8
+https://stmv1.video.brstream.com.br/retrotv/retrotv/chunklist_w1069200121.m3u8
 
 ### Canais Infantis
 
@@ -908,10 +900,6 @@ https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8
 #EXTINF:-1 group-title="Infantis" tvg-id="Local.otakusign.br" tvg-name="Otaku Sign" tvg-logo="https://i.postimg.cc/jSz0YC6d/otaku-sig.png", Otaku Sign
 #EXTGRP:Infantis
 https://cdn.jsdelivr.net/gh/joquinha2025/fora-do-ar/em-manutencao.m3u8
-
-#EXTINF:-1 group-title="Infantis" tvg-id="RetroCartoon.br" tvg-name="Retrô Cartoon" tvg-logo="https://i.postimg.cc/pXFrrsjk/retrocartoon.jpg", Retrô Cartoon
-#EXTGRP:Infantis
-https://stmv1.video.brstream.com.br/retrotv/retrotv/chunklist_w1857106462.m3u8
 
 #EXTINF:-1 group-title="Infantis" tvg-id="Local.tvkidsmais.br" tvg-name="TV Kids Mais" tvg-logo="https://i.postimg.cc/Qxh10Z7j/tv-kids-mais.jpg", TV Kids Mais
 #EXTGRP:Infantis
