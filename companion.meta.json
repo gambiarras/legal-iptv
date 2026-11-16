@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T01:52:05.398314+00:00",
+  "generated_at": "2026-11-16T02:00:43.283353+00:00",
   "selected_channels": 232,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,13 +17,13 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 360,
+      "programmes": 356,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:19:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 29,
+      "programmes": 28,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T01:30:00+00:00"
@@ -371,7 +371,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 38,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T03:00:00+00:00"
@@ -1331,10 +1331,10 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 1,
-      "current": true,
+      "programmes": 0,
+      "current": false,
       "future": false,
-      "horizon_at": "2026-11-16T02:00:00+00:00"
+      "horizon_at": null
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -1373,7 +1373,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 217,
+      "programmes": 216,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:15:00+00:00"
@@ -3514,7 +3514,7 @@
       "name": "TV Sonata",
       "tvg_id": "TVSonata.br",
       "provider_id": "rest_catalog_1",
-      "epg_current": true,
+      "epg_current": false,
       "epg_future": false
     },
     {
