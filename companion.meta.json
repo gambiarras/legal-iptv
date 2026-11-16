@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T18:52:06.437509+00:00",
+  "generated_at": "2026-11-16T19:00:46.825886+00:00",
   "selected_channels": 235,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 387,
+      "programmes": 386,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T19:00:00+00:00"
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 13,
+      "programmes": 12,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T09:00:00+00:00"
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 145,
+      "programmes": 144,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T19:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 207,
+      "programmes": 206,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T19:00:00+00:00"
@@ -3701,10 +3701,6 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
