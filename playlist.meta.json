@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T17:52:05.493849+00:00",
+  "generated_at": "2026-11-16T18:00:50.929388+00:00",
   "total_input_channels": 603,
   "selected_channels": 300,
   "extra_channels": 41,
@@ -28,12 +28,14 @@
     "fetch_live_stream_catalog": 0.002,
     "load_epg_aliases": 0.048,
     "enrich_epg_metadata": 0.017,
-    "refresh_stream_status": 1.6,
-    "filter_media_proof": 0.169,
+    "refresh_stream_status": 1.646,
+    "filter_media_proof": 0.175,
     "select_channels": 0.011,
-    "render_m3u": 0.002,
-    "generate_companion": 0.061,
-    "total": 1.919
+    "ensure_guide": 0.145,
+    "project_guide": 0.374,
+    "render_m3u": 0.001,
+    "generate_companion": 0.053,
+    "total": 2.517
   },
   "epg_aliases_count": 9167,
   "media_proof_required": true
