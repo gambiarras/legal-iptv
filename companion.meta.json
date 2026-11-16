@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T16:07:09.135805+00:00",
-  "selected_channels": 234,
+  "generated_at": "2026-11-16T16:32:00.824318+00:00",
+  "selected_channels": 233,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -35,10 +35,10 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 14,
+      "programmes": 15,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T05:00:00+00:00"
+      "horizon_at": "2026-11-17T09:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 34,
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 143,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T15:30:00+00:00"
+      "horizon_at": "2026-11-19T17:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 203,
+      "programmes": 207,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T15:30:00+00:00"
+      "horizon_at": "2026-11-19T17:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T16:00:00+00:00"
+      "horizon_at": "2026-11-19T17:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1013,10 +1013,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T15:30:00+00:00"
+      "horizon_at": "2026-11-19T18:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1151,12 +1151,6 @@
       "horizon_at": null
     },
     "TVBRICSPortuguese.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1385,10 +1379,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 214,
+      "programmes": 215,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T15:30:00+00:00"
+      "horizon_at": "2026-11-19T17:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3359,14 +3353,6 @@
       "epg_future": false
     },
     {
-      "id": "TVBrasilOeste.br",
-      "name": "TV Brasil Oeste",
-      "tvg_id": "TVBrasilOeste.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.tvbrasil-sinop",
       "name": "TV Brasil Sinop",
       "tvg_id": "Local.tvbrasilsinop.br",
@@ -3687,6 +3673,10 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Record News Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
