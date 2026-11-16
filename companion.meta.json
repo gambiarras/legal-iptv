@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T07:37:06.748101+00:00",
-  "selected_channels": 232,
+  "generated_at": "2026-11-16T08:01:43.940033+00:00",
+  "selected_channels": 234,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 373,
+      "programmes": 386,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T06:05:00+00:00"
+      "horizon_at": "2026-11-19T10:25:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 38,
@@ -34,8 +34,14 @@
       "future": true,
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
+    "666c9c60a7efd40008f552f0": {
+      "programmes": 13,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-16T23:00:00+00:00"
+    },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 40,
+      "programmes": 39,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:39:06+00:00"
@@ -215,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 142,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T06:30:00+00:00"
+      "horizon_at": "2026-11-19T08:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 199,
+      "programmes": 202,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T06:30:00+00:00"
+      "horizon_at": "2026-11-19T08:15:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -371,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T07:00:00+00:00"
+      "horizon_at": "2026-11-19T09:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -988,6 +994,12 @@
       "future": false,
       "horizon_at": null
     },
+    "RBATV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "RITtv.br": {
       "programmes": 0,
       "current": false,
@@ -995,10 +1007,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T06:30:00+00:00"
+      "horizon_at": "2026-11-19T10:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1373,10 +1385,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 210,
+      "programmes": 216,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T06:13:00+00:00"
+      "horizon_at": "2026-11-19T08:21:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1408,7 +1420,7 @@
   "saimo_channels": 249,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 64
+    "already_in_saimo": 65
   },
   "excluded_channels": [
     {
@@ -1729,6 +1741,11 @@
     {
       "id": "rest_catalog_1.19",
       "name": "GeekDot",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "rest_catalog_1.41",
+      "name": "Band",
       "reason": "already_in_saimo"
     }
   ],
@@ -2292,6 +2309,14 @@
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
+    },
+    {
+      "id": "BMCNews.br",
+      "name": "BM&C News",
+      "tvg_id": "666c9c60a7efd40008f552f0",
+      "provider_id": "iptv_org",
+      "epg_current": true,
+      "epg_future": true
     },
     {
       "id": "Canal38.br",
@@ -3158,6 +3183,14 @@
       "epg_future": false
     },
     {
+      "id": "RBATV.br",
+      "name": "RBATV",
+      "tvg_id": "RBATV.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "RecordTVInteriorSP.br",
       "name": "RecordTV Interior SP",
       "tvg_id": "RecordTVInteriorSP.br",
@@ -3617,6 +3650,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",

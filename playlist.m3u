@@ -157,6 +157,10 @@ https://video11.logicahost.com.br/xtremetv/xtremetv/playlist.m3u8
 
 ### Canais TV Aberta
 
+#EXTINF:-1 group-title="TV Aberta" tvg-id="523315" tvg-name="Band" tvg-logo="https://i.postimg.cc/Gh8y0j93/tv-bandeirantes.jpg", Band
+#EXTGRP:TV Aberta
+https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/chunklist.m3u8
+
 #EXTINF:-1 group-title="TV Aberta" tvg-id="Local.gazeta.br" tvg-name="Gazeta" tvg-logo="https://i.postimg.cc/tTf06J3D/tvgazeta-logo.jpg", Gazeta
 #EXTGRP:TV Aberta
 https://video08.logicahost.com.br/tvc21/tvc21/chunklist_w1728739889.m3u8
@@ -358,6 +362,10 @@ https://isaocorp.cloudecast.com/playtv/index.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="PrimerTV.br" tvg-name="Primer TV" tvg-logo="https://i.imgur.com/PMptSP3.png", Primer TV
 #EXTGRP:Variedades
 http://200.194.238.229:8383/live/primer/playlist.m3u8
+
+#EXTINF:-1 group-title="Variedades" tvg-id="RBATV.br" tvg-name="RBATV" tvg-logo="https://i.imgur.com/ZWFxlU1.png", RBATV
+#EXTGRP:Variedades
+https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.record.br" tvg-name="Record" tvg-logo="https://i.imgur.com/sz9gTTr.png", Record
 #EXTGRP:Variedades
@@ -744,6 +752,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-9359/LVW9359_XSyReL0QVf/playlist.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="BandNews.br" tvg-name="BandNews" tvg-logo="https://i.ibb.co/0jVZBFp/u8ya-iw-R-400x400.jpg", BandNews
 #EXTGRP:Notícia
 http://170.83.16.50/BAND_NEWS/index.m3u8
+
+#EXTINF:-1 group-title="Notícia" tvg-id="666c9c60a7efd40008f552f0" tvg-name="BM&C News" tvg-logo="https://i.imgur.com/pOUY2Uz.png", BM&C News
+#EXTGRP:Notícia
+https://jmp2.uk/plu-666c9c60a7efd40008f552f0.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="Canal38.br" tvg-name="Canal 38" tvg-logo="https://i.imgur.com/co7TCWC.png", Canal 38
 #EXTGRP:Notícia

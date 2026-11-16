@@ -323,6 +323,10 @@ https://6836041ea1117.streamlock.net/tvodia/tvodia/playlist.m3u8
 #EXTGRP:Variedades
 http://200.194.238.229:8383/live/primer/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="RBATV.br" tvg-name="RBATV" tvg-logo="https://i.imgur.com/ZWFxlU1.png", RBATV
+#EXTGRP:Variedades
+https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="RecordTVInteriorSP.br" tvg-name="RecordTV Interior SP" tvg-logo="https://i.imgur.com/VcHy0fu.png", RecordTV Interior SP
 #EXTGRP:Variedades
 http://200.77.176.130:8000/udp/224.0.0.4:49152
@@ -608,6 +612,10 @@ https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
 #EXTINF:-1 group-title="Notícia" tvg-id="AratuOn.br" tvg-name="Aratu On" tvg-logo="https://i.imgur.com/Ht4jCab.png", Aratu On
 #EXTGRP:Notícia
 https://cdn.live.br1.jmvstream.com/w/LVW-9359/LVW9359_XSyReL0QVf/playlist.m3u8
+
+#EXTINF:-1 group-title="Notícia" tvg-id="666c9c60a7efd40008f552f0" tvg-name="BM&C News" tvg-logo="https://i.imgur.com/pOUY2Uz.png", BM&C News
+#EXTGRP:Notícia
+https://jmp2.uk/plu-666c9c60a7efd40008f552f0.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="Canal38.br" tvg-name="Canal 38" tvg-logo="https://i.imgur.com/co7TCWC.png", Canal 38
 #EXTGRP:Notícia
