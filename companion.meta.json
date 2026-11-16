@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-16T22:52:05.809886+00:00",
-  "selected_channels": 238,
+  "generated_at": "2026-11-16T23:01:46.918506+00:00",
+  "selected_channels": 239,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 385,
+      "programmes": 387,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T21:20:00+00:00"
+      "horizon_at": "2026-11-20T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 30,
@@ -35,10 +35,10 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 11,
+      "programmes": 12,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T11:00:00+00:00"
+      "horizon_at": "2026-11-17T15:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 31,
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 142,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T21:30:00+00:00"
+      "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 205,
+      "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T21:30:00+00:00"
+      "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T22:00:00+00:00"
+      "horizon_at": "2026-11-20T03:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1013,10 +1013,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T21:50:00+00:00"
+      "horizon_at": "2026-11-20T00:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1361,7 +1361,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 6,
+      "programmes": 5,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T05:00:00+00:00"
@@ -1390,6 +1390,12 @@
       "future": false,
       "horizon_at": null
     },
+    "TVVicosa.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVVilaReal.br": {
       "programmes": 0,
       "current": false,
@@ -1409,10 +1415,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 210,
+      "programmes": 213,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T22:00:00+00:00"
+      "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1898,6 +1904,14 @@
       "id": "TVGRANDENATALHDTVBRASIL.br",
       "name": "TV GRANDE NATAL HDTV BRASIL",
       "tvg_id": "TVGRANDENATALHDTVBRASIL.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVVicosa.br",
+      "name": "TV Vicosa",
+      "tvg_id": "TVVicosa.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3722,6 +3736,10 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
