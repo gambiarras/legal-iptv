@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T00:52:15.951369+00:00",
+  "generated_at": "2026-11-17T01:00:52.894202+00:00",
   "selected_channels": 239,
   "youtube_selected_channels": 10,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 380,
+      "programmes": 378,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:00:00+00:00"
@@ -35,13 +35,13 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 11,
+      "programmes": 10,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 30,
+      "programmes": 29,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T00:39:06+00:00"
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 142,
+      "programmes": 141,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 204,
+      "programmes": 203,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -1013,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 68,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:00:00+00:00"
@@ -1415,7 +1415,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 209,
+      "programmes": 208,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -3747,12 +3747,12 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "Diário TV Teresópolis",
-        "reason": "not_a_television_live"
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
       },
       {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
+        "name": "Diário TV Teresópolis",
+        "reason": "not_a_television_live"
       },
       {
         "name": "Jovem Pan Live",
