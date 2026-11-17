@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T08:00:34.452068+00:00",
-  "selected_channels": 237,
+  "generated_at": "2026-11-17T08:31:37.636882+00:00",
+  "selected_channels": 236,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,14 +17,14 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 362,
+      "programmes": 387,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T05:36:00+00:00"
+      "horizon_at": "2026-11-20T08:55:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 38,
-      "current": true,
+      "programmes": 29,
+      "current": false,
       "future": true,
       "horizon_at": "2026-11-20T01:15:00+00:00"
     },
@@ -34,14 +34,8 @@
       "future": true,
       "horizon_at": "2026-11-20T00:42:30+00:00"
     },
-    "666c9c60a7efd40008f552f0": {
-      "programmes": 10,
-      "current": true,
-      "future": true,
-      "horizon_at": "2026-11-17T20:00:00+00:00"
-    },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 26,
+      "programmes": 40,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:33:50+00:00"
@@ -227,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 140,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T06:00:00+00:00"
+      "horizon_at": "2026-11-20T09:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 203,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T06:00:00+00:00"
+      "horizon_at": "2026-11-20T08:35:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T06:00:00+00:00"
+      "horizon_at": "2026-11-20T09:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1007,10 +1001,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 68,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T06:30:00+00:00"
+      "horizon_at": "2026-11-20T10:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1403,10 +1397,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 192,
+      "programmes": 207,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T05:31:00+00:00"
+      "horizon_at": "2026-11-20T08:34:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1509,11 +1503,6 @@
     {
       "id": "CanalUOL.br",
       "name": "Canal UOL",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "rest_catalog_1.125",
-      "name": "CazéTV",
       "reason": "already_in_saimo"
     },
     {
@@ -1754,6 +1743,11 @@
     {
       "id": "WooHoo.br",
       "name": "WooHoo",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "rest_catalog_1.125",
+      "name": "CazéTV",
       "reason": "already_in_saimo"
     },
     {
@@ -2053,7 +2047,7 @@
       "name": "RunTime Família",
       "tvg_id": "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5",
       "provider_id": "extra",
-      "epg_current": true,
+      "epg_current": false,
       "epg_future": true
     },
     {
@@ -2335,14 +2329,6 @@
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
-    },
-    {
-      "id": "BMCNews.br",
-      "name": "BM&C News",
-      "tvg_id": "666c9c60a7efd40008f552f0",
-      "provider_id": "iptv_org",
-      "epg_current": true,
-      "epg_future": true
     },
     {
       "id": "Canal38.br",
