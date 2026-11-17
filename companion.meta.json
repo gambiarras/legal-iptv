@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T01:22:07.005917+00:00",
+  "generated_at": "2026-11-17T01:30:45.217073+00:00",
   "selected_channels": 239,
   "youtube_selected_channels": 10,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 368,
+      "programmes": 365,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:00:00+00:00"
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-19T00:01:46+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 10,
+      "programmes": 9,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T15:00:00+00:00"
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 141,
+      "programmes": 140,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 203,
+      "programmes": 202,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -1013,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 68,
+      "programmes": 67,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:00:00+00:00"
@@ -1415,7 +1415,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 208,
+      "programmes": 207,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -3747,16 +3747,8 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
