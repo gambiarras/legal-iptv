@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T17:37:06.693986+00:00",
+  "generated_at": "2026-11-17T18:01:50.085558+00:00",
   "selected_channels": 234,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -23,19 +23,19 @@
       "horizon_at": "2026-11-20T19:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 33,
+      "programmes": 32,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T01:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:42:30+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 35,
+      "programmes": 34,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:33:50+00:00"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 143,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T17:00:00+00:00"
+      "horizon_at": "2026-11-20T18:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 207,
+      "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T17:00:00+00:00"
+      "horizon_at": "2026-11-20T18:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T17:00:00+00:00"
+      "horizon_at": "2026-11-20T18:30:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -874,6 +874,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvsaogabriel.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvseries.br": {
       "programmes": 0,
       "current": false,
@@ -1061,12 +1067,6 @@
       "horizon_at": null
     },
     "RetroCartoon.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "SBTInterior.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1385,10 +1385,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 205,
+      "programmes": 207,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T16:45:00+00:00"
+      "horizon_at": "2026-11-20T22:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1415,9 +1415,9 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-17T12:00:40.495951+00:00",
+  "reference_generated_at": "2026-11-17T18:00:47.816463+00:00",
   "reference_retained": false,
-  "saimo_channels": 209,
+  "saimo_channels": 244,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
     "already_in_saimo": 65
@@ -3279,14 +3279,6 @@
       "epg_future": false
     },
     {
-      "id": "SBTInterior.br",
-      "name": "SBT Interior",
-      "tvg_id": "SBTInterior.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "SBTNacional.br",
       "name": "SBT Nacional",
       "tvg_id": "SBTNacional.br",
@@ -3555,6 +3547,14 @@
       "name": "TV Sul Bahia",
       "tvg_id": "TVSulBahia.br",
       "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.54",
+      "name": "TV São Gabriel",
+      "tvg_id": "Local.tvsaogabriel.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
