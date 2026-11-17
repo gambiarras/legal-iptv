@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T15:22:05.584341+00:00",
+  "generated_at": "2026-11-17T15:30:45.639412+00:00",
   "selected_channels": 233,
-  "youtube_selected_channels": 8,
+  "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 143,
+      "programmes": 142,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 207,
+      "programmes": 206,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:30:00+00:00"
@@ -995,7 +995,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 68,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:30:00+00:00"
@@ -1379,7 +1379,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 205,
+      "programmes": 204,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:30:00+00:00"
@@ -3617,6 +3617,10 @@
         "name": "Cartoon Network Brasil"
       },
       {
+        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
+        "name": "Classic Mr Bean"
+      },
+      {
         "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
         "name": "Diário TV Teresópolis"
       },
@@ -3651,20 +3655,12 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "Classic Mr Bean",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
