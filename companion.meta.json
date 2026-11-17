@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T03:00:42.166167+00:00",
-  "selected_channels": 239,
-  "youtube_selected_channels": 10,
+  "generated_at": "2026-11-17T03:31:53.155969+00:00",
+  "selected_channels": 238,
+  "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -17,34 +17,34 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 343,
+      "programmes": 383,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T00:00:00+00:00"
+      "horizon_at": "2026-11-20T03:45:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 28,
+      "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T01:15:00+00:00"
+      "horizon_at": "2026-11-20T01:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 25,
+      "programmes": 39,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T00:01:46+00:00"
+      "horizon_at": "2026-11-20T00:42:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 7,
+      "programmes": 9,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T15:00:00+00:00"
+      "horizon_at": "2026-11-17T17:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 28,
+      "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T00:39:06+00:00"
+      "horizon_at": "2026-11-20T00:33:57+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 137,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T23:30:00+00:00"
+      "horizon_at": "2026-11-20T04:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 199,
+      "programmes": 210,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T23:30:00+00:00"
+      "horizon_at": "2026-11-20T03:45:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T03:00:00+00:00"
+      "horizon_at": "2026-11-20T05:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1013,10 +1013,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 67,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T00:00:00+00:00"
+      "horizon_at": "2026-11-20T03:45:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1361,16 +1361,10 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 2,
+      "programmes": 16,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-17T05:00:00+00:00"
-    },
-    "TVSulBahia.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
+      "horizon_at": "2026-11-18T06:00:00+00:00"
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -1415,10 +1409,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 204,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-19T23:30:00+00:00"
+      "horizon_at": "2026-11-20T03:54:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3613,14 +3607,6 @@
       "epg_future": true
     },
     {
-      "id": "TVSulBahia.br",
-      "name": "TV Sul Bahia",
-      "tvg_id": "TVSulBahia.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.54",
       "name": "TV São Gabriel",
       "tvg_id": "Local.tvsaogabriel.br",
@@ -3695,52 +3681,19 @@
   ],
   "youtube": {
     "player": "Kodi with configured YouTube addon",
-    "channels": [
-      {
-        "id": "BRCartoonNetworkvideos.br.apIsxQZ0rUE",
-        "name": "Cartoon Network Brasil"
-      },
-      {
-        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
-        "name": "Classic Mr Bean"
-      },
-      {
-        "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
-        "name": "Diário TV Teresópolis"
-      },
-      {
-        "id": "mr-bean.tv.oPonPGALYaU",
-        "name": "Mr Bean"
-      },
-      {
-        "id": "NBABrasil.tv.zb_REiJ1-hw",
-        "name": "NBA Brasil"
-      },
-      {
-        "id": "pica-pau.br.mUB69Xk0qwY",
-        "name": "Pica-Pau"
-      },
-      {
-        "id": "PowerRangersTV.br.cQHlHWNg5zA",
-        "name": "PowerRangers TV"
-      },
-      {
-        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
-        "name": "Santuário Nacional de Aparecida"
-      },
-      {
-        "id": "tres-espias-demais.br.nfs5DPFMrcc",
-        "name": "Três Espiãs Demais"
-      },
-      {
-        "id": "tvc-youtube.tv.8N9orlXLI1c",
-        "name": "TV Correio da Manhã"
-      }
-    ],
+    "channels": [],
     "skipped": [
+      {
+        "name": "Cartoon Network Brasil",
+        "reason": "not_a_recent_resolved_video"
+      },
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Classic Mr Bean",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
@@ -3751,16 +3704,64 @@
         "reason": "not_a_television_live"
       },
       {
+        "name": "Diário TV Teresópolis",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "NBA Brasil",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Pica-Pau",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Pica-Pau",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "PowerRangers TV",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
         "reason": "already_in_saimo"
       },
       {
+        "name": "Santuário Nacional de Aparecida",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "SBT",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "TV Correio da Manhã",
+        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
