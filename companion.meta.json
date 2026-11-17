@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T16:52:06.176468+00:00",
+  "generated_at": "2026-11-17T17:00:48.159137+00:00",
   "selected_channels": 234,
-  "youtube_selected_channels": 8,
+  "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 145,
+      "programmes": 144,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T17:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 209,
+      "programmes": 208,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T17:00:00+00:00"
@@ -377,7 +377,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 40,
+      "programmes": 39,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T17:00:00+00:00"
@@ -1385,7 +1385,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 207,
+      "programmes": 206,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T16:45:00+00:00"
@@ -3657,6 +3657,10 @@
       {
         "id": "tres-espias-demais.br.nfs5DPFMrcc",
         "name": "Três Espiãs Demais"
+      },
+      {
+        "id": "tvc-youtube.tv.8N9orlXLI1c",
+        "name": "TV Correio da Manhã"
       }
     ],
     "skipped": [
@@ -3681,6 +3685,10 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
+      },
+      {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
       },
@@ -3695,10 +3703,6 @@
       {
         "name": "SBT",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "TV Correio da Manhã",
-        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
