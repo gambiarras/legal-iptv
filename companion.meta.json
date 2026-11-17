@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T03:52:06.626581+00:00",
+  "generated_at": "2026-11-17T04:00:41.127892+00:00",
   "selected_channels": 238,
-  "youtube_selected_channels": 0,
+  "youtube_selected_channels": 10,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-20T00:42:30+00:00"
     },
     "666c9c60a7efd40008f552f0": {
-      "programmes": 9,
+      "programmes": 8,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-17T17:00:00+00:00"
@@ -227,7 +227,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 145,
+      "programmes": 144,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T04:00:00+00:00"
@@ -1409,7 +1409,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 204,
+      "programmes": 203,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T03:54:00+00:00"
@@ -3681,19 +3681,52 @@
   ],
   "youtube": {
     "player": "Kodi with configured YouTube addon",
-    "channels": [],
-    "skipped": [
+    "channels": [
       {
-        "name": "Cartoon Network Brasil",
-        "reason": "not_a_recent_resolved_video"
+        "id": "BRCartoonNetworkvideos.br.apIsxQZ0rUE",
+        "name": "Cartoon Network Brasil"
       },
+      {
+        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
+        "name": "Classic Mr Bean"
+      },
+      {
+        "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
+        "name": "Diário TV Teresópolis"
+      },
+      {
+        "id": "mr-bean.tv.oPonPGALYaU",
+        "name": "Mr Bean"
+      },
+      {
+        "id": "NBABrasil.tv.zb_REiJ1-hw",
+        "name": "NBA Brasil"
+      },
+      {
+        "id": "pica-pau.br.mUB69Xk0qwY",
+        "name": "Pica-Pau"
+      },
+      {
+        "id": "PowerRangersTV.br.cQHlHWNg5zA",
+        "name": "PowerRangers TV"
+      },
+      {
+        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
+        "name": "Santuário Nacional de Aparecida"
+      },
+      {
+        "id": "tres-espias-demais.br.nfs5DPFMrcc",
+        "name": "Três Espiãs Demais"
+      },
+      {
+        "id": "tvc-youtube.tv.8N9orlXLI1c",
+        "name": "TV Correio da Manhã"
+      }
+    ],
+    "skipped": [
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Classic Mr Bean",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
@@ -3704,64 +3737,16 @@
         "reason": "not_a_television_live"
       },
       {
-        "name": "Diário TV Teresópolis",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Mr Bean",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Mr Bean",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Pica-Pau",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Pica-Pau",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "PowerRangers TV",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
         "reason": "already_in_saimo"
       },
       {
-        "name": "Santuário Nacional de Aparecida",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
         "name": "SBT",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Três Espiãs Demais",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Três Espiãs Demais",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Três Espiãs Demais",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "TV Correio da Manhã",
-        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
