@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T11:30:43.730971+00:00",
-  "selected_channels": 237,
+  "generated_at": "2026-11-17T12:01:46.708476+00:00",
+  "selected_channels": 234,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,14 +17,14 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 387,
+      "programmes": 388,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T10:10:00+00:00"
+      "horizon_at": "2026-11-20T13:30:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 29,
-      "current": false,
+      "programmes": 36,
+      "current": true,
       "future": true,
       "horizon_at": "2026-11-20T01:15:00+00:00"
     },
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 141,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T10:00:00+00:00"
+      "horizon_at": "2026-11-20T12:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 196,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T10:00:00+00:00"
+      "horizon_at": "2026-11-20T12:10:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -844,12 +844,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.tvnews.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.tvnnd.br": {
       "programmes": 0,
       "current": false,
@@ -1007,10 +1001,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 67,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T10:00:00+00:00"
+      "horizon_at": "2026-11-20T12:50:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1252,12 +1246,6 @@
       "future": false,
       "horizon_at": null
     },
-    "TVLitoralRN.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVMaisMarica.br": {
       "programmes": 0,
       "current": false,
@@ -1283,12 +1271,6 @@
       "horizon_at": null
     },
     "TVNBN.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVNatal.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1348,17 +1330,17 @@
       "future": false,
       "horizon_at": null
     },
-    "TVSimSaoMateus.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVSonata.br": {
       "programmes": 12,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T06:00:00+00:00"
+    },
+    "TVSulBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -1403,10 +1385,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 202,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T09:40:00+00:00"
+      "horizon_at": "2026-11-20T12:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1433,7 +1415,7 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-17T06:00:32.171383+00:00",
+  "reference_generated_at": "2026-11-17T12:00:40.495951+00:00",
   "reference_retained": false,
   "saimo_channels": 209,
   "televisao_reference_channels": 0,
@@ -2053,7 +2035,7 @@
       "name": "RunTime Família",
       "tvg_id": "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5",
       "provider_id": "extra",
-      "epg_current": false,
+      "epg_current": true,
       "epg_future": true
     },
     {
@@ -2401,14 +2383,6 @@
       "epg_future": false
     },
     {
-      "id": "TVSimSaoMateus.br",
-      "name": "TV Sim Sao Mateus",
-      "tvg_id": "TVSimSaoMateus.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "VEJAPlusTV.br",
       "name": "VEJA+ TV",
       "tvg_id": "VEJAPlusTV.br",
@@ -2684,14 +2658,6 @@
       "id": "rest_catalog_1.123",
       "name": "TV OLHO D’ÁGUA",
       "tvg_id": "Local.tvolhodagua.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.44",
-      "name": "TV+ News",
-      "tvg_id": "Local.tvnews.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3505,14 +3471,6 @@
       "epg_future": false
     },
     {
-      "id": "TVLitoralRN.br",
-      "name": "TV Litoral RN",
-      "tvg_id": "TVLitoralRN.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVMaisMarica.br",
       "name": "TV Mais Marica",
       "tvg_id": "TVMaisMarica.br",
@@ -3532,14 +3490,6 @@
       "id": "TVMetropole.br",
       "name": "TV Metropole",
       "tvg_id": "TVMetropole.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "TVNatal.br",
-      "name": "TV Natal",
-      "tvg_id": "TVNatal.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3591,6 +3541,14 @@
       "provider_id": "rest_catalog_1",
       "epg_current": true,
       "epg_future": true
+    },
+    {
+      "id": "TVSulBahia.br",
+      "name": "TV Sul Bahia",
+      "tvg_id": "TVSulBahia.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "rest_catalog_1.54",
@@ -3717,10 +3675,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
