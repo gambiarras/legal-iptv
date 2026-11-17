@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T00:22:08.436925+00:00",
+  "generated_at": "2026-11-17T00:30:54.854300+00:00",
   "selected_channels": 239,
-  "youtube_selected_channels": 9,
+  "youtube_selected_channels": 10,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 143,
+      "programmes": 142,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 206,
+      "programmes": 205,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -1415,7 +1415,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 210,
+      "programmes": 209,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-19T23:30:00+00:00"
@@ -3713,6 +3713,10 @@
         "name": "Mr Bean"
       },
       {
+        "id": "NBABrasil.tv.zb_REiJ1-hw",
+        "name": "NBA Brasil"
+      },
+      {
         "id": "pica-pau.br.mUB69Xk0qwY",
         "name": "Pica-Pau"
       },
@@ -3759,8 +3763,8 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
