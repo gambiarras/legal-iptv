@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T20:52:06.833802+00:00",
-  "selected_channels": 235,
+  "generated_at": "2026-11-17T21:01:51.836043+00:00",
+  "selected_channels": 236,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -20,7 +20,7 @@
       "programmes": 387,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T20:30:00+00:00"
+      "horizon_at": "2026-11-20T21:10:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 31,
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-20T01:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 29,
+      "programmes": 28,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:42:30+00:00"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 144,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T20:30:00+00:00"
+      "horizon_at": "2026-11-20T21:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 206,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T20:15:00+00:00"
+      "horizon_at": "2026-11-20T21:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T20:45:00+00:00"
+      "horizon_at": "2026-11-20T22:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1001,10 +1001,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 68,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T20:40:00+00:00"
+      "horizon_at": "2026-11-20T21:50:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1151,6 +1151,12 @@
       "horizon_at": null
     },
     "TVBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1337,7 +1343,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 7,
+      "programmes": 6,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-18T06:00:00+00:00"
@@ -3381,6 +3387,14 @@
       "epg_future": false
     },
     {
+      "id": "TVBrasilOeste.br",
+      "name": "TV Brasil Oeste",
+      "tvg_id": "TVBrasilOeste.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.tvbrasil-sinop",
       "name": "TV Brasil Sinop",
       "tvg_id": "Local.tvbrasilsinop.br",
@@ -3689,6 +3703,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
