@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T18:52:05.523250+00:00",
+  "generated_at": "2026-11-17T19:00:39.918876+00:00",
   "selected_channels": 234,
-  "youtube_selected_channels": 9,
+  "youtube_selected_channels": 5,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 388,
+      "programmes": 387,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T19:00:00+00:00"
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 144,
+      "programmes": 143,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T18:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 207,
+      "programmes": 206,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T18:30:00+00:00"
@@ -3631,16 +3631,8 @@
         "name": "Cartoon Network Brasil"
       },
       {
-        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
-        "name": "Classic Mr Bean"
-      },
-      {
         "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
         "name": "Diário TV Teresópolis"
-      },
-      {
-        "id": "mr-bean.tv.oPonPGALYaU",
-        "name": "Mr Bean"
       },
       {
         "id": "pica-pau.br.mUB69Xk0qwY",
@@ -3651,22 +3643,18 @@
         "name": "PowerRangers TV"
       },
       {
-        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
-        "name": "Santuário Nacional de Aparecida"
-      },
-      {
         "id": "tres-espias-demais.br.nfs5DPFMrcc",
         "name": "Três Espiãs Demais"
-      },
-      {
-        "id": "tvc-youtube.tv.8N9orlXLI1c",
-        "name": "TV Correio da Manhã"
       }
     ],
     "skipped": [
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Classic Mr Bean",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
@@ -3685,6 +3673,14 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
       },
@@ -3693,12 +3689,24 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
+        "name": "Santuário Nacional de Aparecida",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "SBT",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "TV Correio da Manhã",
+        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
