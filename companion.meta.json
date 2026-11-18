@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T12:00:46.943041+00:00",
-  "selected_channels": 234,
+  "generated_at": "2026-11-18T12:31:56.818607+00:00",
+  "selected_channels": 228,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 384,
+      "programmes": 391,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T09:10:00+00:00"
+      "horizon_at": "2026-11-21T12:45:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 37,
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-21T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 35,
+      "programmes": 34,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:40:31+00:00"
@@ -95,12 +95,6 @@
       "horizon_at": null
     },
     "Canal25Jundiai.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Canal38.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -221,16 +215,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 126,
+      "programmes": 125,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 199,
+      "programmes": 210,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T09:30:00+00:00"
+      "horizon_at": "2026-11-21T12:45:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -269,12 +263,6 @@
       "horizon_at": null
     },
     "Local.agtv.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Local.avivandonacoes.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -340,12 +328,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.cloudingtv.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.coletivatv.br": {
       "programmes": 0,
       "current": false,
@@ -377,10 +359,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 40,
+      "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T11:00:00+00:00"
+      "horizon_at": "2026-11-21T14:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -401,12 +383,6 @@
       "horizon_at": null
     },
     "Local.gringotv.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Local.ijuiplay.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -856,12 +832,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.tvnovamt.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.tvolhodagua.br": {
       "programmes": 0,
       "current": false,
@@ -958,12 +928,6 @@
       "future": false,
       "horizon_at": null
     },
-    "PetloversTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "PlenaTV.br": {
       "programmes": 0,
       "current": false,
@@ -1001,10 +965,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 67,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T10:00:00+00:00"
+      "horizon_at": "2026-11-21T12:35:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1385,10 +1349,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 200,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T09:10:00+00:00"
+      "horizon_at": "2026-11-21T13:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1415,12 +1379,12 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-18T06:30:32.192099+00:00",
+  "reference_generated_at": "2026-11-18T12:30:44.342055+00:00",
   "reference_retained": false,
   "saimo_channels": 248,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 65
+    "already_in_saimo": 64
   },
   "excluded_channels": [
     {
@@ -1501,11 +1465,6 @@
     {
       "id": "COMBrasil.br",
       "name": "COM Brasil",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "CulturaFast.br",
-      "name": "Cultura Fast",
       "reason": "already_in_saimo"
     },
     {
@@ -1842,14 +1801,6 @@
       "id": "Loading.br",
       "name": "Loading",
       "tvg_id": "Local.loading.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "PetloversTV.br",
-      "name": "Petlovers TV",
-      "tvg_id": "PetloversTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -2319,14 +2270,6 @@
       "epg_future": false
     },
     {
-      "id": "Canal38.br",
-      "name": "Canal 38",
-      "tvg_id": "Canal38.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "CanalMetropolitanodeNoticias.br",
       "name": "Canal Metropolitano de Noticias",
       "tvg_id": "CanalMetropolitanodeNoticias.br",
@@ -2474,14 +2417,6 @@
       "id": "rest_catalog_1.102",
       "name": "Gramado TV",
       "tvg_id": "Local.gramadotv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.124",
-      "name": "IJUÍ PLAY",
-      "tvg_id": "Local.ijuiplay.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2703,14 +2638,6 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.142",
-      "name": "Avivando Nações",
-      "tvg_id": "Local.avivandonacoes.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.131",
       "name": "Canaã News TV",
       "tvg_id": "Local.canaanewstv.br",
@@ -2863,14 +2790,6 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.157",
-      "name": "TV Nova MT",
-      "tvg_id": "Local.tvnovamt.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.30",
       "name": "TV Record",
       "tvg_id": "RecordTV.br",
@@ -3010,14 +2929,6 @@
       "id": "rest_catalog_1.cbtv-play",
       "name": "CBTV Play",
       "tvg_id": "Local.cbtvplay.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.7",
-      "name": "Clouding TV",
-      "tvg_id": "Local.cloudingtv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3666,10 +3577,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {

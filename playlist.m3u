@@ -35,10 +35,6 @@ https://stream.ichibansys.com:3764/hybrid/play.m3u8
 #EXTGRP:Recomendados
 https://video11.logicahost.com.br/gramadotv/gramadotv/playlist.m3u8
 
-#EXTINF:-1 group-title="Recomendados" tvg-id="Local.ijuiplay.br" tvg-name="IJUÍ PLAY" tvg-logo="https://i.postimg.cc/kMKq946F/ijuiplaytv.jpg", IJUÍ PLAY
-#EXTGRP:Recomendados
-https://video04.logicahost.com.br/schamlztv/schamlztv/playlist.m3u8
-
 #EXTINF:-1 group-title="Recomendados" tvg-id="Local.lamorerockshow.br" tvg-name="Lamore Rock Show" tvg-logo="https://i.postimg.cc/5tBsBfWb/lamore-web-show.jpg", Lamore Rock Show
 #EXTGRP:Recomendados
 https://a.cdni.live/rodrigo2364/rodrigo2364/playlist.m3u8
@@ -173,10 +169,6 @@ https://video04.logicahost.com.br/tvpampa/tvpampa/chunklist_w1970019486.m3u8
 #EXTGRP:TV Aberta
 https://utvitv.acessaradios.com.br/utvitv/utvitv.stream/chunklist_w1641872797.m3u8
 
-#EXTINF:-1 group-title="TV Aberta" tvg-id="Local.tvnovamt.br" tvg-name="TV Nova MT" tvg-logo="https://i.postimg.cc/nh1FztHm/tvnova-mt.png", TV Nova MT
-#EXTGRP:TV Aberta
-https://video04.logicahost.com.br/tvnovaweb/tvnovaweb/playlist.m3u8
-
 #EXTINF:-1 group-title="TV Aberta" tvg-id="RecordTV.br" tvg-name="TV Record" tvg-logo="https://i.postimg.cc/PfKLvRv5/record-tv.png", TV Record
 #EXTGRP:TV Aberta
 https://cdn.live.br1.jmvstream.com/w/LVW-10842/LVW10842_513N26MDBL/chunklist.m3u8
@@ -259,10 +251,6 @@ https://5b33b873179a2.streamlock.net:1443/catve2/catve2/playlist.m3u8
 #EXTGRP:Variedades
 https://stmv2.samcast.com.br/carla7379/carla7379/playlist.m3u8
 
-#EXTINF:-1 group-title="Variedades" tvg-id="Local.cloudingtv.br" tvg-name="Clouding TV" tvg-logo="https://i.postimg.cc/x1wPhzpF/clouding_tv_2.jpg", Clouding TV
-#EXTGRP:Variedades
-https://video04.logicahost.com.br/cloudingtv/cloudingtv/playlist.m3u8
-
 #EXTINF:-1 group-title="Variedades" tvg-id="COMBrasil.br" tvg-name="COM Brasil" tvg-logo="https://i.imgur.com/GrjGwKM.png", COM Brasil
 #EXTGRP:Variedades
 https://dfr80qz435crc.cloudfront.net/EFGH/Amagi/NewCo/New_Brasil_BR/New_Brasil.m3u8
@@ -282,10 +270,6 @@ https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="ConexaoTV.br" tvg-name="Conexao TV" tvg-logo="https://i.imgur.com/CJ9SPsZ.png", Conexao TV
 #EXTGRP:Variedades
 https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="CulturaFast.br" tvg-name="Cultura Fast" tvg-logo="https://eitv6.cdn.broadpeak.io/account351-i1438/channel/53/quadrada_-3-_pequeno-1723832301.png", Cultura Fast
-#EXTGRP:Variedades
-https://fpa-gateway.tvcultura.com.br:8181/memfs/606caef0-a290-413d-9f1f-8fcdb3a73831.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="CulturaPara.br" tvg-name="Cultura Para" tvg-logo="https://i.imgur.com/5jPEI5c.png", Cultura Para
 #EXTGRP:Variedades
@@ -573,7 +557,7 @@ https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVSenado.br" tvg-name="TV Senado" tvg-logo="https://i.imgur.com/duy6waL.png", TV Senado
 #EXTGRP:Variedades
-http://170.83.16.50/TV_SENADO/index.m3u8
+http://170.83.49.66:8083/TVSENADOHD/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVShowFortaleza.br" tvg-name="TV Show Fortaleza" tvg-logo="https://static.wixstatic.com/media/9af6b8_e963e864c8fb40d3954f5c1c8cab1b40~mv2.png", TV Show Fortaleza
 #EXTGRP:Variedades
@@ -749,10 +733,6 @@ https://cdn.live.br1.jmvstream.com/w/LVW-9359/LVW9359_XSyReL0QVf/playlist.m3u8
 #EXTGRP:Notícia
 http://170.83.16.50/BAND_NEWS/index.m3u8
 
-#EXTINF:-1 group-title="Notícia" tvg-id="Canal38.br" tvg-name="Canal 38" tvg-logo="https://i.imgur.com/co7TCWC.png", Canal 38
-#EXTGRP:Notícia
-https://cdn.jmvstream.com/w/LVW-8503/LVW8503_d0V5oduFlK/playlist.m3u8
-
 #EXTINF:-1 group-title="Notícia" tvg-id="CanalGov.br" tvg-name="Canal Gov" tvg-logo="https://televisao.tv/images/canal-gov.webp", Canal Gov
 #EXTGRP:Notícia
 https://canalgov-stream.ebc.com.br/index.m3u8
@@ -840,10 +820,6 @@ https://stmv1.srvsite.com/ely/ely/playlist.m3u8
 #EXTINF:-1 group-title="Entretenimento" tvg-id="Local.loading.br" tvg-name="Loading" tvg-logo="https://i.imgur.com/R0aflu1.png", Loading
 #EXTGRP:Entretenimento
 https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
-
-#EXTINF:-1 group-title="Entretenimento" tvg-id="PetloversTV.br" tvg-name="Petlovers TV" tvg-logo="https://petloverstv.com.br/storage/357/config/yqP4nOugWRxRFCmgLqXF4gRKyM9ybsAOfHgUaqPt.png", Petlovers TV
-#EXTGRP:Entretenimento
-https://video04.logicahost.com.br/petloverstv/petloverstv/playlist.m3u8
 
 #EXTINF:-1 group-title="Entretenimento" tvg-id="RedeNGT.br" tvg-name="Rede NGT" tvg-logo="https://i.imgur.com/ZFN1R4B.png", Rede NGT
 #EXTGRP:Entretenimento
@@ -1208,10 +1184,6 @@ http://170.83.16.50/TERRA_VIVA/index.m3u8
 https://app.tvufop.com.br/hls/tvufop.m3u8
 
 ### Canais Religiosos
-
-#EXTINF:-1 group-title="Religiosos" tvg-id="Local.avivandonacoes.br" tvg-name="Avivando Nações" tvg-logo="https://i.postimg.cc/4xKqKzxc/avivando-nacoes.png", Avivando Nações
-#EXTGRP:Religiosos
-https://video04.logicahost.com.br/tvavivandonacoes/tvavivandonacoes/playlist.m3u8
 
 #EXTINF:-1 group-title="Religiosos" tvg-id="Local.canaanewstv.br" tvg-name="Canaã News TV" tvg-logo="https://i.postimg.cc/9fKggKJZ/cana-news.png", Canaã News TV
 #EXTGRP:Religiosos
