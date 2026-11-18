@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T12:37:06.203914+00:00",
-  "selected_channels": 228,
+  "generated_at": "2026-11-18T13:01:22.296829+00:00",
+  "selected_channels": 235,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 391,
+      "programmes": 392,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T12:45:00+00:00"
+      "horizon_at": "2026-11-21T13:30:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 37,
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-21T00:40:31+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 38,
+      "programmes": 37,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:06:34+00:00"
@@ -95,6 +95,12 @@
       "horizon_at": null
     },
     "Canal25Jundiai.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Canal38.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -215,7 +221,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 125,
+      "programmes": 124,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -224,7 +230,7 @@
       "programmes": 210,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T12:45:00+00:00"
+      "horizon_at": "2026-11-21T13:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -263,6 +269,12 @@
       "horizon_at": null
     },
     "Local.agtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.avivandonacoes.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -328,6 +340,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.cloudingtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.coletivatv.br": {
       "programmes": 0,
       "current": false,
@@ -359,7 +377,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 42,
+      "programmes": 41,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T14:00:00+00:00"
@@ -383,6 +401,12 @@
       "horizon_at": null
     },
     "Local.gringotv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.ijuiplay.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -832,6 +856,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvnovamt.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvolhodagua.br": {
       "programmes": 0,
       "current": false,
@@ -928,6 +958,12 @@
       "future": false,
       "horizon_at": null
     },
+    "PetloversTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "PlenaTV.br": {
       "programmes": 0,
       "current": false,
@@ -968,7 +1004,7 @@
       "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T12:35:00+00:00"
+      "horizon_at": "2026-11-21T15:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1306,6 +1342,12 @@
       "future": true,
       "horizon_at": "2026-11-20T06:20:00+00:00"
     },
+    "TVSulBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
       "current": false,
@@ -1352,7 +1394,7 @@
       "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T13:00:00+00:00"
+      "horizon_at": "2026-11-21T13:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1801,6 +1843,14 @@
       "id": "Loading.br",
       "name": "Loading",
       "tvg_id": "Local.loading.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "PetloversTV.br",
+      "name": "Petlovers TV",
+      "tvg_id": "PetloversTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -2270,6 +2320,14 @@
       "epg_future": false
     },
     {
+      "id": "Canal38.br",
+      "name": "Canal 38",
+      "tvg_id": "Canal38.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "CanalMetropolitanodeNoticias.br",
       "name": "Canal Metropolitano de Noticias",
       "tvg_id": "CanalMetropolitanodeNoticias.br",
@@ -2417,6 +2475,14 @@
       "id": "rest_catalog_1.102",
       "name": "Gramado TV",
       "tvg_id": "Local.gramadotv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.124",
+      "name": "IJUÍ PLAY",
+      "tvg_id": "Local.ijuiplay.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2638,6 +2704,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.142",
+      "name": "Avivando Nações",
+      "tvg_id": "Local.avivandonacoes.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.131",
       "name": "Canaã News TV",
       "tvg_id": "Local.canaanewstv.br",
@@ -2790,6 +2864,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.157",
+      "name": "TV Nova MT",
+      "tvg_id": "Local.tvnovamt.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.30",
       "name": "TV Record",
       "tvg_id": "RecordTV.br",
@@ -2929,6 +3011,14 @@
       "id": "rest_catalog_1.cbtv-play",
       "name": "CBTV Play",
       "tvg_id": "Local.cbtvplay.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.7",
+      "name": "Clouding TV",
+      "tvg_id": "Local.cloudingtv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3462,6 +3552,14 @@
       "epg_future": true
     },
     {
+      "id": "TVSulBahia.br",
+      "name": "TV Sul Bahia",
+      "tvg_id": "TVSulBahia.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.54",
       "name": "TV São Gabriel",
       "tvg_id": "Local.tvsaogabriel.br",
@@ -3586,6 +3684,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
