@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T08:22:05.797661+00:00",
-  "selected_channels": 234,
+  "generated_at": "2026-11-18T08:31:36.170136+00:00",
+  "selected_channels": 233,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 385,
+      "programmes": 388,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T07:05:00+00:00"
+      "horizon_at": "2026-11-21T09:10:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 39,
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 134,
+      "programmes": 133,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 211,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T07:30:00+00:00"
+      "horizon_at": "2026-11-21T08:35:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -1072,12 +1072,6 @@
       "future": false,
       "horizon_at": null
     },
-    "SBTInterior.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "SBTNacional.br": {
       "programmes": 0,
       "current": false,
@@ -1385,10 +1379,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 198,
+      "programmes": 208,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T07:01:00+00:00"
+      "horizon_at": "2026-11-21T08:39:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3274,14 +3268,6 @@
       "id": "RedeTVParana.br",
       "name": "RedeTV! Parana",
       "tvg_id": "RedeTVParana.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "SBTInterior.br",
-      "name": "SBT Interior",
-      "tvg_id": "SBTInterior.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
