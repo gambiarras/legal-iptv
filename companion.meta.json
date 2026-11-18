@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T00:02:12.068382+00:00",
+  "generated_at": "2026-11-18T00:31:21.209276+00:00",
   "selected_channels": 235,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 388,
+      "programmes": 389,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T00:02:00+00:00"
+      "horizon_at": "2026-11-21T00:34:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 29,
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-20T01:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 27,
+      "programmes": 26,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T00:42:30+00:00"
@@ -202,6 +202,12 @@
       "future": false,
       "horizon_at": null
     },
+    "ElyTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "FalaLitoral.br": {
       "programmes": 0,
       "current": false,
@@ -218,10 +224,10 @@
       "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T00:30:00+00:00"
+      "horizon_at": "2026-11-21T01:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 209,
+      "programmes": 208,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T01:00:00+00:00"
@@ -1342,12 +1348,6 @@
       "future": true,
       "horizon_at": "2026-11-18T06:00:00+00:00"
     },
-    "TVSulBahia.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
       "current": false,
@@ -1394,7 +1394,7 @@
       "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T00:30:00+00:00"
+      "horizon_at": "2026-11-21T01:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1832,6 +1832,14 @@
       "id": "ElementalChannel.br",
       "name": "Elemental Channel",
       "tvg_id": "ElementalChannel.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "ElyTV.br",
+      "name": "ElyTV",
+      "tvg_id": "ElyTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3557,14 +3565,6 @@
       "epg_future": true
     },
     {
-      "id": "TVSulBahia.br",
-      "name": "TV Sul Bahia",
-      "tvg_id": "TVSulBahia.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.54",
       "name": "TV São Gabriel",
       "tvg_id": "Local.tvsaogabriel.br",
@@ -3701,10 +3701,6 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
