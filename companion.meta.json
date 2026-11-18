@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T08:52:05.953324+00:00",
-  "selected_channels": 233,
+  "generated_at": "2026-11-18T09:01:40.822680+00:00",
+  "selected_channels": 234,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 133,
+      "programmes": 132,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 212,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T08:35:00+00:00"
+      "horizon_at": "2026-11-21T09:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -380,7 +380,7 @@
       "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T09:00:00+00:00"
+      "horizon_at": "2026-11-21T11:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1001,10 +1001,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 70,
+      "programmes": 71,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T09:00:00+00:00"
+      "horizon_at": "2026-11-21T10:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1067,6 +1067,12 @@
       "horizon_at": null
     },
     "RetroCartoon.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "SBTInterior.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1379,10 +1385,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 206,
+      "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T08:39:00+00:00"
+      "horizon_at": "2026-11-21T09:10:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3273,6 +3279,14 @@
       "epg_future": false
     },
     {
+      "id": "SBTInterior.br",
+      "name": "SBT Interior",
+      "tvg_id": "SBTInterior.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "SBTNacional.br",
       "name": "SBT Nacional",
       "tvg_id": "SBTNacional.br",
@@ -3624,6 +3638,10 @@
       {
         "name": "Classic Mr Bean",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
       },
       {
         "name": "CNN Brasil",
