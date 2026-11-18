@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T05:52:06.129658+00:00",
+  "generated_at": "2026-11-18T06:00:45.660750+00:00",
   "selected_channels": 234,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
@@ -17,19 +17,19 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 325,
+      "programmes": 320,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T01:32:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 41,
+      "programmes": 40,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 38,
+      "programmes": 37,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:40:31+00:00"
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 137,
+      "programmes": 136,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T02:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 201,
+      "programmes": 200,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T02:00:00+00:00"
@@ -377,7 +377,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 37,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -1337,10 +1337,10 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 1,
-      "current": true,
+      "programmes": 0,
+      "current": false,
       "future": false,
-      "horizon_at": "2026-11-18T06:00:00+00:00"
+      "horizon_at": null
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -3547,7 +3547,7 @@
       "name": "TV Sonata",
       "tvg_id": "TVSonata.br",
       "provider_id": "rest_catalog_1",
-      "epg_current": true,
+      "epg_current": false,
       "epg_future": false
     },
     {
