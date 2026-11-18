@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T09:22:06.569055+00:00",
+  "generated_at": "2026-11-18T09:30:33.669975+00:00",
   "selected_channels": 234,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 132,
+      "programmes": 131,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 214,
+      "programmes": 213,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T09:30:00+00:00"
@@ -3638,10 +3638,6 @@
       {
         "name": "Classic Mr Bean",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
       },
       {
         "name": "CNN Brasil",
