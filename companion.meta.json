@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-17T23:52:05.499581+00:00",
-  "selected_channels": 236,
+  "generated_at": "2026-11-18T00:02:12.068382+00:00",
+  "selected_channels": 235,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 384,
+      "programmes": 388,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T21:10:00+00:00"
+      "horizon_at": "2026-11-21T00:02:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 29,
@@ -202,12 +202,6 @@
       "future": false,
       "horizon_at": null
     },
-    "ElyTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "FalaLitoral.br": {
       "programmes": 0,
       "current": false,
@@ -221,16 +215,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 140,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T21:30:00+00:00"
+      "horizon_at": "2026-11-21T00:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 203,
+      "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T21:30:00+00:00"
+      "horizon_at": "2026-11-21T01:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +371,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T22:00:00+00:00"
+      "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1001,10 +995,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 68,
+      "programmes": 70,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T21:50:00+00:00"
+      "horizon_at": "2026-11-21T01:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1397,10 +1391,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 203,
+      "programmes": 209,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T22:00:00+00:00"
+      "horizon_at": "2026-11-21T00:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1427,9 +1421,9 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-17T18:00:47.816463+00:00",
+  "reference_generated_at": "2026-11-18T00:00:48.567768+00:00",
   "reference_retained": false,
-  "saimo_channels": 244,
+  "saimo_channels": 248,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
     "already_in_saimo": 65
@@ -1838,14 +1832,6 @@
       "id": "ElementalChannel.br",
       "name": "Elemental Channel",
       "tvg_id": "ElementalChannel.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "ElyTV.br",
-      "name": "ElyTV",
-      "tvg_id": "ElyTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3715,6 +3701,10 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Record News Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
