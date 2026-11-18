@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T17:52:06.066250+00:00",
-  "selected_channels": 236,
+  "generated_at": "2026-11-18T18:01:59.633150+00:00",
+  "selected_channels": 237,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-21T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 32,
+      "programmes": 31,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:40:31+00:00"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 115,
+      "programmes": 114,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 205,
+      "programmes": 210,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T16:00:00+00:00"
+      "horizon_at": "2026-11-21T19:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 41,
+      "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T16:00:00+00:00"
+      "horizon_at": "2026-11-21T20:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1007,10 +1007,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 69,
+      "programmes": 71,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T16:00:00+00:00"
+      "horizon_at": "2026-11-21T20:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1157,6 +1157,12 @@
       "horizon_at": null
     },
     "TVBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1397,10 +1403,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 209,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T15:45:00+00:00"
+      "horizon_at": "2026-11-21T22:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3391,6 +3397,14 @@
       "name": "TV Brasil Angola",
       "tvg_id": "Local.tvbrasilangola.br",
       "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVBrasilOeste.br",
+      "name": "TV Brasil Oeste",
+      "tvg_id": "TVBrasilOeste.br",
+      "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
     },
