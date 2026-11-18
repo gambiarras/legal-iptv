@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T15:02:08.397228+00:00",
-  "selected_channels": 235,
+  "generated_at": "2026-11-18T15:31:46.368311+00:00",
+  "selected_channels": 236,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -23,7 +23,7 @@
       "horizon_at": "2026-11-21T19:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:00:00+00:00"
@@ -221,7 +221,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 120,
+      "programmes": 119,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -230,7 +230,7 @@
       "programmes": 211,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T15:30:00+00:00"
+      "horizon_at": "2026-11-21T16:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -886,6 +886,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvtudo.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvzimbo.br": {
       "programmes": 0,
       "current": false,
@@ -1001,7 +1007,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 70,
+      "programmes": 69,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T16:00:00+00:00"
@@ -1394,7 +1400,7 @@
       "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T15:30:00+00:00"
+      "horizon_at": "2026-11-21T15:45:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2669,6 +2675,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.107",
+      "name": "TV Tudo",
+      "tvg_id": "Local.tvtudo.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.83",
       "name": "TVBC",
       "tvg_id": "Local.tvbc.br",
@@ -3689,10 +3703,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
