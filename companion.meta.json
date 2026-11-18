@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T06:52:09.368112+00:00",
+  "generated_at": "2026-11-18T07:01:40.887222+00:00",
   "selected_channels": 234,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 310,
+      "programmes": 388,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T01:32:00+00:00"
+      "horizon_at": "2026-11-21T07:05:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 40,
@@ -35,10 +35,10 @@
       "horizon_at": "2026-11-21T00:40:31+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 26,
+      "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T00:33:50+00:00"
+      "horizon_at": "2026-11-21T00:06:34+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 135,
+      "programmes": 136,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T02:00:00+00:00"
+      "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 199,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T02:00:00+00:00"
+      "horizon_at": "2026-11-21T07:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 37,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T03:00:00+00:00"
+      "horizon_at": "2026-11-21T09:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1001,10 +1001,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 65,
+      "programmes": 71,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T02:15:00+00:00"
+      "horizon_at": "2026-11-21T09:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1337,10 +1337,10 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
+      "programmes": 30,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-20T06:20:00+00:00"
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -1385,10 +1385,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 178,
+      "programmes": 202,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T01:45:00+00:00"
+      "horizon_at": "2026-11-21T07:01:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3547,8 +3547,8 @@
       "name": "TV Sonata",
       "tvg_id": "TVSonata.br",
       "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
+      "epg_current": true,
+      "epg_future": true
     },
     {
       "id": "rest_catalog_1.54",
