@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T17:07:09.262643+00:00",
+  "generated_at": "2026-11-18T17:30:53.993890+00:00",
   "selected_channels": 236,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 116,
+      "programmes": 115,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 206,
+      "programmes": 205,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T16:00:00+00:00"
@@ -1397,7 +1397,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 211,
+      "programmes": 209,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T15:45:00+00:00"
@@ -3703,10 +3703,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
