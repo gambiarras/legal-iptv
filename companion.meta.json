@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-18T22:22:05.698732+00:00",
+  "generated_at": "2026-11-18T22:32:14.643329+00:00",
   "selected_channels": 237,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 382,
+      "programmes": 388,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T19:00:00+00:00"
+      "horizon_at": "2026-11-21T23:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 31,
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 106,
+      "programmes": 105,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 200,
+      "programmes": 207,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T19:00:00+00:00"
+      "horizon_at": "2026-11-21T23:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T20:00:00+00:00"
+      "horizon_at": "2026-11-21T23:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -736,6 +736,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvconecta.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvcultural.br": {
       "programmes": 0,
       "current": false,
@@ -1007,10 +1013,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 63,
+      "programmes": 64,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T20:00:00+00:00"
+      "horizon_at": "2026-11-21T22:45:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1157,12 +1163,6 @@
       "horizon_at": null
     },
     "TVBahia.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVBrasilOeste.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1403,10 +1403,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 213,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-21T22:00:00+00:00"
+      "horizon_at": "2026-11-21T23:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2601,6 +2601,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.134",
+      "name": "TV Conecta",
+      "tvg_id": "Local.tvconecta.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.55",
       "name": "TV da Cidade Joinville",
       "tvg_id": "Local.tvdacidadejoinville.br",
@@ -3401,14 +3409,6 @@
       "epg_future": false
     },
     {
-      "id": "TVBrasilOeste.br",
-      "name": "TV Brasil Oeste",
-      "tvg_id": "TVBrasilOeste.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.tvbrasil-sinop",
       "name": "TV Brasil Sinop",
       "tvg_id": "Local.tvbrasilsinop.br",
@@ -3727,12 +3727,12 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
+        "name": "NBA Brasil",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
