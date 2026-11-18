@@ -283,6 +283,10 @@ https://stream01.msolutionbrasil.com.br/hls/conectv/live.m3u8
 #EXTGRP:Variedades
 https://5a57bda70564a.streamlock.net/conexaotv/conexaotv.sdp/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="CulturaFast.br" tvg-name="Cultura Fast" tvg-logo="https://eitv6.cdn.broadpeak.io/account351-i1438/channel/53/quadrada_-3-_pequeno-1723832301.png", Cultura Fast
+#EXTGRP:Variedades
+https://fpa-gateway.tvcultura.com.br:8181/memfs/606caef0-a290-413d-9f1f-8fcdb3a73831.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="CulturaPara.br" tvg-name="Cultura Para" tvg-logo="https://i.imgur.com/5jPEI5c.png", Cultura Para
 #EXTGRP:Variedades
 http://www.portalcultura.com.br/playerhtml/funtelpa/tv_funtelpa/playlist.m3u8
@@ -569,7 +573,7 @@ https://stmv1.voxtvhd.com.br/9030/9030/playlist.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVSenado.br" tvg-name="TV Senado" tvg-logo="https://i.imgur.com/duy6waL.png", TV Senado
 #EXTGRP:Variedades
-http://170.83.49.66:8083/TVSENADOHD/index.m3u8
+http://170.83.16.50/TV_SENADO/index.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="TVShowFortaleza.br" tvg-name="TV Show Fortaleza" tvg-logo="https://static.wixstatic.com/media/9af6b8_e963e864c8fb40d3954f5c1c8cab1b40~mv2.png", TV Show Fortaleza
 #EXTGRP:Variedades
