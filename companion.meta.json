@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T10:52:06.993638+00:00",
-  "selected_channels": 243,
+  "generated_at": "2026-11-19T11:01:51.678166+00:00",
+  "selected_channels": 244,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 395,
+      "programmes": 397,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T10:20:00+00:00"
+      "horizon_at": "2026-11-22T12:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 38,
@@ -34,6 +34,12 @@
       "future": true,
       "horizon_at": "2026-11-22T00:34:43+00:00"
     },
+    "63dac32bda711800088a2ba3": {
+      "programmes": 15,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-20T02:00:00+00:00"
+    },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 38,
       "current": true,
@@ -41,7 +47,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 54,
+      "programmes": 53,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +233,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 81,
+      "programmes": 80,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 191,
+      "programmes": 195,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T10:15:00+00:00"
+      "horizon_at": "2026-11-22T11:05:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +389,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T11:00:00+00:00"
+      "horizon_at": "2026-11-22T12:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1025,10 +1031,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 62,
+      "programmes": 63,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T11:00:00+00:00"
+      "horizon_at": "2026-11-22T12:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1217,10 +1223,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 73,
+      "programmes": 74,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T10:30:00+00:00"
+      "horizon_at": "2026-11-22T11:30:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1439,10 +1445,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 213,
+      "programmes": 217,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T10:09:00+00:00"
+      "horizon_at": "2026-11-22T11:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2348,6 +2354,14 @@
       "id": "MusicBoxBrazil.br",
       "name": "Music Box Brazil",
       "tvg_id": "1072",
+      "provider_id": "iptv_org",
+      "epg_current": true,
+      "epg_future": true
+    },
+    {
+      "id": "TikTokRadioBrasil.br",
+      "name": "TikTok Radio Brasil",
+      "tvg_id": "63dac32bda711800088a2ba3",
       "provider_id": "iptv_org",
       "epg_current": true,
       "epg_future": true
