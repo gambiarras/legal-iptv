@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T17:22:05.966745+00:00",
-  "selected_channels": 241,
+  "generated_at": "2026-11-19T17:31:21.248958+00:00",
+  "selected_channels": 242,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -35,13 +35,13 @@
       "horizon_at": "2026-11-20T08:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 35,
+      "programmes": 34,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 46,
+      "programmes": 45,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,7 +227,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 68,
+      "programmes": 67,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -236,7 +236,7 @@
       "programmes": 194,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T17:30:00+00:00"
+      "horizon_at": "2026-11-22T18:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -1211,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 72,
+      "programmes": 73,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T17:30:00+00:00"
+      "horizon_at": "2026-11-22T18:30:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1390,6 +1390,12 @@
       "future": true,
       "horizon_at": "2026-11-22T01:30:00+00:00"
     },
+    "TVTerceiroAnjo.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVUFOP.br": {
       "programmes": 0,
       "current": false,
@@ -1430,7 +1436,7 @@
       "programmes": 215,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T17:30:00+00:00"
+      "horizon_at": "2026-11-22T18:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2893,6 +2899,14 @@
       "epg_future": false
     },
     {
+      "id": "TVTerceiroAnjo.br",
+      "name": "TV Terceiro Anjo",
+      "tvg_id": "TVTerceiroAnjo.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVUniversal.br",
       "name": "TV Universal",
       "tvg_id": "TVUniversal.br",
@@ -3753,10 +3767,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
