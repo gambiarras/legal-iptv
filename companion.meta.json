@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T23:22:06.408152+00:00",
+  "generated_at": "2026-11-19T23:30:59.171498+00:00",
   "selected_channels": 245,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -23,7 +23,7 @@
       "horizon_at": "2026-11-23T00:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T00:15:00+00:00"
@@ -233,13 +233,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 56,
+      "programmes": 55,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 191,
+      "programmes": 190,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1223,7 +1223,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 80,
+      "programmes": 79,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1451,7 +1451,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 216,
+      "programmes": 215,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:15:00+00:00"
@@ -3807,10 +3807,6 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
       },
@@ -3829,10 +3825,6 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
