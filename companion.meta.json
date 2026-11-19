@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T09:22:05.921901+00:00",
-  "selected_channels": 241,
+  "generated_at": "2026-11-19T09:31:38.463723+00:00",
+  "selected_channels": 242,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 366,
+      "programmes": 395,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T06:04:00+00:00"
+      "horizon_at": "2026-11-22T09:50:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 38,
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-22T00:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 38,
+      "programmes": 37,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T00:34:43+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 57,
+      "programmes": 56,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 84,
+      "programmes": 83,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 189,
+      "programmes": 198,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T06:30:00+00:00"
+      "horizon_at": "2026-11-22T10:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 38,
+      "programmes": 39,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T09:00:00+00:00"
+      "horizon_at": "2026-11-22T11:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1019,10 +1019,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 63,
+      "programmes": 64,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T09:00:00+00:00"
+      "horizon_at": "2026-11-22T10:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1037,6 +1037,12 @@
       "horizon_at": null
     },
     "RedeFamilia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "RedeImpactoGospelTV.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1208,7 +1214,7 @@
       "programmes": 75,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T08:30:00+00:00"
+      "horizon_at": "2026-11-22T10:30:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1427,10 +1433,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 200,
+      "programmes": 215,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T06:26:00+00:00"
+      "horizon_at": "2026-11-22T09:38:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2845,6 +2851,14 @@
       "epg_future": false
     },
     {
+      "id": "RedeImpactoGospelTV.br",
+      "name": "Rede Impacto Gospel TV",
+      "tvg_id": "RedeImpactoGospelTV.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "RedeSeculo21.br",
       "name": "Rede Seculo 21",
       "tvg_id": "RedeSeculo21.br",
@@ -3716,10 +3730,6 @@
       {
         "name": "Classic Mr Bean",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
       },
       {
         "name": "CNN Brasil",
