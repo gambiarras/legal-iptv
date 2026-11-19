@@ -3,18 +3,24 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T21:22:06.255910+00:00",
-  "selected_channels": 244,
+  "generated_at": "2026-11-19T21:31:58.778316+00:00",
+  "selected_channels": 245,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
   "epg_coverage": {
+    "1001Noites.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "1072": {
-      "programmes": 390,
+      "programmes": 393,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T19:30:00+00:00"
+      "horizon_at": "2026-11-22T21:40:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 31,
@@ -29,19 +35,19 @@
       "horizon_at": "2026-11-22T00:34:43+00:00"
     },
     "63dac32bda711800088a2ba3": {
-      "programmes": 11,
+      "programmes": 14,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T08:00:00+00:00"
+      "horizon_at": "2026-11-20T11:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
-      "programmes": 33,
+      "programmes": 18,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T00:29:23+00:00"
+      "horizon_at": "2026-11-21T00:06:34+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 43,
+      "programmes": 42,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +233,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 60,
+      "programmes": 59,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 188,
+      "programmes": 190,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T20:00:00+00:00"
+      "horizon_at": "2026-11-22T21:45:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -1025,10 +1031,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 60,
+      "programmes": 62,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T21:00:00+00:00"
+      "horizon_at": "2026-11-22T23:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1217,10 +1223,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 74,
+      "programmes": 79,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T19:30:00+00:00"
+      "horizon_at": "2026-11-22T22:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -2927,6 +2933,14 @@
       "epg_future": false
     },
     {
+      "id": "1001Noites.br",
+      "name": "1001 Noites",
+      "tvg_id": "1001Noites.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVSeries.br",
       "name": "TV Series",
       "tvg_id": "Local.tvseries.br",
@@ -3795,10 +3809,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
