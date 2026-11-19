@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T00:52:05.729362+00:00",
-  "selected_channels": 238,
+  "generated_at": "2026-11-19T01:00:52.961648+00:00",
+  "selected_channels": 242,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 377,
+      "programmes": 373,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T23:30:00+00:00"
@@ -39,6 +39,12 @@
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T00:06:34+00:00"
+    },
+    "AGROMAIS.br": {
+      "programmes": 37,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-20T03:00:00+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -221,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 101,
+      "programmes": 100,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 202,
+      "programmes": 201,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T00:00:00+00:00"
@@ -1102,6 +1108,12 @@
       "future": false,
       "horizon_at": null
     },
+    "SESCTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "SICTV.br": {
       "programmes": 0,
       "current": false,
@@ -1121,6 +1133,12 @@
       "horizon_at": null
     },
     "SeriesClassic.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "SonyMovies.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1185,6 +1203,12 @@
       "current": false,
       "future": false,
       "horizon_at": null
+    },
+    "TVCamara.br": {
+      "programmes": 66,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-21T23:30:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1355,7 +1379,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T02:59:00+00:00"
@@ -1409,7 +1433,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 210,
+      "programmes": 209,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T23:15:00+00:00"
@@ -1439,12 +1463,12 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-18T18:30:59.321761+00:00",
+  "reference_generated_at": "2026-11-19T01:00:50.352263+00:00",
   "reference_retained": false,
-  "saimo_channels": 209,
+  "saimo_channels": 236,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 65
+    "already_in_saimo": 61
   },
   "excluded_channels": [
     {
@@ -1455,11 +1479,6 @@
     {
       "id": "RunTimeAction.br",
       "name": "RunTime Ação",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "AgroMais.br",
-      "name": "AgroMais",
       "reason": "already_in_saimo"
     },
     {
@@ -1638,18 +1657,8 @@
       "reason": "already_in_saimo"
     },
     {
-      "id": "SESCTV.br",
-      "name": "SESC TV",
-      "reason": "already_in_saimo"
-    },
-    {
       "id": "SonyChannel.br",
       "name": "Sony Channel",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "SonyMovies.br",
-      "name": "Sony Movies",
       "reason": "already_in_saimo"
     },
     {
@@ -1695,11 +1704,6 @@
     {
       "id": "rest_catalog_1.106",
       "name": "TV Brasil",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "TVCamara.br",
-      "name": "TV Camara",
       "reason": "already_in_saimo"
     },
     {
@@ -2063,6 +2067,14 @@
       "epg_future": true
     },
     {
+      "id": "SonyMovies.br",
+      "name": "Sony Movies",
+      "tvg_id": "SonyMovies.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.138",
       "name": "TVNA filmes",
       "tvg_id": "Local.tvnafilmes.br",
@@ -2311,6 +2323,14 @@
       "epg_future": false
     },
     {
+      "id": "TVCamara.br",
+      "name": "TV Camara",
+      "tvg_id": "TVCamara.br",
+      "provider_id": "iptv_org",
+      "epg_current": true,
+      "epg_future": true
+    },
+    {
       "id": "LamoreRockShowWebTV.br",
       "name": "Lamore Rock Show WebTV",
       "tvg_id": "LamoreRockShowWebTV.br",
@@ -2333,6 +2353,14 @@
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
+    },
+    {
+      "id": "AgroMais.br",
+      "name": "AgroMais",
+      "tvg_id": "AGROMAIS.br",
+      "provider_id": "iptv_org",
+      "epg_current": true,
+      "epg_future": true
     },
     {
       "id": "AratuOn.br",
@@ -3343,6 +3371,14 @@
       "epg_future": false
     },
     {
+      "id": "SESCTV.br",
+      "name": "SESC TV",
+      "tvg_id": "SESCTV.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "SICTV.br",
       "name": "SIC TV",
       "tvg_id": "SICTV.br",
@@ -3722,6 +3758,10 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {

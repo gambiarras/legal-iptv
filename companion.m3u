@@ -387,6 +387,10 @@ https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u
 #EXTGRP:Variedades
 https://video09.logicahost.com.br/sbtmutum/sbtmutum/playlist.m3u8
 
+#EXTINF:-1 group-title="Variedades" tvg-id="SESCTV.br" tvg-name="SESC TV" tvg-logo="https://i.imgur.com/Mu8O6CV.png", SESC TV
+#EXTGRP:Variedades
+http://170.83.49.66:8083/SESCTVHD/index.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="SICTV.br" tvg-name="SIC TV" tvg-logo="https://i.imgur.com/mHxQyB2.png", SIC TV
 #EXTGRP:Variedades
 https://parecisfmlive.brasilstream.com.br/hls/parecisfmlive/index.m3u8
@@ -593,6 +597,10 @@ https://run-cr-br.otteravision.com/run/cr_br/cr_br_720.m3u8
 #EXTGRP:Filmes
 https://run-rufb.otteravision.com/run/rufb/rufb_480.m3u8
 
+#EXTINF:-1 group-title="Filmes" tvg-id="SonyMovies.br" tvg-name="Sony Movies" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_Movies_Logo.svg/500px-Sony_Movies_Logo.svg.png", Sony Movies
+#EXTGRP:Filmes
+http://170.83.16.50/SONY_MOVIES/index.m3u8
+
 #EXTINF:-1 group-title="Filmes" tvg-id="Local.tvnafilmes.br" tvg-name="TVNA filmes" tvg-logo="https://i.postimg.cc/pTFJ912p/tvna-filmes.png", TVNA filmes
 #EXTGRP:Filmes
 https://stmv6.voxtvhd.com.br/tvnafilmes/tvnafilmes/playlist.m3u8
@@ -620,6 +628,10 @@ https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8
 https://stmv1.srvif.com/loadingtv/loadingtv/playlist.m3u8
 
 ### Canais Notícia
+
+#EXTINF:-1 group-title="Notícia" tvg-id="AGROMAIS.br" tvg-name="AgroMais" tvg-logo="https://i.imgur.com/sFcOZeo.png", AgroMais
+#EXTGRP:Notícia
+http://170.83.16.50/AGRO_MAIS/index.m3u8
 
 #EXTINF:-1 group-title="Notícia" tvg-id="AratuOn.br" tvg-name="Aratu On" tvg-logo="https://i.imgur.com/Ht4jCab.png", Aratu On
 #EXTGRP:Notícia
@@ -944,6 +956,12 @@ https://stmv1.video.brstream.com.br/retrotv/retrotv/chunklist_w1857106462.m3u8
 #EXTINF:-1 group-title="Infantis" tvg-id="Local.tvkidsmais.br" tvg-name="TV Kids Mais" tvg-logo="https://i.postimg.cc/Qxh10Z7j/tv-kids-mais.jpg", TV Kids Mais
 #EXTGRP:Infantis
 https://Stmv1.transmissaodigital.com/tvkidmais/tvkidmais/playlist.m3u8
+
+### Canais Legislativo
+
+#EXTINF:-1 group-title="Legislativo" tvg-id="TVCamara.br" tvg-name="TV Camara" tvg-logo="https://i.imgur.com/Sdou1Ab.png", TV Camara
+#EXTGRP:Legislativo
+http://170.83.49.66:8083/TVCAMARAHD/index.m3u8
 
 ### Canais Notícias
 
