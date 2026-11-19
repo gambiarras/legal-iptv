@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T05:22:06.058894+00:00",
+  "generated_at": "2026-11-19T05:30:33.725239+00:00",
   "selected_channels": 240,
-  "youtube_selected_channels": 9,
+  "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 318,
+      "programmes": 317,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T01:42:00+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T03:00:00+00:00"
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 92,
+      "programmes": 91,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 194,
+      "programmes": 193,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T03:10:00+00:00"
@@ -1013,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 62,
+      "programmes": 61,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T02:15:00+00:00"
@@ -1421,7 +1421,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 199,
+      "programmes": 198,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T02:00:00+00:00"
@@ -3689,48 +3689,19 @@
   ],
   "youtube": {
     "player": "Kodi with configured YouTube addon",
-    "channels": [
-      {
-        "id": "BRCartoonNetworkvideos.br.apIsxQZ0rUE",
-        "name": "Cartoon Network Brasil"
-      },
-      {
-        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
-        "name": "Classic Mr Bean"
-      },
-      {
-        "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
-        "name": "Diário TV Teresópolis"
-      },
-      {
-        "id": "mr-bean.tv.oPonPGALYaU",
-        "name": "Mr Bean"
-      },
-      {
-        "id": "pica-pau.br.mUB69Xk0qwY",
-        "name": "Pica-Pau"
-      },
-      {
-        "id": "PowerRangersTV.br.cQHlHWNg5zA",
-        "name": "PowerRangers TV"
-      },
-      {
-        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
-        "name": "Santuário Nacional de Aparecida"
-      },
-      {
-        "id": "tres-espias-demais.br.nfs5DPFMrcc",
-        "name": "Três Espiãs Demais"
-      },
-      {
-        "id": "tvc-youtube.tv.8N9orlXLI1c",
-        "name": "TV Correio da Manhã"
-      }
-    ],
+    "channels": [],
     "skipped": [
+      {
+        "name": "Cartoon Network Brasil",
+        "reason": "not_a_recent_resolved_video"
+      },
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Classic Mr Bean",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
@@ -3741,11 +3712,35 @@
         "reason": "not_a_television_live"
       },
       {
+        "name": "Diário TV Teresópolis",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "Jovem Pan Live",
         "reason": "already_in_saimo"
       },
       {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Mr Bean",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "NBA Brasil",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Pica-Pau",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Pica-Pau",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "PowerRangers TV",
         "reason": "not_a_recent_resolved_video"
       },
       {
@@ -3753,8 +3748,28 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "Santuário Nacional de Aparecida",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
         "name": "SBT",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Três Espiãs Demais",
+        "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "TV Correio da Manhã",
+        "reason": "not_a_recent_resolved_video"
       }
     ]
   },
