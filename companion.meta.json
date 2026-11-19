@@ -3,24 +3,18 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T12:30:43.524540+00:00",
-  "selected_channels": 244,
+  "generated_at": "2026-11-19T13:03:11.367454+00:00",
+  "selected_channels": 241,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
   "epg_coverage": {
-    "1001Noites.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "1072": {
-      "programmes": 395,
+      "programmes": 396,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T12:00:00+00:00"
+      "horizon_at": "2026-11-22T13:55:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 37,
@@ -29,16 +23,16 @@
       "horizon_at": "2026-11-22T00:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T00:34:43+00:00"
     },
     "63dac32bda711800088a2ba3": {
-      "programmes": 14,
+      "programmes": 16,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-20T02:00:00+00:00"
+      "horizon_at": "2026-11-20T05:00:00+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 37,
@@ -233,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 77,
+      "programmes": 76,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 185,
+      "programmes": 194,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T11:05:00+00:00"
+      "horizon_at": "2026-11-22T13:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -392,7 +386,7 @@
       "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T12:00:00+00:00"
+      "horizon_at": "2026-11-22T14:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -994,12 +988,6 @@
       "future": false,
       "horizon_at": null
     },
-    "PlenaTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "PlenitudeTV.br": {
       "programmes": 0,
       "current": false,
@@ -1034,7 +1022,7 @@
       "programmes": 62,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T12:00:00+00:00"
+      "horizon_at": "2026-11-22T13:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1223,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 71,
+      "programmes": 75,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T11:30:00+00:00"
+      "horizon_at": "2026-11-22T16:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1402,12 +1390,6 @@
       "future": true,
       "horizon_at": "2026-11-22T01:30:00+00:00"
     },
-    "TVTerceiroAnjo.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVUFOP.br": {
       "programmes": 0,
       "current": false,
@@ -1445,10 +1427,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 213,
+      "programmes": 217,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T11:30:00+00:00"
+      "horizon_at": "2026-11-22T13:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1480,7 +1462,7 @@
   "saimo_channels": 240,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 61
+    "already_in_saimo": 60
   },
   "excluded_channels": [
     {
@@ -1591,11 +1573,6 @@
     {
       "id": "GloboNews.br",
       "name": "GloboNews",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "GloboplayNovelas.br",
-      "name": "Globoplay Novelas",
       "reason": "already_in_saimo"
     },
     {
@@ -2415,14 +2392,6 @@
       "epg_future": false
     },
     {
-      "id": "PlenaTV.br",
-      "name": "Plena TV",
-      "tvg_id": "PlenaTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "STZTV.br",
       "name": "STZ TV",
       "tvg_id": "STZTV.br",
@@ -2911,25 +2880,9 @@
       "epg_future": false
     },
     {
-      "id": "TVTerceiroAnjo.br",
-      "name": "TV Terceiro Anjo",
-      "tvg_id": "TVTerceiroAnjo.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVUniversal.br",
       "name": "TV Universal",
       "tvg_id": "TVUniversal.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "1001Noites.br",
-      "name": "1001 Noites",
-      "tvg_id": "1001Noites.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3795,6 +3748,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
