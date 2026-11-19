@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T18:07:05.714859+00:00",
-  "selected_channels": 242,
+  "generated_at": "2026-11-19T18:31:52.006155+00:00",
+  "selected_channels": 243,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 45,
+      "programmes": 44,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 66,
+      "programmes": 65,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 193,
+      "programmes": 194,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T18:00:00+00:00"
+      "horizon_at": "2026-11-22T19:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -386,7 +386,7 @@
       "programmes": 42,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T18:00:00+00:00"
+      "horizon_at": "2026-11-22T19:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1022,7 +1022,7 @@
       "programmes": 64,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T18:30:00+00:00"
+      "horizon_at": "2026-11-22T21:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1211,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 73,
+      "programmes": 74,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T18:30:00+00:00"
+      "horizon_at": "2026-11-22T19:30:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1390,6 +1390,12 @@
       "future": true,
       "horizon_at": "2026-11-22T01:30:00+00:00"
     },
+    "TVSulBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
       "current": false,
@@ -1433,10 +1439,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 214,
+      "programmes": 216,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-22T18:00:00+00:00"
+      "horizon_at": "2026-11-22T22:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3649,6 +3655,14 @@
       "provider_id": "rest_catalog_1",
       "epg_current": true,
       "epg_future": true
+    },
+    {
+      "id": "TVSulBahia.br",
+      "name": "TV Sul Bahia",
+      "tvg_id": "TVSulBahia.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "TVVilaReal.br",
