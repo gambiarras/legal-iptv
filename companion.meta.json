@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T11:37:05.906298+00:00",
-  "selected_channels": 243,
-  "youtube_selected_channels": 9,
+  "generated_at": "2026-11-20T12:01:49.544898+00:00",
+  "selected_channels": 242,
+  "youtube_selected_channels": 8,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -20,10 +20,10 @@
       "programmes": 394,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T12:00:00+00:00"
+      "horizon_at": "2026-11-23T13:10:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 37,
+      "programmes": 36,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:15:00+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 19,
+      "programmes": 18,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 184,
+      "programmes": 185,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T11:35:00+00:00"
+      "horizon_at": "2026-11-23T12:10:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -892,12 +892,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.tvsaogabriel.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.tvseries.br": {
       "programmes": 0,
       "current": false,
@@ -1028,7 +1022,7 @@
       "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T11:40:00+00:00"
+      "horizon_at": "2026-11-23T12:50:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1217,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 75,
+      "programmes": 76,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T11:45:00+00:00"
+      "horizon_at": "2026-11-23T15:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1442,7 +1436,7 @@
       "programmes": 216,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T12:00:00+00:00"
+      "horizon_at": "2026-11-23T12:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3657,14 +3651,6 @@
       "epg_future": true
     },
     {
-      "id": "rest_catalog_1.54",
-      "name": "TV São Gabriel",
-      "tvg_id": "Local.tvsaogabriel.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVVilaReal.br",
       "name": "TV Vila Real",
       "tvg_id": "TVVilaReal.br",
@@ -3737,10 +3723,6 @@
         "name": "Cartoon Network Brasil"
       },
       {
-        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
-        "name": "Classic Mr Bean"
-      },
-      {
         "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
         "name": "Diário TV Teresópolis"
       },
@@ -3773,6 +3755,10 @@
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
+      },
+      {
+        "name": "Classic Mr Bean",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
