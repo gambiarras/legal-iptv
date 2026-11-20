@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T10:52:06.763891+00:00",
+  "generated_at": "2026-11-20T11:00:45.767694+00:00",
   "total_input_channels": 603,
   "selected_channels": 305,
   "extra_channels": 41,
@@ -7,10 +7,10 @@
   "live_stream_catalog_channels": 166,
   "source_errors": {},
   "selected_before_stream_filter": 594,
-  "selected_after_stream_filter": 380,
-  "stream_filtered_channels": 214,
-  "selection_filtered_channels": 84,
-  "deduplicated_channels": 84,
+  "selected_after_stream_filter": 381,
+  "stream_filtered_channels": 213,
+  "selection_filtered_channels": 85,
+  "deduplicated_channels": 85,
   "selected_by_source": {
     "extra": 10,
     "live_stream_catalog": 138,
@@ -25,15 +25,17 @@
   "timings_seconds": {
     "fetch_extra": 0.0,
     "fetch_iptv_org": 0.004,
-    "fetch_live_stream_catalog": 0.003,
-    "load_epg_aliases": 0.054,
-    "enrich_epg_metadata": 0.021,
-    "refresh_stream_status": 1.888,
-    "filter_media_proof": 0.229,
-    "select_channels": 0.02,
-    "render_m3u": 0.001,
-    "generate_companion": 0.09,
-    "total": 2.317
+    "fetch_live_stream_catalog": 0.002,
+    "load_epg_aliases": 0.05,
+    "enrich_epg_metadata": 0.017,
+    "refresh_stream_status": 4.712,
+    "filter_media_proof": 0.198,
+    "select_channels": 0.01,
+    "ensure_guide": 0.13,
+    "project_guide": 0.302,
+    "render_m3u": 0.002,
+    "generate_companion": 0.052,
+    "total": 5.518
   },
   "epg_aliases_count": 9449,
   "media_proof_required": true
