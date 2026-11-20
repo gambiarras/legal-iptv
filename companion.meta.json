@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T20:22:05.856598+00:00",
-  "selected_channels": 242,
+  "generated_at": "2026-11-20T20:31:55.936073+00:00",
+  "selected_channels": 243,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -20,7 +20,7 @@
       "programmes": 394,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:15:00+00:00"
+      "horizon_at": "2026-11-23T20:35:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 31,
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 11,
+      "programmes": 10,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 14,
+      "programmes": 13,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 181,
+      "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:00:00+00:00"
+      "horizon_at": "2026-11-23T21:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -892,6 +892,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvsaogabriel.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvseries.br": {
       "programmes": 0,
       "current": false,
@@ -1205,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 77,
+      "programmes": 78,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:10:00+00:00"
+      "horizon_at": "2026-11-23T23:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1379,7 +1385,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 21,
+      "programmes": 20,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -1463,7 +1469,7 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-20T14:30:46.863558+00:00",
+  "reference_generated_at": "2026-11-20T20:30:47.509112+00:00",
   "reference_retained": false,
   "saimo_channels": 244,
   "televisao_reference_channels": 0,
@@ -3647,6 +3653,14 @@
       "name": "TV Sul Bahia",
       "tvg_id": "TVSulBahia.br",
       "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.54",
+      "name": "TV São Gabriel",
+      "tvg_id": "Local.tvsaogabriel.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
