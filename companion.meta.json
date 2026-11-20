@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T21:07:06.027517+00:00",
-  "selected_channels": 243,
+  "generated_at": "2026-11-20T21:31:53.075341+00:00",
+  "selected_channels": 242,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 394,
+      "programmes": 393,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:35:00+00:00"
+      "horizon_at": "2026-11-23T21:45:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 30,
@@ -29,7 +29,7 @@
       "horizon_at": "2026-11-23T00:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 31,
+      "programmes": 30,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:35:08+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 10,
+      "programmes": 9,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 12,
+      "programmes": 11,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 182,
+      "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T21:00:00+00:00"
+      "horizon_at": "2026-11-23T22:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:45:00+00:00"
+      "horizon_at": "2026-11-23T22:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -814,12 +814,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.tvmanaargentina.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.tvmanabrasil.br": {
       "programmes": 0,
       "current": false,
@@ -1025,10 +1019,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 54,
+      "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T20:40:00+00:00"
+      "horizon_at": "2026-11-23T21:50:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -2260,14 +2254,6 @@
       "id": "rest_catalog_1.77",
       "name": "TV Maná 2",
       "tvg_id": "Local.tvmana2.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.78",
-      "name": "TV Maná Argentina",
-      "tvg_id": "Local.tvmanaargentina.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
