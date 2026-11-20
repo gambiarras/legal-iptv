@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T21:37:06.492132+00:00",
-  "selected_channels": 242,
+  "generated_at": "2026-11-20T22:01:53.709545+00:00",
+  "selected_channels": 241,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 393,
+      "programmes": 394,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T21:45:00+00:00"
+      "horizon_at": "2026-11-23T22:50:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 30,
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 9,
+      "programmes": 8,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,7 +227,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 11,
+      "programmes": 10,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -236,7 +236,7 @@
       "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T22:00:00+00:00"
+      "horizon_at": "2026-11-23T22:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -386,7 +386,7 @@
       "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T22:00:00+00:00"
+      "horizon_at": "2026-11-23T23:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1022,7 +1022,7 @@
       "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T21:50:00+00:00"
+      "horizon_at": "2026-11-23T22:55:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1205,7 +1205,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 77,
+      "programmes": 76,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T23:00:00+00:00"
@@ -1217,12 +1217,6 @@
       "horizon_at": null
     },
     "TVClube.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVComunitaria.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1436,7 +1430,7 @@
       "programmes": 220,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T22:00:00+00:00"
+      "horizon_at": "2026-11-23T22:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3499,14 +3493,6 @@
       "epg_future": false
     },
     {
-      "id": "TVComunitaria.br",
-      "name": "TV Comunitaria",
-      "tvg_id": "TVComunitaria.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.tv-culturahd",
       "name": "TV Cultural [HD]",
       "tvg_id": "Local.tvcultural.br",
@@ -3761,10 +3747,6 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
@@ -3783,6 +3765,10 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Record News Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
