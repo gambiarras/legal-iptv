@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T17:37:09.295850+00:00",
+  "generated_at": "2026-11-20T18:01:51.373349+00:00",
   "selected_channels": 241,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,19 +17,19 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 394,
+      "programmes": 395,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T15:00:00+00:00"
+      "horizon_at": "2026-11-23T19:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 33,
-      "current": true,
+      "programmes": 28,
+      "current": false,
       "future": true,
       "horizon_at": "2026-11-23T00:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 33,
+      "programmes": 32,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:35:08+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 19,
+      "programmes": 18,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 178,
+      "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T15:00:00+00:00"
+      "horizon_at": "2026-11-23T18:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T16:00:00+00:00"
+      "horizon_at": "2026-11-23T18:30:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1019,10 +1019,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 56,
+      "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T15:30:00+00:00"
+      "horizon_at": "2026-11-23T18:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1174,12 +1174,6 @@
       "future": false,
       "horizon_at": null
     },
-    "TVArapuan.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVBRICSPortuguese.br": {
       "programmes": 0,
       "current": false,
@@ -1211,10 +1205,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 72,
+      "programmes": 77,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T15:00:00+00:00"
+      "horizon_at": "2026-11-23T20:10:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1354,6 +1348,12 @@
       "future": false,
       "horizon_at": null
     },
+    "TVPetropolis.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVPlusPet.br": {
       "programmes": 0,
       "current": false,
@@ -1379,7 +1379,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 20,
+      "programmes": 22,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -1427,10 +1427,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 211,
+      "programmes": 220,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T15:00:00+00:00"
+      "horizon_at": "2026-11-23T22:00:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2057,7 +2057,7 @@
       "name": "RunTime Família",
       "tvg_id": "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5",
       "provider_id": "extra",
-      "epg_current": true,
+      "epg_current": false,
       "epg_future": true
     },
     {
@@ -3437,14 +3437,6 @@
       "epg_future": false
     },
     {
-      "id": "TVArapuan.br",
-      "name": "TV Arapuan",
-      "tvg_id": "TVArapuan.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVBahia.br",
       "name": "TV Bahia",
       "tvg_id": "TVBahia.br",
@@ -3613,6 +3605,14 @@
       "epg_future": false
     },
     {
+      "id": "TVPetropolis.br",
+      "name": "TV Petropolis",
+      "tvg_id": "TVPetropolis.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVSaoRaimundo.br",
       "name": "TV Sao Raimundo",
       "tvg_id": "TVSaoRaimundo.br",
@@ -3744,6 +3744,10 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
