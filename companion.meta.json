@@ -3,9 +3,9 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T12:22:06.077246+00:00",
+  "generated_at": "2026-11-20T12:30:47.859164+00:00",
   "selected_channels": 242,
-  "youtube_selected_channels": 8,
+  "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 30,
+      "programmes": 29,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 182,
+      "programmes": 180,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T12:10:00+00:00"
@@ -1433,7 +1433,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 216,
+      "programmes": 215,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T12:30:00+00:00"
@@ -3723,6 +3723,10 @@
         "name": "Cartoon Network Brasil"
       },
       {
+        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
+        "name": "Classic Mr Bean"
+      },
+      {
         "id": "DiarioTVTeresopolis.br.tbVTSOpJeAQ",
         "name": "Diário TV Teresópolis"
       },
@@ -3755,10 +3759,6 @@
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
-      },
-      {
-        "name": "Classic Mr Bean",
-        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "CNN Brasil",
