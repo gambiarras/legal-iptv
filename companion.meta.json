@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T18:01:51.373349+00:00",
-  "selected_channels": 241,
+  "generated_at": "2026-11-20T18:31:18.781445+00:00",
+  "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 12,
+      "programmes": 11,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -227,7 +227,7 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 18,
+      "programmes": 17,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -236,7 +236,7 @@
       "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T18:30:00+00:00"
+      "horizon_at": "2026-11-23T19:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -299,12 +299,6 @@
       "horizon_at": null
     },
     "Local.bstvonline.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Local.canaanewstv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -386,7 +380,7 @@
       "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T18:30:00+00:00"
+      "horizon_at": "2026-11-23T20:45:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1022,7 +1016,7 @@
       "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T18:30:00+00:00"
+      "horizon_at": "2026-11-23T19:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1379,7 +1373,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 22,
+      "programmes": 21,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -2781,14 +2775,6 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.131",
-      "name": "Canaã News TV",
-      "tvg_id": "Local.canaanewstv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.29",
       "name": "Rede Super TV",
       "tvg_id": "Local.redesupertv.br",
@@ -3744,10 +3730,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
