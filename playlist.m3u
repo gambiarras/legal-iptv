@@ -199,6 +199,10 @@ https://video02.logicahost.com.br/tvriopreto/tvriopreto/playlist.m3u8
 
 ### Canais Variedades
 
+#EXTINF:-1 group-title="Variedades" tvg-id="PlusMaisUm.br" tvg-name="+MaisUm" tvg-logo="https://i.ibb.co/ZRDvqJcf/Logo-Mais-Um-original-sem-fundo.png", +MaisUm
+#EXTGRP:Variedades
+https://stream.ichibansys.com:3230/hybrid/play.m3u8
+
 #EXTINF:-1 group-title="Variedades" tvg-id="AdessoTV.br" tvg-name="Adesso TV" tvg-logo="https://i.postimg.cc/ZqZ88TZv/adesso-tv.jpg", Adesso TV
 #EXTGRP:Variedades
 https://cdn.live.br1.jmvstream.com/w/LVW-9715/LVW9715_12B26T62tm/playlist.m3u8
@@ -342,10 +346,6 @@ https://stmv3.voxtvhd.com.br/leandroenzo/leandroenzo/playlist.m3u8
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.lucastv.br" tvg-name="Lucas TV" tvg-logo="https://i.postimg.cc/76cC5fk1/lucas-tv-logo.jpg", Lucas TV
 #EXTGRP:Variedades
 https://stmv1.srvif.com/lucastv/lucastv/playlist.m3u8
-
-#EXTINF:-1 group-title="Variedades" tvg-id="PlusMaisUm.br" tvg-name="Mais Um" tvg-logo="https://i.postimg.cc/NFWhnwMH/mais_um.jpg", Mais Um
-#EXTGRP:Variedades
-https://stream.ichibansys.com:3230/hybrid/play.m3u8
 
 #EXTINF:-1 group-title="Variedades" tvg-id="Local.nbxtv.br" tvg-name="NBX TV" tvg-logo="https://i.postimg.cc/YSLSDYj8/nbx-tv.jpg", NBX TV
 #EXTGRP:Variedades
