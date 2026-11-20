@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T13:00:49.692461+00:00",
-  "selected_channels": 242,
+  "generated_at": "2026-11-20T13:31:58.969722+00:00",
+  "selected_channels": 239,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -20,10 +20,10 @@
       "programmes": 394,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T13:10:00+00:00"
+      "horizon_at": "2026-11-23T13:50:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:15:00+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 18,
+      "programmes": 17,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -95,12 +95,6 @@
       "horizon_at": null
     },
     "BoxKidsTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Canal25Jundiai.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -227,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 28,
+      "programmes": 27,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 178,
+      "programmes": 184,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T12:10:00+00:00"
+      "horizon_at": "2026-11-23T13:40:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -299,12 +293,6 @@
       "horizon_at": null
     },
     "Local.bstvonline.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "Local.canaanewstv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -383,10 +371,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 40,
+      "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T13:00:00+00:00"
+      "horizon_at": "2026-11-23T16:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1019,10 +1007,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 56,
+      "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T12:50:00+00:00"
+      "horizon_at": "2026-11-23T14:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1354,12 +1342,6 @@
       "future": false,
       "horizon_at": null
     },
-    "TVPetropolis.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVPlusPet.br": {
       "programmes": 0,
       "current": false,
@@ -1433,10 +1415,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 214,
+      "programmes": 217,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T12:30:00+00:00"
+      "horizon_at": "2026-11-23T13:50:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2787,14 +2769,6 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.131",
-      "name": "Canaã News TV",
-      "tvg_id": "Local.canaanewstv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.29",
       "name": "Rede Super TV",
       "tvg_id": "Local.redesupertv.br",
@@ -3006,14 +2980,6 @@
       "id": "BoasNovas.br",
       "name": "Boas Novas",
       "tvg_id": "BoasNovas.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "Canal25Jundiai.br",
-      "name": "Canal 25 Jundiai",
-      "tvg_id": "Canal25Jundiai.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -3619,14 +3585,6 @@
       "epg_future": false
     },
     {
-      "id": "TVPetropolis.br",
-      "name": "TV Petropolis",
-      "tvg_id": "TVPetropolis.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVSaoRaimundo.br",
       "name": "TV Sao Raimundo",
       "tvg_id": "TVSaoRaimundo.br",
@@ -3767,10 +3725,6 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
