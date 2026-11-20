@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-19T23:52:06.087578+00:00",
+  "generated_at": "2026-11-20T00:00:51.730628+00:00",
   "selected_channels": 245,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 396,
+      "programmes": 395,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:00:00+00:00"
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-22T00:34:43+00:00"
     },
     "63dac32bda711800088a2ba3": {
-      "programmes": 15,
+      "programmes": 14,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:00:00+00:00"
@@ -47,7 +47,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 39,
+      "programmes": 38,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -233,13 +233,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 55,
+      "programmes": 54,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 189,
+      "programmes": 188,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1031,7 +1031,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 60,
+      "programmes": 59,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1223,7 +1223,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 78,
+      "programmes": 77,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1397,7 +1397,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 28,
+      "programmes": 27,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T01:30:00+00:00"
@@ -1451,7 +1451,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 215,
+      "programmes": 214,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:15:00+00:00"
@@ -3825,6 +3825,10 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Record News Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
