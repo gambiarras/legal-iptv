@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T01:52:06.117796+00:00",
+  "generated_at": "2026-11-20T02:00:53.243172+00:00",
   "selected_channels": 245,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 374,
+      "programmes": 371,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:00:00+00:00"
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-22T00:34:43+00:00"
     },
     "63dac32bda711800088a2ba3": {
-      "programmes": 13,
+      "programmes": 12,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T14:00:00+00:00"
@@ -47,7 +47,7 @@
       "horizon_at": "2026-11-22T00:29:23+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -233,13 +233,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 51,
+      "programmes": 50,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 185,
+      "programmes": 184,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1223,7 +1223,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 75,
+      "programmes": 74,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:30:00+00:00"
@@ -1451,7 +1451,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 211,
+      "programmes": 210,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-22T23:15:00+00:00"
@@ -1481,9 +1481,9 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-19T19:30:46.360110+00:00",
+  "reference_generated_at": "2026-11-20T02:00:42.649118+00:00",
   "reference_retained": false,
-  "saimo_channels": 240,
+  "saimo_channels": 244,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
     "already_in_saimo": 61
@@ -3807,6 +3807,10 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "CNN Brasil",
+        "reason": "already_in_saimo"
+      },
+      {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
       },
@@ -3819,16 +3823,8 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
