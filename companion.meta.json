@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-20T09:52:09.496269+00:00",
+  "generated_at": "2026-11-20T10:00:38.873129+00:00",
   "selected_channels": 244,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
@@ -35,7 +35,7 @@
       "horizon_at": "2026-11-23T00:35:08+00:00"
     },
     "63dac32bda711800088a2ba3": {
-      "programmes": 14,
+      "programmes": 13,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-20T23:00:00+00:00"
@@ -47,7 +47,7 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 23,
+      "programmes": 22,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
@@ -233,13 +233,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 35,
+      "programmes": 34,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-21T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 180,
+      "programmes": 179,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T07:30:00+00:00"
@@ -1031,7 +1031,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 56,
+      "programmes": 55,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T08:00:00+00:00"
@@ -1223,7 +1223,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 75,
+      "programmes": 74,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T10:30:00+00:00"
@@ -1445,7 +1445,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 199,
+      "programmes": 198,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T07:04:00+00:00"
@@ -3770,6 +3770,10 @@
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
