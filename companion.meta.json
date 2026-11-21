@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T10:22:06.905802+00:00",
-  "selected_channels": 239,
+  "generated_at": "2026-11-21T10:31:34.814300+00:00",
+  "selected_channels": 240,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,10 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 392,
+      "programmes": 393,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T10:00:00+00:00"
+      "horizon_at": "2026-11-24T11:05:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 36,
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-24T00:16:31+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 37,
+      "programmes": 36,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:30:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 86,
+      "programmes": 89,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T09:30:00+00:00"
+      "horizon_at": "2026-11-24T11:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 175,
+      "programmes": 182,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T09:30:00+00:00"
+      "horizon_at": "2026-11-24T10:40:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -946,6 +946,12 @@
       "future": false,
       "horizon_at": null
     },
+    "NickOnlineBobEsponja.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "NovaEraTV.br": {
       "programmes": 0,
       "current": false,
@@ -1013,10 +1019,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 55,
+      "programmes": 58,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T10:00:00+00:00"
+      "horizon_at": "2026-11-24T11:40:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1199,10 +1205,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 77,
+      "programmes": 81,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T09:30:00+00:00"
+      "horizon_at": "2026-11-24T10:45:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1415,10 +1421,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 198,
+      "programmes": 202,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T09:12:00+00:00"
+      "horizon_at": "2026-11-24T10:45:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1760,6 +1766,14 @@
     }
   ],
   "channels": [
+    {
+      "id": "NickOnlineBobEsponja.br",
+      "name": "NickOnline Bob Esponja",
+      "tvg_id": "NickOnlineBobEsponja.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
     {
       "id": "TVLoading.br",
       "name": "TV Loading",
