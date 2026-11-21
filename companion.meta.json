@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T03:00:43.790123+00:00",
+  "generated_at": "2026-11-21T03:31:41.835093+00:00",
   "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,34 +17,34 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 339,
+      "programmes": 387,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T00:02:00+00:00"
+      "horizon_at": "2026-11-24T03:37:00+00:00"
+    },
+    "2353": {
+      "programmes": 83,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-24T04:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 26,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T00:15:00+00:00"
+      "horizon_at": "2026-11-24T00:30:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 27,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T00:35:08+00:00"
+      "horizon_at": "2026-11-24T00:34:43+00:00"
     },
     "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 26,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T00:49:55+00:00"
-    },
-    "AGROMAIS.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
+      "horizon_at": "2026-11-24T00:16:31+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 86,
+      "programmes": 87,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T03:00:00+00:00"
+      "horizon_at": "2026-11-24T04:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 177,
+      "programmes": 183,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T00:30:00+00:00"
+      "horizon_at": "2026-11-24T04:45:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -383,10 +383,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 40,
+      "programmes": 41,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T03:00:00+00:00"
+      "horizon_at": "2026-11-24T05:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1019,10 +1019,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 54,
+      "programmes": 56,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T01:00:00+00:00"
+      "horizon_at": "2026-11-24T03:45:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1205,10 +1205,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 72,
+      "programmes": 75,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T01:00:00+00:00"
+      "horizon_at": "2026-11-24T04:10:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1373,7 +1373,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 16,
+      "programmes": 15,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -1421,10 +1421,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 210,
+      "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T00:15:00+00:00"
+      "horizon_at": "2026-11-24T03:51:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2337,10 +2337,10 @@
     {
       "id": "AgroMais.br",
       "name": "AgroMais",
-      "tvg_id": "AGROMAIS.br",
+      "tvg_id": "2353",
       "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
+      "epg_current": true,
+      "epg_future": true
     },
     {
       "id": "AratuOn.br",
