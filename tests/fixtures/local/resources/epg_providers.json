@@ -1,0 +1,84 @@
+[
+  {
+    "id": "channel_schedule",
+    "enabled_env": "IPTV_EPG_CHANNEL_SCHEDULE_ENABLED",
+    "format": "channel_schedule",
+    "days": 3,
+    "urls": [
+      "https://fixture.example.invalid/6854"
+    ]
+  },
+  {
+    "id": "official_schedule_a",
+    "format": "official_schedule_a",
+    "days": 3,
+    "urls": [
+      "https://fixture.example.invalid/5373"
+    ]
+  },
+  {
+    "id": "official_schedule_b",
+    "format": "official_schedule_b",
+    "days": 3,
+    "urls": [
+      "https://fixture.example.invalid/4568"
+    ]
+  },
+  {
+    "id": "primary",
+    "url_env": "IPTV_EPG_PRIMARY_URL",
+    "headers_env": "IPTV_EPG_PRIMARY_HEADERS",
+    "city_env": "IPTV_EPG_PRIMARY_CITY",
+    "days_env": "IPTV_EPG_PRIMARY_DAYS",
+    "days": 2,
+    "format_env": "IPTV_EPG_PRIMARY_FORMAT",
+    "format": "xmltv"
+  },
+  {
+    "id": "additional",
+    "url_env": "IPTV_EPG_ADDITIONAL_URL",
+    "headers_env": "IPTV_EPG_ADDITIONAL_HEADERS",
+    "format_env": "IPTV_EPG_ADDITIONAL_FORMAT",
+    "format": "xmltv"
+  },
+  {
+    "id": "schedule_site_b_mapped",
+    "enabled_env": "IPTV_EPG_SCHEDULE_SITE_B_ENABLED",
+    "format": "schedule_site_b_mapped",
+    "urls": [
+      "resource:epg_site_mappings.json"
+    ]
+  },
+  {
+    "id": "schedule_site_a_mapped",
+    "enabled": false,
+    "enabled_env": "IPTV_EPG_SCHEDULE_SITE_A_ENABLED",
+    "format": "schedule_site_a_mapped",
+    "urls": [
+      "resource:epg_site_mappings.json"
+    ]
+  },
+  {
+    "id": "schedule_site_a",
+    "url_env": "IPTV_EPG_OPTIONAL_PRIMARY_URL",
+    "format": "schedule_site_a"
+  },
+  {
+    "id": "schedule_site_b",
+    "url_env": "IPTV_EPG_OPTIONAL_SECONDARY_URL",
+    "format": "schedule_site_b"
+  },
+  {
+    "id": "fallback",
+    "urls_env": "IPTV_EPG_FALLBACK_URLS",
+    "format": "xmltv",
+    "urls": [
+      "https://fixture.example.invalid/2915",
+      "https://fixture.example.invalid/3482",
+      "https://fixture.example.invalid/2662",
+      "https://fixture.example.invalid/3577",
+      "https://fixture.example.invalid/3375",
+      "https://fixture.example.invalid/3981"
+    ]
+  }
+]

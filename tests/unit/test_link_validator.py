@@ -1,0 +1,688 @@
+import json
+import tempfile
+import unittest
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from unittest.mock import Mock, patch
+
+import requests
+
+from legal_iptv.models import Channel
+from legal_iptv.services.link_validator import (
+    UrlValidation,
+    filter_active_channels,
+    filter_cached_offline_channels,
+    inspect_url,
+    is_url_active,
+    load_offline_urls,
+    refresh_stream_status,
+    validate_urls,
+)
+from legal_iptv.services.validation_schedule import (
+    ValidationPolicy,
+    context_for_channel,
+    schedule_record,
+)
+
+
+class FakeResponse:
+    def __init__(self, status_code: int, body=None):
+        self.status_code = status_code
+        self.closed = False
+        self.headers = {}
+        self.raw = None
+        self.body = body if body is not None else (b"G" + b"\0" * 187) * 4
+
+    def iter_content(self, chunk_size):
+        yield self.body
+
+    def close(self):
+        self.closed = True
+
+
+def make_channel(
+    id: str,
+    stream_url: str,
+    *,
+    source: str = "live_stream_catalog",
+    source_type: str | None = None,
+) -> Channel:
+    return Channel(
+        id=id,
+        name=id,
+        stream_url=stream_url,
+        logo="",
+        group="Web Live",
+        source=source,
+        source_type=source_type,
+    )
+
+
+def scheduled_record(channel, checked_at):
+    return schedule_record(
+        {
+            "active": True,
+            "status": "active",
+            "checked_at": checked_at,
+            "consecutive_failures": 0,
+            "probe_version": 2,
+        },
+        None,
+        context_for_channel(channel),
+        ValidationPolicy(),
+        now=datetime.fromisoformat(checked_at),
+        active=True,
+    )
+
+
+class LinkValidatorTest(unittest.TestCase):
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_probe_measures_one_get_and_closes_response(self, get_session_mock):
+        session = Mock()
+        session.get.return_value = FakeResponse(206)
+        get_session_mock.return_value = session
+        result = inspect_url("https://example.test/live.ts", timeout=1)
+        self.assertGreaterEqual(result.duration_ms, 0)
+        self.assertEqual(result.request_count, 1)
+        self.assertTrue(session.get.return_value.closed)
+        session.head.assert_not_called()
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_history_tracks_unknown_suppression_and_cache_without_inflating_checks(
+        self, validate_details
+    ):
+        url = "https://example.test/metrics.m3u8"
+        channel = make_channel("metrics", url)
+        channel.provider_id = "provider-a"
+        channel.logical_channel_id = "logical-a"
+        validate_details.side_effect = [
+            {url: UrlValidation(None, 503)},
+            {url: UrlValidation(None, 503)},
+            {url: UrlValidation(True, 200)},
+            {},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "stream-status.json"
+            arguments = dict(
+                status_file=path, max_workers=1, timeout=1, max_age_seconds=14400
+            )
+            refresh_stream_status([channel], **arguments, force=True)
+            refresh_stream_status([channel], **arguments, force=True)
+            suppressed = json.loads(path.read_text())
+            refresh_stream_status([channel], **arguments, force=True)
+            recovered = json.loads(path.read_text())
+            refresh_stream_status([channel], **arguments)
+            cached = json.loads(path.read_text())
+
+        self.assertEqual(suppressed["schema_version"], 2)
+        self.assertEqual(
+            suppressed["summary"]["validation_metrics"]["suppressed_urls"], 1
+        )
+        series = next(iter(suppressed["history"]["channels"].values()))
+        self.assertEqual(series["unknown_checks"], 2)
+        self.assertEqual(series["offline_checks"], 0)
+        self.assertEqual(cached["history"], recovered["history"])
+        self.assertEqual(
+            cached["urls"][url]["checked_at"], recovered["urls"][url]["checked_at"]
+        )
+        self.assertEqual(cached["summary"]["validation_metrics"]["checks"], 0)
+        self.assertEqual(cached["summary"]["provider_metrics"][0]["checks"], 3)
+        self.assertEqual(cached["summary"]["provider_counts"], {"provider-a": 1})
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_corrupt_history_does_not_discard_valid_context_cache(
+        self, validate_details
+    ):
+        url = "https://example.test/cached.m3u8"
+        checked_at = datetime.now(timezone.utc).isoformat()
+        validate_details.return_value = {}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "stream-status.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "history": [],
+                        "urls": {
+                            url: scheduled_record(
+                                make_channel("cached", url), checked_at
+                            )
+                        },
+                    }
+                )
+            )
+            active = refresh_stream_status(
+                [make_channel("cached", url)],
+                status_file=path,
+                max_workers=1,
+                timeout=1,
+                max_age_seconds=14400,
+            )
+            payload = json.loads(path.read_text())
+        self.assertEqual(len(active), 1)
+        self.assertEqual(payload["urls"][url]["checked_at"], checked_at)
+        self.assertEqual(payload["history"]["channels"], {})
+        self.assertEqual(payload["summary"]["validation_metrics"]["checks"], 0)
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_requires_media_content_and_not_successful_head(self, get_session_mock):
+        session = Mock()
+        session.get.side_effect = [FakeResponse(200), FakeResponse(200, b"<html>Error</html>")]
+        get_session_mock.return_value = session
+        self.assertTrue(is_url_active("https://example.test/live.ts", timeout=1))
+        self.assertFalse(is_url_active("https://example.test/error", timeout=1))
+        session.head.assert_not_called()
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_http_statuses_are_not_video_evidence(self, get_session_mock):
+        session = Mock()
+        get_session_mock.return_value = session
+        for status, active in ((404, False), (410, False), (429, None), (503, None)):
+            with self.subTest(status=status):
+                response = FakeResponse(status)
+                session.get.return_value = response
+                result = inspect_url("https://example.test/live.m3u8", timeout=1)
+                self.assertIs(result.active, active)
+                self.assertEqual(result.http_status, status)
+                self.assertTrue(response.closed)
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_url_status_is_unknown_when_requests_time_out(self, get_session_mock):
+        session = Mock()
+        session.get.side_effect = requests.Timeout("private endpoint")
+        get_session_mock.return_value = session
+        result = inspect_url("https://example.test/live.m3u8", timeout=1)
+        self.assertIsNone(result.active)
+        self.assertIsNone(result.http_status)
+        self.assertEqual(result.error_type, "Timeout")
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_refresh_persists_definitive_extra_404(
+        self,
+        validate_details_mock: Mock,
+    ):
+        url = "https://example.test/missing.m3u8"
+        validate_details_mock.return_value = {url: UrlValidation(False, 404)}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            channel = make_channel("manual", url, source="extra")
+            active = refresh_stream_status(
+                [channel],
+                status_file=root / "stream-status.json",
+                max_workers=1,
+                timeout=1,
+                max_age_seconds=14400,
+                extra_removed_file=root / "extra-removed.json",
+            )
+            removed = json.loads(
+                (root / "extra-removed.json").read_text(encoding="utf-8")
+            )
+
+        self.assertEqual(active, [])
+        self.assertEqual(removed["channels"]["manual"]["reason"], "http_404")
+
+    @patch("legal_iptv.services.link_validator._get_session")
+    def test_filter_active_channels_validates_each_url_once(
+        self, get_session_mock: Mock
+    ):
+        session = Mock()
+        session.get.side_effect = [FakeResponse(200), FakeResponse(404)]
+        get_session_mock.return_value = session
+        active_url = "https://example.test/active.m3u8"
+        inactive_url = "https://example.test/inactive.m3u8"
+        channels = [
+            make_channel("active.one", active_url),
+            make_channel("active.two", active_url),
+            make_channel("inactive", inactive_url),
+        ]
+
+        active_channels = filter_active_channels(
+            channels,
+            max_workers=1,
+            timeout=1,
+        )
+
+        self.assertEqual(
+            [channel.id for channel in active_channels],
+            ["active.one", "active.two"],
+        )
+        self.assertEqual(session.get.call_count, 2)
+
+    @patch("legal_iptv.services.link_validator.is_url_active")
+    def test_validate_urls_marks_unexpected_errors_unknown(
+        self, is_url_active_mock: Mock
+    ):
+        is_url_active_mock.side_effect = RuntimeError("boom")
+
+        with self.assertLogs("legal_iptv.services.link_validator", level="WARNING"):
+            status_by_url = validate_urls(
+                ["https://example.test/live.m3u8"],
+                max_workers=1,
+                timeout=1,
+            )
+
+        self.assertEqual(status_by_url, {"https://example.test/live.m3u8": None})
+
+    def test_loads_fresh_offline_urls_from_status_file(self):
+        checked_at = datetime.now(timezone.utc).isoformat()
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            "https://example.test/offline.m3u8": {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/timeout.m3u8": {
+                                "active": False,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/suppressed.m3u8": {
+                                "active": False,
+                                "status": "temporarily_unavailable",
+                                "http_status": 408,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/active.m3u8": {
+                                "active": True,
+                                "checked_at": checked_at,
+                            },
+                            "https://example.test/unknown.m3u8": {
+                                "active": None,
+                                "checked_at": checked_at,
+                            },
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
+
+        self.assertEqual(
+            offline_urls,
+            {
+                "https://example.test/offline.m3u8",
+                "https://example.test/suppressed.m3u8",
+            },
+        )
+
+    def test_retains_stale_offline_urls_until_observed_recovery(self):
+        checked_at = (datetime.now(timezone.utc) - timedelta(hours=5)).isoformat()
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            "https://example.test/offline.m3u8": {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
+
+        self.assertEqual(offline_urls, {"https://example.test/offline.m3u8"})
+
+    def test_retains_stale_temporary_suppression_until_observed_recovery(self):
+        checked_at = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            "https://example.test/suppressed.m3u8": {
+                                "active": False,
+                                "status": "temporarily_unavailable",
+                                "http_status": 408,
+                                "checked_at": checked_at,
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            offline_urls = load_offline_urls(status_file, max_age_seconds=14400)
+
+        self.assertEqual(offline_urls, {"https://example.test/suppressed.m3u8"})
+
+    def test_filters_channels_using_cached_offline_urls(self):
+        checked_at = datetime.now(timezone.utc).isoformat()
+        active_url = "https://example.test/active.m3u8"
+        offline_url = "https://example.test/offline.m3u8"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            offline_url: {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            channels = [
+                make_channel("active", active_url),
+                make_channel("offline", offline_url),
+            ]
+
+            filtered_channels = filter_cached_offline_channels(
+                channels,
+                status_file=status_file,
+                max_age_seconds=14400,
+            )
+
+        self.assertEqual([channel.id for channel in filtered_channels], ["active"])
+
+    def test_cached_offline_filter_holds_failed_transient_urls(self):
+        checked_at = datetime.now(timezone.utc).isoformat()
+        transient_url = "https://manifest.media-video.example.invalid/live.m3u8"
+        static_url = "https://example.test/offline.m3u8"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            transient_url: {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            },
+                            static_url: {
+                                "active": False,
+                                "http_status": 404,
+                                "checked_at": checked_at,
+                            },
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            channels = [
+                make_channel("video_platform", transient_url, source_type="video_platform"),
+                make_channel("static", static_url, source="extra"),
+            ]
+
+            filtered_channels = filter_cached_offline_channels(
+                channels,
+                status_file=status_file,
+                max_age_seconds=14400,
+            )
+
+        self.assertEqual(filtered_channels, [])
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_refresh_stream_status_writes_cache_and_filters_only_offline_channels(
+        self,
+        validate_details_mock: Mock,
+    ):
+        active_url = "https://example.test/active.m3u8"
+        offline_url = "https://example.test/offline.m3u8"
+        unknown_url = "https://example.test/unknown.m3u8"
+        validate_details_mock.return_value = {
+            active_url: UrlValidation(True, 200),
+            offline_url: UrlValidation(False, 404),
+            unknown_url: UrlValidation(None, 408),
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            channels = [
+                make_channel("active", active_url),
+                make_channel("offline", offline_url),
+                make_channel("unknown", unknown_url),
+            ]
+
+            active_channels = refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        self.assertEqual(
+            [channel.id for channel in active_channels], ["active", "unknown"]
+        )
+        self.assertIsInstance(payload["generated_at"], str)
+        self.assertEqual(payload["summary"]["validated_urls"], 3)
+        self.assertEqual(payload["summary"]["cached_urls"], 0)
+        self.assertTrue(payload["urls"][active_url]["active"])
+        self.assertEqual(payload["urls"][active_url]["status"], "active")
+        self.assertEqual(payload["urls"][active_url]["http_status"], 200)
+        self.assertEqual(payload["urls"][active_url]["consecutive_failures"], 0)
+        self.assertEqual(payload["urls"][active_url]["validation"], "validated")
+        self.assertEqual(
+            payload["urls"][active_url]["sources"], ["live_stream_catalog"]
+        )
+        self.assertIsInstance(payload["urls"][active_url]["checked_at"], str)
+        self.assertFalse(payload["urls"][offline_url]["active"])
+        self.assertEqual(payload["urls"][offline_url]["status"], "offline")
+        self.assertEqual(payload["urls"][offline_url]["http_status"], 404)
+        self.assertEqual(payload["urls"][offline_url]["consecutive_failures"], 1)
+        self.assertIsInstance(payload["urls"][offline_url]["checked_at"], str)
+        self.assertIsNone(payload["urls"][unknown_url]["active"])
+        self.assertEqual(payload["urls"][unknown_url]["status"], "unknown")
+        self.assertEqual(payload["urls"][unknown_url]["http_status"], 408)
+        self.assertEqual(payload["urls"][unknown_url]["consecutive_failures"], 1)
+        self.assertIsInstance(payload["urls"][unknown_url]["checked_at"], str)
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_refresh_stream_status_reuses_fresh_cached_records(
+        self,
+        validate_details_mock: Mock,
+    ):
+        cached_url = "https://example.test/cached.m3u8"
+        new_url = "https://example.test/new.m3u8"
+        checked_at = datetime.now(timezone.utc).isoformat()
+        validate_details_mock.return_value = {new_url: UrlValidation(True, 200)}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            status_file.write_text(
+                json.dumps(
+                    {
+                        "urls": {
+                            cached_url: scheduled_record(
+                                make_channel("cached", cached_url), checked_at
+                            )
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            channels = [
+                make_channel("cached", cached_url),
+                make_channel("new", new_url),
+            ]
+
+            active_channels = refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        validate_details_mock.assert_called_once_with(
+            [new_url],
+            max_workers=4,
+            timeout=2,
+        )
+        self.assertEqual([channel.id for channel in active_channels], ["cached", "new"])
+        self.assertEqual(payload["summary"]["validated_urls"], 1)
+        self.assertEqual(payload["summary"]["cached_urls"], 1)
+        self.assertEqual(payload["urls"][cached_url]["validation"], "cached")
+        self.assertEqual(payload["urls"][new_url]["validation"], "validated")
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_second_transient_http_failure_suppresses_until_recovery(
+        self,
+        validate_details_mock: Mock,
+    ):
+        url = "https://example.test/transient.m3u8"
+        channel = make_channel("transient", url)
+        validate_details_mock.side_effect = [
+            {url: UrlValidation(None, 408)},
+            {url: UrlValidation(None, 408)},
+            {url: UrlValidation(True, 200)},
+        ]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            first = refresh_stream_status(
+                [channel],
+                status_file=status_file,
+                max_workers=1,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            first_payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+            second = refresh_stream_status(
+                [channel],
+                status_file=status_file,
+                max_workers=1,
+                timeout=2,
+                max_age_seconds=14400,
+                force=True,
+            )
+            second_payload = json.loads(status_file.read_text(encoding="utf-8"))
+            cached_filtered = filter_cached_offline_channels(
+                [channel],
+                status_file=status_file,
+                max_age_seconds=14400,
+            )
+
+            recovered = refresh_stream_status(
+                [channel],
+                status_file=status_file,
+                max_workers=1,
+                timeout=2,
+                max_age_seconds=14400,
+                force=True,
+            )
+            recovered_payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        self.assertEqual(first, [channel])
+        self.assertIsNone(first_payload["urls"][url]["active"])
+        self.assertEqual(first_payload["urls"][url]["status"], "unknown")
+        self.assertEqual(first_payload["urls"][url]["consecutive_failures"], 1)
+        self.assertEqual(second, [])
+        self.assertFalse(second_payload["urls"][url]["active"])
+        self.assertEqual(
+            second_payload["urls"][url]["status"],
+            "temporarily_unavailable",
+        )
+        self.assertEqual(second_payload["urls"][url]["http_status"], 408)
+        self.assertEqual(second_payload["urls"][url]["consecutive_failures"], 2)
+        self.assertEqual(cached_filtered, [])
+        self.assertEqual(recovered, [channel])
+        self.assertTrue(recovered_payload["urls"][url]["active"])
+        self.assertEqual(recovered_payload["urls"][url]["status"], "active")
+        self.assertEqual(recovered_payload["urls"][url]["http_status"], 200)
+        self.assertEqual(recovered_payload["urls"][url]["consecutive_failures"], 0)
+        self.assertEqual(validate_details_mock.call_count, 3)
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_second_transport_failure_is_suppressed_without_http_status(
+        self,
+        validate_details_mock: Mock,
+    ):
+        url = "https://example.test/timeout.m3u8"
+        validate_details_mock.return_value = {
+            url: UrlValidation(None, error_type="ReadTimeout")
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            channel = make_channel("timeout", url)
+            refresh_stream_status(
+                [channel],
+                status_file=status_file,
+                max_workers=1,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            active = refresh_stream_status(
+                [channel],
+                status_file=status_file,
+                max_workers=1,
+                timeout=2,
+                max_age_seconds=14400,
+                force=True,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        record = payload["urls"][url]
+        self.assertEqual(active, [])
+        self.assertEqual(record["status"], "temporarily_unavailable")
+        self.assertEqual(record["consecutive_failures"], 2)
+        self.assertEqual(record["error_type"], "ReadTimeout")
+        self.assertNotIn("http_status", record)
+
+    @patch("legal_iptv.services.link_validator.validate_url_details")
+    def test_refresh_stream_status_suppresses_failed_transient_transport(
+        self,
+        validate_details_mock: Mock,
+    ):
+        transient_url = "https://manifest.media-video.example.invalid/live.m3u8"
+        validate_details_mock.return_value = {transient_url: UrlValidation(False, 404)}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_file = Path(temp_dir) / "stream-status.json"
+            channels = [
+                make_channel("video_platform", transient_url, source_type="video_platform"),
+            ]
+
+            refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+                max_age_seconds=14400,
+            )
+            active_channels = refresh_stream_status(
+                channels,
+                status_file=status_file,
+                max_workers=4,
+                timeout=2,
+                max_age_seconds=14400,
+                force=True,
+            )
+            payload = json.loads(status_file.read_text(encoding="utf-8"))
+
+        self.assertEqual(active_channels, [])
+        self.assertFalse(payload["urls"][transient_url]["active"])
+        self.assertEqual(payload["urls"][transient_url]["status"], "offline")
+        self.assertEqual(payload["urls"][transient_url]["http_status"], 404)
+        self.assertEqual(payload["urls"][transient_url]["consecutive_failures"], 2)
+        self.assertIsInstance(payload["urls"][transient_url]["checked_at"], str)
+
+
+if __name__ == "__main__":
+    unittest.main()

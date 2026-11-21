@@ -1,0 +1,37 @@
+{
+  "name": "Companion",
+  "version": 2,
+  "rest_catalog_1_provider_ids": [
+    "rest_catalog_1"
+  ],
+  "excluded_provider_fragments": [
+    "excluded_provider",
+    "excluded-provider",
+    "addon_catalog",
+    "json_catalog_1"
+  ],
+  "approved_extra_ids": [
+    "ExampleChannel124.br",
+    "ExampleChannel010.br",
+    "ExampleChannel139.br"
+  ],
+  "required_channel_ids": [
+    "ExampleChannel053.br"
+  ],
+  "guide_url": "https://fixture.example.invalid/6889",
+  "paid_name_prefixes": [
+    "premiumchannel",
+    "premiumexample"
+  ],
+  "aliases": {
+    "examplestationa": "examplestationa",
+    "stationaexample": "examplestationa",
+    "sportsexample1": "sportsexample",
+    "sportsexample": "sportsexample",
+    "seriesexample": "seriesexample",
+    "seriesexampleas": "seriesexample",
+    "canalseriesexample": "seriesexample"
+  },
+  "short_paid_prefixes": [],
+  "client_resolver_host": "client.resolver.example.invalid"
+}

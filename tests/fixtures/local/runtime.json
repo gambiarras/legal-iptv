@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "configured": true,
+  "catalog_url": "https://catalog-url.example.invalid/",
+  "public_catalog_base_url": "https://public-catalog-base-url.example.invalid/api",
+  "reference_base_url": "https://reference-base-url.example.invalid/api",
+  "reference_disabled_url": "https://reference-disabled-url.example.invalid/",
+  "directory_url": "https://directory-url.example.invalid/",
+  "primary_epg_url": "https://primary-epg-url.example.invalid/",
+  "epg_urls": [
+    "https://guide.example.invalid/guide.xml",
+    "https://fallback.example.invalid/guide.xml"
+  ],
+  "epg_index_urls": [
+    "https://guide.example.invalid/guide.xml.gz"
+  ],
+  "channel_schedule_id": "ExampleChannel053.br",
+  "channel_schedule_name": "Required Channel",
+  "channel_schedule_aliases": [
+    "examplechannel124.br",
+    "channel_schedule.br"
+  ],
+  "channel_schedule_page": "https://channel-schedule-page.example.invalid/",
+  "channel_schedule_xmltv": "https://channel-schedule-xmltv.example.invalid/",
+  "channel_schedule_catalog": "https://channel-schedule-catalog.example.invalid/",
+  "video_hosts": [
+    "video-platform.example.invalid",
+    "www.video-platform.example.invalid",
+    "short-video.example.invalid"
+  ],
+  "video_short_host": "short-video.example.invalid",
+  "sensitive_media_hosts": [
+    "media-video.example.invalid",
+    "video-platform.example.invalid",
+    "short-video.example.invalid"
+  ],
+  "client_resolver_prefix": "plugin://client.resolver.example.invalid/play/?video_id=",
+  "client_resolver_host": "client.resolver.example.invalid",
+  "schedule_allowed_hosts": {
+    "schedule_site_a": [
+      "schedule-site-a.example.invalid",
+      "www.schedule-site-a.example.invalid"
+    ],
+    "schedule_site_b": [
+      "schedule-site-b.example.invalid",
+      "www.schedule-site-b.example.invalid"
+    ]
+  },
+  "schedule_url_templates": {
+    "schedule_site_a": "https://www.schedule-site-a.example.invalid/canal/{code}",
+    "schedule_site_b": "https://schedule-site-b.example.invalid/programacao/canal/{code}"
+  },
+  "official_schedules": {
+    "official_schedule_a": {
+      "id": "ExampleChannel054.br",
+      "name": "Example Station A"
+    },
+    "official_schedule_b": {
+      "id": "ExampleChannel055.br",
+      "name": "Example Station B"
+    }
+  },
+  "known_ids": {
+    "requiredchannel": "ExampleChannel053.br",
+    "examplestationa": "ExampleChannel054.br",
+    "examplestationb": "ExampleChannel055.br"
+  },
+  "display_names": {
+    "examplestationa": "Example Station A"
+  },
+  "source_type_aliases": {
+    "video_platform": "video_platform",
+    "game_platform": "game_platform",
+    "live_platform": "live_platform",
+    "directory_catalog": "directory_catalog",
+    "addon_catalog_addon": "addon_catalog",
+    "public_catalog": "public_catalog"
+  },
+  "portable_excluded_ids": [
+    "sportsexample"
+  ]
+}
