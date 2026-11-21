@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T12:22:06.576792+00:00",
+  "generated_at": "2026-11-21T12:30:51.670754+00:00",
   "selected_channels": 241,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-24T00:16:31+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 34,
+      "programmes": 33,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:30:00+00:00"
@@ -233,7 +233,7 @@
       "horizon_at": "2026-11-24T12:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 177,
+      "programmes": 176,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T11:35:00+00:00"
@@ -1211,7 +1211,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 81,
+      "programmes": 80,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T12:00:00+00:00"
@@ -1427,7 +1427,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 200,
+      "programmes": 199,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T11:45:00+00:00"
@@ -3744,6 +3744,10 @@
     "skipped": [
       {
         "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
+        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
