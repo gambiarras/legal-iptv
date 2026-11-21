@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T13:22:05.963331+00:00",
+  "generated_at": "2026-11-21T13:30:47.612768+00:00",
   "selected_channels": 241,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 391,
+      "programmes": 390,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T12:00:00+00:00"
@@ -41,7 +41,7 @@
       "horizon_at": "2026-11-24T00:16:31+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 32,
+      "programmes": 31,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:30:00+00:00"
@@ -233,7 +233,7 @@
       "horizon_at": "2026-11-24T12:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 174,
+      "programmes": 173,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T11:35:00+00:00"
@@ -1211,7 +1211,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 80,
+      "programmes": 79,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T12:00:00+00:00"
@@ -1427,7 +1427,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 198,
+      "programmes": 197,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T11:45:00+00:00"
@@ -3747,6 +3747,10 @@
         "reason": "already_in_saimo"
       },
       {
+        "name": "CazéTV",
+        "reason": "already_in_saimo"
+      },
+      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
@@ -3761,6 +3765,10 @@
       {
         "name": "NBA Brasil",
         "reason": "not_a_recent_resolved_video"
+      },
+      {
+        "name": "Record News Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Record News Live",
