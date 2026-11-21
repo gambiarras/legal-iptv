@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T11:00:35.020901+00:00",
-  "selected_channels": 240,
+  "generated_at": "2026-11-21T11:31:29.983381+00:00",
+  "selected_channels": 241,
   "youtube_selected_channels": 0,
   "required_epg_ids": [
     "FoxKids.br"
@@ -17,13 +17,13 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 392,
+      "programmes": 393,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T11:05:00+00:00"
+      "horizon_at": "2026-11-24T12:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 36,
+      "programmes": 35,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:30:00+00:00"
@@ -227,16 +227,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 89,
+      "programmes": 90,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T11:00:00+00:00"
+      "horizon_at": "2026-11-24T12:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 178,
+      "programmes": 180,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T10:40:00+00:00"
+      "horizon_at": "2026-11-24T11:35:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -886,6 +886,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvsaogabriel.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvseries.br": {
       "programmes": 0,
       "current": false,
@@ -1205,10 +1211,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 80,
+      "programmes": 82,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T10:45:00+00:00"
+      "horizon_at": "2026-11-24T12:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1421,10 +1427,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 200,
+      "programmes": 201,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T10:45:00+00:00"
+      "horizon_at": "2026-11-24T11:45:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3621,6 +3627,14 @@
       "provider_id": "rest_catalog_1",
       "epg_current": true,
       "epg_future": true
+    },
+    {
+      "id": "rest_catalog_1.54",
+      "name": "TV São Gabriel",
+      "tvg_id": "Local.tvsaogabriel.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "TVVilaReal.br",
