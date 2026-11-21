@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T16:22:08.939799+00:00",
+  "generated_at": "2026-11-21T16:30:56.179569+00:00",
   "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 97,
+      "programmes": 96,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T15:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 180,
+      "programmes": 179,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T15:30:00+00:00"
@@ -1421,7 +1421,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 197,
+      "programmes": 196,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T15:30:00+00:00"
@@ -3740,10 +3740,6 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
@@ -3760,12 +3756,12 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
+        "name": "NBA Brasil",
+        "reason": "not_a_recent_resolved_video"
       },
       {
         "name": "Record News Live",
