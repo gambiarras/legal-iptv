@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T02:52:06.072699+00:00",
+  "generated_at": "2026-11-21T03:00:43.790123+00:00",
   "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,13 +17,13 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 343,
+      "programmes": 339,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:02:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 27,
+      "programmes": 26,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T00:15:00+00:00"
@@ -41,10 +41,10 @@
       "horizon_at": "2026-11-23T00:49:55+00:00"
     },
     "AGROMAIS.br": {
-      "programmes": 1,
-      "current": true,
+      "programmes": 0,
+      "current": false,
       "future": false,
-      "horizon_at": "2026-11-21T03:00:00+00:00"
+      "horizon_at": null
     },
     "AWTV.br": {
       "programmes": 0,
@@ -227,13 +227,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 87,
+      "programmes": 86,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T03:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 178,
+      "programmes": 177,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:30:00+00:00"
@@ -383,7 +383,7 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 41,
+      "programmes": 40,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T03:00:00+00:00"
@@ -1205,7 +1205,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 73,
+      "programmes": 72,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T01:00:00+00:00"
@@ -1373,7 +1373,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 17,
+      "programmes": 16,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -1421,7 +1421,7 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 211,
+      "programmes": 210,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:15:00+00:00"
@@ -1451,7 +1451,7 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-20T20:30:47.509112+00:00",
+  "reference_generated_at": "2026-11-21T03:00:40.687598+00:00",
   "reference_retained": false,
   "saimo_channels": 244,
   "televisao_reference_channels": 0,
@@ -2339,7 +2339,7 @@
       "name": "AgroMais",
       "tvg_id": "AGROMAIS.br",
       "provider_id": "iptv_org",
-      "epg_current": true,
+      "epg_current": false,
       "epg_future": false
     },
     {
@@ -3730,10 +3730,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
