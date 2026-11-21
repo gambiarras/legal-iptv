@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T03:31:41.835093+00:00",
+  "generated_at": "2026-11-21T04:01:14.436268+00:00",
   "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,16 +17,10 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 387,
+      "programmes": 390,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T03:37:00+00:00"
-    },
-    "2353": {
-      "programmes": 83,
-      "current": true,
-      "future": true,
-      "horizon_at": "2026-11-24T04:00:00+00:00"
+      "horizon_at": "2026-11-24T04:14:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 40,
@@ -45,6 +39,12 @@
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:16:31+00:00"
+    },
+    "AGROMAIS.br": {
+      "programmes": 46,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-23T02:30:00+00:00"
     },
     "AWTV.br": {
       "programmes": 0,
@@ -230,10 +230,10 @@
       "programmes": 87,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T04:00:00+00:00"
+      "horizon_at": "2026-11-24T04:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 183,
+      "programmes": 182,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T04:45:00+00:00"
@@ -1022,7 +1022,7 @@
       "programmes": 56,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T03:45:00+00:00"
+      "horizon_at": "2026-11-24T05:00:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1205,7 +1205,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 75,
+      "programmes": 74,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T04:10:00+00:00"
@@ -1424,7 +1424,7 @@
       "programmes": 214,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T03:51:00+00:00"
+      "horizon_at": "2026-11-24T04:06:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -2337,7 +2337,7 @@
     {
       "id": "AgroMais.br",
       "name": "AgroMais",
-      "tvg_id": "2353",
+      "tvg_id": "AGROMAIS.br",
       "provider_id": "iptv_org",
       "epg_current": true,
       "epg_future": true
