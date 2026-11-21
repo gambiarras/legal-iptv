@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T17:00:50.878677+00:00",
-  "selected_channels": 240,
+  "generated_at": "2026-11-21T17:31:59.406060+00:00",
+  "selected_channels": 239,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -221,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 96,
+      "programmes": 101,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:30:00+00:00"
+      "horizon_at": "2026-11-24T18:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 178,
+      "programmes": 182,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:30:00+00:00"
+      "horizon_at": "2026-11-24T18:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -377,10 +377,10 @@
       "horizon_at": null
     },
     "Local.gazeta.br": {
-      "programmes": 37,
+      "programmes": 39,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T16:00:00+00:00"
+      "horizon_at": "2026-11-24T18:30:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -1013,10 +1013,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 56,
+      "programmes": 57,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:30:00+00:00"
+      "horizon_at": "2026-11-24T18:30:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1199,10 +1199,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 79,
+      "programmes": 80,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T16:30:00+00:00"
+      "horizon_at": "2026-11-25T00:00:00+00:00"
     },
     "TVCancaoNova.br": {
       "programmes": 0,
@@ -1277,12 +1277,6 @@
       "horizon_at": null
     },
     "TVLifeAmerica.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVLitoralRN.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1421,10 +1415,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 195,
+      "programmes": 199,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:30:00+00:00"
+      "horizon_at": "2026-11-24T17:55:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -3530,14 +3524,6 @@
       "epg_future": false
     },
     {
-      "id": "TVLitoralRN.br",
-      "name": "TV Litoral RN",
-      "tvg_id": "TVLitoralRN.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "TVMaisMarica.br",
       "name": "TV Mais Marica",
       "tvg_id": "TVMaisMarica.br",
@@ -3723,10 +3709,6 @@
       }
     ],
     "skipped": [
-      {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
       {
         "name": "CazéTV",
         "reason": "already_in_saimo"
