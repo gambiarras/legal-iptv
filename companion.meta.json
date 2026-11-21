@@ -3,8 +3,8 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T14:31:23.156307+00:00",
-  "selected_channels": 229,
+  "generated_at": "2026-11-21T15:01:50.516407+00:00",
+  "selected_channels": 240,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
     "FoxKids.br"
@@ -20,10 +20,10 @@
       "programmes": 393,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:00:00+00:00"
+      "horizon_at": "2026-11-24T19:00:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
-      "programmes": 34,
+      "programmes": 33,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T00:30:00+00:00"
@@ -95,6 +95,12 @@
       "horizon_at": null
     },
     "Canal25Jundiai.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Canal38.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -215,16 +221,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 96,
+      "programmes": 97,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:00:00+00:00"
+      "horizon_at": "2026-11-24T15:30:00+00:00"
     },
     "Futura.br": {
-      "programmes": 183,
+      "programmes": 182,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:00:00+00:00"
+      "horizon_at": "2026-11-24T15:30:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -263,6 +269,12 @@
       "horizon_at": null
     },
     "Local.agtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.avivandonacoes.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -328,7 +340,19 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.cloudingtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.coletivatv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.comedycentralwebtv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -346,8 +370,14 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.famatv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.gazeta.br": {
-      "programmes": 39,
+      "programmes": 38,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T16:00:00+00:00"
@@ -688,6 +718,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvcine.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvcom.br": {
       "programmes": 0,
       "current": false,
@@ -790,6 +826,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvmontanha.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvnafilmes.br": {
       "programmes": 0,
       "current": false,
@@ -809,6 +851,12 @@
       "horizon_at": null
     },
     "Local.tvnoticiasagricolas.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvnovamt.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -922,6 +970,18 @@
       "future": false,
       "horizon_at": null
     },
+    "PetloversTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "PlenaTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "PlenitudeTV.br": {
       "programmes": 0,
       "current": false,
@@ -953,7 +1013,7 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 58,
+      "programmes": 57,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T15:30:00+00:00"
@@ -1144,6 +1204,12 @@
       "future": true,
       "horizon_at": "2026-11-24T16:30:00+00:00"
     },
+    "TVCancaoNova.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
       "current": false,
@@ -1307,7 +1373,7 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 15,
+      "programmes": 19,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-23T02:00:00+00:00"
@@ -1358,7 +1424,7 @@
       "programmes": 200,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T15:00:00+00:00"
+      "horizon_at": "2026-11-24T15:30:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1385,9 +1451,9 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-21T09:00:41.171552+00:00",
+  "reference_generated_at": "2026-11-21T15:00:50.879695+00:00",
   "reference_retained": false,
-  "saimo_channels": 244,
+  "saimo_channels": 243,
   "televisao_reference_channels": 0,
   "excluded_by_reason": {
     "already_in_saimo": 60
@@ -1501,6 +1567,11 @@
     {
       "id": "GloboNews.br",
       "name": "GloboNews",
+      "reason": "already_in_saimo"
+    },
+    {
+      "id": "GloboplayNovelas.br",
+      "name": "Globoplay Novelas",
       "reason": "already_in_saimo"
     },
     {
@@ -1624,11 +1695,6 @@
       "reason": "already_in_saimo"
     },
     {
-      "id": "TVCancaoNova.br",
-      "name": "TV Cancao Nova",
-      "reason": "already_in_saimo"
-    },
-    {
       "id": "televisao.tv-cultura",
       "name": "TV Cultura",
       "reason": "already_in_saimo"
@@ -1712,10 +1778,10 @@
       "epg_future": false
     },
     {
-      "id": "RetroCartoon.br",
-      "name": "Retro Cartoon",
-      "tvg_id": "RetroCartoon.br",
-      "provider_id": "iptv_org",
+      "id": "TVCine.br",
+      "name": "TV Cine",
+      "tvg_id": "Local.tvcine.br",
+      "provider_id": "extra",
       "epg_current": false,
       "epg_future": false
     },
@@ -1795,6 +1861,14 @@
       "id": "Loading.br",
       "name": "Loading",
       "tvg_id": "Local.loading.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "PetloversTV.br",
+      "name": "Petlovers TV",
+      "tvg_id": "PetloversTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -2064,6 +2138,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.retro-cartoon",
+      "name": "Retrô Cartoon",
+      "tvg_id": "RetroCartoon.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.26",
       "name": "TV Kids Mais",
       "tvg_id": "Local.tvkidsmais.br",
@@ -2075,6 +2157,14 @@
       "id": "rest_catalog_1.74",
       "name": "Euro News",
       "tvg_id": "Local.euronews.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.63",
+      "name": "Fama TV",
+      "tvg_id": "Local.famatv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2176,6 +2266,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.60",
+      "name": "TV Montanha",
+      "tvg_id": "Local.tvmontanha.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.80",
       "name": "TV Moçambique",
       "tvg_id": "Local.tvmocambique.br",
@@ -2248,6 +2346,14 @@
       "epg_future": false
     },
     {
+      "id": "Canal38.br",
+      "name": "Canal 38",
+      "tvg_id": "Canal38.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "CanalMetropolitanodeNoticias.br",
       "name": "Canal Metropolitano de Noticias",
       "tvg_id": "CanalMetropolitanodeNoticias.br",
@@ -2259,6 +2365,14 @@
       "id": "J3NEWSTV.br",
       "name": "J3NEWS TV",
       "tvg_id": "J3NEWSTV.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "PlenaTV.br",
+      "name": "Plena TV",
+      "tvg_id": "PlenaTV.br",
       "provider_id": "iptv_org",
       "epg_current": false,
       "epg_future": false
@@ -2632,6 +2746,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.142",
+      "name": "Avivando Nações",
+      "tvg_id": "Local.avivandonacoes.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.131",
       "name": "Canaã News TV",
       "tvg_id": "Local.canaanewstv.br",
@@ -2792,6 +2914,14 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.157",
+      "name": "TV Nova MT",
+      "tvg_id": "Local.tvnovamt.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.30",
       "name": "TV Record",
       "tvg_id": "RecordTV.br",
@@ -2931,6 +3061,22 @@
       "id": "rest_catalog_1.cbtv-play",
       "name": "CBTV Play",
       "tvg_id": "Local.cbtvplay.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.7",
+      "name": "Clouding TV",
+      "tvg_id": "Local.cloudingtv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.156",
+      "name": "Comedy Central WebTV",
+      "tvg_id": "Local.comedycentralwebtv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3304,6 +3450,14 @@
       "epg_future": false
     },
     {
+      "id": "TVCancaoNova.br",
+      "name": "TV Cancao Nova",
+      "tvg_id": "TVCancaoNova.br",
+      "provider_id": "iptv_org",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.tv-carioca",
       "name": "TV Carioca Internacional",
       "tvg_id": "Local.tvcariocainternacional.br",
@@ -3582,16 +3736,16 @@
         "reason": "already_in_saimo"
       },
       {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
         "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
         "name": "Diário TV Teresópolis",
         "reason": "not_a_television_live"
+      },
+      {
+        "name": "Jovem Pan Live",
+        "reason": "already_in_saimo"
       },
       {
         "name": "Jovem Pan Live",
