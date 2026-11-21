@@ -18,11 +18,13 @@
   "channel_schedule_page": "",
   "channel_schedule_xmltv": "",
   "channel_schedule_catalog": "",
-  "video_hosts": [],
-  "video_short_host": "",
-  "sensitive_media_hosts": [],
-  "client_resolver_prefix": "",
   "schedule_allowed_hosts": {},
   "schedule_url_templates": {},
-  "official_schedules": {}
+  "official_schedules": {},
+  "video_platform": {
+    "page_hosts": [],
+    "short_hosts": [],
+    "media_hosts": [],
+    "watch_url": ""
+  }
 }

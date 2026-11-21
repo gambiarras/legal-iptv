@@ -59,6 +59,41 @@ def make_channel(id: str, stream_url: str) -> Channel:
 
 
 class AggregateTest(unittest.TestCase):
+    def test_video_platform_expiring_during_guide_collection_is_omitted_from_counts_and_projection(self):
+        now = datetime.now(timezone.utc)
+        expiry = now + timedelta(hours=2)
+        video_platform = replace(make_channel("video_platform.live", (
+            "https://manifest.media-video.example.invalid/api/manifest/hls_variant/expire/"
+            f"{int(expiry.timestamp())}/sig/public/index.m3u8")),
+            name="Official Live - Daily live", source_type="video_platform", provider_id="video_platform",
+            source_url="https://video-platform.example.invalid/watch?v=abcdefghijk", protocol="hls",
+            expires_at=expiry.isoformat(), resolved_at=now.isoformat(),
+            publishable_static=False, requires_dynamic_resolution=True)
+        static = replace(make_channel("static.live", "https://example.test/static.m3u8"),
+                         name="Static Live", source="extra")
+        with tempfile.TemporaryDirectory() as directory:
+            config = replace(make_config(directory, profile="full"), ensure_guide_enabled=True)
+            config.guide_output_path.write_text("<tv/>")
+            with (
+                patch("legal_iptv.services.aggregate.extra_channels.fetch_channels", return_value=[static]),
+                patch("legal_iptv.services.aggregate.public_catalog.fetch_channels", return_value=[]),
+                patch("legal_iptv.services.aggregate.live_stream_catalog.fetch_channels", return_value=[video_platform]),
+                patch("legal_iptv.services.video_platform_transport.datetime", wraps=datetime) as clock,
+                patch("legal_iptv.services.aggregate.ensure_guide") as ensure,
+                patch("legal_iptv.services.aggregate.project_guide") as project,
+            ):
+                clock.now.return_value = now
+                ensure.side_effect = lambda *args, **kwargs: setattr(
+                    clock.now, "return_value", expiry + timedelta(minutes=1))
+                run_aggregation(config)
+            playlist = config.output_path.read_text()
+            metadata = json.loads(config.meta_output_path.read_text())
+            self.assertNotIn(video_platform.stream_url, playlist)
+            self.assertIn(static.stream_url, playlist)
+            self.assertEqual(metadata["selected_channels"], playlist.count("#EXTINF:"))
+            self.assertEqual(metadata["selected_channels"], 1)
+            self.assertEqual(project.call_args.args[2], {"Local.staticlive.br"})
+
     def test_adaptive_validation_preserves_generation_and_force_checks_again(self):
         channel = make_channel("fixture.live", "https://example.test/live.m3u8")
         probe = Mock(return_value=UrlValidation(True, 200, request_count=2))

@@ -38,7 +38,6 @@ class AppConfig:
     companion_output_path: Path | None = None
     companion_meta_output_path: Path | None = None
     companion_guide_output_path: Path | None = None
-    companion_video_platform_output_path: Path | None = None
     companion_guide_url: str | None = None
     companion_reference_file: Path | None = None
     companion_reference_cache_path: Path | None = None
@@ -86,7 +85,6 @@ class AppConfig:
             companion_output_path=Path(args.companion_output) if args.companion_output else None,
             companion_meta_output_path=Path(args.companion_meta_output) if args.companion_meta_output else None,
             companion_guide_output_path=Path(args.companion_guide_output) if args.companion_guide_output else None,
-            companion_video_platform_output_path=Path(args.companion_video_platform_output) if args.companion_video_platform_output else None,
             companion_guide_url=args.companion_guide_url,
             companion_reference_file=Path(args.companion_reference_file) if args.companion_reference_file else None,
             companion_reference_cache_path=Path(args.companion_reference_cache) if args.companion_reference_cache else None,

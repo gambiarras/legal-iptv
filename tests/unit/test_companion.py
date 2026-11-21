@@ -10,7 +10,7 @@ from unittest.mock import Mock
 from legal_iptv.exporters import render_m3u
 from legal_iptv.models import Channel
 from legal_iptv.services.companion import (
-    build_companion_guide, enrich_companion_candidates, select_companion_channels, video_platform_channels,
+    build_companion_guide, enrich_companion_candidates, select_companion_channels,
 )
 from legal_iptv.services.epg_mapper import EPGMapping
 from legal_iptv.services.companion_reference import (
@@ -217,22 +217,6 @@ class CompanionReferenceTest(unittest.TestCase):
             data["generated_at"] = (datetime.now(timezone.utc) - timedelta(days=3)).isoformat()
             with self.assertRaises(ValueError):
                 validate_reference(data)
-
-
-class CompanionVideoPlatformTest(unittest.TestCase):
-    def test_uses_public_video_id_in_client_resolver_without_media_secrets(self):
-        now = datetime.now(timezone.utc)
-        base = dict(source_type="video_platform", status="resolved", resolved_at=now.isoformat(),
-                    stream_url="https://private.example.test/video?token=secret")
-        raw = [{**base, "id": "sportsexample.abcdefghijk", "name": "Sports Example - Live", "source_url": "https://video-platform.example.invalid/watch?v=abcdefghijk"},
-               {**base, "id": "bean.abcdefghijk", "logical_channel_id": "bean", "name": "Comedy Example - Live", "source_url": "https://video-platform.example.invalid/watch?v=abcdefghijk"},
-               {**base, "id": "bean.12345678901", "logical_channel_id": "bean", "name": "Comedy Example - Other Live", "source_url": "https://video-platform.example.invalid/watch?v=12345678901"},
-               {**base, "id": "old", "name": "Old", "resolved_at": (now - timedelta(days=2)).isoformat(), "source_url": "https://video-platform.example.invalid/watch?v=abcdefghijk"}]
-        selected, skipped = video_platform_channels(raw, reference(), now=now)
-        self.assertEqual(len(selected), 1)
-        self.assertEqual(selected[0].stream_url, "plugin://client.resolver.example.invalid/play/?video_id=abcdefghijk")
-        self.assertNotIn("secret", json.dumps(skipped))
-        self.assertNotIn("Sports Example", str(selected))
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ from legal_iptv.services.category_mapper import canonical_category_name, categor
 from legal_iptv.services.channel_selector import select_best_channels
 from legal_iptv.services.profile_config import PlaylistConfiguration, PlaylistProfile
 from legal_iptv.services.publication import is_exportable
+from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
 from legal_iptv.services.channel_identity import canonicalize_channels, rejection_reason
 
 
@@ -102,8 +103,8 @@ def _allowed_by_profile(channel: Channel, profile: PlaylistProfile) -> bool:
         return False
     if profile.require_publishable_static:
         if (
-            not channel.publishable_static
-            or channel.requires_dynamic_resolution
+            ((not channel.publishable_static or channel.requires_dynamic_resolution)
+             and not is_public_video_platform_hls(channel))
             or channel.secret_refs
             or channel.delivery_mode in {"dai", "ssai"}
         ):

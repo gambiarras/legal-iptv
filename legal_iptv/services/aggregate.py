@@ -26,6 +26,7 @@ from legal_iptv.services.link_validator import (
 from legal_iptv.services.metadata import build_run_metadata
 from legal_iptv.services.profile_config import load_playlist_configuration
 from legal_iptv.services.profile_selector import select_profile_channels
+from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
 from legal_iptv.services.validation_schedule import ValidationPolicy
 from legal_iptv.sources import extra_channels, public_catalog, live_stream_catalog
 
@@ -253,6 +254,10 @@ def run_aggregation(config: AppConfig) -> None:
                         required_channel_ids=_required_ids(remapped),
                     ))
                 selected = remapped
+        # Collection can outlast a renewable URL: keep guide, metadata and lists aligned.
+        selected = [channel for channel in selected if (
+            channel.source_type != "video_platform" or is_public_video_platform_hls(channel))]
+        if config.ensure_guide_enabled:
             _timed(timings, "project_guide", lambda: project_guide(
                 config.guide_output_path, config.guide_output_path,
                 {channel.tvg_id for channel in selected if channel.tvg_id},

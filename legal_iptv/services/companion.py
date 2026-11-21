@@ -1,36 +1,33 @@
+"""A separate, conservative playlist that complements the visible base reference catalogue."""
+
 from legal_iptv.local_config import runtime_value
-"""A separate, conservative playlist that complements the visible Base Reference catalogue."""
 
 import copy
 import os
 import shutil
 import tempfile
-import json
 import re
 import xml.etree.ElementTree as ET
 from collections import Counter
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import urlsplit
 
 from legal_iptv.clients import HttpClient
 from legal_iptv.config import AppConfig
 from legal_iptv.exporters import render_m3u
 from legal_iptv.io import write_json_atomic, write_text_atomic
 from legal_iptv.models import Channel
-from legal_iptv.services.companion_reference import identity_key, load_reference
+from legal_iptv.services.companion_reference import load_reference
 from legal_iptv.services.channel_identity import canonical_key, load_policy, rejection_reason
 from legal_iptv.services.profile_config import load_playlist_configuration
 from legal_iptv.services.profile_selector import select_profile_channels
 from legal_iptv.services.guide import parse_xmltv_time
 from legal_iptv.services.epg_mapper import enrich_epg_metadata
 from legal_iptv.services.publication import is_exportable
-from legal_iptv.sources.live_stream_catalog import LIVE_STREAM_CATALOG_URL
+from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
 
-ALTERNATIVE = re.compile(r"\b(?:alternativ[oa]s?|alternative|backup|reserva)\b", re.I)
-ADULT = re.compile(r"(?:\b(?:xxx|porn|adultos?|adults?|nsfw)\b|\+18|18\+)", re.I)
-VIDEO_ID = re.compile(r"[A-Za-z0-9_-]{11}\Z")
 
 
 def enrich_companion_candidates(channels: list[Channel], xmltv_aliases: dict) -> list[Channel]:
@@ -48,10 +45,13 @@ def _transport_safe(channel: Channel) -> bool:
         if not is_exportable(channel, "portable"):
             return False
         parsed = urlsplit(channel.stream_url)
-        # Xtream account paths and signed Video Platform media never belong in this public output.
+        # Account paths remain private; only verified renewable media has a narrow exception.
         if parsed.scheme not in {"http", "https"} or not parsed.hostname:
             return False
-        if parsed.hostname.endswith(tuple(runtime_value("sensitive_media_hosts", []))):
+        settings = runtime_value("video_platform", {})
+        platform_hosts = tuple(settings.get("media_hosts", []) + settings.get("page_hosts", [])
+                               + settings.get("short_hosts", []))
+        if (parsed.hostname.endswith(platform_hosts) and not is_public_video_platform_hls(channel)):
             return False
         if re.search(r"/(?:live|movie|series)/[^/]+/[^/]+/", parsed.path, re.I):
             return False
@@ -147,54 +147,6 @@ def build_companion_guide(guide_file: Path, channels: list[Channel], *,
     return root, coverage
 
 
-def video_platform_channels(raw: list[dict], reference: dict, *, policy: dict | None = None,
-                     now: datetime | None = None) -> tuple[list[Channel], list[dict]]:
-    policy = policy or load_policy()
-    now = now or datetime.now(timezone.utc)
-    base_reference = {_key(name, policy) for name in reference["base_reference_channels"]}
-    chosen: dict[str, Channel] = {}
-    skipped = []
-    for item in raw:
-        if not isinstance(item, dict) or runtime_value("source_type_aliases", {}).get(item.get("source_type"), item.get("source_type")) != "video_platform":
-            continue
-        name = str(item.get("name", "")).split(" - ", 1)[0].strip()
-        key = _key(name, policy)
-        # Some reference identities have alternate display names in discovery inputs.
-        excluded_identity = any(value in identity_key(str(item.get("id", ""))) for value in runtime_value("portable_excluded_ids", []))
-        if key in base_reference or excluded_identity:
-            skipped.append({"name": name, "reason": "already_in_base_reference"})
-            continue
-        reason = None
-        try:
-            parsed = urlsplit(str(item.get("source_url") or ""))
-            video_id = (parsed.path.strip("/") if parsed.hostname == runtime_value("video_short_host", "short-video.example.invalid")
-                        else parse_qs(parsed.query).get("v", [""])[0])
-            checked = datetime.fromisoformat(str(item.get("resolved_at") or "").replace("Z", "+00:00"))
-            if checked.tzinfo is None:
-                raise ValueError("Missing timezone")
-            age = (now - checked).total_seconds()
-            if (parsed.hostname not in runtime_value("video_hosts", [])
-                    or not VIDEO_ID.fullmatch(video_id) or not -300 <= age <= 21600
-                    or item.get("status") != "resolved" or item.get("removed")):
-                reason = "not_a_recent_resolved_video"
-        except (ValueError, TypeError):
-            reason = "not_a_recent_resolved_video"
-        if ADULT.search(name) or "radio" in identity_key(str(item.get("name", ""))):
-            reason = "not_a_directory_live"
-        if reason:
-            skipped.append({"name": name, "reason": reason})
-            continue
-        logical_id = str(item.get("logical_channel_id") or key)
-        if logical_id in chosen:
-            continue
-        chosen[logical_id] = Channel(
-            id=str(item.get("id")), name=name, logo=str(item.get("logo") or ""),
-            stream_url=runtime_value("client_resolver_prefix", "plugin://client.resolver.example.invalid/play/?video_id=") + video_id,
-            source="video_platform", group="Video Platform", tvg_id="Companion.Video Platform." + key,
-        )
-    return sorted(chosen.values(), key=lambda item: item.name.casefold()), skipped
-
-
 def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient, *,
                   reference: dict | None = None) -> dict:
     companion_paths = (config.companion_output_path, config.companion_meta_output_path,
@@ -203,8 +155,6 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
         raise ValueError("Companion requires separate playlist, metadata and guide outputs")
     outputs = [config.output_path, config.meta_output_path, config.guide_output_path,
                *companion_paths]
-    if config.companion_video_platform_output_path:
-        outputs.append(config.companion_video_platform_output_path)
     if len({path.resolve() for path in outputs}) != len(outputs):
         raise ValueError("Companion output paths must be distinct from the main outputs")
     policy = load_policy()
@@ -217,11 +167,6 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
     required = tuple(value for value in policy["required_channel_ids"]
                      if any(channel.tvg_id == value for channel in selected))
     _, coverage = build_companion_guide(config.guide_output_path, selected, required_ids=required)
-    video_platform, video_platform_skipped = [], []
-    if config.companion_video_platform_output_path:
-        raw = (json.loads(config.live_catalog_file.read_text(encoding="utf-8"))
-               if config.live_catalog_file else client.get_json(LIVE_STREAM_CATALOG_URL))
-        video_platform, video_platform_skipped = video_platform_channels(raw, reference, policy=policy)
     configuration = load_playlist_configuration(config.profile_config_file)
     guide_url = config.guide_url or configuration.guide_url or policy["guide_url"]
     playlist = render_m3u(
@@ -229,14 +174,11 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
         category_order=configuration.group_order, legacy_guide_urls=True,
         enforce_capabilities=True,
     )
-    video_platform_playlist = render_m3u(
-        video_platform, guide_url=guide_url, category_order=("Video Platform",), legacy_guide_urls=True,
-    )
     metadata = {
         "name": policy["name"], "schema_version": 2,
         "guide_url": guide_url, "selection": "main_minus_base_reference",
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "selected_channels": len(selected), "video_platform_selected_channels": len(video_platform),
+        "selected_channels": len(selected),
         "required_epg_ids": list(required), "epg_coverage": coverage,
         "reference_generated_at": reference["generated_at"],
         "reference_retained": reference.get("retained_reference", False),
@@ -248,17 +190,13 @@ def run_companion(channels: list[Channel], config: AppConfig, client: HttpClient
                       "provider_id": item.provider_id or item.source,
                       "epg_current": coverage[item.tvg_id]["current"],
                       "epg_future": coverage[item.tvg_id]["future"]} for item in selected],
-        "video_platform": {"player": "Kodi with configured Video Platform addon", "channels": [
-            {"id": item.id, "name": item.name} for item in video_platform], "skipped": video_platform_skipped},
         "limitations": ["Membership is not proof of stream playback or rights",
-                        "Video Platform requires a client resolver and is excluded from the portable playlist",
+                        "Renewable media URLs expire and need periodic refresh",
                         "Schedule coverage depends on source availability"],
     }
     # Validate and construct the whole bundle before changing any Companion output.
     write_guide_alias(config.guide_output_path, config.companion_guide_output_path)
     write_text_atomic(config.companion_output_path, playlist)
-    if config.companion_video_platform_output_path:
-        write_text_atomic(config.companion_video_platform_output_path, video_platform_playlist)
     write_json_atomic(config.companion_meta_output_path, metadata)
     return metadata
 

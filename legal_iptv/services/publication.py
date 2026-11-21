@@ -1,6 +1,7 @@
 from urllib.parse import parse_qsl, urlsplit
 
 from legal_iptv.models import Channel
+from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
 
 
 SENSITIVE_HEADER_NAMES = {
@@ -66,15 +67,17 @@ def _has_supported_kodi_drm(channel: Channel) -> bool:
 
 
 def is_exportable(channel: Channel, player_profile: str) -> bool:
+    renewable = is_public_video_platform_hls(channel)
+    if channel.source_type == "video_platform" and not renewable:
+        return False
     if (
         not channel.stream_url
         or channel.removed
-        or not channel.publishable_static
-        or channel.requires_dynamic_resolution
+        or ((not channel.publishable_static or channel.requires_dynamic_resolution) and not renewable)
         or channel.secret_refs
         or channel.delivery_mode in {"dai", "ssai"}
         or _has_sensitive_headers(channel.request_headers)
-        or _has_sensitive_url(channel.stream_url)
+        or (_has_sensitive_url(channel.stream_url) and not renewable)
     ):
         return False
     if channel.drm and player_profile != "kodi":

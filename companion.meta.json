@@ -5,7 +5,6 @@
   "selection": "main_minus_saimo",
   "generated_at": "2026-11-21T22:30:51.703129+00:00",
   "selected_channels": 238,
-  "youtube_selected_channels": 8,
   "required_epg_ids": [
     "FoxKids.br"
   ],
@@ -3659,89 +3658,6 @@
       "epg_future": false
     }
   ],
-  "youtube": {
-    "player": "Kodi with configured YouTube addon",
-    "channels": [
-      {
-        "id": "BRCartoonNetworkvideos.br.apIsxQZ0rUE",
-        "name": "Cartoon Network Brasil"
-      },
-      {
-        "id": "classic-mr-bean.tv.mF3s5-6mIH4",
-        "name": "Classic Mr Bean"
-      },
-      {
-        "id": "mr-bean.tv.oPonPGALYaU",
-        "name": "Mr Bean"
-      },
-      {
-        "id": "pica-pau.br.mUB69Xk0qwY",
-        "name": "Pica-Pau"
-      },
-      {
-        "id": "PowerRangersTV.br.cQHlHWNg5zA",
-        "name": "PowerRangers TV"
-      },
-      {
-        "id": "SantuarioNacionaldeAparecida.tv.juUt-rN5CVo",
-        "name": "Santuário Nacional de Aparecida"
-      },
-      {
-        "id": "tres-espias-demais.br.nfs5DPFMrcc",
-        "name": "Três Espiãs Demais"
-      },
-      {
-        "id": "tvc-youtube.tv.8N9orlXLI1c",
-        "name": "TV Correio da Manhã"
-      }
-    ],
-    "skipped": [
-      {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "Diário TV Teresópolis",
-        "reason": "not_a_television_live"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "Jovem Pan Live",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "NBA Brasil",
-        "reason": "not_a_recent_resolved_video"
-      },
-      {
-        "name": "Record News Live",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "SBT",
-        "reason": "already_in_saimo"
-      }
-    ]
-  },
   "limitations": [
     "Membership is not proof of stream playback or rights",
     "YouTube requires a client resolver and is excluded from the portable playlist",

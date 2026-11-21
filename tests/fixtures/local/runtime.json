@@ -23,19 +23,6 @@
   "channel_schedule_page": "https://channel-schedule-page.example.invalid/",
   "channel_schedule_xmltv": "https://channel-schedule-xmltv.example.invalid/",
   "channel_schedule_catalog": "https://channel-schedule-catalog.example.invalid/",
-  "video_hosts": [
-    "video-platform.example.invalid",
-    "www.video-platform.example.invalid",
-    "short-video.example.invalid"
-  ],
-  "video_short_host": "short-video.example.invalid",
-  "sensitive_media_hosts": [
-    "media-video.example.invalid",
-    "video-platform.example.invalid",
-    "short-video.example.invalid"
-  ],
-  "client_resolver_prefix": "plugin://client.resolver.example.invalid/play/?video_id=",
-  "client_resolver_host": "client.resolver.example.invalid",
   "schedule_allowed_hosts": {
     "schedule_site_a": [
       "schedule-site-a.example.invalid",
@@ -76,7 +63,17 @@
     "addon_catalog_addon": "addon_catalog",
     "public_catalog": "public_catalog"
   },
-  "portable_excluded_ids": [
-    "sportsexample"
-  ]
+  "video_platform": {
+    "page_hosts": [
+      "video-platform.example.invalid",
+      "www.video-platform.example.invalid"
+    ],
+    "short_hosts": [
+      "short-video.example.invalid"
+    ],
+    "media_hosts": [
+      "media-video.example.invalid"
+    ],
+    "watch_url": "https://video-platform.example.invalid/watch?v={video_id}"
+  }
 }
