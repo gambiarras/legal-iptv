@@ -3,7 +3,7 @@
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
   "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T18:52:05.763026+00:00",
+  "generated_at": "2026-11-21T19:00:50.287545+00:00",
   "selected_channels": 239,
   "youtube_selected_channels": 9,
   "required_epg_ids": [
@@ -17,7 +17,7 @@
       "horizon_at": null
     },
     "1072": {
-      "programmes": 393,
+      "programmes": 392,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T19:00:00+00:00"
@@ -221,13 +221,13 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 101,
+      "programmes": 100,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T18:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 180,
+      "programmes": 179,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-24T18:00:00+00:00"
@@ -1199,7 +1199,7 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 79,
+      "programmes": 78,
       "current": true,
       "future": true,
       "horizon_at": "2026-11-25T00:00:00+00:00"
@@ -2932,14 +2932,6 @@
       "epg_future": false
     },
     {
-      "id": "PlusMaisUm.br",
-      "name": "+MaisUm",
-      "tvg_id": "PlusMaisUm.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.58",
       "name": "Adesso TV",
       "tvg_id": "AdessoTV.br",
@@ -3183,6 +3175,14 @@
       "id": "rest_catalog_1.50",
       "name": "Lucas TV",
       "tvg_id": "Local.lucastv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.87",
+      "name": "Mais Um",
+      "tvg_id": "PlusMaisUm.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3711,10 +3711,6 @@
     "skipped": [
       {
         "name": "CazéTV",
-        "reason": "already_in_saimo"
-      },
-      {
-        "name": "CNN Brasil",
         "reason": "already_in_saimo"
       },
       {
