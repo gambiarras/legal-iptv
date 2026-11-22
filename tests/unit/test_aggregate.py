@@ -226,6 +226,7 @@ class AggregateTest(unittest.TestCase):
                     return_value=remote_aliases,
                 ),
                 patch("legal_iptv.clients.http_client.requests.Session.get") as network,
+                patch("legal_iptv.services.guide.load_epg_providers", return_value=[]),
             ):
                 with (
                     patch(
@@ -288,6 +289,7 @@ class AggregateTest(unittest.TestCase):
                 )
             )
             with (
+                patch("legal_iptv.services.aggregate.project_guide"),
                 patch(
                     "legal_iptv.services.aggregate.extra_channels.fetch_channels",
                     return_value=[],

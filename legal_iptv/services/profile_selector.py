@@ -1,4 +1,5 @@
 import hashlib
+import json
 import re
 import unicodedata
 from dataclasses import replace
@@ -47,6 +48,8 @@ def _provider_key(channel: Channel) -> str:
 
 
 def _logical_key(channel: Channel) -> str:
+    if channel.feed_id and not (channel.logical_channel_id or "").startswith("channel:"):
+        return "feed:" + str(channel.feed_id).strip()
     if channel.logical_channel_id and channel.logical_channel_id.startswith("channel:"):
         return channel.logical_channel_id
     if channel.tvg_id and "." in channel.tvg_id:
@@ -123,7 +126,11 @@ def _apply_overrides(
         return channel
 
     allowed = {"name", "logo", "group", "tvg_id", "logical_channel_id"}
-    return replace(channel, **{key: value for key, value in values.items() if key in allowed})
+    updates = {key: value for key, value in values.items() if key in allowed}
+    if "group" in updates:
+        updates.update(group=canonical_category_name(str(updates["group"])),
+                       category_origin="override", category_reason="explicit_group_override", category_rule=channel.id)
+    return replace(channel, **updates)
 
 
 def _map_group(channel: Channel, configuration: PlaylistConfiguration) -> Channel:
@@ -132,7 +139,30 @@ def _map_group(channel: Channel, configuration: PlaylistConfiguration) -> Channe
     if mapped is None:
         mapped = raw_group if channel.group == "Variedades" else channel.group
     mapped = canonical_category_name(mapped)
-    return channel if mapped == channel.group else replace(channel, group=mapped)
+    result = replace(channel, group=mapped, category_origin="source", category_reason="declared_group", category_rule=None)
+    keys = (channel.logical_channel_id, channel.id, channel.tvg_id)
+    for key in keys:
+        if key and key in configuration.category_overrides:
+            return replace(result, group=canonical_category_name(configuration.category_overrides[key]),
+                           category_origin="identity", category_reason="identity_mapping", category_rule=key)
+    tags = {category_key(tag) for tag in channel.tags}
+    matched = []
+    for rule in configuration.category_rules:
+        all_tags = {category_key(str(tag)) for tag in rule.get("all_tags", [])}
+        any_tags = {category_key(str(tag)) for tag in rule.get("any_tags", [])}
+        if not rule.get("category") or not (all_tags or any_tags):
+            continue
+        if all_tags.issubset(tags) and (not any_tags or tags.intersection(any_tags)):
+            matched.append((int(rule.get("priority", 0)), str(rule.get("id", "tag_rule")),
+                            canonical_category_name(str(rule["category"]))))
+    if matched:
+        priority = max(item[0] for item in matched)
+        winners = sorted(item for item in matched if item[0] == priority)
+        if len({item[2] for item in winners}) > 1:
+            return replace(result, category_origin="review", category_reason="conflicting_tag_rules")
+        return replace(result, group=winners[0][2], category_origin="tags", category_reason="tag_rule",
+                       category_rule=winners[0][1])
+    return result
 
 
 def _normalize_variant_name(channel: Channel) -> Channel:
@@ -189,7 +219,7 @@ def _unique_ids(channels: list[Channel]) -> list[Channel]:
     for channel in channels:
         channel_id = channel.id
         if channel_id in used:
-            digest = hashlib.sha1(channel.stream_url.encode("utf-8")).hexdigest()[:8]
+            digest = hashlib.sha1(json.dumps([channel.stream_url, channel.feed_id, channel.logical_channel_id], separators=(",", ":")).encode("utf-8")).hexdigest()[:8]
             channel_id = f"{channel.id}.{_provider_key(channel)}.{digest}"
         used.add(channel_id)
         result.append(channel if channel_id == channel.id else replace(channel, id=channel_id))
@@ -213,6 +243,8 @@ def _select_logical_providers(
 
 
 def _variant_logical_key(channel: Channel) -> str:
+    if channel.feed_id and not (channel.logical_channel_id or "").startswith("channel:"):
+        return "feed:" + str(channel.feed_id).strip()
     if channel.logical_channel_id and channel.logical_channel_id.startswith("channel:"):
         return channel.logical_channel_id
     base_name = VARIANT_SUFFIX_PATTERN.sub("", channel.name).strip()
@@ -313,7 +345,7 @@ def select_profile_channels(
     for channel in combined:
         if not _allowed_by_profile(channel, profile):
             continue
-        candidate_key = (channel.id, channel.stream_url, channel.source, _provider_key(channel),
+        candidate_key = (channel.id, channel.feed_id, channel.logical_channel_id, channel.stream_url, channel.source, _provider_key(channel),
                          tuple(sorted((key.casefold(), value)
                                       for key, value in channel.request_headers.items())),
                          channel.resolution, channel.codec, channel.bitrate, channel.variant_label)
@@ -322,7 +354,7 @@ def select_profile_channels(
         seen_candidates.add(candidate_key)
         candidates.append(
             _normalize_variant_name(
-                _map_group(_apply_overrides(channel, configuration), configuration)
+                _apply_overrides(_map_group(channel, configuration), configuration)
             )
         )
     candidates = [

@@ -43,6 +43,7 @@ class AppConfig:
     companion_reference_cache_path: Path | None = None
     validation_due_only: bool = False
     require_media_proof: bool = False
+    selection_proof_output_path: Path | None = None
 
     @classmethod
     def from_args(cls, args) -> "AppConfig":
@@ -90,4 +91,5 @@ class AppConfig:
             companion_reference_cache_path=Path(args.companion_reference_cache) if args.companion_reference_cache else None,
             validation_due_only=args.validation_due_only,
             require_media_proof=args.require_media_proof,
+            selection_proof_output_path=Path(args.selection_proof_output) if args.selection_proof_output else None,
         )

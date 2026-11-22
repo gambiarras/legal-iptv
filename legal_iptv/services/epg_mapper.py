@@ -9,15 +9,14 @@ from collections import defaultdict
 from dataclasses import dataclass, replace
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
-from legal_iptv.local_config import resource_path
 from io import BytesIO
 from pathlib import Path
 
 from legal_iptv.clients import HttpClient
 from legal_iptv.io import write_json_atomic
+from legal_iptv.local_config import load_resource, snapshot_value
 from legal_iptv.models import Channel
 from legal_iptv.services.epg_sources import EPG_INDEX_URLS
-
 
 ALIASES_RESOURCE_NAME = "epg_aliases.json"
 LOCAL_XMLTV_ALIASES_CACHE_VERSION = 1
@@ -47,6 +46,9 @@ def enrich_epg_metadata(
 
     enriched: list[Channel] = []
     for channel in channels:
+        if channel.epg_id_ambiguous:
+            enriched.append(channel)
+            continue
         mapping = _find_mapping(
             channel,
             aliases,
@@ -74,6 +76,10 @@ def _find_mapping(
         base_name,
         channel.name,
     ]
+    if channel.feed_id and channel.tvg_id and not GENERIC_TVG_ID_PATTERN.match(channel.tvg_id):
+        # A named alias cannot replace an explicit regional feed's factual ID.
+        # Reviewed aliases keyed by that ID remain available.
+        candidates = [channel.tvg_id]
 
     for value in candidates:
         key = _normalize(value)
@@ -221,7 +227,7 @@ def _read_local_xmltv_aliases_cache(
 def _fetch_xmltv_aliases(client: HttpClient) -> dict[str, EPGMapping]:
     aliases: dict[str, EPGMapping] = {}
 
-    for url in EPG_INDEX_URLS:
+    for url in snapshot_value("epg_index_urls", EPG_INDEX_URLS):
         try:
             payload = client.get_bytes(url)
             source_aliases = parse_xmltv_aliases(
@@ -430,16 +436,11 @@ def _discover_aliases(channels: list[Channel]) -> dict[str, EPGMapping]:
     }
 
 
-@lru_cache(maxsize=1)
 def _load_alias_configuration() -> tuple[
     dict[str, EPGMapping],
     tuple[tuple[str, EPGMapping], ...],
 ]:
-    resource = resource_path(ALIASES_RESOURCE_NAME)
-    if not resource.is_file():
-        return {}, ()
-
-    raw = json.loads(resource.read_text(encoding="utf-8"))
+    raw = load_resource(ALIASES_RESOURCE_NAME)
     aliases: dict[str, EPGMapping] = {}
     prefix_aliases: list[tuple[str, EPGMapping]] = []
 

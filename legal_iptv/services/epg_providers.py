@@ -1,17 +1,15 @@
 import json
-import os
 import re
 import unicodedata
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass
 from collections.abc import Collection
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from legal_iptv.local_config import resource_path
 from pathlib import Path
 from urllib.parse import urlencode
 
 from legal_iptv.clients import HttpClient
-
+from legal_iptv.local_config import environment_value, load_resource
 
 RESOURCE_NAME = "epg_providers.json"
 SOLR_PROGRAMME_BATCH_SIZE = 5
@@ -26,19 +24,22 @@ class EpgProvider:
     headers: dict[str, str] | None = None
     city: str | None = None
     days: int = 2
+    channel_ids: tuple[str, ...] = ()
 
     def fetch(self, client: HttpClient, *, cache_dir: Path | None = None,
               channel_ids: Collection[str] | None = None, now: datetime | None = None,
               days: int = 3, inventory: dict | None = None,
               channel_names: dict[str, str] | None = None) -> ET.Element:
-        from legal_iptv.services.guide import _programme_window, read_xmltv_source
         from legal_iptv.services.epg_cache import cached_source
+        from legal_iptv.services.guide import _programme_window, read_xmltv_source
 
         now = now or datetime.now(timezone.utc)
         if self.format in {"channel_schedule", "schedule_site_a", "schedule_site_b", "official_schedule_a", "official_schedule_b", "schedule_site_b_mapped", "schedule_site_a_mapped"}:
             from legal_iptv.services.epg_collectors import (
-                fetch_channel_schedule, fetch_html_schedules, fetch_official_schedule,
+                fetch_channel_schedule,
+                fetch_html_schedules,
                 fetch_mapped_schedules,
+                fetch_official_schedule,
             )
             if self.format == "channel_schedule":
                 root = fetch_channel_schedule(client, self.url, cache_dir=cache_dir, days=days, now=now)
@@ -98,22 +99,21 @@ class EpgProvider:
 
 
 def load_epg_providers() -> list[EpgProvider]:
-    resource = resource_path(RESOURCE_NAME)
-    raw = json.loads(resource.read_text(encoding="utf-8"))
+    raw = load_resource(RESOURCE_NAME)
     providers: list[EpgProvider] = []
     seen_contexts = set()
 
     for item in raw:
-        enabled = os.environ.get(str(item.get("enabled_env") or ""), str(item.get("enabled", True)))
+        enabled = environment_value(str(item.get("enabled_env") or ""), str(item.get("enabled", True)))
         if enabled.casefold() in {"0", "false", "no", "off"}:
             continue
         provider_format = str(
-            os.environ.get(str(item.get("format_env") or ""), item.get("format", "xmltv"))
+            environment_value(str(item.get("format_env") or ""), item.get("format", "xmltv"))
         ).casefold()
         headers = None
         headers_env = item.get("headers_env")
-        if headers_env and os.environ.get(str(headers_env)):
-            raw_headers = json.loads(os.environ[str(headers_env)])
+        if headers_env and environment_value(str(headers_env)):
+            raw_headers = json.loads(environment_value(str(headers_env)))
             if isinstance(raw_headers, dict):
                 headers = {
                     str(key): str(value)
@@ -122,22 +122,22 @@ def load_epg_providers() -> list[EpgProvider]:
         city = None
         city_env = item.get("city_env")
         if city_env:
-            city = os.environ.get(str(city_env), str(item.get("city") or "")) or None
+            city = environment_value(str(city_env), str(item.get("city") or "")) or None
         days = int(
-            os.environ.get(
+            environment_value(
                 str(item.get("days_env") or ""),
                 str(item.get("days", 2)),
             )
         )
         urls: list[str] = []
         url_env = item.get("url_env")
-        if url_env and os.environ.get(str(url_env)):
-            urls.append(os.environ[str(url_env)])
+        if url_env and environment_value(str(url_env)):
+            urls.append(environment_value(str(url_env)))
         urls_env = item.get("urls_env")
-        if urls_env and os.environ.get(str(urls_env)):
+        if urls_env and environment_value(str(urls_env)):
             urls.extend(
                 value.strip()
-                for value in os.environ[str(urls_env)].split(",")
+                for value in environment_value(str(urls_env)).split(",")
                 if value.strip()
             )
         elif not url_env:
@@ -154,6 +154,7 @@ def load_epg_providers() -> list[EpgProvider]:
                     id=f"{item['id']}{suffix}",
                     url=url,
                     format=provider_format,
+                    channel_ids=tuple(str(value) for value in item.get("channel_ids", [])),
                     headers=headers,
                     city=city,
                     days=days,

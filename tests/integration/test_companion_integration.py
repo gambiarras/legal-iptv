@@ -10,6 +10,7 @@ from unittest.mock import Mock, patch
 from legal_iptv.__main__ import main
 from legal_iptv.models import Channel
 from legal_iptv.models.stream_validation import UrlValidation
+from legal_iptv.services.selection_proof import verify_selection_proof
 
 
 class CompanionIntegrationTest(unittest.TestCase):
@@ -41,6 +42,7 @@ class CompanionIntegrationTest(unittest.TestCase):
                         "--guide-output", str(work / "guide.xml"),
                         "--live-catalog-file", str(work / "catalog.json"),
                         "--stream-status-file", str(work / "status.json"),
+                        "--selection-proof-output", str(work / "selection-proof.json"),
                         "--companion-output", str(work / "companion.m3u"),
                         "--companion-meta-output", str(work / "companion.meta.json"),
                         "--companion-guide-output", str(work / "companion-guide.xml"),
@@ -54,6 +56,8 @@ class CompanionIntegrationTest(unittest.TestCase):
                      patch("legal_iptv.services.link_validator.inspect_url",
                            return_value=observation) as probe:
                     main()
+                verify_selection_proof(work / "main.m3u", work / "selection-proof.json",
+                                       work / "status.json", companion=work / "companion.m3u")
                 probe.assert_called_once()
                 for stem in ("main", "companion"):
                     playlist = (work / f"{stem}.m3u").read_text()

@@ -129,7 +129,7 @@ def _alternative_key(channel: Channel) -> tuple[str, str] | None:
     if not name:
         return None
 
-    return (channel.tvg_id or "", name)
+    return (channel.feed_id or channel.tvg_id or "", name)
 
 
 def _with_alternative_names(channels: list[Channel]) -> list[Channel]:
@@ -166,7 +166,7 @@ def select_best_channels(channels: list[Channel]) -> list[Channel]:
     )
 
     for channel in ranked_channels:
-        url_key = _normalize_url(channel.stream_url)
+        url_key = ("feed:" + str(channel.feed_id).strip()) if channel.feed_id else _normalize_url(channel.stream_url)
         if url_key in selected_urls:
             continue
 

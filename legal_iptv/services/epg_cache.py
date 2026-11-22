@@ -1,3 +1,5 @@
+from legal_iptv.local_config import environment_value
+
 """Bounded, private EPG source cache and streaming downloads."""
 
 import hashlib
@@ -28,7 +30,7 @@ UPSTREAM_MAX_BYTES = 128 * 1024 * 1024
 
 
 def _budget(name: str, default: int) -> int:
-    value = int(os.environ.get(name, str(default)))
+    value = int(environment_value(name, str(default)))
     if value <= 0:
         raise ValueError(f"{name} must be positive")
     return value

@@ -1,7 +1,7 @@
 import json
-from legal_iptv.local_config import resource_path
 from pathlib import Path
 
+from legal_iptv.local_config import load_resource
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
 
@@ -18,8 +18,7 @@ def _removed_records(path: Path | None) -> dict[str, dict]:
 
 
 def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = False) -> list[Channel]:
-    with resource_path("extra_channels.json").open("r", encoding="utf-8") as file:
-        raw = json.load(file)
+    raw = load_resource("extra_channels.json")
 
     removed_records = _removed_records(removed_file)
     channels: list[Channel] = []
@@ -37,6 +36,8 @@ def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = 
             group=localized_category_name(item.get("group", "general")),
             source="extra",
             tvg_id=item.get("tvg_id"),
+            feed_id=item.get("feed_id"),
+            tags=[str(value) for value in item.get("tags", [])] if isinstance(item.get("tags"), list) else [],
             provider_id="extra",
             logical_channel_id=item.get("logical_channel_id") or item["id"],
             variant_id=item.get("variant_id") or item["id"],

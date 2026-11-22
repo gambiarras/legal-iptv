@@ -352,6 +352,25 @@ def _media_success_at(record: dict | None) -> datetime | None:
     return _parse_datetime(value)
 
 
+def media_record_is_confirmed(record: dict | None, *, now: datetime,
+                              max_age_seconds: int = 86400) -> bool:
+    """Apply the shared positive-media policy to an already matched exact context."""
+    if not isinstance(record, dict) or record.get("active") is False or rejected_record(record, now=now):
+        return False
+    if record.get("status") != ("active" if record.get("active") is True else "unknown"):
+        return False
+    checked = _parse_datetime(record.get("checked_at"))
+    success = _media_success_at(record)
+    if checked is None or checked > now or success is None:
+        return False
+    if not 0 <= (now - success).total_seconds() <= max_age_seconds:
+        return False
+    failures = record.get("consecutive_failures", 0)
+    if record.get("active") is None and (type(failures) is not int or not 0 <= failures <= 1):
+        return False
+    return record.get("active") is True or record.get("active") is None
+
+
 def filter_media_confirmed_channels(
     channels: list[Channel],
     *,
@@ -372,25 +391,7 @@ def filter_media_confirmed_channels(
         if context.expired(now):
             continue
         record = matching_record(records.get(context.url), context)
-        if not record or record.get("active") is False or rejected_record(record, now=now):
-            continue
-        if record.get("status") != (
-            "active" if record.get("active") is True else "unknown"
-        ):
-            continue
-        checked = _parse_datetime(record.get("checked_at"))
-        success = _media_success_at(record)
-        if checked is None or checked > now or success is None:
-            continue
-        age = (now - success).total_seconds()
-        if not 0 <= age <= max_age_seconds:
-            continue
-        failures = record.get("consecutive_failures", 0)
-        if record.get("active") is None and (
-            type(failures) is not int or not 0 <= failures <= 1
-        ):
-            continue
-        if record.get("active") is True or record.get("active") is None:
+        if media_record_is_confirmed(record, now=now, max_age_seconds=max_age_seconds):
             confirmed.append(channel)
     logger.info(
         "Media proof filter finished total=%s confirmed=%s unconfirmed=%s",

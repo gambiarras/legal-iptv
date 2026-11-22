@@ -24,6 +24,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--output", default="playlist.m3u")
     parser.add_argument("--meta-output", default="playlist.meta.json")
+    parser.add_argument("--selection-proof-output", default=None, help="Private selected-context evidence for safe publication replay")
     parser.add_argument("--log-level", default="INFO")
     parser.add_argument("--min-live-ttl", type=positive_int, default=900)
     parser.add_argument("--live-catalog-file", default=None)
@@ -96,7 +97,8 @@ def parse_args() -> argparse.Namespace:
     if any(companion_paths) and not all(companion_paths):
         parser.error("Companion requires --companion-output, --companion-meta-output and --companion-guide-output")
     outputs = [args.output, args.meta_output, args.guide_output,
-               *[path for path in companion_paths if path]]
+               *[path for path in companion_paths if path],
+               *([args.selection_proof_output] if args.selection_proof_output else [])]
     if len({Path(path).resolve() for path in outputs}) != len(outputs):
         parser.error("Output paths must be distinct")
     return args

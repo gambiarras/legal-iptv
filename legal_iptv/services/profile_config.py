@@ -1,10 +1,8 @@
-import json
-import os
 from dataclasses import dataclass, field
-from legal_iptv.local_config import resource_path
 from pathlib import Path
-from legal_iptv.services.category_mapper import canonical_category_name, category_key
 
+from legal_iptv.local_config import environment_value, load_json_file, load_resource
+from legal_iptv.services.category_mapper import canonical_category_name, category_key
 
 RESOURCE_NAME = "playlist_profiles.json"
 
@@ -59,6 +57,8 @@ class PlaylistConfiguration:
     alternatives_group: str
     variant_quality_order: tuple[str, ...]
     overrides: dict[str, dict] = field(default_factory=dict)
+    category_overrides: dict[str, str] = field(default_factory=dict)
+    category_rules: tuple[dict, ...] = ()
 
     def profile(self, name: str) -> PlaylistProfile:
         try:
@@ -69,10 +69,9 @@ class PlaylistConfiguration:
 
 def load_playlist_configuration(path: Path | None = None) -> PlaylistConfiguration:
     if path is None:
-        resource = resource_path(RESOURCE_NAME)
-        raw = json.loads(resource.read_text(encoding="utf-8"))
+        raw = load_resource(RESOURCE_NAME)
     else:
-        raw = json.loads(path.read_text(encoding="utf-8"))
+        raw = load_json_file(path)
 
     profiles = {
         name: PlaylistProfile.from_dict(name, value)
@@ -82,7 +81,7 @@ def load_playlist_configuration(path: Path | None = None) -> PlaylistConfigurati
     guide_url = raw.get("guide_url")
     guide_url_env = raw.get("guide_url_env")
     if guide_url_env:
-        guide_url = os.environ.get(str(guide_url_env), guide_url)
+        guide_url = environment_value(str(guide_url_env), guide_url)
 
     return PlaylistConfiguration(
         default_profile=str(raw.get("default_profile", "full")),
@@ -104,6 +103,8 @@ def load_playlist_configuration(path: Path | None = None) -> PlaylistConfigurati
             str(item).upper()
             for item in raw.get("variant_quality_order", ("4K", "FHD", "HD", "SD"))
         ),
+        category_overrides={str(key): str(value) for key, value in raw.get("category_overrides", {}).items()},
+        category_rules=tuple(value for value in raw.get("category_rules", []) if isinstance(value, dict)),
         overrides={
             str(key): value
             for key, value in raw.get("overrides", {}).items()

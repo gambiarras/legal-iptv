@@ -1,6 +1,7 @@
 from collections import defaultdict
 from urllib.parse import urlencode
 
+from legal_iptv.local_config import snapshot_value
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import CATEGORY_ORDER, canonical_category_name
 from legal_iptv.services.epg_sources import EPG_URLS, PRIMARY_EPG_URL
@@ -24,9 +25,9 @@ def _render_header(guide_url: str | None = None, *, legacy_guide_urls: bool = Tr
     if guide_url:
         candidates.extend(item.strip() for item in guide_url.split(","))
     if include_primary_guide:
-        candidates.append(PRIMARY_EPG_URL)
+        candidates.append(snapshot_value("primary_epg_url", PRIMARY_EPG_URL))
     if legacy_guide_urls:
-        candidates.extend(EPG_URLS)
+        candidates.extend(snapshot_value("epg_urls", EPG_URLS))
     tvg_urls = ",".join(dict.fromkeys(item for item in candidates if item))
     if not tvg_urls:
         return '#EXTM3U refresh="3600"'

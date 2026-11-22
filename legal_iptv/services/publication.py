@@ -1,58 +1,44 @@
 from urllib.parse import parse_qsl, urlsplit
 
 from legal_iptv.models import Channel
-from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
+from legal_iptv.services.video_platform_transport import (
+    PRIVATE_HEADERS,
+    PRIVATE_NAMES,
+    _private_header_context,
+    is_public_video_platform_hls,
+)
 
-
-SENSITIVE_HEADER_NAMES = {
-    "authorization",
-    "cookie",
-    "proxy-authorization",
-    "set-cookie",
-    "x-api-key",
-    "api-key",
-    "apikey",
-}
-SENSITIVE_QUERY_NAMES = {
-    "username",
-    "password",
-    "passwd",
-    "apikey",
-    "access_token",
-    "authorization",
-    "credential",
-    "hdnea",
-    "hdntl",
-    "hdnts",
-    "key-pair-id",
-    "policy",
-    "session",
-    "sig",
-    "signature",
-    "token",
-    "x-amz-credential",
-    "x-amz-security-token",
-    "x-amz-signature",
-}
+SENSITIVE_HEADER_NAMES = PRIVATE_HEADERS
+SENSITIVE_QUERY_NAMES = PRIVATE_NAMES | {"sig", "signature"}
 
 
 def _has_sensitive_headers(headers) -> bool:
-    return isinstance(headers, dict) and any(
-        str(name).casefold() in SENSITIVE_HEADER_NAMES
-        for name in headers
-    )
+    return isinstance(headers, dict) and _private_header_context(headers)
 
 
 def _has_sensitive_url(url) -> bool:
     if not isinstance(url, str) or not url:
-        return False
-    parsed = urlsplit(url)
-    if parsed.username or parsed.password:
         return True
-    return any(
-        name.casefold() in SENSITIVE_QUERY_NAMES
-        for name, _ in parse_qsl(parsed.query, keep_blank_values=True)
-    )
+    try:
+        parsed = urlsplit(url)
+        # Accessing hostname/port also rejects malformed bracket/port syntax.
+        if (
+            not parsed.scheme
+            or not parsed.hostname
+            or parsed.port is not None
+            and parsed.port < 1
+            or parsed.username is not None
+            or parsed.password is not None
+            or "\\" in url
+            or any(char.isspace() or ord(char) < 32 for char in url)
+        ):
+            return True
+        return any(
+            name.strip().casefold() in SENSITIVE_QUERY_NAMES
+            for name, _ in parse_qsl(parsed.query, keep_blank_values=True)
+        )
+    except (ValueError, TypeError):
+        return True
 
 
 def _has_supported_kodi_drm(channel: Channel) -> bool:
@@ -73,7 +59,10 @@ def is_exportable(channel: Channel, player_profile: str) -> bool:
     if (
         not channel.stream_url
         or channel.removed
-        or ((not channel.publishable_static or channel.requires_dynamic_resolution) and not renewable)
+        or (
+            (not channel.publishable_static or channel.requires_dynamic_resolution)
+            and not renewable
+        )
         or channel.secret_refs
         or channel.delivery_mode in {"dai", "ssai"}
         or _has_sensitive_headers(channel.request_headers)

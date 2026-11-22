@@ -3,7 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from legal_iptv.sources.public_catalog import API_FILES, fetch_channels
+from legal_iptv.services.channel_identity import canonicalize_channels
+from legal_iptv.sources.public_catalog import API_FILES, _build_channels, fetch_channels
 
 
 def api_payload() -> dict[str, list[dict]]:
@@ -103,8 +104,23 @@ class PublicCatalogSourceTest(unittest.TestCase):
         self.assertEqual(channels[0].id, "ExampleChannel006.br")
         self.assertEqual(channels[0].name, "BroadcastExample RJ")
         self.assertEqual(channels[0].tvg_id, "ExampleChannel006.br")
-        self.assertEqual(channels[0].feed_id, "Rio")
+        self.assertEqual(channels[0].feed_id, "public_catalog:ExampleChannel006.br:Rio")
         self.assertEqual(channels[0].stream_url, "https://example.test/ExampleChannel006.m3u8")
+
+    def test_feed_labels_are_scoped_to_each_channel_and_legacy_cache_migrates_without_retiming(self):
+        payload = api_payload()
+        payload["channels"].append({**payload["channels"][0], "id": "Other.br", "name": "Other"})
+        payload["streams"].append({**payload["streams"][0], "channel": "Other.br"})
+        channels = canonicalize_channels(_build_channels(payload))
+        self.assertEqual(len({item.feed_id for item in channels}), 2)
+        self.assertEqual(len({item.logical_channel_id for item in channels}), 2)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "cache.json"
+            write_cache(path, "2999-01-01T00:00:00+00:00")
+            before = (path.read_bytes(), path.stat().st_mtime_ns)
+            channels = fetch_channels(FailingClient(), cache_file=path, cache_only=True)
+            self.assertEqual(channels[0].feed_id, "public_catalog:ExampleChannel006.br:Rio")
+            self.assertEqual((path.read_bytes(), path.stat().st_mtime_ns), before)
 
     def test_uses_fresh_cache_without_fetching_api(self):
         with tempfile.TemporaryDirectory() as temp_dir:

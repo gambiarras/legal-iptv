@@ -36,6 +36,11 @@ class Channel:
     removal_reason: str | None = None
     raw_group: str | None = None
     is_adult: bool = False
+    tags: list[str] = field(default_factory=list)
+    category_origin: str | None = None
+    category_reason: str | None = None
+    category_rule: str | None = None
+    epg_id_ambiguous: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

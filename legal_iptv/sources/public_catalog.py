@@ -1,15 +1,15 @@
-from legal_iptv.local_config import runtime_value, resource_path
 import json
 import logging
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 from legal_iptv.clients import HttpClient
 from legal_iptv.io import write_json_atomic
+from legal_iptv.local_config import runtime_value, snapshot_value
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
-
 
 BASE_URL = runtime_value('public_catalog_base_url', 'https://public-catalog-base-url.example.invalid/api')
 API_FILES = (
@@ -139,7 +139,7 @@ def _build_channels(raw: dict[str, list[dict]]) -> list[Channel]:
                     group=localized_category_name(category),
                     source="public_catalog",
                     tvg_id=channel["id"],
-                    feed_id=feed_id,
+                    feed_id=_scoped_feed_id(channel["id"], feed_id),
                     provider_id="public_catalog",
                     logical_channel_id=channel["id"],
                     variant_id=(
@@ -159,10 +159,17 @@ def _build_channels(raw: dict[str, list[dict]]) -> list[Channel]:
     return result
 
 
+def _scoped_feed_id(channel_id: str, feed_id: str | None) -> str | None:
+    """Convert source-local feed labels to globally unambiguous identities."""
+    if feed_id is None:
+        return None
+    return "public_catalog:" + quote(str(channel_id), safe="") + ":" + quote(str(feed_id), safe="")
+
+
 def _fetch_api_data(client: HttpClient) -> dict[str, list[dict]]:
     payload: dict[str, list[dict]] = {}
     for name in API_FILES:
-        data = client.get_json(f"{BASE_URL}/{name}.json")
+        data = client.get_json(f"{snapshot_value('public_catalog_base_url', BASE_URL)}/{name}.json")
         if not isinstance(data, list):
             raise RuntimeError(f"Unexpected Public catalog API payload: {name}")
         payload[name] = data
@@ -212,7 +219,10 @@ def _load_channels_cache(
             continue
 
         try:
-            channels.append(Channel(**item))
+            value = dict(item)
+            if payload.get("feed_identity_version") != 1 and value.get("feed_id") is not None:
+                value["feed_id"] = _scoped_feed_id(value.get("tvg_id") or value["id"], value["feed_id"])
+            channels.append(Channel(**value))
         except TypeError:
             logger.warning("Skipping invalid Public catalog cached channel cache_file=%s", cache_file)
 
@@ -224,6 +234,7 @@ def _write_channels_cache(cache_file: Path, channels: list[Channel]) -> None:
         cache_file,
         {
             "generated_at": _utc_now().isoformat(),
+            "feed_identity_version": 1,
             "channels": [channel.to_dict() for channel in channels],
         },
     )

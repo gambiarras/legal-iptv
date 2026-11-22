@@ -1,4 +1,5 @@
-from legal_iptv.local_config import runtime_value, resource_path
+from legal_iptv.local_config import runtime_value, snapshot_value
+
 """Read public channel identities without retaining Base Reference stream credentials."""
 
 import hashlib
@@ -142,8 +143,8 @@ def build_reference(catalogue: str, extras: str, disabled, directory=None) -> di
         "catalogue_sha256": hashlib.sha256(catalogue.encode()).hexdigest(),
         "extras_sha256": hashlib.sha256(extras.encode()).hexdigest(),
         "disabled_sha256": hashlib.sha256(json.dumps(disabled, sort_keys=True).encode()).hexdigest(),
-        "sources": [BASE_REFERENCE_BASE + "catalogo.txt", BASE_REFERENCE_BASE + "canais.txt",
-                    DISABLED_URL] + ([DIRECTORY_CATALOG_URL] if has_directory else []),
+        "sources": [snapshot_value("reference_base_url", BASE_REFERENCE_BASE) + "catalogo.txt", snapshot_value("reference_base_url", BASE_REFERENCE_BASE) + "canais.txt",
+                    snapshot_value("reference_disabled_url", DISABLED_URL)] + ([snapshot_value("directory_url", DIRECTORY_CATALOG_URL)] if has_directory else []),
     }
 
 
@@ -185,9 +186,9 @@ def load_reference(client: HttpClient, cache_file: Path, *, local_file: Path | N
         pass
     try:
         payload = build_reference(
-            client.get_text(BASE_REFERENCE_BASE + "catalogo.txt"),
-            client.get_text(BASE_REFERENCE_BASE + "canais.txt"),
-            client.get_json(DISABLED_URL),
+            client.get_text(snapshot_value("reference_base_url", BASE_REFERENCE_BASE) + "catalogo.txt"),
+            client.get_text(snapshot_value("reference_base_url", BASE_REFERENCE_BASE) + "canais.txt"),
+            client.get_json(snapshot_value("reference_disabled_url", DISABLED_URL)),
         )
         validate_reference(payload)
         write_json_atomic(cache_file, payload)

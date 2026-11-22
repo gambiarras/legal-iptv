@@ -1,16 +1,17 @@
-from legal_iptv.local_config import runtime_value, resource_path
+from legal_iptv.local_config import environment_value, load_resource, runtime_value
+
 """Public schedule adapters. No playback URL or downloaded code is evaluated."""
 
 import copy
 import io
 import json
 import logging
-import os
 import re
 import time
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, replace
-from datetime import date, datetime, time as day_time, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+from datetime import time as day_time
 from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -63,7 +64,7 @@ def has_coverage(root: ET.Element, channel_id: str, now: datetime) -> bool:
 
 
 def _fox_xmltv(payload: bytes, now: datetime) -> ET.Element:
-    root = ET.Element("tv", {"source-info-url": CHANNEL_SCHEDULE_PAGE, "data-granularity": "programme"})
+    root = ET.Element("tv", {"source-info-url": runtime_value("channel_schedule_page", CHANNEL_SCHEDULE_PAGE), "data-granularity": "programme"})
     upstream = None
     depth = 0
     for event, element in ET.iterparse(io.BytesIO(payload), events=("start", "end")):
@@ -76,7 +77,7 @@ def _fox_xmltv(payload: bytes, now: datetime) -> ET.Element:
             continue
         if depth == 2:
             attribute = "id" if element.tag == "channel" else "channel"
-            if element.tag in {"channel", "programme"} and element.get(attribute, "").casefold() in set(runtime_value("channel_schedule_aliases", [CHANNEL_SCHEDULE_ID.casefold()])):
+            if element.tag in {"channel", "programme"} and element.get(attribute, "").casefold() in set(runtime_value("channel_schedule_aliases", [runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID).casefold()])):
                 valid = True
                 if element.tag == "programme":
                     start = _xmltv_time(element.get("start", ""))
@@ -84,12 +85,12 @@ def _fox_xmltv(payload: bytes, now: datetime) -> ET.Element:
                     valid = stop > start and stop > now
                 if valid:
                     copied = copy.deepcopy(element)
-                    copied.set(attribute, CHANNEL_SCHEDULE_ID)
+                    copied.set(attribute, runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID))
                     root.append(copied)
             element.clear()
             upstream.remove(element)
         depth -= 1
-    if not any(channel.get("id") == CHANNEL_SCHEDULE_ID for channel in root.findall("channel")) or not has_coverage(root, CHANNEL_SCHEDULE_ID, now):
+    if not any(channel.get("id") == runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID) for channel in root.findall("channel")) or not has_coverage(root, runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID), now):
         raise ValueError("Published Required Channel XMLTV lacks current and future coverage")
     return root
 
@@ -359,12 +360,12 @@ def channel_schedule_catalog_to_xmltv(payload: bytes, *, now: datetime, days: in
             selected.append(Slot(start, stop, winner.title, winner.description, winner.category,
                                  winner.icon, winner.priority, winner.granularity))
     granularity = "series-and-block" if any(slot.granularity == "series" for slot in selected) else "block"
-    root = ET.Element("tv", {"source-info-url": CHANNEL_SCHEDULE_PAGE, "data-granularity": granularity})
-    channel = ET.SubElement(root, "channel", {"id": CHANNEL_SCHEDULE_ID})
+    root = ET.Element("tv", {"source-info-url": runtime_value("channel_schedule_page", CHANNEL_SCHEDULE_PAGE), "data-granularity": granularity})
+    channel = ET.SubElement(root, "channel", {"id": runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID)})
     ET.SubElement(channel, "display-name", {"lang": "pt"}).text = runtime_value("channel_schedule_name", "Required Channel")
     for slot in selected:
-        _append_programme(root, CHANNEL_SCHEDULE_ID, slot)
-    if not has_coverage(root, CHANNEL_SCHEDULE_ID, now):
+        _append_programme(root, runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID), slot)
+    if not has_coverage(root, runtime_value("channel_schedule_id", CHANNEL_SCHEDULE_ID), now):
         raise ValueError("Declared Required Channel schedule lacks current and future coverage")
     return root
 
@@ -382,11 +383,12 @@ def _append_programme(root: ET.Element, channel_id: str, slot: Slot) -> None:
         ET.SubElement(programme, "icon", {"src": slot.icon})
 
 
-def fetch_channel_schedule(client: HttpClient, url: str = CHANNEL_SCHEDULE_CATALOG, *, cache_dir: Path | None = None,
+def fetch_channel_schedule(client: HttpClient, url: str | None = None, *, cache_dir: Path | None = None,
                   now: datetime | None = None, days: int = 3) -> ET.Element:
     now = now or datetime.now(timezone.utc)
+    url = url or runtime_value("channel_schedule_catalog", CHANNEL_SCHEDULE_CATALOG)
     try:
-        direct = cached_payload(client, CHANNEL_SCHEDULE_XMLTV, cache_dir=cache_dir, ttl_seconds=3600, now=now)
+        direct = cached_payload(client, runtime_value("channel_schedule_xmltv", CHANNEL_SCHEDULE_XMLTV), cache_dir=cache_dir, ttl_seconds=3600, now=now)
         root = _fox_xmltv(direct, now)
         root.set("data-origin", "published-xmltv")
         return root
@@ -629,7 +631,7 @@ def parse_official_schedule_b_html(payload: bytes, *, now: datetime, zone: ZoneI
 def fetch_official_schedule(client: HttpClient, url: str, source: str, *,
                             cache_dir: Path | None = None, now: datetime | None = None,
                             days: int = 3, channel_ids=None) -> ET.Element:
-    from urllib.parse import urlencode, urlsplit, urlunsplit, parse_qsl
+    from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
     if source not in {"official_schedule_a", "official_schedule_b"}:
         raise ValueError("Unknown official EPG source")
@@ -639,7 +641,7 @@ def fetch_official_schedule(client: HttpClient, url: str, source: str, *,
     root = ET.Element("tv", {"data-origin": "official-html", "data-granularity": "programme"})
     if channel_ids is not None and channel_id not in channel_ids:
         return root
-    zone_name = os.environ.get("IPTV_EPG_OFFICIAL_SCHEDULE_A_TIMEZONE" if source == "official_schedule_a" else "IPTV_EPG_OFFICIAL_SCHEDULE_B_TIMEZONE", "America/Sao_Paulo")
+    zone_name = environment_value("IPTV_EPG_OFFICIAL_SCHEDULE_A_TIMEZONE" if source == "official_schedule_a" else "IPTV_EPG_OFFICIAL_SCHEDULE_B_TIMEZONE", "America/Sao_Paulo")
     zone = ZoneInfo(zone_name)
     slots = []
     failed_dates = []
@@ -684,7 +686,6 @@ def fetch_official_schedule(client: HttpClient, url: str, source: str, *,
 def fetch_mapped_schedules(client: HttpClient, source: str, *, cache_dir: Path | None = None,
                            now: datetime | None = None, channel_ids=None,
                            channel_names: dict[str, str] | None = None) -> ET.Element:
-    from importlib import resources
     import unicodedata
 
     if source not in {"schedule_site_a", "schedule_site_b"}:
@@ -693,8 +694,7 @@ def fetch_mapped_schedules(client: HttpClient, source: str, *, cache_dir: Path |
     if channel_ids is None:
         # A broad grab of the resource map is never the default.
         return ET.Element("tv", {"data-schedule-state": "selection-required"})
-    resource = resource_path("epg_site_mappings.json")
-    mappings = json.loads(resource.read_text(encoding="utf-8"))["channels"]
+    mappings = load_resource("epg_site_mappings.json")["channels"]
 
     def normalise(value):
         value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().casefold()
@@ -712,7 +712,7 @@ def fetch_mapped_schedules(client: HttpClient, source: str, *, cache_dir: Path |
         code = next(iter(codes))
         endpoint = runtime_value("schedule_url_templates", {})[source].format(code=code)
         rows.append({"id": identifier, "name": name or matches[0]["names"][0], "url": endpoint})
-    maximum = max(1, min(int(os.environ.get("IPTV_EPG_HTML_MAX_CHANNELS", "32")), 128))
+    maximum = max(1, min(int(environment_value("IPTV_EPG_HTML_MAX_CHANNELS", "32")), 128))
     chosen = rows[:maximum]
     if not chosen:
         return ET.Element("tv", {"data-schedule-state": "no-mapped-selected-channels"})

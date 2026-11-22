@@ -1,12 +1,12 @@
-from legal_iptv.local_config import runtime_value, resource_path
+import hashlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
 
 from legal_iptv.clients import HttpClient
+from legal_iptv.local_config import runtime_value, snapshot_value
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
-
 
 LIVE_STREAM_CATALOG_URL = runtime_value('catalog_url', 'https://catalog-url.example.invalid/')
 TTL_FILTER_EXEMPT_SOURCE_TYPES = {"live_platform"}
@@ -72,31 +72,49 @@ def _is_usable(item: dict, min_live_ttl: int) -> bool:
     return True
 
 
-def _load_raw(client: HttpClient, local_file: Path | None) -> list[dict]:
+def _load_raw(client: HttpClient, local_file: Path | None, provenance: dict | None = None) -> list[dict]:
     if local_file is not None:
         if not local_file.exists():
             raise FileNotFoundError(f"Live catalog file not found: {local_file}")
 
-        return json.loads(local_file.read_text(encoding="utf-8"))
+        payload = local_file.read_bytes()
+        if provenance is not None:
+            provenance["catalog_input_sha256"] = hashlib.sha256(payload).hexdigest()
+        return json.loads(payload.decode("utf-8-sig"))
 
-    return client.get_json(LIVE_STREAM_CATALOG_URL)
+    return client.get_json(snapshot_value("catalog_url", LIVE_STREAM_CATALOG_URL))
 
 
 def fetch_channels(
     client: HttpClient,
     min_live_ttl: int,
     local_file: Path | None = None,
+    *, provenance: dict | None = None,
 ) -> list[Channel]:
-    raw = _load_raw(client, local_file)
+    raw = _load_raw(client, local_file, provenance)
+    if not isinstance(raw, list):
+        raise ValueError("Channel catalog must be an array")
 
     channels: list[Channel] = []
     aliases = runtime_value("source_type_aliases", {})
     for original in raw:
+        if not isinstance(original, dict):
+            if provenance is not None:
+                counts = provenance.setdefault("ingestion_counts", {})
+                counts["invalid_record"] = counts.get("invalid_record", 0) + 1
+            continue
         item = dict(original)
         for field in ("source_type", "provider_id", "protocol"):
             if item.get(field) in aliases:
                 item[field] = aliases[item[field]]
         if not _is_usable(item, min_live_ttl):
+            if provenance is not None:
+                reason = ("removed" if _as_bool(item.get("removed")) or item.get("status") == "removed"
+                          else "unresolved" if item.get("status") != "resolved"
+                          else "missing_media_url" if not (item.get("stream_url") or item.get("url"))
+                          else "insufficient_ttl")
+                counts = provenance.setdefault("ingestion_counts", {})
+                counts[reason] = counts.get(reason, 0) + 1
             continue
 
         channels.append(
@@ -111,6 +129,8 @@ def fetch_channels(
                 source_type=item.get("source_type"),
                 source_url=item.get("source_url"),
                 feed_id=item.get("feed_id"),
+                tags=[str(tag) for tag in item.get("tags", []) if isinstance(tag, (str, int))]
+                     if isinstance(item.get("tags"), list) else [],
                 status=item.get("status"),
                 resolved_at=item.get("resolved_at"),
                 expires_at=item.get("expires_at"),

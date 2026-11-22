@@ -9,6 +9,12 @@ class RunMetadata:
     extra_channels: int
     public_catalog_channels: int
     live_stream_catalog_channels: int
+    contract_version: int = 1
+    catalog_input_sha256: str | None = None
+    decision_counts: dict[str, int] = field(default_factory=dict)
+    selection_decisions: list[dict[str, str]] = field(default_factory=list)
+    decisions_truncated: int = 0
+    ingestion_counts: dict[str, int] = field(default_factory=dict)
     source_errors: dict[str, str] = field(default_factory=dict)
     selected_before_stream_filter: int = 0
     selected_after_stream_filter: int = 0

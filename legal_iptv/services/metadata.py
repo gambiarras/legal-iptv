@@ -22,6 +22,11 @@ def build_run_metadata(
     selected_after_stream_filter: int | None = None,
     timings_seconds: dict[str, float] | None = None,
     epg_aliases_count: int = 0,
+    decision_counts: dict[str, int] | None = None,
+    selection_decisions: list[dict[str, str]] | None = None,
+    decisions_truncated: int = 0,
+    catalog_input_sha256: str | None = None,
+    ingestion_counts: dict[str, int] | None = None,
 ) -> RunMetadata:
     selected_before_filter = (
         len(selected)
@@ -46,11 +51,14 @@ def build_run_metadata(
         public_catalog_channels=input_by_source.get("public_catalog", 0),
         live_stream_catalog_channels=input_by_source.get("live_stream_catalog", 0),
         source_errors=source_errors or {},
+        decision_counts=decision_counts or {}, selection_decisions=selection_decisions or [],
+        decisions_truncated=decisions_truncated, catalog_input_sha256=catalog_input_sha256,
+        ingestion_counts=ingestion_counts or {},
         selected_before_stream_filter=selected_before_filter,
         selected_after_stream_filter=selected_after_filter,
         stream_filtered_channels=stream_filtered,
         selection_filtered_channels=selection_filtered,
-        deduplicated_channels=selection_filtered,
+        deduplicated_channels=(decision_counts.get("deduplicated", 0) if decision_counts is not None else selection_filtered),
         selected_by_source=_count_by_source(selected),
         selected_by_provider=dict(sorted(Counter(
             channel.provider_id or channel.source_type or channel.source for channel in selected

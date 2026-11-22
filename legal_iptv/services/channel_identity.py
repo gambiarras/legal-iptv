@@ -1,11 +1,10 @@
 """Shared feed identity and eligibility for every published playlist."""
 
-import json
 import re
 from dataclasses import replace
-from functools import lru_cache
-from legal_iptv.local_config import load_resource, runtime_value
+from urllib.parse import quote
 
+from legal_iptv.local_config import load_resource, runtime_value
 from legal_iptv.models import Channel
 from legal_iptv.services.companion_reference import identity_key
 
@@ -16,10 +15,8 @@ ALTERNATIVE = re.compile(
 )
 ADULT = re.compile(r"(?:\b(?:xxx|porn|adultos?|adults|nsfw)\b|\+18|18\+)", re.I)
 QUALITY_SUFFIX = re.compile(r"(?:\s*\[(?:4K|FHD|HD|SD|HEVC)\])+\s*$", re.I)
-KNOWN_IDS = runtime_value("known_ids", {})
 
 
-@lru_cache(maxsize=1)
 def load_policy() -> dict:
     return load_resource("companion_policy.json")
 
@@ -65,10 +62,15 @@ def canonicalize_channels(channels: list[Channel]) -> list[Channel]:
     An upstream guide ID shared by different named feeds is ambiguous. Give
     those feeds distinct IDs instead of assigning another region's schedule.
     """
+    feed_aliases = runtime_value("feed_id_aliases", {})
+    feeds = {id(channel): feed_aliases.get(str(channel.feed_id), channel.feed_id) if channel.feed_id else None
+             for channel in channels}
     names = {id(channel): (channel.name.split(" - ", 1)[0].strip()
                           if channel.source_type == "video_platform" or channel.source == "video_platform"
                           else channel.name) for channel in channels}
-    keys = {id(channel): canonical_key(names[id(channel)]) for channel in channels}
+    bases = {id(channel): canonical_key(names[id(channel)]) for channel in channels}
+    keys = {id(channel): ("feed:" + quote(str(feeds[id(channel)]).strip(), safe="._-"))
+            if feeds[id(channel)] else bases[id(channel)] for channel in channels}
     ids_by_key: dict[str, list[str]] = {}
     keys_by_id: dict[str, set[str]] = {}
     for channel in channels:
@@ -77,14 +79,19 @@ def canonicalize_channels(channels: list[Channel]) -> list[Channel]:
             ids_by_key.setdefault(key, []).append(channel.tvg_id)
             keys_by_id.setdefault(channel.tvg_id, set()).add(key)
     result = []
+    known_ids = runtime_value("known_ids", {})
+    display_names = runtime_value("display_names", {})
     for channel in channels:
         key = keys[id(channel)]
+        ambiguous = channel.epg_id_ambiguous or bool(channel.tvg_id and len(keys_by_id[channel.tvg_id]) > 1)
         candidates = ids_by_key.get(key, ())
-        tvg_id = KNOWN_IDS.get(key) or next(
-            (value for value in candidates if len(keys_by_id[value]) == 1),
-            "Local." + key + ".br",
-        )
-        name = runtime_value("display_names", {}).get(key, names[id(channel)])
-        result.append(replace(channel, name=name, tvg_id=tvg_id,
+        explicit = known_ids.get(key)
+        tvg_id = explicit or (None if ambiguous else next(
+            (value for value in candidates if len(keys_by_id[value]) == 1), None))
+        if tvg_id is None:
+            tvg_id = "Local." + key.replace(":", ".") + ".br"
+        name = display_names.get(key, display_names.get(bases[id(channel)], names[id(channel)]))
+        result.append(replace(channel, name=name, tvg_id=tvg_id, feed_id=feeds[id(channel)],
+                              epg_id_ambiguous=ambiguous and explicit is None,
                               logical_channel_id="channel:" + key))
     return result
