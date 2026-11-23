@@ -214,12 +214,16 @@ def _load_channels_cache(
         return None
 
     channels: list[Channel] = []
+    aliases = runtime_value("source_type_aliases", {})
     for item in raw_channels:
         if not isinstance(item, dict):
             continue
 
         try:
             value = dict(item)
+            for field in ("source", "source_type", "provider_id", "protocol"):
+                if value.get(field) in aliases:
+                    value[field] = aliases[value[field]]
             if payload.get("feed_identity_version") != 1 and value.get("feed_id") is not None:
                 value["feed_id"] = _scoped_feed_id(value.get("tvg_id") or value["id"], value["feed_id"])
             channels.append(Channel(**value))
