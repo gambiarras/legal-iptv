@@ -28,16 +28,24 @@ def write_selection_proof(
     *,
     max_age_seconds: int = 86400,
     min_ttl_seconds: int = 900,
+    curated_max_age_seconds: int = 14400,
     now: datetime | None = None,
 ) -> None:
     now = now or datetime.now(UTC)
     if type(min_ttl_seconds) is not int or min_ttl_seconds < 0:
         raise ValueError("Selection proof minimum validity is invalid")
+    if not 1 <= curated_max_age_seconds <= 86400:
+        raise ValueError("Selection proof age limit is invalid")
     if not 1 <= max_age_seconds <= 86400:
         raise ValueError("Selection proof age limit is invalid")
     records = read_stream_status(status_path).get("urls", {})
     bindings = []
     for channel in channels:
+        maximum = (
+            min(max_age_seconds, curated_max_age_seconds)
+            if channel.source_type == "curated_text"
+            else max_age_seconds
+        )
         context = context_for_channel(channel)
         if (
             context.expired(now)
@@ -48,7 +56,7 @@ def write_selection_proof(
             or not media_record_is_confirmed(
                 matching_record(records.get(context.url), context),
                 now=now,
-                max_age_seconds=max_age_seconds,
+                max_age_seconds=maximum,
             )
         ):
             raise ValueError("Selected entry lacks valid sampled media evidence")
@@ -62,6 +70,7 @@ def write_selection_proof(
                 "id": channel.tvg_id,
                 "url_sha256": _digest(channel.stream_url),
                 "context_id": context.id,
+                "max_age_seconds": maximum,
                 "entry_sha256": _digest(exported),
                 "expires_at": (
                     context.expires_at.isoformat()
@@ -160,10 +169,13 @@ def verify_selection_proof(
                 raise ValueError(
                     "Selected transport expires before the minimum validity window"
                 )
+        binding_maximum = binding.get("max_age_seconds", maximum)
+        if type(binding_maximum) is not int or not 1 <= binding_maximum <= maximum:
+            raise ValueError("Invalid selection binding age limit")
         key = (binding["id"], binding["url_sha256"], binding["entry_sha256"])
         if key in index:
             raise ValueError("Duplicate selection binding")
-        index[key] = binding["context_id"]
+        index[key] = (binding["context_id"], binding_maximum)
     entries = _entries(playlist)
     keys = [
         (identifier, _digest(url), _digest(exported))
@@ -175,11 +187,13 @@ def verify_selection_proof(
     for key, (_, url, _) in zip(keys, entries):
         record = records.get(url)
         if isinstance(record, dict) and isinstance(record.get("contexts"), dict):
-            record = record["contexts"].get(index[key])
+            record = record["contexts"].get(index[key][0])
         if (
             not isinstance(record, dict)
-            or record.get("context_id") != index[key]
-            or not media_record_is_confirmed(record, now=now, max_age_seconds=maximum)
+            or record.get("context_id") != index[key][0]
+            or not media_record_is_confirmed(
+                record, now=now, max_age_seconds=index[key][1]
+            )
         ):
             raise ValueError("Published entry lacks valid sampled media evidence")
     if companion is not None:

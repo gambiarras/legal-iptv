@@ -1,6 +1,7 @@
 from urllib.parse import parse_qsl, urlsplit
 
 from legal_iptv.models import Channel
+from legal_iptv.services.public_media_transport import is_public_media_transport
 from legal_iptv.services.video_platform_transport import (
     PRIVATE_HEADERS,
     PRIVATE_NAMES,
@@ -54,6 +55,9 @@ def _has_supported_kodi_drm(channel: Channel) -> bool:
 
 def is_exportable(channel: Channel, player_profile: str) -> bool:
     renewable = is_public_video_platform_hls(channel)
+    reviewed_public = is_public_media_transport(channel)
+    if channel.source_type == "curated_text" and not reviewed_public:
+        return False
     if channel.source_type == "video_platform" and not renewable:
         return False
     if (
@@ -66,7 +70,7 @@ def is_exportable(channel: Channel, player_profile: str) -> bool:
         or channel.secret_refs
         or channel.delivery_mode in {"dai", "ssai"}
         or _has_sensitive_headers(channel.request_headers)
-        or (_has_sensitive_url(channel.stream_url) and not renewable)
+        or (_has_sensitive_url(channel.stream_url) and not (renewable or reviewed_public))
     ):
         return False
     if channel.drm and player_profile != "kodi":

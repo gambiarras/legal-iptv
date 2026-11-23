@@ -58,6 +58,7 @@ from legal_iptv.services.selection_proof import write_selection_proof
 from legal_iptv.services.validation_schedule import ValidationPolicy
 from legal_iptv.services.video_platform_transport import is_public_video_platform_hls
 from legal_iptv.sources import extra_channels, live_stream_catalog, public_catalog
+from legal_iptv.sources.curated_text import CuratedTextUnavailable
 
 logger = logging.getLogger(__name__)
 PRIVATE_ERROR_PATTERN = re.compile(
@@ -80,6 +81,8 @@ def _fetch_source(
 ) -> list[Channel]:
     try:
         return fetcher()
+    except CuratedTextUnavailable:
+        raise
     except Exception as exc:
         logger.error(
             "Failed to fetch source=%s error_type=%s",
@@ -121,7 +124,13 @@ def _collect_phase(
             lambda: _fetch_source(
                 "extra",
                 lambda: extra_channels.fetch_channels(
-                    config.extra_removed_file, include_removed=config.validate_streams
+                    config.extra_removed_file,
+                    include_removed=config.validate_streams,
+                    client=client,
+                    cache_only=config.validation_due_only,
+                    cache_dir=config.public_catalog_cache_file.parent
+                    / ".cache"
+                    / "curated-text",
                 ),
                 source_errors,
             ),
@@ -225,6 +234,30 @@ def _validate_phase(
         )
 
 
+def _required_media_proof(config: AppConfig, channels: list[Channel]) -> list[Channel]:
+    """Curated opaque public tokens always require recent exact sampled evidence."""
+    curated = [channel for channel in channels if channel.source_type == "curated_text"]
+    ordinary = [
+        channel for channel in channels if channel.source_type != "curated_text"
+    ]
+    if curated:
+        curated = filter_media_confirmed_channels(
+            curated,
+            status_file=config.stream_status_file,
+            max_age_seconds=min(
+                config.validation_max_success_age, config.stream_status_max_age
+            ),
+        )
+    if config.require_media_proof:
+        ordinary = filter_media_confirmed_channels(
+            ordinary,
+            status_file=config.stream_status_file,
+            max_age_seconds=config.validation_max_success_age,
+        )
+    retained = {id(channel) for channel in ordinary + curated}
+    return [channel for channel in channels if id(channel) in retained]
+
+
 def _guide_phase(
     config: AppConfig,
     client: HttpClient,
@@ -301,6 +334,17 @@ def _guide_phase(
         )
     ]
     ledger.removed(previous, selected, "renewable_ttl", "freshness")
+    previous = selected
+    curated = [channel for channel in selected if channel.source_type == "curated_text"]
+    if curated:
+        proven = _required_media_proof(config, curated)
+        retained = {id(channel) for channel in proven}
+        selected = [
+            channel
+            for channel in selected
+            if channel.source_type != "curated_text" or id(channel) in retained
+        ]
+        ledger.removed(previous, selected, "media_unconfirmed", "freshness")
     if config.ensure_guide_enabled or config.guide_output_path.is_file():
         _timed(
             timings,
@@ -348,6 +392,7 @@ def _publish_phase(
             config.stream_status_file,
             max_age_seconds=min(config.validation_max_success_age, 86400),
             min_ttl_seconds=config.min_live_ttl,
+            curated_max_age_seconds=min(config.stream_status_max_age, 86400),
         )
     guide_url = config.guide_url or playlist_configuration.guide_url
     playlist = _timed(
@@ -394,7 +439,9 @@ def _publish_phase(
         ingestion_counts=dict(collection.ingestion_counts),
     )
     payload = metadata.to_dict()
-    payload["media_proof_required"] = config.require_media_proof
+    payload["media_proof_required"] = config.require_media_proof or any(
+        channel.source_type == "curated_text" for channel in selected
+    )
     write_json_atomic(config.meta_output_path, payload)
 
     return PublicationResult(len(selected), config.output_path, config.meta_output_path)
@@ -491,18 +538,10 @@ def _run_aggregation(config: AppConfig) -> None:
         validation = validate_candidates(
             selected,
             lambda values: _validate_phase(config, values, timings),
-            lambda values: (
-                _timed(
-                    timings,
-                    "filter_media_proof",
-                    lambda: filter_media_confirmed_channels(
-                        values,
-                        status_file=config.stream_status_file,
-                        max_age_seconds=config.validation_max_success_age,
-                    ),
-                )
-                if config.require_media_proof
-                else values
+            lambda values: _timed(
+                timings,
+                "filter_media_proof",
+                lambda: _required_media_proof(config, values),
             ),
             ledger,
         )

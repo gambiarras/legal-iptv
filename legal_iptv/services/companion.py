@@ -68,10 +68,12 @@ def select_companion_channels(channels: list[Channel], reference: dict,
     """Subtract Base Reference identities from the same winners used by the main list."""
     policy = policy or load_policy()
     base_reference = {_key(name, policy) for name in reference["base_reference_channels"]}
+    main_only = set(policy.get("companion_excluded_ids", []))
     excluded = []
     eligible = []
     for channel in channels:
-        reason = rejection_reason(channel, policy)
+        reason = ("main_only" if main_only.intersection(
+            {channel.id, channel.tvg_id, channel.logical_channel_id}) else rejection_reason(channel, policy))
         if not reason and (channel.removed or channel.status in {"offline", "removed"}):
             reason = "unavailable"
         if not reason and not _transport_safe(channel):

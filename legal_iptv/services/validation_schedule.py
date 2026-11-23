@@ -68,7 +68,7 @@ def context_for_channel(channel: Channel) -> ValidationContext:
     headers = {
         name.casefold(): value for name, value in channel.request_headers.items()
     }
-    transient = (
+    transient = channel.source_type == "curated_text" or (
         channel.source == "live_stream_catalog"
         and channel.source_type in TRANSIENT_TYPES
     )

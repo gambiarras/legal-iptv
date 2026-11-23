@@ -1,9 +1,11 @@
 import json
 from pathlib import Path
 
+from legal_iptv.clients import HttpClient
 from legal_iptv.local_config import load_resource
 from legal_iptv.models import Channel
 from legal_iptv.services.category_mapper import localized_category_name
+from legal_iptv.sources import curated_text
 
 
 def _removed_records(path: Path | None) -> dict[str, dict]:
@@ -17,7 +19,9 @@ def _removed_records(path: Path | None) -> dict[str, dict]:
     return records if isinstance(records, dict) else {}
 
 
-def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = False) -> list[Channel]:
+def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = False,
+                   client: HttpClient | None = None, cache_only: bool = False,
+                   cache_dir: Path | None = None) -> list[Channel]:
     raw = load_resource("extra_channels.json")
 
     removed_records = _removed_records(removed_file)
@@ -51,4 +55,7 @@ def fetch_channels(removed_file: Path | None = None, *, include_removed: bool = 
                 else None
             ),
         ))
+    channels.extend(curated_text.fetch_channels(
+        client, cache_dir=cache_dir or (removed_file.parent if removed_file is not None else Path.cwd()) / ".cache" / "curated-text",
+        cache_only=cache_only))
     return channels
