@@ -2,68 +2,32 @@
   "name": "Companion",
   "schema_version": 2,
   "guide_url": "https://raw.githubusercontent.com/gambiarras/legal-iptv/main/guide.xml",
-  "selection": "main_minus_saimo",
-  "generated_at": "2026-11-21T22:30:51.703129+00:00",
-  "selected_channels": 238,
+  "selection": "main_minus_base_reference",
+  "generated_at": "2026-11-24T22:37:19.969782+00:00",
+  "selected_channels": 254,
   "required_epg_ids": [
     "FoxKids.br"
   ],
   "epg_coverage": {
-    "1001Noites.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "1072": {
-      "programmes": 387,
-      "current": true,
-      "future": true,
-      "horizon_at": "2026-11-24T19:00:00+00:00"
-    },
     "608049aefa2b8ae93c2c3a63-66843672a017b7e51aeb28d5": {
       "programmes": 29,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T00:30:00+00:00"
+      "horizon_at": "2026-11-27T00:15:00+00:00"
     },
     "608049aefa2b8ae93c2c3a63-66843849a017b7e51aeb28d7": {
-      "programmes": 30,
-      "current": true,
-      "future": true,
-      "horizon_at": "2026-11-24T00:34:43+00:00"
-    },
-    "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721": {
       "programmes": 25,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T00:16:31+00:00"
+      "horizon_at": "2026-11-27T00:15:00+00:00"
     },
-    "AWTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "AdessoTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "AgroCanal.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
+    "AGROMAIS.br": {
+      "programmes": 32,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-26T04:00:00+00:00"
     },
     "AmazonSat.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "ArarunaTV.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -81,6 +45,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Blitstv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "BoasNovas.br": {
       "programmes": 0,
       "current": false,
@@ -88,6 +58,12 @@
       "horizon_at": null
     },
     "BoxKidsTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "CINDIETV.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -117,12 +93,6 @@
       "future": false,
       "horizon_at": null
     },
-    "CanalSete.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Catve2.br": {
       "programmes": 0,
       "current": false,
@@ -147,12 +117,6 @@
       "future": false,
       "horizon_at": null
     },
-    "ClassiqueTV.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "ComedyCentralBrasil.br": {
       "programmes": 0,
       "current": false,
@@ -166,6 +130,12 @@
       "horizon_at": null
     },
     "ConexaoTV.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "CulturaFast.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -220,16 +190,16 @@
       "horizon_at": null
     },
     "FoxKids.br": {
-      "programmes": 97,
+      "programmes": 145,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T18:00:00+00:00"
+      "horizon_at": "2026-11-27T23:00:00+00:00"
     },
     "Futura.br": {
-      "programmes": 172,
+      "programmes": 211,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T18:00:00+00:00"
+      "horizon_at": "2026-11-27T23:00:00+00:00"
     },
     "GospelMovieTV.br": {
       "programmes": 0,
@@ -238,12 +208,6 @@
       "horizon_at": null
     },
     "IMPDTVWorldwide.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "ISTV.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -267,13 +231,31 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.adessotv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.agtv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
       "horizon_at": null
     },
+    "Local.ararunatv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.avivandonacoes.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.awtv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -339,6 +321,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.classiquetv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.cloudingtv.br": {
       "programmes": 0,
       "current": false,
@@ -363,23 +351,71 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.euronews.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.famatv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
       "horizon_at": null
     },
+    "Local.feed.public_catalog%3AAWTV.br%3AHD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3AAdessoTV.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3AArarunaTV.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3AClassiqueTV.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3AISTV.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3ALoading.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3ARetroCartoon.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3ATVLifeAmerica.br%3AHD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.feed.public_catalog%3ATVSeries.br%3ASD.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.gazeta.br": {
-      "programmes": 36,
+      "programmes": 40,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T18:30:00+00:00"
+      "horizon_at": "2026-11-27T23:00:00+00:00"
     },
     "Local.gazetabrasil.br": {
       "programmes": 0,
@@ -406,6 +442,12 @@
       "horizon_at": null
     },
     "Local.ijuiplay.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.istv.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -477,6 +519,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.maisum.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.megaonetv.br": {
       "programmes": 0,
       "current": false,
@@ -496,6 +544,12 @@
       "horizon_at": null
     },
     "Local.muzangalatv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.mytimemovienetworkbrazil.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -561,6 +615,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.redeclassic.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.redemaischeti.br": {
       "programmes": 0,
       "current": false,
@@ -586,6 +646,12 @@
       "horizon_at": null
     },
     "Local.redevivaxtv.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.retrocartoon.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -651,6 +717,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.seriesclassic.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tubacasttv.br": {
       "programmes": 0,
       "current": false,
@@ -663,7 +735,19 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvacritica.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvadorandojesus.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvaracati.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -759,6 +843,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.tvgazin.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.tvgrandenatal.br": {
       "programmes": 0,
       "current": false,
@@ -772,6 +862,12 @@
       "horizon_at": null
     },
     "Local.tvkidsmais.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvlifeamerica.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -820,6 +916,12 @@
       "horizon_at": null
     },
     "Local.tvmocambique.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "Local.tvmon.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -879,12 +981,6 @@
       "future": false,
       "horizon_at": null
     },
-    "Local.tvseries.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "Local.tvtudo.br": {
       "programmes": 0,
       "current": false,
@@ -915,6 +1011,12 @@
       "future": false,
       "horizon_at": null
     },
+    "Local.vrtchannel.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "Local.waytv.br": {
       "programmes": 0,
       "current": false,
@@ -927,7 +1029,7 @@
       "future": false,
       "horizon_at": null
     },
-    "MyTimeMovieNetwork.br": {
+    "MusicBoxBrazil.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1012,10 +1114,10 @@
       "horizon_at": null
     },
     "RecordTV.br": {
-      "programmes": 55,
+      "programmes": 71,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T18:30:00+00:00"
+      "horizon_at": "2026-11-27T22:55:00+00:00"
     },
     "RecordTVInteriorSP.br": {
       "programmes": 0,
@@ -1083,18 +1185,6 @@
       "future": false,
       "horizon_at": null
     },
-    "RetroCartoon.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "SBTInterior.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "SBTNacional.br": {
       "programmes": 0,
       "current": false,
@@ -1131,23 +1221,17 @@
       "future": false,
       "horizon_at": null
     },
-    "SeriesClassic.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "SonyMovies.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TCM10HD.br": {
       "programmes": 0,
       "current": false,
       "future": false,
       "horizon_at": null
+    },
+    "TVACritica.br": {
+      "programmes": 43,
+      "current": true,
+      "future": true,
+      "horizon_at": "2026-11-28T00:00:00+00:00"
     },
     "TVAldeia.br": {
       "programmes": 0,
@@ -1162,6 +1246,12 @@
       "horizon_at": null
     },
     "TVAlternativa.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVArapuan.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1191,6 +1281,12 @@
       "future": false,
       "horizon_at": null
     },
+    "TVCAJUIWEB.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVCOMMaceio.br": {
       "programmes": 0,
       "current": false,
@@ -1198,10 +1294,10 @@
       "horizon_at": null
     },
     "TVCamara.br": {
-      "programmes": 73,
+      "programmes": 58,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-25T00:00:00+00:00"
+      "horizon_at": "2026-11-27T23:00:00+00:00"
     },
     "TVCidadeVerdeCuiaba.br": {
       "programmes": 0,
@@ -1245,12 +1341,6 @@
       "future": false,
       "horizon_at": null
     },
-    "TVGazin.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "TVGloboBrasilia.br": {
       "programmes": 0,
       "current": false,
@@ -1263,13 +1353,25 @@
       "future": false,
       "horizon_at": null
     },
+    "TVGuarapari.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
     "TVLatinaSat.br": {
       "programmes": 0,
       "current": false,
       "future": false,
       "horizon_at": null
     },
-    "TVLifeAmerica.br": {
+    "TVLitoralRN.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
+    },
+    "TVMaanaim.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1288,12 +1390,6 @@
       "horizon_at": null
     },
     "TVMetropole.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
-    "TVMon.br": {
       "programmes": 0,
       "current": false,
       "future": false,
@@ -1360,10 +1456,16 @@
       "horizon_at": null
     },
     "TVSonata.br": {
-      "programmes": 15,
+      "programmes": 8,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-23T02:00:00+00:00"
+      "horizon_at": "2026-11-25T12:50:00+00:00"
+    },
+    "TVSulBahia.br": {
+      "programmes": 0,
+      "current": false,
+      "future": false,
+      "horizon_at": null
     },
     "TVTerceiroAnjo.br": {
       "programmes": 0,
@@ -1408,10 +1510,10 @@
       "horizon_at": null
     },
     "TravelBoxBrazil.br": {
-      "programmes": 196,
+      "programmes": 211,
       "current": true,
       "future": true,
-      "horizon_at": "2026-11-24T17:55:00+00:00"
+      "horizon_at": "2026-11-27T22:45:00+00:00"
     },
     "UMATV.br": {
       "programmes": 0,
@@ -1425,12 +1527,6 @@
       "future": false,
       "horizon_at": null
     },
-    "VRTChannel.br": {
-      "programmes": 0,
-      "current": false,
-      "future": false,
-      "horizon_at": null
-    },
     "XtremeTV.br": {
       "programmes": 0,
       "current": false,
@@ -1438,326 +1534,420 @@
       "horizon_at": null
     }
   },
-  "reference_generated_at": "2026-11-21T21:30:46.224940+00:00",
+  "reference_generated_at": "2026-11-24T21:30:20.671648+00:00",
   "reference_retained": false,
-  "saimo_channels": 244,
-  "televisao_reference_channels": 0,
+  "base_reference_channels": 239,
+  "directory_catalog_reference_channels": 0,
   "excluded_by_reason": {
-    "already_in_saimo": 61
+    "already_in_base_reference": 73,
+    "main_only": 5
   },
   "excluded_channels": [
     {
       "id": "rest_catalog_1.13",
       "name": "RunTime",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "RunTimeAction.br",
       "name": "RunTime Ação",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "extra.hallo.anime",
+      "name": "Hallo Anime",
+      "reason": "main_only"
+    },
+    {
+      "id": "extra.hallo.classic",
+      "name": "Hallo Classic",
+      "reason": "main_only"
+    },
+    {
+      "id": "extra.hallo.doc",
+      "name": "Hallo Doc",
+      "reason": "main_only"
+    },
+    {
+      "id": "extra.hallo.movies",
+      "name": "Hallo Movies",
+      "reason": "main_only"
+    },
+    {
+      "id": "extra.hallo.series",
+      "name": "Hallo Series",
+      "reason": "main_only"
+    },
+    {
+      "id": "AgroCanal.br",
+      "name": "AgroCanal",
+      "reason": "already_in_base_reference"
     },
     {
       "id": "Arte1.br",
       "name": "Arte 1",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "AXN.br",
       "name": "AXN",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "BandNews.br",
       "name": "BandNews",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "BandSports.br",
       "name": "Band Sports",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "Blitstv.br",
-      "name": "Blitstv",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CanaldoBoi.br",
       "name": "Canal do Boi",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CanalEducacao.br",
       "name": "Canal Educacao",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CanalFutura.br",
       "name": "Canal Futura",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "televisao.canal-gov",
+      "id": "CanalGov.br",
       "name": "Canal Gov",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CanalRural.br",
       "name": "Canal Rural",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CanalUOL.br",
       "name": "Canal UOL",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "CNNBrasil.br",
       "name": "CNN Brasil",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "COMBrasil.br",
       "name": "COM Brasil",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "CulturaFast.br",
-      "name": "Cultura Fast",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "DumDum.br",
       "name": "DumDum",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "ESPN.br",
       "name": "ESPN",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "ESPN3.br",
       "name": "ESPN 3",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "ESPN4.br",
       "name": "ESPN 4",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "FishTV.br",
       "name": "Fish TV",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "GloboNews.br",
       "name": "GloboNews",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "GloboplayNovelas.br",
       "name": "Globoplay Novelas",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "GospelCartoon.br",
       "name": "Gospel Cartoon",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "History.br",
       "name": "History",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.11",
+      "id": "JovemPanNews.br",
       "name": "Jovem Pan News",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.62",
+      "id": "MyTimeMovieNetwork.br",
       "name": "MyTime Movie Network",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "Nickelodeon.br",
       "name": "Nickelodeon",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.117",
-      "name": "Nickonline",
-      "reason": "already_in_saimo"
+      "id": "NickOnline.br",
+      "name": "NickOnline HD",
+      "reason": "already_in_base_reference"
     },
     {
       "id": "PlayTV.br",
       "name": "Play TV",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "Record.br",
       "name": "Record",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.record-news",
+      "id": "RecordNews.br",
       "name": "Record News",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.rede-brasil",
+      "id": "RedeBrasil.br",
       "name": "Rede Brasil",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "RedeGospel.br",
       "name": "Rede Gospel",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.25",
-      "name": "Rede TV",
-      "reason": "already_in_saimo"
+      "id": "RedeTV.br",
+      "name": "Rede TV! SD",
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.28",
+      "id": "RedeVida.br",
       "name": "Rede Vida",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.22",
+      "id": "SBTNews.br",
       "name": "SBT News",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "SonyChannel.br",
       "name": "Sony Channel",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "SonyMovies.br",
+      "name": "Sony Movies",
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TelecineAction.br",
       "name": "Telecine Action",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TelecineCult.br",
       "name": "Telecine Cult",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TelecineFun.br",
       "name": "Telecine Fun",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TelecinePremium.br",
       "name": "Telecine Premium",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TelecineTouch.br",
       "name": "Telecine Touch",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TerraViva.br",
       "name": "Terra Viva",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.94",
-      "name": "TV ACRÍTICA",
-      "reason": "already_in_saimo"
-    },
-    {
-      "id": "rest_catalog_1.tv-aparecida",
+      "id": "TVAparecida.br",
       "name": "TV Aparecida",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "rest_catalog_1.106",
+      "id": "TVBrasil.br",
       "name": "TV Brasil",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVCancaoNova.br",
       "name": "TV Cancao Nova",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
-      "id": "televisao.tv-cultura",
+      "id": "TVCultura.br",
       "name": "TV Cultura",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVEBahia.br",
       "name": "TVE Bahia",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVEvangelizar.br",
       "name": "TV Evangelizar",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVGazeta.br",
       "name": "TV Gazeta",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVideoNews.br",
       "name": "TVideoNews",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVJustica.br",
       "name": "TV Justica",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVPaiEterno.br",
       "name": "TV Pai Eterno",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVRaTimBum.br",
       "name": "TV Ra Tim Bum",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "TVSenado.br",
       "name": "TV Senado",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "WooHoo.br",
       "name": "WooHoo",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.106",
+      "name": "TV Brasil",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.11",
+      "name": "Jovem Pan News",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.117",
+      "name": "Nickonline",
+      "reason": "already_in_base_reference"
     },
     {
       "id": "rest_catalog_1.125",
       "name": "CazéTV",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
     },
     {
       "id": "rest_catalog_1.19",
       "name": "GeekDot",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.22",
+      "name": "SBT News",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.25",
+      "name": "Rede TV",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.28",
+      "name": "Rede Vida",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "televisao.tv-cultura",
+      "name": "TV Cultura",
+      "reason": "already_in_base_reference"
     },
     {
       "id": "rest_catalog_1.41",
       "name": "Band",
-      "reason": "already_in_saimo"
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.62",
+      "name": "MyTime Movie Network",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.74",
+      "name": "Euro News",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.record-news",
+      "name": "Record News",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.rede-brasil",
+      "name": "Rede Brasil",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "rest_catalog_1.tv-aparecida",
+      "name": "TV Aparecida",
+      "reason": "already_in_base_reference"
+    },
+    {
+      "id": "televisao.canal-gov",
+      "name": "Canal Gov",
+      "reason": "already_in_base_reference"
     }
   ],
   "channels": [
     {
+      "id": "Loading.br",
+      "name": "Loading",
+      "tvg_id": "Local.loading.br",
+      "provider_id": "extra",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "NickOnlineBobEsponja.br",
       "name": "NickOnline Bob Esponja",
       "tvg_id": "NickOnlineBobEsponja.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1766,6 +1956,22 @@
       "name": "TV Loading",
       "tvg_id": "Local.tvloading.br",
       "provider_id": "extra",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "AWTV.br",
+      "name": "AWTV",
+      "tvg_id": "Local.feed.public_catalog%3AAWTV.br%3AHD.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "RetroCartoon.br",
+      "name": "Retro Cartoon",
+      "tvg_id": "Local.feed.public_catalog%3ARetroCartoon.br%3ASD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1781,7 +1987,7 @@
       "id": "ComedyCentralBrasil.br",
       "name": "Comedy Central Brasil",
       "tvg_id": "ComedyCentralBrasil.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1789,7 +1995,15 @@
       "id": "BemMaisTV.br",
       "name": "Bem Mais TV",
       "tvg_id": "BemMaisTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVLifeAmerica.br",
+      "name": "TV Life America",
+      "tvg_id": "Local.feed.public_catalog%3ATVLifeAmerica.br%3AHD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1797,15 +2011,7 @@
       "id": "TVERS.br",
       "name": "TVE RS",
       "tvg_id": "TVERS.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "AgroCanal.br",
-      "name": "AgroCanal",
-      "tvg_id": "AgroCanal.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1813,15 +2019,31 @@
       "id": "Futura.br",
       "name": "Futura",
       "tvg_id": "Futura.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": true,
       "epg_future": true
+    },
+    {
+      "id": "ISTV.br",
+      "name": "ISTV",
+      "tvg_id": "Local.feed.public_catalog%3AISTV.br%3ASD.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "RedeMinas.br",
       "name": "Rede Minas",
       "tvg_id": "RedeMinas.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "Blitstv.br",
+      "name": "Blitstv",
+      "tvg_id": "Blitstv.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1829,7 +2051,7 @@
       "id": "ChromaTV.br",
       "name": "Chroma TV",
       "tvg_id": "ChromaTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1837,7 +2059,7 @@
       "id": "ElementalChannel.br",
       "name": "Elemental Channel",
       "tvg_id": "ElementalChannel.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1845,15 +2067,15 @@
       "id": "ElyTV.br",
       "name": "ElyTV",
       "tvg_id": "ElyTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
-      "id": "Loading.br",
+      "id": "Loading.br.public_catalog.bab293ff",
       "name": "Loading",
-      "tvg_id": "Local.loading.br",
-      "provider_id": "iptv_org",
+      "tvg_id": "Local.feed.public_catalog%3ALoading.br%3ASD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1861,7 +2083,7 @@
       "id": "PetloversTV.br",
       "name": "Petlovers TV",
       "tvg_id": "PetloversTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1869,7 +2091,7 @@
       "id": "RedeNGT.br",
       "name": "Rede NGT",
       "tvg_id": "RedeNGT.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1877,7 +2099,7 @@
       "id": "TVCuruca.br",
       "name": "TV Curuca",
       "tvg_id": "TVCuruca.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1885,7 +2107,7 @@
       "id": "TVGRANDENATALHDTVBRASIL.br",
       "name": "TV GRANDE NATAL HDTV BRASIL",
       "tvg_id": "TVGRANDENATALHDTVBRASIL.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1893,7 +2115,7 @@
       "id": "TVVicosa.br",
       "name": "TV Vicosa",
       "tvg_id": "TVVicosa.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1901,7 +2123,7 @@
       "id": "TVZoom.br",
       "name": "TV Zoom",
       "tvg_id": "TVZoom.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1909,7 +2131,7 @@
       "id": "TVPlusPet.br",
       "name": "TV+Pet",
       "tvg_id": "TVPlusPet.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1917,7 +2139,7 @@
       "id": "UMATV.br",
       "name": "UMA TV",
       "tvg_id": "UMATV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -1964,10 +2186,10 @@
     {
       "id": "CINDIETV.br",
       "name": "CINDIE TV",
-      "tvg_id": "6a1610bebdf296985fd95603-6a3ec58b4ac530f3bac10721",
-      "provider_id": "iptv_org",
-      "epg_current": true,
-      "epg_future": true
+      "tvg_id": "CINDIETV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "rest_catalog_1.109",
@@ -1978,10 +2200,10 @@
       "epg_future": false
     },
     {
-      "id": "rest_catalog_1.23",
+      "id": "ClassiqueTV.br.public_catalog.c4ad9e52",
       "name": "Classique TV",
-      "tvg_id": "ClassiqueTV.br",
-      "provider_id": "rest_catalog_1",
+      "tvg_id": "Local.feed.public_catalog%3AClassiqueTV.br%3ASD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2004,7 +2226,7 @@
     {
       "id": "MyTimemovienetworkBrazil.br",
       "name": "MyTime Movie Network Brazil",
-      "tvg_id": "MyTimeMovieNetwork.br",
+      "tvg_id": "Local.mytimemovienetworkbrazil.br",
       "provider_id": "extra",
       "epg_current": false,
       "epg_future": false
@@ -2050,14 +2272,6 @@
       "epg_future": true
     },
     {
-      "id": "SonyMovies.br",
-      "name": "Sony Movies",
-      "tvg_id": "SonyMovies.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
       "id": "rest_catalog_1.138",
       "name": "TVNA filmes",
       "tvg_id": "Local.tvnafilmes.br",
@@ -2069,15 +2283,7 @@
       "id": "BoxKidsTV.br",
       "name": "Box Kids TV",
       "tvg_id": "BoxKidsTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "Jetsons.br",
-      "name": "Os Jetsons",
-      "tvg_id": "Local.osjetsons.br",
-      "provider_id": "extra",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2122,6 +2328,14 @@
       "epg_future": false
     },
     {
+      "id": "Jetsons.br",
+      "name": "Os Jetsons",
+      "tvg_id": "Local.osjetsons.br",
+      "provider_id": "extra",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.161",
       "name": "Otaku Sign",
       "tvg_id": "Local.otakusign.br",
@@ -2132,7 +2346,7 @@
     {
       "id": "rest_catalog_1.retro-cartoon",
       "name": "Retrô Cartoon",
-      "tvg_id": "RetroCartoon.br",
+      "tvg_id": "Local.retrocartoon.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2141,14 +2355,6 @@
       "id": "rest_catalog_1.26",
       "name": "TV Kids Mais",
       "tvg_id": "Local.tvkidsmais.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.74",
-      "name": "Euro News",
-      "tvg_id": "Local.euronews.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2301,7 +2507,7 @@
       "id": "TVCamara.br",
       "name": "TV Camara",
       "tvg_id": "TVCamara.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": true,
       "epg_future": true
     },
@@ -2309,17 +2515,17 @@
       "id": "LamoreRockShowWebTV.br",
       "name": "Lamore Rock Show WebTV",
       "tvg_id": "LamoreRockShowWebTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "MusicBoxBrazil.br",
       "name": "Music Box Brazil",
-      "tvg_id": "1072",
-      "provider_id": "iptv_org",
-      "epg_current": true,
-      "epg_future": true
+      "tvg_id": "MusicBoxBrazil.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
     },
     {
       "id": "rest_catalog_1.49",
@@ -2330,10 +2536,18 @@
       "epg_future": false
     },
     {
+      "id": "AgroMais.br",
+      "name": "AgroMais",
+      "tvg_id": "AGROMAIS.br",
+      "provider_id": "public_catalog",
+      "epg_current": true,
+      "epg_future": true
+    },
+    {
       "id": "AratuOn.br",
       "name": "Aratu On",
       "tvg_id": "AratuOn.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2341,7 +2555,7 @@
       "id": "Canal38.br",
       "name": "Canal 38",
       "tvg_id": "Canal38.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2349,7 +2563,7 @@
       "id": "CanalMetropolitanodeNoticias.br",
       "name": "Canal Metropolitano de Noticias",
       "tvg_id": "CanalMetropolitanodeNoticias.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2357,7 +2571,7 @@
       "id": "J3NEWSTV.br",
       "name": "J3NEWS TV",
       "tvg_id": "J3NEWSTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2365,47 +2579,7 @@
       "id": "PlenaTV.br",
       "name": "Plena TV",
       "tvg_id": "PlenaTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "STZTV.br",
-      "name": "STZ TV",
-      "tvg_id": "STZTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "TCM10HD.br",
-      "name": "TCM 10 HD",
-      "tvg_id": "TCM10HD.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "TVBrusque.br",
-      "name": "TV Brusque",
-      "tvg_id": "TVBrusque.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "TVSimCachoeiro.br",
-      "name": "TV Sim Cachoeiro",
-      "tvg_id": "TVSimCachoeiro.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "VEJAPlusTV.br",
-      "name": "VEJA+ TV",
-      "tvg_id": "VEJAPlusTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2418,10 +2592,42 @@
       "epg_future": false
     },
     {
+      "id": "STZTV.br",
+      "name": "STZ TV",
+      "tvg_id": "STZTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TCM10HD.br",
+      "name": "TCM 10 HD",
+      "tvg_id": "TCM10HD.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.137",
       "name": "TUBACAST TV+",
       "tvg_id": "Local.tubacasttv.br",
       "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVBrusque.br",
+      "name": "TV Brusque",
+      "tvg_id": "TVBrusque.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVSimCachoeiro.br",
+      "name": "TV Sim Cachoeiro",
+      "tvg_id": "TVSimCachoeiro.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2434,306 +2640,10 @@
       "epg_future": false
     },
     {
-      "id": "TVUFOP.br",
-      "name": "TV UFOP",
-      "tvg_id": "TVUFOP.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.35",
-      "name": "AG TV",
-      "tvg_id": "Local.agtv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.bdc-tv",
-      "name": "BDC TV",
-      "tvg_id": "Local.bdctv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.24",
-      "name": "BRKS TV",
-      "tvg_id": "Local.brkstv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.51",
-      "name": "BS TV Online",
-      "tvg_id": "Local.bstvonline.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.168",
-      "name": "Coletiva TV",
-      "tvg_id": "Local.coletivatv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.95",
-      "name": "Gazeta Brasil",
-      "tvg_id": "Local.gazetabrasil.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.102",
-      "name": "Gramado TV",
-      "tvg_id": "Local.gramadotv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.124",
-      "name": "IJUÍ PLAY",
-      "tvg_id": "Local.ijuiplay.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.lamore-webrock",
-      "name": "Lamore Rock Show",
-      "tvg_id": "Local.lamorerockshow.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.119",
-      "name": "Os Detetives",
-      "tvg_id": "Local.osdetetives.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.135",
-      "name": "RBTI+TV",
-      "tvg_id": "Local.rbtitv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.82",
-      "name": "RFP tv",
-      "tvg_id": "Local.rfptv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.147",
-      "name": "RS PLAY",
-      "tvg_id": "Local.rsplay.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.153",
-      "name": "RS TV",
-      "tvg_id": "Local.rstv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.tv-megaastral",
-      "name": "TV Astral",
-      "tvg_id": "Local.tvastral.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.56",
-      "name": "TV Channel Network",
-      "tvg_id": "Local.tvchannelnetwork.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.110",
-      "name": "TV Cidade",
-      "tvg_id": "Local.tvcidade.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.tvcidade-gazeta",
-      "name": "TV Cidade- Afiliada à TV Gazeta",
-      "tvg_id": "Local.tvcidadeafiliadaatvgazeta.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.128",
-      "name": "TV Com",
-      "tvg_id": "Local.tvcom.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.134",
-      "name": "TV Conecta",
-      "tvg_id": "Local.tvconecta.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.55",
-      "name": "TV da Cidade Joinville",
-      "tvg_id": "Local.tvdacidadejoinville.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.tv-gazin",
-      "name": "TV Gazin",
-      "tvg_id": "TVGazin.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.tv-historia",
-      "name": "TV História",
-      "tvg_id": "Local.tvhistoria.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.108",
-      "name": "TV Life América",
-      "tvg_id": "TVLifeAmerica.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.141",
-      "name": "Tv Litoral Leste",
-      "tvg_id": "Local.tvlitoralleste.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.105",
-      "name": "TV Max 90",
-      "tvg_id": "Local.tvmax90.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.tv-moon",
-      "name": "TV MON [HD]",
-      "tvg_id": "TVMon.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.140",
-      "name": "Tv NND",
-      "tvg_id": "Local.tvnnd.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.97",
-      "name": "TV Notícias Agrícolas",
-      "tvg_id": "Local.tvnoticiasagricolas.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.123",
-      "name": "TV OLHO D’ÁGUA",
-      "tvg_id": "Local.tvolhodagua.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.107",
-      "name": "TV Tudo",
-      "tvg_id": "Local.tvtudo.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.44",
-      "name": "TV+ News",
-      "tvg_id": "Local.tvnews.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.83",
-      "name": "TVBC",
-      "tvg_id": "Local.tvbc.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.57",
-      "name": "Ultra TV",
-      "tvg_id": "Local.ultratv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.164",
-      "name": "Viva a Vida TV",
-      "tvg_id": "Local.vivaavidatv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.37",
-      "name": "Wording TV",
-      "tvg_id": "Local.wordingtv.br",
-      "provider_id": "rest_catalog_1",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "rest_catalog_1.xtreme-tv",
-      "name": "Xtreme TV",
-      "tvg_id": "XtremeTV.br",
-      "provider_id": "rest_catalog_1",
+      "id": "VEJAPlusTV.br",
+      "name": "VEJA+ TV",
+      "tvg_id": "VEJAPlusTV.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2754,10 +2664,82 @@
       "epg_future": false
     },
     {
+      "id": "DespertarTV.br",
+      "name": "Despertar TV",
+      "tvg_id": "DespertarTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "FonteTV.br",
+      "name": "Fonte TV",
+      "tvg_id": "FonteTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "GospelMovieTV.br",
+      "name": "Gospel Movie TV",
+      "tvg_id": "GospelMovieTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "IMPDTVWorldwide.br",
+      "name": "IMPD TV Worldwide",
+      "tvg_id": "IMPDTVWorldwide.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "NovoTempo.br",
+      "name": "Novo Tempo",
+      "tvg_id": "NovoTempo.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "PlenitudeTV.br",
+      "name": "Plenitude TV",
+      "tvg_id": "PlenitudeTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "RedeImpactoGospelTV.br",
+      "name": "Rede Impacto Gospel TV",
+      "tvg_id": "RedeImpactoGospelTV.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "RedeSeculo21.br",
+      "name": "Rede Seculo 21",
+      "tvg_id": "RedeSeculo21.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.29",
       "name": "Rede Super TV",
       "tvg_id": "Local.redesupertv.br",
       "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "RITTV.br",
+      "name": "RIT TV",
+      "tvg_id": "RITtv.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2770,74 +2752,10 @@
       "epg_future": false
     },
     {
-      "id": "DespertarTV.br",
-      "name": "Despertar TV",
-      "tvg_id": "DespertarTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "FonteTV.br",
-      "name": "Fonte TV",
-      "tvg_id": "FonteTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "GospelMovieTV.br",
-      "name": "Gospel Movie TV",
-      "tvg_id": "GospelMovieTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "IMPDTVWorldwide.br",
-      "name": "IMPD TV Worldwide",
-      "tvg_id": "IMPDTVWorldwide.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "NovoTempo.br",
-      "name": "Novo Tempo",
-      "tvg_id": "NovoTempo.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "PlenitudeTV.br",
-      "name": "Plenitude TV",
-      "tvg_id": "PlenitudeTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "RedeImpactoGospelTV.br",
-      "name": "Rede Impacto Gospel TV",
-      "tvg_id": "RedeImpactoGospelTV.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "RedeSeculo21.br",
-      "name": "Rede Seculo 21",
-      "tvg_id": "RedeSeculo21.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "RITTV.br",
-      "name": "RIT TV",
-      "tvg_id": "RITtv.br",
-      "provider_id": "iptv_org",
+      "id": "TVMaanaim.br",
+      "name": "TV Maanaim",
+      "tvg_id": "TVMaanaim.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2845,7 +2763,7 @@
       "id": "TVPadreCicero.br",
       "name": "TV Padre Cicero",
       "tvg_id": "TVPadreCicero.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2853,7 +2771,7 @@
       "id": "TVTerceiroAnjo.br",
       "name": "TV Terceiro Anjo",
       "tvg_id": "TVTerceiroAnjo.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2861,23 +2779,23 @@
       "id": "TVUniversal.br",
       "name": "TV Universal",
       "tvg_id": "TVUniversal.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
-      "id": "1001Noites.br",
-      "name": "1001 Noites",
-      "tvg_id": "1001Noites.br",
-      "provider_id": "iptv_org",
+      "id": "ClassiqueTV.br",
+      "name": "CLASSIQUE TV",
+      "tvg_id": "Local.classiquetv.br",
+      "provider_id": "extra",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "TVSeries.br",
       "name": "TV Series",
-      "tvg_id": "Local.tvseries.br",
-      "provider_id": "iptv_org",
+      "tvg_id": "Local.feed.public_catalog%3ATVSeries.br%3ASD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2930,9 +2848,33 @@
       "epg_future": false
     },
     {
+      "id": "PlusMaisUm.br",
+      "name": "+MaisUm",
+      "tvg_id": "PlusMaisUm.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "AdessoTV.br",
+      "name": "Adesso TV",
+      "tvg_id": "Local.feed.public_catalog%3AAdessoTV.br%3ASD.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.58",
       "name": "Adesso TV",
-      "tvg_id": "AdessoTV.br",
+      "tvg_id": "Local.adessotv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.35",
+      "name": "AG TV",
+      "tvg_id": "Local.agtv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2941,14 +2883,22 @@
       "id": "AmazonSat.br",
       "name": "Amazon Sat",
       "tvg_id": "AmazonSat.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "ArarunaTV.br",
+      "name": "Araruna TV",
+      "tvg_id": "Local.feed.public_catalog%3AArarunaTV.br%3ASD.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "rest_catalog_1.143",
       "name": "Araruna TV",
-      "tvg_id": "ArarunaTV.br",
+      "tvg_id": "Local.ararunatv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2956,7 +2906,15 @@
     {
       "id": "rest_catalog_1.21",
       "name": "AWTV",
-      "tvg_id": "AWTV.br",
+      "tvg_id": "Local.awtv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.bdc-tv",
+      "name": "BDC TV",
+      "tvg_id": "Local.bdctv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -2965,7 +2923,23 @@
       "id": "BoasNovas.br",
       "name": "Boas Novas",
       "tvg_id": "BoasNovas.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.24",
+      "name": "BRKS TV",
+      "tvg_id": "Local.brkstv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.51",
+      "name": "BS TV Online",
+      "tvg_id": "Local.bstvonline.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -2973,7 +2947,7 @@
       "id": "Canal25Jundiai.br",
       "name": "Canal 25 Jundiai",
       "tvg_id": "Canal25Jundiai.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -2997,22 +2971,14 @@
       "id": "CanalFDR.br",
       "name": "Canal FDR",
       "tvg_id": "CanalFDR.br",
-      "provider_id": "iptv_org",
-      "epg_current": false,
-      "epg_future": false
-    },
-    {
-      "id": "CanalSete.br",
-      "name": "Canal Sete",
-      "tvg_id": "CanalSete.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "rest_catalog_1.series-classicas",
       "name": "Canal Séries Classic",
-      "tvg_id": "SeriesClassic.br",
+      "tvg_id": "Local.seriesclassic.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3029,7 +2995,7 @@
       "id": "CatveFM.br",
       "name": "Catve FM",
       "tvg_id": "CatveFM.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3037,7 +3003,7 @@
       "id": "CatveMasterTV.br",
       "name": "Catve Master TV",
       "tvg_id": "CatveMasterTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3045,7 +3011,7 @@
       "id": "Catve2.br",
       "name": "Catve2",
       "tvg_id": "Catve2.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3061,6 +3027,14 @@
       "id": "rest_catalog_1.7",
       "name": "Clouding TV",
       "tvg_id": "Local.cloudingtv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.168",
+      "name": "Coletiva TV",
+      "tvg_id": "Local.coletivatv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3085,7 +3059,7 @@
       "id": "ConecTVBrasil.br",
       "name": "ConecTV Brasil",
       "tvg_id": "ConecTVBrasil.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3093,7 +3067,15 @@
       "id": "ConexaoTV.br",
       "name": "Conexao TV",
       "tvg_id": "ConexaoTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "CulturaFast.br",
+      "name": "Cultura Fast",
+      "tvg_id": "CulturaFast.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3101,7 +3083,7 @@
       "id": "CulturaPara.br",
       "name": "Cultura Para",
       "tvg_id": "CulturaPara.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3109,7 +3091,7 @@
       "id": "DemaisTV.br",
       "name": "Demais TV",
       "tvg_id": "DemaisTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3117,7 +3099,7 @@
       "id": "EUTV.br",
       "name": "EUTV",
       "tvg_id": "EUTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3125,14 +3107,38 @@
       "id": "FalaLitoral.br",
       "name": "Fala Litoral",
       "tvg_id": "FalaLitoral.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.95",
+      "name": "Gazeta Brasil",
+      "tvg_id": "Local.gazetabrasil.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.102",
+      "name": "Gramado TV",
+      "tvg_id": "Local.gramadotv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.124",
+      "name": "IJUÍ PLAY",
+      "tvg_id": "Local.ijuiplay.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "rest_catalog_1.rede-istv",
       "name": "ISTV",
-      "tvg_id": "ISTV.br",
+      "tvg_id": "Local.istv.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3149,7 +3155,15 @@
       "id": "Lke.br",
       "name": "L!ke",
       "tvg_id": "Lke.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.lamore-webrock",
+      "name": "Lamore Rock Show",
+      "tvg_id": "Local.lamorerockshow.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3180,7 +3194,7 @@
     {
       "id": "rest_catalog_1.87",
       "name": "Mais Um",
-      "tvg_id": "PlusMaisUm.br",
+      "tvg_id": "Local.maisum.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3197,7 +3211,7 @@
       "id": "NovaEraTV.br",
       "name": "Nova Era TV",
       "tvg_id": "NovaEraTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3213,7 +3227,7 @@
       "id": "NTV.br",
       "name": "NTV",
       "tvg_id": "NTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3221,7 +3235,15 @@
       "id": "ODiaTV.br",
       "name": "O Dia TV",
       "tvg_id": "ODiaTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.119",
+      "name": "Os Detetives",
+      "tvg_id": "Local.osdetetives.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3229,7 +3251,7 @@
       "id": "PrimerTV.br",
       "name": "Primer TV",
       "tvg_id": "PrimerTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3237,7 +3259,15 @@
       "id": "RBATV.br",
       "name": "RBATV",
       "tvg_id": "RBATV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.135",
+      "name": "RBTI+TV",
+      "tvg_id": "Local.rbtitv.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3245,7 +3275,15 @@
       "id": "RecordTVInteriorSP.br",
       "name": "RecordTV Interior SP",
       "tvg_id": "RecordTVInteriorSP.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.165",
+      "name": "Rede Classic",
+      "tvg_id": "Local.redeclassic.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3253,7 +3291,7 @@
       "id": "RedeCNTRiodeJaneiro.br",
       "name": "Rede CNT Rio de Janeiro",
       "tvg_id": "RedeCNTRiodeJaneiro.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3261,7 +3299,7 @@
       "id": "RedeFamilia.br",
       "name": "Rede Familia",
       "tvg_id": "RedeFamilia.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3285,7 +3323,7 @@
       "id": "RedeMeioNorte.br",
       "name": "Rede Meio Norte",
       "tvg_id": "RedeMeioNorte.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3293,7 +3331,7 @@
       "id": "RedeSPTV.br",
       "name": "Rede SPTV",
       "tvg_id": "RedeSPTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3301,7 +3339,7 @@
       "id": "RedeTVMais.br",
       "name": "Rede TV! Mais",
       "tvg_id": "RedeTVMais.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3317,15 +3355,31 @@
       "id": "RedeTVParana.br",
       "name": "RedeTV! Parana",
       "tvg_id": "RedeTVParana.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
     {
-      "id": "SBTInterior.br",
-      "name": "SBT Interior",
-      "tvg_id": "SBTInterior.br",
-      "provider_id": "iptv_org",
+      "id": "rest_catalog_1.82",
+      "name": "RFP tv",
+      "tvg_id": "Local.rfptv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.147",
+      "name": "RS PLAY",
+      "tvg_id": "Local.rsplay.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.153",
+      "name": "RS TV",
+      "tvg_id": "Local.rstv.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3333,7 +3387,7 @@
       "id": "SBTNacional.br",
       "name": "SBT Nacional",
       "tvg_id": "SBTNacional.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3341,7 +3395,7 @@
       "id": "SBTNovaMutum.br",
       "name": "SBT Nova Mutum",
       "tvg_id": "SBTNovaMutum.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3349,7 +3403,7 @@
       "id": "SESCTV.br",
       "name": "SESC TV",
       "tvg_id": "SESCTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3357,7 +3411,7 @@
       "id": "SICTV.br",
       "name": "SIC TV",
       "tvg_id": "SICTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3365,7 +3419,7 @@
       "id": "SOUTV.br",
       "name": "SOU TV",
       "tvg_id": "SOUTV.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3378,10 +3432,26 @@
       "epg_future": false
     },
     {
+      "id": "TVACritica.br",
+      "name": "TV A Critica",
+      "tvg_id": "TVACritica.br",
+      "provider_id": "public_catalog",
+      "epg_current": true,
+      "epg_future": true
+    },
+    {
+      "id": "rest_catalog_1.94",
+      "name": "TV ACRÍTICA",
+      "tvg_id": "Local.tvacritica.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVAldeia.br",
       "name": "TV Aldeia",
       "tvg_id": "TVAldeia.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3389,7 +3459,7 @@
       "id": "TVAliancaCatarinense.br",
       "name": "TV Alianca Catarinense",
       "tvg_id": "TVAliancaCatarinense.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3397,7 +3467,31 @@
       "id": "TVAlternativa.br",
       "name": "TV Alternativa",
       "tvg_id": "TVAlternativa.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.92",
+      "name": "TV Aracati",
+      "tvg_id": "Local.tvaracati.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVArapuan.br",
+      "name": "TV Arapuan",
+      "tvg_id": "TVArapuan.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.tv-megaastral",
+      "name": "TV Astral",
+      "tvg_id": "Local.tvastral.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3405,7 +3499,7 @@
       "id": "TVBahia.br",
       "name": "TV Bahia",
       "tvg_id": "TVBahia.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3421,7 +3515,7 @@
       "id": "TVBrasilOeste.br",
       "name": "TV Brasil Oeste",
       "tvg_id": "TVBrasilOeste.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3437,7 +3531,15 @@
       "id": "TVBRICSPortuguese.br",
       "name": "TV BRICS Portuguese",
       "tvg_id": "TVBRICSPortuguese.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVCAJUIWEB.br",
+      "name": "TV CAJUI WEB",
+      "tvg_id": "TVCAJUIWEB.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3450,10 +3552,34 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.56",
+      "name": "TV Channel Network",
+      "tvg_id": "Local.tvchannelnetwork.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.110",
+      "name": "TV Cidade",
+      "tvg_id": "Local.tvcidade.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVCidadeVerdeCuiaba.br",
       "name": "TV Cidade Verde Cuiaba",
       "tvg_id": "TVCidadeVerdeCuiaba.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.tvcidade-gazeta",
+      "name": "TV Cidade- Afiliada à TV Gazeta",
+      "tvg_id": "Local.tvcidadeafiliadaatvgazeta.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3461,7 +3587,15 @@
       "id": "TVClube.br",
       "name": "TV Clube",
       "tvg_id": "TVClube.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.128",
+      "name": "TV Com",
+      "tvg_id": "Local.tvcom.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3469,7 +3603,15 @@
       "id": "TVComunitaria.br",
       "name": "TV Comunitaria",
       "tvg_id": "TVComunitaria.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.134",
+      "name": "TV Conecta",
+      "tvg_id": "Local.tvconecta.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3482,10 +3624,18 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.55",
+      "name": "TV da Cidade Joinville",
+      "tvg_id": "Local.tvdacidadejoinville.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVDifusao.br",
       "name": "TV Difusao",
       "tvg_id": "TVDifusao.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3498,10 +3648,18 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.tv-gazin",
+      "name": "TV Gazin",
+      "tvg_id": "Local.tvgazin.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVGloboBrasilia.br",
       "name": "TV Globo Brasilia",
       "tvg_id": "TVGloboBrasilia.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3509,7 +3667,47 @@
       "id": "TVGuara.br",
       "name": "TV Guara",
       "tvg_id": "TVGuara.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVGuarapari.br",
+      "name": "TV Guarapari",
+      "tvg_id": "TVGuarapari.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.tv-historia",
+      "name": "TV História",
+      "tvg_id": "Local.tvhistoria.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.108",
+      "name": "TV Life América",
+      "tvg_id": "Local.tvlifeamerica.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.141",
+      "name": "Tv Litoral Leste",
+      "tvg_id": "Local.tvlitoralleste.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVLitoralRN.br",
+      "name": "TV Litoral RN",
+      "tvg_id": "TVLitoralRN.br",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3517,7 +3715,7 @@
       "id": "TVMaisMarica.br",
       "name": "TV Mais Marica",
       "tvg_id": "TVMaisMarica.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3525,7 +3723,15 @@
       "id": "TVMarajoara.br",
       "name": "TV Marajoara",
       "tvg_id": "TVMarajoara.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.105",
+      "name": "TV Max 90",
+      "tvg_id": "Local.tvmax90.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3533,7 +3739,39 @@
       "id": "TVMetropole.br",
       "name": "TV Metropole",
       "tvg_id": "TVMetropole.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.tv-moon",
+      "name": "TV MON [HD]",
+      "tvg_id": "Local.tvmon.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.140",
+      "name": "Tv NND",
+      "tvg_id": "Local.tvnnd.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.97",
+      "name": "TV Notícias Agrícolas",
+      "tvg_id": "Local.tvnoticiasagricolas.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.123",
+      "name": "TV OLHO D’ÁGUA",
+      "tvg_id": "Local.tvolhodagua.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3541,7 +3779,7 @@
       "id": "TVPantanalMS.br",
       "name": "TV Pantanal MS",
       "tvg_id": "TVPantanalMS.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3549,7 +3787,7 @@
       "id": "TVPassoFundo.br",
       "name": "TV Passo Fundo",
       "tvg_id": "TVPassoFundo.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3557,7 +3795,7 @@
       "id": "TVPetropolis.br",
       "name": "TV Petropolis",
       "tvg_id": "TVPetropolis.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3565,7 +3803,7 @@
       "id": "TVSaoRaimundo.br",
       "name": "TV Sao Raimundo",
       "tvg_id": "TVSaoRaimundo.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3573,7 +3811,7 @@
       "id": "TVShowFortaleza.br",
       "name": "TV Show Fortaleza",
       "tvg_id": "TVShowFortaleza.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3586,6 +3824,14 @@
       "epg_future": true
     },
     {
+      "id": "TVSulBahia.br",
+      "name": "TV Sul Bahia",
+      "tvg_id": "TVSulBahia.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "rest_catalog_1.54",
       "name": "TV São Gabriel",
       "tvg_id": "Local.tvsaogabriel.br",
@@ -3594,10 +3840,42 @@
       "epg_future": false
     },
     {
+      "id": "rest_catalog_1.107",
+      "name": "TV Tudo",
+      "tvg_id": "Local.tvtudo.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "TVUFOP.br",
+      "name": "TV UFOP",
+      "tvg_id": "TVUFOP.br",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
       "id": "TVVilaReal.br",
       "name": "TV Vila Real",
       "tvg_id": "TVVilaReal.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.44",
+      "name": "TV+ News",
+      "tvg_id": "Local.tvnews.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.83",
+      "name": "TVBC",
+      "tvg_id": "Local.tvbc.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
@@ -3605,7 +3883,7 @@
       "id": "TVCOMMaceio.br",
       "name": "TVCOM Maceio",
       "tvg_id": "TVCOMMaceio.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3613,7 +3891,7 @@
       "id": "TVitape.br",
       "name": "TVitape",
       "tvg_id": "TVitape.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3621,7 +3899,7 @@
       "id": "TVLatinaSat.br",
       "name": "TVLatinaSat",
       "tvg_id": "TVLatinaSat.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     },
@@ -3629,14 +3907,46 @@
       "id": "TVNBN.br",
       "name": "TVNBN",
       "tvg_id": "TVNBN.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.57",
+      "name": "Ultra TV",
+      "tvg_id": "Local.ultratv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.164",
+      "name": "Viva a Vida TV",
+      "tvg_id": "Local.vivaavidatv.br",
+      "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
     },
     {
       "id": "rest_catalog_1.46",
       "name": "VRT Channel",
-      "tvg_id": "VRTChannel.br",
+      "tvg_id": "Local.vrtchannel.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.37",
+      "name": "Wording TV",
+      "tvg_id": "Local.wordingtv.br",
+      "provider_id": "rest_catalog_1",
+      "epg_current": false,
+      "epg_future": false
+    },
+    {
+      "id": "rest_catalog_1.xtreme-tv",
+      "name": "Xtreme TV",
+      "tvg_id": "XtremeTV.br",
       "provider_id": "rest_catalog_1",
       "epg_current": false,
       "epg_future": false
@@ -3645,7 +3955,7 @@
       "id": "TravelBoxBrazil.br",
       "name": "Travel Box Brazil",
       "tvg_id": "TravelBoxBrazil.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": true,
       "epg_future": true
     },
@@ -3653,14 +3963,14 @@
       "id": "TVParanaTurismo.br",
       "name": "TV Parana Turismo",
       "tvg_id": "TVParanaTurismo.br",
-      "provider_id": "iptv_org",
+      "provider_id": "public_catalog",
       "epg_current": false,
       "epg_future": false
     }
   ],
   "limitations": [
     "Membership is not proof of stream playback or rights",
-    "YouTube requires a client resolver and is excluded from the portable playlist",
+    "Renewable media URLs expire and need periodic refresh",
     "Schedule coverage depends on source availability"
   ]
 }
