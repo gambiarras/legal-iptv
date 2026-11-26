@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-24T22:37:19.985132+00:00",
-  "total_input_channels": 631,
-  "selected_channels": 332,
+  "generated_at": "2026-11-26T20:52:09.311305+00:00",
+  "total_input_channels": 638,
+  "selected_channels": 329,
   "extra_channels": 46,
   "public_catalog_channels": 399,
-  "live_stream_catalog_channels": 186,
+  "live_stream_catalog_channels": 193,
   "contract_version": 1,
-  "catalog_input_sha256": "eb764b4f5b1c015c633dc8cd4fd0617738c11fdf937449945a9f2c7f74410d71",
+  "catalog_input_sha256": "f6a9f4bb484d8a77b742c8ae6def01c0abad1610d3f2a25a5958fb9750500d10",
   "decision_counts": {
-    "transport_ineligible": 31,
-    "unavailable": 220,
-    "media_unconfirmed": 5,
-    "deduplicated": 43,
-    "selected": 332
+    "transport_ineligible": 38,
+    "unavailable": 218,
+    "media_unconfirmed": 4,
+    "deduplicated": 49,
+    "selected": 329
   },
   "selection_decisions": [
     {
@@ -115,7 +115,7 @@
       "category_rule": ""
     },
     {
-      "id": "Caze.tv.8DHzQERvbYQ",
+      "id": "Caze.tv.9lcWYyhlTVQ",
       "logical_id": "Caze.tv",
       "provider": "video_platform",
       "group": "Esportes",
@@ -126,7 +126,95 @@
       "category_rule": ""
     },
     {
-      "id": "Caze.tv.jUd5TAB29NQ",
+      "id": "Caze.tv.dASnIbujkBc",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.h-fp2h7UOns",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.Jtqi_cW0EJM",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.lwy1aTGEzxw",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.mNtB4XCk1NE",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.pqGgFfGUcFU",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.QLMYhEXsyYY",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.QrOM2f9cwzA",
+      "logical_id": "Caze.tv",
+      "provider": "video_platform",
+      "group": "Esportes",
+      "reason": "transport_ineligible",
+      "phase": "eligibility",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "Caze.tv.uko5Zl0zG74",
       "logical_id": "Caze.tv",
       "provider": "video_platform",
       "group": "Esportes",
@@ -148,7 +236,7 @@
       "category_rule": ""
     },
     {
-      "id": "CNNbrasil.tv.cBoTk2lFqIY",
+      "id": "CNNbrasil.tv.ZH1dIfVUEkI",
       "logical_id": "CNNbrasil.tv",
       "provider": "video_platform",
       "group": "Notícias",
@@ -159,7 +247,7 @@
       "category_rule": ""
     },
     {
-      "id": "DiarioTVTeresopolis.br.M1GdwHvRXK8",
+      "id": "DiarioTVTeresopolis.br.gSCQJkqMQBU",
       "logical_id": "DiarioTVTeresopolis.br",
       "provider": "video_platform",
       "group": "Variedades",
@@ -170,7 +258,7 @@
       "category_rule": ""
     },
     {
-      "id": "DiarioTVTeresopolis.br.y4OzwUvBzQE",
+      "id": "DiarioTVTeresopolis.br.M1GdwHvRXK8",
       "logical_id": "DiarioTVTeresopolis.br",
       "provider": "video_platform",
       "group": "Variedades",
@@ -192,18 +280,7 @@
       "category_rule": ""
     },
     {
-      "id": "JovemPanNews.br.HI_nrJl-jz0",
-      "logical_id": "JovemPanNews.br",
-      "provider": "video_platform",
-      "group": "Notícias",
-      "reason": "transport_ineligible",
-      "phase": "eligibility",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "JovemPanNews.br.LEQKYJ8s4AA",
+      "id": "JovemPanNews.br.mA1Pa9MHxPI",
       "logical_id": "JovemPanNews.br",
       "provider": "video_platform",
       "group": "Notícias",
@@ -269,7 +346,7 @@
       "category_rule": ""
     },
     {
-      "id": "RecordNews.br.Eu4D7TA1p4c",
+      "id": "RecordNews.br.EG1k8_-PGDE",
       "logical_id": "RecordNews.br",
       "provider": "video_platform",
       "group": "Notícias",
@@ -280,7 +357,7 @@
       "category_rule": ""
     },
     {
-      "id": "RecordNews.br.gUhbplnP52w",
+      "id": "RecordNews.br.m1nEPhOY5To",
       "logical_id": "RecordNews.br",
       "provider": "video_platform",
       "group": "Notícias",
@@ -346,7 +423,7 @@
       "category_rule": ""
     },
     {
-      "id": "tvc-youtube.tv.8N9orlXLI1c",
+      "id": "tvc-youtube.tv.sD5IUquF-6c",
       "logical_id": "tvc-youtube.tv",
       "provider": "video_platform",
       "group": "Variedades",
@@ -566,6 +643,17 @@
       "category_rule": ""
     },
     {
+      "id": "NovaTVI.br",
+      "logical_id": "channel:novatvipetropolis",
+      "provider": "extra",
+      "group": "Variedades",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
       "id": "Kanade.br",
       "logical_id": "channel:kanade",
       "provider": "extra",
@@ -581,6 +669,17 @@
       "logical_id": "channel:cnnbrasil",
       "provider": "extra",
       "group": "Notícias",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "RetroCartoon.br",
+      "logical_id": "channel:retrocartoon",
+      "provider": "extra",
+      "group": "Infantil",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -636,17 +735,6 @@
       "logical_id": "channel:feed:public_catalog%3AAgroBrasilTV.br%3ASD",
       "provider": "public_catalog",
       "group": "Outdoor",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "AgroCanal.br",
-      "logical_id": "channel:feed:public_catalog%3AAgroCanal.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Educação",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -764,6 +852,17 @@
       "category_rule": ""
     },
     {
+      "id": "BandNews.br",
+      "logical_id": "channel:feed:public_catalog%3ABandNews.br%3ASD",
+      "provider": "public_catalog",
+      "group": "Notícias",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
       "id": "BandSports.br",
       "logical_id": "channel:feed:public_catalog%3ABandSports.br%3ASD",
       "provider": "public_catalog",
@@ -810,17 +909,6 @@
     {
       "id": "Canal25Jundiai.br",
       "logical_id": "channel:feed:public_catalog%3ACanal25Jundiai.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "CanaldoBoi.br",
-      "logical_id": "channel:feed:public_catalog%3ACanaldoBoi.br%3ASD",
       "provider": "public_catalog",
       "group": "Variedades",
       "reason": "unavailable",
@@ -889,17 +977,6 @@
       "logical_id": "channel:feed:public_catalog%3ACanalRicos.br%3ASD",
       "provider": "public_catalog",
       "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "CanalRural.br",
-      "logical_id": "channel:feed:public_catalog%3ACanalRural.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Outdoor",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1171,17 +1248,6 @@
       "category_rule": ""
     },
     {
-      "id": "JovemPanNews.br",
-      "logical_id": "channel:feed:public_catalog%3AJovemPanNews.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Notícias",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
       "id": "KpopTVPlay.br",
       "logical_id": "channel:feed:public_catalog%3AKpopTVPlay.br%3ASD",
       "provider": "public_catalog",
@@ -1230,6 +1296,17 @@
       "logical_id": "channel:feed:public_catalog%3AMKKWebTV.br%3ASD",
       "provider": "public_catalog",
       "group": "Variedades",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "NickOnlineBobEsponja.br",
+      "logical_id": "channel:feed:public_catalog%3ANickOnlineBobEsponja.br%3AHD",
+      "provider": "public_catalog",
+      "group": "Animação",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1296,6 +1373,17 @@
       "logical_id": "channel:feed:public_catalog%3ARecord.br%3ASD",
       "provider": "public_catalog",
       "group": "Variedades",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "RecordNews.br",
+      "logical_id": "channel:feed:public_catalog%3ARecordNews.br%3ASD",
+      "provider": "public_catalog",
+      "group": "Notícias",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1457,32 +1545,10 @@
       "category_rule": ""
     },
     {
-      "id": "RedeCNTRiodeJaneiro.br",
-      "logical_id": "channel:feed:public_catalog%3ARedeCNTRiodeJaneiro.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
       "id": "RedeGlobo.br",
       "logical_id": "channel:feed:public_catalog%3ARedeGlobo.br%3ASD",
       "provider": "public_catalog",
       "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "RedeGospel.br",
-      "logical_id": "channel:feed:public_catalog%3ARedeGospel.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Religião",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1545,17 +1611,6 @@
       "category_rule": ""
     },
     {
-      "id": "RedeTV.br",
-      "logical_id": "channel:feed:public_catalog%3ARedeTV.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
       "id": "RedeVida.br",
       "logical_id": "channel:feed:public_catalog%3ARedeVida.br%3ASD",
       "provider": "public_catalog",
@@ -1571,6 +1626,17 @@
       "logical_id": "channel:feed:public_catalog%3ARedeVida.br%3ASD",
       "provider": "public_catalog",
       "group": "Religião",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "RetroCartoon.br",
+      "logical_id": "channel:feed:public_catalog%3ARetroCartoon.br%3ASD",
+      "provider": "public_catalog",
+      "group": "Clássico",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1644,32 +1710,10 @@
       "category_rule": ""
     },
     {
-      "id": "SBTInterior.br",
-      "logical_id": "channel:feed:public_catalog%3ASBTInterior.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
       "id": "SBTKids.br",
       "logical_id": "channel:feed:public_catalog%3ASBTKids.br%3ASD",
       "provider": "public_catalog",
       "group": "Infantil",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "SBTNacional.br",
-      "logical_id": "channel:feed:public_catalog%3ASBTNacional.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -1857,6 +1901,17 @@
       "logical_id": "channel:feed:public_catalog%3ATVAparecida.br%3ASD",
       "provider": "public_catalog",
       "group": "Religião",
+      "reason": "unavailable",
+      "phase": "validation",
+      "category_origin": "",
+      "category_reason": "",
+      "category_rule": ""
+    },
+    {
+      "id": "TVArapuan.br",
+      "logical_id": "channel:feed:public_catalog%3ATVArapuan.br%3ASD",
+      "provider": "public_catalog",
+      "group": "Variedades",
       "reason": "unavailable",
       "phase": "validation",
       "category_origin": "",
@@ -2159,99 +2214,44 @@
       "category_origin": "",
       "category_reason": "",
       "category_rule": ""
-    },
-    {
-      "id": "TVEvangelizar.br",
-      "logical_id": "channel:feed:public_catalog%3ATVEvangelizar.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Religião",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "TVFronteira.br",
-      "logical_id": "channel:feed:public_catalog%3ATVFronteira.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "TVFuturo.br",
-      "logical_id": "channel:feed:public_catalog%3ATVFuturo.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "TVGazeta.br",
-      "logical_id": "channel:feed:public_catalog%3ATVGazeta.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
-    },
-    {
-      "id": "TVGazin.br",
-      "logical_id": "channel:feed:public_catalog%3ATVGazin.br%3ASD",
-      "provider": "public_catalog",
-      "group": "Variedades",
-      "reason": "unavailable",
-      "phase": "validation",
-      "category_origin": "",
-      "category_reason": "",
-      "category_rule": ""
     }
   ],
-  "decisions_truncated": 431,
+  "decisions_truncated": 438,
   "ingestion_counts": {
     "unresolved": 5,
     "missing_media_url": 10
   },
   "source_errors": {},
   "selected_before_stream_filter": 600,
-  "selected_after_stream_filter": 375,
-  "stream_filtered_channels": 225,
-  "selection_filtered_channels": 74,
-  "deduplicated_channels": 43,
+  "selected_after_stream_filter": 378,
+  "stream_filtered_channels": 222,
+  "selection_filtered_channels": 87,
+  "deduplicated_channels": 49,
   "selected_by_source": {
-    "extra": 17,
-    "live_stream_catalog": 137,
+    "extra": 16,
+    "live_stream_catalog": 135,
     "public_catalog": 178
   },
   "selected_by_provider": {
     "directory_catalog": 2,
-    "extra": 17,
+    "extra": 16,
     "public_catalog": 178,
-    "rest_catalog_1": 135
+    "rest_catalog_1": 133
   },
   "timings_seconds": {
     "fetch_extra": 0.001,
     "fetch_public_catalog": 0.005,
     "fetch_live_stream_catalog": 0.004,
-    "load_epg_aliases": 0.077,
-    "enrich_epg_metadata": 0.059,
-    "refresh_stream_status": 12.907,
-    "filter_media_proof": 0.411,
-    "select_channels": 0.049,
-    "project_guide": 0.357,
+    "load_epg_aliases": 0.074,
+    "enrich_epg_metadata": 0.061,
+    "refresh_stream_status": 1.75,
+    "filter_media_proof": 0.377,
+    "select_channels": 0.043,
+    "project_guide": 0.361,
     "render_m3u": 0.004,
-    "generate_companion": 0.069,
-    "total": 14.468
+    "generate_companion": 0.048,
+    "total": 3.286
   },
-  "epg_aliases_count": 9137,
+  "epg_aliases_count": 9018,
   "media_proof_required": true
 }
